@@ -2,14 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include <string.h>
 #include "irslinger.h"
+#include "log.h"
+
+
+static const char *PROGRAMNAME = 0;
 
 /*
  * gcc -g -o ac ac.c -lpigpio
  */
-/* Flag set by ‘--verbose’. */
 
-static int verbose_flag;
+/* Flag set by ‘--verbose’. */
 
 #define AUTO 0
 
@@ -27,12 +31,12 @@ typedef struct p {
   int position; 
 } parameter;
 
-parameter legal_temp[] = {{"8",0,0}, {"10",0,0}, {"16",0,0}, {"17",0,0}, {"18",0,0}, {"19",0,0}, {"20",0,0}, {"21",0,0}, {"22",0,0}, {"23",0,0}, {"24",0,0}, {"25",0,0}, {"26",0,0}, {"27",0,0}, {"28",0,0}, {"29",0,0}, {"30",0,0}};
-parameter legal_mode[] = {{"AUTO",0,0}, {"HEAT",0,0}, {"COOL",0,0}, {"FAN",0,0}, {"OFF",0,0}};
+parameter legal_temp[] = {{"8",0,0}, {"10",0,0}, {"16",0,0}, {"17",0,0}, {"18",0,0}, {"19",0,0}, {"20",0,0}, {"21",0,0}, {"22",0,0}, {"23",0,0}, {"24",0,0}, {"25",0,0}, {"26",0,0}, {"27",0,0}, {"28",0,0}, {"29",0,0}, {"30",0,0}, {0, 0, 0}};
+parameter legal_mode[] = {{"AUTO",0,0}, {"HEAT",0,0}, {"COOL",0,0}, {"FAN",0,0}, {"OFF",0,0}, {0, 0, 0}};
 parameter legal_option[] = {{"AUTO",0,0}, {"QUIET",0,0}, {"POWERFUL",0,0}};
-parameter legal_fan[] = {{"AUTO",0,0}, {"VERYSLOW",0,0}, {"SLOW",0,0}, {"MEDIUM",0,0}, {"FAST",0,0}, {"VERYFAST",0,0}};
-parameter legal_updown[] = {{"AUTO",0,0}, {"VERYLOW",0,0}, {"LOW",0,0}, {"MIDDLE",0,0}, {"HIGH",0,0}, {"VERYHIGH",0,0}};
-parameter legal_leftright[] = {{"AUTO",0,0}, {"VERYLEFT",0,0}, {"LEFT",0,0}, {"MIDDLE",0,0}, {"RIGHT",0,0}, {"VERYRIGHT",0,0}};
+parameter legal_fan[] = {{"AUTO",0,0}, {"VERYSLOW",0,0}, {"SLOW",0,0}, {"MEDIUM",0,0}, {"FAST",0,0}, {"VERYFAST",0,0}, {0, 0, 0}};
+parameter legal_updown[] = {{"AUTO",0,0}, {"VERYLOW",0,0}, {"LOW",0,0}, {"MIDDLE",0,0}, {"HIGH",0,0}, {"VERYHIGH",0,0}, {0, 0, 0}};
+parameter legal_leftright[] = {{"AUTO",0,0}, {"VERYLEFT",0,0}, {"LEFT",0,0}, {"MIDDLE",0,0}, {"RIGHT",0,0}, {"VERYRIGHT",0,0}, {0, 0, 0}};
 
 static struct option long_options[] =
   {
@@ -44,42 +48,52 @@ static struct option long_options[] =
    {"fan",  required_argument, 0, 'f'},
    {"updown",  required_argument, 0, 'u'},
    {"leftright",  required_argument, 0, 'l'},
-   {"verbose", no_argument,       &verbose_flag, 1},
+   {"verbose", required_argument, 0, 'v'},
    {0, 0, 0, 0}
   };
-          
 
-void usage(char *programname) {
-  printf("\nusage: %s\n", programname);
+void usage() {
+  printf("\nusage: %s\n", PROGRAMNAME);
   printf("       --temperature, -t (8|10|16|17|..|30)\n");
   printf("       [--mode, -m (AUTO|HEAT|COOL|FAN|OFF)]\n");
   printf("       [--option, -o (AUTO|QUIET|POWERFUL)]\n");
   printf("       [--fan, -f (AUTO|VERYSLOW|SLOW|MEDIUM|FAST|VERYFAST)]\n");
   printf("       [--updown, -u (AUTO|VERYLOW|LOW|MIDDLE|HIGH|VERYHIGH)]\n");
   printf("       [--leftright, -l (AUTO|VERYLEFT|LEFT|MIDDLE|RIGHT|VERYRIGHT)]\n");
-  printf("       [--verbose, -v]\n");
+  printf("       [--verbose, -v (LOG_TRACE|LOG_DEBUG|LOG_INFO|LOG_WARN|LOG_ERROR|LOG_FATAL)\n");
   abort();
 }
 
 parameter* getParameter(char *value, parameter *optionlist) {
-  size_t n = sizeof(optionlist);
-  for (int i = 0 ;  i < n ; i++ ) {
+  parameter *result = 0;
+  for (int i = 0 ; optionlist[i].text ; i++ ) {
     parameter *tempOpt = &optionlist[i];
-    if (strcmp(tempOpt->text,value)==0)
-      return tempOpt;
+    if (0==(int)strcmp(tempOpt->text,value)) {
+      result = tempOpt;
+      break;
+    }
   }
-  return 0;
+  if (result==0)
+    {
+      log_fatal("Parameter '%s' illegal", value);
+      usage();
+    }
+  return result;
 }
 
 int main(int argc, char *argv[])  
 {
+  PROGRAMNAME = argv[0];
   int c;
   parameter *temp=0, *mode=&legal_mode[0], *option=&legal_option[0], *fan=&legal_fan[0], *updown=&legal_updown[0], *leftright=&legal_leftright[0];
+
+  //Log only offending errors
+  log_set_level(LOG_FATAL);
   
   while (1)
     {
       int option_index = -1; // getopt_long stores the option index here. 
-      c = getopt_long (argc, argv, ":t:m:o:f:u:l:",
+      c = getopt_long (argc, argv, ":t:m:o:f:u:l:v:",
                        long_options, &option_index);
 
       // detect the end of the options
@@ -115,9 +129,13 @@ int main(int argc, char *argv[])
 	case 'l':
 	  leftright = getParameter(optarg, legal_leftright);
 	  break;
+	case 'v':
+	  //log_set_quiet(false);
+	  log_set_level(log_level_int(optarg));
+	  break;
         default:
 	  printf("Unknown option '%c'", optopt);
-	  usage(argv[0]);
+	  usage();
         }
     }
 
@@ -126,12 +144,13 @@ int main(int argc, char *argv[])
     for(; optind < argc; optind++){      
       printf("Unknown argument: %s\n", argv[optind]);  
     }
-    usage(argv[0]);
+    usage();
   }
+
   // fail if missing temp
   if (!temp) {
     printf("Missing mandatory temperature argument\n");
-    usage(argv[0]);
+    usage();
   }
       
 

@@ -39,9 +39,7 @@ static struct {
   Callback callbacks[MAX_CALLBACKS];
 } L;
 
-static const char *level_strings[] = {
-  "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "FATAL"
-};
+static const char *level_strings[] = { "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "FATAL", "NOTHING" };
 
 #ifdef LOG_USE_COLOR
 static const char *level_colors[] = {
@@ -98,7 +96,7 @@ const char* log_level_string(int level) {
 
 int log_level_int(const char *strLevel) {
   int intLevel = 0;
-  for (intLevel=LOG_TRACE ; intLevel <= LOG_FATAL ; intLevel++)
+  for (intLevel=LOG_TRACE ; intLevel <= LOG_NOTHING ; intLevel++)
     if (strcmp(level_strings[intLevel], strLevel)==0)
       break;
   return intLevel;

@@ -60,7 +60,7 @@ void usage() {
   printf("       [--fan, -f (AUTO|VERYSLOW|SLOW|MEDIUM|FAST|VERYFAST)]\n");
   printf("       [--updown, -u (AUTO|VERYLOW|LOW|MIDDLE|HIGH|VERYHIGH)]\n");
   printf("       [--leftright, -l (AUTO|VERYLEFT|LEFT|MIDDLE|RIGHT|VERYRIGHT)]\n");
-  printf("       [--verbose, -v (LOG_TRACE|LOG_DEBUG|LOG_INFO|LOG_WARN|LOG_ERROR|LOG_FATAL)\n");
+  printf("       [--verbose, -v (TRACE|DEBUG|INFO|WARN|ERROR|FATAL|NOTHING)\n");
   abort();
 }
 

@@ -1,5 +1,5 @@
 #include <string.h>
-//#include <math.h>
+#include <stdlib.h>
 #include <pigpio.h>
 #include "log.h"
 #include "irslinger.h"
@@ -8,30 +8,43 @@
 {
   int index = *pulseCount;
 
-  log_trace("On:%d - Off:%d - Delay:%d\n", onPins, offPins, duration); 
+  log_trace("%s %d", onPins?"On ":offPins?"Off":"?", duration);
+  if ((!onPins && !offPins) || (onPins && offPins)) {
+      log_fatal("%s %d", onPins?"On ":offPins?"Off":"?", duration);
+      abort();
+  }
 
-  irSignal[index].gpioOn = onPins;
-  irSignal[index].gpioOff = offPins;
-  irSignal[index].usDelay = duration;
-
-  (*pulseCount)++;
+  if (irSignal[index-1].gpioOn == onPins &&
+      irSignal[index-1].gpioOff == offPins)
+    {
+      irSignal[index-1].usDelay += duration;
+    }
+  else
+    {
+      irSignal[index].gpioOn = onPins;
+      irSignal[index].gpioOff = offPins;
+      irSignal[index].usDelay = duration;
+      (*pulseCount)++;
+    }
 }
 
 // Generates a square wave for duration (microseconds) at frequency (Hz)
 // on GPIO pin outPin. dutyCycle is a floating value between 0 and 1.
- void addMark(uint32_t outPin, unsigned long frequency, double dutyCycle, unsigned long duration, gpioPulse_t *irSignal, unsigned int *pulseCount)
+void addMark(uint32_t outPin, unsigned long frequency, double dutyCycle, unsigned long duration, gpioPulse_t *irSignal, unsigned int *pulseCount)
 {
-  log_trace("Mark   %d\n", duration);
+  log_debug("Add mark   %d", duration);
   double cycleLength = (double)1000000/frequency;
   unsigned totalCycles = 0.5f+((double)(duration/cycleLength));
-  unsigned long usedDuration = 0;
+  unsigned long actualUsedDuration = 0;
+  double calculatedUsedDuration = 0;
   for (unsigned i = 0; i < totalCycles; i++)
     {
-      unsigned long thisCycleDuration = 0.5f + (double)(cycleLength*(i+1))-usedDuration;
-      usedDuration += thisCycleDuration;
+      calculatedUsedDuration += cycleLength;
+      unsigned long thisCycleDuration = 0.5f + calculatedUsedDuration-actualUsedDuration;
+      actualUsedDuration += thisCycleDuration;
 
       // High pulse
-      unsigned onDuration = thisCycleDuration / 2;
+      unsigned onDuration = thisCycleDuration * dutyCycle;
       addPulse(1 << outPin, 0, onDuration, irSignal, pulseCount);
 
       // Low pulse
@@ -43,8 +56,8 @@
 // Generates a low signal gap for duration, in microseconds, on GPIO pin outPin
  void addSpace(uint32_t outPin, unsigned long duration, gpioPulse_t *irSignal, unsigned int *pulseCount)
 {
-  log_debug("Space  %d\n", duration);
-  addPulse(0, 0, duration, irSignal, pulseCount);
+  log_debug("Add space  %d", duration);
+  addPulse(0, 1 << outPin, duration, irSignal, pulseCount);
 }
 
 // Transmit generated wave
@@ -67,18 +80,33 @@
   // Start a new wave
   gpioWaveClear();
 
-  if (log_get_level() >= LOG_DEBUG) {
+  if (log_get_level() <= LOG_TRACE) {
     for (int i ; i < *pulseCount ; i++)
-      log_debug("On=%d, Off=%d, Delay=%d", irSignal[i].gpioOn, irSignal[i].gpioOff, irSignal[i].usDelay);
+      log_trace("%s=%zu", irSignal[i].gpioOn?"On":"Off", irSignal[i].usDelay);
   }
   
-  gpioWaveAddGeneric(*pulseCount, irSignal);
+  int result = gpioWaveAddGeneric(*pulseCount, irSignal);
+  if (result==PI_TOO_MANY_PULSES)
+    {
+      log_fatal("gpioWaveAddGeneric: PI_TOO_MANY_PULSES");
+      abort();
+    }
+  else if (result!=*pulseCount)
+    {
+      log_debug("gpioWaveAddGeneric: added %zu different from expected %zu", result, *pulseCount);
+      abort();
+    }
   int waveID = gpioWaveCreate();
 
   if (waveID >= 0)
     {
       int result = gpioWaveTxSend(waveID, PI_WAVE_MODE_ONE_SHOT);
-      printf("Result: %i\n", result);
+      if (result==PI_BAD_WAVE_ID)
+	log_error("gpioWaveTxSend ERROR: PI_BAD_WAVE_ID");
+      else if (result==PI_BAD_WAVE_MODE)
+	log_error("gpioWaveTxSend ERROR: PI_BAD_WAVE_MODE");
+      else
+	printf("gpioWaveTxSend OK: %i\n", result);
     }
   else
     {
@@ -86,6 +114,7 @@
     }
 
   // Wait for the wave to finish transmitting
+  time_sleep(0.2);
   while (gpioWaveTxBusy())
     {
       time_sleep(0.1);
@@ -294,6 +323,7 @@ int irSlingGeneric(uint32_t outPin,
 	return 1;
       }
 
+      log_debug("Pulse %d", pulseCount);
       addMark(outPin, frequency, dutyCycle, markDuration, irSignal, &pulseCount);
       addSpace(outPin, spaceDuration, irSignal, &pulseCount);
     }

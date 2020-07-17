@@ -1,6 +1,7 @@
 #ifndef IRSLINGER_H
 #define IRSLINGER_H
 
+#include "symboldefinition.h"
 #include "pigpio.h"
 
 #define MAX_COMMAND_SIZE 512
@@ -14,12 +15,6 @@
 		
 // Generates a low signal gap for duration, in microseconds, on GPIO pin outPin
  void addSpace(uint32_t outPin, unsigned long duration, gpioPulse_t *irSignal, unsigned int *pulseCount);
-
-typedef struct sd {
-  char symbol;
-  unsigned markDuration;
-  unsigned spaceDuration;
-} symbolDefinition;
 
 int irSlingGeneric(uint32_t outPin,
 		   int frequency,

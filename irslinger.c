@@ -6,6 +6,8 @@
 
  void addPulse(uint32_t onPins, uint32_t offPins, uint32_t duration, gpioPulse_t *irSignal, unsigned int *pulseCount)
 {
+  if (duration==0)
+    return;
   int index = *pulseCount;
 
   log_trace("%s %d", onPins?"On ":offPins?"Off":"?", duration);
@@ -32,7 +34,7 @@
 // on GPIO pin outPin. dutyCycle is a floating value between 0 and 1.
 void addMark(uint32_t outPin, unsigned long frequency, double dutyCycle, unsigned long duration, gpioPulse_t *irSignal, unsigned int *pulseCount)
 {
-  log_debug("Add mark   %d", duration);
+  log_trace("Add mark   %d", duration);
   double cycleLength = (double)1000000/frequency;
   unsigned totalCycles = 0.5f+((double)(duration/cycleLength));
   unsigned long actualUsedDuration = 0;
@@ -56,7 +58,7 @@ void addMark(uint32_t outPin, unsigned long frequency, double dutyCycle, unsigne
 // Generates a low signal gap for duration, in microseconds, on GPIO pin outPin
  void addSpace(uint32_t outPin, unsigned long duration, gpioPulse_t *irSignal, unsigned int *pulseCount)
 {
-  log_debug("Add space  %d", duration);
+  log_trace("Add space  %d", duration);
   addPulse(0, 1 << outPin, duration, irSignal, pulseCount);
 }
 
@@ -93,7 +95,7 @@ void addMark(uint32_t outPin, unsigned long frequency, double dutyCycle, unsigne
     }
   else if (result!=*pulseCount)
     {
-      log_debug("gpioWaveAddGeneric: added %zu different from expected %zu", result, *pulseCount);
+      log_trace("gpioWaveAddGeneric: added %zu different from expected %zu", result, *pulseCount);
       abort();
     }
   int waveID = gpioWaveCreate();
@@ -294,8 +296,8 @@ int irSlingGeneric(uint32_t outPin,
 
   size_t codeLen = strlen(code);
 
-  log_debug("code length is %zu", codeLen);
-  log_debug("%s", code);
+  log_trace("code length is %zu", codeLen);
+  log_trace("%s", code);
 
   if (codeLen > MAX_COMMAND_SIZE)
     {
@@ -312,23 +314,25 @@ int irSlingGeneric(uint32_t outPin,
     {
       unsigned long markDuration = 0;
       unsigned long spaceDuration = 0;
+      symbolDefinition *symdef = 0;
       for (int j = 0 ; j<sizeof(codeLen) ; j++) {
 	if (sdDef[j].symbol==code[i]) {
-	  markDuration = sdDef[j].markDuration;
-	  spaceDuration = sdDef[j].spaceDuration;
+	  symdef = &sdDef[j];
+	  markDuration = symdef->markDuration;
+	  spaceDuration = symdef->spaceDuration;
 	}
       }
-      if (markDuration == spaceDuration &&  spaceDuration == 0) {
-	log_debug("Undefined symbol '%c'", code[i]);
+      if (!symdef) {
+	log_trace("Undefined symbol '%c'", code[i]);
 	return 1;
       }
 
-      log_debug("Pulse %d", pulseCount);
+      log_trace("Pulse %d", pulseCount);
       addMark(outPin, frequency, dutyCycle, markDuration, irSignal, &pulseCount);
       addSpace(outPin, spaceDuration, irSignal, &pulseCount);
     }
 
-  log_debug("pulse count is %i\n", pulseCount);
+  log_trace("pulse count is %i\n", pulseCount);
   // End Generate Code
 
   return transmitWave(outPin, irSignal, &pulseCount);

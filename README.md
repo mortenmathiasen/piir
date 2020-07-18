@@ -20,15 +20,14 @@ To get started transmitting IR signals from PIIR you need to consider if you hav
 The tool is developed in C to support compilation on any platform. 
 
 The tool supports IR transmission by:
-- Raspberry PI using GPIO https://github.com/joan2937/pigpio
-- more platforms to come when you contribute the software.
+* Raspberry PI using GPIO https://github.com/joan2937/pigpio
+* more platforms to come when you contribute the software.
 
 ### Prerequisites
 
 To be able to transmit IR signal you need an IR led, either:
 * build the electronics yourself, e.g. as mentioned at [Raspberry-PI-Geek](https://www.raspberry-pi-geek.com/Archive/2015/10/Raspberry-Pi-IR-remote)
 * apply an premade pHAT, eg. [ANAVI Infrared pHAT](https://anavi.technology/)
-```
 
 ### Compilation
 

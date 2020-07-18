@@ -20,7 +20,7 @@ To get started transmitting IR signals from PIIR you need to consider if you hav
 The tool is developed in C to support compilation on any platform. 
 
 The tool supports IR transmission by:
-* Raspberry PI using GPIO https://github.com/joan2937/pigpio
+* Raspberry PI using [GPIO](http://abyz.me.uk/rpi/pigpio/)
 * more platforms to come when you contribute the software.
 
 ### Prerequisites

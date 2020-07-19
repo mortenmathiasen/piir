@@ -118,5 +118,15 @@ void loadConfig(const char *configfilepath,
   }
   
   return;
-};
+}
 
+void loadOutPin(const char *configfilepath,
+		unsigned int *outPin)   //Output
+{
+  //Load root object
+  JSON_Object *root_object = getRootObject(configfilepath);
+
+  //Load pin number
+  double outPinNumber = json_object_dotget_number(root_object, "transmitter.outpin");
+  *outPin = (unsigned int)outPinNumber;
+}

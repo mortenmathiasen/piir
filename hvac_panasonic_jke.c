@@ -64,23 +64,6 @@ void usage() {
   abort();
 }
 
-/* parameter* getParameter(char *value, parameter *optionlist) { */
-/*   parameter *result = 0; */
-/*   for (int i = 0 ; optionlist[i].text ; i++ ) { */
-/*     parameter *tempOpt = &optionlist[i]; */
-/*     if (0==(int)strcmp(tempOpt->text,value)) { */
-/*       result = tempOpt; */
-/*       break; */
-/*     } */
-/*   } */
-/*   if (result==0) */
-/*     { */
-/*       log_fatal("Parameter '%s' illegal", value); */
-/*       usage(); */
-/*     } */
-/*   return result; */
-/* } */
-
 void insertFeatureValue(const char *Name, const char *Value, const char **featureNames, const char **featureValues) {
   size_t noOfNames = sizeof(featureNames);
   size_t noOfValues = sizeof(featureValues);
@@ -136,15 +119,6 @@ int main(int argc, char *argv[])
       if (c == -1)
         break;
 
-      /*  
-	  printf ("option '%c'", c);
-          if (optarg)
-	  printf (" with arg '%s'", optarg);
-	  else
-	  printf (" with no argument");
-	  printf ("\n"); 
-      */
-	  
       switch (c)
         {
 	case 't':
@@ -180,29 +154,30 @@ int main(int argc, char *argv[])
 	  usage();
         }
     }
-
+  
   // fail if extra unknown arg
   if (optind < argc) {
     for(; optind < argc; optind++){      
-      printf("Unknown argument: %s\n", argv[optind]);  
+      log_error("Unknown argument: %s\n", argv[optind]);  
     }
     usage();
   }
 
-  /* // fail if missing temp */
-  /* if (!temp) { */
-  /*   printf("Missing mandatory temperature argument\n"); */
-  /*   usage(); */
-  /* } */
-
+  // Log settings
+  size_t noOfFeatures = getFeaturesCount(configfilepath);
+  for (size_t featurePosition = 0 ; featurePosition < noOfFeatures ; featurePosition++)
+    log_info("%s = %s",featureNames[featurePosition],featureValues[featurePosition]);
+  
   const char *description = NULL;
   unsigned int frequency = 0;
   double dutycycle = 0;
+  unsigned int outPin = 0; // The Broadcom pin number the signal will be sent on
   char *symbolString = NULL;
 
   int noOfConfigSymbols = getSymboldefinitionsCount(configfilepath);
   symbolDefinition configSymbols[noOfConfigSymbols];
 
+  log_info("Configuration '%s' - %s", configfilepath, description);
   loadConfig(configfilepath,
 	     featureValues,
 	     &description,
@@ -211,30 +186,8 @@ int main(int argc, char *argv[])
 	     &symbolString,
 	     configSymbols);
   log_info("%s", description);
-  log_debug("Transmitting: %s", symbolString);  
 
-  uint32_t outPin = 17;            // The Broadcom pin number the signal will be sent on
-  //  int frequency = 38000;           // The frequency of the IR signal in Hz
-  //  double dutyCycle = 0.5;          // The duty cycle of the IR signal. 0.5 means for every cycle,
-	
-  /* int */
-  /*   headerMarkDuration=3515, */
-  /*   headerSpaceDuration=1744, */
-  /*   widespaceMarkDuration=436, */
-  /*   widespaceSpaceDuration=10330, */
-  /*   zeroMarkDuration=436, */
-  /*   zeroSpaceDuration=436, */
-  /*   oneMarkDuration=436, */
-  /*   oneSpaceDuration=1308; */
-
-  /* symbolDefinition configSymbols[] =  */
-  /*   {{'H',headerMarkDuration,headerSpaceDuration}, */
-  /*    {'W',widespaceMarkDuration,widespaceSpaceDuration}, */
-  /*    {'0',zeroMarkDuration,zeroSpaceDuration}, */
-  /*    {'1',oneMarkDuration,oneSpaceDuration}}; */
-  
   // Calculate and insert checksum
-  //uint8_t checksum = 0b10 + 0b11100100 - 0b11110010;
   uint8_t checksum = 0b11110100;
   int index = 0;
   for (int i=0; i<26; i++)
@@ -244,11 +197,14 @@ int main(int argc, char *argv[])
       index++;
     symbolString[index+(7-i)] = (checksum << i) & 0b10000000 ? '1':'0';
   }
-  printf("%s\n",symbolString);
+  log_debug("Transmitting: %s", symbolString);  
 
-  //transmit symbol string
+  // Load RaspbeeryPI outPin number from config file
+  loadOutPin(configfilepath, &outPin);
+  
+  // Transmit symbol string
   int result = irSlingGeneric(
-			      outPin,
+			      (uint32_t)outPin,
 			      frequency,
 			      dutycycle,
 			      configSymbols,

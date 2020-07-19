@@ -2,6 +2,9 @@
     "description": "Panasonic HVAC remotes, e.g. JKE models",
     "frequency":38000,
     "dutycycle":0.5,
+    "transmitter": {
+	"outpin":17
+    },
     "symboldefinitions": {
 	"-":{"mark":0,"space":0},
 	"H":{"mark":3515,"space":1744},

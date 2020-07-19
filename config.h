@@ -17,6 +17,7 @@ void loadConfig(const char *configfilepath,  // Input
 		char **symbolString,  //Output
 		symbolDefinition configSymbols[]);  //Output
 
+void loadOutPin(const char *configfilepath,  // Input
+		unsigned int *outPin);  //Output
+
 #endif
-
-

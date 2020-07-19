@@ -1,5 +1,8 @@
 ac
 
+# Emacs backup files
+*~
+
 # Prerequisites
 *.d
 

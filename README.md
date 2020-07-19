@@ -59,7 +59,9 @@ make check
 
 ## Deployment
 
-You can deplay the PIIR tool to any live system. Either you can compile the sourced code directly on the live system as explained above. Otherwise, you can compile on another development system and then copy the self-contained execution file to any live system.
+You can deploy the PIIR tool to any live system.
+
+Either you can compile the sourced code directly on the live system as explained above or you can compile it on another development system and then move the  execution file to your live system.
 
 ## Built With
 

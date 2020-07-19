@@ -15,9 +15,11 @@ PIIR is created as an alternative to LIRC and other tools, that are more heavy w
 
 To get started transmitting IR signals from PIIR you need to consider if you have one or more IR receivers you want to control by RaspberryPI. If so, you need to know the IR-signals you will want to transmit. Either, you can find this definition inside the tool already, reverse engineer remote control or find protocol definitions online.
 
-## Supported hardware
+## Supported systems
 
 The tool is developed in C to support deployment on any platform. 
+
+## Supported hardware
 
 The tool supports IR transmission by:
 * Raspberry PI using [GPIO](http://abyz.me.uk/rpi/pigpio/)

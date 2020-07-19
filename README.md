@@ -42,21 +42,21 @@ To install the tool follow these steps:
 1. git clone https://github.com/mortenmathiasen/piir.git
 2. cd piir
 3. ./configuration
-4. ./make
+4. make
 ```
 
 ## Installation
 
 After compilation you can install the PIIR tool by:
 ```
-./make install
+make install
 ```
 
 ## Running the tests
 
 After compilation you can test the PIIR tool by:
 ```
-./make check
+make check
 ```
 
 ### Break down into end to end tests

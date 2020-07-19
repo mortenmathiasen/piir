@@ -17,6 +17,10 @@ piir_SOURCES = \
 	src/parson.h \
 	src/parson.c
 
+piirdir = $(datadir)/piir
+piir_DATA = \
+	conf/remotes/hvac/panasonic_jke.json
+
 
 
 

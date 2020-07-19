@@ -33,9 +33,9 @@ To be able to transmit IR signal you need an IR led, either:
 
 ### Compilation
 
-You will need the PIIR software which can be build from source code, e.g. by using [git](https://git-scm.com/) and [gcc](https://gcc.gnu.org/)
+You will need the PIIR software which can be build from source code, e.g. by using [git](https://git-scm.com/) and [gcc](https://gcc.gnu.org/).
 
-To install the tool follow these steps:
+To compile the tool follow these steps:
 ```
 git clone https://github.com/mortenmathiasen/piir.git
 cd piir
@@ -55,22 +55,6 @@ make install
 After compilation you can test the PIIR tool by:
 ```
 make check
-```
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
 ```
 
 ## Deployment

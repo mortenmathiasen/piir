@@ -43,7 +43,7 @@ To install the tool follow these steps:
 ```
 1. git clone https://github.com/mortenmathiasen/piir.git
 2. cd piir
-3. ./configuration
+3. ./configure
 4. make
 ```
 

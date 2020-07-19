@@ -2,7 +2,7 @@
 
 PIIR is a self-contained tool to transmit IR-signals like remote controls.
 
-The tool is created as an alternative to LIRC and other tools, that are more heavy weight and semi generic.
+The tool is created as an alternative to LIRC and other tools, that are more heavy weight and less generic.
 
 ## Features
 

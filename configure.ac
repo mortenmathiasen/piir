@@ -1,6 +1,6 @@
 #                                               -*- Autoconf -*-
-# Process this file with autoconf to produce a configure script.
 
+# Process this file with autoconf to produce a configure script.
 AC_PREREQ([2.69])
 AC_INIT([PIIR], [1.0.0], [https://github.com/mortenmathiasen/piir/issues])
 AC_CONFIG_SRCDIR([src/parson.c])

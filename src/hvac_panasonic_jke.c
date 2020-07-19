@@ -95,7 +95,10 @@ int main(int argc, char *argv[])
   PROGRAMNAME = argv[0];
   int c;
   //  parameter *temp=20, *mode=&legal_mode[0], *option=&legal_option[0], *fan=&legal_fan[0], *updown=&legal_updown[0], *leftright=&legal_leftright[0];
-  char *configfilepath = "/home/homeassistant/piir/config/remotes/hvac/panasonic_jke.json";
+  
+  char configfilepath[256];
+  strcpy(configfilepath, DATADIR);
+  strcat(configfilepath, "/conf/remotes/hvac/panasonic_jke.json");
   size_t configFeaturesCount = getFeaturesCount(configfilepath);
 
   //Declace and initialize feature name and for now empty values

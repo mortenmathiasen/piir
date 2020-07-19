@@ -101,7 +101,8 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(piirdir)"
+am__installdirs = "$(DESTDIR)$(bindir)" \
+	"$(DESTDIR)$(piir_conf_remotes_hvac_dir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
 am_piir_OBJECTS = src/hvac_panasonic_jke.$(OBJEXT) \
@@ -174,7 +175,7 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-DATA = $(piir_DATA)
+DATA = $(piir_conf_remotes_hvac__DATA)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
 	$(LISP)config.h.in
 # Read a list of newline-separated strings from the standard input,
@@ -307,6 +308,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = subdir-objects
+AM_CFLAGS = -DDATADIR='"$(datadir)/piir"'
 AM_LDFLAGS = -lpigpio
 piir_SOURCES = \
 	src/hvac_panasonic_jke.h \
@@ -321,8 +323,8 @@ piir_SOURCES = \
 	src/parson.h \
 	src/parson.c
 
-piirdir = $(datadir)/piir
-piir_DATA = \
+piir_conf_remotes_hvac_dir = $(datadir)/piir/conf/remotes/hvac
+piir_conf_remotes_hvac__DATA = \
 	conf/remotes/hvac/panasonic_jke.json
 
 all: config.h
@@ -474,27 +476,27 @@ am--depfiles: $(am__depfiles_remade)
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
-install-piirDATA: $(piir_DATA)
+install-piir_conf_remotes_hvac_DATA: $(piir_conf_remotes_hvac__DATA)
 	@$(NORMAL_INSTALL)
-	@list='$(piir_DATA)'; test -n "$(piirdir)" || list=; \
+	@list='$(piir_conf_remotes_hvac__DATA)'; test -n "$(piir_conf_remotes_hvac_dir)" || list=; \
 	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(piirdir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(piirdir)" || exit 1; \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(piir_conf_remotes_hvac_dir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(piir_conf_remotes_hvac_dir)" || exit 1; \
 	fi; \
 	for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  echo "$$d$$p"; \
 	done | $(am__base_list) | \
 	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(piirdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(piirdir)" || exit $$?; \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(piir_conf_remotes_hvac_dir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(piir_conf_remotes_hvac_dir)" || exit $$?; \
 	done
 
-uninstall-piirDATA:
+uninstall-piir_conf_remotes_hvac_DATA:
 	@$(NORMAL_UNINSTALL)
-	@list='$(piir_DATA)'; test -n "$(piirdir)" || list=; \
+	@list='$(piir_conf_remotes_hvac__DATA)'; test -n "$(piir_conf_remotes_hvac_dir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(piirdir)'; $(am__uninstall_files_from_dir)
+	dir='$(DESTDIR)$(piir_conf_remotes_hvac_dir)'; $(am__uninstall_files_from_dir)
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
@@ -725,7 +727,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(PROGRAMS) $(DATA) config.h
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(piirdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(piir_conf_remotes_hvac_dir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -787,7 +789,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-piirDATA
+install-data-am: install-piir_conf_remotes_hvac_DATA
 
 install-dvi: install-dvi-am
 
@@ -838,7 +840,8 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-binPROGRAMS uninstall-piirDATA
+uninstall-am: uninstall-binPROGRAMS \
+	uninstall-piir_conf_remotes_hvac_DATA
 
 .MAKE: all install-am install-strip
 
@@ -853,11 +856,12 @@ uninstall-am: uninstall-binPROGRAMS uninstall-piirDATA
 	install-data-am install-dvi install-dvi-am install-exec \
 	install-exec-am install-html install-html-am install-info \
 	install-info-am install-man install-pdf install-pdf-am \
-	install-piirDATA install-ps install-ps-am install-strip \
-	installcheck installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-compile \
-	mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall \
-	uninstall-am uninstall-binPROGRAMS uninstall-piirDATA
+	install-piir_conf_remotes_hvac_DATA install-ps install-ps-am \
+	install-strip installcheck installcheck-am installdirs \
+	maintainer-clean maintainer-clean-generic mostlyclean \
+	mostlyclean-compile mostlyclean-generic pdf pdf-am ps ps-am \
+	tags tags-am uninstall uninstall-am uninstall-binPROGRAMS \
+	uninstall-piir_conf_remotes_hvac_DATA
 
 .PRECIOUS: Makefile
 

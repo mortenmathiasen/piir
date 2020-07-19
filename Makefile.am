@@ -1,5 +1,7 @@
 AUTOMAKE_OPTIONS = subdir-objects
 
+AM_CFLAGS = -DDATADIR='"$(datadir)/piir"'
+
 AM_LDFLAGS = -lpigpio
 
 bin_PROGRAMS =  piir
@@ -17,9 +19,10 @@ piir_SOURCES = \
 	src/parson.h \
 	src/parson.c
 
-piirdir = $(datadir)/piir
-piir_DATA = \
+piir_conf_remotes_hvac_dir = $(datadir)/piir/conf/remotes/hvac
+piir_conf_remotes_hvac__DATA = \
 	conf/remotes/hvac/panasonic_jke.json
+
 
 
 

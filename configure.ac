@@ -7,13 +7,15 @@ AC_CONFIG_SRCDIR([src/parson.c])
 AC_CONFIG_HEADERS([config.h])
 
 # AutoMake
-AM_INIT_AUTOMAKE ([-Wall -Werror foreign])
+AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 
 # Checks for programs.
 AC_PROG_CC
 
 # Checks for libraries.
-
+LIBS="-lpigpio"
+AC_CHECK_LIB([pigpio], [gpioInitialise])
+		       
 # Checks for header files.
 AC_CHECK_HEADERS([stddef.h stdlib.h string.h unistd.h])
 

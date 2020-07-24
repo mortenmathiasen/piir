@@ -39,6 +39,7 @@ To compile the tool follow these steps:
 ```
 git clone https://github.com/mortenmathiasen/piir.git
 cd piir
+./autogen.sh
 ./configure
 make
 ```

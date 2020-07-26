@@ -13,7 +13,13 @@ PIIR is created as an alternative to LIRC and other tools, that are more heavy w
 
 ## Getting Started
 
-To get started transmitting IR signals from PIIR you need to consider if you have one or more IR receivers you want to control by RaspberryPI. If so, you need to know the IR-signals you will want to transmit. Either, you can find this definition inside the tool already, reverse engineer remote control or find protocol definitions online.
+You need to identify a device you want to control by IR-signals, e.g. an airconditioner, a TV or similar.
+
+### IR-protocol
+
+To control an IR-receiver you need to know the IR-signals to transmit to it. Either, you can:
+* Use the protocol definitions that exists already inside PIIRs remote folder [conf/remotes](https://github.com/mortenmathiasen/piir/tree/master/conf/remotes)
+* Reverse engineer your remote control, e.g. using [IR decoder for Arduino](https://github.com/ToniA/Raw-IR-decoder-for-Arduino.git) which I did for [Panasonic airconditioner](https://github.com/mortenmathiasen/piir/blob/master/conf/remotes/hvac_panasonic.pdf)
 
 ### Supported systems
 

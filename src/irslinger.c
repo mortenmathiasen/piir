@@ -285,7 +285,8 @@ void addMark(uint32_t outPin, unsigned long frequency, double dutyCycle, unsigne
 int irSlingGeneric(uint32_t outPin,
 		   int frequency,
 		   double dutyCycle,
-		   symbolDefinition sdDef[],
+		   size_t sdDefCount,
+		   symbolDefinition *sdDef,
 		   const char *code)
 {
   if (outPin > 31)
@@ -309,13 +310,14 @@ int irSlingGeneric(uint32_t outPin,
   gpioPulse_t irSignal[MAX_PULSES];
   unsigned int pulseCount = 0;
 
-  int i;
+  size_t i = 0;
   for (i = 0; i < codeLen; i++)
     {
       unsigned long markDuration = 0;
       unsigned long spaceDuration = 0;
       symbolDefinition *symdef = 0;
-      for (int j = 0 ; j<sizeof(codeLen) ; j++) {
+      size_t j =  0;
+      for (j = 0 ; j<sdDefCount ; j++) {
 	if (sdDef[j].symbol==code[i]) {
 	  symdef = &sdDef[j];
 	  markDuration = symdef->markDuration;
@@ -323,7 +325,7 @@ int irSlingGeneric(uint32_t outPin,
 	}
       }
       if (!symdef) {
-	log_trace("Undefined symbol '%c'", code[i]);
+	log_fatal("Undefined symbol '%c'", code[i]);
 	return 1;
       }
 

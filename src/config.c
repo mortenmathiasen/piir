@@ -1,7 +1,9 @@
+#include <stdlib.h>
 #include <string.h>
 #include "config.h"
 #include "parson.h"
 #include "log.h"
+
 
 JSON_Object* getRootObject(const char *configfilepath) {
   static JSON_Object *root_object = 0;
@@ -86,25 +88,67 @@ size_t getSymboldefinitionsCount(const char * configfilepath) {
   return json_object_get_count(symboldefs_object);
 }
 
-void loadConfig(const char *configfilepath,
-		const featureT *features,
-		const char **description,
-		unsigned int *frequency,
-		double *dutycycle,
-		char **symbolString,
-		symbolDefinition configSymbols[]) {
-  *description = 0;
-  *frequency = 0;
-  *dutycycle = 0;
-  *symbolString = 0;
-
+void loadConfigText(const char *configfilepath,
+		    const char *inputKey,
+		    const char **outputValue)
+{
   //Load root object
   JSON_Object *root_object = getRootObject(configfilepath);
 
   //Load roots simple members
-  *description = json_object_get_string(root_object, "description");
-  *frequency = json_object_get_number(root_object, "frequency");
-  *dutycycle = json_object_get_number(root_object, "dutycycle");
+  *outputValue = json_object_dotget_string(root_object, inputKey);
+}
+
+void loadConfigNumber(const char *configfilepath,
+		    const char *inputKey,
+		    double *outputValue)
+{
+  //Load root object
+  JSON_Object *root_object = getRootObject(configfilepath);
+
+  //Load roots simple members
+  *outputValue = json_object_dotget_number(root_object, inputKey);
+}
+
+void loadOutPin(const char *configfilepath,
+		unsigned int *outPin)   //Output
+{
+  double outputValue = 0;
+  loadConfigNumber(configfilepath, "transmitter.outpin", &outputValue);
+  *outPin = (unsigned int)outputValue;
+}
+
+void loadDescription(const char *configfilepath,
+		     const char **description)
+{
+  loadConfigText(configfilepath, "description", description);
+}
+
+
+void loadFrequency(const char *configfilepath,
+		   int *frequency)
+{
+  double outputValue = 0;
+  loadConfigNumber(configfilepath, "frequency", &outputValue);
+  *frequency = (int)outputValue;
+}
+
+void loadDutyCycle(const char *configfilepath,
+		   double *dutycycle)
+{
+  loadConfigNumber(configfilepath, "dutycycle", dutycycle);
+}
+
+void loadTemplateCode(const char *configfilepath,
+		      const char **symbolString)
+{
+  loadConfigText(configfilepath, "template", symbolString);
+}
+
+void loadConfigSymbols(const char *configfilepath,
+		       symbolDefinition configSymbols[]) {
+  //Load root object
+  JSON_Object *root_object = getRootObject(configfilepath);
 
   //Load symbol definitions
   JSON_Object *symbolsdef_object = json_object_get_object(root_object, "symboldefinitions");
@@ -125,12 +169,20 @@ void loadConfig(const char *configfilepath,
       configSymbols[i].spaceDuration = json_object_get_number(symboldef_object,"space");
     }
   }
-  
-  //Load template code
-  *symbolString = strdup(json_object_get_string(root_object, "template"));
-  size_t symbolStrLength = strlen(*symbolString);
-  
+}
+
+void loadFeaturedCode(const char *configfilepath,
+		      const featureT *features,
+		      char **featuredCode)
+{  
+  //Load root object
+  JSON_Object *root_object = getRootObject(configfilepath);
+
   //Apply requested features to symbol string
+  const char *templateCode = 0;
+  loadTemplateCode(configfilepath,&templateCode);
+  size_t templateStrLength = strlen(templateCode);
+  *featuredCode = strdup(templateCode);
   JSON_Object *features_object = json_object_get_object(root_object, "features");
   size_t featuresArrayLength = json_object_get_count(features_object);
   for (size_t featureNumber=0 ; featureNumber<featuresArrayLength && features ; featureNumber++) {
@@ -138,30 +190,20 @@ void loadConfig(const char *configfilepath,
     if (!featureValue)
       continue;
     const char *featureName = features[featureNumber].name;
-    char featureValuePath[sizeof(featureName)+1+sizeof(featureValue)+1];
-    sprintf(featureValuePath, "%s.%s", featureName, featureValue);
+    char *featureValuePath = calloc(strlen(featureName)+strlen(featureValue)+2, 2);
+    strcpy(featureValuePath, featureName);
+    strcat(featureValuePath, ".");
+    strcat(featureValuePath, featureValue);
     const char *featureString = json_object_dotget_string(features_object, featureValuePath);
+    free(featureValuePath);
     size_t featureStrLength = strlen(featureString);
-    if (featureStrLength!=symbolStrLength) {
+    if (featureStrLength!=templateStrLength) {
       log_warn("Length of feature code '%s' does match 'template' length %zu",
-		featureString, symbolStrLength);
+  		featureString, templateStrLength);
     }
-    for (int charNumber=0 ; charNumber<featureStrLength && charNumber<symbolStrLength ; charNumber++) {
+    for (int charNumber=0 ; charNumber<featureStrLength && charNumber<templateStrLength ; charNumber++) {
       if (featureString[charNumber]!=' ')
-	(*symbolString)[charNumber] = featureString[charNumber];
+      	(*featuredCode)[charNumber] = featureString[charNumber];
     }
   }
-  
-  return;
-}
-
-void loadOutPin(const char *configfilepath,
-		unsigned int *outPin)   //Output
-{
-  //Load root object
-  JSON_Object *root_object = getRootObject(configfilepath);
-
-  //Load pin number
-  double outPinNumber = json_object_dotget_number(root_object, "transmitter.outpin");
-  *outPin = (unsigned int)outPinNumber;
 }

@@ -18,15 +18,20 @@ size_t getFeatureValuesCount(const char *configfilepath, size_t nameIndex);
 const char * getFeatureValueName(const char *configfilepath, size_t nameIndex, size_t valueIndex);
 int hasFeatureNameAndValue(const char *configfilepath, const char *featureName, const char *featureValue);
 
-void loadConfig(const char *configfilepath,  // Input
-		const featureT *features,  // Input
-		const char **description,  //Output
-		unsigned int *frequency,  //Output
-		double *dutycycle,  //Output
-		char **symbolString,  //Output
-		symbolDefinition configSymbols[]);  //Output
-
+void loadConfigSymbols(const char *configfilepath,
+		       symbolDefinition configSymbols[]);
+void loadTemplateCode(const char *configfilepath,
+		      const char **symbolString);
+void loadFeaturedCode(const char *configfilepath,
+		      const featureT *features,
+		      char **featuredCode);
 void loadOutPin(const char *configfilepath,  // Input
 		unsigned int *outPin);  //Output
+void loadDescription(const char *configfilepath,
+		     const char **description);
+void loadFrequency(const char *configfilepath,
+		   int *frequency);
+void loadDutyCycle(const char *configfilepath,
+		   double *dutycycle);
 
 #endif

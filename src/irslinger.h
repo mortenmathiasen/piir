@@ -19,6 +19,7 @@
 int irSlingGeneric(uint32_t outPin,
 		   int frequency,
 		   double dutyCycle,
-		   symbolDefinition sdDef[],
+		   size_t sdDefCount,
+		   symbolDefinition *sdDef,
 		   const char *code);
 #endif

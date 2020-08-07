@@ -203,23 +203,24 @@ int main(int argc, char *argv[])
   }
 
   // Load config file settings
-  const char *description = NULL;
+  const char *description = 0;
   unsigned int frequency = 0;
   double dutycycle = 0;
   unsigned int outPin = 0; // The Broadcom pin number the signal will be sent on
-  char *symbolString = NULL;
+  char *symbolString = 0;
 
-  int noOfConfigSymbols = getSymboldefinitionsCount(configfilepath);
+  size_t noOfConfigSymbols = getSymboldefinitionsCount(configfilepath);
   symbolDefinition configSymbols[noOfConfigSymbols];
 
   log_info("Configuration '%s' - %s", configfilepath, description);
-  loadConfig(configfilepath,
-	     requestedFeatures,
-	     &description,
-	     &frequency,
-	     &dutycycle,
-	     &symbolString,
-	     configSymbols);
+  loadConfigSymbols(configfilepath,
+		    configSymbols);
+  loadFeaturedCode(configfilepath,
+		   requestedFeatures,
+		   &symbolString);
+  loadDescription(configfilepath, &description);
+  loadFrequency(configfilepath, &frequency);
+  loadDutyCycle(configfilepath, &dutycycle);
   log_info("%s", description);
 
   // Remote specific plugin 
@@ -227,7 +228,6 @@ int main(int argc, char *argv[])
     hvac_panasonic_plugin(symbolString);
   }
   log_debug("Transmitting: %s", symbolString);  
-
   // Load RaspbeeryPI outPin number from config file
   loadOutPin(configfilepath, &outPin);
   
@@ -236,6 +236,7 @@ int main(int argc, char *argv[])
 			      (uint32_t)outPin,
 			      frequency,
 			      dutycycle,
+			      noOfConfigSymbols,
 			      configSymbols,
 			      symbolString
 			      //"H-01000000-00000100-00000111-00100000-00000000-00000000-00000000-01100000-WH-01000000-00000100-00000111-00100000-00000000-10010000-01010100-00000001-11110101-10110000-00000000-01110000-00000111-10000000-00000000-10000001-00000000-00000000-10100111-0" // Original 21 AUTO POWERFUL

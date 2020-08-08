@@ -8,30 +8,27 @@ typedef struct q {
   const char *value;
 } featureT;
 
-size_t getSymboldefinitionsCount(const char *configfilepath);
+//Load configuration from file
+void loadConfig(const char *configfilepath);
+void unloadConfig();
 
-size_t getAllFeaturesCount(const char *configfilepath);
-const char * getFeatureName(const char *configfilepath, size_t index);
-int getFeatureIndex(const char *configfilepath, const char *featureName, size_t *index);
+size_t getSymboldefinitionsCount();
 
-size_t getFeatureValuesCount(const char *configfilepath, size_t nameIndex);
-const char * getFeatureValueName(const char *configfilepath, size_t nameIndex, size_t valueIndex);
-int hasFeatureNameAndValue(const char *configfilepath, const char *featureName, const char *featureValue);
+size_t getAllFeaturesCount();
+const char * getFeatureName(size_t index);
+int getFeatureIndex(const char *featureName, size_t *index);
 
-void loadConfigSymbols(const char *configfilepath,
-		       symbolDefinition configSymbols[]);
-void loadTemplateCode(const char *configfilepath,
-		      const char **symbolString);
-void loadFeaturedCode(const char *configfilepath,
-		      const featureT *features,
+size_t getFeatureValuesCount(size_t nameIndex);
+const char * getFeatureValueName(size_t nameIndex, size_t valueIndex);
+int hasFeatureNameAndValue(const char *featureName, const char *featureValue);
+
+void loadConfigSymbols(symbolDefinition configSymbols[]);
+void loadTemplateCode(const char **symbolString);
+void loadFeaturedCode(const featureT *features,
 		      char **featuredCode);
-void loadOutPin(const char *configfilepath,  // Input
-		unsigned int *outPin);  //Output
-void loadDescription(const char *configfilepath,
-		     const char **description);
-void loadFrequency(const char *configfilepath,
-		   int *frequency);
-void loadDutyCycle(const char *configfilepath,
-		   double *dutycycle);
+void loadOutPin(unsigned int *outPin);  //Output
+void loadDescription(const char **description);
+void loadFrequency(int *frequency);
+void loadDutyCycle(double *dutycycle);
 
 #endif

@@ -13,8 +13,8 @@
 
 featureT *requestedFeatures = 0;
 
-char *configfilepath = 0;
-char *remotepath = 0;
+static  char *configfilepath = 0;
+static  char *remotepath = 0;
 
 static const char *PROGRAMNAME = 0;
 
@@ -49,13 +49,13 @@ void usage() {
 }
 
 void print_available_features() {
-  size_t noOfNames = getAllFeaturesCount(configfilepath);
+  size_t noOfNames = getAllFeaturesCount();
   printf("Features in config file:\n");
   for (size_t featureNameIndex = 0 ; featureNameIndex < noOfNames ; featureNameIndex++) {
-    printf("       %s:\n", getFeatureName(configfilepath,featureNameIndex));
-    size_t noOfValues = getFeatureValuesCount(configfilepath,featureNameIndex);
+    printf("       %s:\n", getFeatureName(featureNameIndex));
+    size_t noOfValues = getFeatureValuesCount(featureNameIndex);
     for (size_t featureValueIndex = 0; featureValueIndex < noOfValues; featureValueIndex++)
-      printf("              %s\n", getFeatureValueName(configfilepath, featureNameIndex, featureValueIndex));
+      printf("              %s\n", getFeatureValueName(featureNameIndex, featureValueIndex));
   }
 }
 
@@ -70,7 +70,7 @@ void initializeDataPaths() {
   strcat(remotepath, remotesubpath);
 }
 
-void initializeConfigfilePath(char *configfile) {
+void loadConfigfile(char *configfile) {
   if (configfilepath)
     return;
 
@@ -83,14 +83,12 @@ void initializeConfigfilePath(char *configfile) {
   strcat(configfilepath, remotepath);
   strcat(configfilepath, configfile);
   strcat(configfilepath, suffix);
-}
 
-void initializeFeatureContainers(char *configfile) {
-  // Initialize configfilepath
-  initializeConfigfilePath(configfile);
+  // load config file
+  loadConfig(configfilepath);
 
   // Find max number of features
-  size_t configFeaturesCount = getAllFeaturesCount(configfilepath);
+  size_t configFeaturesCount = getAllFeaturesCount();
 
   //Declace and initialize feature name and for now empty values
   requestedFeatures = (featureT*)malloc(sizeof(featureT)*configFeaturesCount);
@@ -101,15 +99,11 @@ void initializeFeatureContainers(char *configfile) {
 }
 
 void insertFeatureValue(const char *Name, const char *Value) {
-  if (!configfilepath)
-    return;
-  initializeFeatureContainers(configfilepath);
-
   // prepare
   static int nextFeatureIndex = 0;
   
   // add feature
-  if (hasFeatureNameAndValue(configfilepath, Name, Value)) {
+  if (hasFeatureNameAndValue(Name, Value)) {
     requestedFeatures[nextFeatureIndex].name = Name;
     requestedFeatures[nextFeatureIndex].value = Value;
   } else {
@@ -168,7 +162,7 @@ int main(int argc, char *argv[])
 	  
     switch (c) {
     case 'r':
-      initializeConfigfilePath(optarg);
+      loadConfigfile(optarg);
       break;
 	  
     case 'v':
@@ -209,18 +203,16 @@ int main(int argc, char *argv[])
   unsigned int outPin = 0; // The Broadcom pin number the signal will be sent on
   char *symbolString = 0;
 
-  size_t noOfConfigSymbols = getSymboldefinitionsCount(configfilepath);
+  size_t noOfConfigSymbols = getSymboldefinitionsCount();
   symbolDefinition configSymbols[noOfConfigSymbols];
 
   log_info("Configuration '%s' - %s", configfilepath, description);
-  loadConfigSymbols(configfilepath,
-		    configSymbols);
-  loadFeaturedCode(configfilepath,
-		   requestedFeatures,
+  loadConfigSymbols(configSymbols);
+  loadFeaturedCode(requestedFeatures,
 		   &symbolString);
-  loadDescription(configfilepath, &description);
-  loadFrequency(configfilepath, &frequency);
-  loadDutyCycle(configfilepath, &dutycycle);
+  loadDescription(&description);
+  loadFrequency(&frequency);
+  loadDutyCycle(&dutycycle);
   log_info("%s", description);
 
   // Remote specific plugin 
@@ -229,7 +221,7 @@ int main(int argc, char *argv[])
   }
   log_debug("Transmitting: %s", symbolString);  
   // Load RaspbeeryPI outPin number from config file
-  loadOutPin(configfilepath, &outPin);
+  loadOutPin(&outPin);
   
   // Transmit symbol string
   int result = irSlingGeneric(

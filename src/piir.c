@@ -14,7 +14,8 @@
 featureT *requestedFeatures = 0;
 
 static  char *configfilepath = 0;
-static  char *remotepath = 0;
+static  char *globalpath = 0;
+static  char *localpath = 0;
 
 static const char *PROGRAMNAME = 0;
 
@@ -60,30 +61,43 @@ void print_available_features() {
 }
 
 void initializeDataPaths() {
-  if (remotepath)
+  if (globalpath)
     return;
+  char *remotesubpath = "/conf/remotes/";
   
   // Setup config default config file path
-  char *remotesubpath = "/conf/remotes/";
-  remotepath = (char*) malloc(strlen(DATADIR)+strlen(remotesubpath));
-  strcpy(remotepath, DATADIR);
-  strcat(remotepath, remotesubpath);
+  globalpath = (char*) malloc(strlen(DATADIR)+strlen(remotesubpath));
+  strcpy(globalpath, DATADIR);
+  strcat(globalpath, remotesubpath);
+
+  // Get current working directory
+  char *tmplocalpath = getcwd(NULL,0); 
+  localpath = (char*) malloc(strlen(tmplocalpath)+strlen(remotesubpath));
+  strcpy(localpath, tmplocalpath);
+  strcat(localpath, remotesubpath);
+  free(tmplocalpath);
 }
 
 void loadConfigfile(char *configfile) {
-  if (configfilepath)
+ if (configfilepath)
     return;
-
+ 
   // Initialize data paths
   initializeDataPaths();
 
   // setup path
   char *suffix = ".json";
-  configfilepath = (char*) malloc(strlen(remotepath)+strlen(configfile)+strlen(suffix));
-  strcat(configfilepath, remotepath);
+  size_t pathlength = strlen(globalpath)>strlen(localpath)?strlen(globalpath):strlen(localpath);
+  configfilepath = (char*) malloc(pathlength+strlen(configfile)+strlen(suffix)+2);
+  strcpy(configfilepath, localpath);
   strcat(configfilepath, configfile);
   strcat(configfilepath, suffix);
-
+  if (access( configfilepath, F_OK ) == -1 ) {
+    strcpy(configfilepath, globalpath);
+    strcat(configfilepath, configfile);
+    strcat(configfilepath, suffix);
+  }
+  
   // load config file
   loadConfig(configfilepath);
 
@@ -96,6 +110,8 @@ void loadConfigfile(char *configfile) {
     requestedFeatures[i].name = 0;
     requestedFeatures[i].value = 0;
   }
+
+  
 }
 
 void insertFeatureValue(const char *Name, const char *Value) {
@@ -114,29 +130,47 @@ void insertFeatureValue(const char *Name, const char *Value) {
   }
 }
 
-void printAvailableConfigFiles() {
+void printAvailableConfigFilesInPath(const char *filepath) {
     struct dirent *de; // Pointer for directory entry 
 
+    // Guardian
+    if (access( filepath, F_OK ) == -1 ) {
+      printf("No available configuration files in %s\n", filepath);
+      return;
+    }
+
     // opendir() returns a pointer of DIR type.
-    DIR *dr = opendir(remotepath); 
+    DIR *dr = opendir(filepath); 
 
     if (dr == NULL) // opendir returns NULL if couldn't open directory 
       { 
-	log_fatal("Could not open current directory %s", remotepath);
+	log_fatal("Could not open current directory %s", filepath);
 	usage();
       } 
 
     // Refer http://pubs.opengroup.org/onlinepubs/7990989775/xsh/readdir.html 
     // for readdir()
-    printf("Available configuration files:\n");
+    int headerOutput = false;
     while ((de = readdir(dr)) != NULL) {
       char *head = strtok(de->d_name, ".");
       char *suffix = strtok(NULL, ".");
       char *tail = strtok(NULL, ".");
-      if (head && strcmp("json",suffix)==0  && !tail)
-	printf("    %s\n", head); 
+      if (head && strcmp("json",suffix)==0  && !tail) {
+	if (!headerOutput) {
+	  printf("Available configuration files in %s:\n", filepath);
+	  headerOutput = true;
+	}
+	printf("    %s\n", head);
+      }
     }
+    if (!headerOutput)
+      printf("No available configuration files in %s\n", filepath);
     closedir(dr);	 
+}
+
+void printAvailableConfigFiles() {
+  printAvailableConfigFilesInPath(localpath);
+  printAvailableConfigFilesInPath(globalpath);
 }
 
 int main(int argc, char *argv[])  

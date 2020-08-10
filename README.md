@@ -78,9 +78,58 @@ make check
 
 ## Deployment
 
-You can deploy the PIIR tool to any live system.
+You can deploy the PIIR tool to any live system. Either you can compile the sourced code directly on the live system as explained above or you can compile it on another development system and then move the  execution file to your live system.
 
-Either you can compile the sourced code directly on the live system as explained above or you can compile it on another development system and then move the  execution file to your live system.
+## How to use
+
+You kan get command line help running:
+```
+piir --help
+```
+
+Output will be like:
+```
+usage:      piir
+            --remote, -r CONFIGFILE
+            [--feature, -f NAME=VALUE]
+            [--verbose, -v (TRACE|DEBUG|INFO|WARN|ERROR|FATAL|NOTHING)]
+            [--help, -h]
+
+examples:   piir --help
+            piir --remote hvac_panasonic --help
+            piir --remote hvac_panasonic --feature temperature=21
+            piir --remote tv_sony --feature action=TURN_ON
+```
+
+Getting list of all available remotes is collected simply by calling piir:
+```
+piir
+```
+
+Output will be like:
+```
+Missing configfile setting
+Available configuration files in /root/piir/conf/remotes/:
+    hvac_panasonic
+    ...
+Available configuration files in /usr/local/share/piir/conf/remotes/:
+    hvac_panasonic
+    ...
+```
+
+Specific help for a particular remote can be achieved by:
+```
+piir --remote hvac_panasonic --help
+```
+
+Output will be like:
+```
+```
+
+A live example running the tool would be:
+```
+piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT --feature option=AUTO --feature fan=AUTO --feature updown=HIGH --feature leftrights=MIDDLE --verbose=DEBUG
+```
 
 ## Built With
 

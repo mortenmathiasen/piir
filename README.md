@@ -39,13 +39,27 @@ To be able to transmit IR signal you need an IR led, either:
 
 ### Compilation
 
-Get latest PIGPIO library:
+Update package list:
 ```
 sudo apt update
+```
+
+Install PIGPIO library:
+```
 sudo apt install -y pigpio
 ```
 
-Download the PIIR software from [https://github.com/mortenmathiasen/piir](https://github.com/mortenmathiasen/piir) and compile it:
+Install Autotools to enable compilation
+```
+sudo apt-get install -y autoconf automake libtool
+```
+
+Download the PIIR software from [https://github.com/mortenmathiasen/piir](https://github.com/mortenmathiasen/piir):
+```
+git clone https://github.com/mortenmathiasen/piir.git
+```
+
+Now you can compile it
 ```
 cd piir
 ./autogen.sh
@@ -69,9 +83,110 @@ make check
 
 ## Deployment
 
-You can deploy the PIIR tool to any live system.
+You can deploy the PIIR tool to any live system. Either you can compile the sourced code directly on the live system as explained above or you can compile it on another development system and then move the  execution file to your live system.
 
-Either you can compile the sourced code directly on the live system as explained above or you can compile it on another development system and then move the  execution file to your live system.
+## How to use
+
+You kan get command line help running:
+```
+piir --help
+```
+
+Output will be like:
+```
+Available configuration files in /home/pi/piir/conf/remotes/:
+    hvac_panasonic
+    ...
+Available configuration files in /usr/local/share/piir/conf/remotes/:
+    hvac_panasonic
+    ...
+
+usage:      piir
+            --remote, -r CONFIGFILE
+            [--feature, -f NAME=VALUE]
+            [--verbose, -v (TRACE|DEBUG|INFO|WARN|ERROR|FATAL|NOTHING)]
+            [--help, -h]
+
+examples:   piir --help
+            piir --remote hvac_panasonic --help
+            piir --remote hvac_panasonic --feature temperature=21
+            piir --remote tv_sony --feature action=TURN_ON
+```
+
+Specific help on available features for a particular remote can be achieved by:
+```
+piir --remote hvac_panasonic --help
+```
+
+Output will be like:
+```
+Features in config file /home/pi/piir/conf/remotes/hvac_panasonic.json:
+       temperature:
+              8
+              10
+              16
+              17
+              18
+              19
+              20
+              21
+              22
+              23
+              24
+              25
+              26
+              27
+              28
+              29
+              30
+       mode:
+              AUTO
+              HEAT
+              COOL
+              FAN
+              OFF
+       option:
+              AUTO
+              QUIET
+              POWERFUL
+       fan:
+              AUTO
+              VERYSLOW
+              SLOW
+              MEDIUM
+              FAST
+              VERYFAST
+       updown:
+              AUTO
+              VERYLOW
+              LOW
+              MIDDLE
+              HIGH
+              VERYHIGH
+       leftright:
+              AUTO
+              VERYLEFT
+              LEFT
+              MIDDLE
+              RIGHT
+              VERYRIGHT
+
+usage:      piir
+            --remote, -r CONFIGFILE
+            [--feature, -f NAME=VALUE]
+            [--verbose, -v (TRACE|DEBUG|INFO|WARN|ERROR|FATAL|NOTHING)]
+            [--help, -h]
+
+examples:   piir --help
+            piir --remote hvac_panasonic --help
+            piir --remote hvac_panasonic --feature temperature=21
+            piir --remote tv_sony --feature action=TURN_ON
+```
+
+A working example that runs the tool is:
+```
+piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT --feature option=AUTO --feature fan=AUTO --feature updown=HIGH --feature leftrights=MIDDLE --verbose=DEBUG
+```
 
 ## Built With
 

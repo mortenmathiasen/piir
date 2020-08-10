@@ -51,7 +51,7 @@ sudo apt install -y pigpio
 
 Install Autotools to enable compilation
 ```
-sudo apt-get install autoconf automake libtool
+sudo apt-get install -y autoconf automake libtool
 ```
 
 Download the PIIR software from [https://github.com/mortenmathiasen/piir](https://github.com/mortenmathiasen/piir) and compile it:

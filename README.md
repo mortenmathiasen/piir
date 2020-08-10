@@ -59,7 +59,7 @@ Download the PIIR software from [https://github.com/mortenmathiasen/piir](https:
 git clone https://github.com/mortenmathiasen/piir.git
 ```
 
-Now you can ompile it
+Now you can compile it
 ```
 cd piir
 ./autogen.sh

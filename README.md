@@ -183,7 +183,7 @@ examples:   piir --help
             piir --remote tv_sony --feature action=TURN_ON
 ```
 
-A working example that runs the tool is:
+A working example applying more features to the IR signal:
 ```
 piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT --feature option=AUTO --feature fan=AUTO --feature updown=HIGH --feature leftright=MIDDLE --verbose=DEBUG
 ```

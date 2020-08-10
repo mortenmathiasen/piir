@@ -39,10 +39,19 @@ To be able to transmit IR signal you need an IR led, either:
 
 ### Compilation
 
-Get latest PIGPIO library:
+Update package list:
 ```
 sudo apt update
+```
+
+Install PIGPIO library:
+```
 sudo apt install -y pigpio
+```
+
+Install Autotools to enable compilation
+```
+sudo apt-get install autoconf automake libtool
 ```
 
 Download the PIIR software from [https://github.com/mortenmathiasen/piir](https://github.com/mortenmathiasen/piir) and compile it:

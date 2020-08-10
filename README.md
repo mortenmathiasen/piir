@@ -54,7 +54,12 @@ Install Autotools to enable compilation
 sudo apt-get install -y autoconf automake libtool
 ```
 
-Download the PIIR software from [https://github.com/mortenmathiasen/piir](https://github.com/mortenmathiasen/piir) and compile it:
+Download the PIIR software from [https://github.com/mortenmathiasen/piir](https://github.com/mortenmathiasen/piir):
+```
+git clone https://github.com/mortenmathiasen/piir.git
+```
+
+Now you can ompile it
 ```
 cd piir
 ./autogen.sh

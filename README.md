@@ -94,6 +94,13 @@ piir --help
 
 Output will be like:
 ```
+Available configuration files in /home/pi/piir/conf/remotes/:
+    hvac_panasonic
+    ...
+Available configuration files in /usr/local/share/piir/conf/remotes/:
+    hvac_panasonic
+    ...
+
 usage:      piir
             --remote, -r CONFIGFILE
             [--feature, -f NAME=VALUE]
@@ -106,32 +113,77 @@ examples:   piir --help
             piir --remote tv_sony --feature action=TURN_ON
 ```
 
-Getting list of all available remotes is collected simply by calling piir:
-```
-piir
-```
-
-Output will be like:
-```
-Missing configfile setting
-Available configuration files in /root/piir/conf/remotes/:
-    hvac_panasonic
-    ...
-Available configuration files in /usr/local/share/piir/conf/remotes/:
-    hvac_panasonic
-    ...
-```
-
-Specific help for a particular remote can be achieved by:
+Specific help on available features for a particular remote can be achieved by:
 ```
 piir --remote hvac_panasonic --help
 ```
 
 Output will be like:
 ```
+Features in config file /home/pi/piir/conf/remotes/hvac_panasonic.json:
+       temperature:
+              8
+              10
+              16
+              17
+              18
+              19
+              20
+              21
+              22
+              23
+              24
+              25
+              26
+              27
+              28
+              29
+              30
+       mode:
+              AUTO
+              HEAT
+              COOL
+              FAN
+              OFF
+       option:
+              AUTO
+              QUIET
+              POWERFUL
+       fan:
+              AUTO
+              VERYSLOW
+              SLOW
+              MEDIUM
+              FAST
+              VERYFAST
+       updown:
+              AUTO
+              VERYLOW
+              LOW
+              MIDDLE
+              HIGH
+              VERYHIGH
+       leftright:
+              AUTO
+              VERYLEFT
+              LEFT
+              MIDDLE
+              RIGHT
+              VERYRIGHT
+
+usage:      piir
+            --remote, -r CONFIGFILE
+            [--feature, -f NAME=VALUE]
+            [--verbose, -v (TRACE|DEBUG|INFO|WARN|ERROR|FATAL|NOTHING)]
+            [--help, -h]
+
+examples:   piir --help
+            piir --remote hvac_panasonic --help
+            piir --remote hvac_panasonic --feature temperature=21
+            piir --remote tv_sony --feature action=TURN_ON
 ```
 
-A live example running the tool would be:
+A working example that runs the tool is:
 ```
 piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT --feature option=AUTO --feature fan=AUTO --feature updown=HIGH --feature leftrights=MIDDLE --verbose=DEBUG
 ```

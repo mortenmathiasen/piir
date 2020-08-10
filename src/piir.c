@@ -4,6 +4,7 @@
 #include <getopt.h>
 #include <string.h>
 #include <dirent.h>
+#include <assert.h>
 
 #include "irslinger.h"
 #include "log.h"
@@ -49,9 +50,11 @@ void usage() {
   abort();
 }
 
-void print_available_features() {
+void printAvailableFeatures() {
+  assert("No features without configfile" && configfilepath);
+  
   size_t noOfNames = getAllFeaturesCount();
-  printf("Features in config file:\n");
+  printf("Features in config file %s:\n", configfilepath);
   for (size_t featureNameIndex = 0 ; featureNameIndex < noOfNames ; featureNameIndex++) {
     printf("       %s:\n", getFeatureName(featureNameIndex));
     size_t noOfValues = getFeatureValuesCount(featureNameIndex);
@@ -125,7 +128,7 @@ void insertFeatureValue(const char *Name, const char *Value) {
   } else {
     printf("Feature '%s'='%s' does not match configuration file\n",
 	   Name, Value);
-    print_available_features();
+    printAvailableFeatures();
     usage();
   }
 }
@@ -176,7 +179,7 @@ void printAvailableConfigFiles() {
 int main(int argc, char *argv[])  
 {
   PROGRAMNAME = argv[0];
-  int c;
+  int helprequested = false;
 
   //Initialize installation paths
   initializeDataPaths();
@@ -187,7 +190,7 @@ int main(int argc, char *argv[])
   // Load remote agnostic parameters
   while (1) {
     int option_index = -1; // getopt_long stores the option index here. 
-    c = getopt_long (argc, argv, ":r:v:h:f:",
+    int c = getopt_long (argc, argv, ":r:v:h:f:",
 		     long_options, &option_index);
 
     // detect the end of the options
@@ -204,7 +207,7 @@ int main(int argc, char *argv[])
       break;
 	  
     case 'h':
-      usage();
+      helprequested = true;
       break;
 
     case 'f':
@@ -221,6 +224,15 @@ int main(int argc, char *argv[])
       printf("Unknown argument: %c %s %s\n", c, argv[optind], optarg);  
       usage();
     }
+  }
+
+  // Print help information
+  if (helprequested) {
+    if (!configfilepath)
+      printAvailableConfigFiles();
+    else
+      printAvailableFeatures();
+    usage();
   }
   
   // Initialze features if not done already

@@ -185,7 +185,7 @@ examples:   piir --help
 
 A working example that runs the tool is:
 ```
-piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT --feature option=AUTO --feature fan=AUTO --feature updown=HIGH --feature leftrights=MIDDLE --verbose=DEBUG
+piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT --feature option=AUTO --feature fan=AUTO --feature updown=HIGH --feature leftright=MIDDLE --verbose=DEBUG
 ```
 
 ## Built With

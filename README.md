@@ -44,7 +44,7 @@ Update package list:
 sudo apt update
 ```
 
-Install PIGPIO library:
+PIIR uses the library [PIGPIO](http://abyz.me.uk/rpi/pigpio/) which you can install by:
 ```
 sudo apt install -y pigpio
 ```
@@ -192,10 +192,6 @@ If everything goes well output from the command will be like this:
 ```
 gpioWaveTxSend OK: 15897
 ```
-
-## Built With
-
-* [PIGPIO](http://abyz.me.uk/rpi/pigpio/) - RaspberryPI library access the pin
 
 ## Contributing
 

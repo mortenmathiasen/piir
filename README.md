@@ -3,6 +3,25 @@
 PIIR is a tool to transmit IR-signals like remote controls do. It supports configuration and transmission of any signal.
 PIIR is created as an alternative to LIRC and similar tools that are less generic.
 
+## Table of contents
+
+  * [Features](#features)
+  * [Getting Started](#getting-started)
+    + [IR-protocol](#ir-protocol)
+    + [Supported systems](#supported-systems)
+    + [Supported hardware](#supported-hardware)
+    + [Prerequisites](#prerequisites)
+    + [Compilation](#compilation)
+  * [Installation](#installation)
+  * [Running the tests](#running-the-tests)
+  * [Deployment](#deployment)
+  * [How to use](#how-to-use)
+  * [Contributing](#contributing)
+  * [Versioning](#versioning)
+  * [Authors](#authors)
+  * [License](#license)
+  * [Acknowledgments](#acknowledgments)
+
 ## Features
 
 - Send infrared commands to control aircondition etc.

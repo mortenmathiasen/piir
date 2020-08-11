@@ -5,16 +5,17 @@ PIIR is created as an alternative to LIRC and similar tools that are less generi
 
 ## Table of contents
 
+  * [Table of contents](#table-of-contents)
   * [Features](#features)
-  * [Getting Started](#getting-started)
     + [IR-protocol](#ir-protocol)
     + [Supported systems](#supported-systems)
     + [Supported hardware](#supported-hardware)
     + [Prerequisites](#prerequisites)
+  * [Getting Started](#getting-started)
     + [Compilation](#compilation)
-  * [Installation](#installation)
-  * [Running the tests](#running-the-tests)
-  * [Deployment](#deployment)
+    + [Installation](#installation)
+    + [Running the tests](#running-the-tests)
+    + [Deployment](#deployment)
   * [How to use](#how-to-use)
   * [Contributing](#contributing)
   * [Versioning](#versioning)
@@ -28,10 +29,6 @@ PIIR is created as an alternative to LIRC and similar tools that are less generi
 - Transmit any IR signal using any protocol.
 - Integration to home automation and other systems.
 - Customization by configuration and plugins.
-
-## Getting Started
-
-You need to identify a device you want to control by IR-signals, e.g. an airconditioner, a TV or similar.
 
 ### IR-protocol
 
@@ -54,6 +51,10 @@ The tool supports IR transmission by:
 To be able to transmit IR signal you need an IR led, either:
 * build the electronics yourself, e.g. as mentioned at [Raspberry-PI-Geek](https://www.raspberry-pi-geek.com/Archive/2015/10/Raspberry-Pi-IR-remote)
 * apply an premade pHAT, eg. [ANAVI Infrared pHAT](https://anavi.technology/)
+
+## Getting Started
+
+You need to identify a device you want to control by IR-signals, e.g. an airconditioner, a TV or similar.
 
 ### Compilation
 
@@ -85,21 +86,21 @@ cd piir
 make
 ```
 
-## Installation
+### Installation
 
 After compilation you can install the PIIR tool by:
 ```
 make install
 ```
 
-## Running the tests
+### Running the tests
 
 After compilation you can test the PIIR tool by:
 ```
 make check
 ```
 
-## Deployment
+### Deployment
 
 You can deploy the PIIR tool to any live system. Either you can compile the sourced code directly on the live system as explained above or you can compile it on another development system and then move the  execution file to your live system.
 

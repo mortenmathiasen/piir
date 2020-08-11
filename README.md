@@ -1,8 +1,7 @@
 # PIIR
 
-PIIR is a self-contained tool to transmit IR-signals like remote controls.
-
-PIIR is created as an alternative to LIRC and other tools, that are more heavy weight and less generic.
+PIIR is a tool to transmit IR-signals like remote controls do. It supports configuration and transmission of any signal.
+PIIR is created as an alternative to LIRC and similar tools that are less generic.
 
 ## Features
 

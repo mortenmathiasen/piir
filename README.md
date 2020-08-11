@@ -1,11 +1,15 @@
 # PIIR
 
-PIIR is a tool to transmit IR-signals like remote controls do. It supports configuration and transmission of any signal.
+PIIR is a command line tool to transmit IR-signals like remote controls do. It supports configuration and transmission of any signal.
 PIIR is created as an alternative to LIRC and similar tools that are less generic.
+
+Example:
+```
+piir --remote tv_sony --feature action=TURN_ON
+```
 
 ## Table of contents
 
-  * [Table of contents](#table-of-contents)
   * [Features](#features)
     + [IR-protocol](#ir-protocol)
     + [Supported systems](#supported-systems)
@@ -78,7 +82,7 @@ Download the PIIR software from [https://github.com/mortenmathiasen/piir](https:
 git clone https://github.com/mortenmathiasen/piir.git
 ```
 
-Now you can compile it
+Now you can compile it:
 ```
 cd piir
 ./autogen.sh

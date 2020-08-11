@@ -185,7 +185,12 @@ examples:   piir --help
 
 A working example combining more features into the IR signal:
 ```
-piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT --feature option=AUTO --feature fan=AUTO --feature updown=HIGH --feature leftright=MIDDLE --verbose=DEBUG
+sudo piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT --feature option=AUTO --feature fan=AUTO --feature updown=HIGH --feature leftright=MIDDLE --verbose=DEBUG
+```
+
+If everything goes well output from the command will be like this:
+```
+gpioWaveTxSend OK: 15897
 ```
 
 ## Built With

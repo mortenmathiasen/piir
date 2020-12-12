@@ -3,9 +3,11 @@
 PIIR is a command line tool to transmit IR-signals like remote controls do. It supports configuration and transmission of any signal.
 PIIR is created as an alternative to less generic tools.
 
-Example:
+Examples:
 ```
 piir --remote tv_sony --feature action=TURN_ON
+
+piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
 ```
 
 ## Table of contents

@@ -1,7 +1,6 @@
 # PIIR
 
-PIIR is a command line tool to transmit IR-signals like remote controls do. It supports configuration and transmission of any signal.
-PIIR is created as an alternative to less generic tools.
+PIIR is a command line tool to transmit IR-signals like remote controls do. PIIR is created as a generic tools that supports configuration and transmission of any signal, eg. including long aircondition signals.
 
 ![alt text](https://github.com/mortenmathiasen/piir/blob/master/doc/remote-sommerhus.png?raw=true)
 

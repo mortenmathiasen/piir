@@ -51,7 +51,7 @@ The tool is developed in C to support deployment on any platform.
 
 The tool supports IR transmission by:
 * Raspberry PI using [GPIO](http://abyz.me.uk/rpi/pigpio/)
-* more platforms to come when you contribute the software.
+* more platforms to come
 
 ### Prerequisites
 

@@ -12,12 +12,12 @@ AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 # Checks for programs.
 AC_PROG_CC
 
-# Checks for libraries.
-LIBS="-lpigpio"
-AC_CHECK_LIB([pigpio], [gpioInitialise])
-		       
 # Checks for header files.
 AC_CHECK_HEADERS([stddef.h stdlib.h string.h unistd.h])
+AC_CHECK_HEADERS([gpiod.h],[LINK_GPIOD=-lgpiod])
+AC_SUBST(LINK_GPIOD)
+AC_CHECK_HEADERS([pigpio.h],[LINK_PIGPIO=-lpigpio])
+AC_SUBST(LINK_PIGPIO)
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_CHECK_HEADER_STDBOOL

@@ -2,7 +2,16 @@
 #define IRSLINGER_H
 
 #include "symboldefinition.h"
-#include "pigpio.h"
+#include <stdint.h>
+
+typedef struct
+{
+   uint32_t gpioOn;
+   uint32_t gpioOff;
+   uint32_t usDelay;
+} gpioPulse_t;
+
+// #include "pigpio.h"
 
 #define MAX_COMMAND_SIZE 512
 #define MAX_PULSES 12000

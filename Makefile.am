@@ -2,7 +2,7 @@ AUTOMAKE_OPTIONS = subdir-objects
 
 AM_CFLAGS = -DDATADIR='"$(datadir)/piir"'
 
-#AM_LDFLAGS = -lpigpio
+AM_LDFLAGS = @LINK_PIGPIO@ @LINK_GPIOD@
 
 bin_PROGRAMS =  piir
 

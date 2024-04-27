@@ -1,5 +1,6 @@
 #include "hvac_panasonic_plugin.h"
-#include "pigpio.h"
+#include <stdint.h>
+// #include "pigpio.h"
 
 uint8_t readLeftBinary(const char * str, int *index) {
   uint8_t result = 0;

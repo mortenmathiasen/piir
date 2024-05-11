@@ -2,7 +2,7 @@ AUTOMAKE_OPTIONS = subdir-objects
 
 AM_CFLAGS = -DDATADIR='"$(datadir)/piir"'
 
-AM_LDFLAGS = @LINK_PIGPIO@ @LINK_GPIOD@
+LIBS += @LINK_PIGPIO@ @LINK_GPIOD@
 
 bin_PROGRAMS =  piir
 
@@ -12,8 +12,11 @@ piir_SOURCES = \
 	src/hvac_panasonic_plugin.h \
 	src/hvac_panasonic_plugin.c \
 	src/symboldefinition.h \
+	src/irgeneric.h \
 	src/irslinger.h \
 	src/irslinger.c \
+	src/transmitter.h \
+	src/transmitter.c \
 	src/log.h \
 	src/log.c \
 	src/config.h \

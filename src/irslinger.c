@@ -1,14 +1,16 @@
+#if HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#ifdef HAVE_PIGPIO_H
+
 #include <string.h>
 #include <stdlib.h>
-#ifdef HAVE_PIGPIO_H
 #include <pigpio.h>
-#else
-#include <gpiod.h>
-#endif
 #include "log.h"
 #include "irslinger.h"
 
- void addPulse(uint32_t onPins, uint32_t offPins, uint32_t duration, gpioPulse_t *irSignal, unsigned int *pulseCount)
+void addPulse(uint32_t onPins, uint32_t offPins, uint32_t duration, gpioPulse_t *irSignal, unsigned int *pulseCount)
 {
   if (duration==0)
     return;
@@ -67,7 +69,6 @@ void addMark(uint32_t outPin, unsigned long frequency, double dutyCycle, unsigne
 }
 
 // Transmit generated wave using available library
-#ifdef HAVE_PIGPIO_H
 int transmitWave(uint32_t outPin, gpioPulse_t *irSignal, unsigned int *pulseCount)
 {
   // Prepare DMA channels
@@ -137,11 +138,6 @@ int transmitWave(uint32_t outPin, gpioPulse_t *irSignal, unsigned int *pulseCoun
   gpioTerminate();
   return 0;
 }
-#else
-int transmitWave(uint32_t outPin, gpioPulse_t *irSignal, unsigned int *pulseCount)
-{
-}
-#endif
 
 int irSlingGeneric(uint32_t outPin,
 		   int frequency,
@@ -200,3 +196,5 @@ int irSlingGeneric(uint32_t outPin,
 
   return transmitWave(outPin, irSignal, &pulseCount);
 }
+
+#endif

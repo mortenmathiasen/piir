@@ -6,7 +6,7 @@
 #include <dirent.h>
 #include <assert.h>
 
-#include "irslinger.h"
+#include "irgeneric.h"
 #include "log.h"
 #include "config.h"
 
@@ -267,7 +267,7 @@ int main(int argc, char *argv[])
     hvac_panasonic_plugin(symbolString);
   }
   log_debug("Transmitting: %s", symbolString);  
-  // Load RaspbeeryPI outPin number from config file
+  // Load outPin number from config file
   loadOutPin(&outPin);
   
   // Transmit symbol string

@@ -70,15 +70,13 @@ Update package list:
 sudo apt update
 ```
 
-PIIR uses the library [PIGPIO](http://abyz.me.uk/rpi/pigpio/) which you can install by:
+By default PIIR sends IR through the Linux kernel's IR transmitter driver, which generates the carrier with accurate timing on every Raspberry Pi model including Pi 5. No extra library is needed. Enable the driver by adding this line to `/boot/firmware/config.txt` and rebooting:
 ```
-sudo apt install -y pigpio
+dtoverlay=gpio-ir-tx,gpio_pin=17
 ```
+Use the GPIO pin your IR LED is connected to. This creates `/dev/lirc0`. If that is not your transmitter device (for example because an IR receiver overlay is also enabled), set `"device": "/dev/lirc1"` in the `transmitter` section of the remote's JSON file. The user running PIIR must be allowed to write to the device: check its group with `ls -l /dev/lirc0` and add your user to that group, or run PIIR with `sudo`.
 
-Alternatively PIIR can use [libgpiod](https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/) version 2.0 or newer (Debian trixie / Raspberry Pi OS based on trixie):
-```
-sudo apt install -y libgpiod-dev
-```
+Alternatively PIIR can drive the pin itself through [libgpiod](https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/) version 2.0 or newer (`sudo apt install -y libgpiod-dev`) or [PIGPIO](http://abyz.me.uk/rpi/pigpio/) (`sudo apt install -y pigpio`, not supported on Pi 5). With libgpiod the carrier is generated from user space, so its timing is much less accurate. With these backends the pin is taken from `outpin` in the remote's JSON file.
 
 Install CMake to enable compilation
 ```
@@ -100,7 +98,7 @@ cmake -B build
 cmake --build build
 ```
 
-PIIR uses libgpiod when available and falls back to pigpio. To pick one explicitly, add `-DPIIR_GPIO_BACKEND=gpiod` or `-DPIIR_GPIO_BACKEND=pigpio` to the first `cmake` command.
+PIIR uses the kernel driver (`lirc`) when the kernel headers provide `linux/lirc.h`, which they do on any Linux system, and otherwise falls back to libgpiod and then pigpio. To pick one explicitly, add `-DPIIR_GPIO_BACKEND=lirc`, `gpiod` or `pigpio` to the first `cmake` command.
 
 ### Installation
 
@@ -120,7 +118,7 @@ Toolchain files for 64-bit (`aarch64`) and 32-bit (`armhf`) Raspberry Pi OS are 
 sudo apt install -y gcc-aarch64-linux-gnu
 ```
 
-PIIR must link against libgpiod or pigpio built for the Pi. Either install the Debian multiarch package:
+The default `lirc` backend needs nothing beyond the cross compiler. Only for the `gpiod` or `pigpio` backend must PIIR link against the library built for the Pi. Either install the Debian multiarch package:
 ```
 sudo dpkg --add-architecture arm64
 sudo apt update

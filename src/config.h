@@ -11,6 +11,7 @@ typedef struct q {
 //Load configuration from file
 void loadConfig(const char *configfilepath);
 void unloadConfig();
+int isConfigLoaded();
 
 size_t getSymboldefinitionsCount();
 

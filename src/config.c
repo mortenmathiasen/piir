@@ -36,6 +36,10 @@ void loadConfig(const char *configfilepath) {
   }
 }
 
+int isConfigLoaded() {
+  return ROOT_OBJECT != 0;
+}
+
 JSON_Object* getRootObject() {
   return ROOT_OBJECT;
 }

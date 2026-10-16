@@ -21,8 +21,8 @@ piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
   * [Getting Started](#getting-started)
     + [Compilation](#compilation)
     + [Installation](#installation)
-    + [Running the tests](#running-the-tests)
     + [Deployment](#deployment)
+      - [Cross compiling for Raspberry Pi](#cross-compiling-for-raspberry-pi)
   * [How to use](#how-to-use)
   * [Contributing](#contributing)
   * [Versioning](#versioning)
@@ -50,7 +50,7 @@ The tool is developed in C to support deployment on any platform.
 ### Supported hardware
 
 The tool supports IR transmission by:
-* Raspberry PI using [GPIO](http://abyz.me.uk/rpi/pigpio/)
+* Raspberry Pi (all models, including Pi 5) using the Linux kernel IR transmitter driver, [libgpiod](https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/) or [PIGPIO](http://abyz.me.uk/rpi/pigpio/)
 * more platforms to come
 
 ### Prerequisites

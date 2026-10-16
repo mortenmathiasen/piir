@@ -28,6 +28,7 @@ void loadFeaturedCode(const featureT *features,
 		      char **featuredCode);
 void loadOutPin(unsigned int *outPin);  //Output
 void loadDescription(const char **description);
+void loadDevice(const char **device);
 void loadFrequency(int *frequency);
 void loadDutyCycle(double *dutycycle);
 

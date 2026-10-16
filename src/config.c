@@ -130,6 +130,11 @@ void loadDescription(const char **description)
   loadConfigText("description", description);
 }
 
+void loadDevice(const char **device)
+{
+  loadConfigText("transmitter.device", device);
+}
+
 
 void loadFrequency(int *frequency)
 {

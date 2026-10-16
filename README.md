@@ -113,6 +113,36 @@ sudo cmake --install build
 
 You can deploy the PIIR tool to any live system. Either you can compile the sourced code directly on the live system as explained above or you can compile it on another development system and then move the  execution file to your live system.
 
+#### Cross compiling for Raspberry Pi
+
+Toolchain files for 64-bit (`aarch64`) and 32-bit (`armhf`) Raspberry Pi OS are in `cmake/`. On a Debian/Ubuntu build machine, install the cross compiler, for example for 64-bit:
+```
+sudo apt install -y gcc-aarch64-linux-gnu
+```
+
+PIIR must link against libgpiod or pigpio built for the Pi. Either install the Debian multiarch package:
+```
+sudo dpkg --add-architecture arm64
+sudo apt update
+sudo apt install -y libgpiod-dev:arm64
+```
+or copy a sysroot from the Pi (requires `libgpiod-dev` or `pigpio` installed on the Pi):
+```
+mkdir -p rpi-sysroot/usr
+rsync -a pi@raspberrypi:/usr/include pi@raspberrypi:/usr/lib rpi-sysroot/usr/
+rsync -a pi@raspberrypi:/lib rpi-sysroot/
+```
+
+Then configure and build:
+```
+cmake -B build-rpi -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain-rpi-aarch64.cmake
+# or, with a sysroot:
+cmake -B build-rpi -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain-rpi-aarch64.cmake -DRPI_SYSROOT=$PWD/rpi-sysroot
+cmake --build build-rpi
+```
+
+Copy `build-rpi/piir` to the Pi and `conf/remotes/` to `/usr/local/share/piir/conf/remotes/` (or whatever `CMAKE_INSTALL_PREFIX` you configured with). For 32-bit Raspberry Pi OS use `cmake/toolchain-rpi-armhf.cmake`, `gcc-arm-linux-gnueabihf` and `libgpiod-dev:armhf` instead. That toolchain targets ARMv7, so it does not support the Pi 1 or Pi Zero/Zero W.
+
 ## How to use
 
 You kan get command line help running:

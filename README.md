@@ -75,7 +75,7 @@ PIIR uses the library [PIGPIO](http://abyz.me.uk/rpi/pigpio/) which you can inst
 sudo apt install -y pigpio
 ```
 
-Alternatively PIIR can use [libgpiod](https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/):
+Alternatively PIIR can use [libgpiod](https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/) version 2.0 or newer (Debian trixie / Raspberry Pi OS based on trixie):
 ```
 sudo apt install -y libgpiod-dev
 ```

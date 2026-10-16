@@ -5,6 +5,8 @@
 #include <gpiod.h>
 #include <unistd.h>
 #include <sys/time.h>
+#include <dirent.h>
+#include <stdio.h>
 #include "log.h"
 #include "transmitter.h"
 
@@ -62,72 +64,125 @@ void addSpace(unsigned long duration, gpioPulse_t *irSignal, unsigned int *pulse
 
 unsigned long microtime() {
   struct timeval tv;
+  gettimeofday(&tv, NULL);
   return 1000000 * tv.tv_sec + tv.tv_usec;
 }
 
-// Transmit generated wave using available library libgpiod
+// Open the GPIO chip holding Broadcom pin outPin and return the pin's line offset.
+// Raspberry Pi names the header lines "GPIO<n>" on every model, but the chip
+// holding them differs (gpiochip0 on Pi 1-4, gpiochip4 on Pi 5 with older kernels).
+struct gpiod_chip *openChipForPin(uint32_t outPin, unsigned int *offset)
+{
+  char lineName[16];
+  snprintf(lineName, sizeof(lineName), "GPIO%u", outPin);
+
+  DIR *dir = opendir("/dev");
+  if (dir)
+  {
+    struct dirent *entry;
+    while ((entry = readdir(dir)))
+    {
+      if (strncmp(entry->d_name, "gpiochip", 8))
+        continue;
+
+      char path[64];
+      snprintf(path, sizeof(path), "/dev/%s", entry->d_name);
+      if (!gpiod_is_gpiochip_device(path))
+        continue;
+
+      struct gpiod_chip *chip = gpiod_chip_open(path);
+      if (!chip)
+        continue;
+
+      int lineOffset = gpiod_chip_get_line_offset_from_name(chip, lineName);
+      if (lineOffset >= 0)
+      {
+        log_debug("Found %s on %s line %d", lineName, path, lineOffset);
+        closedir(dir);
+        *offset = lineOffset;
+        return chip;
+      }
+      gpiod_chip_close(chip);
+    }
+    closedir(dir);
+  }
+
+  // Fall back to treating outPin as an offset on the first chip
+  log_debug("%s not found by name, using /dev/gpiochip0 line %u", lineName, outPin);
+  *offset = outPin;
+  return gpiod_chip_open("/dev/gpiochip0");
+}
+
+// Transmit generated wave using available library libgpiod (v2 API)
 int transmitWave(uint32_t outPin, gpioPulse_t *irSignal, unsigned int *pulseCount)
 {
-  unsigned int offsets[1];
+  unsigned int offset;
+  int result = EXIT_FAILURE;
 
-  int values[1];
-  int err;
+  struct gpiod_chip *chip = NULL;
+  struct gpiod_line_settings *settings = NULL;
+  struct gpiod_line_config *lineConfig = NULL;
+  struct gpiod_request_config *requestConfig = NULL;
+  struct gpiod_line_request *request = NULL;
 
-  struct gpiod_chip *chip;
-  struct gpiod_line_request_config config;
-  struct gpiod_line_bulk lines;
-  
   // get chip holding the output pin
-  chip = gpiod_chip_open("/dev/gpiochip0");
+  chip = openChipForPin(outPin, &offset);
   if(!chip)
   {
     log_error("gpiod_chip_open");
     goto cleanup;
   }
 
-  // get output line for pin 
-  offsets[0] = outPin;
-  err = gpiod_chip_get_lines(chip, offsets, 1, &lines);
-  if(err)
+  // Setup output configuration with default value 0
+  settings = gpiod_line_settings_new();
+  if(!settings)
   {
-    log_error("gpiod_chip_get_lines");
+    log_error("gpiod_line_settings_new");
+    goto cleanup;
+  }
+  gpiod_line_settings_set_direction(settings, GPIOD_LINE_DIRECTION_OUTPUT);
+  gpiod_line_settings_set_output_value(settings, GPIOD_LINE_VALUE_INACTIVE);
+
+  lineConfig = gpiod_line_config_new();
+  if(!lineConfig || gpiod_line_config_add_line_settings(lineConfig, &offset, 1, settings))
+  {
+    log_error("gpiod_line_config_add_line_settings");
     goto cleanup;
   }
 
-  // Setup output configuration
-  memset(&config, 0, sizeof(config));
-  config.consumer = "piir";
-  config.request_type = GPIOD_LINE_REQUEST_DIRECTION_OUTPUT;
-  config.flags = 0;
-
-  // get the bulk line setting default value to 0
-  values[0] = 0;
-  err = gpiod_line_request_bulk(&lines, &config, values);
-  if(err)
+  requestConfig = gpiod_request_config_new();
+  if(!requestConfig)
   {
-    log_error("gpiod_line_request_bulk");
+    log_error("gpiod_request_config_new");
+    goto cleanup;
+  }
+  gpiod_request_config_set_consumer(requestConfig, "piir");
+
+  // request output line for pin
+  request = gpiod_chip_request_lines(chip, requestConfig, lineConfig);
+  if(!request)
+  {
+    log_error("gpiod_chip_request_lines");
     goto cleanup;
   }
 
   unsigned int i;
-  time_t old_microtime, new_microtime;
+  unsigned long old_microtime, new_microtime;
   for (i = 0, old_microtime=microtime(), new_microtime=old_microtime ;
        i < *pulseCount ;
        i++, old_microtime=new_microtime, new_microtime=microtime() ) {
 
     // Change value to next pulse signal
-    values[0] = irSignal[i].high;
-    err = gpiod_line_set_value_bulk(&lines, values);
-    if(err) {
-      log_error("gpiod_line_set_value_bulk");
+    if(gpiod_line_request_set_value(request, offset,
+                                    irSignal[i].high ? GPIOD_LINE_VALUE_ACTIVE : GPIOD_LINE_VALUE_INACTIVE)) {
+      log_error("gpiod_line_request_set_value");
       goto cleanup;
     }
 
     // Sleep until pulse is finished
-    long delay = irSignal[i].usDelay-(new_microtime-old_microtime);
-    log_debug("Delay %d", delay);
-    err = usleep(delay);
-    if(err) {
+    long delay = (long)irSignal[i].usDelay-(long)(new_microtime-old_microtime);
+    log_debug("Delay %ld", delay);
+    if(delay > 0 && usleep(delay)) {
         log_error("usleep error");
         goto cleanup;
     }
@@ -135,18 +190,26 @@ int transmitWave(uint32_t outPin, gpioPulse_t *irSignal, unsigned int *pulseCoun
   }
 
   // Ensure turn off IR led
-  values[0] = 0;
-  err = gpiod_line_set_value_bulk(&lines, values);
-  if(err) {
-        log_error("nanosleep interrupted");
+  if(gpiod_line_request_set_value(request, offset, GPIOD_LINE_VALUE_INACTIVE)) {
+        log_error("gpiod_line_request_set_value");
         goto cleanup;
   }
 
-cleanup:
-  gpiod_line_release_bulk(&lines);
-  gpiod_chip_close(chip);
+  result = EXIT_SUCCESS;
 
-  return EXIT_SUCCESS;
+cleanup:
+  if(request)
+    gpiod_line_request_release(request);
+  if(requestConfig)
+    gpiod_request_config_free(requestConfig);
+  if(lineConfig)
+    gpiod_line_config_free(lineConfig);
+  if(settings)
+    gpiod_line_settings_free(settings);
+  if(chip)
+    gpiod_chip_close(chip);
+
+  return result;
 }
 
 int irSlingGeneric(uint32_t outPin,

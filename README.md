@@ -75,9 +75,14 @@ PIIR uses the library [PIGPIO](http://abyz.me.uk/rpi/pigpio/) which you can inst
 sudo apt install -y pigpio
 ```
 
-Install Autotools to enable compilation
+Alternatively PIIR can use [libgpiod](https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/):
 ```
-sudo apt-get install -y autoconf automake libtool
+sudo apt install -y libgpiod-dev
+```
+
+Install CMake to enable compilation
+```
+sudo apt-get install -y cmake build-essential
 ```
 
 Download and extract latest released PIIR software:
@@ -91,23 +96,17 @@ mv ./piir/*/* ./piir
 Now compile it:
 ```
 cd piir
-./autogen.sh
-./configure
-make
+cmake -B build
+cmake --build build
 ```
+
+PIIR uses libgpiod when available and falls back to pigpio. To pick one explicitly, add `-DPIIR_GPIO_BACKEND=gpiod` or `-DPIIR_GPIO_BACKEND=pigpio` to the first `cmake` command.
 
 ### Installation
 
 After compilation you can install the PIIR tool by:
 ```
-sudo make install
-```
-
-### Running the tests
-
-After compilation you can test the PIIR tool by:
-```
-make check
+sudo cmake --install build
 ```
 
 ### Deployment

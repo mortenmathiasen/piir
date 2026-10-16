@@ -3,7 +3,8 @@ piir
 **/.dirstamp
 
 # CMake
-/build/
+/build*/
+/rpi-sysroot/
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake

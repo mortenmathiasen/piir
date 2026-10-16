@@ -37,6 +37,8 @@ static struct option long_options[] =
    {0, 0, 0, 0}
   };
 
+void printAvailableConfigFiles();
+
 void usage() {
   printf("\nusage:      %s\n", PROGRAMNAME);
   printf("            --remote, -r CONFIGFILE\n");
@@ -47,7 +49,7 @@ void usage() {
   printf("            %s --remote hvac_panasonic --help\n", PROGRAMNAME);
   printf("            %s --remote hvac_panasonic --feature temperature=21\n", PROGRAMNAME);
   printf("            %s --remote tv_sony --feature action=TURN_ON\n", PROGRAMNAME);
-  abort();
+  exit(EXIT_FAILURE);
 }
 
 void printAvailableFeatures() {
@@ -69,13 +71,13 @@ void initializeDataPaths() {
   char *remotesubpath = "/conf/remotes/";
   
   // Setup config default config file path
-  globalpath = (char*) malloc(strlen(DATADIR)+strlen(remotesubpath));
+  globalpath = (char*) malloc(strlen(DATADIR)+strlen(remotesubpath)+1);
   strcpy(globalpath, DATADIR);
   strcat(globalpath, remotesubpath);
 
   // Get current working directory
   char *tmplocalpath = getcwd(NULL,0); 
-  localpath = (char*) malloc(strlen(tmplocalpath)+strlen(remotesubpath));
+  localpath = (char*) malloc(strlen(tmplocalpath)+strlen(remotesubpath)+1);
   strcpy(localpath, tmplocalpath);
   strcat(localpath, remotesubpath);
   free(tmplocalpath);
@@ -88,21 +90,31 @@ void loadConfigfile(char *configfile) {
   // Initialize data paths
   initializeDataPaths();
 
-  // setup path
+  // setup path: an existing file path is used as is, otherwise a remote name
+  // is looked up in the local and then the global remotes directory
   char *suffix = ".json";
-  size_t pathlength = strlen(globalpath)>strlen(localpath)?strlen(globalpath):strlen(localpath);
-  configfilepath = (char*) malloc(pathlength+strlen(configfile)+strlen(suffix)+2);
-  strcpy(configfilepath, localpath);
-  strcat(configfilepath, configfile);
-  strcat(configfilepath, suffix);
-  if (access( configfilepath, F_OK ) == -1 ) {
-    strcpy(configfilepath, globalpath);
+  if (strchr(configfile, '/') && access( configfile, F_OK ) == 0) {
+    configfilepath = strdup(configfile);
+  } else {
+    size_t pathlength = strlen(globalpath)>strlen(localpath)?strlen(globalpath):strlen(localpath);
+    configfilepath = (char*) malloc(pathlength+strlen(configfile)+strlen(suffix)+2);
+    strcpy(configfilepath, localpath);
     strcat(configfilepath, configfile);
     strcat(configfilepath, suffix);
+    if (access( configfilepath, F_OK ) == -1 ) {
+      strcpy(configfilepath, globalpath);
+      strcat(configfilepath, configfile);
+      strcat(configfilepath, suffix);
+    }
   }
   
   // load config file
   loadConfig(configfilepath);
+  if (!isConfigLoaded()) {
+    printf("Cannot load remote '%s' from %s\n", configfile, configfilepath);
+    printAvailableConfigFiles();
+    usage();
+  }
 
   // Find max number of features
   size_t configFeaturesCount = getAllFeaturesCount();
@@ -217,8 +229,16 @@ int main(int argc, char *argv[])
 	printAvailableConfigFiles();
 	usage();
       }
-      insertFeatureValue(strtok(optarg, "="),
-			 strtok(NULL, "="));
+      {
+	// Call strtok in sequence; argument evaluation order is unspecified
+	const char *name = strtok(optarg, "=");
+	const char *value = strtok(NULL, "=");
+	if (!name || !value) {
+	  printf("Feature must be given as NAME=VALUE\n");
+	  usage();
+	}
+	insertFeatureValue(name, value);
+      }
       break;
 
     default:
@@ -245,7 +265,7 @@ int main(int argc, char *argv[])
 
   // Load config file settings
   const char *description = 0;
-  unsigned int frequency = 0;
+  int frequency = 0;
   double dutycycle = 0;
   unsigned int outPin = 0; // The Broadcom pin number the signal will be sent on
   char *symbolString = 0;

@@ -21,18 +21,10 @@ jobs:
           - backend: lirc
           - backend: lirc
             sanitize: true
-          - backend: gpiod
-            sanitize: true
           - backend: pigpio
             sanitize: true
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install libgpiod
-        if: matrix.backend == 'gpiod'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgpiod-dev
 
       # Debian and Ubuntu do not package the pigpio C library
       - name: Build pigpio
@@ -52,6 +44,34 @@ jobs:
           -DPIIR_GPIO_BACKEND=${{ matrix.backend }}
           -DCMAKE_C_FLAGS="-Wall ${{ matrix.sanitize && '-fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer' || '' }}"
           $PIGPIO_ARGS
+
+      - name: Build
+        run: cmake --build build --parallel
+
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
+
+  # The gpiod backend needs libgpiod >= 2.0, which Ubuntu 24.04 does not have
+  test-gpiod:
+    name: Test gpiod (sanitizers)
+    runs-on: ubuntu-24.04
+    container:
+      image: debian:trixie
+      options: --cap-add SYS_PTRACE  # for LeakSanitizer
+    steps:
+      - name: Install build tools and libgpiod
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends ca-certificates git cmake make gcc libc6-dev libgpiod-dev
+
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: >
+          cmake -B build
+          -DCMAKE_BUILD_TYPE=Debug
+          -DPIIR_GPIO_BACKEND=gpiod
+          -DCMAKE_C_FLAGS="-Wall -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer"
 
       - name: Build
         run: cmake --build build --parallel
@@ -126,7 +146,7 @@ jobs:
   release:
     name: Release
     if: startsWith(github.ref, 'refs/tags/v')
-    needs: [test, rpi]
+    needs: [test, test-gpiod, rpi]
     runs-on: ubuntu-24.04
     permissions:
       contents: write

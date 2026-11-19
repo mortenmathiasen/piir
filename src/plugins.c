@@ -11,3 +11,9 @@ int applyRemotePlugin(const char *plugin, char *symbolString) {
   }
   return 1;
 }
+
+const char *legacyRemotePlugin(const char *configfilepath) {
+  if (configfilepath && strstr(configfilepath, "hvac_panasonic"))
+    return "hvac_panasonic";
+  return NULL;
+}

@@ -155,6 +155,19 @@ if(PIIR_BACKEND STREQUAL "lirc" AND NOT CMAKE_VERSION VERSION_LESS 3.19)
          --verbose DEBUG
     MATCH "Transmitting: ${outcome}")
 
+  # A remote file from PIIR 1.x without a "plugin" setting still gets the
+  # hvac_panasonic checksum from its file name
+  string(JSON legacy_json REMOVE "${hvac_json}" plugin)
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/remotes/legacy/hvac_panasonic.json "${legacy_json}")
+  # Test vector No 2 (mode OFF): its checksum differs from the template's
+  string(JSON outcome GET "${hvac_json}" tests 1 outcome)
+  piir_cli_test(transmit_legacy_hvac_panasonic EXIT nonzero
+    ARGS --remote ${CMAKE_CURRENT_BINARY_DIR}/remotes/legacy/hvac_panasonic.json
+         --feature temperature=21 --feature mode=OFF --feature option=AUTO
+         --feature fan=AUTO --feature updown=AUTO --feature leftright=AUTO
+         --verbose DEBUG
+    MATCH "Transmitting: ${outcome}")
+
   # A remote converted from LIRC
   file(READ ${PROJECT_SOURCE_DIR}/conf/remotes/sony/RM-ED011.json sony_json)
   string(JSON sony_json SET "${sony_json}" transmitter device "\"/nonexistent/piir-test/lirc0\"")

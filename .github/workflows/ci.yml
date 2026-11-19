@@ -183,9 +183,11 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: piir-${{ matrix.arch }}
+          # Only this architecture's packages: the tests also build the
+          # remotes archive, which the remotes job provides
           path: |
-            build/piir-*.tar.gz
-            build/piir_*.deb
+            build/piir-*-${{ matrix.arch }}.tar.gz
+            build/piir_*_${{ matrix.arch }}.deb
           if-no-files-found: error
 
   # All remotes, for piir-remotes to install from
@@ -231,6 +233,15 @@ jobs:
           pattern: piir-*
           path: dist
           merge-multiple: true
+
+      - name: Check packages
+        run: |
+          cd dist
+          ls -l
+          for f in *.tar.gz; do gzip -t "$f"; done
+          for f in *.deb; do dpkg-deb --info "$f" > /dev/null; done
+          test "$(ls *.deb | wc -l)" -eq 3
+          test "$(ls piir-remotes-*.tar.gz | wc -l)" -eq 1
 
       - name: Checksums
         run: cd dist && sha256sum * | tee SHA256SUMS

@@ -1,6 +1,6 @@
 {
     "description": "SONY_RM-S343 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-S343.lircd.conf", "remote": "SONY_RM-S343", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RM-S343.lircd.conf", "remote": "SONY_RM-S343", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 40000,
     "dutycycle": 0.33,
     "transmitter": {"outpin": 17},

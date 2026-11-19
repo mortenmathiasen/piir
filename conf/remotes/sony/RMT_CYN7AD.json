@@ -1,6 +1,6 @@
 {
     "description": "SONY_RMT_CYN7AD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RMT_CYN7AD.lircd.conf", "remote": "SONY_RMT_CYN7AD", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RMT_CYN7AD.lircd.conf", "remote": "SONY_RMT_CYN7AD", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

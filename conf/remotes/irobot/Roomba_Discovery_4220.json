@@ -1,6 +1,6 @@
 {
     "description": "iRobot_Roomba_Discovery_4220 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/irobot/Roomba_Discovery_4220.lircd.conf", "remote": "iRobot_Roomba_Discovery_4220", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/irobot/Roomba_Discovery_4220.lircd.conf", "remote": "iRobot_Roomba_Discovery_4220", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

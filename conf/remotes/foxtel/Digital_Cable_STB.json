@@ -1,6 +1,6 @@
 {
     "description": "Foxtel_Digital_Cable_STB (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/foxtel/Digital_Cable_STB.lircd.conf", "remote": "Foxtel_Digital_Cable_STB", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/foxtel/Digital_Cable_STB.lircd.conf", "remote": "Foxtel_Digital_Cable_STB", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

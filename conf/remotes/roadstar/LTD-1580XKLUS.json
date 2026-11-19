@@ -1,6 +1,6 @@
 {
     "description": "roadstar-LTD-1580XKLUS.conf (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/roadstar/LTD-1580XKLUS.lircd.conf", "remote": "roadstar-LTD-1580XKLUS.conf", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/roadstar/LTD-1580XKLUS.lircd.conf", "remote": "roadstar-LTD-1580XKLUS.conf", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

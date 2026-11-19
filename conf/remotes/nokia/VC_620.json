@@ -1,6 +1,6 @@
 {
     "description": "NokiaVC620 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/nokia/VC_620.lircd.conf", "remote": "NokiaVC620", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/nokia/VC_620.lircd.conf", "remote": "NokiaVC620", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

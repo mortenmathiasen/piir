@@ -1,6 +1,6 @@
 {
     "description": "SCN600pre (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/nokia/SCN600.lircd.conf", "remote": "SCN600pre", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/nokia/SCN600.lircd.conf", "remote": "SCN600pre", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

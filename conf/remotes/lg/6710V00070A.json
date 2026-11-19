@@ -1,6 +1,6 @@
 {
     "description": "LG_6710V00070A (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lg/6710V00070A.lircd.conf", "remote": "LG_6710V00070A", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/lg/6710V00070A.lircd.conf", "remote": "LG_6710V00070A", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -51,6 +51,44 @@
 	    "SSM/\\*": "DABAAAACFAG",
 	    "PICTURE": "DABAAAACBCAE",
 	    "SOUND": "DABAAACBCBE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "MENU/INDEX": "DBAAAACAAFAE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "TV/AV": "DBAAAACAABAE",
+	    "EYE/\\*": "DBAAAACAFAAE",
+	    "I/II/\\*": "DBAAAACAFAG",
+	    "Q.VIEW": "DBAAAACABCG",
+	    "KEY_LIST": "DBAAAACAFBE",
+	    "KEY_OK": "DBAAAACBCFE",
+	    "KEY_CHANNELUP": "DBAAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DBAAAACBAACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "TEXT/MIX": "DBAAAACAAABE",
+	    "SIZE": "DBAAAACFFAE",
+	    "HOLD": "DBAAAACFBCE",
+	    "KEY_SLEEP": "DBAAAACAAAAG",
+	    "UPDATE": "DBAAAACFAFE",
+	    "KEY_TIME": "DBAAAACFFG",
+	    "REVEAL": "DBAAAACFABE",
+	    "PSM": "DBAAAAAACAAG",
+	    "SSM/\\*": "DBAAAAACFAG",
+	    "PICTURE": "DBAAAAACBCAE",
+	    "SOUND": "DBAAAACBCBE"
 	}
     }
 }

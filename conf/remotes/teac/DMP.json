@@ -1,6 +1,6 @@
 {
     "description": "HD-15-TV_DMP (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/teac/DMP.lircd.conf", "remote": "HD-15-TV_DMP", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/teac/DMP.lircd.conf", "remote": "HD-15-TV_DMP", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

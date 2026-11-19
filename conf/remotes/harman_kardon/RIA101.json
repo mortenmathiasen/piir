@@ -1,6 +1,6 @@
 {
     "description": "Harman_Kardon-HK620 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/harman_kardon/RIA101.lircd.conf", "remote": "Harman_Kardon-HK620", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/harman_kardon/RIA101.lircd.conf", "remote": "Harman_Kardon-HK620", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

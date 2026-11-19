@@ -1,6 +1,6 @@
 {
     "description": "GVC_RM-RK50 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/gvc/RM-RK50.lircd.conf", "remote": "GVC_RM-RK50", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/gvc/RM-RK50.lircd.conf", "remote": "GVC_RM-RK50", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Sharp_GA035SB (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sharp/GA035SB.lircd.conf", "remote": "Sharp_GA035SB", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sharp/GA035SB.lircd.conf", "remote": "Sharp_GA035SB", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

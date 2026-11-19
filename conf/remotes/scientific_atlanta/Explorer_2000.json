@@ -1,6 +1,6 @@
 {
     "description": "SA2000 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/scientific_atlanta/Explorer_2000.lircd.conf", "remote": "SA2000", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/scientific_atlanta/Explorer_2000.lircd.conf", "remote": "SA2000", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 58000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

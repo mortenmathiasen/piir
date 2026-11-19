@@ -1,6 +1,6 @@
 {
     "description": "MOTOROLA_START/STOP (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/grundig/ASIS.lircd.conf", "remote": "MOTOROLA_START/STOP", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/grundig/ASIS.lircd.conf", "remote": "MOTOROLA_START/STOP", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 32000,
     "dutycycle": 0.25,
     "transmitter": {"outpin": 17},

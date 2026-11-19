@@ -1,6 +1,6 @@
 {
     "description": "TV553 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/rft/TV553.lircd.conf", "remote": "TV553", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/rft/TV553.lircd.conf", "remote": "TV553", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 32000,
     "dutycycle": 0.25,
     "transmitter": {"outpin": 17},

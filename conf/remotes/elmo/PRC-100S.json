@@ -1,6 +1,6 @@
 {
     "description": "Elmo_PRC-100S (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/elmo/PRC-100S.lircd.conf", "remote": "Elmo_PRC-100S", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/elmo/PRC-100S.lircd.conf", "remote": "Elmo_PRC-100S", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

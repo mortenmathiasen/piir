@@ -1,6 +1,6 @@
 {
     "description": "KathreinUFD400 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/kathrein/UFD400.lircd.conf", "remote": "KathreinUFD400", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/kathrein/UFD400.lircd.conf", "remote": "KathreinUFD400", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

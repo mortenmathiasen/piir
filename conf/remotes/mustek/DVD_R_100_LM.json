@@ -1,6 +1,6 @@
 {
     "description": "Mustek_DVD_R_100_LM (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/mustek/DVD_R_100_LM.lircd.conf", "remote": "Mustek_DVD_R_100_LM", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/mustek/DVD_R_100_LM.lircd.conf", "remote": "Mustek_DVD_R_100_LM", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

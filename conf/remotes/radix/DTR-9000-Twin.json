@@ -1,6 +1,6 @@
 {
     "description": "Radix_DTR-9000-Twin (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/radix/DTR-9000-Twin.lircd.conf", "remote": "Radix_DTR-9000-Twin", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/radix/DTR-9000-Twin.lircd.conf", "remote": "Radix_DTR-9000-Twin", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

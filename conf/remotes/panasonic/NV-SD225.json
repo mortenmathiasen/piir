@@ -1,6 +1,6 @@
 {
     "description": "Panasonic_NV-SD225 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/NV-SD225.lircd.conf", "remote": "Panasonic_NV-SD225", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/panasonic/NV-SD225.lircd.conf", "remote": "Panasonic_NV-SD225", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

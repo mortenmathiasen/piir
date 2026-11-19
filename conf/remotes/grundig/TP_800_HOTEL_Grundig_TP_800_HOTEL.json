@@ -1,6 +1,6 @@
 {
     "description": "Grundig_TP_800_HOTEL (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/grundig/TP_800_HOTEL.lircd.conf", "remote": "Grundig_TP_800_HOTEL", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/grundig/TP_800_HOTEL.lircd.conf", "remote": "Grundig_TP_800_HOTEL", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 32000,
     "dutycycle": 0.25,
     "transmitter": {"outpin": 17},

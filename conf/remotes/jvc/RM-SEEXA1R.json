@@ -1,6 +1,6 @@
 {
     "description": "JVC_RM-SEEXA1R (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/jvc/RM-SEEXA1R.lircd.conf", "remote": "JVC_RM-SEEXA1R", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/jvc/RM-SEEXA1R.lircd.conf", "remote": "JVC_RM-SEEXA1R", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

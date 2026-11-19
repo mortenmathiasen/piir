@@ -1,6 +1,6 @@
 {
     "description": "rd5860.conf (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RD5860.lircd.conf", "remote": "rd5860.conf", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RD5860.lircd.conf", "remote": "rd5860.conf", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -39,6 +39,32 @@
 	    "a/b": "EAABCDAABAF",
 	    "KEY_AGAIN": "EAABCADAABF",
 	    "scan": "EAABCDBBAF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_OPEN": "EBBCDBABF",
+	    "KEY_1": "EBBCAAAAADF",
+	    "KEY_2": "EBBCAAAADG",
+	    "KEY_3": "EBBCAAAADAF",
+	    "KEY_4": "EBBCAAADCF",
+	    "KEY_5": "EBBCAAADBF",
+	    "KEY_6": "EBBCAAADAG",
+	    "KEY_7": "EBBCAAADAAF",
+	    "KEY_8": "EBBCAADCAF",
+	    "KEY_9": "EBBCAADCDF",
+	    "KEY_0": "EBBCAAAAAAF",
+	    "KEY_STOP": "EBBCDABAG",
+	    "KEY_PAUSE": "EBBCDACAAF",
+	    "KEY_PLAY": "EBBCDABBF",
+	    "track-down": "EBBCDCAADF",
+	    "track-up": "EBBCDCAAAF",
+	    "random": "EBBCADAACF",
+	    "search-down": "EBBCDACDG",
+	    "search-up": "EBBCDABCF",
+	    "a/b": "EBBCDAABAF",
+	    "KEY_AGAIN": "EBBCADAABF",
+	    "scan": "EBBCDBBAF"
 	}
     }
 }

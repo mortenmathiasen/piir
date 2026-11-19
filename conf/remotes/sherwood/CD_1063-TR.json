@@ -1,6 +1,6 @@
 {
     "description": "sherwood (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sherwood/CD_1063-TR.lircd.conf", "remote": "sherwood", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sherwood/CD_1063-TR.lircd.conf", "remote": "sherwood", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

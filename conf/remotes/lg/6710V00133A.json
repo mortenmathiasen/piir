@@ -1,6 +1,6 @@
 {
     "description": "LG_6710V00133A (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lg/6710V00133A.lircd.conf", "remote": "LG_6710V00133A", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/lg/6710V00133A.lircd.conf", "remote": "LG_6710V00133A", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 44000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Hauppauge_MVP (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/hauppauge/MVP.lircd.conf", "remote": "Hauppauge_MVP", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/hauppauge/MVP.lircd.conf", "remote": "Hauppauge_MVP", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -51,6 +51,44 @@
 	    "KEY_PAUSE": "DABACAAABAAE",
 	    "KEY_PREVIOUS": "DABACAABCBE",
 	    "KEY_NEXT": "DABACAFAAAG"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "DBAACABAAACE",
+	    "KEY_2": "DBAACABAACG",
+	    "KEY_3": "DBAACABAACAE",
+	    "KEY_4": "DBAACABACBE",
+	    "KEY_5": "DBAACABACFE",
+	    "KEY_6": "DBAACABACAG",
+	    "KEY_7": "DBAACABACAAE",
+	    "KEY_8": "DBAACABCBAE",
+	    "KEY_9": "DBAACABCBCE",
+	    "KEY_0": "DBAACABAAAAE",
+	    "KEY_POWER": "DBAACAAAAAFE",
+	    "KEY_GOTO": "DBAACAAAAFAE",
+	    "KEY_BACK": "DBAACAFAAAAE",
+	    "KEY_MENU": "DBAACABCAFE",
+	    "KEY_RED": "DBAACABCFAE",
+	    "KEY_GREEN": "DBAACAAFAAG",
+	    "KEY_YELLOW": "DBAACAAAABAE",
+	    "KEY_BLUE": "DBAACAAFBCE",
+	    "KEY_UP": "DBAACAABAAAE",
+	    "KEY_DOWN": "DBAACAABAACE",
+	    "KEY_LEFT": "DBAACAFBACE",
+	    "KEY_RIGHT": "DBAACAFBAAE",
+	    "KEY_MUTE": "DBAACABCAAAE",
+	    "KEY_FN_1": "DBAACABCABE",
+	    "KEY_FN_2": "DBAACAAAAABE",
+	    "KEY_OK": "DBAACAABCFE",
+	    "KEY_REWIND": "DBAACAAABCG",
+	    "KEY_FASTFORWARD": "DBAACAAAFBE",
+	    "KEY_PLAY": "DBAACAAAFFE",
+	    "KEY_RECORD": "DBAACAAAFAAE",
+	    "KEY_STOP": "DBAACAAAFAG",
+	    "KEY_PAUSE": "DBAACAAABAAE",
+	    "KEY_PREVIOUS": "DBAACAABCBE",
+	    "KEY_NEXT": "DBAACAFAAAG"
 	}
     }
 }

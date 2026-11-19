@@ -1,6 +1,6 @@
 {
     "description": "Thomson_RCS615TCLM1 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/thomson/RCS615TCLM1.lircd.conf", "remote": "Thomson_RCS615TCLM1", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/thomson/RCS615TCLM1.lircd.conf", "remote": "Thomson_RCS615TCLM1", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -42,6 +42,39 @@
 	    "KEY_RECORD": "101010100011A",
 	    "KEY_STOP": "101010100100A",
 	    "KEY_PAUSE": "101010100010A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_UP": "101000110100A",
+	    "KEY_DOWN": "101000110101A",
+	    "KEY_LEFT": "101000110110A",
+	    "KEY_RIGHT": "101000110111A",
+	    "KEY_OK": "101000110011A",
+	    "KEY_MENU": "101000011001A",
+	    "KEY_EXIT": "101000111101A",
+	    "KEY_ENTER": "101000101000A",
+	    "KEY_RED": "101000001101A",
+	    "KEY_GREEN": "101000011010A",
+	    "KEY_YELLOW": "101000110010A",
+	    "KEY_BLUE": "101000011100A",
+	    "Purple": "101000011110A",
+	    "KEY_1": "101000000000A",
+	    "KEY_2": "101000001000A",
+	    "KEY_3": "101000010000A",
+	    "KEY_4": "101000000001A",
+	    "KEY_5": "101000001001A",
+	    "KEY_6": "101000010001A",
+	    "KEY_7": "101000000010A",
+	    "KEY_8": "101000001010A",
+	    "KEY_9": "101000010010A",
+	    "KEY_0": "101000001110A",
+	    "Rev": "101000011111A",
+	    "KEY_PLAY": "101000100000A",
+	    "KEY_FORWARD": "101000100001A",
+	    "KEY_RECORD": "101000100011A",
+	    "KEY_STOP": "101000100100A",
+	    "KEY_PAUSE": "101000100010A"
 	}
     }
 }

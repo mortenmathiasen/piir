@@ -1,6 +1,6 @@
 {
     "description": "Watson (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/watson/FA_3619.lircd.conf", "remote": "Watson", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/watson/FA_3619.lircd.conf", "remote": "Watson", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -54,6 +54,47 @@
 	    "UPDATE": "DABAAACFAFE",
 	    "EXPAND": "DABAAACFFAE",
 	    "MIX": "DABAAACFAAG"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "SOUND": "DBAAAACAFAAE",
+	    "PICTURE": "DBAAAACAFAG",
+	    "FEATURE": "DBAAAACABCG",
+	    "INSTALL": "DBAAAACAFBE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "KEY_UP": "DBAAAACBAAAE",
+	    "KEY_DOWN": "DBAAAACBAACE",
+	    "KEY_LEFT": "DBAAAAACFFE",
+	    "KEY_RIGHT": "DBAAAAACFAG",
+	    "KEY_MENU": "DBAAAACABAAE",
+	    "KEY_INFO": "DBAAAAACBCG",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "P<P": "DBAAAACBACG",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "PP": "DBAAAAAACAAG",
+	    "I-II": "DBAAAACBACAE",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_SLEEP": "DBAAAAAACABE",
+	    "KEY_TV": "DBAAAACAAAAAE",
+	    "AV": "DBAAAACAABAE",
+	    "TELETEX": "DBAAAACAAABE",
+	    "KEY_TIME": "DBAAAACFFG",
+	    "HOLD": "DBAAAACFBCE",
+	    "SHOW": "DBAAAACFABE",
+	    "PAGE_INDEX": "DBAAAACFAAAE",
+	    "UPDATE": "DBAAAACFAFE",
+	    "EXPAND": "DBAAAACFFAE",
+	    "MIX": "DBAAAACFAAG"
 	}
     }
 }

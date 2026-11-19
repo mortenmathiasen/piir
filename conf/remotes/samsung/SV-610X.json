@@ -1,6 +1,6 @@
 {
     "description": "Samsung_SV-610X (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/samsung/SV-610X.lircd.conf", "remote": "Samsung_SV-610X", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/samsung/SV-610X.lircd.conf", "remote": "Samsung_SV-610X", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

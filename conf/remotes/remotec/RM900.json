@@ -1,6 +1,6 @@
 {
     "description": "remotec (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/remotec/RM900.lircd.conf", "remote": "remotec", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/remotec/RM900.lircd.conf", "remote": "remotec", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -42,6 +42,35 @@
 	    "KEY_FORWARD": "DABAAACAFFE",
 	    "KEY_STOP": "DABAAACAAABE",
 	    "KEY_PAUSE": "DABAAACFBCE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "p_up": "DBAAAACBAAAE",
+	    "p_down": "DBAAAACBAACE",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "1_2": "DBAAAACAABAE",
+	    "i-ii": "DBAAAACBACAE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "X_KEY_11": "DBAAAAAACFG",
+	    "X_KEY_12": "DBAAAAAACFAE",
+	    "KEY_BACK": "DBAAAACFAAG",
+	    "KEY_PLAY": "DBAAAACAAAAAE",
+	    "KEY_FORWARD": "DBAAAACAFFE",
+	    "KEY_STOP": "DBAAAACAAABE",
+	    "KEY_PAUSE": "DBAAAACFBCE"
 	}
     }
 }

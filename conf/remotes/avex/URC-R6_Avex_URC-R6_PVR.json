@@ -1,6 +1,6 @@
 {
     "description": "Avex_URC-R6_PVR (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/avex/URC-R6.lircd.conf", "remote": "Avex_URC-R6_PVR", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/avex/URC-R6.lircd.conf", "remote": "Avex_URC-R6_PVR", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

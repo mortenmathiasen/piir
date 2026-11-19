@@ -1,6 +1,6 @@
 {
     "description": "Trice_TR-302 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/trice/TR-302.lircd.conf", "remote": "Trice_TR-302", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/trice/TR-302.lircd.conf", "remote": "Trice_TR-302", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

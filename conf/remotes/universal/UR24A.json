@@ -1,6 +1,6 @@
 {
     "description": "X10_Powerhouse_UR24A (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/universal/UR24A.lircd.conf", "remote": "X10_Powerhouse_UR24A", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/universal/UR24A.lircd.conf", "remote": "X10_Powerhouse_UR24A", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

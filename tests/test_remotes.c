@@ -116,18 +116,21 @@ static void checkKeys(const char *path, const symbolDefinition *symbols, size_t 
       memset(features, 0, featureCount * sizeof(featureT));
       features[f].name = getFeatureName(f);
       features[f].value = getFeatureValueName(f, v);
-      char *code = NULL;
-      loadFeaturedCode(features, &code);
-      int pluginOk = applyRemotePlugin(plugin, code) == 0;
-      unittest_checks++;
-      if (!pluginOk) {
-        unittest_failures++;
-        printf("FAIL %s: unknown plugin %s\n", path, plugin);
+      for (int toggled = 0; toggled <= hasToggle(); toggled++) {
+        char *code = NULL;
+        loadToggledFeaturedCode(features, toggled, &code);
+        int pluginOk = applyRemotePlugin(plugin, code) == 0;
+        unittest_checks++;
+        if (!pluginOk) {
+          unittest_failures++;
+          printf("FAIL %s: unknown plugin %s\n", path, plugin);
+        }
+        char what[256];
+        snprintf(what, sizeof(what), "%s=%s%s", features[f].name, features[f].value,
+                 toggled ? " (toggled)" : "");
+        checkCode(path, what, code, symbols, symbolCount);
+        free(code);
       }
-      char what[256];
-      snprintf(what, sizeof(what), "%s=%s", features[f].name, features[f].value);
-      checkCode(path, what, code, symbols, symbolCount);
-      free(code);
       keysChecked++;
     }
   }

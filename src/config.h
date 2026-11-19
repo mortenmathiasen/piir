@@ -27,6 +27,9 @@ void loadConfigSymbols(symbolDefinition configSymbols[]);
 void loadTemplateCode(const char **symbolString);
 void loadFeaturedCode(const featureT *features,
 		      char **featuredCode);
+int hasToggle();
+void loadToggledFeaturedCode(const featureT *features, int toggled,
+			     char **featuredCode);
 void loadOutPin(unsigned int *outPin);  //Output
 void loadDescription(const char **description);
 void loadDevice(const char **device);

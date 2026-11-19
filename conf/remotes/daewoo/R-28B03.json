@@ -1,6 +1,6 @@
 {
     "description": "DAEWOO (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/daewoo/R-28B03.lircd.conf", "remote": "DAEWOO", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/daewoo/R-28B03.lircd.conf", "remote": "DAEWOO", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -12,7 +12,8 @@
 	"E": {"mark": 933, "space": 0},
 	"F": {"mark": 1866, "space": 1710},
 	"G": {"mark": 1866, "space": 0},
-	"I": {"mark": 1923, "space": 1710},
+	"I": {"mark": 1923, "space": 855},
+	"J": {"mark": 1923, "space": 1710},
 	"-": {"mark": 0, "space": 0}
     },
     "template": "-------------",
@@ -30,10 +31,10 @@
 	    "KEY_9": "DABAAAAACBCE",
 	    "KEY_0": "DABAAAAAAAAAE",
 	    "Src": "DABAAACAABAE",
-	    "KEY_MENU": "IBAAAACBCG",
+	    "KEY_MENU": "JBAAAACBCG",
 	    "KEY_UP": "DABAAACBAAAE",
 	    "KEY_LEFT": "DABAAAACBACE",
-	    "KEY_OK": "IBAAAACFAAE",
+	    "KEY_OK": "JBAAAACFAAE",
 	    "KEY_RIGHT": "DABAAAACBAAE",
 	    "KEY_DOWN": "DABAAACBAACE",
 	    "KEY_SLEEP": "DABAAACBCAG",
@@ -45,6 +46,37 @@
 	    "KEY_TIME": "DABAAACABCG",
 	    "KEY_MODE": "DABAAACAFBE",
 	    "KEY_TEXT": "DABAAACAAABE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "Standby": "DBAAAAAACABE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "Src": "DBAAAACAABAE",
+	    "KEY_MENU": "IAAAAAACBCG",
+	    "KEY_UP": "DBAAAACBAAAE",
+	    "KEY_LEFT": "DBAAAAACBACE",
+	    "KEY_OK": "IAAAAAACFAAE",
+	    "KEY_RIGHT": "DBAAAAACBAAE",
+	    "KEY_DOWN": "DBAAAACBAACE",
+	    "KEY_SLEEP": "DBAAAACBCAG",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_AGAIN": "DBAAAAAACAAAE",
+	    "Del": "DBAAAACAFAAE",
+	    "Move": "DBAAAACAFAG",
+	    "KEY_NEXT": "DBAAAACFAFE",
+	    "KEY_TIME": "DBAAAACABCG",
+	    "KEY_MODE": "DBAAAACAFBE",
+	    "KEY_TEXT": "DBAAAACAAABE"
 	}
     }
 }

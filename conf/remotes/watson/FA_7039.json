@@ -1,6 +1,6 @@
 {
     "description": "Watson/Hauppauge (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/watson/FA_7039.lircd.conf", "remote": "Watson/Hauppauge", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/watson/FA_7039.lircd.conf", "remote": "Watson/Hauppauge", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -57,6 +57,50 @@
 	    "KEY_TV": "DABAAACAAAAAE",
 	    "RESERVED": "DABAAAACAAAG",
 	    "MINIMIZE": "DABAAACBCAG"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_102ND": "DBAAAAAACFG",
+	    "PP": "DBAAAAAACAAG",
+	    "AUS/Radio": "DBAAAAAACABE",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_INFO": "DBAAAAACBCG",
+	    "<": "DBAAAAACFFE",
+	    ">": "DBAAAAACFAG",
+	    "KEY_CHANNELUP": "DBAAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DBAAAACBAACE",
+	    "P<P/Sourc": "DBAAAACBACG",
+	    "I-II": "DBAAAACBACAE",
+	    "=VALVE": "DBAAAACFBCE",
+	    "=CLOCK": "DBAAAACFFG",
+	    "=:": "DBAAAACFFAE",
+	    "=?": "DBAAAACFABE",
+	    "=X": "DBAAAACFAFE",
+	    "/=Fullscreen": "DBAAAACFAAG",
+	    "=I": "DBAAAACFAAAE",
+	    "KEY_MENU": "DBAAAACABAAE",
+	    "FEATURE": "DBAAAACABCG",
+	    "INSTALL": "DBAAAACAFBE",
+	    "PICTURE": "DBAAAACAFAG",
+	    "SOUND": "DBAAAACAFAAE",
+	    "AV": "DBAAAACAABAE",
+	    "=": "DBAAAACAAABE",
+	    "KEY_TV": "DBAAAACAAAAAE",
+	    "RESERVED": "DBAAAAACAAAG",
+	    "MINIMIZE": "DBAAAACBCAG"
 	}
     }
 }

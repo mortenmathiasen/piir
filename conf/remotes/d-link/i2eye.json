@@ -1,6 +1,6 @@
 {
     "description": "i2eye (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/d-link/i2eye.lircd.conf", "remote": "i2eye", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/d-link/i2eye.lircd.conf", "remote": "i2eye", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

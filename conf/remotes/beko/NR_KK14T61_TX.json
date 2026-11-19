@@ -1,6 +1,6 @@
 {
     "description": "BEKO_TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/beko/NR_KK14T61_TX.lircd.conf", "remote": "BEKO_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/beko/NR_KK14T61_TX.lircd.conf", "remote": "BEKO_TV", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -51,6 +51,44 @@
 	    "KEY_SUBTITLE": "DABAAAAACFG",
 	    "MIX": "DABAAAAAACBE",
 	    "UPDATE": "DABAAAAACAAAE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_MUTE": "DBAAAACFFAE",
+	    "KEY_POWER": "DBAAAACBAAAE",
+	    "KEY_1": "DBAAAAACBACE",
+	    "KEY_2": "DBAAAAACBCG",
+	    "KEY_3": "DBAAAAACBCAE",
+	    "KEY_4": "DBAAAAACFBE",
+	    "KEY_5": "DBAAAAACFFE",
+	    "KEY_6": "DBAAAAACFAG",
+	    "KEY_7": "DBAAAAACFAAE",
+	    "KEY_8": "DBAAAAACABAE",
+	    "KEY_9": "DBAAAAACABCE",
+	    "X_KEY_1_X_CHANNELS": "DBAAAAACAFG",
+	    "KEY_0": "DBAAAAACBAAE",
+	    "AV/TV": "DBAAAACFFG",
+	    "KEY_MENU": "DBAAAACFBCE",
+	    "PR_UP": "DBAAAAACAABE",
+	    "KEY_TEXT": "DBAAAACABACE",
+	    "VOL_LOW": "DBAAAACBCFE",
+	    "KEY_OK": "DBAAAACFBAE",
+	    "KEY_VOLUMEUP": "DBAAAACBCBE",
+	    "SWAP": "DBAAAACBCAAE",
+	    "PR_DOWN": "DBAAAAACAFAE",
+	    "16:9": "DBAAAACBACAE",
+	    "KEY_I": "DBAAAACFAAAE",
+	    "KEY_RED": "DBAAAACBCAG",
+	    "KEY_GREEN": "DBAAAACFABE",
+	    "KEY_YELLOW": "DBAAAACFAAG",
+	    "KEY_BLUE": "DBAAAACABCAE",
+	    "KEY_STOP": "DBAAAAAACABE",
+	    "REVEAL": "DBAAAAAACAAG",
+	    "DOUBLE": "DBAAAAAAACAAE",
+	    "KEY_SUBTITLE": "DBAAAAAACFG",
+	    "MIX": "DBAAAAAAACBE",
+	    "UPDATE": "DBAAAAAACAAAE"
 	}
     }
 }

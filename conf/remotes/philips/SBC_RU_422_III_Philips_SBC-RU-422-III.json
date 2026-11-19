@@ -1,6 +1,6 @@
 {
     "description": "Philips/SBC-RU-422-III (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/SBC_RU_422_III.lircd.conf", "remote": "Philips/SBC-RU-422-III", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/SBC_RU_422_III.lircd.conf", "remote": "Philips/SBC-RU-422-III", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -12,7 +12,8 @@
 	"E": {"mark": 976, "space": 847},
 	"F": {"mark": 932, "space": 0},
 	"G": {"mark": 1864, "space": 0},
-	"I": {"mark": 1908, "space": 1694},
+	"I": {"mark": 1908, "space": 847},
+	"J": {"mark": 1908, "space": 1694},
 	"-": {"mark": 0, "space": 0}
     },
     "template": "-----------",
@@ -21,8 +22,8 @@
 	    "KEY_POWER": "EABCDBCABF",
 	    "program+": "EABCDABAAAF",
 	    "program-": "EABCDABAACF",
-	    "KEY_MENU": "IBCDDBCG",
-	    "KEY_OK": "IBCDDDAAF",
+	    "KEY_MENU": "JBCDDBCG",
+	    "KEY_OK": "JBCDDDAAF",
 	    "tt.suspend": "EABCDDAADF",
 	    "KEY_1": "EABCDBAAACF",
 	    "KEY_2": "EABCDBAACG",
@@ -41,8 +42,37 @@
 	    "KEY_FORWARD": "EABCDAADBF",
 	    "KEY_PLAY": "EABCDAADDF",
 	    "KEY_RECORD": "EABCDAADAAF",
-	    "sprogram+": "IBCDDBAAF",
-	    "sprogram-": "IBCDDBACF"
+	    "sprogram+": "JBCDDBAAF",
+	    "sprogram-": "JBCDDBACF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "EBACDBCABF",
+	    "program+": "EBACDABAAAF",
+	    "program-": "EBACDABAACF",
+	    "KEY_MENU": "IAACDDBCG",
+	    "KEY_OK": "IAACDDDAAF",
+	    "tt.suspend": "EBACDDAADF",
+	    "KEY_1": "EBACDBAAACF",
+	    "KEY_2": "EBACDBAACG",
+	    "KEY_3": "EBACDBAACAF",
+	    "KEY_4": "EBACDBACBF",
+	    "KEY_5": "EBACDBACDF",
+	    "KEY_6": "EBACDBACAG",
+	    "KEY_7": "EBACDBACAAF",
+	    "KEY_8": "EBACDBCBAF",
+	    "KEY_9": "EBACDBCBCF",
+	    "KEY_0": "EBACDBAAAAF",
+	    "KEY_102ND": "EBACDAAADG",
+	    "KEY_REWIND": "EBACDAABCG",
+	    "KEY_STOP": "EBACDAADAG",
+	    "KEY_PAUSE": "EBACDADBCF",
+	    "KEY_FORWARD": "EBACDAADBF",
+	    "KEY_PLAY": "EBACDAADDF",
+	    "KEY_RECORD": "EBACDAADAAF",
+	    "sprogram+": "IAACDDBAAF",
+	    "sprogram-": "IAACDDBACF"
 	}
     }
 }

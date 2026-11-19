@@ -1,6 +1,6 @@
 {
     "description": "MITSUBISHI_RM561V (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/mitsubishi/RM561V.lircd.conf", "remote": "MITSUBISHI_RM561V", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/mitsubishi/RM561V.lircd.conf", "remote": "MITSUBISHI_RM561V", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

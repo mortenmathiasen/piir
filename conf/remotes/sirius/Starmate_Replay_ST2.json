@@ -1,6 +1,6 @@
 {
     "description": "Sirius_ST2_Starmate_Replay (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sirius/Starmate_Replay_ST2.lircd.conf", "remote": "Sirius_ST2_Starmate_Replay", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sirius/Starmate_Replay_ST2.lircd.conf", "remote": "Sirius_ST2_Starmate_Replay", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

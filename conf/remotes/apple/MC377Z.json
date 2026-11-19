@@ -1,6 +1,6 @@
 {
     "description": "MC377Z (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/apple/MC377Z.lircd.conf", "remote": "MC377Z", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/apple/MC377Z.lircd.conf", "remote": "MC377Z", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

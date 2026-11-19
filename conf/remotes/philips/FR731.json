@@ -1,6 +1,6 @@
 {
     "description": "fr731vcd (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/FR731.lircd.conf", "remote": "fr731vcd", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/FR731.lircd.conf", "remote": "fr731vcd", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -37,6 +37,30 @@
 	    "KEY_NEXT": "DABCBCBAAAE",
 	    "KEY_PREVIOUS": "DABCBCBAACE",
 	    "discplus": "DABCBACAAAG"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "DBACBAAAAACE",
+	    "KEY_2": "DBACBAAAACG",
+	    "KEY_3": "DBACBAAAACAE",
+	    "KEY_4": "DBACBAAACBE",
+	    "KEY_5": "DBACBAAACFE",
+	    "KEY_6": "DBACBAAACAG",
+	    "KEY_7": "DBACBAAACAAE",
+	    "KEY_8": "DBACBAACBAE",
+	    "KEY_9": "DBACBAACBCE",
+	    "KEY_0": "DBACBAAAAAAE",
+	    "search_right": "DBACBCFFG",
+	    "search_left": "DBACBACAAAAE",
+	    "tvvolup": "DBAAAAACBAAE",
+	    "tvvoldown": "DBAAAAACBACE",
+	    "KEY_PLAY": "DBACBCAFFE",
+	    "KEY_STOP": "DBACBCAFAG",
+	    "KEY_PAUSE": "DBACBCABAAE",
+	    "KEY_NEXT": "DBACBCBAAAE",
+	    "KEY_PREVIOUS": "DBACBCBAACE",
+	    "discplus": "DBACBACAAAG"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "SabaTC460 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/saba/TC460.lircd.conf", "remote": "SabaTC460", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/saba/TC460.lircd.conf", "remote": "SabaTC460", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -48,6 +48,45 @@
 	    "CS/Stop": "11111110101A",
 	    "Progr/100": "10111110100A",
 	    "Page": "10111100010A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "01111000000A",
+	    "KEY_2": "00111001000A",
+	    "KEY_3": "00111010000A",
+	    "KEY_4": "01111000001A",
+	    "KEY_5": "01111001001A",
+	    "KEY_6": "00111010001A",
+	    "KEY_7": "00111000010A",
+	    "KEY_8": "01111001010A",
+	    "KEY_9": "01111010010A",
+	    "KEY_C": "00111000110A",
+	    "KEY_0": "00111001110A",
+	    "AV": "01111011000A",
+	    "Color+": "01111000011A",
+	    "Color-": "00111000100A",
+	    "Bright+": "00111001011A",
+	    "Bright-": "01111001100A",
+	    "KEY_VOLUMEUP": "01111011011A",
+	    "KEY_VOLUMEDOWN": "00111011100A",
+	    "KEY_POWER": "00111011101A",
+	    "Norm": "01111011110A",
+	    "KEY_MUTE": "01111000101A",
+	    "KEY_KPPLUS": "00111101001A",
+	    "KEY_KPMINUS": "00111101010A",
+	    "VT/TV": "01111010101A",
+	    "MIX": "01111101011A",
+	    "Contrast": "00111100011A",
+	    "Balance": "00111100101A",
+	    "Bass": "01111100001A",
+	    "Treble": "01111100000A",
+	    "Sound3D": "00111100100A",
+	    "KEY_TIME": "00111110110A",
+	    "KEY_S": "01111101000A",
+	    "CS/Stop": "01111110101A",
+	    "Progr/100": "00111110100A",
+	    "Page": "00111100010A"
 	}
     }
 }

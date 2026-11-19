@@ -1,6 +1,6 @@
 {
     "description": "SEG (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/seg/CT2802.lircd.conf", "remote": "SEG", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/seg/CT2802.lircd.conf", "remote": "SEG", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -54,6 +54,47 @@
 	    "AV": "DABAAACAABAE",
 	    "KEY_TEXT": "DABAAACAAABE",
 	    "KEY_TV": "DABAAACAAAAAE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_102ND": "DBAAAAAACFG",
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "PP": "DBAAAAAACAAG",
+	    "KEY_KPPLUS": "DBAAAAACBAAE",
+	    "KEY_KPMINUS": "DBAAAAACBACE",
+	    "KEY_INFO": "DBAAAAACBCG",
+	    "KEY_LEFT": "DBAAAAACFFE",
+	    "KEY_RIGHT": "DBAAAAACFAG",
+	    "KEY_UP": "DBAAAACBAAAE",
+	    "KEY_DOWN": "DBAAAACBAACE",
+	    "P<P": "DBAAAACBACG",
+	    "I-II": "DBAAAACBACAE",
+	    "text_clock": "DBAAAACFFG",
+	    "text_zoom": "DBAAAACFFAE",
+	    "text_?": "DBAAAACFABE",
+	    "text_x": "DBAAAACFAFE",
+	    "text_translucent": "DBAAAACFAAG",
+	    "text_i": "DBAAAACFAAAE",
+	    "KEY_M": "DBAAAACABAAE",
+	    "KEY_YELLOW": "DBAAAACABCG",
+	    "KEY_BLUE": "DBAAAACAFBE",
+	    "KEY_GREEN": "DBAAAACAFAG",
+	    "KEY_RED": "DBAAAACAFAAE",
+	    "AV": "DBAAAACAABAE",
+	    "KEY_TEXT": "DBAAAACAAABE",
+	    "KEY_TV": "DBAAAACAAAAAE"
 	}
     }
 }

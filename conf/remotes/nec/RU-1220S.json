@@ -1,6 +1,6 @@
 {
     "description": "RU-1220S (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/nec/RU-1220S.lircd.conf", "remote": "RU-1220S", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/nec/RU-1220S.lircd.conf", "remote": "RU-1220S", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

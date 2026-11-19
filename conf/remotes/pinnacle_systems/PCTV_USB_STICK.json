@@ -1,6 +1,6 @@
 {
     "description": "Pinnacle_PCTV_USB_STICK (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/pinnacle_systems/PCTV_USB_STICK.lircd.conf", "remote": "Pinnacle_PCTV_USB_STICK", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/pinnacle_systems/PCTV_USB_STICK.lircd.conf", "remote": "Pinnacle_PCTV_USB_STICK", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -41,6 +41,34 @@
 	    "KEY_8": "DABCAAFBACE",
 	    "KEY_9": "DABCAAFBCG",
 	    "KEY_0": "DABCAAFFFE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_PLAYPAUSE": "DBACAABACAG",
+	    "KEY_STOP": "DBACAABACFE",
+	    "KEY_EXIT": "DBACAABAACAE",
+	    "screen": "DBACAABAACG",
+	    "KEY_REWIND": "DBACAABACBE",
+	    "KEY_FASTFORWARD": "DBACAABACAAE",
+	    "KEY_MUTE": "DBACAABAAAAE",
+	    "KEY_VOLUMEUP": "DBACAABCFAE",
+	    "KEY_VOLUMEDOWN": "DBACAABCAAAE",
+	    "ask": "DBACAAFFBE",
+	    "KEY_M": "DBACAAFFAG",
+	    "KEY_CHANNELUP": "DBACAAFBCAE",
+	    "KEY_CHANNELDOWN": "DBACAAFFAAE",
+	    "KEY_RECORD": "DBACAABAAACE",
+	    "KEY_1": "DBACAABCBAE",
+	    "KEY_2": "DBACAABCBCE",
+	    "KEY_3": "DBACAABCFG",
+	    "KEY_4": "DBACAABCABE",
+	    "KEY_5": "DBACAABCAFE",
+	    "KEY_6": "DBACAABCAAG",
+	    "KEY_7": "DBACAAFBAAE",
+	    "KEY_8": "DBACAAFBACE",
+	    "KEY_9": "DBACAAFBCG",
+	    "KEY_0": "DBACAAFFFE"
 	}
     }
 }

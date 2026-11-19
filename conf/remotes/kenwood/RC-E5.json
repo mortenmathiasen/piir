@@ -1,6 +1,6 @@
 {
     "description": "kenwood_rce5 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/kenwood/RC-E5.lircd.conf", "remote": "kenwood_rce5", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/kenwood/RC-E5.lircd.conf", "remote": "kenwood_rce5", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

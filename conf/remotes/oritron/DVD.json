@@ -1,6 +1,6 @@
 {
     "description": "ORITRON-DVD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/oritron/DVD.lircd.conf", "remote": "ORITRON-DVD", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/oritron/DVD.lircd.conf", "remote": "ORITRON-DVD", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -43,6 +43,40 @@
 	    "KEY_PAUSE": "11101011001A",
 	    "KEY_AGAIN": "11101011111A",
 	    "KEY_ZOOM": "11101011010A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "10111011110A",
+	    "KEY_EJECTCD": "10101100110A",
+	    "KEY_1": "10101110101A",
+	    "KEY_2": "10101101101A",
+	    "KEY_3": "10101010101A",
+	    "KEY_4": "10101011101A",
+	    "KEY_5": "10101101100A",
+	    "KEY_6": "10101101100A",
+	    "KEY_7": "10101100100A",
+	    "KEY_8": "10101011100A",
+	    "KEY_9": "10101110011A",
+	    "KEY_0": "10101101011A",
+	    "KEY_AUDIO": "10101100000A",
+	    "DVD-MENU": "10101100011A",
+	    "KEY_DVD": "10101101110A",
+	    "KEY_MENU": "10101101111A",
+	    "KEY_TITLE": "10101110110A",
+	    "KEY_SUBTITLE": "10101101111A",
+	    "KEY_EXIT": "10101110000A",
+	    "KEY_FASTFORWARD": "10101101000A",
+	    "FASTREWIND": "00101101010A",
+	    "KEY_REWIND": "10101110001A",
+	    "KEY_FORWARD": "10101100001A",
+	    "KEY_PLAY": "10101101001A",
+	    "KEY_UP": "10101110010A",
+	    "KEY_DOWN": "10101110111A",
+	    "KEY_STOP": "10101100010A",
+	    "KEY_PAUSE": "10101011001A",
+	    "KEY_AGAIN": "10101011111A",
+	    "KEY_ZOOM": "10101011010A"
 	}
     }
 }

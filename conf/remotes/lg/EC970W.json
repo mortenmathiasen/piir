@@ -1,6 +1,6 @@
 {
     "description": "LG_EC970W (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lg/EC970W.lircd.conf", "remote": "LG_EC970W", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/lg/EC970W.lircd.conf", "remote": "LG_EC970W", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

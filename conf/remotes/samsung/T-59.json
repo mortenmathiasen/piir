@@ -1,6 +1,6 @@
 {
     "description": "test (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/samsung/T-59.lircd.conf", "remote": "test", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/samsung/T-59.lircd.conf", "remote": "test", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -12,7 +12,8 @@
 	"E": {"mark": 897, "space": 857},
 	"F": {"mark": 1710, "space": 1714},
 	"G": {"mark": 1710, "space": 0},
-	"I": {"mark": 1752, "space": 1714},
+	"I": {"mark": 1752, "space": 857},
+	"J": {"mark": 1752, "space": 1714},
 	"-": {"mark": 0, "space": 0}
     },
     "template": "-------------",
@@ -37,15 +38,47 @@
 	    "Display": "EABAAAAACAAAD",
 	    "KEY_SLEEP": "EABAAACBCAG",
 	    "KEY_MUTE": "EABAAAAACAFD",
-	    "KEY_RED": "IBAAACFFAD",
-	    "KEY_GREEN": "IBAAACFABD",
-	    "KEY_YELLOW": "IBAAACFAFD",
-	    "KEY_BLUE": "IBAAACFAAG",
+	    "KEY_RED": "JBAAACFFAD",
+	    "KEY_GREEN": "JBAAACFABD",
+	    "KEY_YELLOW": "JBAAACFAFD",
+	    "KEY_BLUE": "JBAAACFAAG",
 	    "P.size": "EABAAAACFAG",
-	    "CH/P+": "IBAAAACBAAD",
-	    "CH/P-": "IBAAAACBACD",
-	    "KEY_VOLUMEDOWN": "IBAAAACFFD",
-	    "KEY_VOLUMEUP": "IBAAAACFAG"
+	    "CH/P+": "JBAAAACBAAD",
+	    "CH/P-": "JBAAAACBACD",
+	    "KEY_VOLUMEDOWN": "JBAAAACFFD",
+	    "KEY_VOLUMEUP": "JBAAAACFAG"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "EBAAAAAACABD",
+	    "TTX/MIX": "EBAAAACAAABD",
+	    "KEY_1": "EBAAAAAAAAACD",
+	    "KEY_2": "EBAAAAAAAACG",
+	    "KEY_3": "EBAAAAAAAACAD",
+	    "KEY_4": "EBAAAAAAACBD",
+	    "KEY_5": "EBAAAAAAACFD",
+	    "KEY_6": "EBAAAAAAACAG",
+	    "KEY_7": "EBAAAAAAACAAD",
+	    "KEY_8": "EBAAAAAACBAD",
+	    "KEY_9": "EBAAAAAACBCD",
+	    "KEY_0": "EBAAAAAAAAAAD",
+	    "KEY_102ND": "EBAAAAAACFG",
+	    "Colour": "EBAAAAAACAAG",
+	    "KEY_TV": "EBAAAACAAAAAD",
+	    "KEY_VIDEO": "EBAAAACAABAD",
+	    "Display": "EBAAAAAACAAAD",
+	    "KEY_SLEEP": "EBAAAACBCAG",
+	    "KEY_MUTE": "EBAAAAAACAFD",
+	    "KEY_RED": "IAAAAACFFAD",
+	    "KEY_GREEN": "IAAAAACFABD",
+	    "KEY_YELLOW": "IAAAAACFAFD",
+	    "KEY_BLUE": "IAAAAACFAAG",
+	    "P.size": "EBAAAAACFAG",
+	    "CH/P+": "IAAAAAACBAAD",
+	    "CH/P-": "IAAAAAACBACD",
+	    "KEY_VOLUMEDOWN": "IAAAAAACFFD",
+	    "KEY_VOLUMEUP": "IAAAAAACFAG"
 	}
     }
 }

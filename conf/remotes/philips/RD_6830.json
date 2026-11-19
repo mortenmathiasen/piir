@@ -1,6 +1,6 @@
 {
     "description": "Philips_RC_6830 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RD_6830.lircd.conf", "remote": "Philips_RC_6830", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RD_6830.lircd.conf", "remote": "Philips_RC_6830", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -36,6 +36,29 @@
 	    "n7": "EAABCAAADAAF",
 	    "n8": "EAABCAADCAF",
 	    "n9": "EAABCAADCDF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_PLAY": "EBBCDABBF",
+	    "KEY_STOP": "EBBCDABAG",
+	    "KEY_NEXT": "EBBCDCAAAF",
+	    "KEY_PREVIOUS": "EBBCDCAADF",
+	    "shuffle": "EBBCADAACF",
+	    "KEY_PAUSE": "EBBCDACAAF",
+	    "KEY_AGAIN": "EBBCADAABF",
+	    "KEY_OPEN": "EBBCDBABF",
+	    "scan": "EBBCDBBAF",
+	    "n0": "EBBCAAAAAAF",
+	    "n1": "EBBCAAAAADF",
+	    "n2": "EBBCAAAADG",
+	    "n3": "EBBCAAAADAF",
+	    "n4": "EBBCAAADCF",
+	    "n5": "EBBCAAADBF",
+	    "n6": "EBBCAAADAG",
+	    "n7": "EBBCAAADAAF",
+	    "n8": "EBBCAADCAF",
+	    "n9": "EBBCAADCDF"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "Onkyo_RC-662S (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/onkyo/RC-662S.lircd.conf", "remote": "Onkyo_RC-662S", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/onkyo/RC-662S.lircd.conf", "remote": "Onkyo_RC-662S", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

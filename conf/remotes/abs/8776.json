@@ -1,6 +1,6 @@
 {
     "description": "ABS_8776 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/abs/8776.lircd.conf", "remote": "ABS_8776", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/abs/8776.lircd.conf", "remote": "ABS_8776", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

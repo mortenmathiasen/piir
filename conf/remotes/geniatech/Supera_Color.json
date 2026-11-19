@@ -1,6 +1,6 @@
 {
     "description": "Genentech_Supera_Color (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/geniatech/Supera_Color.lircd.conf", "remote": "Genentech_Supera_Color", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/geniatech/Supera_Color.lircd.conf", "remote": "Genentech_Supera_Color", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -50,6 +50,43 @@
 	    "C-": "DABAAAACAAFE",
 	    "H+": "DABAAAAACFAE",
 	    "H-": "DABAAAAACAAG"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_102ND": "DBAAAAAACFG",
+	    "Exchange": "DBAAAACFBCE",
+	    "RES": "DBAAAACFAFE",
+	    "AUDIO_ONLY": "DBAAAACBCAG",
+	    "CRT/LCD": "DBAAAACBCAAE",
+	    "DAYLIGHT": "DBAAAAACFAG",
+	    "KEY_EPG": "DBAAAACFAAG",
+	    "AV/TV": "DBAAAACAABAE",
+	    "KEY_MENU": "DBAAAACFFAE",
+	    "KEY_CHANNELUP": "DBAAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DBAAAACBAACE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "B+": "DBAAAAACBCG",
+	    "B-": "DBAAAAACBCAE",
+	    "S+": "DBAAAAACFBE",
+	    "S-": "DBAAAAACFFE",
+	    "C+": "DBAAAAACAABE",
+	    "C-": "DBAAAAACAAFE",
+	    "H+": "DBAAAAAACFAE",
+	    "H-": "DBAAAAAACAAG"
 	}
     }
 }

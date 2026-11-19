@@ -1,6 +1,6 @@
 {
     "description": "Sony_RMT-V231A (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RMT-V231A.lircd.conf", "remote": "Sony_RMT-V231A", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RMT-V231A.lircd.conf", "remote": "Sony_RMT-V231A", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

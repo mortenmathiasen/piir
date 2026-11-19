@@ -1,6 +1,6 @@
 {
     "description": "Samsung_AA64-50236A (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/samsung/AA64-50236A.lircd.conf", "remote": "Samsung_AA64-50236A", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/samsung/AA64-50236A.lircd.conf", "remote": "Samsung_AA64-50236A", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

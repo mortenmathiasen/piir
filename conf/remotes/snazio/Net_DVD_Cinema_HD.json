@@ -1,6 +1,6 @@
 {
     "description": "Snazio_Net_DVD_Cinema_HD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/snazio/Net_DVD_Cinema_HD.lircd.conf", "remote": "Snazio_Net_DVD_Cinema_HD", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/snazio/Net_DVD_Cinema_HD.lircd.conf", "remote": "Snazio_Net_DVD_Cinema_HD", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

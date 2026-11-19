@@ -1,6 +1,6 @@
 {
     "description": "OneForAll_VCR_0000 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/one_for_all/URC-7030.lircd.conf", "remote": "OneForAll_VCR_0000", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/one_for_all/URC-7030.lircd.conf", "remote": "OneForAll_VCR_0000", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

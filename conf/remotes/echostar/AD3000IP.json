@@ -1,6 +1,6 @@
 {
     "description": "Echostar_AD3000IP (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/echostar/AD3000IP.lircd.conf", "remote": "Echostar_AD3000IP", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/echostar/AD3000IP.lircd.conf", "remote": "Echostar_AD3000IP", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 56000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

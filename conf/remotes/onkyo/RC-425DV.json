@@ -1,6 +1,6 @@
 {
     "description": "Onkyo_RC-425DV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/onkyo/RC-425DV.lircd.conf", "remote": "Onkyo_RC-425DV", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/onkyo/RC-425DV.lircd.conf", "remote": "Onkyo_RC-425DV", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

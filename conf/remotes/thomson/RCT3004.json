@@ -1,6 +1,6 @@
 {
     "description": "THOMSON_TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/thomson/RCT3004.lircd.conf", "remote": "THOMSON_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/thomson/RCT3004.lircd.conf", "remote": "THOMSON_TV", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -37,6 +37,34 @@
 	    "KEY_GREEN": "11111111011A",
 	    "KEY_YELLOW": "11111111000A",
 	    "KEY_BLUE": "11111010101A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "10111000000A",
+	    "KEY_2": "10111001000A",
+	    "KEY_3": "10111010000A",
+	    "KEY_4": "10111000001A",
+	    "KEY_5": "10111001001A",
+	    "KEY_6": "10111010001A",
+	    "KEY_7": "10111000010A",
+	    "KEY_8": "10111001010A",
+	    "KEY_9": "10111010010A",
+	    "KEY_0": "10111001110A",
+	    "KEY_MUTE": "10111000101A",
+	    "STAND_BY": "10111011101A",
+	    "KEY_CHANNELUP": "10111011111A",
+	    "KEY_CHANNELDOWN": "10111100000A",
+	    "KEY_VOLUMEUP": "10111101001A",
+	    "KEY_VOLUMEDOWN": "10111101010A",
+	    "KEY_ZOOMIN": "10111111100A",
+	    "KEY_ZOOMOUT": "10111111101A",
+	    "KEY_TV": "10111111110A",
+	    "IND": "10111011110A",
+	    "KEY_RED": "10111111001A",
+	    "KEY_GREEN": "10111111011A",
+	    "KEY_YELLOW": "10111111000A",
+	    "KEY_BLUE": "10111010101A"
 	}
     }
 }

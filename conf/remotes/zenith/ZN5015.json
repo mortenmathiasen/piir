@@ -1,6 +1,6 @@
 {
     "description": "Zenith_ZN5015_CODE838 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/zenith/ZN5015.lircd.conf", "remote": "Zenith_ZN5015_CODE838", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/zenith/ZN5015.lircd.conf", "remote": "Zenith_ZN5015_CODE838", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

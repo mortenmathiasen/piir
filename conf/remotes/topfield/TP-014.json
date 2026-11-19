@@ -1,6 +1,6 @@
 {
     "description": "Topfield_TP-014 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/topfield/TP-014.lircd.conf", "remote": "Topfield_TP-014", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/topfield/TP-014.lircd.conf", "remote": "Topfield_TP-014", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

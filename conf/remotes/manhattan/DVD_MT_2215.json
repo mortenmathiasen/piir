@@ -1,6 +1,6 @@
 {
     "description": "DVD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/manhattan/DVD_MT_2215.lircd.conf", "remote": "DVD", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/manhattan/DVD_MT_2215.lircd.conf", "remote": "DVD", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -54,6 +54,47 @@
 	    "KEY_0": "CAAAABDAFAAE",
 	    "KEY_10CHANNELSUP": "CAAAABDAFDE",
 	    "KEY_C": "CAAAABDAAAFE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "CBAABDFABE",
+	    "KEY_OPEN": "CBAABDFADE",
+	    "KEY_ZOOM": "CBAABAAADAE",
+	    "KEY_TITLE": "CBAABAAAADE",
+	    "DISPLAY": "CBAABAAAAAAE",
+	    "KEY_MENU": "CBAABDFAAG",
+	    "KEY_ENTER": "CBAABABBG",
+	    "KEY_UP": "CBAABADAAFE",
+	    "KEY_DOWN": "CBAABADAAAE",
+	    "KEY_LEFT": "CBAABBDAAE",
+	    "KEY_RIGHT": "CBAABBDAFE",
+	    "KEY_SELECT": "CBAABADAFG",
+	    "KEY_PLAY": "CBAABABAAG",
+	    "KEY_STOP": "CBAABABAAAE",
+	    "RRWD": "CBAABABADE",
+	    "KEY_FASTFORWARD": "CBAABABABE",
+	    "RWD": "CBAABBBAG",
+	    "KEY_FORWARD": "CBAABBBBE",
+	    "KEY_SUBTITLE": "CBAABAADFG",
+	    "KEY_AUDIO": "CBAABAABAG",
+	    "KEY_ANGLE": "CBAABABDFE",
+	    "SEARCH_MODE": "CBAABADAFAE",
+	    "KEY_AGAIN": "CBAABABBAE",
+	    "A_B": "CBAABAADAAE",
+	    "KEY_TIME": "CBAABAABAAE",
+	    "KEY_1": "CBAABAABDE",
+	    "KEY_2": "CBAABDAAFAE",
+	    "KEY_3": "CBAABDAAFG",
+	    "KEY_4": "CBAABDFBG",
+	    "KEY_5": "CBAABDAFAG",
+	    "KEY_6": "CBAABDAFBE",
+	    "KEY_7": "CBAABDAAAAE",
+	    "KEY_8": "CBAABDFDFE",
+	    "KEY_9": "CBAABDFDAE",
+	    "KEY_0": "CBAABDAFAAE",
+	    "KEY_10CHANNELSUP": "CBAABDAFDE",
+	    "KEY_C": "CBAABDAAAFE"
 	}
     }
 }

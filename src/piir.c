@@ -10,7 +10,7 @@
 #include "log.h"
 #include "config.h"
 
-#include "hvac_panasonic_plugin.h"
+#include "plugins.h"
 
 featureT *requestedFeatures = 0;
 
@@ -121,7 +121,7 @@ void loadConfigfile(char *configfile) {
 
   //Declace and initialize feature name and for now empty values
   requestedFeatures = (featureT*)malloc(sizeof(featureT)*configFeaturesCount);
-  for (int i=0 ; i<configFeaturesCount ; i++) {
+  for (size_t i=0 ; i<configFeaturesCount ; i++) {
     requestedFeatures[i].name = 0;
     requestedFeatures[i].value = 0;
   }
@@ -130,14 +130,12 @@ void loadConfigfile(char *configfile) {
 }
 
 void insertFeatureValue(const char *Name, const char *Value) {
-  // prepare
-  static int nextFeatureIndex = 0;
-  
-  // add feature
-  if (hasFeatureNameAndValue(Name, Value)) {
-    requestedFeatures[nextFeatureIndex].name = Name;
-    requestedFeatures[nextFeatureIndex].value = Value;
-    nextFeatureIndex++;
+  // Requested features are stored at their index in the configuration file,
+  // so repeating a feature replaces the earlier value
+  size_t featureIndex = 0;
+  if (hasFeatureNameAndValue(Name, Value) && getFeatureIndex(Name, &featureIndex)) {
+    requestedFeatures[featureIndex].name = Name;
+    requestedFeatures[featureIndex].value = Value;
   } else {
     printf("Feature '%s'='%s' does not match configuration file\n",
 	   Name, Value);
@@ -203,7 +201,7 @@ int main(int argc, char *argv[])
   // Load remote agnostic parameters
   while (1) {
     int option_index = -1; // getopt_long stores the option index here. 
-    int c = getopt_long (argc, argv, ":r:v:h:f:",
+    int c = getopt_long (argc, argv, ":r:v:hf:",
 		     long_options, &option_index);
 
     // detect the end of the options
@@ -283,9 +281,7 @@ int main(int argc, char *argv[])
   log_info("%s", description);
 
   // Remote specific plugin 
-  if (strstr(configfilepath, "hvac_panasonic") != NULL) {
-    hvac_panasonic_plugin(symbolString);
-  }
+  applyRemotePlugins(configfilepath, symbolString);
   log_debug("Transmitting: %s", symbolString);  
   // Load outPin number from config file
   loadOutPin(&outPin);

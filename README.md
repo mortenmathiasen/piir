@@ -1,5 +1,7 @@
 # PIIR
 
+[![CI](https://github.com/mortenmathiasen/piir/actions/workflows/ci.yml/badge.svg)](https://github.com/mortenmathiasen/piir/actions/workflows/ci.yml)
+
 PIIR is a command line tool to transmit IR-signals like remote controls do. PIIR is created as a generic tool that supports configuration and transmission of any signal, eg. including long aircondition signals.
 
 ![alt text](https://github.com/mortenmathiasen/piir/blob/master/doc/remote-sommerhus.png?raw=true)
@@ -19,10 +21,13 @@ piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
     + [Supported hardware](#supported-hardware)
     + [Prerequisites](#prerequisites)
   * [Getting Started](#getting-started)
+    + [Prebuilt packages](#prebuilt-packages)
     + [Compilation](#compilation)
     + [Installation](#installation)
     + [Deployment](#deployment)
       - [Cross compiling for Raspberry Pi](#cross-compiling-for-raspberry-pi)
+    + [Testing](#testing)
+    + [Releases](#releases)
   * [How to use](#how-to-use)
   * [Contributing](#contributing)
   * [Versioning](#versioning)
@@ -62,6 +67,29 @@ To be able to transmit IR signal you need an IR led, either:
 ## Getting Started
 
 You need to identify a device you want to control by IR-signals, e.g. an airconditioner, a TV or similar.
+
+### Prebuilt packages
+
+Every [release](https://github.com/mortenmathiasen/piir/releases) has ready-made packages using the kernel driver (`lirc`) backend. The binaries are statically linked, so they run on any Raspberry Pi OS release:
+
+| Package | Raspberry Pi models | OS |
+|---------|---------------------|----|
+| `armv6` | Pi 1, Zero, Zero W and every other Pi | 32-bit |
+| `armv7` | Pi 2, 3, 4, 400, Zero 2 W | 32-bit |
+| `aarch64` | Pi 3, 4, 400, 5, 500, Zero 2 W | 64-bit |
+
+If you are unsure, run `dpkg --print-architecture` on the Pi: `arm64` needs the `aarch64` package, and `armhf` needs `armv6` or `armv7` (`armv6` works on every model).
+
+Install the Debian package, e.g. for a Pi Zero W:
+```
+sudo apt install ./piir_2.0.0_armv6.deb
+```
+or extract the tarball into `/`:
+```
+sudo tar -xzf piir-2.0.0-armv6.tar.gz -C / --strip-components=1
+```
+
+Then enable the kernel IR transmitter as described below.
 
 ### Compilation
 
@@ -140,6 +168,34 @@ cmake --build build-rpi
 ```
 
 Copy `build-rpi/piir` to the Pi and `conf/remotes/` to `/usr/local/share/piir/conf/remotes/` (or whatever `CMAKE_INSTALL_PREFIX` you configured with). For 32-bit Raspberry Pi OS use `cmake/toolchain-rpi-armhf.cmake`, `gcc-arm-linux-gnueabihf` and `libgpiod-dev:armhf` instead. That toolchain targets ARMv7, so it does not support the Pi 1 or Pi Zero/Zero W.
+
+For the Pi 1 and Pi Zero/Zero W (ARMv6) use `cmake/toolchain-rpi-armv6.cmake` with `gcc-arm-linux-gnueabi`. It builds a static binary with the `lirc` backend that runs on every 32-bit Pi. For the `gpiod` or `pigpio` backend on ARMv6, compile on the Pi itself.
+
+Add `-DPIIR_STATIC=ON` to link statically, so the binary does not depend on the C library version of the Pi's OS. `cpack` in the build directory creates `.tar.gz` and `.deb` packages; configure with `-DCMAKE_INSTALL_PREFIX=/usr` first so the packaged binary finds its remotes in `/usr/share/piir`.
+
+### Testing
+
+The unit and command line tests run with CTest:
+```
+cmake -B build
+cmake --build build
+ctest --test-dir build --output-on-failure
+```
+
+They cover the configuration loader, the remote plugins, the transmitter backend selected at configure time and the `piir` command line. The `tests` section of each remote in `conf/remotes/` lists features and the code a real remote sends for them, and every one of these vectors is checked. Vectors that do not match yet are listed in `tests/known_failures.txt`. No test transmits IR, so they are safe to run on a Pi.
+
+When cross compiling, tests run under qemu if you add for example `-DCMAKE_CROSSCOMPILING_EMULATOR=$(command -v qemu-aarch64)` (from the `qemu-user` package).
+
+GitHub Actions runs the tests for all three backends, with AddressSanitizer and UndefinedBehaviorSanitizer, and for the `armv6`, `armv7` and `aarch64` builds under qemu.
+
+### Releases
+
+To release, update `VERSION` in `CMakeLists.txt`, commit, and push a matching tag:
+```
+git tag v2.1.0
+git push origin v2.1.0
+```
+GitHub Actions then runs all tests, builds the packages for every Raspberry Pi architecture and publishes them with checksums as a GitHub release.
 
 ## How to use
 
@@ -243,6 +299,8 @@ A working example combining more features into the IR signal:
 ```
 sudo piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT --feature option=AUTO --feature fan=AUTO --feature updown=HIGH --feature leftright=MIDDLE --verbose=DEBUG
 ```
+
+Features are applied in the order they appear in the remote's JSON file, not the order given on the command line, so a feature listed later in the file wins where two set the same bits. For `hvac_panasonic` this means `option=QUIET` and the frost protection `option=8` override the fan speed and mode, and `mode=FAN` sends the fixed 27 degrees the original remote uses. Giving the same feature twice uses the last value.
 
 If everything goes well output from the command will be like this:
 ```

@@ -61,31 +61,51 @@ else()
   message(STATUS "PIIR GPIO backend: ${PIIR_BACKEND}")
 endif()
 
-add_executable(piir
-  src/piir.c
+# Everything except main() goes into a library shared by piir and the tests
+add_library(piir_core STATIC
   src/hvac_panasonic_plugin.c
+  src/plugins.c
   src/irslinger.c
   src/transmitter.c
   src/lirc.c
   src/log.c
   src/config.c
   src/parson.c)
+target_include_directories(piir_core PUBLIC src)
 
-target_compile_definitions(piir PRIVATE
+target_compile_definitions(piir_core PUBLIC
   DATADIR="${CMAKE_INSTALL_FULL_DATADIR}/piir")
 
 if(PIIR_BACKEND STREQUAL "lirc")
-  target_compile_definitions(piir PRIVATE HAVE_LINUX_LIRC_H=1 LIRC_DEVICE="${PIIR_LIRC_DEVICE}")
+  target_compile_definitions(piir_core PUBLIC HAVE_LINUX_LIRC_H=1 LIRC_DEVICE="${PIIR_LIRC_DEVICE}")
 elseif(PIIR_BACKEND STREQUAL "gpiod")
-  target_compile_definitions(piir PRIVATE HAVE_GPIOD_H=1)
-  target_include_directories(piir PRIVATE ${GPIOD_INCLUDE_DIR})
-  target_link_libraries(piir PRIVATE ${GPIOD_LIBRARY})
+  target_compile_definitions(piir_core PUBLIC HAVE_GPIOD_H=1)
+  target_include_directories(piir_core PUBLIC ${GPIOD_INCLUDE_DIR})
+  target_link_libraries(piir_core PUBLIC ${GPIOD_LIBRARY})
 elseif(PIIR_BACKEND STREQUAL "pigpio")
-  target_compile_definitions(piir PRIVATE HAVE_PIGPIO_H=1)
-  target_include_directories(piir PRIVATE ${PIGPIO_INCLUDE_DIR})
-  target_link_libraries(piir PRIVATE ${PIGPIO_LIBRARY})
+  target_compile_definitions(piir_core PUBLIC HAVE_PIGPIO_H=1)
+  target_include_directories(piir_core PUBLIC ${PIGPIO_INCLUDE_DIR})
+  target_link_libraries(piir_core PUBLIC ${PIGPIO_LIBRARY})
+endif()
+
+add_executable(piir src/piir.c)
+target_link_libraries(piir PRIVATE piir_core)
+
+# A static binary runs on any Raspberry Pi OS release regardless of its glibc
+option(PIIR_STATIC "Link piir statically" OFF)
+if(PIIR_STATIC)
+  target_link_options(piir PRIVATE -static)
 endif()
 
 install(TARGETS piir RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
-install(FILES conf/remotes/hvac_panasonic.json
-  DESTINATION ${CMAKE_INSTALL_DATADIR}/piir/conf/remotes)
+install(DIRECTORY conf/remotes/
+  DESTINATION ${CMAKE_INSTALL_DATADIR}/piir/conf/remotes
+  FILES_MATCHING PATTERN "*.json")
+install(FILES README.md LICENSE DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/piir)
+
+include(CTest)
+if(BUILD_TESTING)
+  add_subdirectory(tests)
+endif()
+
+include(cmake/packaging.cmake)

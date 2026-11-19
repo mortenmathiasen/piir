@@ -1,0 +1,159 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test ${{ matrix.backend }}${{ matrix.sanitize && ' (sanitizers)' || '' }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - backend: lirc
+          - backend: lirc
+            sanitize: true
+          - backend: gpiod
+            sanitize: true
+          - backend: pigpio
+            sanitize: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install libgpiod
+        if: matrix.backend == 'gpiod'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgpiod-dev
+
+      # Debian and Ubuntu do not package the pigpio C library
+      - name: Build pigpio
+        if: matrix.backend == 'pigpio'
+        run: |
+          git clone --depth 1 --branch v79 https://github.com/joan2937/pigpio.git "$RUNNER_TEMP/pigpio"
+          cd "$RUNNER_TEMP/pigpio"
+          gcc -O2 -fpic -c pigpio.c command.c
+          gcc -shared -pthread -o libpigpio.so pigpio.o command.o
+          echo "PIGPIO_ARGS=-DPIGPIO_INCLUDE_DIR=$PWD -DPIGPIO_LIBRARY=$PWD/libpigpio.so" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=$PWD" >> "$GITHUB_ENV"
+
+      - name: Configure
+        run: >
+          cmake -B build
+          -DCMAKE_BUILD_TYPE=Debug
+          -DPIIR_GPIO_BACKEND=${{ matrix.backend }}
+          -DCMAKE_C_FLAGS="-Wall ${{ matrix.sanitize && '-fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer' || '' }}"
+          $PIGPIO_ARGS
+
+      - name: Build
+        run: cmake --build build --parallel
+
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
+
+  # Cross compiled static binaries for Raspberry Pi, tested under qemu with a
+  # CPU matching the oldest Pi each one supports
+  rpi:
+    name: Raspberry Pi ${{ matrix.arch }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: armv6
+            toolchain: armv6
+            compiler: gcc-arm-linux-gnueabi
+            qemu: qemu-arm
+            cpu: arm1176      # Pi 1, Zero, Zero W
+          - arch: armv7
+            toolchain: armhf
+            compiler: gcc-arm-linux-gnueabihf
+            qemu: qemu-arm
+            cpu: cortex-a7    # Pi 2
+          - arch: aarch64
+            toolchain: aarch64
+            compiler: gcc-aarch64-linux-gnu
+            qemu: qemu-aarch64
+            cpu: cortex-a53   # Pi 3, Zero 2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install cross compiler and qemu
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ${{ matrix.compiler }} qemu-user
+
+      - name: Configure
+        run: >
+          cmake -B build
+          -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain-rpi-${{ matrix.toolchain }}.cmake
+          -DCMAKE_BUILD_TYPE=Release
+          -DCMAKE_INSTALL_PREFIX=/usr
+          -DPIIR_GPIO_BACKEND=lirc
+          -DPIIR_STATIC=ON
+          -DPIIR_PACKAGE_ARCH=${{ matrix.arch }}
+          -DCMAKE_CROSSCOMPILING_EMULATOR=$(command -v ${{ matrix.qemu }})
+
+      - name: Build
+        run: cmake --build build --parallel
+
+      - name: Test
+        env:
+          QEMU_CPU: ${{ matrix.cpu }}
+        run: ctest --test-dir build --output-on-failure
+
+      - name: Package
+        run: |
+          file build/piir
+          cd build && cpack
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: piir-${{ matrix.arch }}
+          path: |
+            build/piir-*.tar.gz
+            build/piir_*.deb
+          if-no-files-found: error
+
+  release:
+    name: Release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [test, rpi]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check tag matches project version
+        run: |
+          version=$(sed -n '/^project(/,/)/s/^ *VERSION \([0-9.]*\).*/\1/p' CMakeLists.txt)
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match VERSION $version in CMakeLists.txt"
+            exit 1
+          fi
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: Checksums
+        run: cd dist && sha256sum * | tee SHA256SUMS
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/* \
+            --title "PIIR ${GITHUB_REF_NAME#v}" \
+            --generate-notes \
+            --verify-tag

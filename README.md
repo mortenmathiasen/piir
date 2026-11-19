@@ -60,8 +60,9 @@ The tool is developed in C to support deployment on any platform.
 
 ### Supported hardware
 
-The tool supports IR transmission by:
-* Raspberry Pi (all models, including Pi 5) using the Linux kernel IR transmitter driver, [libgpiod](https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/) or [PIGPIO](http://abyz.me.uk/rpi/pigpio/)
+The tool transmits IR on:
+* Raspberry Pi (all models, including Pi 5) using the Linux kernel IR transmitter driver (the default, used by the release packages) or [libgpiod](https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/)
+* Raspberry Pi 1–4 and Zero models using [pigpio](http://abyz.me.uk/rpi/pigpio/)
 * more platforms to come
 
 ### Prerequisites

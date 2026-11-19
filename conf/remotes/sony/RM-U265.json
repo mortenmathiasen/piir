@@ -1,0 +1,52 @@
+{
+    "description": "RM-U265 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-U265.lircd.conf", "remote": "RM-U265", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 300, "space": 0},
+	"1": {"mark": 300, "space": 1084},
+	"0": {"mark": 300, "space": 1682},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_VIDEO": "101110111110A",
+	    "KEY_TV": "101010011110A",
+	    "tape/md": "001110111110A",
+	    "KEY_CD": "010110111110A",
+	    "KEY_TUNER": "011110111110A",
+	    "phono": "111110111110A",
+	    "tuner-preset_down": "011101101001A",
+	    "tuner-preset_up": "111101101001A",
+	    "tuner-shift": "001100101001A",
+	    "cd-play": "101100101110A",
+	    "cd-pause": "011000101110A",
+	    "cd-stop": "111000101110A",
+	    "cd-previous_track": "111100101110A",
+	    "cd-next_track": "011100101110A",
+	    "cd-d.skip": "100000101110A",
+	    "md-play": "101010100001A",
+	    "md-pause": "011010100001A",
+	    "md-stop": "111010100001A",
+	    "md-previous_track": "111110100001A",
+	    "md-next_track": "011110100001A",
+	    "tape.a-left": "000100111110A",
+	    "tape.a-right": "101100111110A",
+	    "tape.a-stop": "111000111110A",
+	    "tape.a-rew": "001100111110A",
+	    "tape.a-ff": "110100111110A",
+	    "tape.b-left": "111110110001A",
+	    "tape.b-right": "101001110001A",
+	    "tape.b-stop": "111001110001A",
+	    "tape.b-rew": "001001110001A",
+	    "tape.b-ff": "110001110001A",
+	    "bass.boost": "011100111001A",
+	    "muting": "110101111110A",
+	    "KEY_VOLUMEUP": "101101111110A",
+	    "KEY_VOLUMEDOWN": "001101111110A"
+	}
+    }
+}

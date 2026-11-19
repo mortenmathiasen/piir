@@ -1,0 +1,49 @@
+{
+    "description": "TP-750C (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/grundig/TP_750C.lircd.conf", "remote": "TP-750C", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 512, "space": 512},
+	"B": {"mark": 512, "space": 1024},
+	"C": {"mark": 512, "space": 0},
+	"D": {"mark": 1024, "space": 1024},
+	"E": {"mark": 1024, "space": 512},
+	"H": {"mark": 512, "space": 2560},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_SLEEP": "HBDAAAAAAC",
+	    "KEY_1": "HABAADAAAC",
+	    "KEY_2": "HBDADAAAC",
+	    "KEY_3": "HAABADAAAC",
+	    "KEY_4": "HBADDAAAC",
+	    "KEY_5": "HABDDAAAC",
+	    "KEY_6": "HBEBDAAAC",
+	    "KEY_7": "HAAABDAAAC",
+	    "KEY_8": "HBAAEBAAAC",
+	    "KEY_9": "HABAEBAAAC",
+	    "KEY_0": "HBAAADAAAC",
+	    "KEY_I": "HABEBDAAC",
+	    "KEY_MUTE": "HABAAAAAAAC",
+	    "prg+": "HBDDDAAC",
+	    "KEY_OK": "HBAAAAAAAAC",
+	    "prg-": "HAABDDAAC",
+	    "KEY_VOLUMEDOWN": "HABADAAAAC",
+	    "KEY_VOLUMEUP": "HBAADAAAAC",
+	    "KEY_AUX": "HAAABAAAAAC",
+	    "KEY_TEXT": "HBAAAEBAAC",
+	    "KEY_RED": "HBDEABAAC",
+	    "KEY_GREEN": "HBEAAABAAC",
+	    "KEY_YELLOW": "HAABEABAAC",
+	    "KEY_BLUE": "HBEABDAAC",
+	    "color-": "HABEBAAAAC",
+	    "color+": "HBAEBAAAAC",
+	    "Lights-": "HAABDAAAAC",
+	    "Lights+": "HBDDAAAAC"
+	}
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "description": "VCR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/schneider/SVC568RC.lircd.conf", "remote": "VCR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 900, "space": 0},
+	"H": {"mark": 3543, "space": 3446},
+	"1": {"mark": 898, "space": 2593},
+	"0": {"mark": 898, "space": 850},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H000101000001111010111110A",
+	    "KEY_CHANNELDOWN": "H000101000100111010111011A",
+	    "KEY_CHANNELUP": "H000101000010111010111101A",
+	    "KEY_RECORD": "H000101010110111010101001A",
+	    "KEY_PLAY": "H000101010100111010101011A",
+	    "KEY_REWIND": "H000101001100111010110011A",
+	    "f.fwd": "H000101001000111010110111A",
+	    "pause/still": "H000101110100111010001011A",
+	    "KEY_STOP": "H000101001110111010110001A"
+	}
+    }
+}

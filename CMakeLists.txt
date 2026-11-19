@@ -65,6 +65,7 @@ endif()
 add_library(piir_core STATIC
   src/hvac_panasonic_plugin.c
   src/plugins.c
+  src/remotes.c
   src/irslinger.c
   src/transmitter.c
   src/lirc.c
@@ -98,9 +99,7 @@ if(PIIR_STATIC)
 endif()
 
 install(TARGETS piir RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
-install(DIRECTORY conf/remotes/
-  DESTINATION ${CMAKE_INSTALL_DATADIR}/piir/conf/remotes
-  FILES_MATCHING PATTERN "*.json")
+include(cmake/remotes.cmake)
 install(FILES README.md LICENSE DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/piir)
 
 include(CTest)

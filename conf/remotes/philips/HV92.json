@@ -1,0 +1,43 @@
+{
+    "description": "PHILIPS_TV_HV92 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/HV92.lircd.conf", "remote": "PHILIPS_TV_HV92", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 940, "space": 840},
+	"B": {"mark": 1880, "space": 840},
+	"C": {"mark": 940, "space": 1680},
+	"D": {"mark": 940, "space": 0},
+	"E": {"mark": 1880, "space": 0},
+	"F": {"mark": 1880, "space": 1680},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "AABAAAAACABD",
+	    "KEY_POWER2": "AABAAACBCAE",
+	    "KEY_CHANNELUP": "AABAAACBAAAD",
+	    "KEY_CHANNELDOWN": "AABAAACBAACD",
+	    "KEY_VOLUMEUP": "AABAAAACBAAD",
+	    "KEY_VOLUMEDOWN": "AABAAAACBACD",
+	    "KEY_1": "AABAAAAAAAACD",
+	    "KEY_2": "AABAAAAAAACE",
+	    "KEY_3": "AABAAAAAAACAD",
+	    "KEY_4": "AABAAAAAACBD",
+	    "KEY_5": "AABAAAAAACFD",
+	    "KEY_6": "AABAAAAAACAE",
+	    "KEY_7": "AABAAAAAACAAD",
+	    "KEY_8": "AABAAAAACBAD",
+	    "KEY_9": "AABAAAAACBCD",
+	    "KEY_KPPLUS": "AABAAAAACAAAD",
+	    "KEY_0": "AABAAAAAAAAAD",
+	    "KEY_102ND": "AABAAAAACFE",
+	    "CONT_+": "AABAAAACFBD",
+	    "CONT_-": "AABAAAACFFD",
+	    "BRT_+": "AABAAAACBCE",
+	    "BRT_-": "AABAAAACBCAD"
+	}
+    }
+}

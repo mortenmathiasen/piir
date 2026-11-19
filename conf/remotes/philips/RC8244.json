@@ -1,0 +1,51 @@
+{
+    "description": "Philips_RC8244 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC8244.lircd.conf", "remote": "Philips_RC8244", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 36000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 889, "space": 889},
+	"B": {"mark": 1778, "space": 1778},
+	"C": {"mark": 1778, "space": 889},
+	"D": {"mark": 889, "space": 1778},
+	"E": {"mark": 889, "space": 0},
+	"F": {"mark": 1778, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_1": "AABBCAAAADE",
+	    "KEY_2": "ACDBCAAADF",
+	    "KEY_3": "ACDBCAAADAE",
+	    "KEY_4": "AABBCAADCE",
+	    "KEY_5": "ACDBCAADBE",
+	    "KEY_6": "AABBCAADAF",
+	    "KEY_7": "ACDBCAADAAE",
+	    "KEY_8": "AABBCADCAE",
+	    "KEY_9": "ACDBCADCDE",
+	    "KEY_0": "AABBCAAAAAE",
+	    "KEY_POWER": "ACDBCADACE",
+	    "pilot": "AABBCADAAAE",
+	    "prog": "CADBCADAAAE",
+	    "KEY_OK": "BBBCDBAAE",
+	    "KEY_UP": "CADBCDCAAE",
+	    "KEY_DOWN": "BBBCDCADE",
+	    "KEY_RIGHT": "CADBCDBAF",
+	    "KEY_LEFT": "BBBCDBBE",
+	    "twoje": "CADBBCAADE",
+	    "av": "BBBCDCDAE",
+	    "KEY_MUTE": "CADBCAADAF",
+	    "tvsat": "AABBBBCAE",
+	    "KEY_A": "CADBBBBAE",
+	    "KEY_B": "BBBBBACE",
+	    "KEY_C": "CADBBBABE",
+	    "KEY_D": "BBBBBAAF",
+	    "KEY_E": "CADBBBAAAE",
+	    "serv": "BBBCDCDF",
+	    "KEY_KPPLUS": "ACDBBBAAAE",
+	    "perso": "BBBBBBF"
+	}
+    }
+}

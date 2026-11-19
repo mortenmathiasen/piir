@@ -1,0 +1,50 @@
+{
+    "description": "Daas_Color_RCS_9085 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/robotron/RCS-9085.lircd.conf", "remote": "Daas_Color_RCS_9085", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 250, "space": 0},
+	"1": {"mark": 254, "space": 7337},
+	"0": {"mark": 254, "space": 4807},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_1": "11111010001A",
+	    "KEY_2": "11111010010A",
+	    "KEY_3": "11111010011A",
+	    "KEY_4": "11111010100A",
+	    "KEY_5": "11111010101A",
+	    "KEY_6": "11111010110A",
+	    "KEY_7": "11111010111A",
+	    "KEY_8": "11111011000A",
+	    "KEY_9": "11111011001A",
+	    "KEY_0": "11111010000A",
+	    "SATURATION+": "11111100110A",
+	    "SATURATION-": "11111100111A",
+	    "HUE+": "11111100100A",
+	    "HUE-": "11111100101A",
+	    "f+": "11111100000A",
+	    "f-": "11111100001A",
+	    "CONTRAST+": "11111101000A",
+	    "CONTRAST-": "11111101001A",
+	    "KEY_VOLUMEUP": "11111100010A",
+	    "KEY_VOLUMEDOWN": "11111100011A",
+	    "KEY_102ND": "11111111000A",
+	    "AV": "11111110100A",
+	    ">f<": "11111110000A",
+	    "SU": "11111011010A",
+	    "LOE": "11111011110A",
+	    "SP": "11111011111A",
+	    "KEY_CHANNELUP": "11111011011A",
+	    "KEY_CHANNELDOWN": "11111011100A",
+	    "KANAL": "11111011101A",
+	    "KEY_POWER": "11111110010A",
+	    "RESTORE": "11111110011A",
+	    "KEY_MUTE": "11111110001A"
+	}
+    }
+}

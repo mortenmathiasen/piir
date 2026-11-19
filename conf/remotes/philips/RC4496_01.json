@@ -1,0 +1,51 @@
+{
+    "description": "Philips_RC4496_01 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC4496_01.lircd.conf", "remote": "Philips_RC4496_01", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 478, "space": 412},
+	"B": {"mark": 478, "space": 824},
+	"C": {"mark": 956, "space": 824},
+	"D": {"mark": 956, "space": 412},
+	"E": {"mark": 478, "space": 0},
+	"F": {"mark": 956, "space": 0},
+	"H": {"mark": 2751, "space": 821},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "KEY_0": "HBAABDAAAACAAAAAAAAAE",
+	    "KEY_1": "HBAABDAAAACAAAAAAAAF",
+	    "KEY_2": "HBAABDAAAACAAAAAAACE",
+	    "KEY_3": "HBAABDAAAAAAACCDAAE",
+	    "KEY_4": "HBAABDAAAACAAAAAACAE",
+	    "KEY_5": "HBAABDAAAACAAAAAACF",
+	    "KEY_6": "HBAABDAAAACAAAAAADBE",
+	    "KEY_7": "HBAABDAAAACAAAAAADAE",
+	    "KEY_8": "HBAABDAAAACAAAAACAAE",
+	    "KEY_9": "HBAABDAAAACAAAAACAF",
+	    "KEY_CHANNELDOWN": "HBAABDAAAACAAACAAAF",
+	    "KEY_CHANNELUP": "HBAABDAAAACAAACAAAAE",
+	    "KEY_DOWN": "HBAABDAAAACAACDBAF",
+	    "KEY_ENTER": "HBAABDAAAACAACDABAE",
+	    "KEY_ESC": "HBAABDAAAACACAAAADE",
+	    "KEY_FASTFORWARD": "HBAABDAAAACAAACCAAE",
+	    "KEY_INFO": "HBAABDAAAACAAAAADAAE",
+	    "KEY_LEFT": "HBAABDAAAACAACDBCE",
+	    "KEY_MUTE": "HBAABDAACAAAAAAADBF",
+	    "KEY_OPTION": "HBAABDAAAACADBCAAF",
+	    "KEY_PLAYPAUSE": "HBAABDAAAACAAACDBAE",
+	    "KEY_POWER": "HBAABDAAAACADBAADAE",
+	    "KEY_REWIND": "HBAABDAAAACAAACCAF",
+	    "KEY_RIGHT": "HBAABDAAAACAACDBDE",
+	    "KEY_STOP": "HBAABDAAAACAAADBAAF",
+	    "KEY_SUBTITLE": "HBAABDAAAACAACACDE",
+	    "KEY_UP": "HBAABDAAAACAACDBAAE",
+	    "KEY_VOLUMEDOWN": "HBAABDAACAAAAAACAAF",
+	    "KEY_VOLUMEUP": "HBAABDAACAAAAAACAAAE"
+	}
+    }
+}

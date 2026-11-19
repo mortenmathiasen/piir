@@ -1,0 +1,30 @@
+{
+    "description": "Sony_RM-V210 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-V210.lircd.conf", "remote": "Sony_RM-V210", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1276, "space": 0},
+	"B": {"mark": 676, "space": 0},
+	"H": {"mark": 2470, "space": 514},
+	"1": {"mark": 1276, "space": 517},
+	"0": {"mark": 676, "space": 517},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_DOT": "H10111001110100A",
+	    "pip": "H11101110010010A",
+	    "tools": "H01101101110100A",
+	    "KEY_FAVORITES": "H01101111110111B",
+	    "<": "H10011010101100B",
+	    ">": "H11011010101100B",
+	    "KEY_STOP": "H01101100010010A",
+	    "KEY_PLAY": "H01011010101100B",
+	    ".>": "H01000011110100A",
+	    "KEY_PAUSE": "H11101100010010A"
+	}
+    }
+}

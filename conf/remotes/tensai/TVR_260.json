@@ -1,0 +1,38 @@
+{
+    "description": "Tensai (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/tensai/TVR_260.lircd.conf", "remote": "Tensai", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 946, "space": 0},
+	"H": {"mark": 3576, "space": 3401},
+	"1": {"mark": 946, "space": 789},
+	"0": {"mark": 946, "space": 2535},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H111010101011000101010100A",
+	    "KEY_STOP": "H111010110001000101001110A",
+	    "KEY_PAUSE": "H111010001011000101110100A",
+	    "KEY_FORWARD": "H111010110111000101001000A",
+	    "KEY_REWIND": "H111010110011000101001100A",
+	    "Function": "H111010111110000101000001A",
+	    "KEY_RECORD": "H111010101001000101010110A",
+	    "KEY_1": "H111010000001000101111110A",
+	    "KEY_2": "H111010011110000101100001A",
+	    "KEY_3": "H111010101110000101010001A",
+	    "KEY_4": "H111010001110000101110001A",
+	    "KEY_5": "H111010110110000101001001A",
+	    "KEY_6": "H111010010110000101101001A",
+	    "KEY_7": "H111010100110000101011001A",
+	    "KEY_8": "H111010000110000101111001A",
+	    "KEY_9": "H111010111010000101000101A",
+	    "KEY_0": "H111010011010000101100101A",
+	    "KEY_CHANNELDOWN": "H111010111011000101000100A",
+	    "KEY_CHANNELUP": "H111010111101000101000010A"
+	}
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "description": "PHILIPS_LV2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RD5862.lircd.conf", "remote": "PHILIPS_LV2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1880, "space": 1680},
+	"B": {"mark": 940, "space": 840},
+	"C": {"mark": 1880, "space": 840},
+	"D": {"mark": 940, "space": 0},
+	"E": {"mark": 940, "space": 1680},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------",
+    "features": {
+	"key": {
+	    "FTS": "ABACEABCD"
+	}
+    }
+}

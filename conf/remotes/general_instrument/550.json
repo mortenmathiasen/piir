@@ -1,0 +1,45 @@
+{
+    "description": "GI_550 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/general_instrument/550.lircd.conf", "remote": "GI_550", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 39, "space": 0},
+	"1": {"mark": 39, "space": 11945},
+	"0": {"mark": 39, "space": 7966},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "11100A",
+	    "KEY_1": "10111A",
+	    "KEY_2": "10110A",
+	    "KEY_3": "10101A",
+	    "KEY_4": "11011A",
+	    "KEY_5": "11010A",
+	    "KEY_6": "11001A",
+	    "KEY_7": "11111A",
+	    "KEY_8": "11110A",
+	    "KEY_9": "11101A",
+	    "KEY_0": "10010A",
+	    "KEY_SELECT": "00011A",
+	    "KEY_ENTER": "00001A",
+	    "a/b": "11000A",
+	    "tcp": "00000A",
+	    "KEY_F": "00100A",
+	    "last_ch": "01100A",
+	    "KEY_FAVORITES": "10001A",
+	    "KEY_CHANNELUP": "10100A",
+	    "KEY_CHANNELDOWN": "10000A",
+	    "KEY_VOLUMEUP": "01011A",
+	    "KEY_VOLUMEDOWN": "00111A",
+	    "KEY_MUTE": "01001A",
+	    "pcontrol": "10011A",
+	    "pcontrol_learn": "00010A",
+	    "fav_prog": "00110A",
+	    "fav_delete": "00101A"
+	}
+    }
+}

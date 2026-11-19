@@ -1,0 +1,53 @@
+{
+    "description": "ANITECH (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/anitech/VCR.lircd.conf", "remote": "ANITECH", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1040, "space": 640},
+	"B": {"mark": 2020, "space": 800},
+	"C": {"mark": 980, "space": 1440},
+	"D": {"mark": 2020, "space": 1440},
+	"E": {"mark": 1200, "space": 640},
+	"F": {"mark": 980, "space": 800},
+	"G": {"mark": 1040, "space": 0},
+	"I": {"mark": 2020, "space": 0},
+	"J": {"mark": 980, "space": 0},
+	"K": {"mark": 2180, "space": 1440},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "EABCDBCABJ",
+	    "KEY_M": "EABCDAAADAG",
+	    "KEY": "KBCDAAAAAAG",
+	    "KEY_1": "EABCDBFFFCG",
+	    "KEY_2": "EABCDBFFCI",
+	    "KEY_KPPLUS": "EABCDABFFFJ",
+	    "KEY_3": "EABCDBFFCAG",
+	    "KEY_4": "EABCDBFCBJ",
+	    "KEY_5": "EABCDBFCDG",
+	    "KEY_6": "EABCDBFCAI",
+	    "KEY_KPMINUS": "EABCDABFFCG",
+	    "KEY_7": "EABCDBFCAAG",
+	    "KEY_8": "EABCDBCBFJ",
+	    "KEY_9": "EABCDBCBCG",
+	    "KEY_102ND": "EABCDBCDI",
+	    "KEY_0": "EABCDBFFFFJ",
+	    "KEY_X": "EABCDAABFCG",
+	    "KEY_TIME": "EABCDDAADG",
+	    "KEY_RECORD": "EABCDAADAAG",
+	    "TREC": "EABCDABCAAG",
+	    "REV_PLAY": "EABCDADAAAG",
+	    "KEY_REWIND": "EABCDADABJ",
+	    "KEY_PLAY": "EABCDAADDG",
+	    "KEY_FORWARD": "EABCDADAAI",
+	    "KEY_SLOW": "EABCDBCAAI",
+	    "KEY_N": "EABCDADDI",
+	    "KEY_STOP": "EABCDAADAI",
+	    "KEY_PAUSE": "EABCDADBCG"
+	}
+    }
+}

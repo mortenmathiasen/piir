@@ -1,0 +1,27 @@
+{
+    "description": "Wilfa_RVC-17 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/wilfa/RVC-17.lircd.conf", "remote": "Wilfa_RVC-17", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 566, "space": 0},
+	"H": {"mark": 8993, "space": 4532},
+	"1": {"mark": 566, "space": 1689},
+	"0": {"mark": 566, "space": 562},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "auto": "H00000010111101010111000010001111A",
+	    "KEY_FORWARD": "H00000010111101011001100001100111A",
+	    "KEY_LEFT": "H00000010111101011000000001111111A",
+	    "KEY_STOP": "H00000010111101010110000010011111A",
+	    "KEY_RIGHT": "H00000010111101011100000000111111A",
+	    "KEY_BACK": "H00000010111101011010000001011111A",
+	    "spiral": "H00000010111101010100000010111111A",
+	    "vac": "H00000010111101010100100010110111A"
+	}
+    }
+}

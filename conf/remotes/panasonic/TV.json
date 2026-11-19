@@ -1,0 +1,44 @@
+{
+    "description": "Panasonic (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/panasonic/TV.lircd.conf", "remote": "Panasonic", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 955, "space": 0},
+	"H": {"mark": 3711, "space": 3548},
+	"1": {"mark": 955, "space": 2650},
+	"0": {"mark": 955, "space": 853},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H0000000001011111111101A",
+	    "KEY_2": "H0000010001011111011101A",
+	    "KEY_3": "H0000001001011111101101A",
+	    "KEY_4": "H0000011001011111001101A",
+	    "KEY_5": "H0000000101011111110101A",
+	    "KEY_6": "H0000010101011111010101A",
+	    "KEY_7": "H0000001101011111100101A",
+	    "KEY_8": "H0000011101011111000101A",
+	    "KEY_9": "H0000000011011111111001A",
+	    "KEY_0": "H0000010011011111011001A",
+	    "BAL_LEFT": "H0000000100111111110110A",
+	    "BAL_RIGHT": "H0000010100111111010110A",
+	    "KEY_NEXT": "H0000001000111111101110A",
+	    "KEY_PREVIOUS": "H0000011000111111001110A",
+	    "KEY_VOLUMEUP": "H0000010000011111011111A",
+	    "KEY_VOLUMEDOWN": "H0000010110011111010011A",
+	    "BWD": "H0000011011111111001000A",
+	    "KEY_FORWARD": "H0000000111111111110000A",
+	    "KEY_STOP": "H0000011011011111001001A",
+	    "KEY_PAUSE": "H0000000101111111110100A",
+	    "PLAYLIST_CLEAR": "H0000001011011111101001A",
+	    "PLAYLIST_ADD": "H0000001101111111100100A",
+	    "KEY_PLAY": "H0000001011111111101000A",
+	    "KEY_MUTE": "H0000011010011111001011A",
+	    "X_KEY_QUIT": "H0000000000111111111110A"
+	}
+    }
+}

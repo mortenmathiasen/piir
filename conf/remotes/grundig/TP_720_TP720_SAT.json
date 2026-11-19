@@ -1,0 +1,50 @@
+{
+    "description": "TP720_SAT (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/grundig/TP_720.lircd.conf", "remote": "TP720_SAT", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 512, "space": 512},
+	"B": {"mark": 512, "space": 1024},
+	"C": {"mark": 1024, "space": 1024},
+	"D": {"mark": 512, "space": 0},
+	"E": {"mark": 1024, "space": 512},
+	"H": {"mark": 512, "space": 2560},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "HBCAAACAD",
+	    "KEY_1": "HABAACCAD",
+	    "KEY_2": "HBCACCAD",
+	    "KEY_3": "HAABACCAD",
+	    "KEY_4": "HBACCCAD",
+	    "KEY_5": "HABCCCAD",
+	    "KEY_6": "HBEBCCAD",
+	    "KEY_7": "HAAABCCAD",
+	    "KEY_8": "HBAAEBCAD",
+	    "KEY_9": "HABAEBCAD",
+	    "KEY_PC": "HBCEBCAD",
+	    "KEY_0": "HBAAACCAD",
+	    "BR+": "HBCCACAD",
+	    "BR-": "HAABCACAD",
+	    "COLOR+": "HBAEBACAD",
+	    "COLOR-": "HABEBACAD",
+	    "KEY_AUX": "HAAABAACAD",
+	    "KEY_I": "HABEBEBAD",
+	    "KEY_TEXT": "HBAAAEABAD",
+	    "KEY_CHANNELUP": "HBCCEBAD",
+	    "KEY_VOLUMEDOWN": "HABACACAD",
+	    "KEY_OK": "HBAAAAACAD",
+	    "KEY_VOLUMEUP": "HBAACACAD",
+	    "KEY_CHANNELDOWN": "HAABCEBAD",
+	    "KEY_MUTE": "HABAAAACAD",
+	    "KEY_BLUE": "HBEABEBAD",
+	    "KEY_YELLOW": "HAABEAABAD",
+	    "KEY_GREEN": "HBEAAAABAD",
+	    "KEY_RED": "HBCEAABAD"
+	}
+    }
+}

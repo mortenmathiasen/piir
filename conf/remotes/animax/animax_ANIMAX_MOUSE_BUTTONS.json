@@ -1,0 +1,23 @@
+{
+    "description": "ANIMAX_MOUSE_BUTTONS (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/animax/animax.lircd.conf", "remote": "ANIMAX_MOUSE_BUTTONS", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 562, "space": 0},
+	"H": {"mark": 4500, "space": 4500},
+	"1": {"mark": 562, "space": 1682},
+	"0": {"mark": 562, "space": 562},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------",
+    "features": {
+	"key": {
+	    "RIGHT_MOUSE_BUTTON_DOWN": "H000011111001110001100011A",
+	    "RIGHT_MOUSE_BUTTON_UP": "H000011111001110101100010A",
+	    "LEFT_MOUSE_BUTTON_DOWN": "H000011111000110001110011A",
+	    "LEFT_MOUSE_BUTTON_UP": "H000011111000110101110010A"
+	}
+    }
+}

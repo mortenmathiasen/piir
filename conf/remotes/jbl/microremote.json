@@ -1,0 +1,29 @@
+{
+    "description": "JBL (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jbl/microremote.lircd.conf", "remote": "JBL", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 627, "space": 0},
+	"H": {"mark": 9060, "space": 4437},
+	"1": {"mark": 625, "space": 1624},
+	"0": {"mark": 625, "space": 499},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEDOWN": "H00000010111101011000000001111111A",
+	    "KEY_VOLUMEUP": "H00000010111101011100000000111111A",
+	    "KEY_PLAYPAUSE": "H00000010111101010100000010111111A",
+	    "KEY_MUTE": "H00000010111101011001100001100111A",
+	    "KEY_PREVIOUS": "H00000010111101010100100010110111A",
+	    "KEY_NEXT": "H00000010111101011010000001011111A",
+	    "KEY_UP": "H00000010111101010111100010000111A",
+	    "KEY_DOWN": "H00000010111101011111000000001111A",
+	    "KEY_MENU": "H00000010111101010101100010100111A",
+	    "KEY_SELECT": "H00000010111101010110000010011111A"
+	}
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "description": "SONY_RM-X30 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-X30.lircd.conf", "remote": "SONY_RM-X30", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1256, "space": 0},
+	"H": {"mark": 2459, "space": 514},
+	"1": {"mark": 1256, "space": 514},
+	"0": {"mark": 656, "space": 514},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "DSPL": "H00010100010000A",
+	    "OFF": "H10110000010000A",
+	    "FM_MW_SW": "H11110000010000A",
+	    "KEY_CD": "H00010010010000A",
+	    "AF_TA": "H01010010010000A",
+	    "KEY_TAPE": "H11101100010000A",
+	    "SEEK_AMS-": "H11011000010000A",
+	    "SEEK_AMS+": "H00111000010000A",
+	    "KEY_REWIND": "H10001100010000A",
+	    "KEY_FASTFORWARD": "H00001100010000A",
+	    "SEL": "H10001000010000A",
+	    "KEY_MUTE": "H00101000010000A",
+	    "KEY_VOLUMEDOWN": "H11001000010000A",
+	    "KEY_VOLUMEUP": "H01001000010000A"
+	}
+    }
+}

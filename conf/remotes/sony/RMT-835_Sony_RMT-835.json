@@ -1,0 +1,30 @@
+{
+    "description": "Sony_RMT-835 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-835.lircd.conf", "remote": "Sony_RMT-835", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 656, "space": 0},
+	"H": {"mark": 2463, "space": 511},
+	"1": {"mark": 656, "space": 511},
+	"0": {"mark": 1256, "space": 511},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "KEY_RECORD": "H1111001101000011111A",
+	    "KEY_PLAY": "H1011001101001011101A",
+	    "KEY_PAUSE": "H0110001101001011101A",
+	    "KEY_STOP": "H1110001101001011101A",
+	    "KEY_ENTER": "H0010111101001011101A",
+	    "KEY_UP": "H0110000101001011101A",
+	    "KEY_DOWN": "H1010000101001011101A",
+	    "KEY_RIGHT": "H1100000101001011101A",
+	    "KEY_LEFT": "H0010000101001011101A",
+	    "toend": "H0111001101001011101A",
+	    "tobegin": "H1111001101001011101A"
+	}
+    }
+}

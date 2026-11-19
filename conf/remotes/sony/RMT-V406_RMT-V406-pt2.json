@@ -1,0 +1,30 @@
+{
+    "description": "RMT-V406-pt2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V406.lircd.conf", "remote": "RMT-V406-pt2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1160, "space": 0},
+	"H": {"mark": 2356, "space": 633},
+	"1": {"mark": 1160, "space": 633},
+	"0": {"mark": 562, "space": 633},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "Wide": "H10111100010010AVWWWWWWWWWXXXXXXXYYYYYYYYYZZZZZZZH10111100010010AVWWWWWWWWWXXXXXXXYYYYYYYYYZZZZZZZH10111100010010A",
+	    "Pause_Up": "H01110000101110AVWWWWWWWWWXXXXXXXYYYYYYYYYZZZZZZZH01110000101110AVWWWWWWWWWXXXXXXXYYYYYYYYYZZZZZZZH01110000101110A",
+	    "Stop_Down": "H11110000101110AVWWWWWWWWWXYYYYYYYYYZZZZZZZZZH11110000101110AVWWWWWWWWWXYYYYYYYYYZZZZZZZZZH11110000101110A",
+	    "KEY_REWIND": "H00001000101110AVVXXXXXXXXXYYYYYYYYYZZZH00001000101110AVVXXXXXXXXXYYYYYYYYYZZZH00001000101110A",
+	    "FF_Right": "H10001000101110AVVXXXYYYYYYYYYZZZZZH10001000101110AVVXXXYYYYYYYYYZZZZZH10001000101110A",
+	    "KEY_PLAY": "H00011000101110AVVXXXYYYYYYYYYZZZZZH00011000101110AVVXXXYYYYYYYYYZZZZZH00011000101110A"
+	}
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "description": "rm-d5 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-D5.lircd.conf", "remote": "rm-d5", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1249, "space": 0},
+	"H": {"mark": 2468, "space": 550},
+	"1": {"mark": 1249, "space": 547},
+	"0": {"mark": 649, "space": 547},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_TIME": "H00010101000AVVWWWWWXXXXXXYYYYYYYYYZZZZZZZZH00010101000A",
+	    "KEY_AGAIN": "H00110101000AVVWWWWWYYYYYYYYYZZZZZZZZH00110101000A",
+	    "KEY_1": "H00000011000AVVWWWWWWXXYYYYYYYYYZZZZZZZZH00000011000A",
+	    "KEY_2": "H10000011000AVVWWWWWXXXXXXYYYYYYYYYZZZZZZZZH10000011000A",
+	    "KEY_3": "H01000011000AVVWWWWWXXXXXXYYYYYYYYYZZZZZZZZH01000011000A",
+	    "KEY_4": "H11000011000AVVWWWWWYYYYYYYYYZZZZZZZZH11000011000A",
+	    "KEY_5": "H00100011000AVVWWWWWXXXXXXYYYYYYYYYZZZZZZZZH00100011000A",
+	    "fback": "H00001101000AVVWWWWWXXXXXXYYYYYYYYYZZZZZZZZH00001101000A",
+	    "ffor": "H10001101000AVVWWWWWYYYYYYYYYZZZZZZZZH10001101000A",
+	    "KEY_BACK": "H01011101000AVVWWWWXXXXYYYYYYYYYZZZZZZZZH01011101000A",
+	    "for": "H11011101000AVVWWWXXXXXXXXYYYYYYYYYZZZZZZZZH11011101000A",
+	    "KEY_PLAY": "H01001101000AVVWWWWWYYYYYYYYYZZZZZZZZH01001101000A",
+	    "KEY_PAUSE": "H10011101000AVVWWWWXXXXYYYYYYYYYZZZZZZZZH10011101000A",
+	    "KEY_STOP": "H00011101000AVVWWWWWYYYYYYYYYZZZZZZZZH00011101000A"
+	}
+    }
+}

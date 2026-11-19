@@ -1,0 +1,45 @@
+{
+    "description": "SEG_VCR_2200 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/zehnder/BX-299.lircd.conf", "remote": "SEG_VCR_2200", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 500, "space": 0},
+	"B": {"mark": 500, "space": 4000},
+	"H": {"mark": 8000, "space": 4000},
+	"1": {"mark": 500, "space": 1500},
+	"0": {"mark": 500, "space": 500},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H11000000B01100000A",
+	    "KEY_1": "H11000000B00110000A",
+	    "KEY_2": "H11000000B10100000A",
+	    "KEY_3": "H11000000B01110000A",
+	    "KEY_4": "H11000000B00101000A",
+	    "KEY_5": "H11000000B10110000A",
+	    "KEY_6": "H11000000B01101000A",
+	    "KEY_7": "H11000000B00111000A",
+	    "KEY_8": "H11000000B10101000A",
+	    "KEY_9": "H11000000B01111000A",
+	    "KEY_MUTE": "H11000000B00100000A",
+	    "KEY_0": "H11000000B10111000A",
+	    "TIMER": "H11000000B11100000A",
+	    "PROG": "H11000000B11111000A",
+	    "AUD": "H11000000B11101000A",
+	    "SYS": "H11000000B11110000A",
+	    "KEY_NEXT": "H11000000B00000100A",
+	    "KEY_UP": "H11000000B11001000A",
+	    "INDEX": "H11000000B10000000A",
+	    "KEY_KPMINUS": "H11000000B11011000A",
+	    "STORE": "H11000000B10000100A",
+	    "KEY_KPPLUS": "H11000000B11000000A",
+	    "KEY_RADIO": "H11000000B01000000A",
+	    "KEY_DOWN": "H11000000B11010000A",
+	    "KEY_FAVORITES": "H11000000B01001000A"
+	}
+    }
+}

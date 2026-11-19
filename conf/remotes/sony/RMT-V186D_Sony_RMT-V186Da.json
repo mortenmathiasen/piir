@@ -1,0 +1,23 @@
+{
+    "description": "Sony_RMT-V186Da (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V186D.lircd.conf", "remote": "Sony_RMT-V186Da", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1273, "space": 0},
+	"H": {"mark": 2477, "space": 529},
+	"1": {"mark": 669, "space": 529},
+	"0": {"mark": 1273, "space": 529},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "Red/Showview(VTR)": "H11111001010001A",
+	    "Green/Once(VTR)": "H01111001010001A",
+	    "Yellow/Daily(VTR)": "H10111001010001A",
+	    "Blue/Weekly(VTR)": "H00111001010001A"
+	}
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "description": "uni-rec (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/one_for_all/ZAPPER.lircd.conf", "remote": "uni-rec", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 875, "space": 0},
+	"H": {"mark": 3547, "space": 3421},
+	"1": {"mark": 890, "space": 2596},
+	"0": {"mark": 890, "space": 845},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------",
+    "features": {
+	"key": {
+	    "KEY_REWIND": "H000101001100111010110011A",
+	    "KEY_PLAY": "H000101010100111010101011A",
+	    "KEY_FASTFORWARD": "H000101001000111010110111A",
+	    "KEY_RECORD": "H000101010110111010101001A",
+	    "KEY_STOP": "H000101001110111010110001A",
+	    "KEY_PAUSE": "H000101110100111010001011A"
+	}
+    }
+}

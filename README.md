@@ -8,7 +8,7 @@ PIIR is a command line tool to transmit IR-signals like remote controls do. PIIR
 
 Examples:
 ```
-piir --remote tv_sony --feature action=TURN_ON
+piir --remote sony/RM-ED011 --feature key=KEY_POWER
 
 piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
 ```
@@ -29,6 +29,9 @@ piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
     + [Testing](#testing)
     + [Releases](#releases)
   * [How to use](#how-to-use)
+  * [Remotes](#remotes)
+    + [Choosing the remotes of an installation](#choosing-the-remotes-of-an-installation)
+    + [Remotes converted from LIRC](#remotes-converted-from-lirc)
   * [Contributing](#contributing)
   * [Versioning](#versioning)
   * [Authors](#authors)
@@ -45,8 +48,9 @@ piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
 ### IR-protocol
 
 To control an IR-receiver you need to know the IR-signals to transmit to it. Either, you can:
-* Use the protocol definitions that exists already inside PIIRs remote folder [conf/remotes](https://github.com/mortenmathiasen/piir/tree/master/conf/remotes)
-* Reverse engineer your remote control, e.g. using [IR decoder for Arduino](https://github.com/ToniA/Raw-IR-decoder-for-Arduino.git) which I did for [Panasonic airconditioner](https://github.com/mortenmathiasen/piir/blob/master/conf/remotes/hvac_panasonic.pdf)
+* Use the protocol definitions that exists already inside PIIRs remote folder [conf/remotes](https://github.com/mortenmathiasen/piir/tree/master/conf/remotes): more than 3000 remotes from over 500 manufacturers, most of them converted from the [LIRC remote database](https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes), see [Remotes](#remotes)
+* Convert a LIRC configuration (`lircd.conf`) you already have with [tools/lirc2piir.py](tools/lirc2piir.py)
+* Reverse engineer your remote control, e.g. using [IR decoder for Arduino](https://github.com/ToniA/Raw-IR-decoder-for-Arduino.git) which I did for [Panasonic airconditioner](https://github.com/mortenmathiasen/piir/blob/master/conf/remotes/panasonic/hvac_panasonic.pdf)
 
 ### Supported systems
 
@@ -79,6 +83,8 @@ Every [release](https://github.com/mortenmathiasen/piir/releases) has ready-made
 | `aarch64` | Pi 3, 4, 400, 5, 500, Zero 2 W | 64-bit |
 
 If you are unsure, run `dpkg --print-architecture` on the Pi: `arm64` needs the `aarch64` package, and `armhf` needs `armv6` or `armv7` (`armv6` works on every model).
+
+The packages contain PIIR's own remotes. Add the remotes you need from the LIRC database afterwards with `piir-remotes`, see [Choosing the remotes of an installation](#choosing-the-remotes-of-an-installation).
 
 Install the Debian package, e.g. for a Pi Zero W:
 ```
@@ -167,7 +173,7 @@ cmake -B build-rpi -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain-rpi-aarch64.cmake -DRP
 cmake --build build-rpi
 ```
 
-Copy `build-rpi/piir` to the Pi and `conf/remotes/` to `/usr/local/share/piir/conf/remotes/` (or whatever `CMAKE_INSTALL_PREFIX` you configured with). For 32-bit Raspberry Pi OS use `cmake/toolchain-rpi-armhf.cmake`, `gcc-arm-linux-gnueabihf` and `libgpiod-dev:armhf` instead. That toolchain targets ARMv7, so it does not support the Pi 1 or Pi Zero/Zero W.
+Copy `build-rpi/piir` to the Pi and the remotes you need from `conf/remotes/` to `/usr/local/share/piir/conf/remotes/` (or whatever `CMAKE_INSTALL_PREFIX` you configured with). For 32-bit Raspberry Pi OS use `cmake/toolchain-rpi-armhf.cmake`, `gcc-arm-linux-gnueabihf` and `libgpiod-dev:armhf` instead. That toolchain targets ARMv7, so it does not support the Pi 1 or Pi Zero/Zero W.
 
 For the Pi 1 and Pi Zero/Zero W (ARMv6) use `cmake/toolchain-rpi-armv6.cmake` with `gcc-arm-linux-gnueabi`. It builds a static binary with the `lirc` backend that runs on every 32-bit Pi. For the `gpiod` or `pigpio` backend on ARMv6, compile on the Pi itself.
 
@@ -182,7 +188,7 @@ cmake --build build
 ctest --test-dir build --output-on-failure
 ```
 
-They cover the configuration loader, the remote plugins, the transmitter backend selected at configure time and the `piir` command line. The `tests` section of each remote in `conf/remotes/` lists features and the code a real remote sends for them, and every one of these vectors is checked. Vectors that do not match yet are listed in `tests/known_failures.txt`. No test transmits IR, so they are safe to run on a Pi.
+They cover the configuration loader, remote lookup, the remote plugins, the transmitter backend selected at configure time, the `piir` command line, `piir-remotes` and the LIRC converter. Every key of every remote in `conf/remotes/` is checked to produce a code PIIR can send. The `tests` section of a remote lists features and the code a real remote sends for them, and every one of these vectors is checked. Vectors that do not match yet are listed in `tests/known_failures.txt`. No test transmits IR, so they are safe to run on a Pi.
 
 When cross compiling, tests run under qemu if you add for example `-DCMAKE_CROSSCOMPILING_EMULATOR=$(command -v qemu-aarch64)` (from the `qemu-user` package).
 
@@ -195,7 +201,7 @@ To release, update `VERSION` in `CMakeLists.txt`, commit, and push a matching ta
 git tag v2.1.0
 git push origin v2.1.0
 ```
-GitHub Actions then runs all tests, builds the packages for every Raspberry Pi architecture and publishes them with checksums as a GitHub release.
+GitHub Actions then runs all tests, builds the packages for every Raspberry Pi architecture and the archive of all remotes (`piir-remotes-<version>.tar.gz`), and publishes them with checksums as a GitHub release.
 
 ## How to use
 
@@ -206,23 +212,28 @@ piir --help
 
 Output will be like:
 ```
-Available configuration files in /home/pi/piir/conf/remotes/:
-    hvac_panasonic
-    ...
-Available configuration files in /usr/local/share/piir/conf/remotes/:
-    hvac_panasonic
-    ...
+3112 remotes available in /home/pi/piir/conf/remotes/ and /usr/local/share/piir/conf/remotes/, list them with: piir --list
 
 usage:      piir
-            --remote, -r CONFIGFILE
+            --remote, -r REMOTE
             [--feature, -f NAME=VALUE]
             [--verbose, -v (TRACE|DEBUG|INFO|WARN|ERROR|FATAL|NOTHING)]
+            [--list, -l]
             [--help, -h]
 
+REMOTE is a remote name from --list, e.g. sony/RM-ED011, a file name
+that is unique among the remotes, e.g. RM-ED011, or a path to a JSON file.
+
 examples:   piir --help
+            piir --list
             piir --remote hvac_panasonic --help
             piir --remote hvac_panasonic --feature temperature=21
-            piir --remote tv_sony --feature action=TURN_ON
+            piir --remote sony/RM-ED011 --feature key=KEY_POWER
+```
+
+PIIR looks for remotes in `conf/remotes/` below the current directory and then in its installation directory (`/usr/local/share/piir/conf/remotes/` or `/usr/share/piir/conf/remotes/` for the packages). Remotes are named `<manufacturer>/<model>`, like the files in those directories. List them with:
+```
+piir --list | grep -i sony
 ```
 
 Specific help on available features for a particular remote can be achieved by:
@@ -232,7 +243,7 @@ piir --remote hvac_panasonic --help
 
 Output will be like:
 ```
-Features in config file /home/pi/piir/conf/remotes/hvac_panasonic.json:
+Features in config file /home/pi/piir/conf/remotes/panasonic/hvac_panasonic.json:
        temperature:
               8
               10
@@ -284,15 +295,7 @@ Features in config file /home/pi/piir/conf/remotes/hvac_panasonic.json:
               VERYRIGHT
 
 usage:      piir
-            --remote, -r CONFIGFILE
-            [--feature, -f NAME=VALUE]
-            [--verbose, -v (TRACE|DEBUG|INFO|WARN|ERROR|FATAL|NOTHING)]
-            [--help, -h]
-
-examples:   piir --help
-            piir --remote hvac_panasonic --help
-            piir --remote hvac_panasonic --feature temperature=21
-            piir --remote tv_sony --feature action=TURN_ON
+            ...
 ```
 
 A working example combining more features into the IR signal:
@@ -306,6 +309,53 @@ If everything goes well output from the command will be like this:
 ```
 gpioWaveTxSend OK: 15897
 ```
+
+A remote converted from LIRC has a single feature, `key`, with a value for every button:
+```
+piir --remote sony/RM-ED011 --help
+piir --remote sony/RM-ED011 --feature key=KEY_POWER
+```
+
+## Remotes
+
+Remotes are JSON files in `conf/remotes/<manufacturer>/`, in the same structure as the [LIRC remote database](https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes). `panasonic/hvac_panasonic` is PIIR's own; the others are converted from LIRC.
+
+### Choosing the remotes of an installation
+
+The release packages only contain PIIR's own remotes. Each release also has `piir-remotes-<version>.tar.gz` with all remotes, and the `piir-remotes` command installed with PIIR adds remotes from it to the installation. It downloads the archive of the installed version, or uses one given with `--archive`:
+```
+piir-remotes available sony              # remotes in the archive containing "sony"
+sudo piir-remotes add sony               # every Sony remote
+sudo piir-remotes add samsung/AA59-00600A 'lg/AKB*'
+piir-remotes installed
+sudo piir-remotes remove sony
+sudo piir-remotes add all                # everything
+```
+
+When compiling PIIR yourself, `PIIR_REMOTES` chooses the remotes `cmake --install` installs: `all` (the default), `native` (PIIR's own), `none`, manufacturers, remotes and patterns separated by semicolons, for example:
+```
+cmake -B build -DPIIR_REMOTES="native;sony;lg/AKB*"
+```
+
+### Remotes converted from LIRC
+
+[tools/lirc2piir.py](tools/lirc2piir.py) converts LIRC configuration files to PIIR remotes. It needs only Python 3:
+```
+tools/lirc2piir.py convert -o conf/remotes my-remote.lircd.conf
+tools/lirc2piir.py convert -o conf/remotes path/to/lirc-remotes/remotes
+```
+
+Its encoder follows the LIRC 0.10.2 sources, so a converted key sends what `irsend SEND_ONCE` sends, including the repeats a remote needs (`min_repeat`) and the gaps between them. `tools/lirc2piir.py verify` compares it with LIRC's own `irsimsend`: for every file in the LIRC database that LIRC can read, the encoder produces exactly the same pulses and spaces. The converted remotes differ from that only where noted below. CI runs this check and also checks that `conf/remotes` is exactly what the converter makes from the revision of the LIRC database given in `tools/lirc-remotes.txt`.
+
+Not everything converts. [tools/lirc-remotes-report.txt](tools/lirc-remotes-report.txt) lists what was skipped and why:
+* remotes made for IR receivers (e.g. irman) that store scan codes instead of IR timings, and remotes using the rarely used RCMM, XMP, Grundig, B&O and serial encodings
+* keys LIRC cannot send, keys PIIR cannot send because they need more than 1024 pulses and spaces, and duplicate key names (the first one is used, as in LIRC)
+
+Raw recorded codes have small timing variations, so where a raw remote has too many different durations for PIIR's symbols, they are rounded by at most 2%. LIRC itself accepts 30% when receiving.
+
+PIIR sends every key the same way each time. Remotes with a toggle bit (RC5, RC6 and some others) flip it on every press, so a device may take two presses of the same key in a row for one held press; press another key in between.
+
+Two LIRC 0.10.2 bugs are not copied: durations of 0 in a configuration break the alternation of pulses and spaces there, and raw remotes with a repeat code send the start of the raw code instead of the repeat code.
 
 ## Contributing
 

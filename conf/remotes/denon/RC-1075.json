@@ -1,0 +1,42 @@
+{
+    "description": "Denon_RC-1075 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/denon/RC-1075.lircd.conf", "remote": "Denon_RC-1075", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 270, "space": 0},
+	"1": {"mark": 304, "space": 1777},
+	"0": {"mark": 304, "space": 741},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "010001000011100A",
+	    "Off": "010000100011100A",
+	    "KEY_DVD": "010001100011100A",
+	    "TV_CBL": "010001001001100A",
+	    "KEY_VCR": "010001011001100A",
+	    "KEY_PLAY": "001000011101000A",
+	    "KEY_STOP": "001000111101000A",
+	    "Skip_Faavorite": "001001110101000A",
+	    "KEY_PAUSE": "001001100101000A",
+	    "KEY_VOLUMEUP": "010001000111100A",
+	    "KEY_VOLUMEDOWN": "010000100111100A",
+	    "KEY_REWIND": "001001101101000A",
+	    "KEY_FORWARD": "001000101101000A",
+	    "KEY_SETUP": "010000001101100A",
+	    "KEY_MUTE": "010000000111100A",
+	    "Night_Audio": "001000001100100A",
+	    "Display": "010001111101100A",
+	    "KEY_ENTER": "010000000011100A",
+	    "KEY_LEFT": "001101111111000A",
+	    "KEY_UP": "001101100010100A",
+	    "KEY_RIGHT": "010001011101100A",
+	    "KEY_DOWN": "001100010010100A",
+	    "KEY_OK": "010000111101100A",
+	    "Dimmer": "001101111101100A"
+	}
+    }
+}

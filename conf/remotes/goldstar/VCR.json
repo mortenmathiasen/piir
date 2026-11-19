@@ -1,0 +1,28 @@
+{
+    "description": "goldstar (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/goldstar/VCR.lircd.conf", "remote": "goldstar", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 612, "space": 0},
+	"H": {"mark": 9088, "space": 4418},
+	"1": {"mark": 612, "space": 512},
+	"0": {"mark": 612, "space": 1638},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H10001001011101101101011100101000A",
+	    "KEY_PLAY": "H10001001011101101110111100010000A",
+	    "KEY_STOP": "H10001001011101100111111110000000A",
+	    "KEY_REWIND": "H10001001011101101011111101000000A",
+	    "KEY_FORWARD": "H10001001011101100011111111000000A",
+	    "KEY_PAUSE": "H10001001011101100010111111010000A",
+	    "KEY_RECORD": "H10001001011101100110111110010000A",
+	    "KEY_UP": "H10001001011101101110011100011000A",
+	    "KEY_DOWN": "H10001001011101100110011110011000A"
+	}
+    }
+}

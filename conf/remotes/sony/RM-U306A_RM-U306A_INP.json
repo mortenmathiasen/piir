@@ -1,0 +1,29 @@
+{
+    "description": "RM-U306A_INP (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-U306A.lircd.conf", "remote": "RM-U306A_INP", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 668, "space": 0},
+	"H": {"mark": 2463, "space": 520},
+	"1": {"mark": 1264, "space": 516},
+	"0": {"mark": 666, "space": 516},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_VIDEO": "H01000100000110AVVWWXXXXXH01000100000110AVVWWXXXXXH01000100000110AVVWWXXXXXH01000100000110A",
+	    "VIDEO2": "H01111000000110AVVWXXXZZZZH01111000000110AVVWXXXZZZZH01111000000110AVVWXXXZZZZH01111000000110A",
+	    "KEY_DVD": "H10111110000110AVVXZZZZZZZZH10111110000110AVVXZZZZZZZZH10111110000110AVVXZZZZZZZZH10111110000110A",
+	    "MDTAPE": "H10010110000110AVVWXXXZZZZH10010110000110AVVWXXXZZZZH10010110000110AVVWXXXZZZZH10010110000110A",
+	    "KEY_CD": "H10100100000110AVVWXXXXXXXXXZZH10100100000110AVVWXXXXXXXXXZZH10100100000110AVVWXXXXXXXXXZZH10100100000110A",
+	    "KEY_TUNER": "H10000100000110AVVWWXXXXXH10000100000110AVVWWXXXXXH10000100000110AVVWWXXXXXH10000100000110A"
+	}
+    }
+}

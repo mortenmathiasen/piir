@@ -1,0 +1,39 @@
+{
+    "description": "RM-DM7 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-DM7.lircd.conf", "remote": "RM-DM7", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1256, "space": 0},
+	"H": {"mark": 2505, "space": 511},
+	"1": {"mark": 1264, "space": 529},
+	"0": {"mark": 666, "space": 529},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H01001101000A",
+	    "KEY_STOP": "H00011101000A",
+	    "KEY_PAUSE": "H10011101000A",
+	    "KEY_PREVIOUS": "H00001101000A",
+	    "KEY_NEXT": "H10001101000A",
+	    "KEY_FASTFORWARD": "H11011101000A",
+	    "KEY_REWIND": "H01011101000A",
+	    "KEY_1": "H00000001000A",
+	    "KEY_2": "H10000001000A",
+	    "KEY_3": "H01000001000A",
+	    "KEY_4": "H11000001000A",
+	    "KEY_5": "H00100001000A",
+	    "KEY_6": "H10100001000A",
+	    "KEY_7": "H01100001000A",
+	    "KEY_8": "H11100001000A",
+	    "KEY_9": "H00010001000A",
+	    "KEY_0": "H00000101000A",
+	    "KEY_10CHANNELSUP": "H11100101000A",
+	    "KEY_AGAIN": "H00110101000A",
+	    "shuffle": "H10101101000A"
+	}
+    }
+}

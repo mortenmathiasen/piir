@@ -1,0 +1,170 @@
+#!/bin/sh
+# piir-remotes: choose which remote configurations an installation of PIIR has.
+#
+# Release packages contain only PIIR's own remotes. Every release also has
+# piir-remotes-<version>.tar.gz with all remotes, including those converted
+# from the LIRC remote database. This tool installs remotes from it.
+
+set -e
+
+VERSION="@PROJECT_VERSION@"
+REMOTES_DIR="@CMAKE_INSTALL_FULL_DATADIR@/piir/conf/remotes"
+RELEASES_URL="@PROJECT_HOMEPAGE_URL@/releases/download"
+ARCHIVE=""
+PROG=$(basename "$0")
+
+usage() {
+  cat <<EOF
+usage: $PROG [options] COMMAND [REMOTE...]
+
+Commands:
+  available [TEXT]   list remotes in the remotes archive, optionally only
+                     those containing TEXT (case insensitive)
+  installed          list installed remotes
+  add REMOTE...      install remotes from the archive
+  remove REMOTE...   remove installed remotes
+
+REMOTE is a manufacturer (sony), a remote (sony/RM-ED009), a pattern
+('samsung/AA59-*', quote it for the shell) or all.
+
+Options:
+  --archive FILE     use this piir-remotes-*.tar.gz instead of downloading it
+  --dir DIR          remote directory (default $REMOTES_DIR)
+  --version VERSION  release to download the archive of (default $VERSION)
+  -h, --help         show this help
+
+Without --archive the archive of the release is downloaded from
+$RELEASES_URL/v<version>/piir-remotes-<version>.tar.gz
+and kept in \${XDG_CACHE_HOME:-~/.cache}/piir.
+
+examples:
+  $PROG available sony
+  sudo $PROG add sony samsung/AA59-00600A
+  sudo $PROG remove sony
+EOF
+}
+
+die() {
+  echo "$PROG: $*" >&2
+  exit 1
+}
+
+# Print the archive path, downloading it if needed
+archive() {
+  if [ -n "$ARCHIVE" ]; then
+    [ -f "$ARCHIVE" ] || die "cannot read $ARCHIVE"
+    echo "$ARCHIVE"
+    return
+  fi
+  cache="${XDG_CACHE_HOME:-$HOME/.cache}/piir"
+  file="$cache/piir-remotes-$VERSION.tar.gz"
+  if [ ! -s "$file" ]; then
+    url="$RELEASES_URL/v$VERSION/piir-remotes-$VERSION.tar.gz"
+    mkdir -p "$cache"
+    echo "Downloading $url" >&2
+    if command -v curl >/dev/null 2>&1; then
+      curl -fsSL -o "$file.part" "$url" || { rm -f "$file.part"; die "download failed"; }
+    elif command -v wget >/dev/null 2>&1; then
+      wget -q -O "$file.part" "$url" || { rm -f "$file.part"; die "download failed"; }
+    else
+      die "need curl or wget to download $url, or use --archive"
+    fi
+    mv "$file.part" "$file"
+  fi
+  echo "$file"
+}
+
+# Remote names in the archive, e.g. sony/RM-ED009
+archive_remotes() {
+  tar -tzf "$(archive)" | sed -n 's|^\./||; s|\.json$||p'
+}
+
+# Convert a REMOTE argument to a pattern matching names without .json
+name_pattern() {
+  case "$1" in
+    all) echo "*" ;;
+    */*|*\**|*\?*) echo "${1%.json}" ;;
+    *) echo "$1/*" ;;
+  esac
+}
+
+cmd_available() {
+  if [ -n "$1" ]; then
+    archive_remotes | grep -i -F -- "$1" || true
+  else
+    archive_remotes
+  fi
+}
+
+cmd_installed() {
+  [ -d "$REMOTES_DIR" ] || return 0
+  (cd "$REMOTES_DIR" && find . -name '*.json' -type f) | sed 's|^\./||; s|\.json$||' | sort
+}
+
+cmd_add() {
+  [ $# -gt 0 ] || die "add needs at least one REMOTE"
+  file=$(archive)
+  names=$(archive_remotes)
+  selected=""
+  for arg in "$@"; do
+    pattern=$(name_pattern "$arg")
+    matches=$(printf '%s\n' "$names" | while IFS= read -r name; do
+      # shellcheck disable=SC2254
+      case "$name" in $pattern) printf '%s\n' "$name" ;; esac
+    done)
+    [ -n "$matches" ] || die "no remote matches '$arg' (see: $PROG available)"
+    selected="$selected
+$matches"
+  done
+  list=$(mktemp)
+  trap 'rm -f "$list"' EXIT
+  printf '%s\n' "$selected" | sed '/^$/d' | sort -u | sed 's|$|.json|' > "$list"
+  mkdir -p "$REMOTES_DIR"
+  tar -xzf "$file" -C "$REMOTES_DIR" -T "$list"
+  echo "Installed $(wc -l < "$list") remotes in $REMOTES_DIR"
+}
+
+cmd_remove() {
+  [ $# -gt 0 ] || die "remove needs at least one REMOTE"
+  installed=$(cmd_installed)
+  count=0
+  for arg in "$@"; do
+    pattern=$(name_pattern "$arg")
+    found=0
+    for name in $installed; do
+      # shellcheck disable=SC2254
+      case "$name" in
+        $pattern)
+          rm -f "$REMOTES_DIR/$name.json"
+          rmdir "$(dirname "$REMOTES_DIR/$name.json")" 2>/dev/null || true
+          found=1
+          count=$((count + 1))
+          ;;
+      esac
+    done
+    [ $found = 1 ] || echo "$PROG: no installed remote matches '$arg'" >&2
+  done
+  echo "Removed $count remotes from $REMOTES_DIR"
+}
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --archive) [ $# -ge 2 ] || die "--archive needs a file"; ARCHIVE=$2; shift 2 ;;
+    --dir) [ $# -ge 2 ] || die "--dir needs a directory"; REMOTES_DIR=$2; shift 2 ;;
+    --version) [ $# -ge 2 ] || die "--version needs a version"; VERSION=${2#v}; shift 2 ;;
+    -h|--help) usage; exit 0 ;;
+    -*) die "unknown option $1" ;;
+    *) break ;;
+  esac
+done
+
+[ $# -gt 0 ] || { usage >&2; exit 1; }
+command=$1
+shift
+case "$command" in
+  available) cmd_available "$@" ;;
+  installed) cmd_installed ;;
+  add) cmd_add "$@" ;;
+  remove) cmd_remove "$@" ;;
+  *) die "unknown command $command" ;;
+esac

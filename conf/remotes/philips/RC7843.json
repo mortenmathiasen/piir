@@ -1,0 +1,52 @@
+{
+    "description": "Philips_RC7843 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC7843.lircd.conf", "remote": "Philips_RC7843", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 857, "space": 917},
+	"B": {"mark": 1714, "space": 917},
+	"C": {"mark": 857, "space": 1834},
+	"D": {"mark": 848, "space": 917},
+	"E": {"mark": 857, "space": 0},
+	"F": {"mark": 1714, "space": 0},
+	"G": {"mark": 1705, "space": 1834},
+	"I": {"mark": 1714, "space": 1834},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "DABAAAAACABE",
+	    "PP": "DABAAAAACAAF",
+	    "KEY_SLEEP": "DABAAACBCAF",
+	    "KEY_EPG": "DABAAAAACAAAE",
+	    "KEY_MUTE": "DABAAAAACAIE",
+	    "Spatial": "DABAAACBCBE",
+	    "Stereo": "DABAAACBACAE",
+	    "Arriba": "GBAAAACBAAE",
+	    "Abajo": "GBAAAACBACE",
+	    "Izquierda": "GBAAAACIIE",
+	    "Derecha": "GBAAAACIAF",
+	    "KEY_MENU": "GBAAAACBCF",
+	    "Out": "GBAAAACBCAE",
+	    "Cero": "DABAAAAAAAAAE",
+	    "Uno": "DABAAAAAAAACE",
+	    "Dos": "DABAAAAAAACF",
+	    "Tres": "DABAAAAAAACAE",
+	    "Cuatro": "DABAAAAAACBE",
+	    "Cinco": "DABAAAAAACIE",
+	    "Seis": "DABAAAAAACAF",
+	    "Siete": "DABAAAAAACAAE",
+	    "Ocho": "DABAAAAACBAE",
+	    "Nueve": "DABAAAAACBCE",
+	    "DBB": "DABAAAACIAF",
+	    "AV": "DABAAACAABAE",
+	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
+	    "KEY_VOLUMEUP": "DABAAAACBAAE",
+	    "KEY_CHANNELDOWN": "DABAAACBAACE",
+	    "KEY_CHANNELUP": "DABAAACBAAAE"
+	}
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "description": "JVC_RM-RX250 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-RX250.lircd.conf", "remote": "JVC_RM-RX250", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 646, "space": 0},
+	"H": {"mark": 8602, "space": 4032},
+	"1": {"mark": 662, "space": 1437},
+	"0": {"mark": 662, "space": 391},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "DISPLAY": "H1111100100111000A",
+	    "KEY_AGAIN": "H1111100100011110A",
+	    "MEMORY/CALL": "H1111100100101110A",
+	    "KEY_1": "H1111100110000100A",
+	    "KEY_2": "H1111100101000100A",
+	    "KEY_3": "H1111100111000100A",
+	    "KEY_4": "H1111100100100100A",
+	    "KEY_5": "H1111100110100100A",
+	    "KEY_6": "H1111100101100100A",
+	    "KEY_7": "H1111100111100100A",
+	    "KEY_8": "H1111100100010100A",
+	    "KEY_9": "H1111100110010100A",
+	    "KEY_0": "H1111100101010100A",
+	    "KEY_10CHANNELSUP": "H1111100101110100A",
+	    "KEY_PLAY": "H1111100100001110A",
+	    "KEY_STOP": "H1111100110001110A",
+	    "KEY_NEXT": "H1111100101001110A",
+	    "PREV_TRACK": "H1111100111001110A"
+	}
+    }
+}

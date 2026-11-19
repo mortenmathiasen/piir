@@ -1,0 +1,26 @@
+{
+    "description": "RMT-1 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-708.lircd.conf", "remote": "RMT-1", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 686, "space": 0},
+	"H": {"mark": 2487, "space": 501},
+	"1": {"mark": 686, "space": 501},
+	"0": {"mark": 1287, "space": 501},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H10100110001A",
+	    "KEY_STOP": "H11100110001A",
+	    "KEY_FASTFORWARD": "H11000110001A",
+	    "KEY_REWIND": "H00100110001A",
+	    "KEY_PAUSE": "H01100110001A",
+	    "KEY_SLOW": "H00111010001A",
+	    "display": "H10100100001A"
+	}
+    }
+}

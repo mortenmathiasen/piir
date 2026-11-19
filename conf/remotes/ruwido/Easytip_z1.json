@@ -1,0 +1,33 @@
+{
+    "description": "Ruwido_Easytip_z1 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/ruwido/Easytip_z1.lircd.conf", "remote": "Ruwido_Easytip_z1", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 712, "space": 2887},
+	"B": {"mark": 712, "space": 10084},
+	"C": {"mark": 693, "space": 2887},
+	"D": {"mark": 712, "space": 6493},
+	"E": {"mark": 693, "space": 6493},
+	"F": {"mark": 712, "space": 0},
+	"G": {"mark": 693, "space": 0},
+	"I": {"mark": 39, "space": 2600},
+	"J": {"mark": 541, "space": 433},
+	"K": {"mark": 693, "space": 10084},
+	"L": {"mark": 723, "space": 2887},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "audio_mute": "ABCBCBAAADCCAACAF",
+	    "up": "ABCBABCEECAAADF",
+	    "down": "CBABABADAADDACF",
+	    "left": "ABCBAKAAAEEEEF",
+	    "right": "ABABABAAAJICDEDG",
+	    "ok": "ABABABCAADAAAADF",
+	    "power": "ABABCBAALCAACCAEG"
+	}
+    }
+}

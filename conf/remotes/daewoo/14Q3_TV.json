@@ -1,0 +1,50 @@
+{
+    "description": "Daewoo_14Q3_TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/daewoo/14Q3_TV.lircd.conf", "remote": "Daewoo_14Q3_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 903, "space": 882},
+	"B": {"mark": 1806, "space": 882},
+	"C": {"mark": 903, "space": 1764},
+	"D": {"mark": 905, "space": 882},
+	"E": {"mark": 903, "space": 0},
+	"F": {"mark": 1806, "space": 1764},
+	"G": {"mark": 1806, "space": 0},
+	"I": {"mark": 1808, "space": 1764},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "DABAAAAACABE",
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACG",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACFE",
+	    "KEY_6": "DABAAAAAACAG",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "KEY_MENU": "IBAAAACBCG",
+	    "IN": "DABAAACAABAE",
+	    "KEY_CHANNELUP": "DABAAACBAAAE",
+	    "KEY_OK": "IBAAAACFAAE",
+	    "KEY_CHANNELDOWN": "DABAAACBAACE",
+	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
+	    "KEY_VOLUMEUP": "DABAAAACBAAE",
+	    "KEY_SLEEP": "DABAAACBCAG",
+	    "KEY_MUTE": "DABAAAAACAFE",
+	    "KEY_AGAIN": "DABAAAAACAAAE",
+	    "DEL": "DABAAACAFAAE",
+	    "MOVE": "DABAAACAFAG",
+	    "KEY_NEXT": "DABAAACFAFE",
+	    "KEY_TIME": "DABAAACABCG",
+	    "KEY_MODE": "DABAAACAFBE",
+	    "PAGE": "DABAAACAAABE"
+	}
+    }
+}

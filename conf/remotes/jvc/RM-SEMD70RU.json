@@ -1,0 +1,50 @@
+{
+    "description": "JVC (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-SEMD70RU.lircd.conf", "remote": "JVC", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 512, "space": 0},
+	"H": {"mark": 8411, "space": 4227},
+	"1": {"mark": 512, "space": 1594},
+	"0": {"mark": 512, "space": 540},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H1100010111101000A",
+	    "KEY_1": "H1100110110000110A",
+	    "KEY_2": "H1100110101000110A",
+	    "KEY_3": "H1100110111000110A",
+	    "KEY_4": "H1100110100100110A",
+	    "KEY_5": "H1100110110100110A",
+	    "KEY_6": "H1100110101100110A",
+	    "KEY_7": "H1100110111100110A",
+	    "KEY_8": "H1100110100010110A",
+	    "KEY_9": "H1100110110010110A",
+	    "KEY_0": "H1100110101110110A",
+	    "KEY_10CHANNELSUP": "H1100110111110110A",
+	    "fmmode": "H1100010101011010A",
+	    "sound": "H1100010100011100A",
+	    "bass": "H1100010101100110A",
+	    "fmam": "H1100010111010000A",
+	    "KEY_TAPE": "H1100010111111100A",
+	    "KEY_AUX": "H1100010101111100A",
+	    "cd1": "H1100110110011110A",
+	    "cd2": "H1100110101011110A",
+	    "cd3": "H1100110111011110A",
+	    "mdrec": "H1111110110111101A",
+	    "mdplay": "H1111110111010101A",
+	    "cdplay": "H1100110111010110A",
+	    "KEY_VOLUMEUP": "H1100010101111000A",
+	    "KEY_VOLUMEDOWN": "H1100010111111000A",
+	    "KEY_MUTE": "H1100010100111000A",
+	    "KEY_UP": "H1100110111011010A",
+	    "KEY_DOWN": "H1100110111000010A",
+	    "KEY_LEFT": "H1100110111111001A",
+	    "KEY_RIGHT": "H1100110101111001A"
+	}
+    }
+}

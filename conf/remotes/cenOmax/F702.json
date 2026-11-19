@@ -1,0 +1,29 @@
+{
+    "description": "cenOmax_F702 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/cenOmax/F702.lircd.conf", "remote": "cenOmax_F702", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.33,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 563, "space": 0},
+	"H": {"mark": 9000, "space": 4500},
+	"1": {"mark": 563, "space": 1687},
+	"0": {"mark": 563, "space": 562},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "X_KEY_CLOCK": "H01000000111111110111001010001101A",
+	    "X_KEY_SOURCE": "H01000000111111110011101011000101A",
+	    "KEY_MEDIA_REPEAT": "H01000000111111111111100000000111A",
+	    "KEY_MENU": "H01000000111111111101100000100111A",
+	    "KEY_ZOOM": "H01000000111111111000100001110111A",
+	    "KEY_UP": "H01000000111111110010100011010111A",
+	    "KEY_DOWN": "H01000000111111111110100000010111A",
+	    "KEY_LEFT": "H01000000111111111010100001010111A",
+	    "KEY_RIGHT": "H01000000111111110110100010010111A",
+	    "KEY_SELECT": "H01000000111111110001101011100101A"
+	}
+    }
+}

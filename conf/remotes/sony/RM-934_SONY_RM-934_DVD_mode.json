@@ -1,0 +1,30 @@
+{
+    "description": "SONY_RM-934_DVD_mode (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-934.lircd.conf", "remote": "SONY_RM-934_DVD_mode", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 624, "space": 0},
+	"H": {"mark": 2434, "space": 584},
+	"1": {"mark": 1226, "space": 591},
+	"0": {"mark": 630, "space": 591},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "dvd-video-pwon": "H1010100010111001001AVWWXXXXXXXYYYYYYYYZZZH1010100010111001001AVWWXXXXXXXYYYYYYYYZZZH1010100010111001001A",
+	    "dvd-up": "H1001110010111001001AVWWXYYYYYYYYZZZZZZZH1001110010111001001AVWWXYYYYYYYYZZZZZZZH1001110010111001001A",
+	    "dvd-down": "H0001110010111001001AVWWXXXXXXXYYYYYYYYZZZH0001110010111001001AVWWXXXXXXXYYYYYYYYZZZH0001110010111001001A",
+	    "dvd-left": "H1100110010111001001AVWWXYYYYYYYYZZZZZZZH1100110010111001001AVWWXYYYYYYYYZZZZZZZH1100110010111001001A",
+	    "dvd-right": "H0010110010111001001AVWWXXXXXXXYYYYYYYYZZZH0010110010111001001AVWWXXXXXXXYYYYYYYYZZZH0010110010111001001A",
+	    "dvd-ok": "H0100110010111001001AVWWXXXXXXXYYYYYYYYZZZH0100110010111001001AVWWXXXXXXXYYYYYYYYZZZH0100110010111001001A"
+	}
+    }
+}

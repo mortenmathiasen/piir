@@ -1,0 +1,50 @@
+{
+    "description": "Samsung_DVD_Philips_Code_0339 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/32PFL9613D.lircd.conf", "remote": "Samsung_DVD_Philips_Code_0339", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 502, "space": 0},
+	"B": {"mark": 1628, "space": 0},
+	"H": {"mark": 1629, "space": 616},
+	"1": {"mark": 1628, "space": 621},
+	"0": {"mark": 502, "space": 621},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H110001001A",
+	    "KEY_RED": "H110111001A",
+	    "KEY_GREEN": "H100001001B",
+	    "KEY_YELLOW": "H111010101A",
+	    "KEY_BLUE": "H101100101B",
+	    "KEY_EPG": "H111001001A",
+	    "KEY_INFO": "H111110001A",
+	    "KEY_OK": "H111011001A",
+	    "KEY_MENU": "H100101001B",
+	    "KEY_UP": "H111101001A",
+	    "KEY_DOWN": "H100011001B",
+	    "KEY_LEFT": "H101011001B",
+	    "KEY_RIGHT": "H110011001A",
+	    "KEY_REWIND": "H100111001B",
+	    "KEY_PLAYPAUSE": "H100000101B",
+	    "KEY_FORWARD": "H101111001B",
+	    "KEY_STOP": "H101000101B",
+	    "KEY_RECORD": "H111010001A",
+	    "KEY_CHANNELUP": "H110000101A",
+	    "KEY_CHANNELDOWN": "H111111001A",
+	    "KEY_1": "H110000001A",
+	    "KEY_2": "H101000001B",
+	    "KEY_3": "H111000001A",
+	    "KEY_4": "H100100001B",
+	    "KEY_5": "H110100001A",
+	    "KEY_6": "H101100001B",
+	    "KEY_7": "H111100001A",
+	    "KEY_8": "H100010001B",
+	    "KEY_9": "H110010001A",
+	    "KEY_0": "H100000001B"
+	}
+    }
+}

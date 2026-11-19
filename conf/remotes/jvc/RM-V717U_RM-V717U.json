@@ -1,0 +1,22 @@
+{
+    "description": "RM-V717U (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-V717U.lircd.conf", "remote": "RM-V717U", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 40000,
+    "dutycycle": 0.33,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 600, "space": 0},
+	"H": {"mark": 2400, "space": 600},
+	"1": {"mark": 1200, "space": 600},
+	"0": {"mark": 600, "space": 600},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_RECORD": "H10111001101AVVWWWWH10111001101AVVWWWWH10111001101AVVWWWWH10111001101AVVWWWWH10111001101AVVWWWWH10111001101AVVWWWWH10111001101AVVWWWWH10111001101AVVWWWWH10111001101AVVWWWWH10111001101A"
+	}
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "description": "Sony_RM-S315 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-S315.lircd.conf", "remote": "Sony_RM-S315", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1246, "space": 536},
+	"B": {"mark": 653, "space": 536},
+	"C": {"mark": 653, "space": 518},
+	"D": {"mark": 1246, "space": 518},
+	"E": {"mark": 637, "space": 536},
+	"F": {"mark": 2450, "space": 518},
+	"G": {"mark": 637, "space": 518},
+	"I": {"mark": 653, "space": 0},
+	"J": {"mark": 1246, "space": 0},
+	"K": {"mark": 1256, "space": 518},
+	"L": {"mark": 1219, "space": 536},
+	"M": {"mark": 637, "space": 0},
+	"N": {"mark": 637, "space": 561},
+	"O": {"mark": 1219, "space": 518},
+	"P": {"mark": 2450, "space": 536},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "tuner-": "FDCCBDCCKGDDI",
+	    "tuner+": "FCCBEDEBACADI",
+	    "cd_play": "FEAEBAABACBCJ",
+	    "cd_pause": "FAEEDAABAGBCJ",
+	    "cd_stop": "FEEBAAACLBEEJ",
+	    "cd_rew": "FGCBEODCDCCCJ",
+	    "cd_ff": "FABBEAABDBEGJ",
+	    "cd_d.skip": "FCDDDDDCAGCCJ",
+	    "md_play": "FGDCDCDCDDDDI",
+	    "md_pause": "FAEBABAGAADDI",
+	    "md_stop": "FEBBABAEAAAAI",
+	    "md_rew": "FBEEBBABADAAM",
+	    "md_ff": "FACBBGAEAAAAI",
+	    "tape_a_prew": "PAAABAABBBBGJ",
+	    "tape_a_next": "FCAGGDKCCCCCJ",
+	    "tape_a_stop": "FBEGDDDCCCCCJ",
+	    "tape_a_rew": "FAACEDKGCCCCJ",
+	    "tape_a_ff": "FCCDCDDCCBGCJ",
+	    "tape_b_prew": "FBBEBBDBBAAAI",
+	    "tape_b_next": "FBANLABBBDDDI",
+	    "tape_b_stop": "FBEBAABBBAAAI",
+	    "tape_b_rew": "FAABAABBBADAI",
+	    "tape_b_ff": "FBEAAABBBAAAI"
+	}
+    }
+}

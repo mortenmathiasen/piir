@@ -1,0 +1,53 @@
+{
+    "description": "100TS036 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/technisat/100TS036.lircd.conf", "remote": "100TS036", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 907, "space": 885},
+	"B": {"mark": 1814, "space": 885},
+	"C": {"mark": 1814, "space": 1770},
+	"D": {"mark": 907, "space": 1770},
+	"E": {"mark": 907, "space": 0},
+	"F": {"mark": 954, "space": 885},
+	"G": {"mark": 1861, "space": 1770},
+	"I": {"mark": 1814, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "FACBAAADABE",
+	    "KEY_MUTE": "FACBAAADACE",
+	    "KEY_STOP": "FACBADCBDE",
+	    "VT": "FACBADAAABE",
+	    "KEY_102ND": "FACBAAADCI",
+	    "TV/RADIO": "GCBAADBDAE",
+	    "A/B": "FACBADBADAE",
+	    "EXT": "FACBADAABAE",
+	    "KEY_1": "FACBAAAAAADE",
+	    "KEY_2": "FACBAAAAADI",
+	    "KEY_3": "FACBAAAAADAE",
+	    "KEY_4": "FACBAAAADBE",
+	    "KEY_5": "FACBAAAADCE",
+	    "KEY_6": "FACBAAAADAI",
+	    "KEY_7": "FACBAAAADAAE",
+	    "KEY_8": "FACBAAADBAE",
+	    "KEY_9": "FACBAAADBDE",
+	    "KEY_0": "FACBAAAAAAAE",
+	    "KEY_RED": "GCBADCCAE",
+	    "KEY_GREEN": "GCBADCABE",
+	    "KEY_YELLOW": "GCBADCACE",
+	    "KEY_BLUE": "GCBADCAAI",
+	    "KEY_EPG": "FACBADCAAAE",
+	    "KEY_MENU": "GCBAADBDI",
+	    "KEY_BACK": "FACBADBADI",
+	    "KEY_OK": "GCBAADCAAE",
+	    "KEY_UP": "FACBADBAAAE",
+	    "KEY_DOWN": "FACBADBAADE",
+	    "KEY_RIGHT": "FACBAADBAAE",
+	    "KEY_LEFT": "FACBAADBADE"
+	}
+    }
+}

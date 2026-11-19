@@ -1,0 +1,21 @@
+{
+    "description": "Fisher_Price_C0108 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/fisher_price/C0108.lircd.conf", "remote": "Fisher_Price_C0108", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 121, "space": 839},
+	"B": {"mark": 864, "space": 821},
+	"C": {"mark": 864, "space": 822},
+	"D": {"mark": 864, "space": 824},
+	"E": {"mark": 891, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----",
+    "features": {
+	"key": {
+	    "nota": "ADBCE"
+	}
+    }
+}

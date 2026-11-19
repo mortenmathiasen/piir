@@ -1,0 +1,41 @@
+{
+    "description": "CTTC-CLA_Tronic (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/cttc/CLA_Tronic.lircd.conf", "remote": "CTTC-CLA_Tronic", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 835, "space": 0},
+	"H": {"mark": 3369, "space": 3384},
+	"1": {"mark": 837, "space": 2541},
+	"0": {"mark": 837, "space": 851},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H011010000010100101111101A",
+	    "KEY_2": "H011010100010100101011101A",
+	    "KEY_3": "H011010010010100101101101A",
+	    "KEY_4": "H011010110010100101001101A",
+	    "KEY_5": "H011010001010100101110101A",
+	    "KEY_6": "H011010101010100101010101A",
+	    "KEY_7": "H011010011010100101100101A",
+	    "KEY_8": "H011010111010100101000101A",
+	    "KEY_9": "H011010000110100101111001A",
+	    "KEY_0": "H011010100110100101011001A",
+	    "KEY_POWER": "H011010010100100101101011A",
+	    "KEY_MUTE": "H011010000000100101111111A",
+	    "KEY_SLEEP": "H011010110100100101001011A",
+	    "KEY_AGAIN": "H011010111100100101000011A",
+	    "TV/AV": "H011010101100100101010011A",
+	    "Picture": "H011010100000100101011111A",
+	    "KEY_UP": "H011010010000100101101111A",
+	    "KEY_DOWN": "H011010110000100101001111A",
+	    "KEY_CHANNELUP": "H011010000100100101111011A",
+	    "KEY_CHANNELDOWN": "H011010100100100101011011A",
+	    "KEY_VOLUMEUP": "H011010011000100101100111A",
+	    "KEY_VOLUMEDOWN": "H011010111000100101000111A"
+	}
+    }
+}

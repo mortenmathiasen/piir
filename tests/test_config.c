@@ -72,7 +72,7 @@ static void test_scalar_settings(void) {
 
 static void test_missing_optional_device(void) {
   unloadConfig();
-  loadConfig(PROJECT_DIR "/conf/remotes/hvac_panasonic.json");
+  loadConfig(PROJECT_DIR "/conf/remotes/panasonic/hvac_panasonic.json");
   CHECK(isConfigLoaded());
   const char *device = (const char *)1;
   loadDevice(&device);

@@ -1,0 +1,35 @@
+{
+    "description": "sanyo (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sanyo/CTP_6633.lircd.conf", "remote": "sanyo", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 702, "space": 0},
+	"1": {"mark": 702, "space": 1378},
+	"0": {"mark": 702, "space": 3471},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------",
+    "features": {
+	"key": {
+	    "KEY_2": "111101A",
+	    "KEY_7": "011101A",
+	    "KEY_9": "101101A",
+	    "X_KEY_10": "001101A",
+	    "KEY_0": "110101A",
+	    "KEY_A": "010101A",
+	    "KEY_B": "100101A",
+	    "av": "000101A",
+	    "KEY_VOLUMEDOWN": "110111A",
+	    "KEY_VOLUMEUP": "001111A",
+	    "reset": "001011A",
+	    "con_dn": "000111A",
+	    "con_up": "111011A",
+	    "KEY_MUTE": "011011A",
+	    "bri_dn": "100111A",
+	    "bri_up": "010111A",
+	    "KEY_POWER": "100011A"
+	}
+    }
+}

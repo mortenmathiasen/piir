@@ -1,0 +1,41 @@
+{
+    "description": "conrad_vcr_sony_030 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/universal/CV150.lircd.conf", "remote": "conrad_vcr_sony_030", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 582, "space": 0},
+	"1": {"mark": 582, "space": 1370},
+	"0": {"mark": 582, "space": 397},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_1": "1010000110A",
+	    "KEY_2": "1011000110A",
+	    "KEY_3": "1010100110A",
+	    "KEY_4": "1011100110A",
+	    "KEY_5": "1010010110A",
+	    "KEY_6": "1011010110A",
+	    "KEY_7": "1010110110A",
+	    "KEY_8": "1011110110A",
+	    "KEY_9": "1010001110A",
+	    "KEY_0": "1011001110A",
+	    "KEY_UP": "1011010000A",
+	    "KEY_DOWN": "1010110000A",
+	    "KEY_LEFT": "1011001000A",
+	    "KEY_RIGHT": "1010001000A",
+	    "KEY_MENU": "1011000000A",
+	    "KEY_NEXT": "1011000100A",
+	    "KEY_PAUSE": "1011110000A",
+	    "KEY_PLAY": "1010000100A",
+	    "KEY_RECORD": "1010111100A",
+	    "av": "1010101100A",
+	    "b1": "1011111100A",
+	    "b2": "1011100000A",
+	    "KEY_POWER": "1010100000A"
+	}
+    }
+}

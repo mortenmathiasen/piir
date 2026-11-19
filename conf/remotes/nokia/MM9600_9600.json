@@ -1,0 +1,49 @@
+{
+    "description": "9600 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/nokia/MM9600.lircd.conf", "remote": "9600", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 641, "space": 355},
+	"B": {"mark": 641, "space": 710},
+	"C": {"mark": 1282, "space": 710},
+	"D": {"mark": 1282, "space": 355},
+	"E": {"mark": 641, "space": 0},
+	"H": {"mark": 767, "space": 2236},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "OFF": "HBADBAAAAADABCE",
+	    "KEY_RADIO": "HBAAAACAAADABCE",
+	    "KEY_TV": "HAAABACAAADABCE",
+	    "KEY_1": "HABAAAAAAAADABCE",
+	    "KEY_2": "HBCAAAAAAADABCE",
+	    "KEY_3": "HAABAAAAAAADABCE",
+	    "KEY_4": "HBACAAAAAADABCE",
+	    "KEY_5": "HABCAAAAAADABCE",
+	    "KEY_6": "HBDBAAAAAADABCE",
+	    "KEY_7": "HAAABAAAAAADABCE",
+	    "KEY_8": "HBAACAAAAADABCE",
+	    "KEY_9": "HABACAAAAADABCE",
+	    "KEY_0": "HBAAAAAAAAADABCE",
+	    "KEY_EPG": "HAABDABAAADABCE",
+	    "KEY_MENU": "HBCACCAADABCE",
+	    "KEY_EXIT": "HABCCCAADABCE",
+	    "KEY_I": "HABDBCAAADABCE",
+	    "KEY_OK": "HBAAADBAAADABCE",
+	    "KEY_VOLUMEUP": "HBDBCAAAADABCE",
+	    "KEY_VOLUMEDOWN": "HAAABCAAAADABCE",
+	    "KEY_MUTE": "HBAACCAAADABCE",
+	    "KEY_RIGHT": "HBDABCAAADABCE",
+	    "KEY_UP": "HBDABAAAAADABCE",
+	    "KEY_DOWN": "HAAAABAAAAADABCE",
+	    "KEY_NEXT": "HBACCCAADABCE",
+	    "KEY_PREVIOUS": "HAABACCAADABCE",
+	    "KEY_LEFT": "HAAAABCAAADABCE",
+	    "KEY_TEXT": "HBCAAAACADABCE"
+	}
+    }
+}

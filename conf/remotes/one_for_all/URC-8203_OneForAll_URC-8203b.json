@@ -1,0 +1,33 @@
+{
+    "description": "OneForAll_URC-8203b (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/one_for_all/URC-8203.lircd.conf", "remote": "OneForAll_URC-8203b", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 851, "space": 2466},
+	"B": {"mark": 872, "space": 2466},
+	"C": {"mark": 872, "space": 796},
+	"D": {"mark": 851, "space": 818},
+	"E": {"mark": 3412, "space": 3276},
+	"F": {"mark": 872, "space": 818},
+	"G": {"mark": 851, "space": 0},
+	"I": {"mark": 851, "space": 36979},
+	"J": {"mark": 872, "space": 36979},
+	"K": {"mark": 851, "space": 796},
+	"L": {"mark": 872, "space": 0},
+	"M": {"mark": 900, "space": 796},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------------------",
+    "features": {
+	"key": {
+	    "red": "EMDABDBACDAAABBCDADCBADDCJEFDABDBACDBABAG",
+	    "green": "EDCAADBCCDBBABBDCBDABADCCIECCBACBDDCABBABCG",
+	    "yellow": "EDCABCBAAACAAAACCACDDCBDCJEFDABCAABACAAAL",
+	    "blue": "EFDBBCBCBCABBBBDCADBCADDDJECCABCBCAKBBBBL",
+	    "0": "EFDDBDABCCADBAAACBDKABCBCIEFDDACAACDADABBG",
+	    "power": "EDDDADBCCDCDBBAACACBABBADIEDDCBDBCDCDCAAABCG"
+	}
+    }
+}

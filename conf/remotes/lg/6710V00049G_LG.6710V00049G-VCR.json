@@ -1,0 +1,25 @@
+{
+    "description": "LG.6710V00049G-VCR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/lg/6710V00049G.lircd.conf", "remote": "LG.6710V00049G-VCR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 570, "space": 0},
+	"H": {"mark": 9000, "space": 4487},
+	"1": {"mark": 570, "space": 1682},
+	"0": {"mark": 570, "space": 549},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "STOP": "H01110110100010011000000001111111A",
+	    "PSTILL": "H01110110100010011101000000101111A",
+	    "REC": "H01110110100010011001000001101111A",
+	    "REW": "H01110110100010010100000010111111A",
+	    "PLAY": "H01110110100010010001000011101111A",
+	    "FF": "H01110110100010011100000000111111A"
+	}
+    }
+}

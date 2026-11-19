@@ -1,0 +1,49 @@
+{
+    "description": "GRUNDIG_TelePilot_100C (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/grundig/TelePilot_100C.lircd.conf", "remote": "GRUNDIG_TelePilot_100C", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 32000,
+    "dutycycle": 0.25,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 512, "space": 512},
+	"B": {"mark": 512, "space": 1024},
+	"C": {"mark": 1024, "space": 1024},
+	"D": {"mark": 512, "space": 0},
+	"E": {"mark": 1024, "space": 512},
+	"H": {"mark": 512, "space": 2560},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "HBCAAACAD",
+	    "KEY_AUDIO": "HABACEBAD",
+	    ">|": "HABEABCAD",
+	    "|<": "HABCAACAD",
+	    "KEY_MUTE": "HABAAAAAAAD",
+	    "KEY_1": "HABAACCAD",
+	    "KEY_2": "HBCACCAD",
+	    "KEY_3": "HAABACCAD",
+	    "KEY_4": "HBACCCAD",
+	    "KEY_5": "HABCCCAD",
+	    "KEY_6": "HBEBCCAD",
+	    "KEY_7": "HAAABCCAD",
+	    "KEY_8": "HBAAEBCAD",
+	    "KEY_9": "HABAEBCAD",
+	    "KEY_0": "HBAAACCAD",
+	    "KEY_MENU": "HABEBEBAD",
+	    "DiscMenu": "HAAABAACAD",
+	    "KEY_CHANNELUP": "HBCCEBAD",
+	    "KEY_CHANNELDOWN": "HAABCEBAD",
+	    "KEY_KPMINUS": "HABACACAD",
+	    "KEY_KPPLUS": "HBAACACAD",
+	    "KEY_OK": "HBAAAAACAD",
+	    "KEY_TEXT": "HBAAAEABAD",
+	    "TV-G": "HBACAACAD",
+	    "KEY_RED": "HBCEAABAD",
+	    "KEY_GREEN": "HBEAAAABAD",
+	    "KEY_YELLOW": "HAABEAABAD",
+	    "KEY_BLUE": "HBEABEBAD"
+	}
+    }
+}

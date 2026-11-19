@@ -1,0 +1,52 @@
+{
+    "description": "Universum_SR420 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/universum/SR420.lircd.conf", "remote": "Universum_SR420", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 892, "space": 784},
+	"B": {"mark": 1784, "space": 1568},
+	"C": {"mark": 1784, "space": 784},
+	"D": {"mark": 912, "space": 784},
+	"E": {"mark": 892, "space": 0},
+	"F": {"mark": 892, "space": 1568},
+	"G": {"mark": 1784, "space": 0},
+	"I": {"mark": 1804, "space": 1568},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "DABAAACFACE",
+	    "KEY_MUTE": "DABAAACFABE",
+	    "KEY_1": "DABAAACAAAFE",
+	    "KEY_2": "DABAAACAAFG",
+	    "KEY_3": "DABAAACAAFAE",
+	    "KEY_4": "DABAAACAFCE",
+	    "KEY_5": "DABAAACAFBE",
+	    "KEY_6": "DABAAACAFAG",
+	    "KEY_7": "DABAAACAFAAE",
+	    "KEY_8": "DABAAACFCAE",
+	    "KEY_9": "DABAAACFCFE",
+	    "KEY_0": "DABAAACAAAAE",
+	    "KEY_TV": "IBAAACAFBE",
+	    "KEY_RADIO": "IBAAACAFCE",
+	    "av": "DABAAAAAACAE",
+	    "KEY_INFO": "DABAAAABACE",
+	    "KEY_LIST": "DABAAAABBG",
+	    "swap": "DABAAAACAFG",
+	    "KEY_RED": "DABAAAAABAAE",
+	    "KEY_GREEN": "DABAAAAABAG",
+	    "KEY_YELLOW": "DABAAAAACFG",
+	    "KEY_BLUE": "DABAAAAABCE",
+	    "KEY_EXIT": "DABAAAABABE",
+	    "KEY_MENU": "IBAAABCFG",
+	    "KEY_CHANNELUP": "DABAAAACAAAE",
+	    "KEY_CHANNELDOWN": "DABAAAACAAFE",
+	    "KEY_VOLUMEUP": "DABAAABCAAE",
+	    "KEY_VOLUMEDOWN": "DABAAABCAFE",
+	    "KEY_OK": "IBAAABBAAE"
+	}
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "description": "Marantz_RC4000CD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/marantz/RC4000CD.lircd.conf", "remote": "Marantz_RC4000CD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 923, "space": 854},
+	"B": {"mark": 1846, "space": 854},
+	"C": {"mark": 1846, "space": 1708},
+	"D": {"mark": 923, "space": 1708},
+	"E": {"mark": 942, "space": 854},
+	"F": {"mark": 923, "space": 0},
+	"G": {"mark": 1846, "space": 0},
+	"I": {"mark": 1865, "space": 1708},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_TIME": "EAACBAADCAF",
+	    "OFF": "EAACBAADABF",
+	    "PROG": "EAACBDBDBF",
+	    "FADE": "IACBDAABAF",
+	    "SHUFFLE": "EAACBADAABF",
+	    "KEY_1": "EAACBAAAAADF",
+	    "KEY_2": "EAACBAAAADG",
+	    "KEY_3": "EAACBAAAADAF",
+	    "KEY_4": "EAACBAAADBF",
+	    "KEY_5": "EAACBAAADCF",
+	    "KEY_6": "EAACBAAADAG",
+	    "KEY_7": "EAACBAAADAAF",
+	    "KEY_8": "EAACBAADBAF",
+	    "KEY_9": "EAACBAADBDF",
+	    "SCAN": "EAACBDCCAF",
+	    "KEY_0": "EAACBAAAAAAF",
+	    "KEY_AGAIN": "EAACBADAACF",
+	    "KEY_VOLUMEDOWN": "EAACBADBADF",
+	    "KEY_VOLUMEUP": "EAACBADBAAF",
+	    "KEY_PLAY": "EAACBDACCF",
+	    "KEY_STOP": "EAACBDACAG",
+	    "KEY_NEXT": "EAACBDBAAAF",
+	    "Prev_Track": "EAACBDBAADF",
+	    "KEY_REWIND": "EAACBDABDG",
+	    "KEY_PAUSE": "EAACBDABAAF",
+	    "KEY_FORWARD": "EAACBDACBF"
+	}
+    }
+}

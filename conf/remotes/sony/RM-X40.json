@@ -1,0 +1,31 @@
+{
+    "description": "SONY_RM-X40 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-X40.lircd.conf", "remote": "SONY_RM-X40", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1256, "space": 0},
+	"H": {"mark": 2459, "space": 514},
+	"1": {"mark": 1256, "space": 514},
+	"0": {"mark": 656, "space": 514},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "OFF": "H10110000010000A",
+	    "KEY_MODE": "H11100010010000A",
+	    "KEY_CYCLEWINDOWS": "H01100010010000A",
+	    "SEEK_AMS-": "H11011000010000A",
+	    "SEEK_AMS+": "H00111000010000A",
+	    "KEY_REWIND": "H10001100010000A",
+	    "KEY_FASTFORWARD": "H00001100010000A",
+	    "KEY_KPMINUS": "H11001000010000A",
+	    "KEY_KPPLUS": "H01001000010000A",
+	    "SEL": "H10001000010000A",
+	    "KEY_MUTE": "H00101000010000A",
+	    "DSPL": "H00010100010000A"
+	}
+    }
+}

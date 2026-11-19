@@ -1,0 +1,36 @@
+{
+    "description": "Sky_rev.4 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sky/Rev4.lircd.conf", "remote": "Sky_rev.4", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 554, "space": 336},
+	"B": {"mark": 536, "space": 336},
+	"C": {"mark": 554, "space": 782},
+	"D": {"mark": 1010, "space": 336},
+	"E": {"mark": 2830, "space": 756},
+	"F": {"mark": 536, "space": 782},
+	"G": {"mark": 554, "space": 0},
+	"I": {"mark": 988, "space": 336},
+	"J": {"mark": 1010, "space": 782},
+	"K": {"mark": 536, "space": 0},
+	"L": {"mark": 988, "space": 782},
+	"M": {"mark": 1010, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------------",
+    "features": {
+	"key": {
+	    "pwr": "EBBFFIBBBBBBBBBBBBBBBIFBK",
+	    "sky": "EBBFFIBBBBBBBBBBBLBBBBBBK",
+	    "1": "EAACCDAAAAAAAAAAAAAAAAAAM",
+	    "2": "EAACCDAAAAABAAAAAAAAABAJG",
+	    "3": "EAACCDAAAAAAAAAAAAAAAAADG",
+	    "4": "EBAFCDAAAAAAABAABAAAAAJBG",
+	    "6": "EAACCDAAAAAAAAAAAAAAAADCG",
+	    "7": "EAACCDAAAAAAAAAAAAAAAADAG",
+	    "8": "EAACCDAAAAAAAAAAAAAAAJAAG"
+	}
+    }
+}

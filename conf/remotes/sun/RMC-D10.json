@@ -1,0 +1,39 @@
+{
+    "description": "sun (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sun/RMC-D10.lircd.conf", "remote": "sun", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 567, "space": 0},
+	"H": {"mark": 2349, "space": 596},
+	"1": {"mark": 1159, "space": 596},
+	"0": {"mark": 567, "space": 596},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "brightDOWN": "H1111100010111001000A",
+	    "brightUP": "H0111100010111001000A",
+	    "contrastDOWN": "H1001100010111001000A",
+	    "contrastUP": "H0001100010111001000A",
+	    "verticalDOWN": "H1111000010111001000A",
+	    "verticalUP": "H0111000010111001000A",
+	    "horizontalLEFT": "H1011000010111001000A",
+	    "horizontalRIGHT": "H0011000010111001000A",
+	    "heightDOWN": "H1001010010111001000A",
+	    "heightUP": "H0001010010111001000A",
+	    "widthLEFT": "H1110010010111001000A",
+	    "widthRIGHT": "H0110010010111001000A",
+	    "converganceDOWN": "H1011010010111001000A",
+	    "converganceUP": "H0011010010111001000A",
+	    "converganceLEFT": "H1101010010111001000A",
+	    "converganceRIGHT": "H0101010010111001000A",
+	    "tiltDOWNLEFT": "H1000100010111001000A",
+	    "tiltDOWNRIGHT": "H0000100010111001000A",
+	    "sizeDOWN": "H0001110010111001000A",
+	    "sizeUP": "H1110110010111001000A"
+	}
+    }
+}

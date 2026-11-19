@@ -1,0 +1,51 @@
+{
+    "description": "SCHNEIDER_RC206 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/schneider/RC206.lircd.conf", "remote": "SCHNEIDER_RC206", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1060, "space": 780},
+	"B": {"mark": 1080, "space": 680},
+	"C": {"mark": 2140, "space": 780},
+	"D": {"mark": 1060, "space": 1460},
+	"E": {"mark": 1200, "space": 680},
+	"F": {"mark": 1080, "space": 0},
+	"G": {"mark": 1060, "space": 0},
+	"I": {"mark": 2140, "space": 1460},
+	"J": {"mark": 2140, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "EBCAAAAADBCG",
+	    "KEY_POWER2": "EBCAAADCDBJ",
+	    "KEY_MUTE": "EBCAAAAADBIF",
+	    "COLOR_+": "EBCAAAADCDJ",
+	    "COLOR_-": "EBCAAAADCDBF",
+	    "CONTRAST_+": "EBCAAAADICG",
+	    "CONTRAST_-": "EBCAAAADIIF",
+	    "BRIGHT_+": "EBCAAAADBBCG",
+	    "BRIGHT_-": "EBCAAAADBBIF",
+	    "KEY_CHANNELDOWN": "EBCAAADCAADF",
+	    "KEY_CHANNELUP": "EBCAAADCAAAG",
+	    "TS": "EBCAAAAADBBJ",
+	    "KEY_VOLUMEUP": "EBCAAAADCAAG",
+	    "KEY_VOLUMEDOWN": "EBCAAAADCADF",
+	    "KEY_1": "EBCAAAAAAAADF",
+	    "KEY_2": "EBCAAAAAAADJ",
+	    "KEY_3": "EBCAAAAAAADBF",
+	    "KEY_4": "EBCAAAAAADCG",
+	    "KEY_5": "EBCAAAAAADIF",
+	    "KEY_6": "EBCAAAAAADBJ",
+	    "KEY_7": "EBCAAAAAADBBF",
+	    "KEY_8": "EBCAAAAADCAG",
+	    "KEY_9": "EBCAAAAADCDF",
+	    "KEY_0": "EBCAAAAAAAAAG",
+	    "KEY_TV": "EBCAAADBBBBBF",
+	    "AV": "EBCAAADBBCAG",
+	    "KEY_D": "EBCAAAAADIJ"
+	}
+    }
+}

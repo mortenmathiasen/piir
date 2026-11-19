@@ -1,0 +1,32 @@
+{
+    "description": "alpine_rue-4185 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/alpine/RUE-4185.lircd.conf", "remote": "alpine_rue-4185", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 604, "space": 0},
+	"H": {"mark": 9019, "space": 4477},
+	"1": {"mark": 596, "space": 1643},
+	"0": {"mark": 596, "space": 524},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_MUTE": "H01100001010011100110100010010111A",
+	    "KEY_VOLUMEDOWN": "H01100001010011101010100001010111A",
+	    "KEY_VOLUMEUP": "H01100001010011100010100011010111A",
+	    "KEY_POWER": "H01100001010011101001000001101111A",
+	    "KEY_PAUSE": "H01100001010011101110000000011111A",
+	    "KEY_UP": "H01100001010011100111000010001111A",
+	    "KEY_DOWN": "H01100001010011101111000000001111A",
+	    "Back_Track": "H01100001010011101100100000110111A",
+	    "KEY_NEXT": "H01100001010011100100100010110111A",
+	    "cd_chg": "H01100001010011101100000000111111A",
+	    "Band_Prog": "H01100001010011101011000001001111A",
+	    "KEY_CYCLEWINDOWS": "H01100001010011100101000010101111A",
+	    "A_Proc": "H01100001010011100110000010011111A"
+	}
+    }
+}

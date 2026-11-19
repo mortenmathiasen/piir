@@ -1,0 +1,23 @@
+{
+    "description": "panas928 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/panasonic/RAK-RX928WK.lircd.conf", "remote": "panas928", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 518, "space": 0},
+	"H": {"mark": 3610, "space": 1635},
+	"1": {"mark": 518, "space": 331},
+	"0": {"mark": 518, "space": 1208},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------------------------",
+    "features": {
+	"key": {
+	    "-vol": "H101111111111101111111010101111000111001000110100A",
+	    "+vol": "H101111111111101111111010101111001111001010110100A",
+	    "-P": "H101111111111101111111010101111001110100010101110A",
+	    "+P": "H101111111111101111111010101111000001100001011110A"
+	}
+    }
+}

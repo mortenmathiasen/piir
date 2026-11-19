@@ -1,0 +1,27 @@
+{
+    "description": "lifetec_remote (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/lifetec/Mini-Hifi-Station.lircd.conf", "remote": "lifetec_remote", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 617, "space": 0},
+	"H": {"mark": 4533, "space": 4395},
+	"1": {"mark": 617, "space": 473},
+	"0": {"mark": 617, "space": 1600},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H11011010110110101001011101101000A",
+	    "KEY_PLAY": "H11011010110110100011011111001000A",
+	    "KEY_REWIND": "H11011010110110101101111100100000A",
+	    "KEY_FASTFORWARD": "H11011010110110101100111100110000A",
+	    "KEY_STOP": "H11011010110110100010011111011000A",
+	    "KEY_MUTE": "H11011010110110100001011111101000A",
+	    "KEY_VOLUMEUP": "H11011010110110101111101100000100A",
+	    "KEY_VOLUMEDOWN": "H11011010110110101111100100000110A"
+	}
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "description": "InFocus-SP8600 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/infocus/SP8600.lircd.conf", "remote": "InFocus-SP8600", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 584, "space": 0},
+	"H": {"mark": 9009, "space": 4413},
+	"1": {"mark": 584, "space": 1659},
+	"0": {"mark": 584, "space": 530},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_MENU": "H10001100011100111110000100011110A",
+	    "KEY_UP": "H10001100011100111000001101111100A",
+	    "KEY_POWER": "H10001100011100111000000101111110A",
+	    "KEY_LEFT": "H10001100011100111100001100111100A",
+	    "KEY_ENTER": "H10001100011100111010001101011100A",
+	    "KEY_RIGHT": "H10001100011100110010001111011100A",
+	    "keystone_inc": "H10001100011100111010000101011110A",
+	    "KEY_DOWN": "H10001100011100110100001110111100A",
+	    "KEY_VOLUMEUP": "H10001100011100110011000111001110A",
+	    "keystone_dec": "H10001100011100110010000111011110A",
+	    "freeze": "H10001100011100110111000110001110A",
+	    "KEY_VOLUMEDOWN": "H10001100011100111111000100001110A",
+	    "auto": "H10001100011100110110000110011110A",
+	    "source": "H10001100011100111100000100111110A",
+	    "KEY_MUTE": "H10001100011100111001000101101110A"
+	}
+    }
+}

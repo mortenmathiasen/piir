@@ -1,0 +1,32 @@
+{
+    "description": "Toshiba_SE-R0127 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/toshiba/SE-R0127.lircd.conf", "remote": "Toshiba_SE-R0127", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 729, "space": 0},
+	"H": {"mark": 9179, "space": 4309},
+	"1": {"mark": 729, "space": 1519},
+	"0": {"mark": 729, "space": 371},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_OPEN": "H10100010010111011010111101010000A",
+	    "KEY_POWER": "H10100010010111010100100010110111A",
+	    "skip-left": "H10100010010111011100010000111011A",
+	    "skip-right": "H10100010010111010010010011011011A",
+	    "rev": "H10100010010111011001100001100111A",
+	    "KEY_FORWARD": "H10100010010111011100100000110111A",
+	    "KEY_SUBTITLE": "H10100010010111010001010011101011A",
+	    "KEY_ANGLE": "H10100010010111011001010001101011A",
+	    "KEY_CLEAR": "H10100010010111011111011100001000A",
+	    "KEY_ENTER": "H10100010010111010100010010111011A",
+	    "KEY_AUDIO": "H10100010010111011110010000011011A",
+	    "pause-step": "H10100010010111010000000011111111A",
+	    "KEY_PLAY": "H10100010010111011010100001010111A"
+	}
+    }
+}

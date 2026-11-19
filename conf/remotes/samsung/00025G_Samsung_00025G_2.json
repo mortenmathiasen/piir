@@ -1,0 +1,25 @@
+{
+    "description": "Samsung_00025G_2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/samsung/00025G.lircd.conf", "remote": "Samsung_00025G_2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 600, "space": 0},
+	"H": {"mark": 4550, "space": 4383},
+	"1": {"mark": 600, "space": 1632},
+	"0": {"mark": 600, "space": 511},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "tv_power": "H11100000111000000100000010111111A",
+	    "tv_video": "H11100000111000001000000001111111A",
+	    "KEY_VOLUMEUP": "H11100000111000001110000000011111A",
+	    "KEY_VOLUMEDOWN": "H11100000111000001101000000101111A",
+	    "KEY_CHANNELUP": "H11100000111000000100100010110111A",
+	    "KEY_CHANNELDOWN": "H11100000111000000000100011110111A"
+	}
+    }
+}

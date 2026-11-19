@@ -1,0 +1,36 @@
+{
+    "description": "Nakamichi_Egg (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/nakamichi/Egg.lircd.conf", "remote": "Nakamichi_Egg", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 617, "space": 0},
+	"B": {"mark": 9095, "space": 2196},
+	"H": {"mark": 9094, "space": 4445},
+	"1": {"mark": 607, "space": 1643},
+	"0": {"mark": 607, "space": 521},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "H01000001101110100110100110010110AVVVVWYYYZZBAVVVVVVVVVWWWWWWXXZZZZZZBA",
+	    "KEY_VOLUMEDOWN": "H01000001101110101110100100010110AVVVVWYYYZZBAVVVVVVVVVWWWWWWXXZZZZZZBA",
+	    "KEY_CYCLEWINDOWS": "H01000001101110100010100111010110AVVVVWYYYZZBAVVVVVVVVVWWWWWWXXZZZZZZBA",
+	    "KEY_SELECT": "H01000001101110101010100101010110AVVVVWYYYZZBAVVVVVVVVVWWWWWWXXZZZZZZBA",
+	    "fm/am": "H01000001101110100100000110111110AVVVVWYYYZZBAVVVVVVVVVWWWWWWXXZZZZZZBA",
+	    "p.scan": "H01000001101110101111000100001110AVVVVWYYYZZBAVVVVVVVVVWWWWWWXXZZZZZZBA",
+	    "ps+": "H01000001101110101100100100110110AVVVVWYYYZZBAVVVVVVVVVWWWWWWXXZZZZZZBA",
+	    "ps-": "H01000001101110101000100101110110AVVVVWYYYZZBAVVVVVVVVVWWWWWWXXZZZZZZBA",
+	    "<<<": "H01000001101110101001000101101110AVVVVWYYYZZBAVVVVVVVVVWWWWWWXXZZZZZZBA",
+	    ">>>": "H01000001101110101101000100101110AVVVVWYYYZZBAVVVVVVVVVWWWWWWXXZZZZZZBA",
+	    "KEY_MUTE": "H01000001101110100100100110110110AVVVVWYYYZZBAVVVVVVVVVWWWWWWXXZZZZZZBA"
+	}
+    }
+}

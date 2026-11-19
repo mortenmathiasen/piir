@@ -1,0 +1,52 @@
+{
+    "description": "Medion_41666 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/medion/MD_41666.lircd.conf", "remote": "Medion_41666", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 674, "space": 0},
+	"H": {"mark": 2477, "space": 487},
+	"1": {"mark": 674, "space": 487},
+	"0": {"mark": 1296, "space": 487},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_MENU": "H11111000111A",
+	    "KEY_MUTE": "H11010110111A",
+	    "KEY_POWER": "H01010110111A",
+	    "KEY_EXIT": "H01101100011A",
+	    "KEY_VOLUMEUP": "H10110110111A",
+	    "KEY_VOLUMEDOWN": "H00110110111A",
+	    "KEY_LEFT": "H00100110111A",
+	    "KEY_UP": "H10000110111A",
+	    "KEY_RIGHT": "H10100110111A",
+	    "KEY_DOWN": "H00000110111A",
+	    "KEY_CHANNELUP": "H11110110111A",
+	    "KEY_CHANNELDOWN": "H01110110111A",
+	    "KEY_1": "H11111110111A",
+	    "KEY_2": "H01111110111A",
+	    "KEY_3": "H10111110111A",
+	    "KEY_4": "H00111110111A",
+	    "KEY_5": "H11011110111A",
+	    "KEY_6": "H01011110111A",
+	    "KEY_7": "H10011110111A",
+	    "KEY_8": "H00011110111A",
+	    "KEY_9": "H11101110111A",
+	    "av": "H01011010111A",
+	    "KEY_0": "H01101110111A",
+	    "KEY_ENTER": "H11001110111A",
+	    "vtx": "H00000010111A",
+	    "vtxm": "H10101100011A",
+	    "vtxp": "H11101100011A",
+	    "vtxt": "H01000110111A",
+	    "vtxex": "H11100010111A",
+	    "KEY_RED": "H11001100011A",
+	    "KEY_GREEN": "H01001100011A",
+	    "KEY_YELLOW": "H10001100011A",
+	    "KEY_BLUE": "H00001100011A"
+	}
+    }
+}

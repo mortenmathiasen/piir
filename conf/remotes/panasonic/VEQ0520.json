@@ -1,0 +1,30 @@
+{
+    "description": "Panasonic (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/panasonic/VEQ0520.lircd.conf", "remote": "Panasonic", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 300, "space": 0},
+	"H": {"mark": 300, "space": 1239},
+	"1": {"mark": 300, "space": 1712},
+	"0": {"mark": 300, "space": 4459},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H101011111111001000000001A",
+	    "VUp": "H101011110111001000010001A",
+	    "VDown": "H101011100111001000110001A",
+	    "KEY_RECORD": "H101011111101101000000100A",
+	    "KEY_PAUSE": "H101011110011101000011000A",
+	    "StillAdv": "H101011111001101000001100A",
+	    "KEY_STOP": "H101011111111101000000000A",
+	    "KEY_REWIND": "H101011110111101000010000A",
+	    "KEY_FASTFORWARD": "H101011100111101000110000A",
+	    "KEY_PLAY": "H101011110101101000010100A",
+	    "KEY_SLOW": "H101011100001101000111100A"
+	}
+    }
+}

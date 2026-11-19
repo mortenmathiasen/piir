@@ -1,0 +1,47 @@
+{
+    "description": "ST3002S (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/technisat/ST3002S.lircd.conf", "remote": "ST3002S", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 210, "space": 0},
+	"1": {"mark": 201, "space": 7390},
+	"0": {"mark": 201, "space": 4859},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "11001000001A",
+	    "KEY_MUTE": "11001000110A",
+	    "KEY_1": "11001010000A",
+	    "KEY_2": "11001010001A",
+	    "KEY_3": "11001010010A",
+	    "KEY_4": "11001010011A",
+	    "KEY_5": "11001010100A",
+	    "KEY_6": "11001010101A",
+	    "KEY_7": "11001010110A",
+	    "KEY_8": "11001010111A",
+	    "KEY_9": "11001011000A",
+	    "KEY_0": "11001001111A",
+	    "KEY_VOLUMEUP": "11001101110A",
+	    "KEY_VOLUMEDOWN": "11001101111A",
+	    "program_plus": "11001000111A",
+	    "program_minus": "11001001000A",
+	    "KEY_RADIO": "11001000010A",
+	    "audio_plus": "11001101000A",
+	    "audio_minus": "11001101001A",
+	    "deem": "11001011110A",
+	    "dek": "11001000100A",
+	    "a-b": "11001100100A",
+	    "lnb": "11001001110A",
+	    "video_plus": "11001101100A",
+	    "video_minus": "11001101101A",
+	    "KEY_SAT": "11001001001A",
+	    "KEY_TAB": "11001000101A",
+	    "save": "11001100110A",
+	    "KEY_DELETE": "11001100001A"
+	}
+    }
+}

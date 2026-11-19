@@ -1,0 +1,30 @@
+{
+    "description": "CAM (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/canon/WL-60.lircd.conf", "remote": "CAM", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 649, "space": 0},
+	"H": {"mark": 9152, "space": 4444},
+	"1": {"mark": 648, "space": 1612},
+	"0": {"mark": 648, "space": 480},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "START/STOP": "H10100001011011101100000000111111A",
+	    "KEY_W": "H10100001011011101011100001000111A",
+	    "KEY_T": "H10100001011011100011100011000111A",
+	    "COUNTER-RESET": "H10100001011011101011000001001111A",
+	    "TAPE-RETURN": "H10100001011011100110000010011111A",
+	    "KEY_POWER": "H10100001011011101101100000100111A",
+	    "KEY_REWIND": "H10100001011011100100000010111111A",
+	    "KEY_PLAY": "H10100001011011101000000001111111A",
+	    "KEY_FASTFORWARD": "H10100001011011100000000011111111A",
+	    "KEY_STOP": "H10100001011011101110100000010111A",
+	    "KEY_PAUSE": "H10100001011011100010000011011111A"
+	}
+    }
+}

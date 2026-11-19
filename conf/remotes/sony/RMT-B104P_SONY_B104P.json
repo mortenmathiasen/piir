@@ -1,0 +1,28 @@
+{
+    "description": "SONY_B104P (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-B104P.lircd.conf", "remote": "SONY_B104P", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 637, "space": 0},
+	"H": {"mark": 2441, "space": 556},
+	"1": {"mark": 1234, "space": 557},
+	"0": {"mark": 637, "space": 557},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "H01001001000AVVWWWWWWXXXYYZZZZZZZZZH01001001000AVVWWWWWWXXXYYZZZZZZZZZH01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000AVVWWWWWXXXXXXXYYYZZH11001001000AVVWWWWWXXXXXXXYYYZZH11001001000A",
+	    "KEY_POWER2": "H10101001000AVVWWWWWXXXXXXXYYYZZH10101001000AVVWWWWWXXXXXXXYYYZZH10101001000A",
+	    "X_KEY_INPUT": "H10100101000AVVWWWWWXXXXXXXYYYZZH10100101000AVVWWWWWXXXXXXXYYYZZH10100101000A"
+	}
+    }
+}

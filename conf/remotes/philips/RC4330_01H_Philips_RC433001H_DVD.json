@@ -1,0 +1,39 @@
+{
+    "description": "Philips_RC433001H_DVD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC4330_01H.lircd.conf", "remote": "Philips_RC433001H_DVD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 458, "space": 419},
+	"B": {"mark": 458, "space": 838},
+	"C": {"mark": 916, "space": 838},
+	"D": {"mark": 916, "space": 419},
+	"E": {"mark": 458, "space": 0},
+	"F": {"mark": 1374, "space": 1257},
+	"G": {"mark": 916, "space": 0},
+	"H": {"mark": 2726, "space": 848},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------",
+    "features": {
+	"key": {
+	    "Power": "HBAAFAAAACAAAAADBAE",
+	    "FastRewind": "HBAABDAAAACAAACCAG",
+	    "Stop": "HBAAFAAAACAAADBAAG",
+	    "Play": "HBAABDAAAACAAACDBAE",
+	    "FastForward": "HBAAFAAAACAAACCAAE",
+	    "Pause": "HBAABDAAAACAAADBAAAE",
+	    "Menu": "HBAAFAAAACAACCCAE",
+	    "OK": "HBAABDAAAACAACDABAE",
+	    "Up": "HBAAFAAAACAACDBAAE",
+	    "Down": "HBAABDAAAACAACDBAG",
+	    "Left": "HBAAFAAAACAACDBCE",
+	    "Right": "HBAABDAAAACAACDBDE",
+	    "Audio": "HBAAFAAAACAACADABE",
+	    "SubtitlingLanguage": "HBAABDAAAACAADABAAG",
+	    "SubtitleSelection": "HBAAFAAAACAACACDE",
+	    "OSD": "HBAABDAAAACAAAAADAAE"
+	}
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "description": "TAPE (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pioneer/CU-VSX107.lircd.conf", "remote": "TAPE", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 506, "space": 0},
+	"H": {"mark": 8492, "space": 4310},
+	"1": {"mark": 507, "space": 1625},
+	"0": {"mark": 507, "space": 559},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "tapestop": "H10000101011110100110100010010111A",
+	    "tape<<": "H10000101011110101000100001110111A",
+	    "tape>>": "H10000101011110100000100011110111A",
+	    "tape<": "H10000101011110101010100001010111A",
+	    "tape>": "H10000101011110101110100000010111A",
+	    "tapepower": "H10000101011110100011100011000111A"
+	}
+    }
+}

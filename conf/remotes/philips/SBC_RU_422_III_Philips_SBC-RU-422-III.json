@@ -1,0 +1,48 @@
+{
+    "description": "Philips/SBC-RU-422-III (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/SBC_RU_422_III.lircd.conf", "remote": "Philips/SBC-RU-422-III", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 932, "space": 847},
+	"B": {"mark": 1864, "space": 847},
+	"C": {"mark": 932, "space": 1694},
+	"D": {"mark": 1864, "space": 1694},
+	"E": {"mark": 976, "space": 847},
+	"F": {"mark": 932, "space": 0},
+	"G": {"mark": 1864, "space": 0},
+	"I": {"mark": 1908, "space": 1694},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "EABCDBCABF",
+	    "program+": "EABCDABAAAF",
+	    "program-": "EABCDABAACF",
+	    "KEY_MENU": "IBCDDBCG",
+	    "KEY_OK": "IBCDDDAAF",
+	    "tt.suspend": "EABCDDAADF",
+	    "KEY_1": "EABCDBAAACF",
+	    "KEY_2": "EABCDBAACG",
+	    "KEY_3": "EABCDBAACAF",
+	    "KEY_4": "EABCDBACBF",
+	    "KEY_5": "EABCDBACDF",
+	    "KEY_6": "EABCDBACAG",
+	    "KEY_7": "EABCDBACAAF",
+	    "KEY_8": "EABCDBCBAF",
+	    "KEY_9": "EABCDBCBCF",
+	    "KEY_0": "EABCDBAAAAF",
+	    "KEY_102ND": "EABCDAAADG",
+	    "KEY_REWIND": "EABCDAABCG",
+	    "KEY_STOP": "EABCDAADAG",
+	    "KEY_PAUSE": "EABCDADBCF",
+	    "KEY_FORWARD": "EABCDAADBF",
+	    "KEY_PLAY": "EABCDAADDF",
+	    "KEY_RECORD": "EABCDAADAAF",
+	    "sprogram+": "IBCDDBAAF",
+	    "sprogram-": "IBCDDBACF"
+	}
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "description": "LG_SERVICE_ALTERNATIVE (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/lg/SERVICE_MENU.lircd.conf", "remote": "LG_SERVICE_ALTERNATIVE", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 637, "space": 0},
+	"H": {"mark": 9045, "space": 4421},
+	"1": {"mark": 637, "space": 479},
+	"0": {"mark": 637, "space": 1608},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "S-CHECK_(FACTORY_MODE)": "H11011111001000000100000010111111A",
+	    "EZ_ADJUST": "H11011111001000000000000011111111A",
+	    "IN_START": "H11011111001000000010000011011111A"
+	}
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "description": "RMV202_TV011 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-V202.lircd.conf", "remote": "RMV202_TV011", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 937, "space": 823},
+	"B": {"mark": 1874, "space": 823},
+	"C": {"mark": 937, "space": 1646},
+	"D": {"mark": 1013, "space": 823},
+	"E": {"mark": 937, "space": 0},
+	"F": {"mark": 1874, "space": 1646},
+	"G": {"mark": 1874, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "Power": "DABAAAAACABE",
+	    "1": "DABAAAAAAAACE",
+	    "2": "DABAAAAAAACG",
+	    "3": "DABAAAAAAACAE",
+	    "4": "DABAAAAAACBE",
+	    "5": "DABAAAAAACFE",
+	    "6": "DABAAAAAACAG",
+	    "7": "DABAAAAAACAAE",
+	    "8": "DABAAAAACBAE",
+	    "9": "DABAAAAACBCE",
+	    "0": "DABAAAAAAAAAE",
+	    "PIP": "DABAAACAAFG",
+	    "Mute": "DABAAAAACAFE",
+	    "Recall": "DABAAACBACG",
+	    "TV_Video": "DABAAACFBAE",
+	    "Sleep": "DABAAACBCAG",
+	    "Up": "DABAAACBAAAE",
+	    "Down": "DABAAACBAACE",
+	    "Left": "DABAAAACBACE",
+	    "Right": "DABAAAACBAAE",
+	    "Menu": "DABAAACAAFAE",
+	    "OK": "DABAAAAACAAAE",
+	    "Play": "DABAAACAFAAE",
+	    "Stop": "DABAAACFAAAE",
+	    "Vol+": "DABAAAACBAAE",
+	    "Vol-": "DABAAAACBACE",
+	    "Ch+": "DABAAACBAAAE",
+	    "Ch-": "DABAAACBAACE"
+	}
+    }
+}

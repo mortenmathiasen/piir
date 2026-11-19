@@ -2,7 +2,12 @@
 #include "plugins.h"
 #include "hvac_panasonic_plugin.h"
 
-void applyRemotePlugins(const char *configfilepath, char *symbolString) {
-  if (strstr(configfilepath, "hvac_panasonic") != NULL)
+int applyRemotePlugin(const char *plugin, char *symbolString) {
+  if (!plugin)
+    return 0;
+  if (strcmp(plugin, "hvac_panasonic") == 0) {
     hvac_panasonic_plugin(symbolString);
+    return 0;
+  }
+  return 1;
 }

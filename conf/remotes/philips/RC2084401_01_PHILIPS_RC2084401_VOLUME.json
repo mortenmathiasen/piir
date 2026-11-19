@@ -1,0 +1,41 @@
+{
+    "description": "PHILIPS_RC2084401_VOLUME (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC2084401_01.lircd.conf", "remote": "PHILIPS_RC2084401_VOLUME", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 876, "space": 0},
+	"B": {"mark": 878, "space": 892},
+	"C": {"mark": 880, "space": 1777},
+	"D": {"mark": 881, "space": 895},
+	"E": {"mark": 882, "space": 889},
+	"F": {"mark": 882, "space": 890},
+	"G": {"mark": 883, "space": 885},
+	"I": {"mark": 883, "space": 1777},
+	"J": {"mark": 900, "space": 872},
+	"K": {"mark": 920, "space": 869},
+	"L": {"mark": 929, "space": 836},
+	"M": {"mark": 930, "space": 838},
+	"N": {"mark": 931, "space": 0},
+	"O": {"mark": 931, "space": 839},
+	"P": {"mark": 932, "space": 838},
+	"Q": {"mark": 932, "space": 842},
+	"R": {"mark": 933, "space": 839},
+	"S": {"mark": 933, "space": 1723},
+	"T": {"mark": 934, "space": 844},
+	"a": {"mark": 953, "space": 841},
+	"b": {"mark": 1764, "space": 890},
+	"c": {"mark": 1768, "space": 889},
+	"d": {"mark": 1821, "space": 836},
+	"e": {"mark": 1824, "space": 833},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "adROTLPSeQMN",
+	    "KEY_VOLUMEDOWN": "KJcEFDGCbBIA"
+	}
+    }
+}

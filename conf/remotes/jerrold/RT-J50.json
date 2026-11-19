@@ -1,0 +1,46 @@
+{
+    "description": "RT-J50 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jerrold/RT-J50.lircd.conf", "remote": "RT-J50", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 335, "space": 0},
+	"1": {"mark": 334, "space": 11690},
+	"0": {"mark": 334, "space": 7663},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "11100A",
+	    "KEY_1": "10111A",
+	    "KEY_2": "10110A",
+	    "KEY_3": "10101A",
+	    "KEY_4": "11011A",
+	    "KEY_5": "11010A",
+	    "KEY_6": "11001A",
+	    "KEY_7": "11111A",
+	    "KEY_8": "11110A",
+	    "KEY_9": "11101A",
+	    "KEY_0": "10010A",
+	    "a/b": "11000A",
+	    "KEY_CHANNELUP": "10100A",
+	    "ch-dn": "10000A",
+	    "pc-pm": "10011A",
+	    "KEY_FAVORITES": "10001A",
+	    "last-ch": "01100A",
+	    "ap": "01010A",
+	    "KEY_VOLUMEUP": "01011A",
+	    "KEY_VOLUMEDOWN": "00111A",
+	    "KEY_MUTE": "01001A",
+	    "prgm": "00110A",
+	    "KEY_DELETE": "00101A",
+	    "KEY_F": "00100A",
+	    "event": "00011A",
+	    "learn": "00010A",
+	    "KEY_ENTER": "00001A",
+	    "tcp": "00000A"
+	}
+    }
+}

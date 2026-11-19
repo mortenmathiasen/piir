@@ -1,0 +1,42 @@
+{
+    "description": "Philips_RC8601_01-CD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC8601_01.lircd.conf", "remote": "Philips_RC8601_01-CD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 932, "space": 843},
+	"B": {"mark": 1864, "space": 843},
+	"C": {"mark": 1864, "space": 1686},
+	"D": {"mark": 932, "space": 1686},
+	"E": {"mark": 969, "space": 843},
+	"F": {"mark": 932, "space": 0},
+	"G": {"mark": 1864, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_SLEEP": "EAACBAADABF",
+	    "disc": "EAACBADAAAG",
+	    "shuffle": "EAACBADAABF",
+	    "KEY_0": "EAACBAAAAAAF",
+	    "KEY_1": "EAACBAAAAADF",
+	    "KEY_2": "EAACBAAAADG",
+	    "KEY_3": "EAACBAAAADAF",
+	    "KEY_4": "EAACBAAADBF",
+	    "KEY_5": "EAACBAAADCF",
+	    "KEY_6": "EAACBAAADAG",
+	    "KEY_7": "EAACBAAADAAF",
+	    "KEY_8": "EAACBAADBAF",
+	    "KEY_9": "EAACBAADBDF",
+	    "KEY_NEXT": "EAACBDBAAAF",
+	    "KEY_PREVIOUS": "EAACBDBAADF",
+	    "KEY_PLAY": "EAACBDACCF",
+	    "KEY_STOP": "EAACBDACAG",
+	    "KEY_PAUSE": "EAACBDABAAF",
+	    "KEY_FASTFORWARD": "EAACBDACBF",
+	    "KEY_REWIND": "EAACBDABDG"
+	}
+    }
+}

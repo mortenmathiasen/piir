@@ -1,0 +1,25 @@
+{
+    "description": "test (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/samsung/10141A.lircd.conf", "remote": "test", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 619, "space": 0},
+	"H": {"mark": 4485, "space": 4464},
+	"1": {"mark": 619, "space": 1613},
+	"0": {"mark": 619, "space": 498},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_CHANNELUP": "H11100000111000000100100010110111A",
+	    "KEY_CHANNELDOWN": "H11100000111000000000100011110111A",
+	    "TV_Video": "H11100000111000001000000001111111A",
+	    "KEY_VOLUMEUP": "H11100000111000001110000000011111A",
+	    "KEY_VOLUMEDOWN": "H11100000111000001101000000101111A",
+	    "TV_Power": "H11100000111000000100000010111111A"
+	}
+    }
+}

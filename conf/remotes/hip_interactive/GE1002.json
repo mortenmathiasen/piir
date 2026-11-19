@@ -1,0 +1,35 @@
+{
+    "description": "GamingEdge_GE1002 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/hip_interactive/GE1002.lircd.conf", "remote": "GamingEdge_GE1002", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 582, "space": 0},
+	"H": {"mark": 9031, "space": 4473},
+	"1": {"mark": 580, "space": 1669},
+	"0": {"mark": 580, "space": 541},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_MENU": "H00000000011011110000000011111111A",
+	    "KEY_SUBTITLE": "H00000000011011110101000010101111A",
+	    "KEY_AUDIO": "H00000000011011111111000000001111A",
+	    "KEY_PLAY": "H00000000011011110010000011011111A",
+	    "KEY_NEXT": "H00000000011011111010000001011111A",
+	    "KEY_PREVIOUS": "H00000000011011110001000011101111A",
+	    "KEY_REWIND": "H00000000011011110110000010011111A",
+	    "KEY_FORWARD": "H00000000011011111101000000101111A",
+	    "KEY_EPG": "H00000000011011111000000001111111A",
+	    "KEY_TITLE": "H00000000011011110100000010111111A",
+	    "KEY_ENTER": "H00000000011011111110000000011111A",
+	    "KEY_STOP": "H00000000011011111100000000111111A",
+	    "KEY_UP": "H00000000011011111001000001101111A",
+	    "KEY_DOWN": "H00000000011011111011000001001111A",
+	    "KEY_LEFT": "H00000000011011110011000011001111A",
+	    "KEY_RIGHT": "H00000000011011110111000010001111A"
+	}
+    }
+}

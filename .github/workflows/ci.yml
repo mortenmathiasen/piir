@@ -119,6 +119,7 @@ jobs:
           -DCMAKE_INSTALL_PREFIX=/usr
           -DPIIR_GPIO_BACKEND=lirc
           -DPIIR_STATIC=ON
+          -DPIIR_REMOTES=native
           -DPIIR_PACKAGE_ARCH=${{ matrix.arch }}
           -DCMAKE_CROSSCOMPILING_EMULATOR=$(command -v ${{ matrix.qemu }})
 
@@ -143,10 +144,29 @@ jobs:
             build/piir_*.deb
           if-no-files-found: error
 
+  # All remotes, for piir-remotes to install from
+  remotes:
+    name: Remotes archive
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build archive
+        run: |
+          cmake -B build -DBUILD_TESTING=OFF
+          cmake --build build --target remotes_archive
+          tar -tzf build/piir-remotes-*.tar.gz | sed -n 's/\.json$//p' | wc -l
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: piir-remotes
+          path: build/piir-remotes-*.tar.gz
+          if-no-files-found: error
+
   release:
     name: Release
     if: startsWith(github.ref, 'refs/tags/v')
-    needs: [test, test-gpiod, rpi]
+    needs: [test, test-gpiod, rpi, remotes]
     runs-on: ubuntu-24.04
     permissions:
       contents: write

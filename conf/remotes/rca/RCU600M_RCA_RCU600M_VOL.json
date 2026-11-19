@@ -1,0 +1,22 @@
+{
+    "description": "RCA_RCU600M_VOL (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/rca/RCU600M.lircd.conf", "remote": "RCA_RCU600M_VOL", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 661, "space": 0},
+	"H": {"mark": 9089, "space": 4388},
+	"1": {"mark": 668, "space": 1642},
+	"0": {"mark": 668, "space": 463},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "key_volumeup": "H11111111000000000000000111111110A",
+	    "key_volumedown": "H11111111000000000000001011111101A",
+	    "key_mute": "H11111111000000000000001111111100A"
+	}
+    }
+}

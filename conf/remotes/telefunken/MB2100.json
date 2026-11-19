@@ -1,0 +1,42 @@
+{
+    "description": "MB2100 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/telefunken/MB2100.lircd.conf", "remote": "MB2100", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 549, "space": 0},
+	"1": {"mark": 549, "space": 1967},
+	"0": {"mark": 549, "space": 4462},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_0": "111101110001A",
+	    "KEY_1": "111111111111A",
+	    "KEY_2": "111101110111A",
+	    "KEY_3": "111111101111A",
+	    "KEY_4": "111101111110A",
+	    "KEY_5": "111111110110A",
+	    "KEY_6": "111101101110A",
+	    "KEY_7": "111111111101A",
+	    "KEY_8": "111101110101A",
+	    "KEY_9": "111111101101A",
+	    "KEY_OK": "111101001100A",
+	    "KEY_BACK": "111101000001A",
+	    "KEY_RED": "111111000110A",
+	    "KEY_GREEN": "111101000100A",
+	    "KEY_YELLOW": "111111000111A",
+	    "KEY_BLUE": "111101101010A",
+	    "KEY_UP": "111111001011A",
+	    "KEY_DOWN": "111101001010A",
+	    "KEY_MENU": "111111001110A",
+	    "KEY_LEFT": "111101001001A",
+	    "KEY_RIGHT": "111111001000A",
+	    "KEY_VOLUMEUP": "110001010110A",
+	    "KEY_VOLUMEDOWN": "110011010101A",
+	    "KEY_MUTE": "110001111010A"
+	}
+    }
+}

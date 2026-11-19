@@ -1,0 +1,49 @@
+{
+    "description": "Philips (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC_7540_00N.lircd.conf", "remote": "Philips", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 949, "space": 834},
+	"B": {"mark": 1898, "space": 834},
+	"C": {"mark": 949, "space": 1668},
+	"D": {"mark": 1898, "space": 1668},
+	"E": {"mark": 972, "space": 834},
+	"F": {"mark": 949, "space": 0},
+	"G": {"mark": 1898, "space": 0},
+	"I": {"mark": 1921, "space": 834},
+	"J": {"mark": 1921, "space": 1668},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "EABCDBCABF",
+	    "KEY_1": "EBACDBAAACF",
+	    "KEY_2": "EABCDBAACG",
+	    "KEY_3": "EBACDBAACAF",
+	    "KEY_4": "EABCDBACBF",
+	    "KEY_5": "EBACDBACDF",
+	    "KEY_6": "EABCDBACAG",
+	    "KEY_7": "EBACDBACAAF",
+	    "KEY_8": "EABCDBCBAF",
+	    "KEY_9": "EBACDBCBCF",
+	    "KEY_0": "EABCDBAAAAF",
+	    "KEY_BACK": "EBACDBCDG",
+	    "KEY_MENU": "EABCDDAADF",
+	    "KEY_UP": "IAACDDBAAF",
+	    "KEY_DOWN": "JBCDDBACF",
+	    "KEY_RIGHT": "IAACDDDAG",
+	    "KEY_LEFT": "JBCDDDDF",
+	    "KEY_OK": "EBACDAADDF",
+	    "KEY_VOLUMEUP": "EBAAAAACBAAF",
+	    "KEY_VOLUMEDOWN": "EBAAAAACBACF",
+	    "KEY_MUTE": "EBAAAAAACADF",
+	    "KEY_RED": "EBACDAADAAF",
+	    "KEY_GREEN": "EBACDAABCG",
+	    "KEY_YELLOW": "EBACDAADBF",
+	    "KEY_BLUE": "EBACDAADAG"
+	}
+    }
+}

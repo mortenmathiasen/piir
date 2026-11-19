@@ -1,0 +1,25 @@
+{
+    "description": "Gorenje_DVG6566AX (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/gorenje/DVG6566AX.lircd.conf", "remote": "Gorenje_DVG6566AX", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 607, "space": 0},
+	"H": {"mark": 8988, "space": 4433},
+	"1": {"mark": 605, "space": 1631},
+	"0": {"mark": 605, "space": 513},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H00000000111111111010001001011101A",
+	    "KEY_YELLOW": "H00000000111111111110001000011101A",
+	    "KEY_REFRESH": "H00000000111111110000001011111101A",
+	    "KEY_DOWN": "H00000000111111111110000000011111A",
+	    "KEY_UP": "H00000000111111111001000001101111A",
+	    "KEY_TIME": "H00000000111111111001100001100111A"
+	}
+    }
+}

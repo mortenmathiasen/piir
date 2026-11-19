@@ -1,0 +1,29 @@
+{
+    "description": "ANITECH_TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/anitech/TV_M3740.lircd.conf", "remote": "ANITECH_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 827, "space": 950},
+	"B": {"mark": 1654, "space": 950},
+	"C": {"mark": 827, "space": 1900},
+	"D": {"mark": 827, "space": 0},
+	"E": {"mark": 1654, "space": 0},
+	"F": {"mark": 1654, "space": 1900},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_SLEEP": "AABAAACBCAE",
+	    "KEY_POWER": "AABAAAAACABD",
+	    "KEY_MUTE": "AABAAAAACAFD",
+	    "DISPLAY": "AABAAAAACAAAD",
+	    "KEY_CHANNELUP": "AABAAACBAAAD",
+	    "KEY_CHANNELDOWN": "AABAAACBAACD",
+	    "KEY_VOLUMEUP": "AABAAAACBAAD",
+	    "KEY_VOLUMEDOWN": "AABAAAACBACD"
+	}
+    }
+}

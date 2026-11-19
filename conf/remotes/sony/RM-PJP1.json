@@ -1,0 +1,27 @@
+{
+    "description": "Sony_RM-PJP1 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-PJP1.lircd.conf", "remote": "Sony_RM-PJP1", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 560, "space": 0},
+	"H": {"mark": 2395, "space": 587},
+	"1": {"mark": 1157, "space": 637},
+	"0": {"mark": 560, "space": 637},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_B": "H1011111010110101010AVWXXXXXXYYYYYYYYYZZZZZZZZZH1011111010110101010AVWXXXXXXYYYYYYYYYZZZZZZZZZH1011111010110101010A",
+	    "KEY_RIGHT": "H1101111010110101010AVWXXXXXXYYYYYYYYYZZZZZZZZZH1101111010110101010AVWXXXXXXYYYYYYYYYZZZZZZZZZH1101111010110101010A",
+	    "KEY_LEFT": "H0011111010110101010AVWWXXYYYYYYYYYZZZZZZH0011111010110101010AVWWXXYYYYYYYYYZZZZZZH0011111010110101010A"
+	}
+    }
+}

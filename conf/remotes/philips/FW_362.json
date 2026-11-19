@@ -1,0 +1,46 @@
+{
+    "description": "Philips_FW362 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/FW_362.lircd.conf", "remote": "Philips_FW362", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 908, "space": 868},
+	"B": {"mark": 1816, "space": 868},
+	"C": {"mark": 908, "space": 1736},
+	"D": {"mark": 943, "space": 868},
+	"E": {"mark": 908, "space": 0},
+	"F": {"mark": 1816, "space": 1736},
+	"G": {"mark": 1816, "space": 0},
+	"I": {"mark": 1851, "space": 1736},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "tv_power": "DABAAAAACABE",
+	    "KEY_POWER": "DAAFFBCABE",
+	    "tv_vcr": "DABAAACAAAAAE",
+	    "KEY_TUNER": "DAABACAAAAAAE",
+	    "KEY_CD": "DAAFBCAAAAAE",
+	    "KEY_AUX": "DAAFFAAAAAAE",
+	    "tape1": "DAABCFFABE",
+	    "tape2": "DAABCFFAAG",
+	    "KEY_PLAY": "DABCFAAFFE",
+	    "KEY_PAUSE": "DABCFAABAAE",
+	    "KEY_STOP": "DABCFAAFAG",
+	    "skip_forw": "DABAAACBAAAE",
+	    "skip_back": "DABAAACBAACE",
+	    "forw": "DABAAAACBAAE",
+	    "KEY_BACK": "DABAAAACBACE",
+	    "KEY_VOLUMEUP": "DAABAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DAABAAACBACE",
+	    "dsc": "IABAAAACAAAE",
+	    "incredible_sound": "IABAAAAAAAAE",
+	    "dbb": "IABAAAAACAG",
+	    "disc_up": "DAAFBACAAAG",
+	    "shuffle": "DAAFBACAABE",
+	    "side": "DAABCFFAAAE"
+	}
+    }
+}

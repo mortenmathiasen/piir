@@ -1,0 +1,46 @@
+{
+    "description": "pace (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pace/MSS1000_IRD.lircd.conf", "remote": "pace", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 738, "space": 0},
+	"H": {"mark": 797, "space": 2984},
+	"1": {"mark": 749, "space": 6835},
+	"0": {"mark": 749, "space": 4310},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "tvsat": "H00100010100A",
+	    "KEY_POWER": "H01100010000A",
+	    "KEY_1": "H00100000001A",
+	    "KEY_2": "H01100000010A",
+	    "KEY_3": "H00100000011A",
+	    "KEY_4": "H01100000100A",
+	    "KEY_5": "H00100000101A",
+	    "KEY_6": "H01100000110A",
+	    "KEY_7": "H01100000111A",
+	    "KEY_8": "H00100001000A",
+	    "KEY_9": "H01100001001A",
+	    "KEY_0": "H00100000000A",
+	    "KEY_AGAIN": "H01100011010A",
+	    "KEY_F": "H00100011001A",
+	    "KEY_LEFT": "H01100010110A",
+	    "KEY_MENU": "H00100010111A",
+	    "KEY_RIGHT": "H01100010001A",
+	    "KEY_I": "H00100011111A",
+	    "KEY_FAVORITES": "H01100001011A",
+	    "KEY_RADIO": "H00100001111A",
+	    "store": "H01100010011A",
+	    "norm": "H00100010101A",
+	    "KEY_MUTE": "H01100011110A",
+	    "shape": "H00100001110A",
+	    "level": "H01100010010A",
+	    "dolby": "H01100001100A",
+	    "effect": "H00100001101A"
+	}
+    }
+}

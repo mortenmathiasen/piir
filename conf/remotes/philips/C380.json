@@ -1,0 +1,46 @@
+{
+    "description": "C380 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/C380.lircd.conf", "remote": "C380", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 909, "space": 863},
+	"B": {"mark": 1818, "space": 863},
+	"C": {"mark": 909, "space": 1726},
+	"D": {"mark": 1818, "space": 1726},
+	"E": {"mark": 909, "space": 0},
+	"F": {"mark": 964, "space": 863},
+	"G": {"mark": 1873, "space": 1726},
+	"I": {"mark": 1818, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "FAADBAACABE",
+	    "tape1-2": "FAABCDAAAAAE",
+	    "KEY_TUNER": "FAABACAAAAAAE",
+	    "incredible_surround": "GABAAAAAAAAE",
+	    "KEY_AUX": "FAADDAAAAAAE",
+	    "osm": "GABAACDABE",
+	    "cd_direct_1": "FAADBCADAAE",
+	    "cd_direct_2": "FAADBCAABAE",
+	    "cd_direct_3": "FAADBCAABCE",
+	    "KEY_AGAIN": "FAADBACAADE",
+	    "KEY_SLEEP": "FAABAACBCAI",
+	    "shuffle": "FAADBACAABE",
+	    "KEY_VOLUMEDOWN": "FAABAAACBACE",
+	    "KEY_VOLUMEUP": "FAABAAACBAAE",
+	    "KEY_PLAY": "FAADBCADDE",
+	    "skip_back": "FAADBCBAACE",
+	    "skip_forward": "FAADBCBAAAE",
+	    "KEY_STOP": "FAADBCADAI",
+	    "KEY_REWIND": "FAADBCABCI",
+	    "KEY_FASTFORWARD": "FAADBCADBE",
+	    "dsc": "GABAAAACAAAE",
+	    "dbb123": "GABAAAAACAI",
+	    "vec": "GABAACDDAE"
+	}
+    }
+}

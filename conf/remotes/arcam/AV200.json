@@ -1,0 +1,50 @@
+{
+    "description": "Arcam_AV200 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/arcam/AV200.lircd.conf", "remote": "Arcam_AV200", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 975, "space": 783},
+	"B": {"mark": 1950, "space": 783},
+	"C": {"mark": 975, "space": 1566},
+	"D": {"mark": 975, "space": 0},
+	"E": {"mark": 1007, "space": 783},
+	"F": {"mark": 1950, "space": 1566},
+	"G": {"mark": 1950, "space": 0},
+	"I": {"mark": 1982, "space": 1566},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "EAABAAAACABD",
+	    "KEY_SAT": "EAABAAAAAAAAD",
+	    "KEY_DVD": "EAABAAAAACBD",
+	    "KEY_VCR": "EAABAAAAACAG",
+	    "KEY_AUX": "EAABAAAACBAD",
+	    "KEY_TAPE": "EAABAAAAACFD",
+	    "KEY_CD": "EAABAAAAACAAD",
+	    "KEY_RADIO": "EAABAACAFFD",
+	    "am": "EAABAACAFBD",
+	    "KEY_INFO": "EAABAACAFAAD",
+	    "t-mode": "EAABAACAFAG",
+	    "KEY_CHANNELDOWN": "EAABAACAABCD",
+	    "KEY_CHANNELUP": "EAABAACAABAD",
+	    "KEY_1": "EAABAAAAAACG",
+	    "KEY_SLEEP": "EAABAACFFG",
+	    "test": "IABAAACABAD",
+	    "KEY_OK": "IABAAACFAAD",
+	    "KEY_LEFT": "IABAAACBACD",
+	    "KEY_RIGHT": "IABAAACBAAD",
+	    "KEY_UP": "IABAAACFAG",
+	    "KEY_DOWN": "IABAAACFFD",
+	    "trim": "EAABAACBCFD",
+	    "silent": "EAABAAAACAFD",
+	    "KEY_MODE": "EAABAACBAAAD",
+	    "KEY_VOLUMEUP": "EAABAAACBAAD",
+	    "KEY_VOLUMEDOWN": "EAABAAACBACD",
+	    "dyn": "EAABAACAAAAG"
+	}
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "description": "PHILIPS_CD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RD5862.lircd.conf", "remote": "PHILIPS_CD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 940, "space": 840},
+	"B": {"mark": 1880, "space": 840},
+	"C": {"mark": 1880, "space": 1680},
+	"D": {"mark": 940, "space": 1680},
+	"E": {"mark": 940, "space": 0},
+	"F": {"mark": 1880, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_0": "AAACBAAAAAAE",
+	    "KEY_1": "AAACBAAAAADE",
+	    "KEY_2": "AAACBAAAADF",
+	    "KEY_3": "AAACBAAAADAE",
+	    "KEY_4": "AAACBAAADBE",
+	    "KEY_5": "AAACBAAADCE",
+	    "KEY_6": "AAACBAAADAF",
+	    "KEY_7": "AAACBAAADAAE",
+	    "KEY_8": "AAACBAADBAE",
+	    "KEY_9": "AAACBAADBDE",
+	    "SCAN": "AAACBDCCAE",
+	    "KEY_OPEN": "AAACBDCACE",
+	    "KEY_AGAIN": "AAACBADAACE",
+	    "KEY_PAUSE": "AAACBDABAAE",
+	    "RANDOM": "AAACBADAABE",
+	    "KEY_NEXT": "AAACBDBAAAE",
+	    "PREV_TRACK": "AAACBDBAADE",
+	    "KEY_PLAY": "AAACBDACCE",
+	    "KEY_STOP": "AAACBDACAF",
+	    "DIRECT_PR/PLAY": "AAACBDBDBE",
+	    "NEXT_INDEX": "AAACBDBADF",
+	    "PREV_INDEX": "AAACBDBADAE",
+	    "SEARCH_BACKW": "AAACBDABDF",
+	    "SEARCH_FORW": "AAACBDACBE",
+	    "FAST": "AAACBDCAAAE",
+	    "A/B": "AAACBDAACAE",
+	    "KEY_TIME": "AAACBAADCAE",
+	    "REVIEW": "AAACBAADAAAE",
+	    "KEY_C": "AAACBDABADE",
+	    "KEY_S": "AAACBDCBDE"
+	}
+    }
+}

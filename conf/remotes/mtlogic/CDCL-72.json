@@ -1,0 +1,30 @@
+{
+    "description": "CDCL-72.conf (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/mtlogic/CDCL-72.lircd.conf", "remote": "CDCL-72.conf", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 580, "space": 0},
+	"H": {"mark": 9034, "space": 4469},
+	"1": {"mark": 595, "space": 1653},
+	"0": {"mark": 595, "space": 528},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "H00000000111111111101001000101101A",
+	    "KEY_VOLUMEDOWN": "H00000000111111111110001000011101A",
+	    "KEY_MUTE": "H00000000111111111111101000000101A",
+	    "KEY_PREVIOUS": "H00000000111111110110001010011101A",
+	    "KEY_NEXT": "H00000000111111110101001010101101A",
+	    "KEY_PLAYPAUSE": "H00000000111111111011000001001111A",
+	    "KEY_STOP": "H00000000111111111010000001011111A",
+	    "KEY_CHANNELUP": "H00000000111111111111000000001111A",
+	    "KEY_CHANNELDOWN": "H00000000111111111110000000011111A",
+	    "KEY_RADIO": "H00000000111111111000101001110101A",
+	    "KEY_AUX": "H00000000111111111011001001001101A"
+	}
+    }
+}

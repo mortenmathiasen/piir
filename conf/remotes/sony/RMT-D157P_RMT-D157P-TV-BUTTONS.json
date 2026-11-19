@@ -1,0 +1,25 @@
+{
+    "description": "RMT-D157P-TV-BUTTONS (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-D157P.lircd.conf", "remote": "RMT-D157P-TV-BUTTONS", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 561, "space": 0},
+	"H": {"mark": 2355, "space": 634},
+	"1": {"mark": 1160, "space": 634},
+	"0": {"mark": 561, "space": 634},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "tvpower": "H10101001000AVVVVWWWWXXXXXXXXXZZZZZH10101001000AVVVVWWWWXXXXXXXXXZZZZZH10101001000A",
+	    "input_select": "H10100101000AVVVVWWWWXXXXXXXXXZZZZZH10100101000AVVVVWWWWXXXXXXXXXZZZZZH10100101000A"
+	}
+    }
+}

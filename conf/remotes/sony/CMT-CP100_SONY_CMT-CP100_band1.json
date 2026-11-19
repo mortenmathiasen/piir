@@ -1,0 +1,26 @@
+{
+    "description": "SONY_CMT-CP100_band1 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/CMT-CP100.lircd.conf", "remote": "SONY_CMT-CP100_band1", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 699, "space": 0},
+	"H": {"mark": 2456, "space": 441},
+	"1": {"mark": 1289, "space": 445},
+	"0": {"mark": 699, "space": 445},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "KEY_PAUSE": "H1001110010111001110A",
+	    "KEY_STOP": "H0001110010111001110A",
+	    "X_KEY_PREV_SONG": "H0000110010111001110A",
+	    "X_KEY_NEXT_SONG": "H1000110010111001110A",
+	    "KEY_PREV": "H1100110010111001110A",
+	    "KEY_NEXT": "H0010110010111001110A",
+	    "KEY_ENTER": "H0011000010111001110A"
+	}
+    }
+}

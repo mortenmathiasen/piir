@@ -1,0 +1,52 @@
+{
+    "description": "4400 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/bush/4400.lircd.conf", "remote": "4400", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 36000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 889, "space": 889},
+	"B": {"mark": 1778, "space": 889},
+	"C": {"mark": 889, "space": 1778},
+	"D": {"mark": 889, "space": 0},
+	"E": {"mark": 1778, "space": 1778},
+	"F": {"mark": 1778, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_0": "AABAAAAAAAAAD",
+	    "KEY_1": "AABAAAAAAAACD",
+	    "KEY_2": "AABAAAAAAACF",
+	    "KEY_3": "AABAAAAAAACAD",
+	    "KEY_4": "AABAAAAAACBD",
+	    "KEY_5": "AABAAAAAACED",
+	    "KEY_6": "AABAAAAAACAF",
+	    "KEY_7": "AABAAAAAACAAD",
+	    "KEY_8": "AABAAAAACBAD",
+	    "KEY_9": "AABAAAAACBCD",
+	    "off": "AABAAAAACABD",
+	    "KEY_MUTE": "AABAAAAACAED",
+	    "norm": "AABAAAAACAAF",
+	    "KEY_EPG": "AABAAAAACAAAD",
+	    "KEY_VOLUMEUP": "AABAAAACBAAD",
+	    "KEY_VOLUMEDOWN": "AABAAAACBACD",
+	    "KEY_CHANNELUP": "AABAAACBAAAD",
+	    "KEY_CHANNELDOWN": "AABAAACBAACD",
+	    "KEY_LAST": "AABAAACBCBD",
+	    "clockon": "AABAAACEEF",
+	    "KEY_YELLOW": "AABAAACABCF",
+	    "KEY_BLUE": "AABAAACAEBD",
+	    "white": "AABAAACAEED",
+	    "KEY_GREEN": "AABAAACAEAF",
+	    "KEY_RED": "AABAAACAEAAD",
+	    "av": "AABAAACAABAD",
+	    "KEY_MENU": "AABAAACAAEAD",
+	    "KEY_TEXT": "AABAAACAAABD",
+	    "KEY_TV": "AABAAACAAAAAD",
+	    "menu-off": "EBAAAACBCAD",
+	    "KEY_ZOOM": "EBAAACAAAAF"
+	}
+    }
+}

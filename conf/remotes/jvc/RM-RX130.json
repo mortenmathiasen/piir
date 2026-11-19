@@ -1,0 +1,51 @@
+{
+    "description": "RM-RX130 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-RX130.lircd.conf", "remote": "RM-RX130", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 586, "space": 0},
+	"H": {"mark": 8550, "space": 4158},
+	"1": {"mark": 598, "space": 1508},
+	"0": {"mark": 598, "space": 462},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "CD_PLAY_PAUSE": "H1111100100001110A",
+	    "CD_STOP": "H1111100110001110A",
+	    "KEY_SLEEP": "H1111100101001100A",
+	    "KEY_POWER": "H1111100100000000A",
+	    "SEARCH_DOWN": "H1111100101111100A",
+	    "SEARCH_UP": "H1111100110111100A",
+	    "TUNER_BAND": "H1111100111010000A",
+	    "PRESET_SCAN": "H1111100101001000A",
+	    "MEMORY_CALL": "H1111100100101110A",
+	    "INTRO": "H1111100101101110A",
+	    "RANDOM": "H1111100111101110A",
+	    "KEY_AGAIN": "H1111100100011110A",
+	    "KEY_1": "H1111100110000100A",
+	    "KEY_2": "H1111100101000100A",
+	    "KEY_3": "H1111100111000100A",
+	    "KEY_4": "H1111100100100100A",
+	    "KEY_5": "H1111100110100100A",
+	    "KEY_6": "H1111100101100100A",
+	    "KEY_7": "H1111100111100100A",
+	    "KEY_8": "H1111100100010100A",
+	    "KEY_9": "H1111100110010100A",
+	    "KEY_0": "H1111100101010100A",
+	    "KEY_10CHANNELSUP": "H1111100101110100A",
+	    "KEY_ENTER": "H1111100110001000A",
+	    "KEY_TIME": "H1111100100111000A",
+	    "SET": "H1111100111001100A",
+	    "TIMER_ON_OFF": "H1111100101101100A",
+	    "TIMER_SET": "H1111100100001100A",
+	    "ACTIVE_HYPER_BASS": "H1111100100100000A",
+	    "FREQUENCY": "H1111100100000001A",
+	    "KEY_VOLUMEUP": "H1111100110000000A",
+	    "KEY_VOLUMEDOWN": "H1111100101000000A"
+	}
+    }
+}

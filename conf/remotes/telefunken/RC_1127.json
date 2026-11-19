@@ -1,0 +1,38 @@
+{
+    "description": "TV-RC_1127 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/telefunken/RC_1127.lircd.conf", "remote": "TV-RC_1127", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 303, "space": 0},
+	"1": {"mark": 304, "space": 8337},
+	"0": {"mark": 304, "space": 5457},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_RED": "11111111001A",
+	    "KEY_GREEN": "11111111011A",
+	    "KEY_YELLOW": "11111111000A",
+	    "KEY_BLUE": "11111010101A",
+	    "STD_VALUES": "11111011110A",
+	    "KEY_VIDEO": "11111111110A",
+	    "KEY_VOLUMEDOWN": "11111101010A",
+	    "KEY_VOLUMEUP": "11111101001A",
+	    "DIGIT_1": "11111000000A",
+	    "DIGIT_2": "11111001000A",
+	    "DIGIT_3": "11111010000A",
+	    "DIGIT_4": "11111000001A",
+	    "DIGIT_5": "11111001001A",
+	    "DIGIT_6": "11111010001A",
+	    "DIGIT_7": "11111000010A",
+	    "DIGIT_8": "11111001010A",
+	    "DIGIT_9": "11111010010A",
+	    "DIGIT_0": "11111001110A",
+	    "KEY_MUTE": "11111000101A",
+	    "KEY_POWER": "11111011101A"
+	}
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "description": "NAD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/nad/CDP-5425.lircd.conf", "remote": "NAD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1291, "space": 0},
+	"H": {"mark": 2487, "space": 511},
+	"1": {"mark": 1286, "space": 512},
+	"0": {"mark": 687, "space": 512},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H01001101000AVVWWWWWXZZZZZZZH01001101000AVVWWWWWXZZZZZZZH01001101000A",
+	    "KEY_STOP": "H00011101000AVVWWWWWXZZZZZZZH00011101000AVVWWWWWXZZZZZZZH00011101000A",
+	    "KEY_PAUSE": "H10011101000AVVWWWWXXXXXZZZZZZZZH10011101000AVVWWWWXXXXXZZZZZZZZH10011101000A",
+	    "SKIP_LEFT": "H00001101000AVVWWWWWXXXXXXXZZZZZZH00001101000AVVWWWWWXXXXXXXZZZZZZH00001101000A",
+	    "SKIP_RIGHT": "H10001101000AVVWWWWWXZZZZZZZH10001101000AVVWWWWWXZZZZZZZH10001101000A",
+	    "SCAN_LEFT": "H01011101000AVVWWWWXXXXXZZZZZZZZH01011101000AVVWWWWXXXXXZZZZZZZZH01011101000A",
+	    "SCAN_RIGHT": "H11011101000AVVWWWXXXXXXXXXZZZZZZZZZH11011101000AVVWWWXXXXXXXXXZZZZZZZZZH11011101000A"
+	}
+    }
+}

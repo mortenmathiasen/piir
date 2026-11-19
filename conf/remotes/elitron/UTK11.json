@@ -1,0 +1,46 @@
+{
+    "description": "utk (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/elitron/UTK11.lircd.conf", "remote": "utk", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 940, "space": 840},
+	"B": {"mark": 1880, "space": 840},
+	"C": {"mark": 940, "space": 1680},
+	"D": {"mark": 940, "space": 0},
+	"E": {"mark": 1880, "space": 1680},
+	"F": {"mark": 1880, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_0": "AABCAABAAAAD",
+	    "KEY_1": "AABCAABAAACD",
+	    "KEY_2": "AABCAABAACF",
+	    "KEY_3": "AABCAABAACAD",
+	    "KEY_4": "AABCAABACBD",
+	    "KEY_5": "AABCAABACED",
+	    "KEY_6": "AABCAABACAF",
+	    "KEY_7": "AABCAABACAAD",
+	    "KEY_8": "AABCAABCBAD",
+	    "KEY_9": "AABCAABCBCD",
+	    "KEY_102ND": "AABCAABCEF",
+	    "KEY_POWER": "AABCAABCABD",
+	    "key": "AABCAABCAED",
+	    "preset_up": "AABCAAABAAAD",
+	    "preset_down": "AABCAAABAACD",
+	    "tune_up": "AABCAAEEBD",
+	    "tune_down": "AABCAAEEED",
+	    "KEY_FAVORITES": "AABCAAEBAAD",
+	    "favorit_down": "AABCAAEBACD",
+	    "KEY_AGAIN": "AABCAAAAABAD",
+	    "timer": "AABCAAABCBD",
+	    "envelope": "AABCAAEAAAF",
+	    "KEY_BACK": "AABCAAEBCF",
+	    "pgm": "AABCAAEBCAD",
+	    "KEY_CLEAR": "AABCAABCAAAD"
+	}
+    }
+}

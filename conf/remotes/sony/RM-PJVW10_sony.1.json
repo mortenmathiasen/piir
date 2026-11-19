@@ -1,0 +1,31 @@
+{
+    "description": "sony.1 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-PJVW10.lircd.conf", "remote": "sony.1", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 561, "space": 0},
+	"H": {"mark": 2278, "space": 595},
+	"1": {"mark": 1158, "space": 642},
+	"0": {"mark": 561, "space": 642},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H1000101010110101010AVWWWWWWXXXXXXXYYYYYYZZZZZZZZZ1000101010110101010AVWWWWWWXXXXXXXYYYYYYZZZZZZZZZ1000101010110101010A",
+	    "KEY_2": "H0100101010110101010AVWWWWWWXXXXXXXYYYYYYZZZZZZZZZ0100101010110101010AVWWWWWWXXXXXXXYYYYYYZZZZZZZZZ0100101010110101010A",
+	    "KEY_3": "H1100101010110101010AVWWWWWWXYYYYYYYZZ1100101010110101010AVWWWWWWXYYYYYYYZZ1100101010110101010A",
+	    "KEY_4": "H0010101010110101010AVWWWWWWXXXXXXXYYYYYYZZZZZZZZZ0010101010110101010AVWWWWWWXXXXXXXYYYYYYZZZZZZZZZ0010101010110101010A",
+	    "KEY_5": "H1010101010110101010AVWWWWWWXYYYYYYYZZ1010101010110101010AVWWWWWWXYYYYYYYZZ1010101010110101010A",
+	    "KEY_6": "H0110101010110101010AVWWWWWWXYYYYYYYZZ0110101010110101010AVWWWWWWXYYYYYYYZZ0110101010110101010A",
+	    "off": "H0000101010110101010AVWWWWWWWXXXYYYYYYZZZZZZ0000101010110101010AVWWWWWWWXXXYYYYYYZZZZZZ0000101010110101010A"
+	}
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "description": "RM-U306A_VOL (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-U306A.lircd.conf", "remote": "RM-U306A_VOL", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 666, "space": 0},
+	"H": {"mark": 2461, "space": 524},
+	"1": {"mark": 1265, "space": 516},
+	"0": {"mark": 665, "space": 516},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "MUTING": "H00101000000110AVVWWXXXXYYYYYZZZZZZZZH00101000000110AVVWWXXXXYYYYYZZZZZZZZH00101000000110AVVWWXXXXYYYYYZZZZZZZZH00101000000110A",
+	    "KEY_VOLUMEUP": "H01001000000110AVVWWXXXXYYYYYZZZZZZZZH01001000000110AVVWWXXXXYYYYYZZZZZZZZH01001000000110AVVWWXXXXYYYYYZZZZZZZZH01001000000110A",
+	    "KEY_VOLUMEDOWN": "H11001000000110AVVWXXXXXXXXYYYYYZZZZZZZZH11001000000110AVVWXXXXXXXXYYYYYZZZZZZZZH11001000000110AVVWXXXXXXXXYYYYYZZZZZZZZH11001000000110A"
+	}
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "description": "Canon_WL-DC100 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/canon/WL-DC100.lircd.conf", "remote": "Canon_WL-DC100", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 599, "space": 0},
+	"H": {"mark": 9042, "space": 4379},
+	"1": {"mark": 612, "space": 1621},
+	"0": {"mark": 612, "space": 512},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "Snap": "H01010011100011011111100000000111A",
+	    "KEY_ZOOMOUT": "H01010011100011010100001010111101A",
+	    "KEY_ZOOMIN": "H01010011100011011100001000111101A",
+	    "KEY_RIGHT": "H01010011100011010000001011111101A",
+	    "KEY_LEFT": "H01010011100011011000001001111101A",
+	    "Multi": "H01010011100011010010001011011101A",
+	    "Magnify": "H01010011100011010110001010011101A",
+	    "Display": "H01010011100011011110001000011101A"
+	}
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "description": "TV553 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/rft/TV553.lircd.conf", "remote": "TV553", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 32000,
+    "dutycycle": 0.25,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 512, "space": 512},
+	"B": {"mark": 512, "space": 1024},
+	"C": {"mark": 512, "space": 0},
+	"D": {"mark": 1024, "space": 1024},
+	"E": {"mark": 1024, "space": 512},
+	"H": {"mark": 512, "space": 2560},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "P1": "HBEABDAAC",
+	    "P2": "HAAAABDAAC",
+	    "P3": "HAABEABAAC",
+	    "P4": "HAABDAAAAC",
+	    "KEY_1": "HABAADAAAC",
+	    "KEY_2": "HBDADAAAC",
+	    "KEY_3": "HAABADAAAC",
+	    "VT/TV": "HAABAEBAAC",
+	    "KEY_4": "HBADDAAAC",
+	    "KEY_5": "HABDDAAAC",
+	    "KEY_6": "HBEBDAAAC",
+	    "KEY_RADIO": "HBAAEABAAC",
+	    "KEY_7": "HAAABDAAAC",
+	    "KEY_8": "HBAAEBAAAC",
+	    "KEY_9": "HABAEBAAAC",
+	    "KEY_INFO": "HBEABAAAAC",
+	    "KEY_102ND": "HBDEBAAAC",
+	    "KEY_0": "HBAAADAAAC",
+	    "Spez": "HAABEBAAAC",
+	    "KEY_CHANNELUP": "HBEAABAAAC",
+	    "KEY_KPMINUS": "HABAAAAAAAC",
+	    "KEY_OK": "HBDDAAAAC",
+	    "KEY_KPPLUS": "HBAAAAAAAAC",
+	    "KEY_CHANNELDOWN": "HAAAAABAAAC",
+	    "Off": "HBAAAADAAC"
+	}
+    }
+}

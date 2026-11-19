@@ -1,0 +1,32 @@
+{
+    "description": "Phillips_CL304 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/CL304.lircd.conf", "remote": "Phillips_CL304", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 896, "space": 896},
+	"B": {"mark": 1920, "space": 1920},
+	"C": {"mark": 1920, "space": 896},
+	"D": {"mark": 896, "space": 1920},
+	"E": {"mark": 896, "space": 0},
+	"F": {"mark": 896, "space": 1664},
+	"G": {"mark": 1920, "space": 1664},
+	"I": {"mark": 896, "space": 1152},
+	"J": {"mark": 1664, "space": 0},
+	"K": {"mark": 1664, "space": 896},
+	"L": {"mark": 1920, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "<<": "ACADGAACFL",
+	    "Play": "AIKDBAABBE",
+	    ">>": "ACADBAABCE",
+	    "Record": "AACDBAAGAAE",
+	    "Stop": "ACAFGAABAJ",
+	    "Pause": "AACFBABCDE"
+	}
+    }
+}

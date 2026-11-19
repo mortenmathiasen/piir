@@ -1,0 +1,33 @@
+{
+    "description": "Samsung_PR3914 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/samsung/PR3914.lircd.conf", "remote": "Samsung_PR3914", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 567, "space": 0},
+	"H": {"mark": 4577, "space": 4400},
+	"1": {"mark": 567, "space": 1655},
+	"0": {"mark": 567, "space": 539},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H10100000101000001001100001100111A",
+	    "KEY_STOP": "H10100000101000001010100001010111A",
+	    "KEY_REWIND": "H10100000101000000001100011100111A",
+	    "KEY_FASTFORWARD": "H10100000101000000101100010100111A",
+	    "KEY_EJECTCD": "H10100000101000000000010011111011A",
+	    "A.TRK": "H10100000101000001000010001111011A",
+	    "A.REP": "H10100000101000001100000000111111A",
+	    "SYSTEM": "H10100000101000000100110010110011A",
+	    "KEY_RECORD": "H10100000101000000010100011010111A",
+	    "P/S_N.C": "H10100000101000000110100010010111A",
+	    "TV_VCR": "H10100000101000001000000001111111A",
+	    "TRACKING__Up": "H10100000101000000011010011001011A",
+	    "TRACKING_Down": "H10100000101000001011010001001011A",
+	    "KEY_POWER": "H10100000101000000100000010111111A"
+	}
+    }
+}

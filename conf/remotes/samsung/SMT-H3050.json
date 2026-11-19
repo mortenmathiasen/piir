@@ -1,0 +1,37 @@
+{
+    "description": "Samsung_SMT-H3050 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/samsung/SMT-H3050.lircd.conf", "remote": "Samsung_SMT-H3050", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 900, "space": 0},
+	"H": {"mark": 3350, "space": 3150},
+	"1": {"mark": 900, "space": 2350},
+	"0": {"mark": 900, "space": 700},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H1101111100000100000111A",
+	    "BTN_1": "H1101100001000100111101A",
+	    "BTN_2": "H1101110001000100011101A",
+	    "BTN_3": "H1101101001000100101101A",
+	    "BTN_4": "H1101111001000100001101A",
+	    "BTN_5": "H1101100101000100110101A",
+	    "BTN_6": "H1101110101000100010101A",
+	    "BTN_7": "H1101101101000100100101A",
+	    "BTN_8": "H1101111101000100000101A",
+	    "BTN_9": "H1101100011000100111001A",
+	    "BTN_0": "H1101110011000100011001A",
+	    "KEY_UP": "H1101101000000100101111A",
+	    "KEY_DOWN": "H1101111010000100001011A",
+	    "KEY_LEFT": "H1101111000000100001111A",
+	    "KEY_RIGHT": "H1101100100000100110111A",
+	    "KEY_SELECT": "H1101100110000100110011A",
+	    "KEY_INFO": "H1101100010000100111011A",
+	    "KEY_EXIT": "H1101100110100100110010A"
+	}
+    }
+}

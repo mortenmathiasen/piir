@@ -1,0 +1,30 @@
+{
+    "description": "SONY_RMT-V266_other (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V266.lircd.conf", "remote": "SONY_RMT-V266_other", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 78, "space": 0},
+	"H": {"mark": 78, "space": 2904},
+	"1": {"mark": 78, "space": 1716},
+	"0": {"mark": 78, "space": 1118},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "menu": "H10110011101AVVWWWWXXXXYYYYYZZZZZZZZZH10110011101AVVWWWWXXXXYYYYYZZZZZZZZZH10110011101A",
+	    "input_select": "H11110011101AVVWWWXXXXXXXXYYYYYYZH11110011101AVVWWWXXXXXXXXYYYYYYZH11110011101A",
+	    "slow": "H11000101101AVVWWWWWYYYYYZZZZZZZH11000101101AVVWWWWWYYYYYZZZZZZZH11000101101A",
+	    "x2": "H00101001101AVVWWWWWXXXXXXYYYYYZZZZZH00101001101AVVWWWWWXXXXXXYYYYYZZZZZH00101001101A",
+	    "smart_cue": "H10111011101AVVWWWXXXXXXXXYYYYYYZH10111011101AVVWWWXXXXXXXXYYYYYYZH10111011101A",
+	    "enter": "H11010001101AVVWWWWWYYYYYZZZZZZZH11010001101AVVWWWWWYYYYYZZZZZZZH11010001101A"
+	}
+    }
+}

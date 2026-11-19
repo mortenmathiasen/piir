@@ -1,0 +1,40 @@
+{
+    "description": "PHILIPS_CD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC6830.lircd.conf", "remote": "PHILIPS_CD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 940, "space": 840},
+	"B": {"mark": 1880, "space": 1680},
+	"C": {"mark": 1880, "space": 840},
+	"D": {"mark": 940, "space": 1680},
+	"E": {"mark": 940, "space": 0},
+	"F": {"mark": 1880, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_0": "AAABCAAAAAAE",
+	    "KEY_1": "AAABCAAAAADE",
+	    "KEY_2": "AAABCAAAADF",
+	    "KEY_3": "AAABCAAAADAE",
+	    "KEY_4": "AAABCAAADCE",
+	    "KEY_5": "AAABCAAADBE",
+	    "KEY_6": "AAABCAAADAF",
+	    "KEY_7": "AAABCAAADAAE",
+	    "KEY_8": "AAABCAADCAE",
+	    "KEY_9": "AAABCAADCDE",
+	    "SCAN": "AAABCDBBAE",
+	    "KEY_OPEN": "AAABCDBABE",
+	    "KEY_AGAIN": "AAABCADAABE",
+	    "KEY_PAUSE": "AAABCDACAAE",
+	    "SHUFFLE": "AAABCADAACE",
+	    "KEY_NEXT": "AAABCDCAAAE",
+	    "KEY_PREVIOUS": "AAABCDCAADE",
+	    "KEY_PLAY": "AAABCDABBE",
+	    "KEY_STOP": "AAABCDABAF"
+	}
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "description": "PANASONIC_TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/panasonic/EUR50350.lircd.conf", "remote": "PANASONIC_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1029, "space": 0},
+	"H": {"mark": 3653, "space": 3044},
+	"1": {"mark": 1029, "space": 646},
+	"0": {"mark": 1029, "space": 2235},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H1111111111000000000001A",
+	    "KEY_CHANNELUP": "H1111110111000000010001A",
+	    "KEY_CHANNELDOWN": "H1111100111000000110001A",
+	    "KEY_VOLUMEUP": "H1111111011000000001001A",
+	    "KEY_VOLUMEDOWN": "H1111101011000000101001A",
+	    "KEY_1": "H1111111110100000000010A",
+	    "KEY_2": "H1111101110100000100010A",
+	    "KEY_3": "H1111110110100000010010A",
+	    "KEY_4": "H1111100110100000110010A",
+	    "KEY_5": "H1111111010100000001010A",
+	    "KEY_6": "H1111101010100000101010A",
+	    "KEY_7": "H1111110010100000011010A",
+	    "KEY_8": "H1111100010100000111010A",
+	    "KEY_9": "H1111111100100000000110A",
+	    "KEY_0": "H1111101100100000100110A",
+	    "R-Tune": "H1111110101100000010100A",
+	    "KEY_AGAIN": "H1111100001100000111100A",
+	    "KEY_MUTE": "H1111111111100000000000A",
+	    "TV/Video": "H1111101001100000101100A",
+	    "KEY_SLEEP": "H1111100101100000110100A"
+	}
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "description": "RC-28b (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/cce/RC-28.lircd.conf", "remote": "RC-28b", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 940, "space": 832},
+	"B": {"mark": 1880, "space": 832},
+	"C": {"mark": 940, "space": 1664},
+	"D": {"mark": 975, "space": 832},
+	"E": {"mark": 940, "space": 0},
+	"F": {"mark": 1880, "space": 0},
+	"G": {"mark": 1880, "space": 1664},
+	"I": {"mark": 1915, "space": 1664},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_MUTE": "DABAAAAACAGE",
+	    "KEY_POWER": "DABAAAAACABE",
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACF",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACGE",
+	    "KEY_6": "DABAAAAAACAF",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "p.skip": "DABAAAAACGF",
+	    "p.ch": "DABAAACBACF",
+	    "KEY_MENU": "IBAAAACBCF",
+	    "out": "DABAAAAACAAAE",
+	    "KEY_CHANNELUP": "DABAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DABAAACBAACE",
+	    "KEY_VOLUMEUP": "DABAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
+	    "KEY_CLOSE": "IBAAACAGGE",
+	    "auto_image": "DABAAAAACAAF",
+	    "sap": "DABAAACBACAE",
+	    "av": "DABAAACGBAE",
+	    "KEY_SLEEP": "DABAAACBCAF",
+	    "dsc": "DABAAACGBCE"
+	}
+    }
+}

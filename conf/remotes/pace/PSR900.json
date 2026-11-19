@@ -1,0 +1,42 @@
+{
+    "description": "pace900 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pace/PSR900.lircd.conf", "remote": "pace900", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 673, "space": 0},
+	"H": {"mark": 762, "space": 3077},
+	"1": {"mark": 666, "space": 6948},
+	"0": {"mark": 666, "space": 4414},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H01100010000A",
+	    "KEY_1--": "H01100001010A",
+	    "KEY_1": "H01100000001A",
+	    "KEY_2": "H01100000010A",
+	    "KEY_3": "H01100000011A",
+	    "KEY_4": "H01100000100A",
+	    "KEY_5": "H01100000101A",
+	    "KEY_6": "H01100000110A",
+	    "KEY_7": "H01100000111A",
+	    "KEY_8": "H01100001000A",
+	    "KEY_9": "H01100001001A",
+	    "KEY_0": "H01100000000A",
+	    "KEY_AGAIN": "H01100011010A",
+	    "KEY_F": "H01100011001A",
+	    "KEY_LEFT": "H01100010110A",
+	    "KEY_MENU": "H01100010111A",
+	    "KEY_RIGHT": "H01100010001A",
+	    "display": "H01100011111A",
+	    "tv/sat": "H01100010100A",
+	    "KEY_RADIO": "H01100001111A",
+	    "store": "H01100010011A",
+	    "norm": "H01100010101A",
+	    "KEY_MUTE": "H01100011110A"
+	}
+    }
+}

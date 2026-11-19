@@ -1,0 +1,48 @@
+{
+    "description": "mivar (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/mivar/x1.lircd.conf", "remote": "mivar", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 259, "space": 0},
+	"1": {"mark": 259, "space": 7303},
+	"0": {"mark": 259, "space": 4772},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_1": "10111000100A",
+	    "KEY_2": "11111000010A",
+	    "KEY_3": "10111000011A",
+	    "KEY_4": "11111000101A",
+	    "KEY_6": "10111001100A",
+	    "KEY_7": "11111001010A",
+	    "KEY_8": "10111001011A",
+	    "KEY_9": "11111001101A",
+	    "KEY_0": "10111001110A",
+	    "KEY_5": "11111000110A",
+	    "KEY_CHANNELUP": "10111010100A",
+	    "KEY_CHANNELDOWN": "11111011100A",
+	    "KEY_VOLUMEUP": "10111010010A",
+	    "KEY_VOLUMEDOWN": "11111011010A",
+	    "Lum+": "10111010101A",
+	    "Lum-": "11111011101A",
+	    "Col+": "10111010110A",
+	    "Col-": "11111011110A",
+	    "P/C": "10111100100A",
+	    "Muto": "11111100101A",
+	    "V-M": "10111100010A",
+	    "L1-L2": "11111100110A",
+	    "KEY_STOP": "10111101100A",
+	    "Canc": "11111101010A",
+	    "TV-TVD": "10111101011A",
+	    "All": "11111101101A",
+	    "Riv": "10111101110A",
+	    "Ora": "11111110100A",
+	    "spento": "11111110011A",
+	    "AV": "10111110110A"
+	}
+    }
+}

@@ -3,7 +3,7 @@
 #include "hvac_panasonic_plugin.h"
 #include "plugins.h"
 
-// Test vector "No 1" from conf/remotes/hvac_panasonic.json
+// Test vector "No 1" from conf/remotes/panasonic/hvac_panasonic.json
 static const char *VALID =
   "H-01000000-00000100-00000111-00100000-00000000-00000000-00000000-01100000-W"
   "H-01000000-00000100-00000111-00100000-00000000-10010000-01010100-00000001-"
@@ -56,9 +56,11 @@ static void test_checksum_follows_payload(void) {
 
 static void test_plugin_dispatch(void) {
   char *code = with_checksum("00000000");
-  applyRemotePlugins("/somewhere/else/tv_sony.json", code);
+  CHECK_EQ_INT(0, applyRemotePlugin(NULL, code));
   CHECK(strcmp(VALID, code) != 0);
-  applyRemotePlugins("/usr/share/piir/conf/remotes/hvac_panasonic.json", code);
+  CHECK_EQ_INT(1, applyRemotePlugin("no_such_plugin", code));
+  CHECK(strcmp(VALID, code) != 0);
+  CHECK_EQ_INT(0, applyRemotePlugin("hvac_panasonic", code));
   CHECK_EQ_STR(VALID, code);
   free(code);
 }

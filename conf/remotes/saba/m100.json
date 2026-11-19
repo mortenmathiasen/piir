@@ -1,0 +1,47 @@
+{
+    "description": "TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/saba/m100.lircd.conf", "remote": "TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 545, "space": 0},
+	"1": {"mark": 545, "space": 4518},
+	"0": {"mark": 545, "space": 1989},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "001110011101A",
+	    "KEY_RED": "001110111001A",
+	    "KEY_GREEN": "001110111011A",
+	    "KEY_YELLOW": "001110111000A",
+	    "KEY_BLUE": "001110010101A",
+	    "KEY_TEXT": "001110011110A",
+	    "KEY_EXIT": "001110111110A",
+	    "KEY_LEFT": "001110110110A",
+	    "KEY_RIGHT": "001110110111A",
+	    "KEY_UP": "001110001011A",
+	    "KEY_DOWN": "001110001101A",
+	    "KEY_OK": "001110001100A",
+	    "KEY_MENU": "001110110001A",
+	    "KEY_MUTE": "001110000101A",
+	    "KEY_VOLUMEUP": "001110101001A",
+	    "KEY_VOLUMEDOWN": "001110101010A",
+	    "KEY_CHANNELUP": "001110100101A",
+	    "KEY_CHANNELDOWN": "001110100111A",
+	    "KEY_1": "001110000000A",
+	    "KEY_2": "001110001000A",
+	    "KEY_3": "001110010000A",
+	    "KEY_4": "001110000001A",
+	    "KEY_5": "001110001001A",
+	    "KEY_6": "001110010001A",
+	    "KEY_7": "001110000010A",
+	    "KEY_8": "001110001010A",
+	    "KEY_9": "001110010010A",
+	    "KEY_0": "001110001110A",
+	    "AV": "001110011000A"
+	}
+    }
+}

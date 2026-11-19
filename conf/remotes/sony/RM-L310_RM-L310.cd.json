@@ -1,0 +1,46 @@
+{
+    "description": "RM-L310.cd (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-L310.lircd.conf", "remote": "RM-L310.cd", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1279, "space": 0},
+	"H": {"mark": 2491, "space": 522},
+	"1": {"mark": 1279, "space": 521},
+	"0": {"mark": 678, "space": 521},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_CD": "H10100100000A",
+	    "KEY_PLAY": "H01001101000A",
+	    "KEY_BACK": "H00001101000A",
+	    "KEY_FORWARD": "H10001101000A",
+	    "KEY_PAUSE": "H10011101000A",
+	    "KEY_STOP": "H00011101000A",
+	    "KEY_TUNER": "H10000100000A",
+	    "KEY_1": "H00000001000A",
+	    "KEY_2": "H10000001000A",
+	    "KEY_3": "H01000001000A",
+	    "KEY_4": "H11000001000A",
+	    "KEY_5": "H00100001000A",
+	    "KEY_6": "H10100001000A",
+	    "KEY_7": "H01100001000A",
+	    "KEY_8": "H11100001000A",
+	    "KEY_9": "H00010001000A",
+	    "X_KEY_10": "H00000101000A",
+	    "X_KEY_11": "H10000101000A",
+	    "X_KEY_12": "H01100101000A",
+	    "X_KEY_13": "H11000101000A",
+	    "X_KEY_14": "H00100101000A",
+	    "X_KEY_15": "H10100101000A",
+	    "KEY_TAPE": "H11000100000A",
+	    "PHONO": "H00000100000A",
+	    "KEY_VOLUMEUP": "H01001000000A",
+	    "KEY_VOLUMEDOWN": "H11001000000A",
+	    "X_KEY_16": "H01100101000A"
+	}
+    }
+}

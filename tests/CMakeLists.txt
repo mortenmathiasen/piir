@@ -32,7 +32,8 @@ add_test(NAME remotes.all
 if(PIIR_BACKEND STREQUAL "lirc")
   piir_unit_test(test_lirc)
   piir_unit_test(test_lirc_device)
-  target_link_options(test_lirc_device PRIVATE -Wl,--wrap=ioctl -Wl,--wrap=write)
+  target_link_options(test_lirc_device PRIVATE
+    -Wl,--wrap=ioctl -Wl,--wrap=__ioctl_time64 -Wl,--wrap=write)
 elseif(PIIR_BACKEND STREQUAL "gpiod")
   piir_unit_test(test_transmitter)
   piir_unit_test(test_transmitter_device)

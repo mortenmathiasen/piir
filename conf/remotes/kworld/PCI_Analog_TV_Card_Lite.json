@@ -1,6 +1,6 @@
 {
     "description": "KWorld_VS-PRV-TV_7134SE (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/kworld/PCI_Analog_TV_Card_Lite.lircd.conf", "remote": "KWorld_VS-PRV-TV_7134SE", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/kworld/PCI_Analog_TV_Card_Lite.lircd.conf", "remote": "KWorld_VS-PRV-TV_7134SE", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

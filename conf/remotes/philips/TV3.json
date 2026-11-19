@@ -1,6 +1,6 @@
 {
     "description": "PHILIPS_MULTI_TV3 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/TV3.lircd.conf", "remote": "PHILIPS_MULTI_TV3", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/TV3.lircd.conf", "remote": "PHILIPS_MULTI_TV3", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -36,6 +36,30 @@
 	    "KEY_CHANNELUP": "AABAAACBAAAD",
 	    "KEY_CHANNELDOWN": "AABAAACBAACD",
 	    "KEY_MUTE": "AABAAAAACAED"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "ABAAAAAAAAACD",
+	    "KEY_2": "ABAAAAAAAACF",
+	    "KEY_3": "ABAAAAAAAACAD",
+	    "KEY_4": "ABAAAAAAACBD",
+	    "KEY_5": "ABAAAAAAACED",
+	    "KEY_6": "ABAAAAAAACAF",
+	    "KEY_7": "ABAAAAAAACAAD",
+	    "KEY_8": "ABAAAAAACBAD",
+	    "KEY_9": "ABAAAAAACBCD",
+	    "KEY_0": "ABAAAAAAAAAAD",
+	    "A/V": "ABAAAACEBAD",
+	    "TEXT_TV": "ABAAAACAAABD",
+	    "KEY_TV": "ABAAAACAAAAAD",
+	    "KEY_POWER": "ABAAAAAACABD",
+	    "KEY_102ND": "ABAAAAAACEF",
+	    "KEY_VOLUMEUP": "ABAAAAACBAAD",
+	    "KEY_VOLUMEDOWN": "ABAAAAACBACD",
+	    "KEY_CHANNELUP": "ABAAAACBAAAD",
+	    "KEY_CHANNELDOWN": "ABAAAACBAACD",
+	    "KEY_MUTE": "ABAAAAAACAED"
 	}
     }
 }

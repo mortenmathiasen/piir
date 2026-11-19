@@ -1,6 +1,6 @@
 {
     "description": "AV5609 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/AV5609.lircd.conf", "remote": "AV5609", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/AV5609.lircd.conf", "remote": "AV5609", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

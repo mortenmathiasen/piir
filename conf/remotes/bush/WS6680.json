@@ -1,6 +1,6 @@
 {
     "description": "BUSH_WS6680 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/bush/WS6680.lircd.conf", "remote": "BUSH_WS6680", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/bush/WS6680.lircd.conf", "remote": "BUSH_WS6680", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -55,6 +55,48 @@
 	    "MIX": "DABAAAAAACBE",
 	    "SMART_CONTROL_PICTURE": "DABAAAAAAACG",
 	    "SMART_CONTROL_SOUND": "DABAAAAACFAE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_MUTE": "DBAAAACFFAE",
+	    "KEY_POWER": "DBAAAACBAAAE",
+	    "KEY_1": "DBAAAAACBACE",
+	    "KEY_2": "DBAAAAACBCG",
+	    "KEY_3": "DBAAAAACBCAE",
+	    "KEY_4": "DBAAAAACFBE",
+	    "KEY_5": "DBAAAAACFFE",
+	    "KEY_6": "DBAAAAACFAG",
+	    "KEY_7": "DBAAAAACFAAE",
+	    "KEY_8": "DBAAAAACABAE",
+	    "KEY_9": "DBAAAAACABCE",
+	    "KEY_0": "DBAAAAACBAAE",
+	    "KEY_102ND": "DBAAAAACAFG",
+	    "AV": "DBAAAACFFG",
+	    "KEY_MENU": "DBAAAACFBCE",
+	    "SWAP": "DBAAAACBCAAE",
+	    "KEY_CHANNELUP": "DBAAAAACAABE",
+	    "KEY_CHANNELDOWN": "DBAAAAACAFAE",
+	    "KEY_VOLUMEUP": "DBAAAACBCBE",
+	    "KEY_VOLUMEDOWN": "DBAAAACBCFE",
+	    "KEY_OK": "DBAAAACFBAE",
+	    "TV/TX": "DBAAAACABACE",
+	    "PP": "DBAAAACBAACE",
+	    "16:9": "DBAAAACBACAE",
+	    "KEY_RED": "DBAAAACBCAG",
+	    "KEY_GREEN": "DBAAAACFABE",
+	    "KEY_YELLOW": "DBAAAACFAAG",
+	    "KEY_BLUE": "DBAAAACABCAE",
+	    "PURPLE": "DBAAAACFAAAE",
+	    "P100": "DBAAAAAAACAG",
+	    "REV": "DBAAAAAACAAG",
+	    "DOUB": "DBAAAAAAACAAE",
+	    "HOLD": "DBAAAAAACABE",
+	    "KEY_SUBTITLE": "DBAAAAAACFG",
+	    "UPDATE": "DBAAAAAACAAAE",
+	    "MIX": "DBAAAAAAACBE",
+	    "SMART_CONTROL_PICTURE": "DBAAAAAAAACG",
+	    "SMART_CONTROL_SOUND": "DBAAAAAACFAE"
 	}
     }
 }

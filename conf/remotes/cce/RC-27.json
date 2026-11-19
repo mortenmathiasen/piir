@@ -1,6 +1,6 @@
 {
     "description": "RC-27 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/cce/RC-27.lircd.conf", "remote": "RC-27", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/cce/RC-27.lircd.conf", "remote": "RC-27", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -12,7 +12,8 @@
 	"E": {"mark": 937, "space": 0},
 	"F": {"mark": 1874, "space": 1650},
 	"G": {"mark": 1874, "space": 0},
-	"I": {"mark": 1918, "space": 1650},
+	"I": {"mark": 1918, "space": 825},
+	"J": {"mark": 1918, "space": 1650},
 	"-": {"mark": 0, "space": 0}
     },
     "template": "-------------",
@@ -36,12 +37,40 @@
 	    "KEY_CHANNELDOWN": "DABAAACBAACE",
 	    "KEY_VOLUMEUP": "DABAAAACBAAE",
 	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
-	    "KEY_CLOSE": "IBAAACAFFE",
+	    "KEY_CLOSE": "JBAAACAFFE",
 	    "auto_image": "DABAAAAACAAG",
 	    "timer": "DABAAACFFG",
 	    "av": "DABAAACFBAE",
 	    "KEY_SLEEP": "DABAAACBCAG",
 	    "dsc": "DABAAACFBCE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "p.skip": "DBAAAAAACFG",
+	    "p.ch": "DBAAAAAACAAAE",
+	    "KEY_CHANNELUP": "DBAAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DBAAAACBAACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_CLOSE": "IAAAAACAFFE",
+	    "auto_image": "DBAAAAAACAAG",
+	    "timer": "DBAAAACFFG",
+	    "av": "DBAAAACFBAE",
+	    "KEY_SLEEP": "DBAAAACBCAG",
+	    "dsc": "DBAAAACFBCE"
 	}
     }
 }

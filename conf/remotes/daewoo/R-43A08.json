@@ -1,6 +1,6 @@
 {
     "description": "daewoo_R-43A08 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/daewoo/R-43A08.lircd.conf", "remote": "daewoo_R-43A08", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/daewoo/R-43A08.lircd.conf", "remote": "daewoo_R-43A08", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

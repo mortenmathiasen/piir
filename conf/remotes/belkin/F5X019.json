@@ -1,6 +1,6 @@
 {
     "description": "Belkin_F5X019 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/belkin/F5X019.lircd.conf", "remote": "Belkin_F5X019", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/belkin/F5X019.lircd.conf", "remote": "Belkin_F5X019", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

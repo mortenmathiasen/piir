@@ -1,6 +1,6 @@
 {
     "description": "Radioshack2115 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/radio_shack/5-in-1_2115.lircd.conf", "remote": "Radioshack2115", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/radio_shack/5-in-1_2115.lircd.conf", "remote": "Radioshack2115", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

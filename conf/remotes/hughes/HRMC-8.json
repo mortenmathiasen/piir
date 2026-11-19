@@ -1,6 +1,6 @@
 {
     "description": "Hughes_HRMC-8 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/hughes/HRMC-8.lircd.conf", "remote": "Hughes_HRMC-8", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/hughes/HRMC-8.lircd.conf", "remote": "Hughes_HRMC-8", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

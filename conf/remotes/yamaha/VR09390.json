@@ -1,6 +1,6 @@
 {
     "description": "VR09390 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamaha/VR09390.lircd.conf", "remote": "VR09390", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/yamaha/VR09390.lircd.conf", "remote": "VR09390", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 39200,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

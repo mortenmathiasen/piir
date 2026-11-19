@@ -1,6 +1,6 @@
 {
     "description": "Philips_RC5932 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RC5932.lircd.conf", "remote": "Philips_RC5932", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RC5932.lircd.conf", "remote": "Philips_RC5932", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -12,7 +12,8 @@
 	"E": {"mark": 959, "space": 0},
 	"F": {"mark": 1918, "space": 1794},
 	"G": {"mark": 1918, "space": 0},
-	"I": {"mark": 1957, "space": 1794},
+	"I": {"mark": 1957, "space": 897},
+	"J": {"mark": 1957, "space": 1794},
 	"-": {"mark": 0, "space": 0}
     },
     "template": "-------------",
@@ -48,11 +49,50 @@
 	    "PAY-TV_DOWN": "DABACAFAAFE",
 	    "RADIO_UP": "DABACAFAAAG",
 	    "RADIO_DOWN": "DABACAFAAAAE",
-	    "KEY_UP": "IBAAAAACAFE",
-	    "KEY_DOWN": "IBAAAAACAAG",
-	    "KEY_OK": "IBAAACFAAG",
-	    "KEY_INFO": "IBAAACFFAE",
-	    "KEY_MAIL": "IBAAACFAFE"
+	    "KEY_UP": "JBAAAAACAFE",
+	    "KEY_DOWN": "JBAAAAACAAG",
+	    "KEY_OK": "JBAAACFAAG",
+	    "KEY_INFO": "JBAAACFFAE",
+	    "KEY_MAIL": "JBAAACFAFE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "PP": "DBAAAAAACAAG",
+	    "AV": "DBAAAACAABAE",
+	    "COLOUR_UP": "DBAAAAACFBE",
+	    "COLOUR_DOWN": "DBAAAAACFFE",
+	    "KEY_BRIGHTNESSUP": "DBAAAAACBCG",
+	    "KEY_BRIGHTNESSDOWN": "DBAAAAACBCAE",
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_TIME": "DBAAAACFFG",
+	    "KEY_102ND": "DBAAAAAACFG",
+	    "TEXT_UP": "DBAACBACFG",
+	    "TEXT_DOWN": "DBAACBACFAE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_CHANNELUP": "DBAAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DBAAAACBAACE",
+	    "PAY-TV_UP": "DBAACAFAABE",
+	    "PAY-TV_DOWN": "DBAACAFAAFE",
+	    "RADIO_UP": "DBAACAFAAAG",
+	    "RADIO_DOWN": "DBAACAFAAAAE",
+	    "KEY_UP": "IAAAAAAACAFE",
+	    "KEY_DOWN": "IAAAAAAACAAG",
+	    "KEY_OK": "IAAAAACFAAG",
+	    "KEY_INFO": "IAAAAACFFAE",
+	    "KEY_MAIL": "IAAAAACFAFE"
 	}
     }
 }

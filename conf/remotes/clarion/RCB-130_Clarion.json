@@ -1,6 +1,6 @@
 {
     "description": "Clarion (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/clarion/RCB-130.lircd.conf", "remote": "Clarion", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/clarion/RCB-130.lircd.conf", "remote": "Clarion", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

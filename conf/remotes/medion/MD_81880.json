@@ -1,6 +1,6 @@
 {
     "description": "Medion_MD81880 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/medion/MD_81880.lircd.conf", "remote": "Medion_MD81880", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/medion/MD_81880.lircd.conf", "remote": "Medion_MD81880", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

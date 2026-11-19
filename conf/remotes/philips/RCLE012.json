@@ -1,6 +1,6 @@
 {
     "description": "Philips_RCLE012 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RCLE012.lircd.conf", "remote": "Philips_RCLE012", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RCLE012.lircd.conf", "remote": "Philips_RCLE012", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -12,17 +12,18 @@
 	"E": {"mark": 988, "space": 0},
 	"F": {"mark": 1976, "space": 1572},
 	"G": {"mark": 1976, "space": 0},
-	"I": {"mark": 2006, "space": 1572},
+	"I": {"mark": 2006, "space": 786},
+	"J": {"mark": 2006, "space": 1572},
 	"-": {"mark": 0, "space": 0}
     },
     "template": "-------------",
     "features": {
 	"key": {
 	    "KEY_POWER": "DABAAAAACABE",
-	    "KEY_UP": "IBAAAACBAAE",
-	    "KEY_DOWN": "IBAAAACBACE",
-	    "KEY_LEFT": "IBAAAACFFE",
-	    "KEY_RIGHT": "IBAAAACFAG",
+	    "KEY_UP": "JBAAAACBAAE",
+	    "KEY_DOWN": "JBAAAACBACE",
+	    "KEY_LEFT": "JBAAAACFFE",
+	    "KEY_RIGHT": "JBAAAACFAG",
 	    "KEY_1": "DABAAAAAAAACE",
 	    "KEY_2": "DABAAAAAAACG",
 	    "KEY_3": "DABAAAAAAACAE",
@@ -41,10 +42,41 @@
 	    "Sound": "DABAAAACFBE",
 	    "P<P": "DABAAACBACG",
 	    "Screen": "DABAAAACFFE",
-	    "KEY_MENU": "IBAAAACBCG",
+	    "KEY_MENU": "JBAAAACBCG",
 	    "i+": "DABAAAAACAAAE",
 	    "KEY_TIME": "DABAAACBCAG",
 	    "KEY_LAST": "DABAAACAABAE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_UP": "IAAAAAACBAAE",
+	    "KEY_DOWN": "IAAAAAACBACE",
+	    "KEY_LEFT": "IAAAAAACFFE",
+	    "KEY_RIGHT": "IAAAAAACFAG",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_CHANNELUP": "DBAAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DBAAAACBAACE",
+	    "Sound": "DBAAAAACFBE",
+	    "P<P": "DBAAAACBACG",
+	    "Screen": "DBAAAAACFFE",
+	    "KEY_MENU": "IAAAAAACBCG",
+	    "i+": "DBAAAAAACAAAE",
+	    "KEY_TIME": "DBAAAACBCAG",
+	    "KEY_LAST": "DBAAAACAABAE"
 	}
     }
 }

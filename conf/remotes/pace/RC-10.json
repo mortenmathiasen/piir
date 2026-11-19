@@ -1,6 +1,6 @@
 {
     "description": "PACE-RC-10 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/pace/RC-10.lircd.conf", "remote": "PACE-RC-10", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/pace/RC-10.lircd.conf", "remote": "PACE-RC-10", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

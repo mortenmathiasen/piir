@@ -1,6 +1,6 @@
 {
     "description": "Marantz_RC-65CD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/marantz/RC-65CD.lircd.conf", "remote": "Marantz_RC-65CD", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/marantz/RC-65CD.lircd.conf", "remote": "Marantz_RC-65CD", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -40,6 +40,33 @@
 	    "REVIEW": "EAABCAADAAAF",
 	    "KEY_AGAIN": "EAABCADAABF",
 	    "AMS": "EAABCDBBAF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "EBBCAAAAADF",
+	    "KEY_2": "EBBCAAAADG",
+	    "KEY_3": "EBBCAAAADAF",
+	    "KEY_4": "EBBCAAADCF",
+	    "KEY_5": "EBBCAAADBF",
+	    "KEY_6": "EBBCAAADAG",
+	    "KEY_7": "EBBCAAADAAF",
+	    "KEY_8": "EBBCAADCAF",
+	    "KEY_9": "EBBCAADCDF",
+	    "KEY_0": "EBBCAAAAAAF",
+	    "KEY_NEXT": "EBBCDCAAAF",
+	    "KEY_PREVIOUS": "EBBCDCAADF",
+	    "MEMO": "EBBCDBCDF",
+	    "KEY_PAUSE": "EBBCDACAAF",
+	    "SEARCH-": "EBBCDACDG",
+	    "SEARCH+": "EBBCDABCF",
+	    "KEY_PLAY": "EBBCDABBF",
+	    "KEY_STOP": "EBBCDABAG",
+	    "KEY_SELECT": "EBBCAADBG",
+	    "LAP": "EBBCAADBAF",
+	    "REVIEW": "EBBCAADAAAF",
+	    "KEY_AGAIN": "EBBCADAABF",
+	    "AMS": "EBBCDBBAF"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "SANSUI-RS-S103 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sansui/RS-S103.lircd.conf", "remote": "SANSUI-RS-S103", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sansui/RS-S103.lircd.conf", "remote": "SANSUI-RS-S103", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

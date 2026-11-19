@@ -1,6 +1,6 @@
 {
     "description": "M3PO (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/terratec/M3PO.lircd.conf", "remote": "M3PO", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/terratec/M3PO.lircd.conf", "remote": "M3PO", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -13,7 +13,7 @@
 	"F": {"mark": 1880, "space": 0},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "----------",
+    "template": "-----------",
     "features": {
 	"key": {
 	    "KEY_RIGHT": "AAACBBDBF",
@@ -34,6 +34,28 @@
 	    "KEY_MUTE": "AAAAABBBE",
 	    "KEY_INFO": "AAAABCBBE",
 	    "KEY_PLAY": "AAAABCBDE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_RIGHT": "CBDACBBDBF",
+	    "KEY_PAUSE": "CBDACBDBBBE",
+	    "Speed-": "CBDACDCBBE",
+	    "KEY_LEFT": "CBDACDCBDE",
+	    "KEY_PREVIOUS": "CBDACDCDF",
+	    "KEY_NEXT": "CBDACDCDBE",
+	    "KEY_ENTER": "CBDACDAAE",
+	    "Speed_Normal": "CBDACDABF",
+	    "KEY_DOWN": "CBDACDABBE",
+	    "KEY_REWIND": "CBDAACBBDE",
+	    "KEY_FORWARD": "CBDAAAAF",
+	    "Speed+": "CBDAAAABE",
+	    "KEY_STOP": "CBDAAABCE",
+	    "KEY_UP": "CBDAAABAE",
+	    "KEY_MENU": "CBDAAABBF",
+	    "KEY_MUTE": "CBDAAABBBE",
+	    "KEY_INFO": "CBDAABCBBE",
+	    "KEY_PLAY": "CBDAABCBDE"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "Philips_N0340UD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/N0340UD.lircd.conf", "remote": "Philips_N0340UD", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/N0340UD.lircd.conf", "remote": "Philips_N0340UD", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -12,7 +12,8 @@
 	"E": {"mark": 961, "space": 836},
 	"F": {"mark": 939, "space": 0},
 	"G": {"mark": 1878, "space": 0},
-	"I": {"mark": 1900, "space": 1672},
+	"I": {"mark": 1900, "space": 836},
+	"J": {"mark": 1900, "space": 1672},
 	"-": {"mark": 0, "space": 0}
     },
     "template": "------------",
@@ -42,13 +43,48 @@
 	    "chan_prev": "EABAAACBAAAF",
 	    "chan_next": "EABAAACBAACF",
 	    "KEY_MUTE": "EABAAAAACADF",
-	    "track_up": "IBCDBCADF",
-	    "track_down": "IBCDBCAAG",
+	    "track_up": "JBCDBCADF",
+	    "track_down": "JBCDBCAAG",
 	    "speed": "EABCDAAADG",
 	    "memory": "EABCDAAADAF",
 	    "KEY_PAUSE": "EABCDADBCF",
 	    "KEY_VOLUMEDOWN": "EABAAAACBACF",
 	    "KEY_VOLUMEUP": "EABAAAACBAAF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "EBACDBCABF",
+	    "KEY_MENU": "EBACDDAADF",
+	    "status": "EBACDBCAAAF",
+	    "KEY_CLEAR": "EBACDAABACF",
+	    "KEY_EJECTCD": "EBACDADADF",
+	    "KEY_1": "EBACDBAAACF",
+	    "KEY_2": "EBACDBAACG",
+	    "KEY_3": "EBACDBAACAF",
+	    "KEY_4": "EBACDBACBF",
+	    "KEY_5": "EBACDBACDF",
+	    "KEY_6": "EBACDBACAG",
+	    "KEY_7": "EBACDBACAAF",
+	    "KEY_8": "EBACDBCBAF",
+	    "KEY_9": "EBACDBCBCF",
+	    "KEY_0": "EBACDBAAAAF",
+	    "sleep_wake": "EBAAAACBCAG",
+	    "alt_ch": "EBAAAACBACG",
+	    "KEY_PLAY": "EBACDAADDF",
+	    "KEY_REWIND": "EBACDAABCG",
+	    "KEY_FASTFORWARD": "EBACDAADBF",
+	    "KEY_STOP": "EBACDAADAG",
+	    "chan_prev": "EBAAAACBAAAF",
+	    "chan_next": "EBAAAACBAACF",
+	    "KEY_MUTE": "EBAAAAAACADF",
+	    "track_up": "IAACDBCADF",
+	    "track_down": "IAACDBCAAG",
+	    "speed": "EBACDAAADG",
+	    "memory": "EBACDAAADAF",
+	    "KEY_PAUSE": "EBACDADBCF",
+	    "KEY_VOLUMEDOWN": "EBAAAAACBACF",
+	    "KEY_VOLUMEUP": "EBAAAAACBAAF"
 	}
     }
 }

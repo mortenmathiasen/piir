@@ -1,6 +1,6 @@
 {
     "description": "Samsung_SV-DVD3E (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/samsung/SV-DVD3E.lircd.conf", "remote": "Samsung_SV-DVD3E", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/samsung/SV-DVD3E.lircd.conf", "remote": "Samsung_SV-DVD3E", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

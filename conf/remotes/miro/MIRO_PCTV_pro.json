@@ -1,6 +1,6 @@
 {
     "description": "MIRO (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/miro/MIRO_PCTV_pro.lircd.conf", "remote": "MIRO", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/miro/MIRO_PCTV_pro.lircd.conf", "remote": "MIRO", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

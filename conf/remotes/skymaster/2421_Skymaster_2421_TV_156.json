@@ -1,6 +1,6 @@
 {
     "description": "Skymaster_2421_TV_156 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/skymaster/2421.lircd.conf", "remote": "Skymaster_2421_TV_156", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/skymaster/2421.lircd.conf", "remote": "Skymaster_2421_TV_156", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -49,6 +49,42 @@
 	    "KEY_PAUSE": "DABACEAEEF",
 	    "screen": "DABACEEAEF",
 	    "vtzoom": "DABACEEBCF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "tvvcr": "DBAACBAAAAAF",
+	    "KEY_MUTE": "DBAACBACAEF",
+	    "KEY_POWER": "DBAACBACABF",
+	    "KEY_1": "DBAACBAAAACF",
+	    "KEY_2": "DBAACBAAACG",
+	    "KEY_3": "DBAACBAAACAF",
+	    "KEY_4": "DBAACBAACBF",
+	    "KEY_5": "DBAACBAACEF",
+	    "KEY_6": "DBAACBAACAG",
+	    "KEY_7": "DBAACBAACAAF",
+	    "KEY_8": "DBAACBACBAF",
+	    "KEY_9": "DBAACBACBCF",
+	    "KEY_0": "DBAACBAAAAAF",
+	    "KEY_MENU": "DBAACEAAAAAF",
+	    "KEY_UP": "DBAACBCBCG",
+	    "KEY_LEFT": "DBAACBCEEF",
+	    "KEY_OK": "DBAACEBACAF",
+	    "KEY_RIGHT": "DBAACBCEBF",
+	    "KEY_DOWN": "DBAACBCBCAF",
+	    "KEY_CHANNELUP": "DBAACBACEG",
+	    "KEY_CHANNELDOWN": "DBAACBACEAF",
+	    "KEY_VOLUMEUP": "DBAACBCBAAF",
+	    "KEY_VOLUMEDOWN": "DBAACBCBACF",
+	    "KEY_RED": "DBAACEAEAAF",
+	    "KEY_YELLOW": "DBAACEABCG",
+	    "KEY_BLUE": "DBAACEAEBF",
+	    "KEY_KPPLUS": "DBAACEAAAAG",
+	    "KEY_RECORD": "DBAACEEAAG",
+	    "KEY_GREEN": "DBAACEAEAG",
+	    "KEY_PAUSE": "DBAACEAEEF",
+	    "screen": "DBAACEEAEF",
+	    "vtzoom": "DBAACEEBCF"
 	}
     }
 }

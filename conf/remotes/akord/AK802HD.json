@@ -1,6 +1,6 @@
 {
     "description": "Akord_AK802HD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/akord/AK802HD.lircd.conf", "remote": "Akord_AK802HD", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/akord/AK802HD.lircd.conf", "remote": "Akord_AK802HD", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

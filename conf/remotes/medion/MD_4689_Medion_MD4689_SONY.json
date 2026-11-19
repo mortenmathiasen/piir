@@ -1,6 +1,6 @@
 {
     "description": "Medion_MD4689_SONY (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/medion/MD_4689.lircd.conf", "remote": "Medion_MD4689_SONY", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/medion/MD_4689.lircd.conf", "remote": "Medion_MD4689_SONY", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

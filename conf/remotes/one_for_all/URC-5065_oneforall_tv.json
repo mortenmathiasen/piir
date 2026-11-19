@@ -1,6 +1,6 @@
 {
     "description": "oneforall_tv (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/one_for_all/URC-5065.lircd.conf", "remote": "oneforall_tv", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/one_for_all/URC-5065.lircd.conf", "remote": "oneforall_tv", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

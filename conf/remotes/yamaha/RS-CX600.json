@@ -1,6 +1,6 @@
 {
     "description": "RS-CX600 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamaha/RS-CX600.lircd.conf", "remote": "RS-CX600", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/yamaha/RS-CX600.lircd.conf", "remote": "RS-CX600", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

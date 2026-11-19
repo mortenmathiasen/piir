@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(PIIR
-  VERSION 2.1.0
+  VERSION 2.2.0
   DESCRIPTION "Raspberry Pi IR transmitter"
   HOMEPAGE_URL "https://github.com/mortenmathiasen/piir"
   LANGUAGES C)
@@ -74,6 +74,7 @@ add_library(piir_core STATIC
   src/hvac_panasonic_plugin.c
   src/plugins.c
   src/remotes.c
+  src/state.c
   src/irslinger.c
   src/transmitter.c
   src/lirc.c

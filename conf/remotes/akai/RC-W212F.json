@@ -1,6 +1,6 @@
 {
     "description": "Akai_RC-W212F (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/akai/RC-W212F.lircd.conf", "remote": "Akai_RC-W212F", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/akai/RC-W212F.lircd.conf", "remote": "Akai_RC-W212F", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

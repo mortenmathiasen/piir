@@ -1,6 +1,6 @@
 {
     "description": "Sharp_G0006AJ (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sharp/G0006AJ.lircd.conf", "remote": "Sharp_G0006AJ", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sharp/G0006AJ.lircd.conf", "remote": "Sharp_G0006AJ", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -47,6 +47,44 @@
 	    "Dpss-": "110000110010000A",
 	    "Dpss+": "110000110001111A",
 	    "TamperProof": "110001101100000A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "110001111111111A",
+	    "KEY_EJECTCD": "110000101101111A",
+	    "Tv/Vcr": "110000101111111A",
+	    "Input": "110001011101111A",
+	    "KEY_1": "110000001011111A",
+	    "KEY_2": "110001101011111A",
+	    "KEY_3": "110000101011111A",
+	    "KEY_4": "110000100100000A",
+	    "KEY_5": "110000011011111A",
+	    "KEY_6": "110000000100000A",
+	    "KEY_7": "110000111011111A",
+	    "KEY_8": "110001000011111A",
+	    "KEY_9": "110001111100000A",
+	    "KEY_102ND": "110001000011011A",
+	    "KEY_0": "110001100011111A",
+	    "KEY_KPMINUS": "110001101111111A",
+	    "KEY_KPPLUS": "110001110000000A",
+	    "KEY_EPG": "110001101100100A",
+	    "Display": "110001010011011A",
+	    "KEY_MENU": "110000010111111A",
+	    "Add/Erase": "110000011101011A",
+	    "KEY_CANCEL": "110001011011011A",
+	    "KEY_RECORD": "110001000001111A",
+	    "KEY_STOP": "110000111001111A",
+	    "KEY_PAUSE": "110001100110000A",
+	    "KEY_REWIND": "110000101001111A",
+	    "KEY_PLAY": "110001101001111A",
+	    "KEY_FASTFORWARD": "110000001001111A",
+	    "TapeSpeed": "110000110111111A",
+	    "ZeroBack": "110000101011011A",
+	    "KEY_SLOW": "110000000001111A",
+	    "Dpss-": "110001001101111A",
+	    "Dpss+": "110001001110000A",
+	    "TamperProof": "110000010011111A"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "Creative_RM900 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/creative/RM-900.lircd.conf", "remote": "Creative_RM900", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/creative/RM-900.lircd.conf", "remote": "Creative_RM900", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.33,
     "transmitter": {"outpin": 17},

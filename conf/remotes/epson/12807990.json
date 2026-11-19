@@ -1,6 +1,6 @@
 {
     "description": "Epson_12807990 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/epson/12807990.lircd.conf", "remote": "Epson_12807990", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/epson/12807990.lircd.conf", "remote": "Epson_12807990", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

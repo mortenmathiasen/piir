@@ -1,6 +1,6 @@
 {
     "description": "Telefunken_RC1323-Video-B (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/telefunken/RC1323-VIDEO-B.lircd.conf", "remote": "Telefunken_RC1323-Video-B", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/telefunken/RC1323-VIDEO-B.lircd.conf", "remote": "Telefunken_RC1323-Video-B", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -45,6 +45,42 @@
 	    "KEY_RECORD": "000110100011A",
 	    "KEY_STOP": "000110100100A",
 	    "KEY_PAUSE": "000110100010A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "OFF": "000100011101A",
+	    "KEY_RED": "000100111001A",
+	    "KEY_GREEN": "000100111011A",
+	    "KEY_YELLOW": "000100111000A",
+	    "KEY_BLUE": "000100010101A",
+	    "Status": "000100011110A",
+	    "Timer": "000100101011A",
+	    "Display/Menu": "000100111110A",
+	    "SP/LP": "000100000101A",
+	    "Erase": "000100111101A",
+	    "Index": "000100111100A",
+	    "Adjust": "000100101100A",
+	    "tv/vcr": "000100101101A",
+	    "av/audio": "000100011000A",
+	    "KEY_1": "000100000000A",
+	    "KEY_2": "000100001000A",
+	    "KEY_3": "000100010000A",
+	    "KEY_4": "000100000001A",
+	    "KEY_5": "000100001001A",
+	    "KEY_6": "000100010001A",
+	    "KEY_7": "000100000010A",
+	    "KEY_8": "000100001010A",
+	    "KEY_9": "000100010010A",
+	    "KEY_0": "000100001110A",
+	    "-/Down": "000100101010A",
+	    "+/Up": "000100101001A",
+	    "KEY_REWIND": "000100011111A",
+	    "KEY_PLAY": "000100100000A",
+	    "KEY_FASTFORWARD": "000100100001A",
+	    "KEY_RECORD": "000100100011A",
+	    "KEY_STOP": "000100100100A",
+	    "KEY_PAUSE": "000100100010A"
 	}
     }
 }

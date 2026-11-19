@@ -1,6 +1,6 @@
 {
     "description": "IrradioHIFI1300V (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/irradio/HIFI_1300V.lircd.conf", "remote": "IrradioHIFI1300V", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/irradio/HIFI_1300V.lircd.conf", "remote": "IrradioHIFI1300V", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

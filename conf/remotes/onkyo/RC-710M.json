@@ -1,6 +1,6 @@
 {
     "description": "Onkyo_RC-710M (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/onkyo/RC-710M.lircd.conf", "remote": "Onkyo_RC-710M", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/onkyo/RC-710M.lircd.conf", "remote": "Onkyo_RC-710M", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "RC181 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/denon/RC-181.lircd.conf", "remote": "RC181", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/denon/RC-181.lircd.conf", "remote": "RC181", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

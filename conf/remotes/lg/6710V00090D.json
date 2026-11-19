@@ -1,6 +1,6 @@
 {
     "description": "LG_6710V00090D (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lg/6710V00090D.lircd.conf", "remote": "LG_6710V00090D", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/lg/6710V00090D.lircd.conf", "remote": "LG_6710V00090D", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -43,6 +43,36 @@
 	    "KEY_SLEEP": "DABAAACBCAF",
 	    "picture": "DABAAAACBCAE",
 	    "sound": "DABAAACBCBE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_MUTE": "DBAAAAAACAGE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACF",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACGE",
+	    "KEY_6": "DBAAAAAAACAF",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "eye": "DBAAAACAGAAE",
+	    "i-ii": "DBAAAACAGAF",
+	    "pr-up": "DBAAAACBAAAE",
+	    "pr-down": "DBAAAACBAACE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "KEY_OK": "DBAAAACBCGE",
+	    "q-view": "DBAAAACABCF",
+	    "KEY_LIST": "DBAAAACAGBE",
+	    "psm": "DBAAAAAACAAF",
+	    "ssm": "DBAAAAACGAF",
+	    "KEY_SLEEP": "DBAAAACBCAF",
+	    "picture": "DBAAAAACBCAE",
+	    "sound": "DBAAAACBCBE"
 	}
     }
 }

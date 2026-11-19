@@ -1,6 +1,6 @@
 {
     "description": "LG_MKJ39170805_TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lg/MKJ39170805.lircd.conf", "remote": "LG_MKJ39170805_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/lg/MKJ39170805.lircd.conf", "remote": "LG_MKJ39170805_TV", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 37917,
     "dutycycle": 0.33,
     "transmitter": {"outpin": 17},

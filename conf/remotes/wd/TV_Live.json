@@ -1,6 +1,6 @@
 {
     "description": "WD_TV_LIVE_REMOTE (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/wd/TV_Live.lircd.conf", "remote": "WD_TV_LIVE_REMOTE", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/wd/TV_Live.lircd.conf", "remote": "WD_TV_LIVE_REMOTE", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

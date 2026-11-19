@@ -1,6 +1,6 @@
 {
     "description": "Majestic_DVX377USB (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/majestic/DVX377USB.lircd.conf", "remote": "Majestic_DVX377USB", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/majestic/DVX377USB.lircd.conf", "remote": "Majestic_DVX377USB", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

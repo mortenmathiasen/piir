@@ -1,6 +1,6 @@
 {
     "description": "KINGMAN_IMEX_IM_1313 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/imex/IM-1313_027.lircd.conf", "remote": "KINGMAN_IMEX_IM_1313", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/imex/IM-1313_027.lircd.conf", "remote": "KINGMAN_IMEX_IM_1313", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

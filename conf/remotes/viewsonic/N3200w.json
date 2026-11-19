@@ -1,6 +1,6 @@
 {
     "description": "Viewsonic_N3200w (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/viewsonic/N3200w.lircd.conf", "remote": "Viewsonic_N3200w", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/viewsonic/N3200w.lircd.conf", "remote": "Viewsonic_N3200w", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

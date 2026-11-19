@@ -1,6 +1,6 @@
 {
     "description": "Apex_K12K-C5 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/apex/K12K-C5.lircd.conf", "remote": "Apex_K12K-C5", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/apex/K12K-C5.lircd.conf", "remote": "Apex_K12K-C5", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

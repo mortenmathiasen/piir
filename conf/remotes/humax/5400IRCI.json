@@ -1,6 +1,6 @@
 {
     "description": "Humax-5400IRCI (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/humax/5400IRCI.lircd.conf", "remote": "Humax-5400IRCI", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/humax/5400IRCI.lircd.conf", "remote": "Humax-5400IRCI", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

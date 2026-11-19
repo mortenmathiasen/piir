@@ -1,6 +1,6 @@
 {
     "description": "NEC_RB-73A (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/nec/RB-73A.lircd.conf", "remote": "NEC_RB-73A", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/nec/RB-73A.lircd.conf", "remote": "NEC_RB-73A", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

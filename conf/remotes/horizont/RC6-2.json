@@ -1,6 +1,6 @@
 {
     "description": "HORIZONT_RC6-2 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/horizont/RC6-2.lircd.conf", "remote": "HORIZONT_RC6-2", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/horizont/RC6-2.lircd.conf", "remote": "HORIZONT_RC6-2", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -57,6 +57,50 @@
 	    "F+": "DABAAACFFAE",
 	    "F-": "DABAAACFABE",
 	    "-M": "DABAAACFBCE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_SLEEP": "DBAAAAAACABE",
+	    "display": "DBAAAAAACAAAE",
+	    "PP": "DBAAAAAACAAG",
+	    "sleeptimer": "DBAAAACBCAG",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_102ND": "DBAAAAAACFG",
+	    "P<P": "DBAAAACBACG",
+	    "KEY_CHANNELUP": "DBAAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DBAAAACBAACE",
+	    "KEY_S": "DBAAAAACAAAG",
+	    "KEY_KPPLUS": "DBAAAAACBAAE",
+	    "KEY_KPMINUS": "DBAAAAACBACE",
+	    "SEL": "DBAAAACAAFAE",
+	    "KEY_TV": "DBAAAACAAAAAE",
+	    "AV": "DBAAAACAABAE",
+	    "(><)": "DBAAAACBCBE",
+	    "I-II": "DBAAAACBACAE",
+	    "<X": "DBAAAAAACAFE",
+	    "KEY_RECORD": "DBAAAACAFAAE",
+	    "KEY_STOP": "DBAAAACAFAG",
+	    "KEY_REWIND": "DBAAAACABCG",
+	    "KEY_FORWARD": "DBAAAACAFBE",
+	    "KEY_PLAY": "DBAAAACAFFE",
+	    "<=": "DBAAAAAACFAE",
+	    "==": "DBAAAACAAABE",
+	    "_/=": "DBAAAACFAAG",
+	    "SYS": "DBAAAACFAFE",
+	    "KEY_O": "DBAAAACFFG",
+	    "F+": "DBAAAACFFAE",
+	    "F-": "DBAAAACFABE",
+	    "-M": "DBAAAACFBCE"
 	}
     }
 }

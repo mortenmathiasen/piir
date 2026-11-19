@@ -1,6 +1,6 @@
 {
     "description": "RM-DX300_CD1 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-DX300.lircd.conf", "remote": "RM-DX300_CD1", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RM-DX300.lircd.conf", "remote": "RM-DX300_CD1", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

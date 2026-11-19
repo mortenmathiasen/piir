@@ -1,6 +1,6 @@
 {
     "description": "Euroconsumers_LG-5988 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/euroconsumers/LG-5988.lircd.conf", "remote": "Euroconsumers_LG-5988", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/euroconsumers/LG-5988.lircd.conf", "remote": "Euroconsumers_LG-5988", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

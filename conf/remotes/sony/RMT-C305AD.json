@@ -1,6 +1,6 @@
 {
     "description": "Sony-RMT-C305AD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RMT-C305AD.lircd.conf", "remote": "Sony-RMT-C305AD", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RMT-C305AD.lircd.conf", "remote": "Sony-RMT-C305AD", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "PHILIPS_CD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RD6831.lircd.conf", "remote": "PHILIPS_CD", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RD6831.lircd.conf", "remote": "PHILIPS_CD", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -36,6 +36,30 @@
 	    "TRACK_-": "AAABCDCAADE",
 	    "KEY_PLAY": "AAABCDABBE",
 	    "KEY_STOP": "AAABCDABAF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_0": "ABBCAAAAAAE",
+	    "KEY_1": "ABBCAAAAADE",
+	    "KEY_2": "ABBCAAAADF",
+	    "KEY_3": "ABBCAAAADAE",
+	    "KEY_4": "ABBCAAADCE",
+	    "KEY_5": "ABBCAAADBE",
+	    "KEY_6": "ABBCAAADAF",
+	    "KEY_7": "ABBCAAADAAE",
+	    "KEY_8": "ABBCAADCAE",
+	    "KEY_9": "ABBCAADCDE",
+	    "INDEX": "ABBCDBBAE",
+	    "KEY_OPEN": "ABBCDBABE",
+	    "KEY_AGAIN": "ABBCADAABE",
+	    "DISC": "ABBCADAAAF",
+	    "KEY_PAUSE": "ABBCDACAAE",
+	    "RANDOM": "ABBCADAACE",
+	    "TRACK_+": "ABBCDCAAAE",
+	    "TRACK_-": "ABBCDCAADE",
+	    "KEY_PLAY": "ABBCDABBE",
+	    "KEY_STOP": "ABBCDABAF"
 	}
     }
 }

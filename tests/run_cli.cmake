@@ -30,6 +30,11 @@ elseif(EXIT STREQUAL "nonzero" AND result EQUAL 0)
   message(FATAL_ERROR "expected a non-zero exit code")
 endif()
 
+# Sanitizer reports fail a test even when it expects a non-zero exit code
+if(output MATCHES "ERROR: AddressSanitizer|ERROR: LeakSanitizer|runtime error:")
+  message(FATAL_ERROR "sanitizer error")
+endif()
+
 foreach(regex IN LISTS MATCH)
   if(NOT output MATCHES "${regex}")
     message(FATAL_ERROR "output does not match: ${regex}")

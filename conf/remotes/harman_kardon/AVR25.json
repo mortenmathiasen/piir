@@ -1,6 +1,6 @@
 {
     "description": "Harman_Kardon_AVR25 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/harman_kardon/AVR25.lircd.conf", "remote": "Harman_Kardon_AVR25", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/harman_kardon/AVR25.lircd.conf", "remote": "Harman_Kardon_AVR25", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

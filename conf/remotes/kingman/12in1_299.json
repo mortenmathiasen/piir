@@ -1,6 +1,6 @@
 {
     "description": "k12in1_299 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/kingman/12in1_299.lircd.conf", "remote": "k12in1_299", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/kingman/12in1_299.lircd.conf", "remote": "k12in1_299", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

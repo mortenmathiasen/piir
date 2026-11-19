@@ -1,6 +1,6 @@
 {
     "description": "Thomson_rct443_mn1_VCR (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/thomson/RCT443_MN1.lircd.conf", "remote": "Thomson_rct443_mn1_VCR", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/thomson/RCT443_MN1.lircd.conf", "remote": "Thomson_rct443_mn1_VCR", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -52,6 +52,49 @@
 	    "KEY_RECORD": "000010100011A",
 	    "KEY_STOP": "000010100100A",
 	    "KEY_PAUSE": "000010100010A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_OPEN": "000000111010A",
+	    "MARKER": "000000000101A",
+	    "THREE_CIRCLE": "000000111100A",
+	    "PROG/RANDOM": "000000111101A",
+	    "KEY_POWER": "000000011101A",
+	    "KEY_CLEAR": "000000011000A",
+	    "KEY_RED": "000000111001A",
+	    "KEY_GREEN": "000000111011A",
+	    "KEY_YELLOW": "000000111000A",
+	    "KEY_BLUE": "000000010101A",
+	    "MAGENTA": "000000011110A",
+	    "KEY_UP": "000000110100A",
+	    "KEY_RIGHT": "000000110111A",
+	    "KEY_DOWN": "000000110101A",
+	    "KEY_LEFT": "000000110110A",
+	    "KEY_OK": "000000110011A",
+	    "KEY_ENTER": "000000111110A",
+	    "KEY_MENU": "000000110001A",
+	    "KEY_CHANNELUP": "000000101001A",
+	    "KEY_CHANNELDOWN": "000000101010A",
+	    "KEY_VOLUMEUP": "001100101001A",
+	    "KEY_VOLUMEDOWN": "001100101010A",
+	    "KEY_MUTE": "001100000101A",
+	    "KEY_1": "000000000000A",
+	    "KEY_2": "000000001000A",
+	    "KEY_3": "000000010000A",
+	    "KEY_4": "000000000001A",
+	    "KEY_5": "000000001001A",
+	    "KEY_6": "000000010001A",
+	    "KEY_7": "000000000010A",
+	    "KEY_8": "000000001010A",
+	    "KEY_9": "000000010010A",
+	    "KEY_0": "000000001110A",
+	    "REV": "000000011111A",
+	    "KEY_PLAY": "000000100000A",
+	    "KEY_FORWARD": "000000100001A",
+	    "KEY_RECORD": "000000100011A",
+	    "KEY_STOP": "000000100100A",
+	    "KEY_PAUSE": "000000100010A"
 	}
     }
 }

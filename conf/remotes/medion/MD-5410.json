@@ -1,6 +1,6 @@
 {
     "description": "MD-5410 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/medion/MD-5410.lircd.conf", "remote": "MD-5410", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/medion/MD-5410.lircd.conf", "remote": "MD-5410", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -46,6 +46,43 @@
 	    "KEY_PLAY": "11101011001A",
 	    "KEY_PAUSE": "11101011010A",
 	    "INDEX": "11101011111A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "10101011110A",
+	    "KEY_EJECTCD": "10101100110A",
+	    "KEY_MUTE": "10101011000A",
+	    "KEY_1": "10101110101A",
+	    "KEY_2": "10101101101A",
+	    "KEY_3": "10101100101A",
+	    "KEY_4": "10101011101A",
+	    "KEY_5": "10101110100A",
+	    "KEY_6": "10101101100A",
+	    "KEY_7": "10101100100A",
+	    "KEY_8": "10101011100A",
+	    "KEY_9": "10101110011A",
+	    "KEY_0": "10101101011A",
+	    "KEY_INFO": "10101100000A",
+	    "KEY_CLEAR": "10101100011A",
+	    "KEY_CAMERA": "10101101110A",
+	    "KEY_MENU": "10101010111A",
+	    "KEY_TITLE": "10101100111A",
+	    "KEY_EXIT": "10101110000A",
+	    "KEY_REWIND": "10101110111A",
+	    "KEY_FORWARD": "10101110010A",
+	    "KEY_ZOOM": "10101010010A",
+	    "KEY_UP": "10101101000A",
+	    "KEY_DOWN": "10101101010A",
+	    "KEY_LEFT": "10101110001A",
+	    "KEY_RIGHT": "10101100001A",
+	    "KEY_OK": "10101101001A",
+	    "KEY_NEXT": "10101010110A",
+	    "KEY_PREVIOUS": "10101010101A",
+	    "KEY_STOP": "10101100010A",
+	    "KEY_PLAY": "10101011001A",
+	    "KEY_PAUSE": "10101011010A",
+	    "INDEX": "10101011111A"
 	}
     }
 }

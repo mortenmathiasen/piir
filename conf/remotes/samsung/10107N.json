@@ -1,6 +1,6 @@
 {
     "description": "Samsung_10107N (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/samsung/10107N.lircd.conf", "remote": "Samsung_10107N", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/samsung/10107N.lircd.conf", "remote": "Samsung_10107N", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -12,7 +12,8 @@
 	"E": {"mark": 929, "space": 0},
 	"F": {"mark": 1858, "space": 0},
 	"G": {"mark": 1858, "space": 1724},
-	"I": {"mark": 1915, "space": 1724},
+	"I": {"mark": 1915, "space": 862},
+	"J": {"mark": 1915, "space": 1724},
 	"-": {"mark": 0, "space": 0}
     },
     "template": "-------------",
@@ -37,11 +38,39 @@
 	    "P.STD": "DABAAAAACAAF",
 	    "KEY_MUTE": "DABAAAAACAGE",
 	    "P.Size": "DABAAAACGAF",
-	    "KEY_VOLUMEDOWN": "IBAAAACGGE",
-	    "KEY_VOLUMEUP": "IBAAAACGAF",
-	    "KEY_CHANNELUP": "IBAAAACBAAE",
-	    "KEY_CHANNELDOWN": "IBAAAACBACE",
-	    "KEY_MENU": "IBAAAACBCF"
+	    "KEY_VOLUMEDOWN": "JBAAAACGGE",
+	    "KEY_VOLUMEUP": "JBAAAACGAF",
+	    "KEY_CHANNELUP": "JBAAAACBAAE",
+	    "KEY_CHANNELDOWN": "JBAAAACBACE",
+	    "KEY_MENU": "JBAAAACBCF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACF",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACGE",
+	    "KEY_6": "DBAAAAAAACAF",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_TV": "DBAAAACAAAAAE",
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_VIDEO": "DBAAAACAABAE",
+	    "Display": "DBAAAAAACAAAE",
+	    "KEY_SLEEP": "DBAAAACBCAF",
+	    "KEY_102ND": "DBAAAAAACGF",
+	    "P.STD": "DBAAAAAACAAF",
+	    "KEY_MUTE": "DBAAAAAACAGE",
+	    "P.Size": "DBAAAAACGAF",
+	    "KEY_VOLUMEDOWN": "IAAAAAACGGE",
+	    "KEY_VOLUMEUP": "IAAAAAACGAF",
+	    "KEY_CHANNELUP": "IAAAAAACBAAE",
+	    "KEY_CHANNELDOWN": "IAAAAAACBACE",
+	    "KEY_MENU": "IAAAAAACBCF"
 	}
     }
 }

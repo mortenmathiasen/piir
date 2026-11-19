@@ -1,6 +1,6 @@
 {
     "description": "EUR642162 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/EUR642162.lircd.conf", "remote": "EUR642162", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/panasonic/EUR642162.lircd.conf", "remote": "EUR642162", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

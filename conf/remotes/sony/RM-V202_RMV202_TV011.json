@@ -1,6 +1,6 @@
 {
     "description": "RMV202_TV011 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-V202.lircd.conf", "remote": "RMV202_TV011", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RM-V202.lircd.conf", "remote": "RMV202_TV011", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -45,6 +45,38 @@
 	    "Vol-": "DABAAAACBACE",
 	    "Ch+": "DABAAACBAAAE",
 	    "Ch-": "DABAAACBAACE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "Power": "DBAAAAAACABE",
+	    "1": "DBAAAAAAAAACE",
+	    "2": "DBAAAAAAAACG",
+	    "3": "DBAAAAAAAACAE",
+	    "4": "DBAAAAAAACBE",
+	    "5": "DBAAAAAAACFE",
+	    "6": "DBAAAAAAACAG",
+	    "7": "DBAAAAAAACAAE",
+	    "8": "DBAAAAAACBAE",
+	    "9": "DBAAAAAACBCE",
+	    "0": "DBAAAAAAAAAAE",
+	    "PIP": "DBAAAACAAFG",
+	    "Mute": "DBAAAAAACAFE",
+	    "Recall": "DBAAAACBACG",
+	    "TV_Video": "DBAAAACFBAE",
+	    "Sleep": "DBAAAACBCAG",
+	    "Up": "DBAAAACBAAAE",
+	    "Down": "DBAAAACBAACE",
+	    "Left": "DBAAAAACBACE",
+	    "Right": "DBAAAAACBAAE",
+	    "Menu": "DBAAAACAAFAE",
+	    "OK": "DBAAAAAACAAAE",
+	    "Play": "DBAAAACAFAAE",
+	    "Stop": "DBAAAACFAAAE",
+	    "Vol+": "DBAAAAACBAAE",
+	    "Vol-": "DBAAAAACBACE",
+	    "Ch+": "DBAAAACBAAAE",
+	    "Ch-": "DBAAAACBAACE"
 	}
     }
 }

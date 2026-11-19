@@ -1,6 +1,6 @@
 {
     "description": "LEMON (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lemon/Volksbox.lircd.conf", "remote": "LEMON", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/lemon/Volksbox.lircd.conf", "remote": "LEMON", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -50,6 +50,43 @@
 	    "KEY_GREEN": "DABCAAAAFAG",
 	    "KEY_YELLOW": "DABCAAAABCG",
 	    "KEY_BLUE": "DABCAAAAFBE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_MUTE": "DBACAABCAFE",
+	    "KEY_POWER": "DBACAABCABE",
+	    "KEY_1": "DBACAABAAACE",
+	    "KEY_2": "DBACAABAACG",
+	    "KEY_3": "DBACAABAACAE",
+	    "KEY_4": "DBACAABACBE",
+	    "KEY_5": "DBACAABACFE",
+	    "KEY_6": "DBACAABACAG",
+	    "KEY_7": "DBACAABACAAE",
+	    "KEY_8": "DBACAABCBAE",
+	    "KEY_9": "DBACAABCBCE",
+	    "KEY_0": "DBACAABAAAAE",
+	    "KEY_LIST": "DBACAAABACAE",
+	    "tone": "DBACAAABCBE",
+	    "KEY_UP": "DBACAAABAAAE",
+	    "KEY_DOWN": "DBACAAABAACE",
+	    "KEY_LEFT": "DBACAAFBACE",
+	    "KEY_RIGHT": "DBACAAFBAAE",
+	    "KEY_OK": "DBACAAAAAFAE",
+	    "KEY_TV": "DBACAAAAAAAAE",
+	    "KEY_RADIO": "DBACAAAAFFE",
+	    "KEY_MENU": "DBACAAABCFE",
+	    "vtx": "DBACAAAAAABE",
+	    "KEY_HELP": "DBACAABCAAG",
+	    "KEY_SELECT": "DBACAAFAAAG",
+	    "KEY_I": "DBACAAAAABAE",
+	    "av": "DBACAAAFFG",
+	    "KEY_EXIT": "DBACAAAFBCE",
+	    "timer": "DBACAAAFFAE",
+	    "KEY_RED": "DBACAAAAFAAE",
+	    "KEY_GREEN": "DBACAAAAFAG",
+	    "KEY_YELLOW": "DBACAAAABCG",
+	    "KEY_BLUE": "DBACAAAAFBE"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "VR50590.a (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamaha/VR50590-CX1.lircd.conf", "remote": "VR50590.a", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/yamaha/VR50590-CX1.lircd.conf", "remote": "VR50590.a", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

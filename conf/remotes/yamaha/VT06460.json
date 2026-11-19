@@ -1,6 +1,6 @@
 {
     "description": "Yamaha_VT06460 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamaha/VT06460.lircd.conf", "remote": "Yamaha_VT06460", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/yamaha/VT06460.lircd.conf", "remote": "Yamaha_VT06460", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

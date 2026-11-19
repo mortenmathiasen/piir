@@ -1,6 +1,6 @@
 {
     "description": "humax (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/humax/RM-F04.lircd.conf", "remote": "humax", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/humax/RM-F04.lircd.conf", "remote": "humax", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

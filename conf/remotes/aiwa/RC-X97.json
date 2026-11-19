@@ -1,6 +1,6 @@
 {
     "description": "Aiwa_RC-X97 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/aiwa/RC-X97.lircd.conf", "remote": "Aiwa_RC-X97", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/aiwa/RC-X97.lircd.conf", "remote": "Aiwa_RC-X97", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

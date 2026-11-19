@@ -1,6 +1,6 @@
 {
     "description": "Thomson_RCT110D_A1 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/thomson/RCT110D_A1.lircd.conf", "remote": "Thomson_RCT110D_A1", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/thomson/RCT110D_A1.lircd.conf", "remote": "Thomson_RCT110D_A1", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -50,6 +50,47 @@
 	    "KEY_STOP": "010010100100A",
 	    "KEY_PAUSE": "010010011000A",
 	    "OFF": "010010011101A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_RED": "010000111001A",
+	    "KEY_GREEN": "010000011011A",
+	    "KEY_YELLOW": "010000010100A",
+	    "KEY_BLUE": "010000010101A",
+	    "VIOLET": "010000010111A",
+	    "KEY_ENTER": "010000101001A",
+	    "KEY_MENU": "010000011001A",
+	    "KEY_UP": "010000110100A",
+	    "KEY_DOWN": "010000110101A",
+	    "KEY_LEFT": "010000110110A",
+	    "KEY_RIGHT": "010000110111A",
+	    "KEY_OK": "010000110011A",
+	    "KEY_VOLUMEUP": "001100101001A",
+	    "KEY_VOLUMEDOWN": "001100101010A",
+	    "KEY_MUTE": "001100000101A",
+	    "KEY_CHANNELUP": "010000100111A",
+	    "KEY_CHANNELDOWN": "010000101000A",
+	    "KEY_1": "010000000000A",
+	    "KEY_2": "010000001000A",
+	    "KEY_3": "010000010000A",
+	    "KEY_4": "010000000001A",
+	    "KEY_5": "010000001001A",
+	    "KEY_6": "010000010001A",
+	    "KEY_7": "010000000010A",
+	    "KEY_8": "010000001010A",
+	    "KEY_9": "010000010010A",
+	    "KEY_0": "010000001110A",
+	    "KEY_CLEAR": "010000111101A",
+	    "KEY_ZOOM": "010000100011A",
+	    "KEY_AGAIN": "010000101100A",
+	    "KEY_REWIND": "010000011111A",
+	    "KEY_PLAY": "010000100000A",
+	    "KEY_FASTFORWARD": "010000100001A",
+	    "KEY_EJECTCD": "010000100110A",
+	    "KEY_STOP": "010000100100A",
+	    "KEY_PAUSE": "010000011000A",
+	    "OFF": "010000011101A"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "Daewoo_14Q3_TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/daewoo/14Q3_TV.lircd.conf", "remote": "Daewoo_14Q3_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/daewoo/14Q3_TV.lircd.conf", "remote": "Daewoo_14Q3_TV", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -12,7 +12,8 @@
 	"E": {"mark": 903, "space": 0},
 	"F": {"mark": 1806, "space": 1764},
 	"G": {"mark": 1806, "space": 0},
-	"I": {"mark": 1808, "space": 1764},
+	"I": {"mark": 1808, "space": 882},
+	"J": {"mark": 1808, "space": 1764},
 	"-": {"mark": 0, "space": 0}
     },
     "template": "-------------",
@@ -29,10 +30,10 @@
 	    "KEY_8": "DABAAAAACBAE",
 	    "KEY_9": "DABAAAAACBCE",
 	    "KEY_0": "DABAAAAAAAAAE",
-	    "KEY_MENU": "IBAAAACBCG",
+	    "KEY_MENU": "JBAAAACBCG",
 	    "IN": "DABAAACAABAE",
 	    "KEY_CHANNELUP": "DABAAACBAAAE",
-	    "KEY_OK": "IBAAAACFAAE",
+	    "KEY_OK": "JBAAAACFAAE",
 	    "KEY_CHANNELDOWN": "DABAAACBAACE",
 	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
 	    "KEY_VOLUMEUP": "DABAAAACBAAE",
@@ -45,6 +46,37 @@
 	    "KEY_TIME": "DABAAACABCG",
 	    "KEY_MODE": "DABAAACAFBE",
 	    "PAGE": "DABAAACAAABE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_MENU": "IAAAAAACBCG",
+	    "IN": "DBAAAACAABAE",
+	    "KEY_CHANNELUP": "DBAAAACBAAAE",
+	    "KEY_OK": "IAAAAAACFAAE",
+	    "KEY_CHANNELDOWN": "DBAAAACBAACE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "KEY_SLEEP": "DBAAAACBCAG",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_AGAIN": "DBAAAAAACAAAE",
+	    "DEL": "DBAAAACAFAAE",
+	    "MOVE": "DBAAAACAFAG",
+	    "KEY_NEXT": "DBAAAACFAFE",
+	    "KEY_TIME": "DBAAAACABCG",
+	    "KEY_MODE": "DBAAAACAFBE",
+	    "PAGE": "DBAAAACAAABE"
 	}
     }
 }

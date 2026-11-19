@@ -1,6 +1,6 @@
 {
     "description": "sony_RM-PP411_receiver-AV2 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-PP411.lircd.conf", "remote": "sony_RM-PP411_receiver-AV2", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RM-PP411.lircd.conf", "remote": "sony_RM-PP411_receiver-AV2", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

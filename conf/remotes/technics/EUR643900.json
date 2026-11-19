@@ -1,6 +1,6 @@
 {
     "description": "TECHNICS_cd (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/technics/EUR643900.lircd.conf", "remote": "TECHNICS_cd", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/technics/EUR643900.lircd.conf", "remote": "TECHNICS_cd", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

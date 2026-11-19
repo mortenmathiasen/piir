@@ -1,6 +1,6 @@
 {
     "description": "DK_Digital_DVD-585 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/dk_digital/DVD-585.lircd.conf", "remote": "DK_Digital_DVD-585", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/dk_digital/DVD-585.lircd.conf", "remote": "DK_Digital_DVD-585", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

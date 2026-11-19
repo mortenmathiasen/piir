@@ -1,6 +1,6 @@
 {
     "description": "sony_rm-694 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-694.lircd.conf", "remote": "sony_rm-694", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RM-694.lircd.conf", "remote": "sony_rm-694", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

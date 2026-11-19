@@ -1,6 +1,6 @@
 {
     "description": "vi (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/NV-FJ610.lircd.conf", "remote": "vi", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/panasonic/NV-FJ610.lircd.conf", "remote": "vi", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

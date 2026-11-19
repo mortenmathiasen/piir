@@ -1,6 +1,6 @@
 {
     "description": "Magnavox_HCC-MFX-450 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/magnavox/MFX-450.lircd.conf", "remote": "Magnavox_HCC-MFX-450", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/magnavox/MFX-450.lircd.conf", "remote": "Magnavox_HCC-MFX-450", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -45,6 +45,39 @@
 	    "KEY_UP": "CBDCCBAAE",
 	    "KEY_VOLUMEUP": "AAABAAADBAAE",
 	    "KEY_VOLUMEDOWN": "AAABAAADBADE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_0": "ABADCBAAAAE",
+	    "KEY_1": "ABADCBAAADE",
+	    "KEY_2": "ABADCBAADF",
+	    "KEY_3": "ABADCBAADAE",
+	    "KEY_4": "ABADCBADBE",
+	    "KEY_5": "ABADCBADCE",
+	    "KEY_6": "ABADCBADAF",
+	    "KEY_7": "ABADCBADAAE",
+	    "KEY_8": "ABADCBDBAE",
+	    "KEY_9": "ABADCBDBDE",
+	    "CancelAngle": "ABADCAABADE",
+	    "ChMinus": "ABADCAABDF",
+	    "ChPlus": "ABADCAACBE",
+	    "KEY_DOWN": "BAADCCBADE",
+	    "IndexTC": "BAADCAABAAE",
+	    "KEY_LEFT": "BAADCCCCE",
+	    "KEY_MENU": "BAADCCBDF",
+	    "News": "BDBAAADACF",
+	    "Night": "ACBAADAAAAF",
+	    "KEY_OK": "BAADCCCAAE",
+	    "KEY_PAUSE": "ABADCACBDE",
+	    "KEY_PLAY": "ABADCAACCE",
+	    "KEY_POWER": "ABADCBDABE",
+	    "KEY_RECORD": "ABADCAACAAE",
+	    "KEY_RIGHT": "BAADCCCAF",
+	    "KEY_STOP": "ABADCAACAF",
+	    "KEY_UP": "BAADCCBAAE",
+	    "KEY_VOLUMEUP": "ACBAAADBAAE",
+	    "KEY_VOLUMEDOWN": "ACBAAADBADE"
 	}
     }
 }

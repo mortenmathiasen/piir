@@ -1,6 +1,6 @@
 {
     "description": "MC-10 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/universal/MC-10.lircd.conf", "remote": "MC-10", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/universal/MC-10.lircd.conf", "remote": "MC-10", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -49,6 +49,42 @@
 	    "KEY_VOLUMEUP": "EABDCAAAAAAF",
 	    "KEY_VOLUMEDOWN": "EABDCACCAF",
 	    "KEY_POWER": "EABDCBDABF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "EBADCBAAADF",
+	    "KEY_2": "EBADCBAADG",
+	    "KEY_3": "EBADCBAADAF",
+	    "KEY_4": "EBADCBADBF",
+	    "KEY_5": "EBADCBADCF",
+	    "KEY_6": "EBADCBADAG",
+	    "KEY_7": "EBADCBADAAF",
+	    "KEY_8": "EBADCBDBAF",
+	    "KEY_9": "EBADCBDBDF",
+	    "KEY_0": "EBADCBAAAAF",
+	    "KEY_RED": "EBADCBDAAG",
+	    "KEY_GREEN": "EBADCACAAAF",
+	    "KEY_YELLOW": "EBADCAAACAF",
+	    "KEY_BLUE": "EBADCAAAABF",
+	    "KEY_UP": "EBADCABAAAF",
+	    "KEY_DOWN": "EBADCABAADF",
+	    "KEY_LEFT": "EBADCCBADF",
+	    "KEY_RIGHT": "EBADCCBAAF",
+	    "KEY_OK": "EBADCACACF",
+	    "FastRew": "EBADCAABDG",
+	    "KEY_RECORD": "EBADCAACAAF",
+	    "KEY_PLAY": "EBADCAACCF",
+	    "KEY_FASTFORWARD": "EBADCAACBF",
+	    "KEY_STOP": "EBADCAACAG",
+	    "KEY_PAUSE": "EBADCAABAAF",
+	    "KEY_MENU": "EBADCACABF",
+	    "KEY_BACK": "EBADCACAAG",
+	    "KEY_CHANNELUP": "EBADCCCBF",
+	    "KEY_CHANNELDOWN": "EBADCCCCF",
+	    "KEY_VOLUMEUP": "EBADCAAAAAAF",
+	    "KEY_VOLUMEDOWN": "EBADCACCAF",
+	    "KEY_POWER": "EBADCBDABF"
 	}
     }
 }

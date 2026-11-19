@@ -428,6 +428,30 @@ class Conversion(unittest.TestCase):
         self.assertEqual("H00000001", keys["KEY_A"][:9])
         self.assertEqual(len(data["template"]), max(len(v) for v in keys.values()))
 
+    def test_toggle_section(self):
+        text = NEC.replace("gap 40000", "gap 40000\ntoggle_bit_mask 0x01")
+        data, _ = self.convert(text)
+        keys = data["features"]["key"]
+        toggle = data["toggle"]["key"]
+        self.assertEqual(set(keys), set(toggle))
+        # the last data bit is the toggle bit
+        self.assertEqual("H00000001", keys["KEY_A"][:9])
+        self.assertEqual("H00000000", toggle["KEY_A"][:9])
+        self.assertEqual(data, json.loads(L.format_json(data)))
+
+    def test_no_toggle_section_without_toggle_bit(self):
+        data, _ = self.convert(NEC)
+        self.assertNotIn("toggle", data)
+
+    def test_send_once_presses(self):
+        r = remote(NEC.replace("gap 40000", "gap 40000\ntoggle_bit_mask 0x01"))
+        first = L.send_once(r, r.codes[0], press=0)
+        second = L.send_once(r, r.codes[0], press=1)
+        self.assertNotEqual(first, second)
+        self.assertEqual(first, L.send_once(r, r.codes[0], press=2))
+        r = remote(NEC)
+        self.assertEqual(L.send_once(r, r.codes[0]), L.send_once(r, r.codes[0], press=1))
+
     def test_gap_symbols(self):
         self.assertEqual("UVVWWWXXXXYYYYYZZZZZZ", L.gap_symbols(123456))
         self.assertEqual("", L.gap_symbols(0))

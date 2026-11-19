@@ -1,6 +1,6 @@
 {
     "description": "Pinnacle_RC-42D (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/pinnacle_systems/RC-42D.lircd.conf", "remote": "Pinnacle_RC-42D", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/pinnacle_systems/RC-42D.lircd.conf", "remote": "Pinnacle_RC-42D", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Philips_RC8601_01-TVVCR (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RC8601_01.lircd.conf", "remote": "Philips_RC8601_01-TVVCR", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RC8601_01.lircd.conf", "remote": "Philips_RC8601_01-TVVCR", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -35,6 +35,28 @@
 	    "KEY_PAUSE": "DABCFAABAAE",
 	    "KEY_FASTFORWARD": "DABCFAAFBE",
 	    "KEY_REWIND": "DABCFAABCG"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_SLEEP": "DBAAAAAACABE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_NEXT": "DBAAAACBAAAE",
+	    "KEY_PREVIOUS": "DBAAAACBAACE",
+	    "KEY_PLAY": "DBACFAAFFE",
+	    "KEY_STOP": "DBACFAAFAG",
+	    "KEY_PAUSE": "DBACFAABAAE",
+	    "KEY_FASTFORWARD": "DBACFAAFBE",
+	    "KEY_REWIND": "DBACFAABCG"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "Sony_RMT-CF1A (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RMT-CF1A.lircd.conf", "remote": "Sony_RMT-CF1A", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RMT-CF1A.lircd.conf", "remote": "Sony_RMT-CF1A", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

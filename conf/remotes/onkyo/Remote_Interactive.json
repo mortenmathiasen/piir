@@ -1,6 +1,6 @@
 {
     "description": "Onkyo_TX-SR502E (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/onkyo/Remote_Interactive.lircd.conf", "remote": "Onkyo_TX-SR502E", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/onkyo/Remote_Interactive.lircd.conf", "remote": "Onkyo_TX-SR502E", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

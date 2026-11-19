@@ -1,6 +1,6 @@
 {
     "description": "Toshiba_CT-90159_TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/toshiba/CT-90159.lircd.conf", "remote": "Toshiba_CT-90159_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/toshiba/CT-90159.lircd.conf", "remote": "Toshiba_CT-90159_TV", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

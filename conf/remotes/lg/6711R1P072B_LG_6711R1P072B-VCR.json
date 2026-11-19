@@ -1,6 +1,6 @@
 {
     "description": "LG_6711R1P072B-VCR (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lg/6711R1P072B.lircd.conf", "remote": "LG_6711R1P072B-VCR", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/lg/6711R1P072B.lircd.conf", "remote": "LG_6711R1P072B-VCR", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

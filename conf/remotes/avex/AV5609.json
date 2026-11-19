@@ -1,6 +1,6 @@
 {
     "description": "AVEX-AV5609 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/avex/AV5609.lircd.conf", "remote": "AVEX-AV5609", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/avex/AV5609.lircd.conf", "remote": "AVEX-AV5609", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -32,6 +32,25 @@
 	    "KEY_FORWARD": "EACDBAABCF",
 	    "x_right": "EACDBABBG",
 	    "KEY_SLEEP": "EACDBCDACF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_RECORD": "ECADBAABAAF",
+	    "reset": "ECADBAACADF",
+	    "timer": "ECADBBAABF",
+	    "KEY_KPPLUS": "ECADBACAAAF",
+	    "KEY_KPMINUS": "ECADBACAADF",
+	    "KEY_LEFT": "ECADBABAAAF",
+	    "KEY_RIGHT": "ECADBAABBF",
+	    "scan_left": "ECADBABACF",
+	    "scan_right": "ECADBABAAG",
+	    "KEY_PAUSE": "ECADBABCDF",
+	    "KEY_STOP": "ECADBAABAG",
+	    "KEY_REWIND": "ECADBAACDG",
+	    "KEY_FORWARD": "ECADBAABCF",
+	    "x_right": "ECADBABBG",
+	    "KEY_SLEEP": "ECADBCDACF"
 	}
     }
 }

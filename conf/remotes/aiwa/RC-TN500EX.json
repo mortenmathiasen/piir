@@ -1,6 +1,6 @@
 {
     "description": "RC-TN500EX (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/aiwa/RC-TN500EX.lircd.conf", "remote": "RC-TN500EX", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/aiwa/RC-TN500EX.lircd.conf", "remote": "RC-TN500EX", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

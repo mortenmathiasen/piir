@@ -1,6 +1,6 @@
 {
     "description": "orava (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/orava/RC_5219.lircd.conf", "remote": "orava", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/orava/RC_5219.lircd.conf", "remote": "orava", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -54,6 +54,47 @@
 	    "KEY_GREEN": "DABAAACAFAG",
 	    "KEY_YELLOW": "DABAAACABCG",
 	    "KEY_BLUE": "DABAAACAFBE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "av": "DBAAAACAABAE",
+	    "KEY_102ND": "DBAAAAAACFG",
+	    "<>": "DBAAAACBACG",
+	    "clock": "DBAAAACBCAG",
+	    "I-II": "DBAAAACBACAE",
+	    "OO": "DBAAAACBCBE",
+	    "sel": "DBAAAACAAFAE",
+	    "KEY_LEFT": "DBAAAAACBACE",
+	    "KEY_UP": "DBAAAACBAAAE",
+	    "KEY_RIGHT": "DBAAAAACBAAE",
+	    "KEY_DOWN": "DBAAAACBAACE",
+	    "KEY_OK": "DBAAAAAACAAG",
+	    "KEY_MENU": "DBAAAAAACAAAE",
+	    "KEY_TEXT": "DBAAAACAAABE",
+	    "KEY_INFO": "DBAAAACAFFE",
+	    "hide": "DBAAAACFAFE",
+	    "KEY_TIME": "DBAAAACFFG",
+	    "mixed": "DBAAAACFAAG",
+	    "question": "DBAAAACFABE",
+	    "doublesize": "DBAAAACFFAE",
+	    "KEY_STOP": "DBAAAACFBCE",
+	    "KEY_RED": "DBAAAACAFAAE",
+	    "KEY_GREEN": "DBAAAACAFAG",
+	    "KEY_YELLOW": "DBAAAACABCG",
+	    "KEY_BLUE": "DBAAAACAFBE"
 	}
     }
 }

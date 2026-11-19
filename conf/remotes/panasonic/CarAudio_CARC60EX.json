@@ -1,6 +1,6 @@
 {
     "description": "PanasonicCarAudio_CARC60EX (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/CarAudio_CARC60EX.lircd.conf", "remote": "PanasonicCarAudio_CARC60EX", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/panasonic/CarAudio_CARC60EX.lircd.conf", "remote": "PanasonicCarAudio_CARC60EX", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

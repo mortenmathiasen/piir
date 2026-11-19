@@ -1,6 +1,6 @@
 {
     "description": "Canon_WL-DC100 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/canon/WL-DC100.lircd.conf", "remote": "Canon_WL-DC100", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/canon/WL-DC100.lircd.conf", "remote": "Canon_WL-DC100", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

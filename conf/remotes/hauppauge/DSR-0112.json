@@ -1,6 +1,6 @@
 {
     "description": "Hauppauge_WinTV-HVR-950Q_DSR-0112 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/hauppauge/DSR-0112.lircd.conf", "remote": "Hauppauge_WinTV-HVR-950Q_DSR-0112", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/hauppauge/DSR-0112.lircd.conf", "remote": "Hauppauge_WinTV-HVR-950Q_DSR-0112", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -52,6 +52,45 @@
 	    "KEY_MENU": "CAAAABDFABE",
 	    "KEY_0": "CAAAABDAAAAE",
 	    "KEY_TEXT": "CAAAABDFBG"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "CBAABAAAABE",
+	    "KEY_HOME": "CBAABAAABAE",
+	    "KEY_TV": "CBAABBAADE",
+	    "KEY_UP": "CBAABBBDE",
+	    "KEY_BACK": "CBAABBAAAAE",
+	    "KEY_FORWARD": "CBAABBAAAG",
+	    "KEY_REWIND": "CBAABADFDE",
+	    "KEY_RIGHT": "CBAABBBAAE",
+	    "KEY_OK": "CBAABADFBE",
+	    "KEY_LEFT": "CBAABBBAG",
+	    "KEY_PLAY": "CBAABAABBE",
+	    "KEY_PAUSE": "CBAABAADAAE",
+	    "KEY_STOP": "CBAABAABAG",
+	    "KEY_DOWN": "CBAABBBBE",
+	    "KEY_RECORD": "CBAABAABAAE",
+	    "KEY_FASTFORWARD": "CBAABAABDE",
+	    "FastRewind": "CBAABAADFG",
+	    "KEY_3": "CBAABDAAFAE",
+	    "KEY_2": "CBAABDAAFG",
+	    "KEY_1": "CBAABDAAAFE",
+	    "KEY_VOLUMEUP": "CBAABBDAAE",
+	    "KEY_CHANNELUP": "CBAABADAAAE",
+	    "KEY_6": "CBAABDAFAG",
+	    "KEY_5": "CBAABDAFBE",
+	    "KEY_4": "CBAABDAFDE",
+	    "KEY_VOLUMEDOWN": "CBAABBDAFE",
+	    "KEY_CHANNELDOWN": "CBAABADAAFE",
+	    "KEY_9": "CBAABDFDFE",
+	    "KEY_8": "CBAABDFDAE",
+	    "KEY_7": "CBAABDAFAAE",
+	    "KEY_MUTE": "CBAABDFAAAE",
+	    "Prev.ch": "CBAABBDFG",
+	    "KEY_MENU": "CBAABDFABE",
+	    "KEY_0": "CBAABDAAAAE",
+	    "KEY_TEXT": "CBAABDFBG"
 	}
     }
 }

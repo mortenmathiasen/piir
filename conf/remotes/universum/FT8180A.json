@@ -1,6 +1,6 @@
 {
     "description": "RC-222 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/universum/FT8180A.lircd.conf", "remote": "RC-222", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/universum/FT8180A.lircd.conf", "remote": "RC-222", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -55,6 +55,48 @@
 	    "VT_ZOOM": "DABAAACFFAE",
 	    "VT_?": "DABAAACFABE",
 	    "VT_I": "DABAAACFAAAE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "PP": "DBAAAAAACAAG",
+	    "I-II": "DBAAAACBACAE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_102ND": "DBAAAAAACFG",
+	    "P<P": "DBAAAACBACG",
+	    "KEY_MENU": "DBAAAACABAAE",
+	    "KEY_INFO": "DBAAAAACBCG",
+	    "KEY_LEFT": "DBAAAAACFFE",
+	    "KEY_RIGHT": "DBAAAAACFAG",
+	    "KEY_UP": "DBAAAACBAAAE",
+	    "KEY_DOWN": "DBAAAACBAACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_RED": "DBAAAACAFAAE",
+	    "KEY_GREEN": "DBAAAACAFAG",
+	    "KEY_YELLOW": "DBAAAACABCG",
+	    "KEY_BLUE": "DBAAAACAFBE",
+	    "KEY_TV": "DBAAAACAAAAAE",
+	    "AV": "DBAAAACAABAE",
+	    "KEY_VIDEO": "DBAAAACAAABE",
+	    "VT_TRANSPARENT": "DBAAAACFAAG",
+	    "KEY_TIME": "DBAAAACFFG",
+	    "VT_STOP": "DBAAAACFBCE",
+	    "VT_X": "DBAAAACFAFE",
+	    "VT_ZOOM": "DBAAAACFFAE",
+	    "VT_?": "DBAAAACFABE",
+	    "VT_I": "DBAAAACFAAAE"
 	}
     }
 }

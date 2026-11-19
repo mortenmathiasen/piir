@@ -1,6 +1,6 @@
 {
     "description": "AWIA-RC-ZVR04 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/aiwa/RC-ZVR04.lircd.conf", "remote": "AWIA-RC-ZVR04", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/aiwa/RC-ZVR04.lircd.conf", "remote": "AWIA-RC-ZVR04", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

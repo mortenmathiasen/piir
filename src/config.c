@@ -206,6 +206,19 @@ void loadConfigSymbols(symbolDefinition configSymbols[]) {
 void loadFeaturedCode(const featureT *features,
 		      char **featuredCode)
 {
+  loadToggledFeaturedCode(features, 0, featuredCode);
+}
+
+int hasToggle() {
+  return json_object_get_count(json_object_get_object(ROOT_OBJECT, "toggle")) > 0;
+}
+
+// Like loadFeaturedCode(). When toggled is set, a feature value that has a
+// code in the "toggle" section uses that code instead: remotes with a
+// toggle bit send it on every other press.
+void loadToggledFeaturedCode(const featureT *features, int toggled,
+			     char **featuredCode)
+{
   const char *templateCode = 0;
   loadTemplateCode(&templateCode);
   if (!templateCode) {
@@ -230,6 +243,13 @@ void loadFeaturedCode(const featureT *features,
 
     JSON_Object *feature_object = json_object_get_object(features_object, featureName);
     const char *featureString = json_object_get_string(feature_object, featureValue);
+    if (featureString && toggled) {
+      JSON_Object *toggle_object = json_object_get_object(
+	json_object_get_object(ROOT_OBJECT, "toggle"), featureName);
+      const char *toggleString = json_object_get_string(toggle_object, featureValue);
+      if (toggleString)
+	featureString = toggleString;
+    }
     if (!featureString) {
       log_error("Feature '%s'='%s' not found in %s", featureName, featureValue, CONFIGFILEPATH);
       continue;

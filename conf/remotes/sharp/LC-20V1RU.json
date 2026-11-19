@@ -1,6 +1,6 @@
 {
     "description": "Sharp_LC-20V1RU (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sharp/LC-20V1RU.lircd.conf", "remote": "Sharp_LC-20V1RU", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sharp/LC-20V1RU.lircd.conf", "remote": "Sharp_LC-20V1RU", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

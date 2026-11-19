@@ -1,6 +1,6 @@
 {
     "description": "CA_RC-DVD53B (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/cambridge_audio/RC-DVD53.lircd.conf", "remote": "CA_RC-DVD53B", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/cambridge_audio/RC-DVD53.lircd.conf", "remote": "CA_RC-DVD53B", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

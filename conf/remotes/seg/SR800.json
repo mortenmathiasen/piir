@@ -1,6 +1,6 @@
 {
     "description": "SR800 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/seg/SR800.lircd.conf", "remote": "SR800", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/seg/SR800.lircd.conf", "remote": "SR800", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -37,6 +37,30 @@
 	    "KEY_CHANNELDOWN": "DABCBACBCAE",
 	    "KEY_OK": "DABCBACAAAF",
 	    "AFC": "DABCBACAABE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_0": "DBACBAAAAAAE",
+	    "KEY_1": "DBACBAAAAACE",
+	    "KEY_2": "DBACBAAAACF",
+	    "KEY_3": "DBACBAAAACAE",
+	    "KEY_4": "DBACBAAACBE",
+	    "KEY_5": "DBACBAAACGE",
+	    "KEY_6": "DBACBAAACAF",
+	    "KEY_7": "DBACBAAACAAE",
+	    "KEY_8": "DBACBAACBAE",
+	    "KEY_9": "DBACBAACBCE",
+	    "KEY_M": "DBACBAACGAE",
+	    "KEY_POWER": "DBACBAACABE",
+	    "KEY_MUTE": "DBACBAACAAF",
+	    "A/S": "DBACBAACAAAE",
+	    "KEY_KPPLUS": "DBACBACBAAE",
+	    "KEY_KPMINUS": "DBACBACBACE",
+	    "KEY_CHANNELUP": "DBACBACBCF",
+	    "KEY_CHANNELDOWN": "DBACBACBCAE",
+	    "KEY_OK": "DBACBACAAAF",
+	    "AFC": "DBACBACAABE"
 	}
     }
 }

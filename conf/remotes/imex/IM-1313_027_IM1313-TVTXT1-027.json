@@ -1,6 +1,6 @@
 {
     "description": "IM1313-TVTXT1-027 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/imex/IM-1313_027.lircd.conf", "remote": "IM1313-TVTXT1-027", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/imex/IM-1313_027.lircd.conf", "remote": "IM1313-TVTXT1-027", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -57,6 +57,50 @@
 	    "BRIGHT+": "DABAAAACBCG",
 	    "HUE-": "DABAAAACFFE",
 	    "HUE+": "DABAAAACFBE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "MEMO": "DBAAAACAAAAG",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "Pr": "DBAAAACBCAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "LEFTPOINT": "DBAAAAACAAAG",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "12": "DBAAAACFBAE",
+	    "KEY_TIME": "DBAAAACFAFE",
+	    "TVSAT": "DBAAAACAAAAAE",
+	    "TXTTV": "DBAAAAAACAAG",
+	    "KEY_PLAY": "DBAAAACFFAE",
+	    "KEY_UP": "DBAAAACAABCE",
+	    "KEY_DOWN": "DBAAAACAABAE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "POINT": "DBAAAACFABE",
+	    "KEY_STOP": "DBAAAACFBCE",
+	    "KEY_PREVIOUS": "DBAAAACFAAG",
+	    "KEY_NEXT": "DBAAAACFFG",
+	    "KEY_REWIND": "DBAAAAAACFAE",
+	    "KEY_FORWARD": "DBAAAAAACFG",
+	    "KEY_A": "DBAAAAACABAE",
+	    "KEY_B": "DBAAAAACFAG",
+	    "KEY_C": "DBAAAAACAFG",
+	    "KEY_D": "DBAAAACBACAE",
+	    "CONT-": "DBAAAAACAABE",
+	    "CONT+": "DBAAAAACAAFE",
+	    "BRIGHT-": "DBAAAAACBCAE",
+	    "BRIGHT+": "DBAAAAACBCG",
+	    "HUE-": "DBAAAAACFFE",
+	    "HUE+": "DBAAAAACFBE"
 	}
     }
 }

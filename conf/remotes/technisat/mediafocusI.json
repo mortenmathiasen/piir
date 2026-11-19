@@ -1,6 +1,6 @@
 {
     "description": "TECHNISAT (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/technisat/mediafocusI.lircd.conf", "remote": "TECHNISAT", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/technisat/mediafocusI.lircd.conf", "remote": "TECHNISAT", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.33,
     "transmitter": {"outpin": 17},
@@ -18,6 +18,15 @@
 	    "KEY_VOLUMEDOWN": "11001101111A",
 	    "KEY_CHANNELUP": "11001000111A",
 	    "KEY_CHANNELDOWN": "11001001000A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_MUTE": "10001000110A",
+	    "KEY_VOLUMEUP": "10001101110A",
+	    "KEY_VOLUMEDOWN": "10001101111A",
+	    "KEY_CHANNELUP": "10001000111A",
+	    "KEY_CHANNELDOWN": "10001001000A"
 	}
     }
 }

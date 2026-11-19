@@ -1,6 +1,6 @@
 {
     "description": "RC8X02NX (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/ferguson/RC8X02NX.lircd.conf", "remote": "RC8X02NX", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/ferguson/RC8X02NX.lircd.conf", "remote": "RC8X02NX", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -52,6 +52,49 @@
 	    "KEY_POWER2": "000010011101A",
 	    "KEY_TEXT": "000010011110A",
 	    "KEY_MENU": "000010110001A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "000000011101A",
+	    "status": "000000111000A",
+	    "KEY_EPG": "000000010101A",
+	    "prog": "000000111011A",
+	    "dec": "000000111001A",
+	    "KEY_EXIT": "000000111110A",
+	    "KEY_OK": "000000110011A",
+	    "KEY_LEFT": "000000110110A",
+	    "KEY_RIGHT": "000000110111A",
+	    "KEY_DOWN": "000000110101A",
+	    "KEY_UP": "000000110100A",
+	    "KEY_1": "000000000000A",
+	    "KEY_2": "000000001000A",
+	    "KEY_3": "000000010000A",
+	    "KEY_4": "000000000001A",
+	    "KEY_5": "000000001001A",
+	    "KEY_6": "000000010001A",
+	    "KEY_7": "000000000010A",
+	    "KEY_8": "000000001010A",
+	    "KEY_9": "000000010010A",
+	    "KEY_0": "000000001110A",
+	    "av": "000000011000A",
+	    "KEY_PLAY": "000000100000A",
+	    "KEY_STOP": "000000100100A",
+	    "KEY_REWIND": "000000011111A",
+	    "KEY_FASTFORWARD": "000000100001A",
+	    "KEY_PAUSE": "000000100010A",
+	    "KEY_RECORD": "000000100011A",
+	    "KEY_VOLUMEUP": "001100101001A",
+	    "KEY_VOLUMEDOWN": "001100101010A",
+	    "KEY_CHANNELUP": "000000101001A",
+	    "KEY_CHANNELDOWN": "000000101010A",
+	    "KEY_MUTE": "001100000101A",
+	    "index_mark": "000000111100A",
+	    "0000": "000000111101A",
+	    "splp": "000000000101A",
+	    "KEY_POWER2": "000000011101A",
+	    "KEY_TEXT": "000000011110A",
+	    "KEY_MENU": "000000110001A"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "kh2800 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/bench/KH2800.lircd.conf", "remote": "kh2800", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/bench/KH2800.lircd.conf", "remote": "kh2800", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Marantz_RC8000PM_RC-5 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/marantz/RC8000PM.lircd.conf", "remote": "Marantz_RC8000PM_RC-5", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/marantz/RC8000PM.lircd.conf", "remote": "Marantz_RC8000PM_RC-5", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -48,6 +48,41 @@
 	    "VOLUME_DOWN": "DAACAAAFCAFE",
 	    "PAUSE": "DAABAAAACAAE",
 	    "OPEN_CLOSE": "DAABAAABABE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "SOURCE_ON-OFF": "DBCAAAAFACE",
+	    "PHONO": "DBBBAAAAAAE",
+	    "CD": "DBBCFAAAAAE",
+	    "TUNER": "DBCAFAAAAAAE",
+	    "CD-R": "DBBAAAAAAAAE",
+	    "TAPE": "DBCFBAAAAAE",
+	    "1": "DBBAACAAAFE",
+	    "2": "DBBAACAAFG",
+	    "3": "DBBAACAAFAE",
+	    "4": "DBBAACAFCE",
+	    "5": "DBBAACAFBE",
+	    "6": "DBBAACAFAG",
+	    "7": "DBBAACAFAAE",
+	    "8": "DBBAACFCAE",
+	    "9": "DBBAACFCFE",
+	    "MINUS": "DBBAAACAAFE",
+	    "0": "DBBAACAAAAE",
+	    "PLUS": "DBBAAACAAAE",
+	    "MEMO": "DBBAAABCFE",
+	    "SCROLL": "DBBAACFAAAE",
+	    "CANCEL": "DBBAAAAABG",
+	    "TEXT": "DBBAACFBAE",
+	    "TIME": "DBBAACFBAE",
+	    "PLAY": "DBBAAAABBE",
+	    "REW": "DBBAAAACFG",
+	    "FF": "DBBAAAABCE",
+	    "MUTE": "DBCAAAAFABE",
+	    "VOLUME_UP": "DBCAAAFCAAE",
+	    "VOLUME_DOWN": "DBCAAAFCAFE",
+	    "PAUSE": "DBBAAAACAAE",
+	    "OPEN_CLOSE": "DBBAAABABE"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "JVC_RM-C410 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/jvc/RM-C410.lircd.conf", "remote": "JVC_RM-C410", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/jvc/RM-C410.lircd.conf", "remote": "JVC_RM-C410", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -40,6 +40,36 @@
 	    "FUNCTION": "H1100000011011110A",
 	    "LEVELDOWN": "H1100000011011010A",
 	    "LEVELUP": "H1100000001011010A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "BROADCAST": "H1100000011010000A",
+	    "DISPLAY": "H1100000000100000A",
+	    "KEY_MENU": "H1100000001011100A",
+	    "KEY_POWER": "H1100000011101000A",
+	    "KEY_AGAIN": "H1100000000111100A",
+	    "KEY_1": "H1100000010000100A",
+	    "KEY_2": "H1100000001000100A",
+	    "KEY_3": "H1100000011000100A",
+	    "KEY_OK": "H1100000001010000A",
+	    "KEY_4": "H1100000000100100A",
+	    "KEY_5": "H1100000010100100A",
+	    "KEY_6": "H1100000001100100A",
+	    "KEY_ENTER": "H1100000010100000A",
+	    "KEY_7": "H1100000011100100A",
+	    "KEY_8": "H1100000000010100A",
+	    "KEY_9": "H1100000010010100A",
+	    "KEY_0": "H1100000000000100A",
+	    "KEY_CHANNELDOWN": "H1100000000011000A",
+	    "KEY_CHANNELUP": "H1100000010011000A",
+	    "KEY_MUTE": "H1100000000111000A",
+	    "KEY_VOLUMEDOWN": "H1100000011111000A",
+	    "KEY_VOLUMEUP": "H1100000001111000A",
+	    "RESET": "H1100000001100000A",
+	    "FUNCTION": "H1100000011011100A",
+	    "LEVELDOWN": "H1100000011011000A",
+	    "LEVELUP": "H1100000001011000A"
 	}
     }
 }

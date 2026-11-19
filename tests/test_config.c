@@ -226,6 +226,28 @@ static void test_feature_longer_than_template(void) {
   free(code);
 }
 
+static void test_toggle(void) {
+  unloadConfig();
+  loadConfig(FIXTURE_DIR "/toggle.json");
+  CHECK(hasToggle());
+  featureT features[1] = {{"key", "KEY_POWER"}};
+  char *code = 0;
+  loadToggledFeaturedCode(features, 0, &code);
+  CHECK_EQ_STR("AAAA", code);
+  free(code);
+  loadToggledFeaturedCode(features, 1, &code);
+  CHECK_EQ_STR("BAAA", code);
+  free(code);
+  // A key without a toggled code sends the same code on every press
+  features[0].value = "KEY_1";
+  loadToggledFeaturedCode(features, 1, &code);
+  CHECK_EQ_STR("ABAB", code);
+  free(code);
+
+  loadConfig(SIMPLE);
+  CHECK(!hasToggle());
+}
+
 int main(void) {
   log_set_level(LOG_NOTHING);
   RUN_TEST(test_load_missing_file);
@@ -245,6 +267,7 @@ int main(void) {
   RUN_TEST(test_featured_code_unknown_value);
   RUN_TEST(test_minimal_remote);
   RUN_TEST(test_feature_longer_than_template);
+  RUN_TEST(test_toggle);
   unloadConfig();
   return TEST_RESULT();
 }

@@ -1,6 +1,6 @@
 {
     "description": "Thomson-ROC_230 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/thomson/ROC230.lircd.conf", "remote": "Thomson-ROC_230", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/thomson/ROC230.lircd.conf", "remote": "Thomson-ROC_230", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -56,6 +56,50 @@
 	    "KEY_GREEN": "AABAAACEABD",
 	    "KEY_YELLOW": "AABAAACEEAD",
 	    "KEY_BLUE": "AABAAAACAAAF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "ABAAAAAACABD",
+	    "KEY_1": "ABAAAAAAAAACD",
+	    "KEY_2": "ABAAAAAAAACF",
+	    "KEY_3": "ABAAAAAAAACAD",
+	    "KEY_4": "ABAAAAAAACBD",
+	    "KEY_5": "ABAAAAAAACED",
+	    "KEY_6": "ABAAAAAAACAF",
+	    "KEY_7": "ABAAAAAAACAAD",
+	    "KEY_8": "ABAAAAAACBAD",
+	    "KEY_9": "ABAAAAAACBCD",
+	    "KEY_0": "ABAAAAAAAAAAD",
+	    "AV": "ABAAAACAABAD",
+	    "WIN_IN": "ABAAAACAABCD",
+	    "EMPTY_BUTTON": "ABAAAAAACEF",
+	    "_/__": "ABAAAAAACEAD",
+	    "KEY_F11": "ABAAAACAAAAAD",
+	    "WIN+": "ABAAAAAACAAAD",
+	    "KEY_MENU": "ABAAAAAACAAF",
+	    "LINES_WIN": "ABAAAACAAABD",
+	    "KEY_EXIT": "ABAAAACEAAF",
+	    "KEY_VOLUMEDOWN": "ABAAAAACBACD",
+	    "KEY_VOLUMEUP": "ABAAAAACBAAD",
+	    "KEY_CHANNELDOWN": "ABAAAACBAACD",
+	    "KEY_CHANNELUP": "ABAAAACBAAAD",
+	    "KEY_ZOOMOUT": "ABAAAAACEED",
+	    "KEY_ZOOMIN": "ABAAAAACEBD",
+	    "KEY_OK": "ABAAAAAACAED",
+	    "KEY_MUTE": "ABAAAACBACAD",
+	    "KEY_REWIND": "ABAAAACAEAAD",
+	    "KEY_FORWARD": "ABAAAACAEBD",
+	    "KEY_STOP": "ABAAAACAEAF",
+	    "KEY_PLAY": "ABAAAACABCF",
+	    "KEY_PAUSE": "ABAAAACBCBD",
+	    "POINT": "ABAAAACEBCD",
+	    "MINIMIZE": "ABAAAACAAAAF",
+	    "GRAY": "ABAAAACAEED",
+	    "KEY_RED": "ABAAAACEAED",
+	    "KEY_GREEN": "ABAAAACEABD",
+	    "KEY_YELLOW": "ABAAAACEEAD",
+	    "KEY_BLUE": "ABAAAAACAAAF"
 	}
     }
 }

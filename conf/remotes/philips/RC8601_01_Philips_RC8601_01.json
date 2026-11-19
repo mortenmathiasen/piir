@@ -1,6 +1,6 @@
 {
     "description": "Philips_RC8601_01 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RC8601_01.lircd.conf", "remote": "Philips_RC8601_01", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RC8601_01.lircd.conf", "remote": "Philips_RC8601_01", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -11,8 +11,9 @@
 	"D": {"mark": 932, "space": 0},
 	"E": {"mark": 969, "space": 843},
 	"F": {"mark": 1864, "space": 1686},
-	"G": {"mark": 1901, "space": 1686},
-	"I": {"mark": 1864, "space": 0},
+	"G": {"mark": 1864, "space": 0},
+	"I": {"mark": 1901, "space": 843},
+	"J": {"mark": 1901, "space": 1686},
 	"-": {"mark": 0, "space": 0}
     },
     "template": "-------------",
@@ -20,17 +21,34 @@
 	"key": {
 	    "KEY_TUNER": "EAABACAAAAAAD",
 	    "tape1": "EAABCFFABD",
-	    "tape2": "EAABCFFAAI",
+	    "tape2": "EAABCFFAAG",
 	    "mmedia": "EABCBCAAAAAD",
 	    "tvvcr": "EABAAACAAAAAD",
 	    "KEY_CD": "EAAFBCAAAAAD",
-	    "dbb": "GABAAAAACAI",
-	    "dsc": "GABAAAACAAAD",
-	    "sound": "GABAAAAAAAAD",
+	    "dbb": "JABAAAAACAG",
+	    "dsc": "JABAAAACAAAD",
+	    "sound": "JABAAAAAAAAD",
 	    "KEY_VOLUMEUP": "EAABAAACBAAD",
 	    "KEY_VOLUMEDOWN": "EAABAAACBACD",
 	    "voltvplus": "EABAAAACBAAD",
 	    "voltvminus": "EABAAAACBACD"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_TUNER": "EFBACAAAAAAD",
+	    "tape1": "EFBCFFABD",
+	    "tape2": "EFBCFFAAG",
+	    "mmedia": "EBACBCAAAAAD",
+	    "tvvcr": "EBAAAACAAAAAD",
+	    "KEY_CD": "EFFBCAAAAAD",
+	    "dbb": "ICBAAAAACAG",
+	    "dsc": "ICBAAAACAAAD",
+	    "sound": "ICBAAAAAAAAD",
+	    "KEY_VOLUMEUP": "EFBAAACBAAD",
+	    "KEY_VOLUMEDOWN": "EFBAAACBACD",
+	    "voltvplus": "EBAAAAACBAAD",
+	    "voltvminus": "EBAAAAACBACD"
 	}
     }
 }

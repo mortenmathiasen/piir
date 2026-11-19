@@ -1,6 +1,6 @@
 {
     "description": "AVerTV_Studio_203 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/avermedia/Studio_203.lircd.conf", "remote": "AVerTV_Studio_203", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/avermedia/Studio_203.lircd.conf", "remote": "AVerTV_Studio_203", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

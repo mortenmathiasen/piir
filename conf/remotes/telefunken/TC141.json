@@ -1,6 +1,6 @@
 {
     "description": "Telefunken_RC141 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/telefunken/TC141.lircd.conf", "remote": "Telefunken_RC141", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/telefunken/TC141.lircd.conf", "remote": "Telefunken_RC141", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

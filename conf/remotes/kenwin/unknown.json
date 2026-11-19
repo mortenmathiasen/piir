@@ -1,6 +1,6 @@
 {
     "description": "/home/pi/kenwin-lirc.cfg (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/kenwin/unknown.lircd.conf", "remote": "/home/pi/kenwin-lirc.cfg", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/kenwin/unknown.lircd.conf", "remote": "/home/pi/kenwin-lirc.cfg", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

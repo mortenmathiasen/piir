@@ -1,6 +1,6 @@
 {
     "description": "GAMEFACTORY_PS2DVD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/gamefactory/PS2DVD.lircd.conf", "remote": "GAMEFACTORY_PS2DVD", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/gamefactory/PS2DVD.lircd.conf", "remote": "GAMEFACTORY_PS2DVD", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

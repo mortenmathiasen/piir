@@ -28,7 +28,7 @@ import subprocess
 import sys
 import tempfile
 
-VERSION = "1.0"
+VERSION = "1.1"
 
 # LIRC constants (lib/ir_remote_types.h, lib/transmit.c)
 DEFAULT_FREQ = 38000
@@ -626,15 +626,18 @@ def initial_toggle_state(remote):
     return 0
 
 
-def send_once(remote, code):
-    """What lircd sends for SEND_ONCE right after it started, as a list of
-    (duration, gap part) tuples alternating pulse and space, starting and
-    ending with a pulse. Returns None if LIRC cannot send the code."""
+def send_once(remote, code, press=0):
+    """What lircd sends for SEND_ONCE, as a list of (duration, gap part)
+    tuples alternating pulse and space, starting and ending with a pulse.
+    press 0 is the first press after lircd started, press 1 the next one,
+    which differs when the remote has a toggle bit (toggle_bit_mask).
+    Returns None if LIRC cannot send the code."""
     r = remote
     r.toggle_mask_state = 0
     r.toggle_bit_mask_state = initial_toggle_state(r)
     if r.toggle_bit_mask:
-        r.toggle_bit_mask_state ^= r.toggle_bit_mask
+        for _ in range(press + 1):
+            r.toggle_bit_mask_state ^= r.toggle_bit_mask
     t = Transmitter(r)
     state = {"next": None}
     out = []
@@ -780,7 +783,8 @@ def convert_remote(remote, source=None):
         raise ConfigError("no encoding flag")
 
     warnings = []
-    keys = {}
+    keys = {}       # key name -> signal of the first press
+    toggled = {}    # key name -> signal of the next press, if it differs
     for code in remote.codes:
         if code.name in keys:
             warnings.append("duplicate key %s ignored" % code.name)
@@ -797,10 +801,18 @@ def convert_remote(remote, source=None):
                             % (code.name, len(signal)))
             continue
         keys[code.name] = signal
+        if remote.toggle_bit_mask:
+            other = send_once(remote, code, press=1)
+            if other is not None and other != signal \
+                    and len(other) <= PIIR_MAX_LIRC_VALUES - 1:
+                toggled[code.name] = other
     if not keys:
         raise ConfigError("no key can be sent")
 
-    tokenized = {name: tokenize(sig) for name, sig in keys.items()}
+    # Both presses share the symbols; entries are ("key" or "toggle", name)
+    signals = {("key", name): sig for name, sig in keys.items()}
+    signals.update({("toggle", name): sig for name, sig in toggled.items()})
+    tokenized = {entry: tokenize(sig) for entry, sig in signals.items()}
 
     # Quantize raw codes so the mark/space pairs fit the symbol alphabet
     pairs = {(t[1], t[2]) for toks in tokenized.values() for t in toks if t[0] == "pair"}
@@ -849,19 +861,27 @@ def convert_remote(remote, source=None):
     for pair, ch in by_pair.items():
         symbols[ch] = pair
 
-    features = {}
-    for name, toks in tokenized.items():
+    texts = {}
+    for entry, toks in tokenized.items():
         text = ""
         for t in toks:
             if t[0] == "pair":
                 text += by_pair[q((t[1], t[2]))]
             else:
                 text += gap_symbols(t[1])
+        texts[entry] = text
+    features = {}
+    toggle_features = {}
+    for name in keys:
+        text = texts[("key", name)]
         if len(text) > PIIR_MAX_COMMAND_SIZE:
             warnings.append("key %s needs %d symbols, more than PIIR supports"
                             % (name, len(text)))
             continue
         features[name] = text
+        other = texts.get(("toggle", name))
+        if other is not None and len(other) <= PIIR_MAX_COMMAND_SIZE:
+            toggle_features[name] = other
 
     if not features:
         raise ConfigError("no key fits PIIR's limits")
@@ -871,8 +891,10 @@ def convert_remote(remote, source=None):
     all_symbols["-"] = (0, 0)
     for s, unit in GAP_SYMBOLS:
         all_symbols[s] = (0, unit)
-    for name, text in features.items():
-        expected = [v for v, _ in keys[name]]
+    checks = [(name, text, keys[name]) for name, text in features.items()]
+    checks += [(name, text, toggled[name]) for name, text in toggle_features.items()]
+    for name, text, signal in checks:
+        expected = [v for v, _ in signal]
         got = expand(text, all_symbols)
         if len(got) != len(expected):
             raise ConfigError("internal error: key %s converts to %d values instead of %d"
@@ -884,13 +906,14 @@ def convert_remote(remote, source=None):
     symboldefs = {}
     for ch in sorted(symbols, key=SYMBOL_ALPHABET.index):
         symboldefs[ch] = {"mark": symbols[ch][0], "space": symbols[ch][1]}
-    used_gaps = {c for text in features.values() for c in text}
+    used_gaps = {c for text in list(features.values()) + list(toggle_features.values())
+                 for c in text}
     for s, unit in GAP_SYMBOLS:
         if s in used_gaps:
             symboldefs[s] = {"mark": 0, "space": unit}
     symboldefs["-"] = {"mark": 0, "space": 0}
 
-    longest = max(len(t) for t in features.values())
+    longest = max(len(t) for t in list(features.values()) + list(toggle_features.values()))
     description = "%s (LIRC remote)" % remote.name
     result = {"description": description}
     if source:
@@ -905,6 +928,9 @@ def convert_remote(remote, source=None):
         "template": "-" * longest,
         "features": {"key": features},
     })
+    if toggle_features:
+        # PIIR sends these instead of the features on every other press
+        result["toggle"] = {"key": toggle_features}
     return result, warnings
 
 
@@ -955,8 +981,8 @@ def format_json(data):
                              % (json.dumps(s), d["mark"], d["space"],
                                 "," if j < len(sym) - 1 else ""))
             lines.append("    }" + comma)
-        elif key == "features":
-            lines.append('    "features": {')
+        elif key in ("features", "toggle"):
+            lines.append('    %s: {' % json.dumps(key))
             feats = list(value.items())
             for j, (fname, values) in enumerate(feats):
                 lines.append("\t%s: {" % json.dumps(fname))

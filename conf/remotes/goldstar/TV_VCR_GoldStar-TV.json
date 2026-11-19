@@ -1,6 +1,6 @@
 {
     "description": "GoldStar-TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/goldstar/TV_VCR.lircd.conf", "remote": "GoldStar-TV", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/goldstar/TV_VCR.lircd.conf", "remote": "GoldStar-TV", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -54,6 +54,47 @@
 	    ">=<": "DABAAACFBCE",
 	    "=X": "DABAAACFAFE",
 	    "=M": "DABAAACAAAAG"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "KEY_TV": "DBAAAACAAAAAE",
+	    "AV": "DBAAAACAABAE",
+	    "LOOP": "DBAAAACBACG",
+	    "KEY_102ND": "DBAAAAAACFG",
+	    "PP": "DBAAAAAACAAG",
+	    "KEY_MENU": "DBAAAACAAFAE",
+	    "KEY_OK": "DBAAAACBCFE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "KEY_CHANNELDOWN": "DBAAAACBAACE",
+	    "KEY_CHANNELUP": "DBAAAACBAAAE",
+	    "<=": "DBAAAAAACFAE",
+	    "=": "DBAAAACAAABE",
+	    "KEY_RED": "DBAAAACAFAAE",
+	    "KEY_GREEN": "DBAAAACAFAG",
+	    "KEY_YELLOW": "DBAAAACABCG",
+	    "KEY_BLUE": "DBAAAACAFBE",
+	    "=/": "DBAAAACFAAG",
+	    "=o": "DBAAAACFFG",
+	    "=?": "DBAAAACFABE",
+	    "=i": "DBAAAACAFFE",
+	    "=^": "DBAAAACFFAE",
+	    ">=<": "DBAAAACFBCE",
+	    "=X": "DBAAAACFAFE",
+	    "=M": "DBAAAACAAAAG"
 	}
     }
 }

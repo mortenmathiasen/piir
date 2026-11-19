@@ -1,6 +1,6 @@
 {
     "description": "Hampton_Bay_Window_AC (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/hampton_bay/Window_AC.lircd.conf", "remote": "Hampton_Bay_Window_AC", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/hampton_bay/Window_AC.lircd.conf", "remote": "Hampton_Bay_Window_AC", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

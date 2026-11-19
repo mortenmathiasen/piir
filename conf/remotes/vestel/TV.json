@@ -1,6 +1,6 @@
 {
     "description": "Vestel_TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/vestel/TV.lircd.conf", "remote": "Vestel_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/vestel/TV.lircd.conf", "remote": "Vestel_TV", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -56,6 +56,49 @@
 	    "KEY_H": "DABAAACFAAAE",
 	    "KEY_X": "DABAAACAAAAAE",
 	    "KEY_Y": "DABAAACAABAE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "PlP": "DBAAAACBACG",
+	    "KEY_102ND": "DBAAAAAACFG",
+	    "OFF": "DBAAAAAACABE",
+	    "PP": "DBAAAAAACAAG",
+	    "KEY_MENU": "DBAAAACABAAE",
+	    "KEY_INFO": "DBAAAAACBCG",
+	    "i-ii": "DBAAAACBACAE",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_UP": "DBAAAACBAAAE",
+	    "KEY_DOWN": "DBAAAACBAACE",
+	    "KEY_LEFT": "DBAAAAACFFE",
+	    "KEY_RIGHT": "DBAAAAACFAG",
+	    "KEY_OK": "DBAAAACAFFE",
+	    "VOL_p": "DBAAAAACBAAE",
+	    "VOL+m": "DBAAAAACBACE",
+	    "sound": "DBAAAACAFAAE",
+	    "picture": "DBAAAACAFAG",
+	    "feature": "DBAAAACABCG",
+	    "install": "DBAAAACAFBE",
+	    "KEY_A": "DBAAAACAAABE",
+	    "KEY_B": "DBAAAACFFG",
+	    "KEY_C": "DBAAAACFBCE",
+	    "KEY_D": "DBAAAACFAFE",
+	    "KEY_E": "DBAAAACFAAG",
+	    "KEY_F": "DBAAAACFFAE",
+	    "KEY_G": "DBAAAACFABE",
+	    "KEY_H": "DBAAAACFAAAE",
+	    "KEY_X": "DBAAAACAAAAAE",
+	    "KEY_Y": "DBAAAACAABAE"
 	}
     }
 }

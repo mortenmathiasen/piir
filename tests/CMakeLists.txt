@@ -21,6 +21,7 @@ piir_unit_test(test_log)
 piir_unit_test(test_config)
 piir_unit_test(test_hvac_panasonic)
 piir_unit_test(test_remote_lookup)
+piir_unit_test(test_state)
 
 # Every key of every remote, and the test vectors of remotes that have them
 piir_test_executable(test_remotes)
@@ -60,15 +61,25 @@ string(REPLACE ";" "~~" PIIR_EMULATOR "${CMAKE_CROSSCOMPILING_EMULATOR}")
 set(HVAC ${PROJECT_SOURCE_DIR}/conf/remotes/panasonic/hvac_panasonic.json)
 
 # piir_cli_test(name [EXIT 0|nonzero|any] [WORKDIR dir] [PROG program]
-#               [ARGS ...] [MATCH regex...] [NOMATCH regex...] [FIXTURES ...])
+#               [TARGET target] [STATE dir] [ARGS ...] [MATCH regex...]
+#               [NOMATCH regex...] [FIXTURES ...])
+# PROG is a script run on the build machine, TARGET an executable built here
+# (piir by default), run with the cross compiling emulator if there is one.
+# Each test keeps toggle states in its own directory (STATE) instead of the
+# user's.
 function(piir_cli_test name)
-  cmake_parse_arguments(T "" "EXIT;WORKDIR;PROG" "ARGS;MATCH;NOMATCH;FIXTURES" ${ARGN})
+  cmake_parse_arguments(T "" "EXIT;WORKDIR;PROG;TARGET;STATE" "ARGS;MATCH;NOMATCH;FIXTURES" ${ARGN})
+  if(NOT T_STATE)
+    set(T_STATE ${CMAKE_CURRENT_BINARY_DIR}/state/${name})
+  endif()
   if(NOT T_WORKDIR)
     set(T_WORKDIR ${CMAKE_CURRENT_BINARY_DIR})
   endif()
   set(emulator ${PIIR_EMULATOR})
   if(T_PROG)
     set(emulator "")   # scripts run on the build machine
+  elseif(T_TARGET)
+    set(T_PROG $<TARGET_FILE:${T_TARGET}>)
   else()
     set(T_PROG $<TARGET_FILE:piir>)
   endif()
@@ -85,6 +96,7 @@ function(piir_cli_test name)
       -DMATCH=${match}
       -DNOMATCH=${nomatch}
       -P ${CMAKE_CURRENT_SOURCE_DIR}/run_cli.cmake)
+  set_tests_properties(cli.${name} PROPERTIES ENVIRONMENT PIIR_STATE_DIR=${T_STATE})
   if(T_FIXTURES)
     set_tests_properties(cli.${name} PROPERTIES FIXTURES_REQUIRED "${T_FIXTURES}")
   endif()
@@ -201,6 +213,69 @@ if(PIIR_BACKEND STREQUAL "lirc" AND NOT CMAKE_VERSION VERSION_LESS 3.19)
     ARGS --remote ${CMAKE_CURRENT_BINARY_DIR}/remotes/RM-ED011.json
          --feature key=KEY_POWER --verbose DEBUG
     MATCH "Transmitting: ${code}" "Cannot open /nonexistent/piir-test/lirc0")
+endif()
+
+# Toggle bits: the state file decides which code is sent, and a failed
+# transmission (the device does not exist) leaves the state unchanged
+if(PIIR_BACKEND STREQUAL "lirc")
+  get_filename_component(toggle_remote ${FIXTURE_DIR}/toggle.json REALPATH)
+  set(toggled_state ${CMAKE_CURRENT_BINARY_DIR}/state/toggled)
+  file(WRITE ${toggled_state}/toggle-state "1 /other/remote.json\n1 ${toggle_remote}\n")
+  piir_cli_test(toggle_first_press EXIT nonzero
+    ARGS --remote ${toggle_remote} --feature key=KEY_POWER --verbose DEBUG
+    MATCH "Toggle state 0" "Transmitting: AAAA")
+  piir_cli_test(toggle_second_press EXIT nonzero STATE ${toggled_state}
+    ARGS --remote ${toggle_remote} --feature key=KEY_POWER --verbose DEBUG
+    MATCH "Toggle state 1 from .*/state/toggled/toggle-state" "Transmitting: BAAA")
+  piir_cli_test(toggle_state_kept_after_failure EXIT nonzero STATE ${toggled_state}
+    ARGS --remote ${toggle_remote} --feature key=KEY_POWER --verbose DEBUG
+    MATCH "Toggle state 1" "Transmitting: BAAA")
+  set_tests_properties(cli.toggle_state_kept_after_failure PROPERTIES
+    DEPENDS cli.toggle_second_press)
+
+  # Complete runs with a simulated kernel driver: every successful press
+  # flips the toggle state
+  add_executable(piir_fake_lirc ${PROJECT_SOURCE_DIR}/src/piir.c fake_lirc_driver.c)
+  target_link_libraries(piir_fake_lirc PRIVATE piir_core)
+  target_link_options(piir_fake_lirc PRIVATE -Wl,--wrap=ioctl -Wl,--wrap=__ioctl_time64)
+  if(PIIR_STATIC)
+    target_link_options(piir_fake_lirc PRIVATE -static)
+  endif()
+  file(READ ${FIXTURE_DIR}/toggle.json toggle_json)
+  string(JSON toggle_json SET "${toggle_json}" transmitter device
+    "\"${CMAKE_CURRENT_BINARY_DIR}/fake-lirc0\"")
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/remotes/fake/toggle.json "${toggle_json}")
+  set(fake_remote ${CMAKE_CURRENT_BINARY_DIR}/remotes/fake/toggle.json)
+  set(fake_state ${CMAKE_CURRENT_BINARY_DIR}/state/fake)
+  add_test(NAME toggle.clean COMMAND ${CMAKE_COMMAND} -E rm -rf ${fake_state})
+  add_test(NAME toggle.device COMMAND ${CMAKE_COMMAND} -E touch ${CMAKE_CURRENT_BINARY_DIR}/fake-lirc0)
+  set_tests_properties(toggle.clean toggle.device PROPERTIES FIXTURES_SETUP toggle_presses)
+  set(previous "")
+  foreach(press 1 2 3)
+    if(press EQUAL 2)
+      set(code "BAAA")
+    else()
+      set(code "AAAA")
+    endif()
+    piir_cli_test(toggle_press_${press} EXIT 0 TARGET piir_fake_lirc STATE ${fake_state}
+      FIXTURES toggle_presses
+      ARGS --remote ${fake_remote} --feature key=KEY_POWER --verbose DEBUG
+      MATCH "Transmitting: ${code}")
+    if(previous)
+      set_tests_properties(cli.toggle_press_${press} PROPERTIES DEPENDS ${previous})
+    endif()
+    set(previous cli.toggle_press_${press})
+  endforeach()
+  # The state belongs to the remote, not the key
+  piir_cli_test(toggle_press_other_key EXIT 0 TARGET piir_fake_lirc STATE ${fake_state}
+    FIXTURES toggle_presses
+    ARGS --remote ${fake_remote} --feature key=KEY_MUTE --verbose DEBUG
+    MATCH "Toggle state 1" "Transmitting: ABBB")
+  set_tests_properties(cli.toggle_press_other_key PROPERTIES DEPENDS ${previous})
+
+  piir_cli_test(no_toggle_state_without_toggle EXIT nonzero
+    ARGS --remote ${HVAC} --feature temperature=21 --verbose DEBUG
+    NOMATCH "Toggle state")
 endif()
 
 # piir-remotes: install and remove remotes from the remotes archive

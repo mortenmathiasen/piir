@@ -1,6 +1,6 @@
 {
     "description": "100_TS_023 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/technisat/100TS023.lircd.conf", "remote": "100_TS_023", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/technisat/100TS023.lircd.conf", "remote": "100_TS_023", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -40,6 +40,37 @@
 	    "zurueck": "11111100111A",
 	    "ats": "11111111101A",
 	    "menue": "11111101011A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_MUTE": "10111000110A",
+	    "KEY_POWER": "10111000001A",
+	    "klassik": "10111010000A",
+	    "pop": "10111010001A",
+	    "oldies": "10111010010A",
+	    "pa": "10111100101A",
+	    "rock": "10111010011A",
+	    "jazz": "10111010100A",
+	    "country": "10111010101A",
+	    "spez-mu": "10111010110A",
+	    "regional": "10111010111A",
+	    "nachr": "10111011000A",
+	    "allgemein": "10111001111A",
+	    "frei": "10111001010A",
+	    "analog": "10111000011A",
+	    "tv_radio": "10111000010A",
+	    "programm+": "10111000111A",
+	    "programm-": "10111001000A",
+	    "^": "10111110010A",
+	    "KEY_V": "10111110011A",
+	    "<": "10111110100A",
+	    ">": "10111110101A",
+	    "KEY_OK": "10111110110A",
+	    "liste": "10111110111A",
+	    "zurueck": "10111100111A",
+	    "ats": "10111111101A",
+	    "menue": "10111101011A"
 	}
     }
 }

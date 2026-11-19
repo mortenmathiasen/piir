@@ -1,14 +1,14 @@
 {
     "description": "PHILIPS_RC-5 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RC0786_01.lircd.conf", "remote": "PHILIPS_RC-5", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RC0786_01.lircd.conf", "remote": "PHILIPS_RC-5", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
 	"A": {"mark": 889, "space": 889},
 	"B": {"mark": 1778, "space": 889},
-	"C": {"mark": 889, "space": 1778},
-	"D": {"mark": 1778, "space": 1778},
+	"C": {"mark": 1778, "space": 1778},
+	"D": {"mark": 889, "space": 1778},
 	"E": {"mark": 889, "space": 0},
 	"F": {"mark": 1778, "space": 0},
 	"-": {"mark": 0, "space": 0}
@@ -16,20 +16,38 @@
     "template": "------------",
     "features": {
 	"key": {
-	    "KEY_VOLUMEUP": "AAABAAACBAAE",
-	    "KEY_VOLUMEDOWN": "AAABAAACBACE",
-	    "SHUFFLE": "AAADBACAABE",
-	    "KEY_AGAIN": "AAADBACAADE",
-	    "KEY_PLAY": "AAADBCADDE",
-	    "TRACK-": "AAADBCBAACE",
-	    "TRACK+": "AAADBCBAAAE",
-	    "KEY_STOP": "AAADBCADAF",
-	    "SEARCH-": "AAADBCABCF",
-	    "SEARCH+": "AAADBCADBE",
-	    "PRESET+": "AAABACABAAAE",
-	    "PRESET-": "AAABACABAACE",
-	    "TUNING-": "AAABACDAAAAE",
-	    "TUNING+": "AAABACDAAAF"
+	    "KEY_VOLUMEUP": "AAABAAADBAAE",
+	    "KEY_VOLUMEDOWN": "AAABAAADBADE",
+	    "SHUFFLE": "AAACBADAABE",
+	    "KEY_AGAIN": "AAACBADAACE",
+	    "KEY_PLAY": "AAACBDACCE",
+	    "TRACK-": "AAACBDBAADE",
+	    "TRACK+": "AAACBDBAAAE",
+	    "KEY_STOP": "AAACBDACAF",
+	    "SEARCH-": "AAACBDABDF",
+	    "SEARCH+": "AAACBDACBE",
+	    "PRESET+": "AAABADABAAAE",
+	    "PRESET-": "AAABADABAADE",
+	    "TUNING-": "AAABADCAAAAE",
+	    "TUNING+": "AAABADCAAAF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_VOLUMEUP": "ACBAAADBAAE",
+	    "KEY_VOLUMEDOWN": "ACBAAADBADE",
+	    "SHUFFLE": "ACCBADAABE",
+	    "KEY_AGAIN": "ACCBADAACE",
+	    "KEY_PLAY": "ACCBDACCE",
+	    "TRACK-": "ACCBDBAADE",
+	    "TRACK+": "ACCBDBAAAE",
+	    "KEY_STOP": "ACCBDACAF",
+	    "SEARCH-": "ACCBDABDF",
+	    "SEARCH+": "ACCBDACBE",
+	    "PRESET+": "ACBADABAAAE",
+	    "PRESET-": "ACBADABAADE",
+	    "TUNING-": "ACBADCAAAAE",
+	    "TUNING+": "ACBADCAAAF"
 	}
     }
 }

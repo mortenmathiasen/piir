@@ -1,6 +1,6 @@
 {
     "description": "Skymaster_DCI_9410 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/skymaster/DCI_9410.lircd.conf", "remote": "Skymaster_DCI_9410", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/skymaster/DCI_9410.lircd.conf", "remote": "Skymaster_DCI_9410", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -48,6 +48,45 @@
 	    "KEY_YELLOW": "11101100010A",
 	    "KEY_BLUE": "11101110111A",
 	    "KEY_I": "11101010100A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_MUTE": "10101011000A",
+	    "KEY_POWER": "10101011110A",
+	    "KEY_TV": "10101100110A",
+	    "TV/RAD": "10101101110A",
+	    "KEY_AUDIO": "10101110110A",
+	    "KEY_1": "10101110101A",
+	    "KEY_2": "10101101101A",
+	    "KEY_3": "10101100101A",
+	    "KEY_4": "10101011101A",
+	    "KEY_5": "10101110100A",
+	    "KEY_6": "10101101100A",
+	    "KEY_7": "10101100100A",
+	    "KEY_8": "10101011100A",
+	    "KEY_9": "10101110011A",
+	    "KEY_TEXT": "10101100011A",
+	    "KEY_0": "10101101011A",
+	    "KEY_SUBTITLE": "10101010110A",
+	    "KEY_EPG": "10101101111A",
+	    "KEY_MENU": "10101100111A",
+	    "EXT": "10101110000A",
+	    "ALT": "10101010101A",
+	    "KEY_CHANNELUP": "10101101000A",
+	    "KEY_OK": "10101101001A",
+	    "KEY_CHANNELDOWN": "10101101010A",
+	    "KEY_VOLUMEDOWN": "10101110001A",
+	    "KEY_VOLUMEUP": "10101100001A",
+	    "FREEZE": "10101100000A",
+	    "KEY_PAGEDOWN": "10101011111A",
+	    "KEY_PAGEUP": "10101011010A",
+	    "BROWSE": "10101011011A",
+	    "KEY_RED": "10101011001A",
+	    "KEY_GREEN": "10101110010A",
+	    "KEY_YELLOW": "10101100010A",
+	    "KEY_BLUE": "10101110111A",
+	    "KEY_I": "10101010100A"
 	}
     }
 }

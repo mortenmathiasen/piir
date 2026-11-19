@@ -1,6 +1,6 @@
 {
     "description": "DSE_G7659 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/dse/G7659.lircd.conf", "remote": "DSE_G7659", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/dse/G7659.lircd.conf", "remote": "DSE_G7659", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

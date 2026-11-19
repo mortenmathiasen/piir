@@ -1,6 +1,6 @@
 {
     "description": "tp820sat (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/grundig/TP_820_SAT.lircd.conf", "remote": "tp820sat", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/grundig/TP_820_SAT.lircd.conf", "remote": "tp820sat", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

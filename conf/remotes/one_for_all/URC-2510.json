@@ -1,6 +1,6 @@
 {
     "description": "OneForAll_URC-2510(12341) (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/one_for_all/URC-2510.lircd.conf", "remote": "OneForAll_URC-2510(12341)", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/one_for_all/URC-2510.lircd.conf", "remote": "OneForAll_URC-2510(12341)", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

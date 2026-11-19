@@ -1,6 +1,6 @@
 {
     "description": "utk (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/elitron/UTK11.lircd.conf", "remote": "utk", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/elitron/UTK11.lircd.conf", "remote": "utk", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -41,6 +41,35 @@
 	    "KEY_BACK": "AABCAAEBCF",
 	    "pgm": "AABCAAEBCAD",
 	    "KEY_CLEAR": "AABCAABCAAAD"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_0": "ABACAABAAAAD",
+	    "KEY_1": "ABACAABAAACD",
+	    "KEY_2": "ABACAABAACF",
+	    "KEY_3": "ABACAABAACAD",
+	    "KEY_4": "ABACAABACBD",
+	    "KEY_5": "ABACAABACED",
+	    "KEY_6": "ABACAABACAF",
+	    "KEY_7": "ABACAABACAAD",
+	    "KEY_8": "ABACAABCBAD",
+	    "KEY_9": "ABACAABCBCD",
+	    "KEY_102ND": "ABACAABCEF",
+	    "KEY_POWER": "ABACAABCABD",
+	    "key": "ABACAABCAED",
+	    "preset_up": "ABACAAABAAAD",
+	    "preset_down": "ABACAAABAACD",
+	    "tune_up": "ABACAAEEBD",
+	    "tune_down": "ABACAAEEED",
+	    "KEY_FAVORITES": "ABACAAEBAAD",
+	    "favorit_down": "ABACAAEBACD",
+	    "KEY_AGAIN": "ABACAAAAABAD",
+	    "timer": "ABACAAABCBD",
+	    "envelope": "ABACAAEAAAF",
+	    "KEY_BACK": "ABACAAEBCF",
+	    "pgm": "ABACAAEBCAD",
+	    "KEY_CLEAR": "ABACAABCAAAD"
 	}
     }
 }

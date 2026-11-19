@@ -1,6 +1,6 @@
 {
     "description": "rc5 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/centrum/DVD.lircd.conf", "remote": "rc5", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/centrum/DVD.lircd.conf", "remote": "rc5", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -54,6 +54,48 @@
 	    "KEY_0": "AAAAABCAEAAD",
 	    "KEY_102ND": "AAAAABCAECD",
 	    "KEY_C": "AAAAABCAAAED"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "ABAABCEABD",
+	    "KEY_OPEN": "ABAABCEACD",
+	    "KEY_ZOOM": "ABAABAAACAD",
+	    "KEY_TITLE": "ABAABAAAACD",
+	    "display": "ABAABAAAAAAD",
+	    "KEY_MENU": "ABAABCEAAF",
+	    "KEY_ENTER": "ABAABABBF",
+	    "KEY_UP": "ABAABACAAED",
+	    "KEY_LEFT": "ABAABBCAAD",
+	    "KEY_SELECT": "ABAABACAEF",
+	    "KEY_RIGHT": "ABAABBCAED",
+	    "KEY_DOWN": "ABAABACAAAD",
+	    "KEY_PLAYPAUSE": "ABAABABAAF",
+	    "KEY_STOP": "ABAABABAAAD",
+	    "KEY_REWIND": "ABAABABACD",
+	    "KEY_NEXT": "ABAABABABD",
+	    "searchback": "ABAABBBAF",
+	    "searchforward": "ABAABBBBD",
+	    "KEY_SUBTITLE": "ABAABAACEF",
+	    "KEY_AUDIO": "ABAABAABAF",
+	    "KEY_ANGLE": "ABAABABCED",
+	    "searchmode": "ABAABACAEAD",
+	    "program": "ABAABAABCD",
+	    "KEY_AGAIN": "ABAABABBAD",
+	    "atob": "ABAABAACAAD",
+	    "KEY_TIME": "ABAABAABAAD",
+	    "KEY_1": "ABAABBCEF",
+	    "KEY_2": "ABAABCAAEAD",
+	    "KEY_3": "ABAABCAAEF",
+	    "KEY_4": "ABAABCEBF",
+	    "KEY_5": "ABAABCAEAF",
+	    "KEY_6": "ABAABCAEBD",
+	    "KEY_7": "ABAABCAAAAD",
+	    "KEY_8": "ABAABCECED",
+	    "KEY_9": "ABAABCECAD",
+	    "KEY_0": "ABAABCAEAAD",
+	    "KEY_102ND": "ABAABCAECD",
+	    "KEY_C": "ABAABCAAAED"
 	}
     }
 }

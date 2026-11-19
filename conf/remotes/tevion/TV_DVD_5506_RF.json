@@ -1,6 +1,6 @@
 {
     "description": "Tevion_TV_DVD_5506_RF (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/tevion/TV_DVD_5506_RF.lircd.conf", "remote": "Tevion_TV_DVD_5506_RF", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/tevion/TV_DVD_5506_RF.lircd.conf", "remote": "Tevion_TV_DVD_5506_RF", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -55,6 +55,48 @@
 	    "TV/DVD": "DABAAAAAAACG",
 	    "PROGRAM": "DABAAAAACFAE",
 	    "GOTO": "DABAAACBCAAE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_MUTE": "DBAAAACFFAE",
+	    "P100": "DBAAAAAAACAG",
+	    "REV": "DBAAAAAACAAG",
+	    "DOUB": "DBAAAAAAACAAE",
+	    "HOLD": "DBAAAAAACABE",
+	    "KEY_SUBTITLE": "DBAAAAAACFG",
+	    "UPDATE": "DBAAAAAACAAAE",
+	    "MIX": "DBAAAAAAACBE",
+	    "KEY_POWER": "DBAAAACBAAAE",
+	    "KEY_1": "DBAAAAACBACE",
+	    "KEY_2": "DBAAAAACBCG",
+	    "KEY_3": "DBAAAAACBCAE",
+	    "KEY_4": "DBAAAAACFBE",
+	    "KEY_5": "DBAAAAACFFE",
+	    "KEY_6": "DBAAAAACFAG",
+	    "KEY_7": "DBAAAAACFAAE",
+	    "KEY_8": "DBAAAAACABAE",
+	    "KEY_9": "DBAAAAACABCE",
+	    "AV": "DBAAAACFFG",
+	    "KEY_0": "DBAAAAACBAAE",
+	    "KEY_102ND": "DBAAAAACAFG",
+	    "KEY_VOLUMEDOWN": "DBAAAACABACE",
+	    "KEY_CHANNELUP": "DBAAAAACAABE",
+	    "KEY_VOLUMEUP": "DBAAAACFBCE",
+	    "KEY_LEFT": "DBAAAACBCFE",
+	    "KEY_OK": "DBAAAACFBAE",
+	    "KEY_RIGHT": "DBAAAACBCBE",
+	    "TV/TX": "DBAAAACBAACE",
+	    "KEY_CHANNELDOWN": "DBAAAAACAFAE",
+	    "TV_MENU": "DBAAAACBACAE",
+	    "KEY_RED": "DBAAAACBCAG",
+	    "KEY_GREEN": "DBAAAACFABE",
+	    "KEY_YELLOW": "DBAAAACFAAG",
+	    "KEY_BLUE": "DBAAAACABCAE",
+	    "Violet": "DBAAAACFAAAE",
+	    "TV/DVD": "DBAAAAAAAACG",
+	    "PROGRAM": "DBAAAAAACFAE",
+	    "GOTO": "DBAAAACBCAAE"
 	}
     }
 }

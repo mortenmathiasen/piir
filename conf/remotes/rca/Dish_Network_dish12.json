@@ -1,6 +1,6 @@
 {
     "description": "dish12 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/rca/Dish_Network.lircd.conf", "remote": "dish12", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/rca/Dish_Network.lircd.conf", "remote": "dish12", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 56000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

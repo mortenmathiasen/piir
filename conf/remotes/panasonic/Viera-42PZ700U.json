@@ -1,6 +1,6 @@
 {
     "description": "Panasonic_Viera-42PZ700U (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/Viera-42PZ700U.lircd.conf", "remote": "Panasonic_Viera-42PZ700U", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/panasonic/Viera-42PZ700U.lircd.conf", "remote": "Panasonic_Viera-42PZ700U", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

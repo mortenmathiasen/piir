@@ -1,6 +1,6 @@
 {
     "description": "Nordmende (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/nordmende/VCR.lircd.conf", "remote": "Nordmende", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/nordmende/VCR.lircd.conf", "remote": "Nordmende", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -50,6 +50,47 @@
 	    "vcr_jog_right": "000110100101A",
 	    "vcr_shuttle_right": "000111000000A",
 	    "vcr_shuttle_left": "000111000100A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "vcr_menu": "000100111001A",
+	    "vcr_access": "000100111011A",
+	    "vcr_show_view": "000100111000A",
+	    "vcr_vps": "000100010101A",
+	    "KEY_EXIT": "000100011110A",
+	    "vcr_on_off": "000100011101A",
+	    "vcr_confirm": "000100110011A",
+	    "vcr_up": "000100110100A",
+	    "vcr_right": "000100110111A",
+	    "vcr_left": "000100110110A",
+	    "vcr_down": "000100110101A",
+	    "vcr_minus": "000100101010A",
+	    "vcr_plus": "000100101001A",
+	    "vcr_one": "000100000000A",
+	    "vcr_two": "000100001000A",
+	    "vcr_three": "000100010000A",
+	    "vcr_four": "000100000001A",
+	    "vcr_five": "000100001001A",
+	    "vcr_six": "000100010001A",
+	    "vcr_seven": "000100000010A",
+	    "vcr_eight": "000100001010A",
+	    "vcr_nine": "000100010010A",
+	    "vcr_zero": "000100001110A",
+	    "vcr_splp": "000100000101A",
+	    "vcr_av": "000100011000A",
+	    "vcr_stop": "000100100100A",
+	    "vcr_play": "000100100000A",
+	    "vcr_rew": "000100011111A",
+	    "vcr_ffwd": "000100100001A",
+	    "vcr_rec": "000100100011A",
+	    "vcr_pause": "000100100010A",
+	    "vcr_mark": "000100111100A",
+	    "vcr_erase": "000100111101A",
+	    "vcr_jog_left": "000100100111A",
+	    "vcr_jog_right": "000100100101A",
+	    "vcr_shuttle_right": "000101000000A",
+	    "vcr_shuttle_left": "000101000100A"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "AKB73615302 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/energenie/AKB73615302.lircd.conf", "remote": "AKB73615302", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/energenie/AKB73615302.lircd.conf", "remote": "AKB73615302", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "SONY_15_RM-YD010 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-YD010.lircd.conf", "remote": "SONY_15_RM-YD010", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RM-YD010.lircd.conf", "remote": "SONY_15_RM-YD010", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

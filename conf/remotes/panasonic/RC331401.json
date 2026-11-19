@@ -1,14 +1,14 @@
 {
     "description": "Panasonic_RC331401 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/RC331401.lircd.conf", "remote": "Panasonic_RC331401", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/panasonic/RC331401.lircd.conf", "remote": "Panasonic_RC331401", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
 	"A": {"mark": 945, "space": 824},
 	"B": {"mark": 1890, "space": 824},
-	"C": {"mark": 945, "space": 1648},
-	"D": {"mark": 1890, "space": 1648},
+	"C": {"mark": 1890, "space": 1648},
+	"D": {"mark": 945, "space": 1648},
 	"E": {"mark": 965, "space": 824},
 	"F": {"mark": 945, "space": 0},
 	"G": {"mark": 1890, "space": 0},
@@ -17,20 +17,38 @@
     "template": "------------",
     "features": {
 	"key": {
-	    "KEY_VOLUMEUP": "EAABAAACBAAF",
-	    "KEY_VOLUMEDOWN": "EAABAAACBACF",
-	    "Preset+": "EAABACABAAAF",
-	    "Preset-": "EAABACABAACF",
-	    "Tuning_l": "EAABACDAAAAF",
-	    "Tuning_r": "EAABACDAAAG",
-	    "Shuffle": "EAADBACAABF",
-	    "KEY_AGAIN": "EAADBACAADF",
-	    "KEY_PLAY": "EAADBCADDF",
-	    "KEY_BACK": "EAADBCBAACF",
-	    "KEY_FASTFORWARD": "EAADBCBAAAF",
-	    "KEY_STOP": "EAADBCADAG",
-	    "Search_l": "EAADBCABCG",
-	    "Search_r": "EAADBCADBF"
+	    "KEY_VOLUMEUP": "EAABAAADBAAF",
+	    "KEY_VOLUMEDOWN": "EAABAAADBADF",
+	    "Preset+": "EAABADABAAAF",
+	    "Preset-": "EAABADABAADF",
+	    "Tuning_l": "EAABADCAAAAF",
+	    "Tuning_r": "EAABADCAAAG",
+	    "Shuffle": "EAACBADAABF",
+	    "KEY_AGAIN": "EAACBADAACF",
+	    "KEY_PLAY": "EAACBDACCF",
+	    "KEY_BACK": "EAACBDBAADF",
+	    "KEY_FASTFORWARD": "EAACBDBAAAF",
+	    "KEY_STOP": "EAACBDACAG",
+	    "Search_l": "EAACBDABDG",
+	    "Search_r": "EAACBDACBF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_VOLUMEUP": "ECBAAADBAAF",
+	    "KEY_VOLUMEDOWN": "ECBAAADBADF",
+	    "Preset+": "ECBADABAAAF",
+	    "Preset-": "ECBADABAADF",
+	    "Tuning_l": "ECBADCAAAAF",
+	    "Tuning_r": "ECBADCAAAG",
+	    "Shuffle": "ECCBADAABF",
+	    "KEY_AGAIN": "ECCBADAACF",
+	    "KEY_PLAY": "ECCBDACCF",
+	    "KEY_BACK": "ECCBDBAADF",
+	    "KEY_FASTFORWARD": "ECCBDBAAAF",
+	    "KEY_STOP": "ECCBDACAG",
+	    "Search_l": "ECCBDABDG",
+	    "Search_r": "ECCBDACBF"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "URC8040_SAT_1300 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/one_for_all/URC-8040.lircd.conf", "remote": "URC8040_SAT_1300", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/one_for_all/URC-8040.lircd.conf", "remote": "URC8040_SAT_1300", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "PHILIPS_U352_TV_MODE (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/U352.lircd.conf", "remote": "PHILIPS_U352_TV_MODE", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/U352.lircd.conf", "remote": "PHILIPS_U352_TV_MODE", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -39,6 +39,32 @@
 	    "KEY_VOLUMEUP": "DABAAAACBAAE",
 	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
 	    "KEY_MUTE": "DABAAAAACAFE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_SLEEP": "DBAAAAAACABE",
+	    "KEY_MENU": "DBAAAACFAAG",
+	    "KEY_EXIT": "DBAAAAAACAAAE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_UP": "DBAAAAACAABE",
+	    "KEY_LEFT": "DBAAAACFABE",
+	    "KEY_RIGHT": "DBAAAACFFAE",
+	    "KEY_DOWN": "DBAAAAACAAFE",
+	    "KEY_CHANNELUP": "DBAAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DBAAAACBAACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_MUTE": "DBAAAAAACAFE"
 	}
     }
 }

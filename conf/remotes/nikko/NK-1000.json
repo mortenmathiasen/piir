@@ -1,6 +1,6 @@
 {
     "description": "Nikko (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/nikko/NK-1000.lircd.conf", "remote": "Nikko", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/nikko/NK-1000.lircd.conf", "remote": "Nikko", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -29,6 +29,26 @@
 	    "KEY_CHANNELUP": "11101001011A",
 	    "AUDIO_SELECT": "11101001111A",
 	    "AUDIO_MUTE": "11101001110A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "10101001101A",
+	    "KEY_102ND": "10101001010A",
+	    "KEY_1": "10101000001A",
+	    "KEY_2": "10101000010A",
+	    "KEY_3": "10101000011A",
+	    "KEY_4": "10101000100A",
+	    "KEY_5": "10101000101A",
+	    "KEY_6": "10101000110A",
+	    "KEY_7": "10101000111A",
+	    "KEY_8": "10101001000A",
+	    "KEY_9": "10101001001A",
+	    "KEY_0": "10101000000A",
+	    "KEY_CHANNELDOWN": "10101001100A",
+	    "KEY_CHANNELUP": "10101001011A",
+	    "AUDIO_SELECT": "10101001111A",
+	    "AUDIO_MUTE": "10101001110A"
 	}
     }
 }

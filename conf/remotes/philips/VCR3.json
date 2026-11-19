@@ -1,6 +1,6 @@
 {
     "description": "PHILIPS_multi_VCR3 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/VCR3.lircd.conf", "remote": "PHILIPS_multi_VCR3", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/VCR3.lircd.conf", "remote": "PHILIPS_multi_VCR3", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -39,6 +39,33 @@
 	    "CH_UP": "AABCAEBAAAD",
 	    "CH_DOWN": "AABCAEBAACD",
 	    "MUTE": "AABCABACAED"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "1": "ABACABAAAACD",
+	    "2": "ABACABAAACF",
+	    "3": "ABACABAAACAD",
+	    "4": "ABACABAACBD",
+	    "5": "ABACABAACED",
+	    "6": "ABACABAACAF",
+	    "7": "ABACABAACAAD",
+	    "8": "ABACABACBAD",
+	    "9": "ABACABACBCD",
+	    "0": "ABACABAAAAAD",
+	    "POWER": "ABACABACABD",
+	    "-/--": "ABACABACEF",
+	    "2-": "ABACABACEAD",
+	    "REW": "ABACAEEABD",
+	    "FF": "ABACAEEAAF",
+	    "PLAY": "ABACAEAEED",
+	    "REC": "ABACAEAEAAD",
+	    "STOP": "ABACAEAEAF",
+	    "VOL_UP": "ABACABCBAAD",
+	    "VOL_DOWN": "ABACABCBACD",
+	    "CH_UP": "ABACAEBAAAD",
+	    "CH_DOWN": "ABACAEBAACD",
+	    "MUTE": "ABACABACAED"
 	}
     }
 }

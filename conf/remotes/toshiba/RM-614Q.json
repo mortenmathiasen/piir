@@ -1,6 +1,6 @@
 {
     "description": "Toshiba_RM-614Q (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/toshiba/RM-614Q.lircd.conf", "remote": "Toshiba_RM-614Q", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/toshiba/RM-614Q.lircd.conf", "remote": "Toshiba_RM-614Q", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Motorola_VIP1510 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/motorola/VIP_1510.lircd.conf", "remote": "Motorola_VIP1510", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/motorola/VIP_1510.lircd.conf", "remote": "Motorola_VIP1510", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 56400,
     "dutycycle": 0.33,
     "transmitter": {"outpin": 17},

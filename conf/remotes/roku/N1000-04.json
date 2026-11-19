@@ -1,6 +1,6 @@
 {
     "description": "Roku_N1000-04 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/roku/N1000-04.lircd.conf", "remote": "Roku_N1000-04", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/roku/N1000-04.lircd.conf", "remote": "Roku_N1000-04", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -23,6 +23,19 @@
 	    "FastRev": "H01111101111101110110000001101111A",
 	    "Start/Pause": "H01111101111101111110000011101111A",
 	    "KEY_FASTFORWARD": "H01111101111101110001000000011111A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_HOME": "H01111101111101111111000011111111A",
+	    "KEY_UP": "H01111101111101110111000001111111A",
+	    "KEY_BACK": "H01111101111101111011000010111111A",
+	    "KEY_SELECT": "H01111101111101110011000000111111A",
+	    "KEY_FORWARD": "H01111101111101111101000011011111A",
+	    "KEY_DOWN": "H01111101111101110101000001011111A",
+	    "FastRev": "H01111101111101111001000010011111A",
+	    "Start/Pause": "H01111101111101110001000000011111A",
+	    "KEY_FASTFORWARD": "H01111101111101111110000011101111A"
 	}
     }
 }

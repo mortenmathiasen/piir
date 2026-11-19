@@ -1,6 +1,6 @@
 {
     "description": "proscan-vcr (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/proscan/PSVR72.lircd.conf", "remote": "proscan-vcr", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/proscan/PSVR72.lircd.conf", "remote": "proscan-vcr", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 57600,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

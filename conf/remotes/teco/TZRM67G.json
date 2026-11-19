@@ -1,6 +1,6 @@
 {
     "description": "Teco_TZRM67G (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/teco/TZRM67G.lircd.conf", "remote": "Teco_TZRM67G", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/teco/TZRM67G.lircd.conf", "remote": "Teco_TZRM67G", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Philips_RC283501 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RC283501.lircd.conf", "remote": "Philips_RC283501", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RC283501.lircd.conf", "remote": "Philips_RC283501", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -51,6 +51,45 @@
 	    "Reduce_Teletext": "AABAAACEEAD",
 	    "Expand_Teletext": "AABAAACEBCD",
 	    "Teletext_?": "AABAAACEABD"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "ABAAAAAACABD",
+	    "AV": "ABAAAACAABAD",
+	    "KEY_EPG": "ABAAAAAACAAAD",
+	    "KEY_SLEEP": "ABAAAACBCAF",
+	    "KEY_1": "ABAAAAAAAAACD",
+	    "KEY_2": "ABAAAAAAAACF",
+	    "KEY_3": "ABAAAAAAAACAD",
+	    "KEY_4": "ABAAAAAAACBD",
+	    "KEY_5": "ABAAAAAAACED",
+	    "KEY_6": "ABAAAAAAACAF",
+	    "KEY_7": "ABAAAAAAACAAD",
+	    "KEY_8": "ABAAAAAACBAD",
+	    "KEY_9": "ABAAAAAACBCD",
+	    "KEY_0": "ABAAAAAAAAAAD",
+	    "Sound": "ABAACABCEAD",
+	    "Screen": "ABAACABCEF",
+	    "KEY_MENU": "BAAAAAACBCF",
+	    "Inc_Surr": "ABAAAACBCBD",
+	    "KEY_UP": "BAAAAAACBAAD",
+	    "KEY_DOWN": "BAAAAAACBACD",
+	    "KEY_LEFT": "BAAAAAACEED",
+	    "KEY_RIGHT": "BAAAAAACEAF",
+	    "KEY_VOLUMEUP": "ABAAAAACBAAD",
+	    "KEY_VOLUMEDOWN": "ABAAAAACBACD",
+	    "KEY_MUTE": "ABAAAAAACAED",
+	    "KEY_CHANNELUP": "ABAAAACBAAAD",
+	    "KEY_CHANNELDOWN": "ABAAAACBAACD",
+	    "KEY_RED": "BAAAAACEEAD",
+	    "KEY_GREEN": "BAAAAACEABD",
+	    "KEY_YELLOW": "BAAAAACEAED",
+	    "KEY_BLUE": "BAAAAACEAAF",
+	    "KEY_TEXT": "ABAAAACAAABD",
+	    "Reduce_Teletext": "ABAAAACEEAD",
+	    "Expand_Teletext": "ABAAAACEBCD",
+	    "Teletext_?": "ABAAAACEABD"
 	}
     }
 }

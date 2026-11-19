@@ -1,6 +1,6 @@
 {
     "description": "PCTV_800i (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/pinnacle_systems/PCTV_800i.lircd.conf", "remote": "PCTV_800i", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/pinnacle_systems/PCTV_800i.lircd.conf", "remote": "PCTV_800i", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -42,6 +42,35 @@
 	    "key_record": "DABCAAAAFAG",
 	    "key_stop": "DABCAAAAAABE",
 	    "key_question": "DABCAAAAAAAAE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "key_mute": "DBACAABAAAAE",
+	    "key_menu": "DBACAABAAACE",
+	    "key_power": "DBACAAAAABCE",
+	    "key_volumeup": "DBACAABAACAE",
+	    "key_volumedown": "DBACAABCBCE",
+	    "key_channelup": "DBACAABACAG",
+	    "key_channeldown": "DBACAABCABE",
+	    "btn_1": "DBACAABCAAAE",
+	    "btn_2": "DBACAAFFFE",
+	    "btn_3": "DBACAAFBAAE",
+	    "btn_4": "DBACAAFABAE",
+	    "btn_5": "DBACAAFAFAE",
+	    "btn_6": "DBACAAFAAAG",
+	    "btn_7": "DBACAAFBACE",
+	    "btn_8": "DBACAAABAACE",
+	    "btn_9": "DBACAAFBCG",
+	    "btn_0": "DBACAAABCAAE",
+	    "key_screen": "DBACAAABCBE",
+	    "key_t": "DBACAAAFFG",
+	    "key_rewind": "DBACAAAFAFE",
+	    "key_playpause": "DBACAAAABAAE",
+	    "key_fastforward": "DBACAAAABCAE",
+	    "key_record": "DBACAAAAFAG",
+	    "key_stop": "DBACAAAAAABE",
+	    "key_question": "DBACAAAAAAAAE"
 	}
     }
 }

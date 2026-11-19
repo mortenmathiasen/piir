@@ -1,6 +1,6 @@
 {
     "description": "AVerMedia_RM-H7 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/avermedia/RM-H7.lircd.conf", "remote": "AVerMedia_RM-H7", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/avermedia/RM-H7.lircd.conf", "remote": "AVerMedia_RM-H7", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

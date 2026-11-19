@@ -1,6 +1,6 @@
 {
     "description": "Samsung_BN59-01224C (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/samsung/BN59-01224C.lircd.conf", "remote": "Samsung_BN59-01224C", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/samsung/BN59-01224C.lircd.conf", "remote": "Samsung_BN59-01224C", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

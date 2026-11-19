@@ -1,6 +1,6 @@
 {
     "description": "EUR571756-VCR (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/EUR571756.lircd.conf", "remote": "EUR571756-VCR", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/panasonic/EUR571756.lircd.conf", "remote": "EUR571756-VCR", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Knopex (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/universal/Knopex.lircd.conf", "remote": "Knopex", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/universal/Knopex.lircd.conf", "remote": "Knopex", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -43,6 +43,40 @@
 	    "KEY_PREVIOUS": "11111001110A",
 	    "KEY_NEXT": "11111100110A",
 	    "KEY_3play": "11111101011A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "10111111100A",
+	    "KEY_1": "10111010001A",
+	    "KEY_2": "10111010010A",
+	    "KEY_3": "10111010011A",
+	    "KEY_4": "10111010100A",
+	    "KEY_5": "10111010101A",
+	    "KEY_6": "10111010110A",
+	    "KEY_7": "10111010111A",
+	    "KEY_8": "10111011000A",
+	    "KEY_9": "10111011001A",
+	    "X_KEY_10": "10111011010A",
+	    "X_KEY_11": "10111011011A",
+	    "X_KEY_12": "10111011100A",
+	    "KEY_CHANNELUP": "10111100000A",
+	    "KEY_CHANNELDOWN": "10111100001A",
+	    "KEY_VOLUMEUP": "10111101100A",
+	    "KEY_VOLUMEDOWN": "10111101101A",
+	    "KEY_MUTE": "10111101010A",
+	    "KEY_PLAY": "10111001100A",
+	    "KEY_STOP": "10111000101A",
+	    "KEY_PAUSE": "10111111111A",
+	    "KEY_RECORD": "10111000110A",
+	    "KEY_TV": "10111100111A",
+	    "KEY_RED": "10111011101A",
+	    "KEY_GREEN": "10111011110A",
+	    "KEY_YELLOW": "10111011111A",
+	    "KEY_BLUE": "10111101001A",
+	    "KEY_PREVIOUS": "10111001110A",
+	    "KEY_NEXT": "10111100110A",
+	    "KEY_3play": "10111101011A"
 	}
     }
 }

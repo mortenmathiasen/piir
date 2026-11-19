@@ -1,6 +1,6 @@
 {
     "description": "Philips_RC8601_01-TUNER (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RC8601_01.lircd.conf", "remote": "Philips_RC8601_01-TUNER", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RC8601_01.lircd.conf", "remote": "Philips_RC8601_01-TUNER", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -10,8 +10,8 @@
 	"C": {"mark": 932, "space": 1686},
 	"D": {"mark": 969, "space": 843},
 	"E": {"mark": 932, "space": 0},
-	"F": {"mark": 1864, "space": 0},
-	"G": {"mark": 1864, "space": 1686},
+	"F": {"mark": 1864, "space": 1686},
+	"G": {"mark": 1864, "space": 0},
 	"-": {"mark": 0, "space": 0}
     },
     "template": "------------",
@@ -20,18 +20,37 @@
 	    "KEY_SLEEP": "DAABACBCABE",
 	    "KEY_0": "DAABACBAAAAE",
 	    "KEY_1": "DAABACBAAACE",
-	    "KEY_2": "DAABACBAACF",
+	    "KEY_2": "DAABACBAACG",
 	    "KEY_3": "DAABACBAACAE",
 	    "KEY_4": "DAABACBACBE",
-	    "KEY_5": "DAABACBACGE",
-	    "KEY_6": "DAABACBACAF",
+	    "KEY_5": "DAABACBACFE",
+	    "KEY_6": "DAABACBACAG",
 	    "KEY_7": "DAABACBACAAE",
 	    "KEY_8": "DAABACBCBAE",
 	    "KEY_9": "DAABACBCBCE",
 	    "KEY_NEXT": "DAABACABAAAE",
 	    "KEY_PREVIOUS": "DAABACABAACE",
-	    "KEY_FASTFORWARD": "DAABACGAAAF",
-	    "KEY_REWIND": "DAABACGAAAAE"
+	    "KEY_FASTFORWARD": "DAABACFAAAG",
+	    "KEY_REWIND": "DAABACFAAAAE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_SLEEP": "DFBACBCABE",
+	    "KEY_0": "DFBACBAAAAE",
+	    "KEY_1": "DFBACBAAACE",
+	    "KEY_2": "DFBACBAACG",
+	    "KEY_3": "DFBACBAACAE",
+	    "KEY_4": "DFBACBACBE",
+	    "KEY_5": "DFBACBACFE",
+	    "KEY_6": "DFBACBACAG",
+	    "KEY_7": "DFBACBACAAE",
+	    "KEY_8": "DFBACBCBAE",
+	    "KEY_9": "DFBACBCBCE",
+	    "KEY_NEXT": "DFBACABAAAE",
+	    "KEY_PREVIOUS": "DFBACABAACE",
+	    "KEY_FASTFORWARD": "DFBACFAAAG",
+	    "KEY_REWIND": "DFBACFAAAAE"
 	}
     }
 }

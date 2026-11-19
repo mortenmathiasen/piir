@@ -9,7 +9,7 @@ static char *CONFIGFILEPATH = 0;
 
 void unloadConfig() {
   if (ROOT_OBJECT) {
-    json_value_free((JSON_Value*)ROOT_OBJECT);
+    json_value_free(json_object_get_wrapping_value(ROOT_OBJECT));
     ROOT_OBJECT = 0;
   }
   if (CONFIGFILEPATH) {
@@ -77,6 +77,16 @@ size_t getFeatureValuesCount(size_t nameIndex) {
 const char * getFeatureValueName(size_t nameIndex, size_t valueIndex) {
   JSON_Object *feature_object = getFeatureObject(nameIndex);
   return json_object_get_name(feature_object, valueIndex);
+}
+
+int getFeatureIndex(const char *featureName, size_t *index) {
+  size_t featuresCount = getAllFeaturesCount();
+  for (size_t i = 0 ; i < featuresCount ; i++)
+    if (strcmp(featureName, getFeatureName(i)) == 0) {
+      *index = i;
+      return true;
+    }
+  return false;
 }
 
 int hasFeatureNameAndValue(const char *featureName, const char *featureValue) {
@@ -182,36 +192,49 @@ void loadConfigSymbols(symbolDefinition configSymbols[]) {
   }
 }
 
+// Apply the requested features to the template. features holds up to
+// getAllFeaturesCount() entries, unused ones with a NULL value. Features are
+// applied in the order of the configuration file, so a feature defined later
+// (e.g. an option forcing a fan speed) overrides an earlier one regardless of
+// the order they were requested in. If a feature is requested more than once,
+// the last request is used.
 void loadFeaturedCode(const featureT *features,
 		      char **featuredCode)
-{  
-  //Load root object
-  JSON_Object *ROOT_OBJECT = getRootObject();
-
-  //Apply requested features to symbol string
+{
   const char *templateCode = 0;
   loadTemplateCode(&templateCode);
+  if (!templateCode) {
+    log_error("JSON file %s has no template", CONFIGFILEPATH);
+    templateCode = "";
+  }
   size_t templateStrLength = strlen(templateCode);
   *featuredCode = strdup(templateCode);
-  JSON_Object *features_object = json_object_get_object(ROOT_OBJECT, "features");
-  size_t featuresArrayLength = json_object_get_count(features_object);
-  for (size_t featureNumber=0 ; featureNumber<featuresArrayLength && features ; featureNumber++) {
-    const char *featureValue = features[featureNumber].value;
+  if (!features)
+    return;
+
+  JSON_Object *features_object = getAllFeaturesObject();
+  size_t featuresCount = json_object_get_count(features_object);
+  for (size_t configIndex = 0 ; configIndex < featuresCount ; configIndex++) {
+    const char *featureName = json_object_get_name(features_object, configIndex);
+    const char *featureValue = 0;
+    for (size_t i = 0 ; i < featuresCount ; i++)
+      if (features[i].name && features[i].value && strcmp(features[i].name, featureName) == 0)
+	featureValue = features[i].value;
     if (!featureValue)
       continue;
-    const char *featureName = features[featureNumber].name;
-    char *featureValuePath = calloc(strlen(featureName)+strlen(featureValue)+2, 2);
-    strcpy(featureValuePath, featureName);
-    strcat(featureValuePath, ".");
-    strcat(featureValuePath, featureValue);
-    const char *featureString = json_object_dotget_string(features_object, featureValuePath);
-    free(featureValuePath);
+
+    JSON_Object *feature_object = json_object_get_object(features_object, featureName);
+    const char *featureString = json_object_get_string(feature_object, featureValue);
+    if (!featureString) {
+      log_error("Feature '%s'='%s' not found in %s", featureName, featureValue, CONFIGFILEPATH);
+      continue;
+    }
     size_t featureStrLength = strlen(featureString);
     if (featureStrLength!=templateStrLength) {
-      log_warn("Length of feature code '%s' does match 'template' length %zu",
+      log_warn("Length of feature code '%s' does not match 'template' length %zu",
   		featureString, templateStrLength);
     }
-    for (int charNumber=0 ; charNumber<featureStrLength && charNumber<templateStrLength ; charNumber++) {
+    for (size_t charNumber=0 ; charNumber<featureStrLength && charNumber<templateStrLength ; charNumber++) {
       if (featureString[charNumber]!=' ')
       	(*featuredCode)[charNumber] = featureString[charNumber];
     }

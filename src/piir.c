@@ -285,6 +285,8 @@ int main(int argc, char *argv[])
   // Remote specific plugin
   const char *plugin = 0;
   loadPlugin(&plugin);
+  if (!plugin)
+    plugin = legacyRemotePlugin(configfilepath);
   if (applyRemotePlugin(plugin, symbolString)) {
     printf("Unknown plugin '%s' in %s\n", plugin, configfilepath);
     exit(EXIT_FAILURE);

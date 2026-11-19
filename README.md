@@ -28,6 +28,7 @@ piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
       - [Cross compiling for Raspberry Pi](#cross-compiling-for-raspberry-pi)
     + [Testing](#testing)
     + [Releases](#releases)
+    + [Upgrading from PIIR 1.x](#upgrading-from-piir-1x)
   * [How to use](#how-to-use)
   * [Remotes](#remotes)
     + [Choosing the remotes of an installation](#choosing-the-remotes-of-an-installation)
@@ -202,6 +203,17 @@ git tag v2.1.0
 git push origin v2.1.0
 ```
 GitHub Actions then runs all tests, builds the packages for every Raspberry Pi architecture and the archive of all remotes (`piir-remotes-<version>.tar.gz`), and publishes them with checksums as a GitHub release.
+
+### Upgrading from PIIR 1.x
+
+The command line options and remote files of PIIR 1.x still work. These things changed:
+
+* **Build system.** PIIR is built with CMake instead of autotools: `./autogen.sh && ./configure && make && sudo make install` becomes `cmake -B build && cmake --build build && sudo cmake --install build`. The default installation prefix is still `/usr/local`.
+* **Transmitter.** PIIR 1.x always used pigpio. PIIR 2 prefers the Linux kernel IR driver, which works on every Raspberry Pi including Pi 5, but needs `dtoverlay=gpio-ir-tx,gpio_pin=17` in `/boot/firmware/config.txt` (see [Compilation](#compilation)). The overlay sets the GPIO pin, so `outpin` in a remote file is not used by this backend. Without the overlay PIIR stops with `Cannot open /dev/lirc0`. To keep using pigpio and `outpin`, build with `-DPIIR_GPIO_BACKEND=pigpio` (this does not compile in release 2.0.0; use a later release).
+* **Exit codes and output.** On errors and after `--help`, PIIR 1.x aborted (exit code 134); PIIR 2 exits with 1. The `gpioWaveTxSend OK` line is only printed by the pigpio backend.
+* **Remote locations.** The remotes shipped with PIIR are in manufacturer directories, e.g. `conf/remotes/panasonic/hvac_panasonic.json`. Your own remotes directly in `conf/remotes/` are still found, and `--remote hvac_panasonic` still works. Release packages contain only PIIR's own remotes; add others with [piir-remotes](#choosing-the-remotes-of-an-installation).
+* **Plugins.** A remote now names its plugin, e.g. `"plugin": "hvac_panasonic"`. Remote files without this setting whose path contains `hvac_panasonic` still get the Panasonic checksum, as in PIIR 1.x.
+* **Codes sent.** PIIR 1.x only applied the last `--feature` given; PIIR 2 applies all of them, in the order of the remote file (see [How to use](#how-to-use)). For `hvac_panasonic`, `mode=FAN` now sends the fixed 27 degrees and `option=QUIET`, `option=8` and `option=10` override the fan speed and mode, as the original remote does. The same command can therefore send a different, correct code than PIIR 1.x.
 
 ## How to use
 

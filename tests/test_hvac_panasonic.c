@@ -65,10 +65,18 @@ static void test_plugin_dispatch(void) {
   free(code);
 }
 
+static void test_legacy_plugin(void) {
+  CHECK_EQ_STR("hvac_panasonic", legacyRemotePlugin("/home/pi/conf/remotes/hvac_panasonic.json"));
+  CHECK_EQ_STR("hvac_panasonic", legacyRemotePlugin("my_hvac_panasonic_copy.json"));
+  CHECK(legacyRemotePlugin("/usr/share/piir/conf/remotes/sony/RM-ED011.json") == NULL);
+  CHECK(legacyRemotePlugin(NULL) == NULL);
+}
+
 int main(void) {
   RUN_TEST(test_restores_checksum);
   RUN_TEST(test_idempotent);
   RUN_TEST(test_checksum_follows_payload);
   RUN_TEST(test_plugin_dispatch);
+  RUN_TEST(test_legacy_plugin);
   return TEST_RESULT();
 }

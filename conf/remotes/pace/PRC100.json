@@ -1,0 +1,45 @@
+{
+    "description": "pace (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pace/PRC100.lircd.conf", "remote": "pace", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 661, "space": 0},
+	"1": {"mark": 658, "space": 6930},
+	"0": {"mark": 658, "space": 4402},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_1": "001100000001A",
+	    "KEY_2": "001100000010A",
+	    "KEY_3": "001100000011A",
+	    "KEY_4": "001100000100A",
+	    "KEY_5": "001100000101A",
+	    "KEY_6": "001100000110A",
+	    "KEY_7": "001100000111A",
+	    "KEY_8": "001100001000A",
+	    "KEY_9": "001100001001A",
+	    "KEY_0": "001100000000A",
+	    "KEY_AGAIN": "001100011010A",
+	    "KEY_F": "001100011001A",
+	    "KEY_LEFT": "001100010110A",
+	    "KEY_MENU": "001100010111A",
+	    "KEY_RIGHT": "001100010001A",
+	    "KEY_I": "001100011111A",
+	    "KEY_FAVORITES": "001100001011A",
+	    "KEY_RADIO": "001100001111A",
+	    "STORE": "001100010011A",
+	    "NORM": "001100010101A",
+	    "KEY_MUTE": "001100011110A",
+	    "SHAPE": "001100001110A",
+	    "LEVEL": "001100010010A",
+	    "KEY_UP": "001100011000A",
+	    "DOLBY": "001100001100A",
+	    "EFFECT": "001100001101A",
+	    "KEY_VOLUMEDOWN": "001100011011A"
+	}
+    }
+}

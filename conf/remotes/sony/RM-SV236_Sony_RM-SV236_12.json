@@ -1,0 +1,41 @@
+{
+    "description": "Sony_RM-SV236_12 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-SV236.lircd.conf", "remote": "Sony_RM-SV236_12", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1265, "space": 0},
+	"B": {"mark": 664, "space": 0},
+	"H": {"mark": 2463, "space": 530},
+	"1": {"mark": 1265, "space": 532},
+	"0": {"mark": 664, "space": 532},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H10101000000A",
+	    "tv_power": "H10101001000B",
+	    "timer_set": "H10100110000A",
+	    "clock_select": "H01000110000A",
+	    "KEY_SLEEP": "H00000110000A",
+	    "tv+": "H00001001000B",
+	    "tv-": "H10001001000B",
+	    "tv_vol+": "H01001001000B",
+	    "tv_vol-": "H11001001000B",
+	    "KEY_TAPE": "H11000100000A",
+	    "md": "H10010110000A",
+	    "KEY_TUNER": "H11110000000A",
+	    "game": "H00111110000A",
+	    "KEY_CD": "H10100100000A",
+	    "KEY_VOLUMEUP": "H01001000000A",
+	    "KEY_VOLUMEDOWN": "H11001000000A",
+	    "dimmer": "H10110010000A",
+	    "karaoke_mpx": "H11111010000A",
+	    "effect_on_off": "H11111000000A",
+	    "display": "H11010010000A",
+	    "tv_video": "H10100101000B"
+	}
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "description": "H+H_8in1 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/harting_helling/H+H_8in1.lircd.conf", "remote": "H+H_8in1", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 517, "space": 377},
+	"B": {"mark": 517, "space": 754},
+	"C": {"mark": 1034, "space": 754},
+	"D": {"mark": 1034, "space": 377},
+	"E": {"mark": 517, "space": 0},
+	"F": {"mark": 1034, "space": 0},
+	"H": {"mark": 2765, "space": 792},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "1-DVD": "HBAABDAAAACAAAAAAAAF",
+	    "2-DVD": "HBAABDAAAACAAAAAAACE",
+	    "3-DVD": "HBAABDAAAACAAAAAAADE",
+	    "4-DVD": "HBAABDAAAACAAAAAACAE",
+	    "5-DVD": "HBAABDAAAACAAAAAACF",
+	    "6-DVD": "HBAABDAAAACAAAAAADBE",
+	    "7-DVD": "HBAABDAAAACAAAAAADAE",
+	    "8-DVD": "HBAABDAAAACAAAAACAAE",
+	    "9-DVD": "HBAABDAAAACAAAAACAF",
+	    "0-DVD": "HBAABDAAAACAAAAAAAAAE",
+	    "11-DVD": "HBAABDAAAACAADAABAAE",
+	    "R-DVD": "HBAABDAAAACACAAACF",
+	    "AV/TV-DVD": "HBAABDAAAACAACAAADE",
+	    "OK-DVD": "HBAABDAAAACAACDABAE",
+	    "LEFT-DVD": "HBAABDAAAACAACDBCE",
+	    "RIGHT-DVD": "HBAABDAAAACAACDBDE",
+	    "UP-DVD": "HBAABDAAAACAACDBAAE",
+	    "DOWN-DVD": "HBAABDAAAACAACDBAF",
+	    "PAUSE-DVD": "HBAABDAAAACAAADBAAAE",
+	    "STOP-DVD": "HBAABDAAAACAAADBAAF",
+	    "KEY_REWIND": "HBAABDAAAACAAACAAAF",
+	    "KEY_PLAY": "HBAABDAAAACAAACDBAE",
+	    "FWD-DVD": "HBAABDAAAACAAACAAAAE",
+	    "KEY_RECORD": "HBAABDAAAACADBCCF",
+	    "CH+-DVD": "HBAABDAAAACAAACAAAAE",
+	    "LCR-DVD": "HBAABDAAAACACAAAADE",
+	    "MUTE-DVD": "HBAABDAAAACAAAAADBF",
+	    "KEY_POWER": "HBAABDAAAACAAAAADBAE"
+	}
+    }
+}

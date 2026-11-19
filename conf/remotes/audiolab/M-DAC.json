@@ -1,0 +1,32 @@
+{
+    "description": "audiolab (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/audiolab/M-DAC.conf", "remote": "audiolab", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 569, "space": 0},
+	"H": {"mark": 8992, "space": 4468},
+	"1": {"mark": 574, "space": 1661},
+	"0": {"mark": 574, "space": 544},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_MUTE": "H00000100111110110000100011110111A",
+	    "KEY_PLAY": "H00000100111110111001000001101111A",
+	    "KEY_STOP": "H00000100111110111011000001001111A",
+	    "KEY_PREVIOUSSONG": "H00000100111110110000001011111101A",
+	    "KEY_NEXTSONG": "H00000100111110111110100000010111A",
+	    "KEY_LEFT": "H00000100111110110001001011101101A",
+	    "KEY_RIGHT": "H00000100111110110100100010110111A",
+	    "KEY_EQUAL": "H00000100111110110010000011011111A",
+	    "KEY_MENU": "H00000100111110110110100010010111A",
+	    "KEY_VOLUMEUP": "H00000100111110110000000011111111A",
+	    "KEY_VOLUMEDOWN": "H00000100111110111000100001110111A",
+	    "KEY_CHANNELUP": "H00000100111110110011001011001101A",
+	    "KEY_CHANNELDOWN": "H00000100111110111101100000100111A"
+	}
+    }
+}

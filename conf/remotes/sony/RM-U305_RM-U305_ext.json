@@ -1,0 +1,28 @@
+{
+    "description": "RM-U305_ext (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-U305.lircd.conf", "remote": "RM-U305_ext", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1208, "space": 0},
+	"B": {"mark": 616, "space": 0},
+	"H": {"mark": 2397, "space": 587},
+	"1": {"mark": 1208, "space": 569},
+	"0": {"mark": 616, "space": 569},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "DISC": "H01010011000AVVWWWWWXXXXXXXYYYYYZH01010011000AVVWWWWWXXXXXXXYYYYYZH01010011000A",
+	    "TV/VIDEO": "H10100101000BVVWWWWWWXXXYYYYZZZH10100101000BVVWWWWWWXXXYYYYZZZH10100101000B",
+	    "MULTICH/2CH": "H10010010000AVVWWWWWWXXXYYYYZZZH10010010000AVVWWWWWWXXXYYYYZZZH10010010000A"
+	}
+    }
+}

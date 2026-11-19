@@ -1,0 +1,30 @@
+{
+    "description": "RC-334E (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/nec/RC-334E.lircd.conf", "remote": "RC-334E", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 550, "space": 0},
+	"H": {"mark": 8800, "space": 4400},
+	"1": {"mark": 550, "space": 1650},
+	"0": {"mark": 550, "space": 550},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H00011000100101110001000011101111A",
+	    "OFF": "H00011000100101110010100011010111A",
+	    "KEY_VIDEO": "H00011000100101111100000000111111A",
+	    "RGB_1": "H00011000100101110010000011011111A",
+	    "RGB_2": "H00011000100101111010000001011111A",
+	    "RGB_MODE": "H00011000100101111011001001001101A",
+	    "RESET": "H00011000100101111100001000111101A",
+	    "ON_SCR_MANA_MENU": "H00011000100101110110001010011101A",
+	    "ON_SCR_MANA_-": "H00011000100101111011101001000101A",
+	    "ON_SCR_MANA_+": "H00011000100101110011101011000101A",
+	    "ON_SCR_MANA_SET_UP": "H00011000100101110110000010011111A"
+	}
+    }
+}

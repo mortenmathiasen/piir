@@ -1,0 +1,40 @@
+{
+    "description": "Cambridge_X40A_Amplifier (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/cambridge_audio/X40A.lircd.conf", "remote": "Cambridge_X40A_Amplifier", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 36000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 889, "space": 889},
+	"B": {"mark": 1778, "space": 889},
+	"C": {"mark": 889, "space": 1778},
+	"D": {"mark": 889, "space": 0},
+	"E": {"mark": 1778, "space": 1778},
+	"F": {"mark": 1778, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "Tape_Mon": "AAABAAAAAAAAD",
+	    "KEY_DVD": "AAABAAAAAAACD",
+	    "AV_MD": "AAABAAAAAACF",
+	    "Tuner_DAB": "AAABAAAAAACAD",
+	    "Aux_Phono": "AAABAAAAACBD",
+	    "KEY_CD": "AAABAAAAACED",
+	    "KEY_SLEEP": "AAABAAAACABD",
+	    "KEY_MUTE": "AAABAAAACAED",
+	    "KEY_POWER": "AAABAAAACAAF",
+	    "KEY_POWER2": "AAABAAAACAAAD",
+	    "KEY_VOLUMEUP": "AAABAAACBAAD",
+	    "KEY_VOLUMEDOWN": "AAABAAACBACD",
+	    "Brightness": "AAABAAACBCF",
+	    "Source_Up": "AAABAAACBCAD",
+	    "Source_Down": "AAABAAACEBD",
+	    "Clip_Off": "AAABAAACEED",
+	    "Clip_On": "AAABAAACEAF",
+	    "Mute_On": "AAABAACABCF",
+	    "Mute_Off": "AAABAACABCAD"
+	}
+    }
+}

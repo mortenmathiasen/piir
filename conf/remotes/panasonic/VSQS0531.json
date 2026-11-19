@@ -1,0 +1,31 @@
+{
+    "description": "Panasonic_VSQS0531 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/panasonic/VSQS0531.lircd.conf", "remote": "Panasonic_VSQS0531", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 300, "space": 0},
+	"H": {"mark": 300, "space": 4124},
+	"1": {"mark": 300, "space": 3271},
+	"0": {"mark": 300, "space": 1583},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H0100000000110111111110A",
+	    "vcr/tv": "H0100001010110111101010A",
+	    "KEY_CHANNELDOWN": "H0100011000110111001110A",
+	    "KEY_CHANNELUP": "H0100001000110111101110A",
+	    "KEY_RECORD": "H0100000010010111111011A",
+	    "KEY_PAUSE": "H0100001100010111100111A",
+	    "f_adv": "H0100000110010111110011A",
+	    "KEY_PLAY": "H0100001010010111101011A",
+	    "KEY_STOP": "H0100000000010111111111A",
+	    "KEY_REWIND": "H0100001000010111101111A",
+	    "KEY_FASTFORWARD": "H0100011000010111001111A",
+	    "x2": "H0100001110010111100011A"
+	}
+    }
+}

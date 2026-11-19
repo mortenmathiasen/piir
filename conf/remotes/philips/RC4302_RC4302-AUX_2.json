@@ -1,0 +1,50 @@
+{
+    "description": "RC4302-AUX (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC4302.lircd.conf", "remote": "RC4302-AUX", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 931, "space": 857},
+	"B": {"mark": 1862, "space": 857},
+	"C": {"mark": 931, "space": 1714},
+	"D": {"mark": 1862, "space": 1714},
+	"E": {"mark": 973, "space": 857},
+	"F": {"mark": 931, "space": 0},
+	"G": {"mark": 1862, "space": 0},
+	"I": {"mark": 1904, "space": 1714},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "onoff": "EAADBAACABF",
+	    "pixelplus": "EAADBCADBF",
+	    "showtime": "EAADBCABCG",
+	    "surroundmode": "EAADBCADAG",
+	    "cinemago": "EAADBCADDF",
+	    "nexTView": "EAADBCABAAF",
+	    "vol_up": "EAABAAACBAAF",
+	    "vol_down": "EAABAAACBACF",
+	    "mute": "EAABAAAACADF",
+	    "prog_up": "EAADBCBAAAF",
+	    "prog_down": "EAADBCBAACF",
+	    "1": "EAADBAAAAACF",
+	    "2": "EAADBAAAACG",
+	    "3": "EAADBAAAACAF",
+	    "4": "EAADBAAACBF",
+	    "5": "EAADBAAACDF",
+	    "6": "EAADBAAACAG",
+	    "7": "EAADBAAACAAF",
+	    "8": "EAADBAACBAF",
+	    "9": "EAADBAACBCF",
+	    "0": "EAADBAAAAAAF",
+	    "info": "EAADBAACDAF",
+	    "ptop": "EAADBCAADAF",
+	    "cur_up": "IADBCABCG",
+	    "cur_down": "IADBCABCAF",
+	    "cur_left": "EAADBCBAACF",
+	    "cur_right": "EAADBCBAAAF"
+	}
+    }
+}

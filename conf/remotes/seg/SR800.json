@@ -1,0 +1,42 @@
+{
+    "description": "SR800 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/seg/SR800.lircd.conf", "remote": "SR800", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 880, "space": 894},
+	"B": {"mark": 1760, "space": 894},
+	"C": {"mark": 880, "space": 1788},
+	"D": {"mark": 903, "space": 894},
+	"E": {"mark": 880, "space": 0},
+	"F": {"mark": 1760, "space": 0},
+	"G": {"mark": 1760, "space": 1788},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_0": "DABCBAAAAAAE",
+	    "KEY_1": "DABCBAAAAACE",
+	    "KEY_2": "DABCBAAAACF",
+	    "KEY_3": "DABCBAAAACAE",
+	    "KEY_4": "DABCBAAACBE",
+	    "KEY_5": "DABCBAAACGE",
+	    "KEY_6": "DABCBAAACAF",
+	    "KEY_7": "DABCBAAACAAE",
+	    "KEY_8": "DABCBAACBAE",
+	    "KEY_9": "DABCBAACBCE",
+	    "KEY_M": "DABCBAACGAE",
+	    "KEY_POWER": "DABCBAACABE",
+	    "KEY_MUTE": "DABCBAACAAF",
+	    "A/S": "DABCBAACAAAE",
+	    "KEY_KPPLUS": "DABCBACBAAE",
+	    "KEY_KPMINUS": "DABCBACBACE",
+	    "KEY_CHANNELUP": "DABCBACBCF",
+	    "KEY_CHANNELDOWN": "DABCBACBCAE",
+	    "KEY_OK": "DABCBACAAAF",
+	    "AFC": "DABCBACAABE"
+	}
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "description": "CD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pioneer/CU-VSX107.lircd.conf", "remote": "CD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 513, "space": 0},
+	"H": {"mark": 8497, "space": 4302},
+	"1": {"mark": 512, "space": 1620},
+	"0": {"mark": 512, "space": 554},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "cdstop": "H01000101101110100110100010010111A",
+	    "cdplay": "H01000101101110101110100000010111A",
+	    "cd<<": "H01000101101110101000100001110111A",
+	    "cd>>": "H01000101101110100000100011110111A",
+	    "cddisc-": "H01000101101110101000001101111100A",
+	    "cddisc+": "H01000101101110101011100001000111A",
+	    "cdpower": "H01000101101110100011100011000111A"
+	}
+    }
+}

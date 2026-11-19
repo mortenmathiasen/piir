@@ -1,0 +1,52 @@
+{
+    "description": "Aiwa_DVD_Philips_Code_0140 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/32PFL9613D.lircd.conf", "remote": "Aiwa_DVD_Philips_Code_0140", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 500, "space": 0},
+	"B": {"mark": 1629, "space": 0},
+	"H": {"mark": 1623, "space": 615},
+	"1": {"mark": 1629, "space": 622},
+	"0": {"mark": 500, "space": 622},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H100000000B",
+	    "KEY_SUBTITLE": "H110010110A",
+	    "KEY_RED": "H101111000B",
+	    "KEY_GREEN": "H111001000A",
+	    "KEY_YELLOW": "H110111000A",
+	    "KEY_BLUE": "H111010110A",
+	    "KEY_EPG": "H110110000A",
+	    "KEY_INFO": "H100001000B",
+	    "KEY_OK": "H101000110B",
+	    "KEY_BACK": "H110100100A",
+	    "KEY_MENU": "H110000110A",
+	    "KEY_UP": "H100100110B",
+	    "KEY_DOWN": "H110100110A",
+	    "KEY_LEFT": "H111100110A",
+	    "KEY_RIGHT": "H101100110B",
+	    "KEY_REWIND": "H101101100B",
+	    "KEY_PLAYPAUSE": "H110101000A",
+	    "KEY_FORWARD": "H110101100A",
+	    "KEY_STOP": "H101011000B",
+	    "KEY_RECORD": "H111110110A",
+	    "KEY_CHANNELUP": "H100011000B",
+	    "KEY_CHANNELDOWN": "H110011000A",
+	    "KEY_1": "H110000000A",
+	    "KEY_2": "H101000000B",
+	    "KEY_3": "H111000000A",
+	    "KEY_4": "H100100000B",
+	    "KEY_5": "H110100000A",
+	    "KEY_6": "H101100000B",
+	    "KEY_7": "H111100000A",
+	    "KEY_8": "H100010000B",
+	    "KEY_9": "H110010000A",
+	    "KEY_0": "H101010000B"
+	}
+    }
+}

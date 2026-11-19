@@ -1,0 +1,48 @@
+{
+    "description": "RM-D720 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-D720.lircd.conf", "remote": "RM-D720", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1163, "space": 0},
+	"H": {"mark": 2362, "space": 635},
+	"1": {"mark": 1163, "space": 635},
+	"0": {"mark": 564, "space": 635},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "CONTINUE": "H10111001000A",
+	    "SHUFFLE": "H10101101000A",
+	    "PROGRAM": "H11111001000A",
+	    "KEY_1": "H00000001000A",
+	    "KEY_2": "H10000001000A",
+	    "KEY_3": "H01000001000A",
+	    "KEY_4": "H11000001000A",
+	    "KEY_5": "H00100001000A",
+	    "KEY_6": "H10100001000A",
+	    "KEY_7": "H01100001000A",
+	    "KEY_8": "H11100001000A",
+	    "KEY_9": "H00010001000A",
+	    ">10": "H11100101000A",
+	    "KEY_0": "H00000101000A",
+	    "KEY_CLEAR": "H11110001000A",
+	    "KEY_TIME": "H00010101000A",
+	    "CHECK": "H10110001000A",
+	    "KEY_AGAIN": "H00110101000A",
+	    "A<->B": "H01010101000A",
+	    "FADER": "H11111011000A",
+	    "KEY_PLAY": "H01001101000A",
+	    "KEY_PAUSE": "H10011101000A",
+	    "KEY_STOP": "H00011101000A",
+	    "SEEK_PREV": "H00001101000A",
+	    "SEEK_NEXT": "H10001101000A",
+	    "KEY_KPPLUS": "H01001001000A",
+	    "SEEK_BACK": "H11001101000A",
+	    "SEEK_FWD": "H00101101000A",
+	    "KEY_KPMINUS": "H11001001000A"
+	}
+    }
+}

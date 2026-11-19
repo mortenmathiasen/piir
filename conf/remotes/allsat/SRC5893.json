@@ -1,0 +1,42 @@
+{
+    "description": "sat (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/allsat/SRC5893.lircd.conf", "remote": "sat", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 940, "space": 840},
+	"B": {"mark": 1880, "space": 840},
+	"C": {"mark": 1880, "space": 1680},
+	"D": {"mark": 940, "space": 1680},
+	"E": {"mark": 940, "space": 0},
+	"F": {"mark": 1880, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_0": "AACBAAAAAAAE",
+	    "KEY_1": "AACBAAAAAADE",
+	    "KEY_2": "AACBAAAAADF",
+	    "KEY_3": "AACBAAAAADAE",
+	    "KEY_4": "AACBAAAADBE",
+	    "KEY_5": "AACBAAAADCE",
+	    "KEY_6": "AACBAAAADAF",
+	    "KEY_7": "AACBAAAADAAE",
+	    "KEY_8": "AACBAAADBAE",
+	    "KEY_9": "AACBAAADBDE",
+	    "KEY_102ND": "AACBAAADCF",
+	    "KEY_POWER": "AACBAAADABE",
+	    "KEY_MUTE": "AACBAAADACE",
+	    "i-ii": "AACBADBADAE",
+	    "KEY_MODE": "AACBAAADCAE",
+	    "KEY_CHANNELUP": "AACBADBAAAE",
+	    "KEY_CHANNELDOWN": "AACBADBAADE",
+	    "KEY_AGAIN": "AACBADBADF",
+	    "KEY_SEARCH": "AACBAADAAAF",
+	    "ext": "AACBADBDBE",
+	    "store": "AACBADACAAE"
+	}
+    }
+}

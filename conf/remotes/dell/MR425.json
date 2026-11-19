@@ -1,0 +1,40 @@
+{
+    "description": "Dell_XPS_Remote_MR425 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/dell/MR425.lircd.conf", "remote": "Dell_XPS_Remote_MR425", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 468, "space": 422},
+	"B": {"mark": 468, "space": 844},
+	"C": {"mark": 936, "space": 844},
+	"D": {"mark": 936, "space": 422},
+	"E": {"mark": 1404, "space": 844},
+	"F": {"mark": 468, "space": 0},
+	"G": {"mark": 936, "space": 0},
+	"H": {"mark": 2713, "space": 866},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "HAABBEAAAAAAAAADABAAACCDBAACAAAF",
+	    "KEY_VOLUMEDOWN": "HAABBEAAAAAAAAADABAAACCDBAACAAG",
+	    "vol_off": "HAABBEAAAAAAAAADABAAACCDBAAADBG",
+	    "KEY_UP": "HAABBEAAAAAAAAADABAAACCDAABADABF",
+	    "KEY_DOWN": "HAABBEAAAAAAAAADABAAACCDAABADAAF",
+	    "cross_up": "HAABBEAAAAAAAAADABAAACCDBCDBAAF",
+	    "cross_down": "HAABBEAAAAAAAAADABAAACCDBCDBAG",
+	    "cross_left": "HAABBEAAAAAAAAADABAAACCDBCDBCF",
+	    "cross_right": "HAABBEAAAAAAAAADABAAACCDBCDBDF",
+	    "cross_enter": "HAABBEAAAAAAAAADABAAACCDBCDABAF",
+	    "KEY_BACK": "HAABBEAAAAAAAAADABAAACCDABCACAF",
+	    "KEY_REWIND": "HAABBEAAAAAAAAADABAAACCDBACDAAF",
+	    "KEY_FORWARD": "HAABBEAAAAAAAAADABAAACCDBACDABF",
+	    "KEY_PLAYPAUSE": "HAABBEAAAAAAAAADABAAACCDBACDBAF",
+	    "KEY_PREVIOUS": "HAABBEAAAAAAAAADABAAACCDBACAAAG",
+	    "KEY_NEXT": "HAABBEAAAAAAAAADABAAACCDBACAAAAF",
+	    "KEY_STOP": "HAABBEAAAAAAAAADABAAACCDBADBAAG"
+	}
+    }
+}

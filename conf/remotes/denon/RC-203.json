@@ -1,0 +1,44 @@
+{
+    "description": "Denon_RC-203 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/denon/RC-203.lircd.conf", "remote": "Denon_RC-203", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 269, "space": 0},
+	"1": {"mark": 269, "space": 1837},
+	"0": {"mark": 269, "space": 784},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_1": "000100100001000A",
+	    "KEY_2": "000101100001000A",
+	    "KEY_3": "000100010001000A",
+	    "KEY_4": "000101010001000A",
+	    "KEY_5": "000100110001000A",
+	    "KEY_6": "000101110001000A",
+	    "KEY_7": "000100001001000A",
+	    "KEY_8": "000101001001000A",
+	    "KEY_9": "000100101001000A",
+	    "KEY_0": "000101101001000A",
+	    "KEY_10CHANNELSUP": "000100011001000A",
+	    "prog_direct": "000101011001000A",
+	    "KEY_TIME": "000101100101000A",
+	    "KEY_AGAIN": "000100010101000A",
+	    "auto_space": "000101000011000A",
+	    "auto_edit": "000101100011000A",
+	    "bwd": "000101101101000A",
+	    "KEY_FORWARD": "000100101101000A",
+	    "KEY_PREVIOUS": "000101001101000A",
+	    "KEY_NEXT": "000100001101000A",
+	    "KEY_OPEN": "000100000101000A",
+	    "KEY_PLAY": "000100011101000A",
+	    "KEY_PAUSE": "000101011101000A",
+	    "KEY_STOP": "000100111101000A",
+	    "KEY_VOLUMEDOWN": "000101111001000A",
+	    "KEY_VOLUMEUP": "000100111001000A"
+	}
+    }
+}

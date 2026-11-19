@@ -1,0 +1,43 @@
+{
+    "description": "DualRC500 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/dual/RC500.lircd.conf", "remote": "DualRC500", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 921, "space": 854},
+	"B": {"mark": 1842, "space": 854},
+	"C": {"mark": 1842, "space": 1708},
+	"D": {"mark": 921, "space": 1708},
+	"E": {"mark": 934, "space": 854},
+	"F": {"mark": 921, "space": 0},
+	"G": {"mark": 1842, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_STOP": "EAACBDACAG",
+	    "KEY_PAUSE": "EAACBDABAAF",
+	    "KEY_PLAY": "EAACBDACCF",
+	    "Scan": "EAACBDCCAF",
+	    "<<_track": "EAACBDBAADF",
+	    "track_>>": "EAACBDBAAAF",
+	    "Shuffle": "EAACBADAABF",
+	    "<<_search": "EAACBDABDG",
+	    "search_>>": "EAACBDACBF",
+	    "KEY_1": "EAACBAAAAADF",
+	    "KEY_2": "EAACBAAAADG",
+	    "KEY_3": "EAACBAAAADAF",
+	    "KEY_4": "EAACBAAADBF",
+	    "KEY_5": "EAACBAAADCF",
+	    "KEY_6": "EAACBAAADAG",
+	    "KEY_7": "EAACBAAADAAF",
+	    "KEY_8": "EAACBAADBAF",
+	    "KEY_9": "EAACBAADBDF",
+	    "KEY_0": "EAACBAAAAAAF",
+	    "PGRM": "EAACBDCBDF",
+	    "KEY_AGAIN": "EAACBADAACF"
+	}
+    }
+}

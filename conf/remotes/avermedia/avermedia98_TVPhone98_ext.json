@@ -1,0 +1,23 @@
+{
+    "description": "TVPhone98_ext (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/avermedia/avermedia98.lircd.conf", "remote": "TVPhone98_ext", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 620, "space": 0},
+	"H": {"mark": 9078, "space": 4437},
+	"1": {"mark": 615, "space": 1631},
+	"0": {"mark": 615, "space": 515},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_BLUE": "H11000000001111110000000011111111A",
+	    "KEY_GREEN": "H11000000001111111000000001111111A",
+	    "KEY_CHANNELDOWN": "H11000000001111110100000010111111A",
+	    "KEY_CHANNELUP": "H11000000001111111100000000111111A"
+	}
+    }
+}

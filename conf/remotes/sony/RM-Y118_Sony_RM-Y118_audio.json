@@ -1,0 +1,23 @@
+{
+    "description": "Sony_RM-Y118_audio (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-Y118.lircd.conf", "remote": "Sony_RM-Y118_audio", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 40000,
+    "dutycycle": 0.33,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1200, "space": 0},
+	"H": {"mark": 2400, "space": 600},
+	"1": {"mark": 1200, "space": 600},
+	"0": {"mark": 600, "space": 600},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_AUDIO": "H00111110010010AVWWWWWWWWWXXXXXXXXH00111110010010AVWWWWWWWWWXXXXXXXXH00111110010010A"
+	}
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "description": "Philips_5300 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC5300.lircd.conf", "remote": "Philips_5300", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 948, "space": 829},
+	"B": {"mark": 1896, "space": 829},
+	"C": {"mark": 948, "space": 1658},
+	"D": {"mark": 991, "space": 829},
+	"E": {"mark": 948, "space": 0},
+	"F": {"mark": 1896, "space": 1658},
+	"G": {"mark": 1896, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACG",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACFE",
+	    "KEY_6": "DABAAAAAACAG",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "KEY_1-": "DABAAAAACFG",
+	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
+	    "KEY_VOLUMEUP": "DABAAAACBAAE",
+	    "KEY_MUTE": "DABAAAAACAFE",
+	    "KEY_POWER": "DABAAAAACABE",
+	    "KEY_GREEN": "DABAAAAACAAG",
+	    "Contrast_down": "DABAAAACFFE",
+	    "Contrast_up": "DABAAAACFBE",
+	    "Brightness_down": "DABAAAACBCAE",
+	    "Brightness_up": "DABAAAACBCG",
+	    "Search_programm": "DABAAAACAAAG",
+	    "Skip_back": "DABAAACFABE",
+	    "Skip_forw": "DABAAACFAAG",
+	    "KEY_STOP": "DABAAACFBCE",
+	    "KEY_ENTER": "DABAAACFFG",
+	    "KEY_RECORD": "DABAAACAFAAE",
+	    "KEY_BACK": "DABAAACFAAAE",
+	    "KEY_PAUSE": "DABAAACAFAG",
+	    "KEY_PLAY": "DABAAACFBAE",
+	    "Forw": "DABAAACAFFE",
+	    "KEY_CLEAR": "DABAAACABCAE"
+	}
+    }
+}

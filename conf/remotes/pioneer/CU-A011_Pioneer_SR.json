@@ -1,0 +1,40 @@
+{
+    "description": "Pioneer_SR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pioneer/CU-A011.lircd.conf", "remote": "Pioneer_SR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 590, "space": 0},
+	"H": {"mark": 8569, "space": 4164},
+	"1": {"mark": 590, "space": 1512},
+	"0": {"mark": 590, "space": 451},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H01000101101110100011100011000111A",
+	    "KEY_POWER2": "H00100101110110100011100011000111A",
+	    "Power_Tape": "H10000101011110100011100011000111A",
+	    "TapeSelect": "H10000101011110100011001011001101A",
+	    "TapeDeck1_PlayReverse": "H10000101011110101101101000100101A",
+	    "TapeDeck1_Stop": "H10000101011110100011101011000101A",
+	    "TapeDeck1_Play": "H10000101011110101011101001000101A",
+	    "TapeDeck1_Rewind": "H10000101011110101110101000010101A",
+	    "TapeDeck1_FFwd": "H10000101011110100110101010010101A",
+	    "TapeDeck2_PlayReverse": "H10000101011110101010100001010111A",
+	    "TapeDeck2_Stop": "H10000101011110100110100010010111A",
+	    "TapeDeck2_Play": "H10000101011110101110100000010111A",
+	    "TapeDeck2_Rewind": "H10000101011110101000100001110111A",
+	    "TapeDeck2_FFwd": "H10000101011110100000100011110111A",
+	    "CD_SkipBack": "H01000101101110101000100001110111A",
+	    "CD_SkipNext": "H01000101101110100000100011110111A",
+	    "CD_Stop": "H01000101101110100110100010010111A",
+	    "CD_Play": "H01000101101110101110100000010111A",
+	    "CD_DiscSelect": "H01000101101110101011100001000111A",
+	    "Tuner_Station-": "H00100101110110101000100001110111A",
+	    "Tuner_Station+": "H00100101110110100000100011110111A"
+	}
+    }
+}

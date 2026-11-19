@@ -1,0 +1,30 @@
+{
+    "description": "Nubert_AW-800 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/nubert/AW-800.lircd.conf", "remote": "Nubert_AW-800", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 500, "space": 1200},
+	"B": {"mark": 450, "space": 1200},
+	"C": {"mark": 500, "space": 1150},
+	"D": {"mark": 1350, "space": 300},
+	"E": {"mark": 550, "space": 1150},
+	"F": {"mark": 500, "space": 0},
+	"G": {"mark": 1350, "space": 350},
+	"I": {"mark": 550, "space": 1100},
+	"J": {"mark": 1300, "space": 350},
+	"K": {"mark": 1300, "space": 400},
+	"L": {"mark": 1400, "space": 300},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "vol_down": "GCEDEABAJABF",
+	    "vol_up": "DEADACACADAF",
+	    "freq_down": "LIEDACAKBABF",
+	    "freq_up": "GCEDACGABABF"
+	}
+    }
+}

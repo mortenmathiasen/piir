@@ -1,0 +1,27 @@
+{
+    "description": "GVC_RM-RK50 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/gvc/RM-RK50.lircd.conf", "remote": "GVC_RM-RK50", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 580, "space": 0},
+	"1": {"mark": 586, "space": 1505},
+	"0": {"mark": 586, "space": 471},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "1111000101110001A",
+	    "sound": "1111000110110001A",
+	    "KEY_VOLUMEDOWN": "1111000110100001A",
+	    "KEY_VOLUMEUP": "1111000100100001A",
+	    "KEY_CYCLEWINDOWS": "1111000100010001A",
+	    "KEY_UP": "1111000100101001A",
+	    "KEY_DOWN": "1111000110101001A",
+	    "KEY_LEFT": "1111000111001001A",
+	    "KEY_RIGHT": "1111000101001001A"
+	}
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "description": "ApexDigital_DT250_Oddball (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/auvisio/VRC-1100_Ro.lircd.conf", "remote": "ApexDigital_DT250_Oddball", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 512, "space": 1130},
+	"B": {"mark": 512, "space": 512},
+	"C": {"mark": 490, "space": 533},
+	"D": {"mark": 512, "space": 1152},
+	"E": {"mark": 533, "space": 1109},
+	"F": {"mark": 512, "space": 490},
+	"G": {"mark": 3690, "space": 1728},
+	"I": {"mark": 512, "space": 0},
+	"J": {"mark": 512, "space": 469},
+	"K": {"mark": 512, "space": 597},
+	"L": {"mark": 490, "space": 0},
+	"M": {"mark": 490, "space": 512},
+	"N": {"mark": 490, "space": 618},
+	"O": {"mark": 533, "space": 1130},
+	"P": {"mark": 3669, "space": 1728},
+	"Q": {"mark": 3711, "space": 1728},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------------------------------",
+    "features": {
+	"key": {
+	    "Mute": "GOEECECECECCEECECCCCAECANGCACAACACAAACACAML",
+	    "Left": "QDDDBABABDBBDABABBBBDDBDKGBABDABABBABABBAJI",
+	    "Right": "GAAABABABABBDABABBFBAABAKPBABDABAFFFFAABAJI"
+	}
+    }
+}

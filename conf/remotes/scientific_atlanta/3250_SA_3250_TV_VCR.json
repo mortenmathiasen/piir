@@ -1,0 +1,47 @@
+{
+    "description": "SA_3250_TV/VCR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/scientific_atlanta/3250.lircd.conf", "remote": "SA_3250_TV/VCR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 58000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 559, "space": 931},
+	"B": {"mark": 560, "space": 931},
+	"C": {"mark": 323, "space": 0},
+	"D": {"mark": 535, "space": 1951},
+	"E": {"mark": 557, "space": 932},
+	"F": {"mark": 559, "space": 932},
+	"G": {"mark": 559, "space": 1925},
+	"I": {"mark": 559, "space": 1926},
+	"J": {"mark": 560, "space": 1925},
+	"K": {"mark": 560, "space": 1926},
+	"L": {"mark": 561, "space": 931},
+	"M": {"mark": 561, "space": 1924},
+	"N": {"mark": 561, "space": 1925},
+	"O": {"mark": 561, "space": 1926},
+	"P": {"mark": 563, "space": 931},
+	"Q": {"mark": 583, "space": 1901},
+	"R": {"mark": 585, "space": 907},
+	"S": {"mark": 585, "space": 908},
+	"T": {"mark": 585, "space": 1899},
+	"a": {"mark": 586, "space": 905},
+	"b": {"mark": 586, "space": 907},
+	"c": {"mark": 586, "space": 908},
+	"d": {"mark": 586, "space": 1899},
+	"e": {"mark": 586, "space": 1900},
+	"f": {"mark": 587, "space": 905},
+	"g": {"mark": 587, "space": 1899},
+	"h": {"mark": 610, "space": 1875},
+	"i": {"mark": 612, "space": 1873},
+	"j": {"mark": 1048, "space": 7898},
+	"k": {"mark": 3707, "space": 3862},
+	"l": {"mark": 19945, "space": 3915},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------",
+    "features": {
+	"key": {
+	    "TV/VCR": "liKJLBfAPENSQAaRhMOIDGbTBjkgdeFcC"
+	}
+    }
+}

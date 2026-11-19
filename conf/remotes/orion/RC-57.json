@@ -1,0 +1,26 @@
+{
+    "description": "orion-RC57 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/orion/RC-57.lircd.conf", "remote": "orion-RC57", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 604, "space": 0},
+	"H": {"mark": 9040, "space": 4443},
+	"1": {"mark": 609, "space": 1628},
+	"0": {"mark": 609, "space": 512},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H00000001011111101101000000101111A",
+	    "KEY_AGAIN": "H00000001011111100101000010101111A",
+	    "KEY_PLAY": "H00000001011111100011000011001111A",
+	    "KEY_REWIND": "H00000001011111101111000000001111A",
+	    "KEY_FASTFORWARD": "H00000001011111100111000010001111A",
+	    "KEY_STOP": "H00000001011111101011000001001111A",
+	    "still": "H00000001011111100000100011110111A"
+	}
+    }
+}

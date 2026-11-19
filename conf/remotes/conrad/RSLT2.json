@@ -1,0 +1,43 @@
+{
+    "description": "Conrad_RSLT2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/conrad/RSLT2.lircd.conf", "remote": "Conrad_RSLT2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 666, "space": 1129},
+	"B": {"mark": 666, "space": 1151},
+	"C": {"mark": 1312, "space": 521},
+	"D": {"mark": 1329, "space": 479},
+	"E": {"mark": 1329, "space": 501},
+	"F": {"mark": 1312, "space": 501},
+	"G": {"mark": 647, "space": 1170},
+	"I": {"mark": 666, "space": 1108},
+	"J": {"mark": 647, "space": 1151},
+	"K": {"mark": 692, "space": 1108},
+	"L": {"mark": 1329, "space": 521},
+	"M": {"mark": 647, "space": 1129},
+	"N": {"mark": 1356, "space": 447},
+	"O": {"mark": 628, "space": 1151},
+	"P": {"mark": 628, "space": 6284},
+	"Q": {"mark": 647, "space": 0},
+	"R": {"mark": 647, "space": 6284},
+	"S": {"mark": 666, "space": 0},
+	"T": {"mark": 666, "space": 1170},
+	"a": {"mark": 692, "space": 1129},
+	"b": {"mark": 1312, "space": 479},
+	"c": {"mark": 1312, "space": 538},
+	"d": {"mark": 692, "space": 1151},
+	"e": {"mark": 1356, "space": 479},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------",
+    "features": {
+	"key": {
+	    "LeftI": "PNKKECBaFMICCAEcJDDFBFBCAAGAAGBBQ",
+	    "LeftO": "RNKAeGEdDIIDCBELAbDFAcBCMAAAABBGQ",
+	    "RightI": "PNAKJaCTDIAEEBELADDCGFBLAMOABBBBS",
+	    "RightO": "RFKJAECBDIADEGLLAFEbBFTCAIJOBJBGS"
+	}
+    }
+}

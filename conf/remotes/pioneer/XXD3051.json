@@ -1,0 +1,30 @@
+{
+    "description": "pioneer (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pioneer/XXD3051.lircd.conf", "remote": "pioneer", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 566, "space": 0},
+	"H": {"mark": 8513, "space": 4195},
+	"1": {"mark": 566, "space": 1540},
+	"0": {"mark": 566, "space": 504},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_DVD": "H10100101010110101010000101011110A",
+	    "KEY_TV": "H10100101010110100011000011001111A",
+	    "KEY_VCR": "H10100101010110101111000000001111A",
+	    "KEY_CD": "H10100101010110100011001011001101A",
+	    "KEY_TAPE": "H10100101010110100001000111101110A",
+	    "KEY_TUNER": "H10100101010110101110001000011101A",
+	    "KEY_AUX": "H10100101010110101111001000001101A",
+	    "KEY_POWER": "H10100101010110100011100011000111A",
+	    "KEY_MUTE": "H10100101010110100100100010110111A",
+	    "KEY_VOLUMEDOWN": "H10100101010110101101000000101111A",
+	    "KEY_VOLUMEUP": "H10100101010110100101000010101111A"
+	}
+    }
+}

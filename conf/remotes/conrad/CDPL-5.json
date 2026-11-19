@@ -1,0 +1,29 @@
+{
+    "description": "conrad_cdpl-5 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/conrad/CDPL-5.lircd.conf", "remote": "conrad_cdpl-5", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 604, "space": 0},
+	"H": {"mark": 9048, "space": 4456},
+	"1": {"mark": 596, "space": 1643},
+	"0": {"mark": 596, "space": 533},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_MODE": "H00100001100000001101000000101111A",
+	    "KEY_CHANNELUP": "H00100001100000000101000010101111A",
+	    "KEY_ZOOM": "H00100001100000001001000001101111A",
+	    "KEY_PAGEDOWN": "H00100001100000001111000000001111A",
+	    "KEY_PAGEUP": "H00100001100000001011000001001111A",
+	    "KEY_MINUS": "H00100001100000001100100000110111A",
+	    "KEY_PLUS": "H00100001100000001000100001110111A",
+	    "KEY_VOLUMEDOWN": "H00100001100000001101100000100111A",
+	    "KEY_VOLUMEUP": "H00100001100000001001100001100111A",
+	    "KEY_POWER": "H00100001100000000011100011000111A"
+	}
+    }
+}

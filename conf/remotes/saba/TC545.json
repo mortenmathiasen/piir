@@ -1,0 +1,46 @@
+{
+    "description": "SabaTC545 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/saba/TC545.lircd.conf", "remote": "SabaTC545", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 479, "space": 0},
+	"1": {"mark": 479, "space": 2046},
+	"0": {"mark": 479, "space": 4573},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "111111011111A",
+	    "KEY_STOP": "111101011011A",
+	    "KEY_POWER": "111111100010A",
+	    "KEY_REWIND": "111101100000A",
+	    "KEY_FORWARD": "111111011110A",
+	    "KEY_PAUSE": "111101011101A",
+	    "KEY_RECORD": "111111011100A",
+	    "KEY_VOLUMEDOWN": "111101010101A",
+	    "KEY_VOLUMEUP": "111111010110A",
+	    "IndexMark": "111111000011A",
+	    "IndexErase": "111101000010A",
+	    "KEY_A": "111111000110A",
+	    "KEY_B": "111101000100A",
+	    "KEY_C": "111111000111A",
+	    "KEY_D": "111101101010A",
+	    "KEY_E": "111111100001A",
+	    "Mute(SP/LP)": "111101111010A",
+	    "TV(AV)": "111111100111A",
+	    "KEY_1": "111101111111A",
+	    "KEY_2": "111111110111A",
+	    "KEY_3": "111101101111A",
+	    "KEY_4": "111111111110A",
+	    "KEY_5": "111101110110A",
+	    "KEY_6": "111111101110A",
+	    "KEY_7": "111101111101A",
+	    "KEY_8": "111111110101A",
+	    "KEY_9": "111101101101A",
+	    "KEY_0": "111111110001A"
+	}
+    }
+}

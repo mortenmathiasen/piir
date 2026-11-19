@@ -1,0 +1,28 @@
+{
+    "description": "Hitachi (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/hitachi/TV_VCR.lircd.conf", "remote": "Hitachi", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 299, "space": 0},
+	"1": {"mark": 299, "space": 1807},
+	"0": {"mark": 299, "space": 754},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_CHANNELUP": "1001001100A",
+	    "KEY_CHANNELDOWN": "1000101100A",
+	    "KEY_STOP": "1001100000A",
+	    "KEY_REWIND": "1001110000A",
+	    "F.FWD": "1000110000A",
+	    "KEY_PLAY": "1000011000A",
+	    "VISUAL": "1001111000A",
+	    "KEY_SEARCH": "1000111000A",
+	    "KEY_PAUSE": "1001011000A",
+	    "F.ADV": "1000110100A"
+	}
+    }
+}

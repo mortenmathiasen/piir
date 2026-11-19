@@ -1,0 +1,45 @@
+{
+    "description": "PHILIPS_multi_VCR1 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/VCR1.lircd.conf", "remote": "PHILIPS_multi_VCR1", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 940, "space": 840},
+	"B": {"mark": 1880, "space": 840},
+	"C": {"mark": 940, "space": 1680},
+	"D": {"mark": 1880, "space": 1680},
+	"E": {"mark": 940, "space": 0},
+	"F": {"mark": 1880, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_1": "AABCDBAAACE",
+	    "KEY_2": "AABCDBAACF",
+	    "KEY_3": "AABCDBAACAE",
+	    "KEY_4": "AABCDBACBE",
+	    "KEY_5": "AABCDBACDE",
+	    "KEY_6": "AABCDBACAF",
+	    "KEY_7": "AABCDBACAAE",
+	    "KEY_8": "AABCDBCBAE",
+	    "KEY_9": "AABCDBCBCE",
+	    "KEY_0": "AABCDBAAAAE",
+	    "KEY_POWER": "AABCDBCABE",
+	    "KEY_102ND": "AABCDBCDF",
+	    "KEY_2-": "AABCDBCDAE",
+	    "KEY_REWIND": "AABCDAABCF",
+	    "KEY_FASTFORWARD": "AABCDAADBE",
+	    "KEY_PLAY": "AABCDAADDE",
+	    "KEY_RECORD": "AABCDAADAAE",
+	    "KEY_STOP": "AABCDAADAF",
+	    "KEY_PAUSE": "AABCDADBCE",
+	    "KEY_VOLUMEUP": "AABCDDBAAE",
+	    "KEY_VOLUMEDOWN": "AABCDDBACE",
+	    "KEY_CHANNELUP": "AABCDABAAAE",
+	    "KEY_CHANNELDOWN": "AABCDABAACE",
+	    "KEY_MUTE": "AABCDBCADE"
+	}
+    }
+}

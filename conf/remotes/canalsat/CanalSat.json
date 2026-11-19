@@ -1,0 +1,53 @@
+{
+    "description": "CanalSat (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/canalsat/CanalSat.lircd.conf", "remote": "CanalSat", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1858, "space": 1682},
+	"B": {"mark": 929, "space": 841},
+	"C": {"mark": 1858, "space": 841},
+	"D": {"mark": 929, "space": 1682},
+	"E": {"mark": 929, "space": 0},
+	"F": {"mark": 1879, "space": 1682},
+	"G": {"mark": 950, "space": 841},
+	"I": {"mark": 1858, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "Pilote": "GBAACBDBBBE",
+	    "Progr": "FAACBDBBBE",
+	    "KEY_UP": "FAACDCBBE",
+	    "KEY_DOWN": "FAACDCBDE",
+	    "KEY_LEFT": "FAACDAAE",
+	    "KEY_RIGHT": "FAACDABI",
+	    "KEY_OK": "FAACDABBE",
+	    "KEY_1": "GBAACBBBBDE",
+	    "KEY_2": "GBAACBBBDI",
+	    "KEY_3": "GBAACBBBDBE",
+	    "KEY_4": "GBAACBBDCE",
+	    "KEY_5": "GBAACBBDAE",
+	    "KEY_6": "GBAACBBDBI",
+	    "KEY_7": "GBAACBBDBBE",
+	    "KEY_8": "GBAACBDCBE",
+	    "KEY_9": "GBAACBDCDE",
+	    "KEY_0": "GBAACBBBBBE",
+	    "Prefer": "FAAACBBDE",
+	    "KEY_EXIT": "FAACDCDBE",
+	    "Serv": "FAACDCDI",
+	    "KEY_KPPLUS": "GBAAAABBBE",
+	    "Perso": "FAAAAAI",
+	    "KEY_A": "FAAAAABE",
+	    "KEY_B": "FAAAABCE",
+	    "KEY_C": "FAAAABAE",
+	    "KEY_D": "FAAAABBI",
+	    "KEY_E": "FAAAABBBE",
+	    "KEY_MUTE": "FAACBBDBI",
+	    "KEY_CYCLEWINDOWS": "GBAAAACBE",
+	    "KEY_POWER": "GBAACBDBCE"
+	}
+    }
+}

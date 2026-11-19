@@ -1,0 +1,48 @@
+{
+    "description": "sony_RM-PP411_receiver-AV2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-PP411.lircd.conf", "remote": "sony_RM-PP411_receiver-AV2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 662, "space": 0},
+	"B": {"mark": 1260, "space": 0},
+	"H": {"mark": 2444, "space": 569},
+	"1": {"mark": 1260, "space": 542},
+	"0": {"mark": 662, "space": 542},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "I/O": "H10101000000110A",
+	    "SLEEP": "H00000110000110A",
+	    "VIDEO1": "H01000100000110A",
+	    "VIDEO2": "H01111000000110A",
+	    "VIDEO3": "H01000010000110A",
+	    "DVD/LD": "H10111110000110A",
+	    "TV/SAT": "H01010110000110A",
+	    "MD/TAPE": "H10010110000110A",
+	    "CD/SACD": "H10100100000110A",
+	    "TUNER": "H10000100000110A",
+	    "PHONO": "H00000100000110A",
+	    "AUX": "H10111000000110A",
+	    "MULTI_CH": "H01001110000110A",
+	    "SOURCE": "H11011111001111A",
+	    "TEST_TONE": "H01010010000110B",
+	    "PRESET": "H01100100000110B",
+	    "AUTO_DECoding": "H11100010000110B",
+	    "MPX/DUAL": "H11101000000110A",
+	    "ANALOG_DIRECT": "H10010010000110A",
+	    "2CH": "H10000010000110B",
+	    "MODE+": "H01110110000110B",
+	    "MODE-": "H11110110000110B",
+	    "MUTING": "H00101000000110A",
+	    "MASTER_VOL+": "H01001000000110A",
+	    "MASTER_VOL-": "H11001000000110A",
+	    "MAIN_MENU": "H11101110000110B",
+	    "ON_SCREEN": "H11001010000110A",
+	    "SYSTEM_STANDBY": "H11101100010000A"
+	}
+    }
+}

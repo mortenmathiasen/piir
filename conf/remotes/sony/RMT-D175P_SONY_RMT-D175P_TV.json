@@ -1,0 +1,27 @@
+{
+    "description": "SONY_RMT-D175P_TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-D175P.lircd.conf", "remote": "SONY_RMT-D175P_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 600, "space": 0},
+	"H": {"mark": 2400, "space": 600},
+	"1": {"mark": 1200, "space": 600},
+	"0": {"mark": 600, "space": 600},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "H01001001000AVVWWWWWWXXXXYYYYYYH01001001000AVVWWWWWWXXXXYYYYYYH01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000AVVWWWWWXXXXXXXXYYYYYYH11001001000AVVWWWWWXXXXXXXXYYYYYYH11001001000A",
+	    "KEY_CYCLEWINDOWS": "H10100101000AVVWWWWWXXXXXXXXYYYYYYH10100101000AVVWWWWWXXXXXXXXYYYYYYH10100101000A",
+	    "TV_POWER": "H10101001000AVVWWWWWXXXXXXXXYYYYYYH10101001000AVVWWWWWXXXXXXXXYYYYYYH10101001000A"
+	}
+    }
+}

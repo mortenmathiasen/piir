@@ -1,0 +1,50 @@
+{
+    "description": "TP720_TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/grundig/TP_720.lircd.conf", "remote": "TP720_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 512, "space": 512},
+	"B": {"mark": 512, "space": 1024},
+	"C": {"mark": 512, "space": 0},
+	"D": {"mark": 1024, "space": 1024},
+	"E": {"mark": 1024, "space": 512},
+	"H": {"mark": 512, "space": 2560},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "HBDAAAAAAC",
+	    "KEY_1": "HABAADAAAC",
+	    "KEY_2": "HBDADAAAC",
+	    "KEY_3": "HAABADAAAC",
+	    "KEY_4": "HBADDAAAC",
+	    "KEY_5": "HABDDAAAC",
+	    "KEY_6": "HBEBDAAAC",
+	    "KEY_7": "HAAABDAAAC",
+	    "KEY_8": "HBAAEBAAAC",
+	    "KEY_9": "HABAEBAAAC",
+	    "KEY_PC": "HBDEBAAAC",
+	    "KEY_0": "HBAAADAAAC",
+	    "BR+": "HBDDAAAAC",
+	    "BR-": "HAABDAAAAC",
+	    "COLOR+": "HBAEBAAAAC",
+	    "COLOR-": "HABEBAAAAC",
+	    "KEY_AUX": "HAAABAAAAAC",
+	    "KEY_I": "HABEBDAAC",
+	    "KEY_TEXT": "HBAAAEBAAC",
+	    "KEY_CHANNELUP": "HBDDDAAC",
+	    "KEY_VOLUMEDOWN": "HABADAAAAC",
+	    "KEY_OK": "HBAAAAAAAAC",
+	    "KEY_VOLUMEUP": "HBAADAAAAC",
+	    "KEY_CHANNELDOWN": "HAABDDAAC",
+	    "KEY_MUTE": "HABAAAAAAAC",
+	    "KEY_BLUE": "HBEABDAAC",
+	    "KEY_YELLOW": "HAABEABAAC",
+	    "KEY_GREEN": "HBEAAABAAC",
+	    "KEY_RED": "HBDEABAAC"
+	}
+    }
+}

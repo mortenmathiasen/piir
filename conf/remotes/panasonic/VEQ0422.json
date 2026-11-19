@@ -1,0 +1,31 @@
+{
+    "description": "Panasonic_VEQ0422 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/panasonic/VEQ0422.lircd.conf", "remote": "Panasonic_VEQ0422", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1026, "space": 0},
+	"H": {"mark": 3599, "space": 3147},
+	"1": {"mark": 1038, "space": 2338},
+	"0": {"mark": 1038, "space": 643},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H0100000000110111111110A",
+	    "VTR/TV": "H0100001010110111101010A",
+	    "KEY_VOLUMEDOWN": "H0100011000110111001110A",
+	    "KEY_VOLUMEUP": "H0100001000110111101110A",
+	    "KEY_RECORD": "H0100000010010111111011A",
+	    "KEY_PAUSE": "H0100001100010111100111A",
+	    "F.ADV": "H0100000110010111110011A",
+	    "KEY_STOP": "H0100000000010111111111A",
+	    "KEY_REWIND": "H0100001000010111101111A",
+	    "KEY_FASTFORWARD": "H0100011000010111001111A",
+	    "KEY_PLAY": "H0100001010010111101011A",
+	    "KEY_SLOW": "H0100011110010111000011A"
+	}
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "description": "RM-U306A_PWR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-U306A.lircd.conf", "remote": "RM-U306A_PWR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 667, "space": 0},
+	"H": {"mark": 2463, "space": 521},
+	"1": {"mark": 1262, "space": 518},
+	"0": {"mark": 663, "space": 518},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------------------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_SLEEP": "H00000110000110AVVWWXXXXXYYYZZZZZH00000110000110AVVWWXXXXXYYYZZZZZH00000110000110AVVWWXXXXXYYYZZZZZH00000110000110A",
+	    "STANDBY": "H10101000000110AVVWXXXXXXXXXYYYZZZZZZH10101000000110AVVWXXXXXXXXXYYYZZZZZZH10101000000110AVVWXXXXXXXXXYYYZZZZZZH10101000000110A"
+	}
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "description": "AudioSource_SS-Three (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/audiosource/SS-Three.lircd.conf", "remote": "AudioSource_SS-Three", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1294, "space": 406},
+	"B": {"mark": 470, "space": 1224},
+	"C": {"mark": 448, "space": 1224},
+	"D": {"mark": 1294, "space": 392},
+	"E": {"mark": 448, "space": 1244},
+	"F": {"mark": 470, "space": 1244},
+	"G": {"mark": 470, "space": 1200},
+	"I": {"mark": 490, "space": 1200},
+	"J": {"mark": 448, "space": 0},
+	"K": {"mark": 470, "space": 0},
+	"L": {"mark": 490, "space": 0},
+	"M": {"mark": 448, "space": 1200},
+	"N": {"mark": 490, "space": 1224},
+	"O": {"mark": 1294, "space": 0},
+	"P": {"mark": 1307, "space": 392},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "power": "CAAEACBFCFAJ",
+	    "monitor": "FDACACACFECK",
+	    "matrix": "FAACACFAECBK",
+	    "hall": "BAAMAMIIAGIL",
+	    "surround": "GAACDIIIIAGL",
+	    "test": "EAAEEADFCBBJ",
+	    "phantom": "IDAGIPGDGGGL",
+	    "20ms": "NADNGAGIDBGL",
+	    "30ms": "CAAEEACFCAEJ",
+	    "rear+": "BAAACBAEECBK",
+	    "center+": "BDADBBBFACBK",
+	    "vol+": "FADAEEECFEAJ",
+	    "rear-": "CDADFCFDBBFJ",
+	    "center-": "CDADBBBBBDBK",
+	    "vol-": "BAAACBCBGIIO"
+	}
+    }
+}

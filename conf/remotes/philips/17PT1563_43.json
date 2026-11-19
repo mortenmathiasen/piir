@@ -1,0 +1,52 @@
+{
+    "description": "PHILIPS_17PT1563_43 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/17PT1563_43.lircd.conf", "remote": "PHILIPS_17PT1563_43", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 882, "space": 895},
+	"B": {"mark": 1764, "space": 895},
+	"C": {"mark": 882, "space": 1790},
+	"D": {"mark": 871, "space": 895},
+	"E": {"mark": 882, "space": 0},
+	"F": {"mark": 1764, "space": 1790},
+	"G": {"mark": 1764, "space": 0},
+	"I": {"mark": 1753, "space": 1790},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_INFO": "DABAAAAACAAAE",
+	    "KEY_CHANNELUP": "DABAAACBAAAE",
+	    "KEY_POWER": "DABAAAAACABE",
+	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
+	    "KEY_MENU": "IBAAAACBCG",
+	    "KEY_VOLUMEUP": "DABAAAACBAAE",
+	    "KEY_MUTE": "DABAAAAACAFE",
+	    "KEY_CHANNELDOWN": "DABAAACBAACE",
+	    "EXT": "DABAAACAABAE",
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACG",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACFE",
+	    "KEY_6": "DABAAAAAACAG",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "TEXT_TV": "DABAAACAAABE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "SURF": "DABAAACBACG",
+	    "TEXT_CLOCK": "DABAAACFFG",
+	    "TEXT_ENLARGE": "DABAAACFFAE",
+	    "TEXT_STOP_SEQUENCE": "DABAAACFBCE",
+	    "TEXT_REVEAL": "DABAAACBACAE",
+	    "PICTURE_SETTINGS": "IBAAACFFAE",
+	    "SOUND_SETTINGS": "IBAAACFABE",
+	    "TIMER": "IBAAACFAFE",
+	    "GAME": "IBAAACFAAG"
+	}
+    }
+}

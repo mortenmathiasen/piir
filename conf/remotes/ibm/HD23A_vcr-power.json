@@ -1,0 +1,20 @@
+{
+    "description": "vcr-power (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/ibm/HD23A.lircd.conf", "remote": "vcr-power", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 586, "space": 0},
+	"H": {"mark": 4011, "space": 3740},
+	"1": {"mark": 582, "space": 1869},
+	"0": {"mark": 582, "space": 840},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------",
+    "features": {
+	"key": {
+	    "VCR-POWER": "H111000101010000111010101A"
+	}
+    }
+}

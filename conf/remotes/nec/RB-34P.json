@@ -1,0 +1,28 @@
+{
+    "description": "RB-34P (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/nec/RB-34P.lircd.conf", "remote": "RB-34P", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 550, "space": 0},
+	"H": {"mark": 8800, "space": 4400},
+	"1": {"mark": 550, "space": 1650},
+	"0": {"mark": 550, "space": 550},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H10011000011001111010000001011111A",
+	    "KEY_STOP": "H10011000011001110010000011011111A",
+	    "KEY_PAUSE": "H10011000011001110111000010001111A",
+	    "KEY_FASTFORWARD": "H10011000011001110011000011001111A",
+	    "KEY_REWIND": "H10011000011001111011000001001111A",
+	    "KEY_RECORD": "H10011000011001110110000010011111A",
+	    "OPERATE": "H10011000011001110001000011101111A",
+	    "KEY_CHANNELUP": "H10011000011001110000000011111111A",
+	    "KEY_CHANNELDOWN": "H10011000011001111000000001111111A"
+	}
+    }
+}

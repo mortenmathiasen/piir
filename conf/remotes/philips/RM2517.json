@@ -1,0 +1,49 @@
+{
+    "description": "Philips_RC2617 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RM2517.lircd.conf", "remote": "Philips_RC2617", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 901, "space": 871},
+	"B": {"mark": 1802, "space": 871},
+	"C": {"mark": 901, "space": 1742},
+	"D": {"mark": 934, "space": 871},
+	"E": {"mark": 901, "space": 0},
+	"F": {"mark": 1802, "space": 1742},
+	"G": {"mark": 1802, "space": 0},
+	"I": {"mark": 1835, "space": 1742},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "VCD": "DABCBCAAAAAE",
+	    "KEY_POWER": "DABCBAACABE",
+	    "KEY_AUX": "DAAFFAAAAAAE",
+	    "KEY_TUNER": "DAABACAAAAAAE",
+	    "TAPE1/2": "DAABCFAAAAAE",
+	    "KEY_1": "DAABCBAAAACE",
+	    "KEY_2": "DAABCBAAACG",
+	    "KEY_3": "DAABCBAAACAE",
+	    "KEY_4": "DAABCBAACBE",
+	    "KEY_5": "DAABCBAACFE",
+	    "KEY_6": "DAABCBAACAG",
+	    "KEY_7": "DAABCBAACAAE",
+	    "KEY_8": "DAABCBACBAE",
+	    "KEY_9": "DAABCBACBCE",
+	    "KEY_0": "DAABCBAAAAAE",
+	    "KEY_VOLUMEDOWN": "DAABAAACBACE",
+	    "KEY_VOLUMEUP": "DAABAAACBAAE",
+	    "KEY_PLAYPAUSE": "DAABCFAFFE",
+	    "KEY_STOP": "DAABCFAFAG",
+	    "TITLE-": "DAABCFBAACE",
+	    "TITLE+": "DAABCFBAAAE",
+	    "ALBUM-": "DAABCFABCG",
+	    "ALBUM+": "DAABCFAFBE",
+	    "IS": "IABAAAAAAAAE",
+	    "DBB": "IABAAAAACAG",
+	    "DSC": "IABAAAACAAAE"
+	}
+    }
+}

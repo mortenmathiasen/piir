@@ -1,0 +1,25 @@
+{
+    "description": "AMP_MDDAT (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-AV2100T.lircd.conf", "remote": "AMP_MDDAT", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 600, "space": 0},
+	"H": {"mark": 2400, "space": 600},
+	"1": {"mark": 1200, "space": 600},
+	"0": {"mark": 600, "space": 600},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "md/dat": "H10010110000100AVVWXXXYYYYZZZZZZZZH10010110000100AVVWXXXYYYYZZZZZZZZH10010110000100A"
+	}
+    }
+}

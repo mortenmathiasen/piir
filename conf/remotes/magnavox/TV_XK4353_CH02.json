@@ -1,0 +1,48 @@
+{
+    "description": "UNIFIED6TRANS (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/magnavox/TV_XK4353_CH02.lircd.conf", "remote": "UNIFIED6TRANS", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 903, "space": 876},
+	"B": {"mark": 1806, "space": 876},
+	"C": {"mark": 903, "space": 1752},
+	"D": {"mark": 937, "space": 876},
+	"E": {"mark": 903, "space": 0},
+	"F": {"mark": 1806, "space": 1752},
+	"G": {"mark": 1806, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "DABAAAAACABE",
+	    "Reset": "DABAAAAACAAG",
+	    "KEY_SLEEP": "DABAAACBCAG",
+	    "KEY_MUTE": "DABAAAAACAFE",
+	    "KEY_VOLUMEUP": "DABAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
+	    "KEY_CHANNELUP": "DABAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DABAAACBAACE",
+	    "PrevCh": "DABAAACBACG",
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACG",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACFE",
+	    "KEY_6": "DABAAAAAACAG",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "Display": "DABAAACFAAG",
+	    "KEY_KPPLUS": "DABAAACFFAE",
+	    "KEY_KPMINUS": "DABAAACFABE",
+	    "Status": "DABAAAAACAAAE",
+	    "KEY_PLAY": "DABAAAACAABE",
+	    "KEY_STOP": "DABAAAACAAFE",
+	    "KEY_PAUSE": "DABAAACAAFAE"
+	}
+    }
+}

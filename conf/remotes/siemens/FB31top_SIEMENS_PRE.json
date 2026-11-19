@@ -1,0 +1,19 @@
+{
+    "description": "SIEMENS_PRE (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/siemens/FB31top.lircd.conf", "remote": "SIEMENS_PRE", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 580, "space": 460},
+	"B": {"mark": 580, "space": 0},
+	"H": {"mark": 612, "space": 2576},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_PREVIOUS": "HAAAAAAAAAB"
+	}
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "description": "Pansat_SD3500_AUX (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pansat/SD3500.lircd.conf", "remote": "Pansat_SD3500_AUX", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 187, "space": 0},
+	"1": {"mark": 187, "space": 7299},
+	"0": {"mark": 187, "space": 4757},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "10101011110A",
+	    "KEY_1": "10101110101A",
+	    "KEY_2": "11101101101A",
+	    "KEY_3": "10101100101A",
+	    "KEY_4": "11101011101A",
+	    "KEY_5": "10101110100A",
+	    "KEY_6": "11101101100A",
+	    "KEY_7": "10101100100A",
+	    "KEY_8": "10101011100A",
+	    "KEY_9": "11101110011A",
+	    "KEY_0": "10101101011A",
+	    "KEY_MENU": "10101100111A",
+	    "KEY_EXIT": "10101110000A",
+	    "KEY_UP": "11101101000A",
+	    "KEY_DOWN": "10101101010A",
+	    "KEY_LEFT": "11101110001A",
+	    "KEY_RIGHT": "10101100001A",
+	    "KEY_OK": "11101101001A",
+	    "KEY_PLAY": "10101101001A",
+	    "KEY_STOP": "11101100010A",
+	    "KEY_MUTE": "11101011000A",
+	    "prev2": "10101110111A",
+	    "frwd2": "11101110010A"
+	}
+    }
+}

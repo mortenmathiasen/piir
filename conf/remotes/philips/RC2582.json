@@ -1,0 +1,50 @@
+{
+    "description": "Philips_RC2582 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC2582.lircd.conf", "remote": "Philips_RC2582", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 36000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 444, "space": 444},
+	"B": {"mark": 444, "space": 888},
+	"C": {"mark": 888, "space": 444},
+	"D": {"mark": 888, "space": 888},
+	"E": {"mark": 444, "space": 0},
+	"F": {"mark": 888, "space": 0},
+	"H": {"mark": 2667, "space": 889},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "HBAABCADACABAAAAAAF",
+	    "KEY_2": "HBAABCADACABAAAAADE",
+	    "KEY_3": "HBAABCADACABAAAAACE",
+	    "KEY_4": "HBAABCADACABAAAADAE",
+	    "KEY_5": "HBAABCADACABAAAADF",
+	    "KEY_6": "HBAABCADACABAAAACBE",
+	    "KEY_7": "HBAABCADACABAAAACAE",
+	    "KEY_8": "HBAABCADACABAAADAAE",
+	    "KEY_9": "HBAABCADACABAAADAF",
+	    "KEY_0": "HBAABCADACABAAAAAAAE",
+	    "KEY_BACK": "HBAABCADACAABAAAACE",
+	    "KEY_CHANNELUP": "HBAABCADACABDCBAAE",
+	    "KEY_CHANNELDOWN": "HBAABCADACABDCBAF",
+	    "KEY_LANGUAGE": "HBAABCADACABDACABE",
+	    "KEY_TEXT": "HBAABCADACABDADCE",
+	    "KEY_OK": "HBAABCADACABDCABAE",
+	    "KEY_FAVORITES": "HBAABCADACAABAAADAE",
+	    "KEY_INFO": "HBAABCADACAAABADCE",
+	    "themes": "HBAABCADACAAABACBF",
+	    "opts": "HBAABCADACAAABCBCE",
+	    "KEY_EPG": "HBAABCADACAAABACBAE",
+	    "pp": "HBAABCADACABAAADDE",
+	    "KEY_PAGEUP": "HBAABCADACAAABACABE",
+	    "KEY_PAGEDOWN": "HBAABCADACAAABACAAE",
+	    "KEY_POWER": "HBAABCADACABAAACBAE",
+	    "av": "HBAABCADACABDAAACE",
+	    "KEY_LEFT": "HBAABCADACABDCBDE",
+	    "KEY_RIGHT": "HBAABCADACABDCBCE"
+	}
+    }
+}

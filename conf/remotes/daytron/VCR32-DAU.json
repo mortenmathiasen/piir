@@ -1,0 +1,30 @@
+{
+    "description": "daytron (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/daytron/VCR32-DAU.lircd.conf", "remote": "daytron", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1208, "space": 0},
+	"H": {"mark": 18101, "space": 8929},
+	"1": {"mark": 1208, "space": 1044},
+	"0": {"mark": 1208, "space": 3293},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H11011111001000001110111100010000A",
+	    "tvvcr": "H11011111001000000100111110110000A",
+	    "KEY_SLOW": "H11011111001000001001111101100000A",
+	    "KEY_DOWN": "H11011111001000000111111110000000A",
+	    "KEY_UP": "H11011111001000001111111100000000A",
+	    "KEY_RECORD": "H11011111001000001000011101111000A",
+	    "KEY_PAUSE": "H11011111001000001000111101110000A",
+	    "KEY_STOP": "H11011111001000001100111100110000A",
+	    "KEY_REWIND": "H11011111001000000001111111100000A",
+	    "KEY_PLAY": "H11011111001000001101111100100000A",
+	    "KEY_FASTFORWARD": "H11011111001000000101111110100000A"
+	}
+    }
+}

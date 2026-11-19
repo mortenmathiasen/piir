@@ -30,6 +30,7 @@ void loadFeaturedCode(const featureT *features,
 void loadOutPin(unsigned int *outPin);  //Output
 void loadDescription(const char **description);
 void loadDevice(const char **device);
+void loadPlugin(const char **plugin);
 void loadFrequency(int *frequency);
 void loadDutyCycle(double *dutycycle);
 

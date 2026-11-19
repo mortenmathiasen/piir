@@ -1,0 +1,21 @@
+{
+    "description": "LiveDrive_Headphone (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/creative/livedrive.lircd.conf", "remote": "LiveDrive_Headphone", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.33,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 563, "space": 0},
+	"H": {"mark": 9000, "space": 4500},
+	"1": {"mark": 563, "space": 1687},
+	"0": {"mark": 563, "space": 562},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------",
+    "features": {
+	"key": {
+	    "Headphone_out": "H1000000000000000010000000000000A",
+	    "Headphone_in": "H1000000000000000010000001000000A"
+	}
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "description": "rm (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-PP402.lircd.conf", "remote": "rm", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 610, "space": 0},
+	"H": {"mark": 2429, "space": 564},
+	"1": {"mark": 610, "space": 564},
+	"0": {"mark": 1203, "space": 564},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "tape_play": "H10100111000A",
+	    "tape_backplay": "H11111011000A",
+	    "tape_pause": "H01100111000A",
+	    "tape_stop": "H11100111000A",
+	    "tape_last": "H11110011000A",
+	    "tape_next": "H01110011000A",
+	    "tape_rwnd": "H00100111000A",
+	    "tape_ffwd": "H11000111000A",
+	    "tape_record": "H10000111000A",
+	    "tape_shift": "H00011011000A",
+	    "tape_enter": "H10101111000A",
+	    "tape_1": "H11111111000A",
+	    "tape_2": "H01111111000A",
+	    "tape_3": "H10111111000A",
+	    "tape_4": "H00111111000A",
+	    "tape_5": "H11011111000A",
+	    "tape_6": "H01011111000A",
+	    "tape_7": "H10011111000A",
+	    "tape_8": "H00011111000A",
+	    "tape_9": "H11101111000A",
+	    "tape_0": "H01101111000A"
+	}
+    }
+}

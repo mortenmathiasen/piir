@@ -1,0 +1,28 @@
+{
+    "description": "SonyTV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-D153A.lircd.conf", "remote": "SonyTV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 749, "space": 0},
+	"H": {"mark": 2554, "space": 443},
+	"1": {"mark": 1349, "space": 449},
+	"0": {"mark": 749, "space": 449},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "TV_Power": "H10101001000AVVWWWWWXXXXXXYYYYYYYYYZZZZZZZZH10101001000AVVWWWWWXXXXXXYYYYYYYYYZZZZZZZZH10101001000A",
+	    "KEY_VOLUMEUP": "H01001001000AVVWWWWWWXXYYYYYYYYYZZZZZZZZH01001001000AVVWWWWWWXXYYYYYYYYYZZZZZZZZH01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000AVVWWWWWXXXXXXYYYYYYYYYZZZZZZZZH11001001000AVVWWWWWXXXXXXYYYYYYYYYZZZZZZZZH11001001000A",
+	    "TV/Video": "H10100101000AVVWWWWWXXXXXXYYYYYYYYYZZZZZZZZH10100101000AVVWWWWWXXXXXXYYYYYYYYYZZZZZZZZH10100101000A"
+	}
+    }
+}

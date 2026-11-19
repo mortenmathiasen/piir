@@ -1,0 +1,47 @@
+{
+    "description": "FW_530C (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/FW_530C.lircd.conf", "remote": "FW_530C", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 882, "space": 894},
+	"B": {"mark": 1764, "space": 894},
+	"C": {"mark": 882, "space": 1788},
+	"D": {"mark": 1764, "space": 1788},
+	"E": {"mark": 869, "space": 894},
+	"F": {"mark": 882, "space": 0},
+	"G": {"mark": 1751, "space": 1788},
+	"I": {"mark": 1764, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "EAADBCADDF",
+	    "KEY_STOP": "EAADBCADAI",
+	    "KEY_NEXT": "EAADBCBAAAF",
+	    "KEY_PREVIOUS": "EAADBCBAACF",
+	    "KEY_VOLUMEUP": "EAABAAACBAAF",
+	    "KEY_VOLUMEDOWN": "EAABAAACBACF",
+	    "KEY_REWIND": "EAADBCABCI",
+	    "Forw": "EAADBCADBF",
+	    "KEY_AGAIN": "EAADBACAADF",
+	    "Shuffle": "EAADBACAABF",
+	    "KEY_PAUSE": "EAADBCABAAF",
+	    "Program": "EAADBCBCBF",
+	    "DBB2": "GABAAAAACAI",
+	    "DSC": "GABAAAACAAAF",
+	    "INC_SURR": "GABAAAAAAAAF",
+	    "KEY_1": "EAADBCADAAF",
+	    "KEY_2": "EAADBCAABAF",
+	    "KEY_3": "EAADBCAABCF",
+	    "KEY_CD": "EAADBCAAAAAF",
+	    "Tape1/2": "EAABCDAAAAAF",
+	    "Side": "EAABCDDAAAF",
+	    "KEY_TUNER": "EAABACAAAAAAF",
+	    "KEY_AUX": "EAADDAAAAAAF",
+	    "KEY_SLEEP": "EAADDBCABF"
+	}
+    }
+}

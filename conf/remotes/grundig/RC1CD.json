@@ -1,0 +1,50 @@
+{
+    "description": "Grundig (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/grundig/RC1CD.lircd.conf", "remote": "Grundig", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 910, "space": 782},
+	"B": {"mark": 1764, "space": 1613},
+	"C": {"mark": 1764, "space": 782},
+	"D": {"mark": 910, "space": 1613},
+	"E": {"mark": 910, "space": 0},
+	"F": {"mark": 931, "space": 761},
+	"G": {"mark": 931, "space": 782},
+	"I": {"mark": 910, "space": 761},
+	"J": {"mark": 931, "space": 1613},
+	"K": {"mark": 1764, "space": 0},
+	"L": {"mark": 952, "space": 761},
+	"M": {"mark": 884, "space": 782},
+	"N": {"mark": 884, "space": 809},
+	"O": {"mark": 931, "space": 0},
+	"P": {"mark": 1764, "space": 761},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "1": "FFABCFAAFAJE",
+	    "2": "GAABCAAAFDK",
+	    "3": "GAABCAAAIJAE",
+	    "4": "AFABCAFADCE",
+	    "5": "AAABCAAADBE",
+	    "6": "FAABCAAFDAK",
+	    "7": "GAABCIAADAAE",
+	    "8": "GAABCAADCAE",
+	    "9": "LAABCAADCDE",
+	    "0": "LAABCAAFAAFO",
+	    "store": "GAFBCDBPDE",
+	    "scan": "GNABCJBBFE",
+	    "repeat": "AAABCADAABE",
+	    "stop": "GAABCJABAK",
+	    "play": "GAABCDFBBE",
+	    "pause": "GAABCDACFAE",
+	    "<": "MAIBCDCAADE",
+	    ">": "GIGBCDCAAAE",
+	    "<<": "GAABCDGCDK",
+	    ">>": "GAABCDABCE"
+	}
+    }
+}

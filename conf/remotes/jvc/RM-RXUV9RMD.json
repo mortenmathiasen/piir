@@ -1,0 +1,51 @@
+{
+    "description": "RM-RXUV9RMD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-RXUV9RMD.lircd.conf", "remote": "RM-RXUV9RMD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 568, "space": 0},
+	"H": {"mark": 8491, "space": 4166},
+	"1": {"mark": 567, "space": 1537},
+	"0": {"mark": 567, "space": 488},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H1100010111101000A",
+	    "KEY_SLEEP": "H1100010111000000A",
+	    "DIMMER": "H1100110101001010A",
+	    "DISPLAY": "H1100010100001110A",
+	    "FM-MODE": "H1100010101011010A",
+	    "TAPE-AUX": "H1100010101111100A",
+	    "AHB-PRO": "H1100010110101110A",
+	    "AUTO-PRESET": "H1100010111101110A",
+	    "CD-EJECT": "H1100110100100010A",
+	    "PROGRAM": "H1100110101010110A",
+	    "RANDOM": "H1100110101001110A",
+	    "KEY_AGAIN": "H1100110111011010A",
+	    "BASS": "H1111010101111000A",
+	    "TREBLE": "H1111010101110100A",
+	    "KEY_CANCEL": "H1100110110110110A",
+	    "EDIT-TITLE": "H1111110110010001A",
+	    "CHARA": "H1111110100011101A",
+	    "KEY_UP": "H1111010100000000A",
+	    "KEY_DOWN": "H1111010110000000A",
+	    "KEY_LEFT": "H1111010111000000A",
+	    "KEY_RIGHT": "H1111010101000000A",
+	    "PTY-EON": "H1111010110100001A",
+	    "DISPLAY-MODE": "H1111010111000001A",
+	    "SET": "H1111010110001001A",
+	    "MD-PLAY-PAUSE": "H1111010100001100A",
+	    "CD-PLAY-PAUSE": "H1100010110111100A",
+	    "TUNER-BAND": "H1100010111011010A",
+	    "KEY_PREVIOUS": "H1111010101100000A",
+	    "KEY_STOP": "H1100110111000010A",
+	    "KEY_NEXT": "H1111010110100000A",
+	    "KEY_VOLUMEUP": "H1100010101111000A",
+	    "KEY_VOLUMEDOWN": "H1100010111111000A"
+	}
+    }
+}

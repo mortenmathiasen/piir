@@ -1,0 +1,51 @@
+{
+    "description": "lircd.conf (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/universal/SupportPlus.lircd.conf", "remote": "lircd.conf", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 889, "space": 889},
+	"B": {"mark": 1778, "space": 889},
+	"C": {"mark": 889, "space": 1778},
+	"D": {"mark": 889, "space": 0},
+	"E": {"mark": 1778, "space": 1778},
+	"F": {"mark": 1778, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "AABAAAAACABD",
+	    "KEY_LEFT": "AABAAAACBACD",
+	    "KEY_RIGHT": "AABAAAACBAAD",
+	    "KEY_VOLUMEDOWN": "AABAAACAAABD",
+	    "KEY_VOLUMEUP": "AABAAACBCAF",
+	    "KEY_OK": "AABAAAAACAAF",
+	    "KEY_UP": "AABAAACBAAAD",
+	    "KEY_DOWN": "AABAAACBAACD",
+	    "KEY_RED": "AABAAACAEAAD",
+	    "KEY_GREEN": "AABAAACAEAF",
+	    "KEY_YELLOW": "AABAAACABCF",
+	    "KEY_BLUE": "AABAAACAEBD",
+	    "KEY_MUTE": "AABAAAAACAED",
+	    "KEY_MENU": "AABAAAAACEAD",
+	    "KEY_1": "AABAAAAAAAACD",
+	    "KEY_2": "AABAAAAAAACF",
+	    "KEY_3": "AABAAAAAAACAD",
+	    "KEY_4": "AABAAAAAACBD",
+	    "KEY_5": "AABAAAAAACED",
+	    "KEY_6": "AABAAAAAACAF",
+	    "KEY_7": "AABAAAAAACAAD",
+	    "KEY_8": "AABAAAAACBAD",
+	    "KEY_9": "AABAAAAACBCD",
+	    "KEY_102ND": "AABAAAAACAAAD",
+	    "KEY_0": "AABAAAAAAAAAD",
+	    "KEY_BACK": "AABAAACAABAD",
+	    "KEY_VIDEO": "AABAAACAAAAAD",
+	    "Mix": "AABAAACEAAF",
+	    "TV/SAT": "AABAAACEAED",
+	    "Shift": "AABAAACEAAAD"
+	}
+    }
+}

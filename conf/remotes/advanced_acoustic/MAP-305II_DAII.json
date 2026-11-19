@@ -1,0 +1,28 @@
+{
+    "description": "Advance_Acoustic_MAP-305II/DAII (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/advanced_acoustic/MAP-305II_DAII.lircd.conf", "remote": "Advance_Acoustic_MAP-305II/DAII", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 589, "space": 0},
+	"H": {"mark": 9000, "space": 4487},
+	"1": {"mark": 599, "space": 1671},
+	"0": {"mark": 599, "space": 506},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_SLEEP": "H00100100110100100010101011010101A",
+	    "KEY_CD": "H00100100110100100001000011101111A",
+	    "KEY_TUNER": "H00100100110100100001001011101101A",
+	    "KEY_AUX": "H00100100110100100011000011001111A",
+	    "phono": "H00100100110100100011001011001101A",
+	    "digital": "H00100100110100100000100011110111A",
+	    "KEY_MUTE": "H00100100110100100000101011110101A",
+	    "KEY_VOLUMEDOWN": "H00100100110100100010100011010111A",
+	    "KEY_VOLUMEUP": "H00100100110100101010101001010101A"
+	}
+    }
+}

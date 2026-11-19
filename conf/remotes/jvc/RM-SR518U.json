@@ -1,0 +1,43 @@
+{
+    "description": "jvc (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-SR518U.lircd.conf", "remote": "jvc", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 600, "space": 0},
+	"H": {"mark": 8609, "space": 4068},
+	"1": {"mark": 621, "space": 1466},
+	"0": {"mark": 621, "space": 434},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "tv_power": "H1100000011101000A",
+	    "audio_power": "H1100010111101000A",
+	    "sur_on_off": "H1100010110100000A",
+	    "center_mode": "H1100010100011010A",
+	    "test": "H1100010111101011A",
+	    "delay": "H1100010100010010A",
+	    "KEY_VOLUMEUP": "H1100010101111000A",
+	    "KEY_VOLUMEDOWN": "H1100010111111000A",
+	    "KEY_MUTE": "H1100010100111000A",
+	    "phono": "H1100010100111100A",
+	    "KEY_VIDEO": "H1100010111000010A",
+	    "fm/am": "H1100010111010000A",
+	    "KEY_CD": "H1100010110111100A",
+	    "KEY_TAPE": "H1100010111111100A",
+	    "KEY_VCR": "H1100010110001000A",
+	    "vcr_power": "H1100001011010000A",
+	    "KEY_TV": "H1100001000001000A",
+	    "vcr_ch_plus": "H1100001010011000A",
+	    "vcr_ch_minus": "H1100001000011000A",
+	    "KEY_PLAY": "H1100001000110000A",
+	    "KEY_REWIND": "H1100001011100000A",
+	    "KEY_FASTFORWARD": "H1100001001100000A",
+	    "KEY_STOP": "H1100001011000000A",
+	    "KEY_PAUSE": "H1100001010110000A"
+	}
+    }
+}

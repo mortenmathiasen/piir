@@ -1,0 +1,53 @@
+{
+    "description": "One-For-All_URC-3021B00-VCR-0081 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/one_for_all/URC-3021B00.lircd.conf", "remote": "One-For-All_URC-3021B00-VCR-0081", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 889, "space": 889},
+	"B": {"mark": 1778, "space": 889},
+	"C": {"mark": 1778, "space": 1778},
+	"D": {"mark": 889, "space": 1778},
+	"E": {"mark": 889, "space": 0},
+	"F": {"mark": 1778, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_1": "AABDCBAAADE",
+	    "KEY_2": "AABDCBAADF",
+	    "KEY_3": "AABDCBAADAE",
+	    "KEY_4": "AABDCBADBE",
+	    "KEY_5": "AABDCBADCE",
+	    "KEY_6": "AABDCBADAF",
+	    "KEY_7": "AABDCBADAAE",
+	    "KEY_8": "AABDCBDBAE",
+	    "KEY_9": "AABDCBDBDE",
+	    "KEY_0": "AABDCBAAAAE",
+	    "TV/VID": "AABDCAAAAAF",
+	    "KEY_EPG": "CBDCBADCE",
+	    "KEY_MENU": "AABDCCAACE",
+	    "KEY_INFO": "AABDCAAAABE",
+	    "KEY_EXIT": "AABDCAABADE",
+	    "KEY_UP": "AABDCABAAAE",
+	    "KEY_LEFT": "CBDCCCCE",
+	    "KEY_RIGHT": "CBDCCCAF",
+	    "KEY_DOWN": "AABDCABAADE",
+	    "KEY_SELECT": "AABDCBDCAE",
+	    "KEY_LAST": "AABDCAAACAE",
+	    "KEY_SUBTITLE": "AABDCABADAE",
+	    "KEY_MUTE": "AABDCBDACE",
+	    "KEY_REWIND": "AABDCAABDF",
+	    "KEY_PLAY": "AABDCAACCE",
+	    "KEY_FORWARD": "AABDCAACBE",
+	    "SKIPR": "CBDCAABADE",
+	    "KEY_PAUSE": "AABDCACBDE",
+	    "SKIPF": "CBDCAABAAE",
+	    "KEY_RECORD": "AABDCAACAAE",
+	    "KEY_STOP": "AABDCAACAF",
+	    "KEY_SLEEP": "AABDCABDAF"
+	}
+    }
+}

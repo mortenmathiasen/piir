@@ -1,0 +1,26 @@
+{
+    "description": "DENON_RC1120_3 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/denon/RC-1120.lircd.conf", "remote": "DENON_RC1120_3", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 677, "space": 0},
+	"H": {"mark": 2475, "space": 507},
+	"1": {"mark": 1276, "space": 508},
+	"0": {"mark": 677, "space": 508},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "TV_INPUT": "H10100101000AVVWWWWWXXXXXXXXYYZZZZZH10100101000AVVWWWWWXXXXXXXXYYZZZZZH10100101000A",
+	    "TV_POWER": "H10101001000AVVWWWWWXXXXXXXXYYZZZZZH10101001000AVVWWWWWXXXXXXXXYYZZZZZH10101001000A"
+	}
+    }
+}

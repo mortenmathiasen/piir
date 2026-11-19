@@ -1,0 +1,50 @@
+{
+    "description": "RMT-D126E (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-D126E.lircd.conf", "remote": "RMT-D126E", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 629, "space": 0},
+	"H": {"mark": 2441, "space": 539},
+	"1": {"mark": 1231, "space": 539},
+	"0": {"mark": 629, "space": 539},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H1010100010111001001A",
+	    "KEY_OPEN": "H0110100010111001001A",
+	    "surround": "H0101101010111001001A",
+	    "KEY_TIME": "H0001010010111001001A",
+	    "shuffle": "H1010110010111001001A",
+	    "program": "H1111100010111001001A",
+	    "KEY_AUDIO": "H0010011010111001001A",
+	    "bnr": "H0001001010111001001A",
+	    "a-b": "H0101010010111001001A",
+	    "KEY_AGAIN": "H0011010010111001001A",
+	    "KEY_CLEAR": "H1111000010111001001A",
+	    "KEY_ANGLE": "H1010011010111001001A",
+	    "KEY_SUBTITLE": "H1100011010111001001A",
+	    "KEY_PREVIOUS": "H0000110010111001001A",
+	    "KEY_NEXT": "H1000110010111001001A",
+	    "KEY_SEARCH": "H1101001010111001001A",
+	    "scan": "H0100010010111001001A",
+	    "KEY_SLOW": "H1100010010111001001A",
+	    "ir": "H0011101010111001001A",
+	    "KEY_PLAY": "H0100110010111001001A",
+	    "KEY_PAUSE": "H1001110010111001001A",
+	    "KEY_STOP": "H0001110010111001001A",
+	    "KEY_TITLE": "H0101100010111001001A",
+	    "KEY_MENU": "H1101100010111001001A",
+	    "KEY_UP": "H1001111010111001001A",
+	    "KEY_LEFT": "H1101111010111001001A",
+	    "KEY_OK": "H1101000010111001001A",
+	    "KEY_RIGHT": "H0011111010111001001A",
+	    "KEY_DOWN": "H0101111010111001001A",
+	    "display": "H0010101010111001001A",
+	    "KEY_ENTER": "H0111000010111001001A"
+	}
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "description": "Saba-TC521.conf (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/saba/TC521.lircd.conf", "remote": "Saba-TC521.conf", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 509, "space": 0},
+	"1": {"mark": 512, "space": 4532},
+	"0": {"mark": 512, "space": 1999},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_MENU": "000010111001A",
+	    "KEY_B": "000010111011A",
+	    "KEY_C": "000010111000A",
+	    "KEY_D": "000010010101A",
+	    "KEY_F": "000010011110A",
+	    "KEY_CHANNELDOWN": "000010101010A",
+	    "KEY_CHANNELUP": "000010101001A",
+	    "KEY_1": "000010000000A",
+	    "KEY_2": "000010001000A",
+	    "KEY_3": "000010010000A",
+	    "KEY_4": "000010000001A",
+	    "KEY_5": "000010001001A",
+	    "KEY_6": "000010010001A",
+	    "KEY_7": "000010000010A",
+	    "KEY_8": "000010001010A",
+	    "KEY_9": "000010010010A",
+	    "KEY_0": "000010001110A",
+	    "AV": "000010011000A",
+	    "Mark": "000010111100A",
+	    "Index": "000010111101A",
+	    "SP_LP": "000010000101A",
+	    "KEY_PLAY": "000010100000A",
+	    "KEY_REWIND": "000010011111A",
+	    "KEY_FORWARD": "000010100001A",
+	    "KEY_RECORD": "000010100011A",
+	    "KEY_STOP": "000010100100A",
+	    "KEY_PAUSE": "000010100010A",
+	    "KEY_POWER": "000010011101A"
+	}
+    }
+}

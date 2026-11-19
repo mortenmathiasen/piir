@@ -1,0 +1,24 @@
+{
+    "description": "emerson-cd (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/emerson/CD.lircd.conf", "remote": "emerson-cd", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 564, "space": 0},
+	"1": {"mark": 1451, "space": 236},
+	"0": {"mark": 564, "space": 1118},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "11001001000A",
+	    "KEY_PLAYPAUSE": "11001000010A",
+	    "stop/clear": "11001000100A",
+	    "KEY_MUTE": "11001010000A",
+	    "KEY_VOLUMEDOWN": "11010000001A",
+	    "KEY_VOLUMEUP": "11010000010A"
+	}
+    }
+}

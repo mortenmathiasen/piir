@@ -1,0 +1,47 @@
+{
+    "description": "PHILIPS_TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/TV.lircd.conf", "remote": "PHILIPS_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 940, "space": 840},
+	"B": {"mark": 1880, "space": 840},
+	"C": {"mark": 940, "space": 1680},
+	"D": {"mark": 940, "space": 0},
+	"E": {"mark": 1880, "space": 1680},
+	"F": {"mark": 1880, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_0": "AABAAAAAAAAAD",
+	    "KEY_1": "AABAAAAAAAACD",
+	    "KEY_2": "AABAAAAAAACF",
+	    "KEY_3": "AABAAAAAAACAD",
+	    "KEY_4": "AABAAAAAACBD",
+	    "KEY_5": "AABAAAAAACED",
+	    "KEY_6": "AABAAAAAACAF",
+	    "KEY_7": "AABAAAAAACAAD",
+	    "KEY_8": "AABAAAAACBAD",
+	    "KEY_9": "AABAAAAACBCD",
+	    "KEY_POWER": "AABAAAAACABD",
+	    "KEY_MUTE": "AABAAAAACAED",
+	    "A/V": "AABAAACAABAD",
+	    "KEY_102ND": "AABAAAAACEF",
+	    "KEY_VOLUMEUP": "AABAAAACBAAD",
+	    "BRT_+": "AABAAAACBCF",
+	    "CONT_+": "AABAAAACEBD",
+	    "KEY_VOLUMEDOWN": "AABAAAACBACD",
+	    "BRT_-": "AABAAAACBCAD",
+	    "CONT_-": "AABAAAAACAAF",
+	    "unknown1": "AABAAACABCF",
+	    "unknown2": "AABAAACAEBD",
+	    "TEXT_TV": "AABAAACAAABD",
+	    "TIMER": "AABAAACAEAAD",
+	    "unknown3": "AABAAACAEAF",
+	    "unknown4": "AABAAACAEED"
+	}
+    }
+}

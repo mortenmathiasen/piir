@@ -1,0 +1,20 @@
+{
+    "description": "sat-power (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/ibm/HD23A.lircd.conf", "remote": "sat-power", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 685, "space": 0},
+	"H": {"mark": 8982, "space": 4499},
+	"1": {"mark": 685, "space": 1763},
+	"0": {"mark": 685, "space": 617},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "SAT-POWER": "H00000001111001100011100011000111A"
+	}
+    }
+}

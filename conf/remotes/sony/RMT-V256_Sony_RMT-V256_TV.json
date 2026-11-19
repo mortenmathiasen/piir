@@ -1,0 +1,24 @@
+{
+    "description": "Sony_RMT-V256_TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V256.lircd.conf", "remote": "Sony_RMT-V256_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 633, "space": 0},
+	"H": {"mark": 2469, "space": 547},
+	"1": {"mark": 1231, "space": 547},
+	"0": {"mark": 633, "space": 547},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "tv_power": "H10101001000A",
+	    "tv_tv/video": "H10100101000A",
+	    "tv_display": "H01011101000A",
+	    "tv_prog+": "H00001001000A",
+	    "tv_prog-": "H10001001000A"
+	}
+    }
+}

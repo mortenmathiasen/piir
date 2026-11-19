@@ -1,0 +1,35 @@
+{
+    "description": "Funai_N9479 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/funai/N9479.lircd.conf", "remote": "Funai_N9479", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 966, "space": 0},
+	"H": {"mark": 3582, "space": 3396},
+	"1": {"mark": 966, "space": 770},
+	"0": {"mark": 966, "space": 2510},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H111010111110000101000001A",
+	    "KEY_EJECTCD": "H111010010000000101101111A",
+	    "TRACK-": "H111010111011000101000100A",
+	    "TRACK+": "H111010111101000101000010A",
+	    "MEMO": "H111010110101000101001010A",
+	    "RESET": "H111010000011000101111100A",
+	    "DISPLAY": "H111010100111000101011000A",
+	    "AUToREPEAT": "H110010111001001101000110A",
+	    "PIC_SELECT": "H110010011001001101100110A",
+	    "KEY_REWIND": "H111010110011000101001100A",
+	    "F.FWD": "H111010110111000101001000A",
+	    "KEY_PLAY": "H111010101011000101010100A",
+	    "KEY_STOP": "H111010110001000101001110A",
+	    "KEY_RECORD": "H111010101001000101010110A",
+	    "SPEED": "H110010001000001101110111A",
+	    "KEY_PAUSE": "H111010001011000101110100A"
+	}
+    }
+}

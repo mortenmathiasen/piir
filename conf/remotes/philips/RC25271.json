@@ -1,0 +1,49 @@
+{
+    "description": "Philips_RC_25271 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC25271.lircd.conf", "remote": "Philips_RC_25271", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 864, "space": 902},
+	"B": {"mark": 1728, "space": 902},
+	"C": {"mark": 864, "space": 1804},
+	"D": {"mark": 864, "space": 0},
+	"E": {"mark": 881, "space": 902},
+	"F": {"mark": 1745, "space": 1804},
+	"G": {"mark": 1728, "space": 1804},
+	"I": {"mark": 1728, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_1": "EABAAAAAAAACD",
+	    "KEY_2": "EABAAAAAAACI",
+	    "KEY_3": "EABAAAAAAACAD",
+	    "KEY_4": "EABAAAAAACBD",
+	    "KEY_5": "EABAAAAAACGD",
+	    "KEY_6": "EABAAAAAACAI",
+	    "KEY_7": "EABAAAAAACAAD",
+	    "KEY_8": "EABAAAAACBAD",
+	    "KEY_9": "EABAAAAACBCD",
+	    "KEY_0": "EABAAAAAAAAAD",
+	    "KEY_MENU": "FBAAAACBCI",
+	    "Cinema": "FBACAAAABCD",
+	    "KEY_UP": "FBAAAACBAAD",
+	    "KEY_DOWN": "FBAAAACBACD",
+	    "KEY_LEFT": "FBAAAACGGD",
+	    "KEY_RIGHT": "FBAAAACGAI",
+	    "KEY_VOLUMEUP": "EABAAAACBAAD",
+	    "KEY_VOLUMEDOWN": "EABAAAACBACD",
+	    "KEY_MUTE": "FBAAAACBACD",
+	    "KEY_CHANNELUP": "EABAAACBAAAD",
+	    "KEY_CHANNELDOWN": "EABAAACBAACD",
+	    "KEY_RED": "FBAAACGGAD",
+	    "KEY_GREEN": "FBAAACGABD",
+	    "Yelloy": "FBAAACGAGD",
+	    "KEY_BLUE": "FBAAACGAAI",
+	    "KEY_POWER": "EABAAAAACABD"
+	}
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "description": "Tesla (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/tesla/VCR.lircd.conf", "remote": "Tesla", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 925, "space": 845},
+	"B": {"mark": 1850, "space": 845},
+	"C": {"mark": 925, "space": 1690},
+	"D": {"mark": 1850, "space": 1690},
+	"E": {"mark": 961, "space": 845},
+	"F": {"mark": 925, "space": 0},
+	"G": {"mark": 1850, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_1": "EABCDBAAACF",
+	    "KEY_2": "EABCDBAACG",
+	    "KEY_3": "EABCDBAACAF",
+	    "KEY_4": "EABCDBACBF",
+	    "KEY_5": "EABCDBACDF",
+	    "KEY_6": "EABCDBACAG",
+	    "KEY_7": "EABCDBACAAF",
+	    "KEY_8": "EABCDBCBAF",
+	    "KEY_9": "EABCDBCBCF",
+	    "KEY_0": "EABCDBAAAAF",
+	    "/": "EABCDBCDG",
+	    "hod": "EABCDDAADF",
+	    "dolu": "EABCDABAACF",
+	    "hore": "EABCDABAAAF",
+	    "KEY_X": "EABCDAABACF",
+	    "KEY_PLAY": "EABCDBCAAG",
+	    "KEY_PREVIOUS": "EABCDAABCG",
+	    "KEY_STOP": "EABCDAADAG",
+	    "KEY_NEXT": "EABCDAADBF",
+	    "KEY_BACK": "EABCDADAAAF",
+	    "play3": "EABCDADDG",
+	    "KEY_REWIND": "EABCDADABF",
+	    "KEY_PAUSE": "EABCDADBCF",
+	    "KEY_FASTFORWARD": "EABCDADAAG",
+	    "play2": "EABCDAADDF",
+	    "KEY_RECORD": "EABCDAADAAF",
+	    "rect": "EABCDABCAAF",
+	    "KEY_POWER": "EABCDBCABF"
+	}
+    }
+}

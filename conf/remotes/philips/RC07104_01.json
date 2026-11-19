@@ -1,0 +1,49 @@
+{
+    "description": "CD723 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC07104_01.lircd.conf", "remote": "CD723", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 930, "space": 847},
+	"B": {"mark": 1860, "space": 847},
+	"C": {"mark": 1860, "space": 1694},
+	"D": {"mark": 930, "space": 1694},
+	"E": {"mark": 966, "space": 847},
+	"F": {"mark": 930, "space": 0},
+	"G": {"mark": 1860, "space": 0},
+	"I": {"mark": 1896, "space": 1694},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "fade": "IACBDAABAF",
+	    "KEY_0": "EAACBAAAAAAF",
+	    "KEY_1": "EAACBAAAAADF",
+	    "KEY_2": "EAACBAAAADG",
+	    "KEY_3": "EAACBAAAADAF",
+	    "KEY_4": "EAACBAAADBF",
+	    "KEY_5": "EAACBAAADCF",
+	    "KEY_6": "EAACBAAADAG",
+	    "KEY_7": "EAACBAAADAAF",
+	    "KEY_8": "EAACBAADBAF",
+	    "KEY_9": "EAACBAADBDF",
+	    "KEY_TIME": "EAACBAADCAF",
+	    "KEY_SLEEP": "EAACBAADABF",
+	    "KEY_VOLUMEUP": "EAACBADBAAF",
+	    "KEY_VOLUMEDOWN": "EAACBADBADF",
+	    "shuffle": "EAACBADAABF",
+	    "KEY_AGAIN": "EAACBADAACF",
+	    "KEY_NEXT": "EAACBDBAAAF",
+	    "KEY_PREVIOUS": "EAACBDBAADF",
+	    "program": "EAACBDBDBF",
+	    "highlight": "EAACBDCCAF",
+	    "KEY_PAUSE": "EAACBDABAAF",
+	    "KEY_REWIND": "EAACBDABDG",
+	    "wind": "EAACBDACBF",
+	    "KEY_PLAY": "EAACBDACCF",
+	    "KEY_STOP": "EAACBDACAG"
+	}
+    }
+}

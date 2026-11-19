@@ -1,0 +1,48 @@
+{
+    "description": "Skymaster_2421 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/skymaster/2421.lircd.conf", "remote": "Skymaster_2421", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 910, "space": 835},
+	"B": {"mark": 1820, "space": 835},
+	"C": {"mark": 910, "space": 1670},
+	"D": {"mark": 910, "space": 0},
+	"E": {"mark": 923, "space": 835},
+	"F": {"mark": 1820, "space": 1670},
+	"G": {"mark": 1833, "space": 1670},
+	"I": {"mark": 1820, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_1": "EABAAAAAAAACD",
+	    "KEY_2": "EABAAAAAAACI",
+	    "KEY_3": "EABAAAAAAACAD",
+	    "KEY_4": "EABAAAAAACBD",
+	    "KEY_5": "EABAAAAAACFD",
+	    "KEY_6": "EABAAAAAACAI",
+	    "KEY_7": "EABAAAAAACAAD",
+	    "KEY_8": "EABAAAAACBAD",
+	    "KEY_9": "EABAAAAACBCD",
+	    "KEY_0": "EABAAAAAAAAAD",
+	    "KEY_OK": "EABAAACBACAD",
+	    "KEY_UP": "GBAAAACBAAD",
+	    "KEY_DOWN": "GBAAAACBACD",
+	    "KEY_LEFT": "GBAAAACFFD",
+	    "KEY_RIGHT": "GBAAAACFAI",
+	    "KEY_VOLUMEUP": "EABAAAACBAAD",
+	    "KEY_VOLUMEDOWN": "EABAAAACBACD",
+	    "KEY_RED": "GBAAACFFAD",
+	    "KEY_GREEN": "GBAAACFABD",
+	    "KEY_BLUE": "GBAAACFAAI",
+	    "KEY_YELLOW": "GBAAACFAFD",
+	    "KEY_MENU": "GBAAAACBCI",
+	    "KEY_BACK": "EABAAACBACI",
+	    "KEY_POWER": "EABAAAAACABD",
+	    "KEY_MUTE": "EABAAAAACAFD"
+	}
+    }
+}

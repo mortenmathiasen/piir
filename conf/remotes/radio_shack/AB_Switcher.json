@@ -1,0 +1,21 @@
+{
+    "description": "RadioShack (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/radio_shack/AB_Switcher.lircd.conf", "remote": "RadioShack", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 550, "space": 0},
+	"H": {"mark": 1500, "space": 200},
+	"1": {"mark": 1400, "space": 300},
+	"0": {"mark": 600, "space": 1100},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_A": "H1010000010A",
+	    "KEY_B": "H1010000001A"
+	}
+    }
+}

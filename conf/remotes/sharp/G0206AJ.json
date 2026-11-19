@@ -1,0 +1,31 @@
+{
+    "description": "Sharp_G0009AJ (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sharp/G0206AJ.lircd.conf", "remote": "Sharp_G0009AJ", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 281, "space": 0},
+	"1": {"mark": 282, "space": 1827},
+	"0": {"mark": 282, "space": 772},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "OPERATE": "110001001011101A",
+	    "RENATAL": "110001100110001A",
+	    "TRACKINGD": "110001001111001A",
+	    "TRACKINGU": "110000101111001A",
+	    "KEY_PLAY": "110000100010010A",
+	    "KEY_REWIND": "110001100010010A",
+	    "KEY_FORWARD": "110000111101101A",
+	    "KEY_RECORD": "110001110101101A",
+	    "KEY_STOP": "110000001101101A",
+	    "KEY_PAUSE": "110000101101101A",
+	    "KEY_SLOW": "110000110101101A",
+	    "KEY_TAPE": "110000011000110A",
+	    "MEMORY": "110001100000110A"
+	}
+    }
+}

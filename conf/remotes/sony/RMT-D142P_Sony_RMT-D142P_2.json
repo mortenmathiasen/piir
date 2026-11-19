@@ -1,0 +1,27 @@
+{
+    "description": "Sony_RMT-D142P (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-D142P.lircd.conf", "remote": "Sony_RMT-D142P", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 556, "space": 0},
+	"H": {"mark": 2345, "space": 646},
+	"1": {"mark": 1150, "space": 641},
+	"0": {"mark": 556, "space": 641},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "tv_power": "H10101001000AVVWWWWWXXXXXXXXYYYZZZH10101001000AVVWWWWWXXXXXXXXYYYZZZH10101001000A",
+	    "KEY_VOLUMEUP": "H01001001000AVVWWWWWWXXXXYYZZZZZZZH01001001000AVVWWWWWWXXXXYYZZZZZZZH01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000AVVWWWWWXXXXXXXXYYYZZZH11001001000AVVWWWWWXXXXXXXXYYYZZZH11001001000A"
+	}
+    }
+}

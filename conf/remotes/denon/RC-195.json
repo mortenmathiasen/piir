@@ -1,0 +1,39 @@
+{
+    "description": "DENON_RC-195 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/denon/RC-195.lircd.conf", "remote": "DENON_RC-195", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 561, "space": 0},
+	"1": {"mark": 561, "space": 489},
+	"0": {"mark": 561, "space": 1543},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "101110111110011A",
+	    "KEY_UP": "110011001010011A",
+	    "KEY_DOWN": "110010101010011A",
+	    "KEY_TUNER": "101110101110011A",
+	    "KEY_CD": "101111101110011A",
+	    "PHONO": "101110011110011A",
+	    "KEY_VCR": "101110100110011A",
+	    "KEY_TV": "101111010110011A",
+	    "KEY_TAPE": "101111011010011A",
+	    "STEREO": "101110001100011A",
+	    "KEY_MODE": "101111001100011A",
+	    "TESTTONE": "101111010100011A",
+	    "DELAY": "101110110100011A",
+	    "KEY_MUTE": "101111111000011A",
+	    "PANEL": "101111000010011A",
+	    "CENTER_UP": "101110101000011A",
+	    "CENTER_DOWN": "101111001000011A",
+	    "REAR_UP": "101110011000011A",
+	    "REAR_DOWN": "101111101000011A",
+	    "KEY_VOLUMEUP": "101110111000011A",
+	    "KEY_VOLUMEDOWN": "101111011000011A"
+	}
+    }
+}

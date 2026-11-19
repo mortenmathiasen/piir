@@ -1,0 +1,32 @@
+{
+    "description": "frigid (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/frigidaire/WF-RG63.lircd.conf", "remote": "frigid", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 613, "space": 0},
+	"H": {"mark": 9005, "space": 4394},
+	"1": {"mark": 613, "space": 1600},
+	"0": {"mark": 613, "space": 458},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H00010000101011111000100001110111A",
+	    "KEY_LEFT": "H00010000101011110010000011011111A",
+	    "KEY_UP": "H00010000101011110111000010001111A",
+	    "KEY_RIGHT": "H00010000101011111000000001111111A",
+	    "KEY_DOWN": "H00010000101011111011000001001111A",
+	    "KEY_C": "H00010000101011111001000001101111A",
+	    "KEY_SAVE": "H00010000101011110100000010111111A",
+	    "KEY_F": "H00010000101011111110000000011111A",
+	    "KEY_SLEEP": "H00010000101011110000000011111111A",
+	    "KEY_A": "H00010000101011111111000000001111A",
+	    "KEY_TIME": "H00010000101011110110000010011111A",
+	    "BTN_START": "H00010000101011111111010110110110A",
+	    "KEY_STOP": "H00010000101011111111011100001000A"
+	}
+    }
+}

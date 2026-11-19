@@ -1,0 +1,6 @@
+{
+    "description": "Feature longer than the template",
+    "symboldefinitions": {"A": {"mark": 100, "space": 100}, "B": {"mark": 200, "space": 200}},
+    "template": "AA",
+    "features": {"key": {"LONG": "BBB", "SHORT": "B"}}
+}

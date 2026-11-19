@@ -1,0 +1,27 @@
+{
+    "description": "Creative_JUKEBOX3 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/creative/JUKEBOX_3.lircd.conf", "remote": "Creative_JUKEBOX3", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 638, "space": 0},
+	"H": {"mark": 8900, "space": 4460},
+	"1": {"mark": 638, "space": 1509},
+	"0": {"mark": 638, "space": 410},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H10000100001101010000010011111011A",
+	    "KEY_PLAYPAUSE": "H10000100001101010000001011111101A",
+	    "FAST_REVERSE": "H10000100001101010000010111111010A",
+	    "KEY_FASTFORWARD": "H10000100001101010000011111111000A",
+	    "KEY_STOP": "H10000100001101010000101011110101A",
+	    "EAX": "H10000100001101010000110111110010A",
+	    "KEY_VOLUMEUP": "H10000100001101010000111111110000A",
+	    "KEY_VOLUMEDOWN": "H10000100001101010000111011110001A"
+	}
+    }
+}

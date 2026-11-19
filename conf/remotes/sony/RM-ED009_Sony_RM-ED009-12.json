@@ -1,0 +1,52 @@
+{
+    "description": "Sony_RM-ED009-12 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-ED009.lircd.conf", "remote": "Sony_RM-ED009-12", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 660, "space": 0},
+	"H": {"mark": 2478, "space": 476},
+	"1": {"mark": 1276, "space": 513},
+	"0": {"mark": 660, "space": 513},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_INFO": "H01011101000A",
+	    "KEY_POWER": "H10101001000A",
+	    "pic": "H00111011000A",
+	    "ab": "H11101001000A",
+	    "KEY_RED": "H00110011100A",
+	    "KEY_GREEN": "H10110011100A",
+	    "KEY_YELLOW": "H01110011100A",
+	    "KEY_BLUE": "H11110011100A",
+	    "input": "H10100101000A",
+	    "KEY_UP": "H00101111000A",
+	    "KEY_DOWN": "H10101111000A",
+	    "KEY_LEFT": "H00101101000A",
+	    "KEY_OK": "H10100111000A",
+	    "KEY_RIGHT": "H11001101000A",
+	    "KEY_MENU": "H00000111000A",
+	    "analog": "H00011101000A",
+	    "KEY_1": "H00000001000A",
+	    "KEY_2": "H10000001000A",
+	    "KEY_3": "H01000001000A",
+	    "KEY_4": "H11000001000A",
+	    "KEY_5": "H00100001000A",
+	    "KEY_6": "H10100001000A",
+	    "KEY_7": "H01100001000A",
+	    "KEY_8": "H11100001000A",
+	    "KEY_9": "H00010001000A",
+	    "KEY_TEXT": "H11111101000A",
+	    "KEY_0": "H10010001000A",
+	    "refresh": "H11011101000A",
+	    "KEY_VOLUMEUP": "H01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000A",
+	    "KEY_CHANNELUP": "H00001001000A",
+	    "KEY_CHANNELDOWN": "H10001001000A",
+	    "KEY_MUTE": "H00101001000A"
+	}
+    }
+}

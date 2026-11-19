@@ -1,0 +1,50 @@
+{
+    "description": "Sony_RM-PP860_12 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-PP860.lircd.conf", "remote": "Sony_RM-PP860_12", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 666, "space": 0},
+	"H": {"mark": 2494, "space": 494},
+	"1": {"mark": 1269, "space": 527},
+	"0": {"mark": 666, "space": 527},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H01011000100A",
+	    "KEY_PAUSE": "H10011000100A",
+	    "KEY_STOP": "H00011000100A",
+	    "joyleft": "H01000110100A",
+	    "joyright": "H10000110100A",
+	    "joyup": "H01000010100A",
+	    "joydown": "H11000010100A",
+	    "display": "H01011010100A",
+	    "avmenu": "H10110010100A",
+	    "tvvolup": "H01001001000A",
+	    "tvvoldown": "H11001001000A",
+	    "tvch+": "H00001001000A",
+	    "tvch-": "H10001001000A",
+	    "tvvideo": "H10100101000A",
+	    "joyenter": "H10001010100A",
+	    "KEY_1": "H00000000100A",
+	    "KEY_2": "H10000000100A",
+	    "KEY_3": "H01000000100A",
+	    "KEY_4": "H11000000100A",
+	    "KEY_5": "H00100000100A",
+	    "KEY_6": "H10100000100A",
+	    "KEY_7": "H01100000100A",
+	    "KEY_8": "H11100000100A",
+	    "KEY_9": "H00010000100A",
+	    "presetskip+": "H00001000100A",
+	    "presetskip-": "H10001000100A",
+	    "KEY_AUDIO": "H11101000100A",
+	    "KEY_NEXT": "H01101010100A",
+	    "KEY_PREVIOUS": "H11101010100A",
+	    "KEY_FASTFORWARD": "H00111000100A",
+	    "KEY_REWIND": "H11011000100A"
+	}
+    }
+}

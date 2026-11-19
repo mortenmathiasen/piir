@@ -1,0 +1,23 @@
+{
+    "description": "TOSHIBA_NEC (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/toshiba/TDP-S2.lircd.conf", "remote": "TOSHIBA_NEC", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 579, "space": 0},
+	"H": {"mark": 9014, "space": 4444},
+	"1": {"mark": 581, "space": 1654},
+	"0": {"mark": 581, "space": 536},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_SLEEP": "H11100001011100101011000001001111A",
+	    "COMPUTER": "H11100001011100101001100001100111A",
+	    "KEY_VIDEO": "H11100001011100100101100010100111A",
+	    "KEY_MENU": "H11100001011100100100000010111111A"
+	}
+    }
+}

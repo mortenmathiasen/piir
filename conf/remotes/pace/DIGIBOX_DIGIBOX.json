@@ -1,0 +1,53 @@
+{
+    "description": "DIGIBOX (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pace/DIGIBOX.lircd.conf", "remote": "DIGIBOX", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 444, "space": 444},
+	"B": {"mark": 444, "space": 888},
+	"C": {"mark": 888, "space": 444},
+	"D": {"mark": 444, "space": 0},
+	"E": {"mark": 888, "space": 888},
+	"F": {"mark": 888, "space": 0},
+	"H": {"mark": 2667, "space": 889},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------",
+    "features": {
+	"key": {
+	    "sky": "HAABBCAAAAAAAAAAAEAAAAAAD",
+	    "tvguide": "HAABBCAAAAAAAAAAACBACBAD",
+	    "services": "HAABBCAAAAAAAAAAAACAAAABD",
+	    "interactive": "HAABBCAAAAAAAAAAACAABEF",
+	    "i": "HAABBCAAAAAAAAAAACBAECD",
+	    "up": "HAABBCAAAAAAAAAAAAECBAAD",
+	    "down": "HAABBCAAAAAAAAAAAAECBAF",
+	    "left": "HAABBCAAAAAAAAAAAAECBED",
+	    "right": "HAABBCAAAAAAAAAAAAECBCD",
+	    "ch+": "HAABBCAAAAAAAAAAAAAEAAAAD",
+	    "ch-": "HAABBCAAAAAAAAAAAAAEAAAF",
+	    "backup": "HAABBCAAAAAAAAAAAEAAAACD",
+	    "text": "HAABBCAAAAAAAAAAAAACAABAD",
+	    "help": "HAABBCAAAAAAAAAAAEAAAAAF",
+	    "red": "HAABBCAAAAAAAAAAAACBCBF",
+	    "green": "HAABBCAAAAAAAAAAAACBCABD",
+	    "yellow": "HAABBCAAAAAAAAAAAACBCAAD",
+	    "1": "HAABBCAAAAAAAAAAAAAAAAAAF",
+	    "2": "HAABBCAAAAAAAAAAAAAAAAAED",
+	    "3": "HAABBCAAAAAAAAAAAAAAAAACD",
+	    "4": "HAABBCAAAAAAAAAAAAAAAAEAD",
+	    "5": "HAABBCAAAAAAAAAAAAAAAAEF",
+	    "6": "HAABBCAAAAAAAAAAAAAAAACBD",
+	    "7": "HAABBCAAAAAAAAAAAAAAAACAD",
+	    "8": "HAABBCAAAAAAAAAAAAAAAEAAD",
+	    "9": "HAABBCAAAAAAAAAAAAAAAEAF",
+	    "0": "HAABBCAAAAAAAAAAAAAAAAAAAD",
+	    "boxoffice": "HAABBCAAAAAAAAAAAACAAABF",
+	    "select": "HAABBCAAAAAAAAAAAAECABAD",
+	    "blue": "HAABBCAAAAAAAAAAAACABAAAD",
+	    "power": "HAABBCAAAAAAAAAAAAAAACBAD"
+	}
+    }
+}

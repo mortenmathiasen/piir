@@ -1,0 +1,45 @@
+{
+    "description": "Telefunken_RC141 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/telefunken/TC141.lircd.conf", "remote": "Telefunken_RC141", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 540, "space": 0},
+	"1": {"mark": 540, "space": 1945},
+	"0": {"mark": 540, "space": 4485},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_MENU": "111111000110A",
+	    "access": "111101000100A",
+	    "svtimer": "111101000111A",
+	    "install": "111111101010A",
+	    "status": "111101100001A",
+	    "KEY_1": "111111111111A",
+	    "KEY_2": "111111110111A",
+	    "KEY_3": "111101101111A",
+	    "KEY_4": "111111111110A",
+	    "KEY_5": "111101110110A",
+	    "KEY_6": "111111101110A",
+	    "KEY_7": "111101111101A",
+	    "KEY_8": "111111110101A",
+	    "KEY_9": "111101101101A",
+	    "KEY_0": "111111110001A",
+	    "KEY_KPMINUS": "111101010101A",
+	    "KEY_KPPLUS": "111111010110A",
+	    "KEY_REWIND": "111101100000A",
+	    "KEY_PLAY": "111111011111A",
+	    "KEY_FORWARD": "111101011110A",
+	    "KEY_RECORD": "111111011100A",
+	    "KEY_STOP": "111101011011A",
+	    "KEY_PAUSE": "111111011101A",
+	    "KEY_POWER": "111101100010A",
+	    "index": "111111000011A",
+	    "erase": "111101000010A",
+	    "sp": "111111111010A"
+	}
+    }
+}

@@ -10,7 +10,8 @@
 #include "log.h"
 #include "config.h"
 
-#include "hvac_panasonic_plugin.h"
+#include "plugins.h"
+#include "remotes.h"
 
 featureT *requestedFeatures = 0;
 
@@ -34,6 +35,7 @@ static struct option long_options[] =
    {"feature",  required_argument, 0, 'f'},
    {"verbose", required_argument, 0, 'v'},
    {"help", no_argument, 0, 'h'},
+   {"list", no_argument, 0, 'l'},
    {0, 0, 0, 0}
   };
 
@@ -41,14 +43,18 @@ void printAvailableConfigFiles();
 
 void usage() {
   printf("\nusage:      %s\n", PROGRAMNAME);
-  printf("            --remote, -r CONFIGFILE\n");
+  printf("            --remote, -r REMOTE\n");
   printf("            [--feature, -f NAME=VALUE]\n");
   printf("            [--verbose, -v (TRACE|DEBUG|INFO|WARN|ERROR|FATAL|NOTHING)]\n");
+  printf("            [--list, -l]\n");
   printf("            [--help, -h]\n");
+  printf("\nREMOTE is a remote name from --list, e.g. sony/RM-ED011, a file name\n");
+  printf("that is unique among the remotes, e.g. RM-ED011, or a path to a JSON file.\n");
   printf("\nexamples:   %s --help\n", PROGRAMNAME);
+  printf("            %s --list\n", PROGRAMNAME);
   printf("            %s --remote hvac_panasonic --help\n", PROGRAMNAME);
   printf("            %s --remote hvac_panasonic --feature temperature=21\n", PROGRAMNAME);
-  printf("            %s --remote tv_sony --feature action=TURN_ON\n", PROGRAMNAME);
+  printf("            %s --remote sony/RM-ED011 --feature key=KEY_POWER\n", PROGRAMNAME);
   exit(EXIT_FAILURE);
 }
 
@@ -90,24 +96,28 @@ void loadConfigfile(char *configfile) {
   // Initialize data paths
   initializeDataPaths();
 
-  // setup path: an existing file path is used as is, otherwise a remote name
-  // is looked up in the local and then the global remotes directory
-  char *suffix = ".json";
+  // An existing file path is used as is, otherwise the remote name is
+  // looked up in the local and then the global remotes directory
   if (strchr(configfile, '/') && access( configfile, F_OK ) == 0) {
     configfilepath = strdup(configfile);
   } else {
-    size_t pathlength = strlen(globalpath)>strlen(localpath)?strlen(globalpath):strlen(localpath);
-    configfilepath = (char*) malloc(pathlength+strlen(configfile)+strlen(suffix)+2);
-    strcpy(configfilepath, localpath);
-    strcat(configfilepath, configfile);
-    strcat(configfilepath, suffix);
-    if (access( configfilepath, F_OK ) == -1 ) {
-      strcpy(configfilepath, globalpath);
-      strcat(configfilepath, configfile);
-      strcat(configfilepath, suffix);
+    const char *dirs[] = {localpath, globalpath};
+    remoteListT matches;
+    size_t found = findRemote(dirs, 2, configfile, &configfilepath, &matches);
+    if (found > 1) {
+      printf("Remote '%s' is ambiguous, use one of:\n", configfile);
+      for (size_t i = 0; i < matches.count; i++)
+	printf("    %s\n", matches.names[i]);
+      freeRemoteList(&matches);
+      usage();
+    }
+    if (!found) {
+      printf("Cannot find remote '%s'\n", configfile);
+      printAvailableConfigFiles();
+      usage();
     }
   }
-  
+
   // load config file
   loadConfig(configfilepath);
   if (!isConfigLoaded()) {
@@ -121,7 +131,7 @@ void loadConfigfile(char *configfile) {
 
   //Declace and initialize feature name and for now empty values
   requestedFeatures = (featureT*)malloc(sizeof(featureT)*configFeaturesCount);
-  for (int i=0 ; i<configFeaturesCount ; i++) {
+  for (size_t i=0 ; i<configFeaturesCount ; i++) {
     requestedFeatures[i].name = 0;
     requestedFeatures[i].value = 0;
   }
@@ -130,14 +140,12 @@ void loadConfigfile(char *configfile) {
 }
 
 void insertFeatureValue(const char *Name, const char *Value) {
-  // prepare
-  static int nextFeatureIndex = 0;
-  
-  // add feature
-  if (hasFeatureNameAndValue(Name, Value)) {
-    requestedFeatures[nextFeatureIndex].name = Name;
-    requestedFeatures[nextFeatureIndex].value = Value;
-    nextFeatureIndex++;
+  // Requested features are stored at their index in the configuration file,
+  // so repeating a feature replaces the earlier value
+  size_t featureIndex = 0;
+  if (hasFeatureNameAndValue(Name, Value) && getFeatureIndex(Name, &featureIndex)) {
+    requestedFeatures[featureIndex].name = Name;
+    requestedFeatures[featureIndex].value = Value;
   } else {
     printf("Feature '%s'='%s' does not match configuration file\n",
 	   Name, Value);
@@ -146,47 +154,35 @@ void insertFeatureValue(const char *Name, const char *Value) {
   }
 }
 
-void printAvailableConfigFilesInPath(const char *filepath) {
-    struct dirent *de; // Pointer for directory entry 
-
-    // Guardian
-    if (access( filepath, F_OK ) == -1 ) {
-      printf("No available configuration files in %s\n", filepath);
-      return;
-    }
-
-    // opendir() returns a pointer of DIR type.
-    DIR *dr = opendir(filepath); 
-
-    if (dr == NULL) // opendir returns NULL if couldn't open directory 
-      { 
-	log_fatal("Could not open current directory %s", filepath);
-	usage();
-      } 
-
-    // Refer http://pubs.opengroup.org/onlinepubs/7990989775/xsh/readdir.html 
-    // for readdir()
-    int headerOutput = false;
-    while ((de = readdir(dr)) != NULL) {
-      char *head = strtok(de->d_name, ".");
-      char *suffix = strtok(NULL, ".");
-      char *tail = strtok(NULL, ".");
-      if (head && strcmp("json",suffix)==0  && !tail) {
-	if (!headerOutput) {
-	  printf("Available configuration files in %s:\n", filepath);
-	  headerOutput = true;
-	}
-	printf("    %s\n", head);
-      }
-    }
-    if (!headerOutput)
-      printf("No available configuration files in %s\n", filepath);
-    closedir(dr);	 
-}
+// Remotes are listed in full up to this number, otherwise --list does it
+#define MAX_REMOTES_IN_HELP 40
 
 void printAvailableConfigFiles() {
-  printAvailableConfigFilesInPath(localpath);
-  printAvailableConfigFilesInPath(globalpath);
+  const char *dirs[] = {localpath, globalpath};
+  remoteListT list;
+  listRemotes(dirs, 2, &list);
+  if (list.count == 0)
+    printf("No remotes found in %s or %s\n", localpath, globalpath);
+  else if (list.count > MAX_REMOTES_IN_HELP)
+    printf("%zu remotes available in %s and %s, list them with: %s --list\n",
+	   list.count, localpath, globalpath, PROGRAMNAME);
+  else {
+    printf("Available remotes in %s and %s:\n", localpath, globalpath);
+    for (size_t i = 0; i < list.count; i++)
+      printf("    %s\n", list.names[i]);
+  }
+  freeRemoteList(&list);
+}
+
+void listAllRemotes() {
+  const char *dirs[] = {localpath, globalpath};
+  remoteListT list;
+  listRemotes(dirs, 2, &list);
+  size_t count = list.count;
+  for (size_t i = 0; i < count; i++)
+    printf("%s\n", list.names[i]);
+  freeRemoteList(&list);
+  exit(count ? EXIT_SUCCESS : EXIT_FAILURE);
 }
 
 int main(int argc, char *argv[])  
@@ -203,7 +199,7 @@ int main(int argc, char *argv[])
   // Load remote agnostic parameters
   while (1) {
     int option_index = -1; // getopt_long stores the option index here. 
-    int c = getopt_long (argc, argv, ":r:v:h:f:",
+    int c = getopt_long (argc, argv, ":r:v:hlf:",
 		     long_options, &option_index);
 
     // detect the end of the options
@@ -221,6 +217,10 @@ int main(int argc, char *argv[])
 	  
     case 'h':
       helprequested = true;
+      break;
+
+    case 'l':
+      listAllRemotes();
       break;
 
     case 'f':
@@ -282,9 +282,14 @@ int main(int argc, char *argv[])
   loadDutyCycle(&dutycycle);
   log_info("%s", description);
 
-  // Remote specific plugin 
-  if (strstr(configfilepath, "hvac_panasonic") != NULL) {
-    hvac_panasonic_plugin(symbolString);
+  // Remote specific plugin
+  const char *plugin = 0;
+  loadPlugin(&plugin);
+  if (!plugin)
+    plugin = legacyRemotePlugin(configfilepath);
+  if (applyRemotePlugin(plugin, symbolString)) {
+    printf("Unknown plugin '%s' in %s\n", plugin, configfilepath);
+    exit(EXIT_FAILURE);
   }
   log_debug("Transmitting: %s", symbolString);  
   // Load outPin number from config file

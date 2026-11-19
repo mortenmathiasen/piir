@@ -1,0 +1,28 @@
+{
+    "description": "Roku_Netflix_Player (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/roku/Netflix_Player.lircd.conf", "remote": "Roku_Netflix_Player", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 640, "space": 0},
+	"H": {"mark": 9088, "space": 4480},
+	"1": {"mark": 640, "space": 1664},
+	"0": {"mark": 640, "space": 640},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_HOME": "H01111101111101110000000011111111A",
+	    "KEY_UP": "H01111101111101111000000001111111A",
+	    "KEY_DOWN": "H01111101111101111010000001011111A",
+	    "KEY_LEFT": "H01111101111101110100000010111111A",
+	    "KEY_RIGHT": "H01111101111101110010000011011111A",
+	    "KEY_OK": "H01111101111101111100000000111111A",
+	    "KEY_REWIND": "H01111101111101110110000010011111A",
+	    "KEY_FORWARD": "H01111101111101110001000011101111A",
+	    "KEY_PLAY": "H01111101111101111110000000011111A"
+	}
+    }
+}

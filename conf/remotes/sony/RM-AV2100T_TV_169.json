@@ -1,0 +1,25 @@
+{
+    "description": "TV_169 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-AV2100T.lircd.conf", "remote": "TV_169", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1200, "space": 0},
+	"H": {"mark": 2400, "space": 600},
+	"1": {"mark": 1200, "space": 600},
+	"0": {"mark": 600, "space": 600},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_9": "H10111100010010AVWWWWWWWWWXXXXXYYYYZZZZZZZZZH10111100010010AVWWWWWWWWWXXXXXYYYYZZZZZZZZZH10111100010010A"
+	}
+    }
+}

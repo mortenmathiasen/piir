@@ -1,0 +1,50 @@
+{
+    "description": "AVEX-RC501 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/avex/RC501.lircd.conf", "remote": "AVEX-RC501", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 941, "space": 831},
+	"B": {"mark": 1882, "space": 831},
+	"C": {"mark": 941, "space": 1662},
+	"D": {"mark": 1882, "space": 1662},
+	"E": {"mark": 983, "space": 831},
+	"F": {"mark": 941, "space": 0},
+	"G": {"mark": 1882, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "EABCDAADDF",
+	    "KEY_STOP": "EABCDAADAG",
+	    "KEY_REWIND": "EABCDAABCG",
+	    "KEY_FASTFORWARD": "EABCDAADBF",
+	    "pic_rew": "EABCDADABF",
+	    "pic_ff": "EABCDADAAG",
+	    "KEY_PAUSE": "EABCDADBCF",
+	    "reset": "EABCDAABACF",
+	    "calibrate": "EABCDBCAAG",
+	    "backward": "EABCDADAAAF",
+	    "fast": "EABCDADDG",
+	    "KEY_UP": "EABCDABAAAF",
+	    "KEY_DOWN": "EABCDABAACF",
+	    "prog": "EABCDDAADF",
+	    "KEY_SLEEP": "EABCDBCABF",
+	    "KEY_RECORD": "EABCDAADAAF",
+	    "otr-rec": "EABCDABCBF",
+	    "KEY_1": "EABCDBAAACF",
+	    "KEY_2": "EABCDBAACG",
+	    "KEY_3": "EABCDBAACAF",
+	    "KEY_4": "EABCDBACBF",
+	    "KEY_5": "EABCDBACDF",
+	    "KEY_6": "EABCDBACAG",
+	    "KEY_7": "EABCDBACAAF",
+	    "KEY_8": "EABCDBCBAF",
+	    "KEY_9": "EABCDBCBCF",
+	    "KEY_0": "EABCDBAAAAF",
+	    "switch_prgs": "EABCDBCDG"
+	}
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "description": "Sony_RM-SC1_3 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-SC1.lircd.conf", "remote": "Sony_RM-SC1_3", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 652, "space": 0},
+	"H": {"mark": 2487, "space": 500},
+	"1": {"mark": 1248, "space": 542},
+	"0": {"mark": 652, "space": 542},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "play_mode-tuning_mode": "H0001010010111001110A",
+	    "repeat-fm_mode": "H1011010010111001110A",
+	    "skip_back": "H0000110010111001110A",
+	    "skip_forward": "H1000110010111001110A",
+	    "KEY_REWIND": "H1100110010111001110A",
+	    "KEY_FASTFORWARD": "H0010110010111001110A",
+	    "KEY_PLAY": "H0100110010111001110A",
+	    "KEY_PAUSE": "H1001110010111001110A",
+	    "KEY_STOP": "H0001110010111001110A",
+	    "KEY_CLEAR": "H1111000010111001110A",
+	    "KEY_ENTER": "H0011111010111001110A",
+	    "disc_skip": "H0111110010111001110A"
+	}
+    }
+}

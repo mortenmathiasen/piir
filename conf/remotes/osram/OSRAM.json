@@ -1,0 +1,19 @@
+{
+    "description": "OSRAM (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/osram/OSRAM.lircd.conf", "remote": "OSRAM", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 460, "space": 0},
+	"1": {"mark": 1300, "space": 360},
+	"0": {"mark": 460, "space": 1250},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_OK": "10000100001A"
+	}
+    }
+}

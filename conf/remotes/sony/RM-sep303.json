@@ -1,0 +1,40 @@
+{
+    "description": "sonyRM-sep303 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-sep303.lircd.conf", "remote": "sonyRM-sep303", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 263, "space": 0},
+	"1": {"mark": 263, "space": 7286},
+	"0": {"mark": 263, "space": 4752},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_PLAYPAUSE": "11100000101A",
+	    "KEY_STOP": "11100001101A",
+	    "Shuffle": "10100010000A",
+	    "KEY_AGAIN": "11100010001A",
+	    "KEY_PREVIOUS": "11100000100A",
+	    "KEY_NEXT": "10100001100A",
+	    "KEY_ENTER": "11100011100A",
+	    "Tuning-": "10100011110A",
+	    "Preset-": "11100100111A",
+	    "Preset+": "10100011111A",
+	    "Tuning+": "11100011001A",
+	    "MusicMenu": "10100100001A",
+	    "KEY_VOLUMEUP": "11100000000A",
+	    "Voume-": "10100001000A",
+	    "MegaBass": "11100010100A",
+	    "Muting": "10100001001A",
+	    "Clock/Timer": "11100110011A",
+	    "Timer(on/off)": "10100110110A",
+	    "KEY_POWER": "11100000001A",
+	    "KEY_TAPE": "10100000011A",
+	    "KEY_CD": "11100001010A",
+	    "KEY_TUNER": "10100000010A"
+	}
+    }
+}

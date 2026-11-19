@@ -1,0 +1,47 @@
+{
+    "description": "Sony_RMT-C380 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-C380.lircd.conf", "remote": "Sony_RMT-C380", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 708, "space": 0},
+	"H": {"mark": 2527, "space": 480},
+	"1": {"mark": 1317, "space": 489},
+	"0": {"mark": 708, "space": 489},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_OPEN": "H01101000010011A",
+	    "KEY_POWER": "H10101000010001A",
+	    "SOUND": "H00001100010001A",
+	    "FUNCTION": "H11100010010001A",
+	    "KEY_1": "H00000000010011A",
+	    "KEY_2": "H10000000010011A",
+	    "KEY_3": "H01000000010011A",
+	    "KEY_4": "H11000000010011A",
+	    "KEY_5": "H00100000010011A",
+	    "KEY_6": "H10100000010011A",
+	    "KEY_7": "H01100000010011A",
+	    "KEY_8": "H11100000010011A",
+	    "KEY_9": "H00010000010011A",
+	    "KEY_MODE": "H10001000010001A",
+	    "KEY_0": "H00110000010011A",
+	    ">10": "H10110000010011A",
+	    "KEY_PLAY": "H01001100010011A",
+	    "KEY_PREVIOUS": "H00001100010011A",
+	    "KEY_NEXT": "H10001100010011A",
+	    "KEY_PAUSE": "H10011100010011A",
+	    "KEY_REWIND": "H01011100010011A",
+	    "KEY_FORWARD": "H11011100010011A",
+	    "KEY_STOP": "H00011100010011A",
+	    "BAND": "H11110110010011A",
+	    "TUNE_UP": "H11001110010011A",
+	    "TUNE_DOWN": "H00101110010011A",
+	    "KEY_VOLUMEUP": "H01001000010001A",
+	    "KEY_VOLUMEDOWN": "H11001000010001A"
+	}
+    }
+}

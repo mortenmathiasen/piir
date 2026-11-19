@@ -1,0 +1,51 @@
+{
+    "description": "G0009AJ (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sharp/G0009AJ.lircd.conf", "remote": "G0009AJ", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 281, "space": 0},
+	"1": {"mark": 282, "space": 1827},
+	"0": {"mark": 282, "space": 772},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "Operate": "110000110100010A",
+	    "TimerOnOff": "110001001100010A",
+	    "KEY_1": "110001000000010A",
+	    "KEY_2": "110000100000010A",
+	    "KEY_3": "110001100000010A",
+	    "KEY_4": "110000010000010A",
+	    "KEY_5": "110001010000010A",
+	    "KEY_6": "110000110000010A",
+	    "KEY_7": "110001110000010A",
+	    "KEY_8": "110000001000010A",
+	    "KEY_9": "110001001000010A",
+	    "KEY_0": "110000101000010A",
+	    "AmPm": "110000010111101A",
+	    "Input": "110000010110010A",
+	    "KEY_CHANNELUP": "110001000100010A",
+	    "KEY_CHANNELDOWN": "110000100100010A",
+	    "KEY_TIME": "110000111000010A",
+	    "VpsPds": "110000011000010A",
+	    "PROG": "110001011100010A",
+	    "KEY_STOP": "110001110010010A",
+	    "KEY_RECORD": "110000001010010A",
+	    "KEY_PAUSE": "110001010010010A",
+	    "KEY_PLAY": "110000100010010A",
+	    "KEY_REWIND": "110001100010010A",
+	    "KEY_FASTFORWARD": "110001000010010A",
+	    "TapeSpeed": "110001111100010A",
+	    "ZeroBack": "110001100000110A",
+	    "KEY_AGAIN": "110001111011101A",
+	    "SkipSearch": "110000000100110A",
+	    "KEY_SLOW": "110001001010010A",
+	    "DPSS-": "110000000110010A",
+	    "DPSS+": "110001111010010A",
+	    "Key": "110001011000010A"
+	}
+    }
+}

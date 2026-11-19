@@ -1,0 +1,31 @@
+{
+    "description": "SONY_RMT-V288-14bit (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V288.lircd.conf", "remote": "SONY_RMT-V288-14bit", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1275, "space": 0},
+	"H": {"mark": 2499, "space": 521},
+	"1": {"mark": 1275, "space": 523},
+	"0": {"mark": 674, "space": 523},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "vcr_rew": "H00001000101110AVVXXXXXXYYYYYYYYYZZZH00001000101110AVVXXXXXXYYYYYYYYYZZZH00001000101110A",
+	    "vcr_ff": "H10001000101110AVVYYYYYYYYYZZH10001000101110AVVYYYYYYYYYZZH10001000101110A",
+	    "vcr_pause": "H01110000101110AVWWWWWWWWWXXXXYYYYYYYYYZH01110000101110AVWWWWWWWWWXXXXYYYYYYYYYZH01110000101110A",
+	    "vcr_stop": "H11110000101110AVWWWWWWWWXXXXXXXXYYYYYYYYYH11110000101110AVWWWWWWWWXXXXXXXXYYYYYYYYYH11110000101110A",
+	    "vcr_play": "H00011000101110AVVYYYYYYYYYZZH00011000101110AVVYYYYYYYYYZZH00011000101110A",
+	    "vcr_smartsearch": "H00111000101110AVWWWWWWWWWXXXXYYYYYYYYYZH00111000101110AVWWWWWWWWWXXXXYYYYYYYYYZH00111000101110A",
+	    "tv_wide": "H10111100010010AVWWWWWWWWWXXXXYYYYYYYYYZH10111100010010AVWWWWWWWWWXXXXYYYYYYYYYZH10111100010010A"
+	}
+    }
+}

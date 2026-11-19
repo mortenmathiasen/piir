@@ -1,0 +1,27 @@
+{
+    "description": "tv (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/universal/REMOTE_MASTER_1000_0171.lircd.conf", "remote": "tv", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 614, "space": 0},
+	"H": {"mark": 2393, "space": 571},
+	"1": {"mark": 1211, "space": 571},
+	"0": {"mark": 613, "space": 571},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEDOWN": "H11001001000AVVWWWWWXXYYYYYZZZZZZZZH11001001000AVVWWWWWXXYYYYYZZZZZZZZH11001001000A",
+	    "KEY_VOLUMEUP": "H01001001000AVVWWWWWXXXXXXXXYYYYYZZZZZZH01001001000AVVWWWWWXXXXXXXXYYYYYZZZZZZH01001001000A",
+	    "KEY_MUTE": "H00101001000AVVWWWWWXXXXXXXXYYYYYZZZZZZH00101001000AVVWWWWWXXXXXXXXYYYYYZZZZZZH00101001000A"
+	}
+    }
+}

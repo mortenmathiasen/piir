@@ -1,0 +1,25 @@
+{
+    "description": "Apple_A1156 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/apple/A1156.lircd.conf", "remote": "Apple_A1156", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 567, "space": 0},
+	"H": {"mark": 9065, "space": 4484},
+	"1": {"mark": 574, "space": 1668},
+	"0": {"mark": 574, "space": 547},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H01110111111000010010000011000101A",
+	    "KEY_KPPLUS": "H01110111111000011101000011000101A",
+	    "KEY_FASTFORWARD": "H01110111111000011110000011000101A",
+	    "KEY_REWIND": "H01110111111000010001000011000101A",
+	    "KEY_KPMINUS": "H01110111111000011011000011000101A",
+	    "KEY_MENU": "H01110111111000010100000011000101A"
+	}
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "description": "JVC_RM-RK60 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-RK60.lircd.conf", "remote": "JVC_RM-RK60", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 566, "space": 0},
+	"H": {"mark": 8482, "space": 4207},
+	"1": {"mark": 566, "space": 1528},
+	"0": {"mark": 566, "space": 479},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H1111000101110001A",
+	    "KEY_UP": "H1111000100101001A",
+	    "KEY_REWIND": "H1111000111001001A",
+	    "SRC": "H1111000100010001A",
+	    "KEY_FASTFORWARD": "H1111000101001001A",
+	    "KEY_DOWN": "H1111000110101001A",
+	    "Sound": "H1111000110110001A",
+	    "KEY_VOLUMEUP": "H1111000100100001A",
+	    "KEY_VOLUMEDOWN": "H1111000110100001A"
+	}
+    }
+}

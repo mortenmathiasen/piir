@@ -1,0 +1,53 @@
+{
+    "description": "RM-CD-X99 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sharp/RRMCG0186AFSA.lircd.conf", "remote": "RM-CD-X99", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 275, "space": 0},
+	"1": {"mark": 275, "space": 779},
+	"0": {"mark": 275, "space": 1815},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "101101001011101A",
+	    "x-bass": "101101000101101A",
+	    "KEY_VOLUMEDOWN": "101100101011101A",
+	    "KEY_VOLUMEUP": "101101101011101A",
+	    "radioup": "101100111011101A",
+	    "radiodown": "101101011011101A",
+	    "radioam": "101101101001101A",
+	    "radiofm": "101101011001101A",
+	    "program": "110110100111101A",
+	    "KEY_CLEAR": "110111111001101A",
+	    "call": "110110000101101A",
+	    "memory": "110110011011101A",
+	    "display": "110110001001101A",
+	    "KEY_1": "110110111111101A",
+	    "KEY_2": "110111011111101A",
+	    "KEY_3": "110110011111101A",
+	    "KEY_4": "110111101111101A",
+	    "KEY_5": "110110101111101A",
+	    "KEY_6": "110111001111101A",
+	    "KEY_7": "110110001111101A",
+	    "KEY_8": "110111110111101A",
+	    "KEY_9": "110110110111101A",
+	    "KEY_0": "110111010111101A",
+	    "KEY_10CHANNELSUP": "110110010111101A",
+	    "KEY_PAUSE": "110111001101101A",
+	    "KEY_PREVIOUS": "110111111101101A",
+	    "KEY_NEXT": "110111110011101A",
+	    "KEY_PLAY": "110110000011101A",
+	    "KEY_STOP": "110110110101101A",
+	    "random": "110111110001101A",
+	    "cdchange": "110110010011101A",
+	    "KEY_CD": "101100010011101A",
+	    "KEY_TUNER": "101100110011101A",
+	    "KEY_TAPE": "101101010011101A",
+	    "KEY_AUX": "101100100011101A"
+	}
+    }
+}

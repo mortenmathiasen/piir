@@ -1,0 +1,41 @@
+{
+    "description": "Sony_RM-S11 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-S11.lircd.conf", "remote": "Sony_RM-S11", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 40244,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1200, "space": 0},
+	"B": {"mark": 600, "space": 0},
+	"H": {"mark": 2400, "space": 600},
+	"1": {"mark": 1200, "space": 600},
+	"0": {"mark": 600, "space": 600},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "System_Power": "H10101000000A",
+	    "KEY_SLEEP": "H00000110000A",
+	    "DBFB": "H10001100011B",
+	    "Tuner_Band": "H11110001011B",
+	    "Tuner_Previous_Preset": "H10001001011B",
+	    "Tuner_Next_Preset": "H00001001011B",
+	    "CD_Play": "H01001101000A",
+	    "CD_Pause": "H10011101000A",
+	    "CD_Stop": "H00011101000A",
+	    "CD_Previous_Track": "H00001101000A",
+	    "CD_Next_Track": "H10001101000A",
+	    "CD_Edit": "H01010111000A",
+	    "Tape_Backward": "H11101100000A",
+	    "Tape_Forward": "H01001100000A",
+	    "Tape_Fast_Backward": "H11001100000A",
+	    "Tape_Fast_Forward": "H00101100000A",
+	    "Tape_Deck_Select": "H10011110000A",
+	    "Tape_Stop": "H00011100000A",
+	    "Select_1_To_5": "H01110110011B",
+	    "KEY_VOLUMEUP": "H01001000000A",
+	    "KEY_VOLUMEDOWN": "H11001000000A"
+	}
+    }
+}

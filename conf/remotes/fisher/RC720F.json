@@ -1,0 +1,27 @@
+{
+    "description": "Fisher_RC720F (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/fisher/RC720F.lircd.conf", "remote": "Fisher_RC720F", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 665, "space": 0},
+	"H": {"mark": 9117, "space": 4338},
+	"1": {"mark": 665, "space": 1574},
+	"0": {"mark": 665, "space": 446},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "QUICK": "H00010110111010011010000001011111A",
+	    "KEY_SLOW": "H00010110111010010010000011011111A",
+	    "KEY_RECORD": "H00010110111010011000000001111111A",
+	    "KEY_PLAY": "H00010110111010010000000011111111A",
+	    "PAUSE/STILL": "H00010110111010011101000000101111A",
+	    "KEY_REWIND": "H00010110111010011001000001101111A",
+	    "KEY_FASTFORWARD": "H00010110111010010001000011101111A",
+	    "KEY_STOP": "H00010110111010010101000010101111A"
+	}
+    }
+}

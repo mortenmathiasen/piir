@@ -1,0 +1,28 @@
+{
+    "description": "Toshiba_CT-90101_VCR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/toshiba/CT-90101.lircd.conf", "remote": "Toshiba_CT-90101_VCR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 671, "space": 0},
+	"H": {"mark": 9074, "space": 4363},
+	"1": {"mark": 676, "space": 1563},
+	"0": {"mark": 676, "space": 442},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H00100010110111010100100010110111A",
+	    "KEY_PLAY": "H00100010110111011010100001010111A",
+	    "KEY_STOP": "H00100010110111010010100011010111A",
+	    "KEY_REWIND": "H00100010110111011001100001100111A",
+	    "KEY_FORWARD": "H00100010110111011100100000110111A",
+	    "KEY_NEXT": "H00100010110111010111100110000110A",
+	    "KEY_AGAIN": "H00100010110111011111100100000110A",
+	    "KEY_EJECTCD": "H00100010110111011010111101010000A",
+	    "KEY_PAUSE": "H00100010110111010000100011110111A"
+	}
+    }
+}

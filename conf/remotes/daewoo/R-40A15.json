@@ -1,0 +1,41 @@
+{
+    "description": "Daewoo_R-40A15 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/daewoo/R-40A15.lircd.conf", "remote": "Daewoo_R-40A15", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 632, "space": 424},
+	"B": {"mark": 607, "space": 449},
+	"C": {"mark": 632, "space": 1489},
+	"D": {"mark": 607, "space": 1509},
+	"E": {"mark": 607, "space": 1489},
+	"F": {"mark": 8510, "space": 4116},
+	"G": {"mark": 607, "space": 4116},
+	"I": {"mark": 632, "space": 0},
+	"J": {"mark": 607, "space": 0},
+	"K": {"mark": 632, "space": 4116},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------",
+    "features": {
+	"key": {
+	    "1": "FAACBCABAKEABBBAAAJ",
+	    "2": "FABDADAAAGBEBBABBBI",
+	    "3": "FAACBDABAGDEBAAAAAJ",
+	    "4": "FAAEBDBABGAACBBBBBJ",
+	    "5": "FABCBCBABKDBDBAABBI",
+	    "6": "FBACACABAGAECAAABBI",
+	    "7": "FABDAEABBKCCEBAABAJ",
+	    "8": "FBBDACABAGBBBCBBBAJ",
+	    "9": "FBADAEBBBKEABEBBBAI",
+	    "0": "FABCAEABBGABBBBABAI",
+	    "AV": "FABEBDBABGADDBDBBBI",
+	    "VOL_UP": "FABCBCBAAKCCAACBAAI",
+	    "VOL_DOWN": "FBADAEAAAKAACAEBAAJ",
+	    "CH_UP": "FBADACBABGCCCACABAI",
+	    "CH_DOWN": "FBACBCBBAGAAAEDBBBI",
+	    "POWER": "FBACADBAAGDAEBEAAAI"
+	}
+    }
+}

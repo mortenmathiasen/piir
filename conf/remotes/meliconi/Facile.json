@@ -1,0 +1,51 @@
+{
+    "description": "Meliconi_Facile (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/meliconi/Facile.lircd.conf", "remote": "Meliconi_Facile", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 956, "space": 831},
+	"B": {"mark": 1912, "space": 831},
+	"C": {"mark": 956, "space": 1662},
+	"D": {"mark": 976, "space": 831},
+	"E": {"mark": 956, "space": 0},
+	"F": {"mark": 1912, "space": 0},
+	"G": {"mark": 1912, "space": 1662},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACF",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACGE",
+	    "KEY_6": "DABAAAAAACAF",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "KEY_1-/--": "DABAAAAACGF",
+	    "KEY_2-": "DABAAACBACF",
+	    "KEY_MENU": "DABAAACABAAE",
+	    "KEY_OK": "DABAAAAACAAF",
+	    "KEY_CHANNELUP": "DABAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DABAAACBAACE",
+	    "KEY_VOLUMEUP": "DABAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
+	    "AV": "DABAAACAABAE",
+	    "No_Vol": "DABAAAAACAGE",
+	    "KEY_NUMERIC_STAR": "DABAAAACBCF",
+	    "KEY_RED": "DABAAACAGAAE",
+	    "KEY_GREEN": "DABAAACAGAF",
+	    "KEY_YELLOW": "DABAAACABCF",
+	    "KEY_BLUE": "DABAAACAGBE",
+	    "OFF": "DABAAAAACABE",
+	    "TV1": "DABAAACAAABE",
+	    "TV2": "DABAAACAAAAAE",
+	    "TV3": "DABAAACGBCE"
+	}
+    }
+}

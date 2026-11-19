@@ -1,0 +1,30 @@
+{
+    "description": "UC7078T (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/hampton_bay/UC7078T.lircd.conf", "remote": "UC7078T", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 700, "space": 700},
+	"B": {"mark": 300, "space": 300},
+	"C": {"mark": 300, "space": 0},
+	"D": {"mark": 700, "space": 0},
+	"H": {"mark": 400, "space": 300},
+	"1": {"mark": 700, "space": 300},
+	"0": {"mark": 300, "space": 700},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "LIGHT_UP": "H11ABA00BA0BDVWWH11ABA00BA0BDVWWH11ABA00BA0BDVWWH11ABA00BA0BDVWWH11ABA00BA0BDVWWH11ABA00BA0BD",
+	    "FAN_HIGH": "H11ABABA0000CVWWH11ABABA0000CVWWH11ABABA0000CVWWH11ABABA0000CVWWH11ABABA0000CVWWH11ABABA0000C",
+	    "FAN_MED": "H11ABA0BA000CVWWH11ABA0BA000CVWWH11ABA0BA000CVWWH11ABA0BA000CVWWH11ABA0BA000CVWWH11ABA0BA000C",
+	    "FAN_LOW": "H11ABA00BA00CVWWH11ABA00BA00CVWWH11ABA00BA00CVWWH11ABA00BA00CVWWH11ABA00BA00CVWWH11ABA00BA00C",
+	    "FAN_OFF": "H11ABA0000BACVWWH11ABA0000BACVWWH11ABA0000BACVWWH11ABA0000BACVWWH11ABA0000BACVWWH11ABA0000BAC",
+	    "LIGHT_DOWN": "H11ABA00000BDVWWH11ABA00000BDVWWH11ABA00000BDVWWH11ABA00000BDVWWH11ABA00000BDVWWH11ABA00000BD"
+	}
+    }
+}

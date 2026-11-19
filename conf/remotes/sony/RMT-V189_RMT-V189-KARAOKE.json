@@ -1,0 +1,28 @@
+{
+    "description": "RMT-V189-KARAOKE (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V189.lircd.conf", "remote": "RMT-V189-KARAOKE", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1251, "space": 0},
+	"H": {"mark": 2471, "space": 548},
+	"1": {"mark": 1250, "space": 548},
+	"0": {"mark": 649, "space": 548},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY/S.D.": "H00011110101110AVWWWWWWWWWXYYYYYZZZH00011110101110AVWWWWWWWWWXYYYYYZZZH00011110101110A",
+	    "SCORE": "H11110110101110AVWWWWWWWXXXXXXXXXYYYYYZH11110110101110AVWWWWWWWXXXXXXXXXYYYYYZH11110110101110A",
+	    "KEY_B": "H11011110101110AVWWWWWWWXXXXXXXXXYYYYYZH11011110101110AVWWWWWWWXXXXXXXXXYYYYYZH11011110101110A",
+	    "KEY_NUMERIC_POUND": "H10011110101110AVWWWWWWWWXXXXXYYYYYZZH10011110101110AVWWWWWWWWXXXXXYYYYYZZH10011110101110A"
+	}
+    }
+}

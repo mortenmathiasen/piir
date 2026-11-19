@@ -1,0 +1,32 @@
+{
+    "description": "tvwebtv (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/SWK-8660.lircd.conf", "remote": "tvwebtv", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 691, "space": 0},
+	"H": {"mark": 2512, "space": 514},
+	"1": {"mark": 1290, "space": 519},
+	"0": {"mark": 691, "space": 519},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "video": "H10100101000AVVWWWWWXXXXXXXYYYYYYYYZH10100101000AVVWWWWWXXXXXXXYYYYYYYYZH10100101000A",
+	    "tv": "H10101001000AVVWWWWWXXXXXXXYYYYYYYYZH10101001000AVVWWWWWXXXXXXXYYYYYYYYZH10101001000A",
+	    "pip": "H11011011000AVVWWWWXXXXXYYYYYYYYZZZH11011011000AVVWWWWXXXXXYYYYYYYYZZZH11011011000A",
+	    "mute": "H00101001000AVVWWWWWWXXXYYYYYYYYH00101001000AVVWWWWWWXXXYYYYYYYYH00101001000A",
+	    "volup": "H01001001000AVVWWWWWWXXXYYYYYYYYH01001001000AVVWWWWWWXXXYYYYYYYYH01001001000A",
+	    "voldown": "H11001001000AVVWWWWWXXXXXXXYYYYYYYYZH11001001000AVVWWWWWXXXXXXXYYYYYYYYZH11001001000A",
+	    "chandown": "H10001001000AVVWWWWWWXXXYYYYYYYYH10001001000AVVWWWWWWXXXYYYYYYYYH10001001000A",
+	    "chanup": "H00001001000AVVWWWWWWXXXXXXXXXYYYYYYYZZZZZZZZZH00001001000AVVWWWWWWXXXXXXXXXYYYYYYYZZZZZZZZZH00001001000A"
+	}
+    }
+}

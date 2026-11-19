@@ -1,0 +1,46 @@
+{
+    "description": "Pinnacle_PCTV_USB_STICK (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pinnacle_systems/PCTV_USB_STICK.lircd.conf", "remote": "Pinnacle_PCTV_USB_STICK", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 823, "space": 856},
+	"B": {"mark": 1646, "space": 856},
+	"C": {"mark": 823, "space": 1712},
+	"D": {"mark": 818, "space": 856},
+	"E": {"mark": 823, "space": 0},
+	"F": {"mark": 1646, "space": 1712},
+	"G": {"mark": 1646, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_PLAYPAUSE": "DABCAABACAG",
+	    "KEY_STOP": "DABCAABACFE",
+	    "KEY_EXIT": "DABCAABAACAE",
+	    "screen": "DABCAABAACG",
+	    "KEY_REWIND": "DABCAABACBE",
+	    "KEY_FASTFORWARD": "DABCAABACAAE",
+	    "KEY_MUTE": "DABCAABAAAAE",
+	    "KEY_VOLUMEUP": "DABCAABCFAE",
+	    "KEY_VOLUMEDOWN": "DABCAABCAAAE",
+	    "ask": "DABCAAFFBE",
+	    "KEY_M": "DABCAAFFAG",
+	    "KEY_CHANNELUP": "DABCAAFBCAE",
+	    "KEY_CHANNELDOWN": "DABCAAFFAAE",
+	    "KEY_RECORD": "DABCAABAAACE",
+	    "KEY_1": "DABCAABCBAE",
+	    "KEY_2": "DABCAABCBCE",
+	    "KEY_3": "DABCAABCFG",
+	    "KEY_4": "DABCAABCABE",
+	    "KEY_5": "DABCAABCAFE",
+	    "KEY_6": "DABCAABCAAG",
+	    "KEY_7": "DABCAAFBAAE",
+	    "KEY_8": "DABCAAFBACE",
+	    "KEY_9": "DABCAAFBCG",
+	    "KEY_0": "DABCAAFFFE"
+	}
+    }
+}

@@ -1,14 +1,8 @@
 #ifndef IRSLINGER_H
 #define IRSLINGER_H
 
+#include <pigpio.h> // gpioPulse_t
 #include "irgeneric.h"
-
-typedef struct
-{
-   uint32_t gpioOn;
-   uint32_t gpioOff;
-   uint32_t usDelay;
-} gpioPulse_t;
 
 int addPulse(uint32_t onPins, uint32_t offPins, uint32_t duration, gpioPulse_t *irSignal, unsigned int *pulseCount);
 

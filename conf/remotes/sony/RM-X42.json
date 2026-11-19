@@ -1,0 +1,31 @@
+{
+    "description": "SONY_RM-X42 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-X42.lircd.conf", "remote": "SONY_RM-X42", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1240, "space": 0},
+	"H": {"mark": 2475, "space": 535},
+	"1": {"mark": 1241, "space": 535},
+	"0": {"mark": 641, "space": 535},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "OFF": "H10110000010000A",
+	    "DIR": "H11100010010000A",
+	    "KEY_CYCLEWINDOWS": "H01100010010000A",
+	    "SEEK-": "H11011000010000A",
+	    "SEEK+": "H00111000010000A",
+	    "DISK-": "H10001100010000A",
+	    "DISK+": "H00001100010000A",
+	    "KEY_VOLUMEDOWN": "H11001000010000A",
+	    "KEY_VOLUMEUP": "H01001000010000A",
+	    "SOUND": "H10001000010000A",
+	    "KEY_MUTE": "H00101000010000A",
+	    "DSPL": "H00010100010000A"
+	}
+    }
+}

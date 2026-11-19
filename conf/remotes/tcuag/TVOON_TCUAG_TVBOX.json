@@ -1,0 +1,26 @@
+{
+    "description": "TCUAG_TVBOX (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/tcuag/TVOON.lircd.conf", "remote": "TCUAG_TVBOX", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38400,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 500, "space": 500},
+	"B": {"mark": 1000, "space": 500},
+	"C": {"mark": 4000, "space": 500},
+	"D": {"mark": 1000, "space": 2900},
+	"E": {"mark": 500, "space": 2900},
+	"F": {"mark": 20000, "space": 20000},
+	"G": {"mark": 1000, "space": 0},
+	"I": {"mark": 500, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "TV": "FFCBABABABABAECBABABAAAABDCBABABABABADCBABABAAAAADCBABABAAABBDCBABAAAAAAAECBABAAAAABAG",
+	    "PC": "FFCBABABABABAECBABABAAAABDCBABABABABADCBABABAAAAADCBABABAAABBDCBABABAAAAAECBABABAAAAAG",
+	    "VCR": "FFCBABABABABAECBABABAAAABDCBABABABABADCBABABAAAAADCBABABAAABBDCBABAABAAAAECBABAABAAABI"
+	}
+    }
+}

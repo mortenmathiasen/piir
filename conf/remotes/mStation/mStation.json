@@ -1,0 +1,31 @@
+{
+    "description": "mStation (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/mStation/mStation.lircd.conf", "remote": "mStation", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.33,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 563, "space": 0},
+	"H": {"mark": 9000, "space": 4500},
+	"1": {"mark": 563, "space": 1687},
+	"0": {"mark": 563, "space": 562},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H00000010111101010011100011000111A",
+	    "KEY_MENU": "H00000010111101010111000010001111A",
+	    "FR": "H00000010111101011000000001111111A",
+	    "KEY_FASTFORWARD": "H00000010111101011100000000111111A",
+	    "KEY_PLAY": "H00000010111101010100000010111111A",
+	    "KEY_VOLUMEUP": "H00000010111101011001100001100111A",
+	    "KEY_VOLUMEDOWN": "H00000010111101011010000001011111A",
+	    "KEY_SELECT": "H00000010111101010100100010110111A",
+	    "EQ": "H00000010111101010111100010000111A",
+	    "KEY_MUTE": "H00000010111101011111000000001111A",
+	    "PROGRAM": "H00000010111101010101100010100111A",
+	    "KEY_STOP": "H00000010111101010110000010011111A"
+	}
+    }
+}

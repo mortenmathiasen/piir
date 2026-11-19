@@ -1,0 +1,30 @@
+{
+    "description": "rm-pp402 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-PP402.lircd.conf", "remote": "rm-pp402", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1210, "space": 0},
+	"H": {"mark": 2452, "space": 551},
+	"1": {"mark": 1210, "space": 551},
+	"0": {"mark": 620, "space": 551},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "sel_dvd": "H10111110000A",
+	    "sel_tape": "H11000100000A",
+	    "sel_md": "H10010110000A",
+	    "sel_video1": "H01000100000A",
+	    "sel_video2": "H01111000000A",
+	    "sel_video3": "H01000010000A",
+	    "sel_tv": "H01010110000A",
+	    "sel_cd": "H10100100000A",
+	    "sel_tuner": "H10000100000A",
+	    "sel_phono": "H00000100000A",
+	    "sel_51": "H01001110000A"
+	}
+    }
+}

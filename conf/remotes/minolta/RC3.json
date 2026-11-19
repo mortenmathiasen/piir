@@ -1,0 +1,21 @@
+{
+    "description": "Minolta_RC3 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/minolta/RC3.lircd.conf", "remote": "Minolta_RC3", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 527, "space": 0},
+	"H": {"mark": 3872, "space": 1708},
+	"1": {"mark": 527, "space": 436},
+	"0": {"mark": 527, "space": 1331},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H11010011101011000111110101111111A",
+	    "two_sec": "H11010011101011000111110111111111A"
+	}
+    }
+}

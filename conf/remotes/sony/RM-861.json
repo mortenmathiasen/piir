@@ -1,0 +1,49 @@
+{
+    "description": "Sony_RM-861 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-861.lircd.conf", "remote": "Sony_RM-861", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 602, "space": 0},
+	"H": {"mark": 2415, "space": 570},
+	"1": {"mark": 1203, "space": 570},
+	"0": {"mark": 602, "space": 570},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H10101001000A",
+	    "KEY_SLEEP": "H01101101000A",
+	    "muting": "H00101001000A",
+	    "tv/video": "H10100101000A",
+	    "auto_pgm": "H11010111000A",
+	    "mts": "H11101001000A",
+	    "KEY_1": "H00000001000A",
+	    "KEY_2": "H10000001000A",
+	    "KEY_3": "H01000001000A",
+	    "KEY_4": "H11000001000A",
+	    "KEY_5": "H00100001000A",
+	    "KEY_6": "H10100001000A",
+	    "KEY_7": "H01100001000A",
+	    "KEY_8": "H11100001000A",
+	    "KEY_9": "H00010001000A",
+	    "KEY_0": "H10010001000A",
+	    "display": "H01011101000A",
+	    "KEY_OK": "H11010001000A",
+	    "ch_guide": "H01110001000A",
+	    "KEY_VOLUMEUP": "H01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000A",
+	    "KEY_CHANNELUP": "H00001001000A",
+	    "chDN": "H10001001000A",
+	    "jump": "H11011101000A",
+	    "reset": "H01101001000A",
+	    "surround": "H10010101000A",
+	    "KEY_MENU": "H00000111000A",
+	    "KEY_ENTER": "H10100111000A",
+	    "KEY_KPPLUS": "H00101111000A",
+	    "KEY_KPMINUS": "H10101111000A"
+	}
+    }
+}

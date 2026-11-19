@@ -1,0 +1,41 @@
+{
+    "description": "RMT-V173C (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V173C.lircd.conf", "remote": "RMT-V173C", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 637, "space": 0},
+	"H": {"mark": 2473, "space": 545},
+	"1": {"mark": 637, "space": 545},
+	"0": {"mark": 1236, "space": 545},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_STOP": "H11100110010A",
+	    "KEY_PLAY": "H10100110010A",
+	    "KEY_FASTFORWARD": "H11000110010A",
+	    "KEY_REWIND": "H00100110010A",
+	    "KEY_PAUSE": "H01100110010A",
+	    "Search_FF": "H01101010010A",
+	    "KEY_RECORD": "H01000110010A",
+	    "Auto_Manual": "H00011010010A",
+	    "Tracking_Normal": "H01011100010A",
+	    "Tracking_Slow": "H11011100010A",
+	    "Frame": "H01110010010A",
+	    "Slow-": "H10000010010A",
+	    "TV_video": "H01011010111A",
+	    "TV_menu": "H11100010111A",
+	    "TV_Power": "H01010110111A",
+	    "TV_Vol+": "H10110110111A",
+	    "TV_Vol-": "H00110110111A",
+	    "TV_Prog+": "H11110110111A",
+	    "TV_Prog-": "H01110110111A",
+	    "TV_VTR": "H10101010010A",
+	    "KEY_EJECTCD": "H10010110010A",
+	    "KEY_POWER": "H01010110010A"
+	}
+    }
+}

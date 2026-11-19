@@ -1,0 +1,35 @@
+{
+    "description": "FESTIVAL2000 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/schneider/FESTIVAL2000.lircd.conf", "remote": "FESTIVAL2000", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 467, "space": 1214},
+	"B": {"mark": 1314, "space": 373},
+	"C": {"mark": 1340, "space": 350},
+	"D": {"mark": 467, "space": 0},
+	"E": {"mark": 490, "space": 1190},
+	"F": {"mark": 1314, "space": 0},
+	"G": {"mark": 1340, "space": 373},
+	"I": {"mark": 490, "space": 0},
+	"J": {"mark": 1358, "space": 350},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "on_of": "BBBABAAAAABD",
+	    "volume_down": "JCBBAAACAAAD",
+	    "volume_up": "BBBBAABAAAAD",
+	    "prog_d": "CCBBAAAABAAD",
+	    "prog_u": "CBBBAAAAABAD",
+	    "tuner": "BBBABAAAABAD",
+	    "cd": "CBCEBAACAAAD",
+	    "play/pause": "CCCAABAAAECI",
+	    "skip_f": "CGBBAEAAAABD",
+	    "skip_r": "GBBBAAAAAAAF",
+	    "stop": "CCBAACAAAAEF"
+	}
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "description": "PHILIPS_RC-5 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC9076.lircd.conf", "remote": "PHILIPS_RC-5", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 940, "space": 840},
+	"B": {"mark": 1880, "space": 840},
+	"C": {"mark": 940, "space": 1680},
+	"D": {"mark": 940, "space": 0},
+	"E": {"mark": 1880, "space": 1680},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "TV_STANDBY": "AABAAAAACABD",
+	    "TV_PRG_UP": "AABAAACBAAAD",
+	    "TV_PRG_DOWN": "AABAAACBAACD",
+	    "TV_VOL_UP": "AABAAAACBAAD",
+	    "TV_VOL_DOWN": "AABAAAACBACD",
+	    "TV_MUTE": "AABAAAAACAED"
+	}
+    }
+}

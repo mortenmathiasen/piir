@@ -1,0 +1,28 @@
+{
+    "description": "Panasonic_VSQ_0305 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/panasonic/VSQ_0305.lircd.conf", "remote": "Panasonic_VSQ_0305", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 928, "space": 0},
+	"H": {"mark": 3697, "space": 3620},
+	"1": {"mark": 929, "space": 2725},
+	"0": {"mark": 929, "space": 898},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------",
+    "features": {
+	"key": {
+	    "KEY_CHANNELUP": "H0100001000110111101110A",
+	    "KEY_CHANNELDOWN": "H0100011000110111001110A",
+	    "KEY_REWIND": "H0100001000010111101111A",
+	    "KEY_FASTFORWARD": "H0100011000010111001111A",
+	    "KEY_STOP": "H0100000000010111111111A",
+	    "KEY_PLAY": "H0100001010010111101011A",
+	    "KEY_PAUSE": "H0100001100010111100111A",
+	    "Still_Adv": "H0100000110010111110011A",
+	    "KEY_RECORD": "H0100000010010111111011A"
+	}
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "description": "Sony_RM-SR100 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-SR100.lircd.conf", "remote": "Sony_RM-SR100", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1276, "space": 0},
+	"B": {"mark": 677, "space": 0},
+	"H": {"mark": 2516, "space": 512},
+	"1": {"mark": 1276, "space": 517},
+	"0": {"mark": 677, "space": 517},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_SLEEP": "H00000110000A",
+	    "KEY_SELECT": "H01000110000A",
+	    "SET": "H10100110000A",
+	    "KEY_POWER": "H10101000000A",
+	    "D.SKIP": "H01111101000A",
+	    "MD_PLAY": "H01010101111B",
+	    "MD_PAUSE": "H10010101111B",
+	    "MD_STOP": "H00010101111B",
+	    "KEY_VIDEO": "H10010110000A",
+	    "KEY_TAPE": "H11000100000A",
+	    "KEY_CD": "H10100100000A",
+	    "KEY_TUNER": "H11110000000A",
+	    "CHECK": "H10110001000A",
+	    "KEY_CLEAR": "H11110001000A",
+	    "LOOP": "H00011111000A",
+	    "KEY_VOLUMEUP": "H01001000000A",
+	    "KEY_VOLUMEDOWN": "H11001000000A",
+	    "MENU+": "H00111110100A",
+	    "MENU-": "H10111110100A",
+	    "KEY_POWER2": "H00010100011B"
+	}
+    }
+}

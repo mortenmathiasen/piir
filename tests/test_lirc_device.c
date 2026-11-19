@@ -19,13 +19,7 @@ static unsigned long failRequest;    // ioctl request that fails, 0 for none
 static uint32_t lastMode, lastCarrier, lastDuty;
 static int shortWrite;
 
-int __real_ioctl(int fd, unsigned long request, ...);
-int __wrap_ioctl(int fd, unsigned long request, ...) {
-  (void)fd;
-  va_list ap;
-  va_start(ap, request);
-  uint32_t *arg = va_arg(ap, uint32_t *);
-  va_end(ap);
+static int fakeIoctl(unsigned long request, uint32_t *arg) {
   if (request == failRequest) {
     errno = EINVAL;
     return -1;
@@ -38,6 +32,26 @@ int __wrap_ioctl(int fd, unsigned long request, ...) {
   }
   errno = ENOTTY;
   return -1;
+}
+
+int __wrap_ioctl(int fd, unsigned long request, ...) {
+  (void)fd;
+  va_list ap;
+  va_start(ap, request);
+  uint32_t *arg = va_arg(ap, uint32_t *);
+  va_end(ap);
+  return fakeIoctl(request, arg);
+}
+
+// 32-bit glibc with a 64-bit time_t (Debian's armhf and armel) calls this
+// instead of ioctl
+int __wrap___ioctl_time64(int fd, unsigned long request, ...) {
+  (void)fd;
+  va_list ap;
+  va_start(ap, request);
+  uint32_t *arg = va_arg(ap, uint32_t *);
+  va_end(ap);
+  return fakeIoctl(request, arg);
 }
 
 ssize_t __real_write(int fd, const void *buf, size_t count);

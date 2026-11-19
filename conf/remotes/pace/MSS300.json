@@ -1,6 +1,6 @@
 {
     "description": "pace (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/pace/MSS300.lircd.conf", "remote": "pace", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/pace/MSS300.lircd.conf", "remote": "pace", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -34,6 +34,31 @@
 	    "KEY_GREEN": "001100001100A",
 	    "KEY_YELLOW": "001100010010A",
 	    "KEY_BLUE": "001100001101A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "000100000001A",
+	    "KEY_2": "000100000010A",
+	    "KEY_3": "000100000011A",
+	    "KEY_4": "000100000100A",
+	    "KEY_5": "000100000101A",
+	    "KEY_6": "000100000110A",
+	    "KEY_7": "000100000111A",
+	    "KEY_8": "000100001000A",
+	    "KEY_9": "000100001001A",
+	    "KEY_0": "000100000000A",
+	    "KEY_UP": "000100011010A",
+	    "KEY_LEFT": "000100010110A",
+	    "KEY_RIGHT": "000100010001A",
+	    "KEY_DOWN": "000100001011A",
+	    "KEY_MENU": "000100010111A",
+	    "KEY_OK": "000100011111A",
+	    "KEY_BACK": "000100001111A",
+	    "KEY_RED": "000100001110A",
+	    "KEY_GREEN": "000100001100A",
+	    "KEY_YELLOW": "000100010010A",
+	    "KEY_BLUE": "000100001101A"
 	}
     }
 }

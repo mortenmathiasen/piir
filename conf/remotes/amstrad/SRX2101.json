@@ -1,6 +1,6 @@
 {
     "description": "SRX2101 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/amstrad/SRX2101.lircd.conf", "remote": "SRX2101", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/amstrad/SRX2101.lircd.conf", "remote": "SRX2101", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

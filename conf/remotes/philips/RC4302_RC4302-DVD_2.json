@@ -1,6 +1,6 @@
 {
     "description": "RC4302-DVD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RC4302.lircd.conf", "remote": "RC4302-DVD", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RC4302.lircd.conf", "remote": "RC4302-DVD", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

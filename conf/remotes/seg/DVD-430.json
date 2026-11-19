@@ -1,6 +1,6 @@
 {
     "description": "SEG-DVD-430 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/seg/DVD-430.lircd.conf", "remote": "SEG-DVD-430", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/seg/DVD-430.lircd.conf", "remote": "SEG-DVD-430", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

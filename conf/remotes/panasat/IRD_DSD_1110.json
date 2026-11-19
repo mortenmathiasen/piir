@@ -1,6 +1,6 @@
 {
     "description": "Panasat_IRD_DSD_1110 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasat/IRD_DSD_1110.lircd.conf", "remote": "Panasat_IRD_DSD_1110", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/panasat/IRD_DSD_1110.lircd.conf", "remote": "Panasat_IRD_DSD_1110", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

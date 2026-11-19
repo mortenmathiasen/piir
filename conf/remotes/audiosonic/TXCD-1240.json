@@ -1,6 +1,6 @@
 {
     "description": "audiosonic_TXCD-1240 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/audiosonic/TXCD-1240.lircd.conf", "remote": "audiosonic_TXCD-1240", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/audiosonic/TXCD-1240.lircd.conf", "remote": "audiosonic_TXCD-1240", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

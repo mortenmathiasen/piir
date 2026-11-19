@@ -1,6 +1,6 @@
 {
     "description": "Durabrand_PTV141 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/durabrand/PTV141.lircd.conf", "remote": "Durabrand_PTV141", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/durabrand/PTV141.lircd.conf", "remote": "Durabrand_PTV141", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

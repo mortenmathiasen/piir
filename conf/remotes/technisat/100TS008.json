@@ -1,6 +1,6 @@
 {
     "description": "TECHNISAT_ST3004S (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/technisat/100TS008.lircd.conf", "remote": "TECHNISAT_ST3004S", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/technisat/100TS008.lircd.conf", "remote": "TECHNISAT_ST3004S", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -39,6 +39,36 @@
 	    "ARROW_DOWN": "11001110011A",
 	    "ARROW_RIGHT": "11001110101A",
 	    "ARROW_LEFT": "11001110100A"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "10001000001A",
+	    "KEY_MUTE": "10001000110A",
+	    "KEY_0": "10001001111A",
+	    "KEY_1": "10001010000A",
+	    "KEY_2": "10001010001A",
+	    "KEY_3": "10001010010A",
+	    "KEY_4": "10001010011A",
+	    "KEY_5": "10001010100A",
+	    "KEY_6": "10001010101A",
+	    "KEY_7": "10001010110A",
+	    "KEY_8": "10001010111A",
+	    "KEY_9": "10001011000A",
+	    "KEY_VOLUMEUP": "10001101110A",
+	    "KEY_VOLUMEDOWN": "10001101111A",
+	    "KEY_CHANNELUP": "10001000111A",
+	    "KEY_CHANNELDOWN": "10001001000A",
+	    "KEY_LIST": "10001110111A",
+	    "A/B": "10001100100A",
+	    "TV/R": "10001000010A",
+	    "KEY_BACK": "10001100111A",
+	    "KEY_MENU": "10001101011A",
+	    "KEY_OK": "10001110110A",
+	    "ARROW_UP": "10001110010A",
+	    "ARROW_DOWN": "10001110011A",
+	    "ARROW_RIGHT": "10001110101A",
+	    "ARROW_LEFT": "10001110100A"
 	}
     }
 }

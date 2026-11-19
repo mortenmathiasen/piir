@@ -1,6 +1,6 @@
 {
     "description": "Pioneer_CU-VSX159 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/pioneer/CU-VSX159.lircd.conf", "remote": "Pioneer_CU-VSX159", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/pioneer/CU-VSX159.lircd.conf", "remote": "Pioneer_CU-VSX159", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 39200,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

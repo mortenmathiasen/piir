@@ -1,6 +1,6 @@
 {
     "description": "Citizen_JX-2022C (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/citizen/JX-2022C.lircd.conf", "remote": "Citizen_JX-2022C", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/citizen/JX-2022C.lircd.conf", "remote": "Citizen_JX-2022C", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

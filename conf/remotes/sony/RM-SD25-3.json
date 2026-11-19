@@ -1,6 +1,6 @@
 {
     "description": "sony-rm-sd25 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-SD25-3.lircd.conf", "remote": "sony-rm-sd25", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RM-SD25-3.lircd.conf", "remote": "sony-rm-sd25", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Kenwood_RC-R0517 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/kenwood/RC-R0517.lircd.conf", "remote": "Kenwood_RC-R0517", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/kenwood/RC-R0517.lircd.conf", "remote": "Kenwood_RC-R0517", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

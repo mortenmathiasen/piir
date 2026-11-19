@@ -1,6 +1,6 @@
 {
     "description": "Motorola_DCH3200_VOL (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/motorola/DCH3200.lircd.conf", "remote": "Motorola_DCH3200_VOL", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/motorola/DCH3200.lircd.conf", "remote": "Motorola_DCH3200_VOL", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

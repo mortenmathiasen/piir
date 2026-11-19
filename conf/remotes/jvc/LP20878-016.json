@@ -1,6 +1,6 @@
 {
     "description": "JVC_LP20878-016-VCR_TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/jvc/LP20878-016.lircd.conf", "remote": "JVC_LP20878-016-VCR_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/jvc/LP20878-016.lircd.conf", "remote": "JVC_LP20878-016-VCR_TV", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

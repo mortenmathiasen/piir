@@ -1,6 +1,6 @@
 {
     "description": "Sejin_Electron_SWP-D3956W-KR1 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sejin_electron/SWP-D3956W-KR1.lircd.conf", "remote": "Sejin_Electron_SWP-D3956W-KR1", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sejin_electron/SWP-D3956W-KR1.lircd.conf", "remote": "Sejin_Electron_SWP-D3956W-KR1", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

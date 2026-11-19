@@ -1,6 +1,6 @@
 {
     "description": "GoldStar-VCR (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/goldstar/TV_VCR.lircd.conf", "remote": "GoldStar-VCR", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/goldstar/TV_VCR.lircd.conf", "remote": "GoldStar-VCR", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

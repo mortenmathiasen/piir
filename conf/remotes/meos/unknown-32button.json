@@ -1,6 +1,6 @@
 {
     "description": "32Button-Noname (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/meos/unknown-32button.lircd.conf", "remote": "32Button-Noname", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/meos/unknown-32button.lircd.conf", "remote": "32Button-Noname", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

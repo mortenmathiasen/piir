@@ -1,6 +1,6 @@
 {
     "description": "DSS (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/DSS.lircd.conf", "remote": "DSS", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/panasonic/DSS.lircd.conf", "remote": "DSS", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

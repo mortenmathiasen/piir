@@ -1,6 +1,6 @@
 {
     "description": "Sony_RM-V302-VCR013 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-V302.lircd.conf", "remote": "Sony_RM-V302-VCR013", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RM-V302.lircd.conf", "remote": "Sony_RM-V302-VCR013", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -45,6 +45,39 @@
 	    "KEY_RECORD": "AABDCAACAAE",
 	    "KEY_STOP": "AABDCAACAF",
 	    "KEY_PAUSE": "AABDCACBDE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_1": "ABADCBAAADE",
+	    "KEY_2": "ABADCBAADF",
+	    "KEY_3": "ABADCBAADAE",
+	    "KEY_4": "ABADCBADBE",
+	    "KEY_5": "ABADCBADCE",
+	    "KEY_6": "ABADCBADAF",
+	    "KEY_7": "ABADCBADAAE",
+	    "KEY_8": "ABADCBDBAE",
+	    "KEY_9": "ABADCBDBDE",
+	    "KEY_0": "ABADCBAAAAE",
+	    "KEY_POWER": "ABADCBDABE",
+	    "KEY_VOLUMEUP": "ABAAAAADBAAE",
+	    "KEY_VOLUMEDOWN": "ABAAAAADBADE",
+	    "KEY_CHANNELUP": "ABADCABAAAE",
+	    "KEY_CHANNELDOWN": "ABADCABAADE",
+	    "TV/VIDEO": "ABADCAAAAAF",
+	    "KEY_MUTE": "ABAAAAAADACE",
+	    "KEY_UP": "BAADCCBAAE",
+	    "KEY_RIGHT": "BAADCCCAF",
+	    "KEY_DOWN": "BAADCCBADE",
+	    "KEY_LEFT": "BAADCCCCE",
+	    "KEY_MENU": "BAADCCBDF",
+	    "KEY_OK": "BAADCCCAAE",
+	    "SEEK-": "ABADCAABDF",
+	    "KEY_PLAY": "ABADCAACCE",
+	    "SEEK+": "ABADCAACBE",
+	    "KEY_RECORD": "ABADCAACAAE",
+	    "KEY_STOP": "ABADCAACAF",
+	    "KEY_PAUSE": "ABADCACBDE"
 	}
     }
 }

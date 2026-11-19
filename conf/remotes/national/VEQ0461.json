@@ -1,6 +1,6 @@
 {
     "description": "VEQ0461 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/national/VEQ0461.lircd.conf", "remote": "VEQ0461", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/national/VEQ0461.lircd.conf", "remote": "VEQ0461", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

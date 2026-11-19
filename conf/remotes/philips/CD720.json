@@ -1,6 +1,6 @@
 {
     "description": "Philips_CD720 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/CD720.lircd.conf", "remote": "Philips_CD720", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/CD720.lircd.conf", "remote": "Philips_CD720", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -29,6 +29,22 @@
 	    "KEY_NEXT": "EAABCDCAAAF",
 	    "KEY_VOLUMEDOWN": "EAABCADCADF",
 	    "KEY_VOLUMEUP": "EAABCADCAAF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_TIME": "EBBCAADBAF",
+	    "SCAN": "EBBCDBBAF",
+	    "KEY_AGAIN": "EBBCADAABF",
+	    "KEY_OPEN": "EBBCDBABF",
+	    "KEY_PAUSE": "EBBCDACAAF",
+	    "SHUFFLE": "EBBCADAACF",
+	    "KEY_STOP": "EBBCDABAG",
+	    "KEY_PLAY": "EBBCDABBF",
+	    "KEY_PREVIOUS": "EBBCDCAADF",
+	    "KEY_NEXT": "EBBCDCAAAF",
+	    "KEY_VOLUMEDOWN": "EBBCADCADF",
+	    "KEY_VOLUMEUP": "EBBCADCAAF"
 	}
     }
 }

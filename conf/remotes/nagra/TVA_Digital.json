@@ -1,6 +1,6 @@
 {
     "description": "Nagra_TVA_Digital (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/nagra/TVA_Digital.lircd.conf", "remote": "Nagra_TVA_Digital", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/nagra/TVA_Digital.lircd.conf", "remote": "Nagra_TVA_Digital", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

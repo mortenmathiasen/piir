@@ -1,6 +1,6 @@
 {
     "description": "philips_digital_RC-5901.conf3 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RC5901.lircd.conf", "remote": "philips_digital_RC-5901.conf3", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RC5901.lircd.conf", "remote": "philips_digital_RC-5901.conf3", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -56,6 +56,49 @@
 	    "KEY_STOP": "DABAAACAFAG",
 	    "KEY_PREVIOUS": "DABAAACABCG",
 	    "KEY_NEXT": "DABAAACAFBE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "DBAAAAAACAAG",
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "OFF1": "DBAAAACBCAG",
+	    "OFF2": "DBAAAAAACABE",
+	    "SCREEN": "DBAAAACAAAAAE",
+	    "VT": "DBAAAACAAABE",
+	    "KEY_VIDEO": "DBAAAACAABAE",
+	    "KEY_MODE": "DBAAAAAACAAAE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "PSEL": "DBAAAAAACFG",
+	    "PPREV": "DBAAAACBACG",
+	    "KEY_CHANNELUP": "DBAAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DBAAAACBAACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "BW+": "DBAAAAACFBE",
+	    "BW-": "DBAAAAACFFE",
+	    "BR+": "DBAAAAACBCG",
+	    "BR-": "DBAAAAACBCAE",
+	    "TIMER": "DBAAAACFFG",
+	    "OPT1": "DBAAAACFBCE",
+	    "OPT2": "DBAAAACFAFE",
+	    "OPT3": "DBAAAACFABE",
+	    "OPT4": "DBAAAACFFAE",
+	    "SPLIT": "DBAAAACFAAG",
+	    "KEY_INFO": "DBAAAACAFFE",
+	    "KEY_PLAY": "DBAAAACAFAAE",
+	    "KEY_STOP": "DBAAAACAFAG",
+	    "KEY_PREVIOUS": "DBAAAACABCG",
+	    "KEY_NEXT": "DBAAAACAFBE"
 	}
     }
 }

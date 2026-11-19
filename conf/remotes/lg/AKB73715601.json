@@ -1,6 +1,6 @@
 {
     "description": "LG_AKB73715601 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lg/AKB73715601.lircd.conf", "remote": "LG_AKB73715601", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/lg/AKB73715601.lircd.conf", "remote": "LG_AKB73715601", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Philips_RC8601_01-MMEDIA (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RC8601_01.lircd.conf", "remote": "Philips_RC8601_01-MMEDIA", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/RC8601_01.lircd.conf", "remote": "Philips_RC8601_01-MMEDIA", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -37,6 +37,30 @@
 	    "KEY_PAUSE": "DABCBCABAAE",
 	    "KEY_FASTFORWARD": "DABCBCAGBE",
 	    "KEY_REWIND": "DABCBCABCF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_SLEEP": "DBACBAACABE",
+	    "disc": "DBACBACAAAF",
+	    "shuffle": "DBACBACAABE",
+	    "KEY_0": "DBACBAAAAAAE",
+	    "KEY_1": "DBACBAAAAACE",
+	    "KEY_2": "DBACBAAAACF",
+	    "KEY_3": "DBACBAAAACAE",
+	    "KEY_4": "DBACBAAACBE",
+	    "KEY_5": "DBACBAAACGE",
+	    "KEY_6": "DBACBAAACAF",
+	    "KEY_7": "DBACBAAACAAE",
+	    "KEY_8": "DBACBAACBAE",
+	    "KEY_9": "DBACBAACBCE",
+	    "KEY_NEXT": "DBACBCBAAAE",
+	    "KEY_PREVIOUS": "DBACBCBAACE",
+	    "KEY_PLAY": "DBACBCAGGE",
+	    "KEY_STOP": "DBACBCAGAF",
+	    "KEY_PAUSE": "DBACBCABAAE",
+	    "KEY_FASTFORWARD": "DBACBCAGBE",
+	    "KEY_REWIND": "DBACBCABCF"
 	}
     }
 }

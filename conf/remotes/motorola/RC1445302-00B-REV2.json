@@ -1,6 +1,6 @@
 {
     "description": "Motorola_RC1445302-00B-REV2 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/motorola/RC1445302-00B-REV2.lircd.conf", "remote": "Motorola_RC1445302-00B-REV2", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/motorola/RC1445302-00B-REV2.lircd.conf", "remote": "Motorola_RC1445302-00B-REV2", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

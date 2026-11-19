@@ -1,6 +1,6 @@
 {
     "description": "PHILIPS_TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/TV.lircd.conf", "remote": "PHILIPS_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/TV.lircd.conf", "remote": "PHILIPS_TV", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -42,6 +42,36 @@
 	    "TIMER": "AABAAACAEAAD",
 	    "unknown3": "AABAAACAEAF",
 	    "unknown4": "AABAAACAEED"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_0": "ABAAAAAAAAAAD",
+	    "KEY_1": "ABAAAAAAAAACD",
+	    "KEY_2": "ABAAAAAAAACF",
+	    "KEY_3": "ABAAAAAAAACAD",
+	    "KEY_4": "ABAAAAAAACBD",
+	    "KEY_5": "ABAAAAAAACED",
+	    "KEY_6": "ABAAAAAAACAF",
+	    "KEY_7": "ABAAAAAAACAAD",
+	    "KEY_8": "ABAAAAAACBAD",
+	    "KEY_9": "ABAAAAAACBCD",
+	    "KEY_POWER": "ABAAAAAACABD",
+	    "KEY_MUTE": "ABAAAAAACAED",
+	    "A/V": "ABAAAACAABAD",
+	    "KEY_102ND": "ABAAAAAACEF",
+	    "KEY_VOLUMEUP": "ABAAAAACBAAD",
+	    "BRT_+": "ABAAAAACBCF",
+	    "CONT_+": "ABAAAAACEBD",
+	    "KEY_VOLUMEDOWN": "ABAAAAACBACD",
+	    "BRT_-": "ABAAAAACBCAD",
+	    "CONT_-": "ABAAAAAACAAF",
+	    "unknown1": "ABAAAACABCF",
+	    "unknown2": "ABAAAACAEBD",
+	    "TEXT_TV": "ABAAAACAAABD",
+	    "TIMER": "ABAAAACAEAAD",
+	    "unknown3": "ABAAAACAEAF",
+	    "unknown4": "ABAAAACAEED"
 	}
     }
 }

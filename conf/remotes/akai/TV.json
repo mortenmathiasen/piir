@@ -1,6 +1,6 @@
 {
     "description": "Akai_TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/akai/TV.lircd.conf", "remote": "Akai_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/akai/TV.lircd.conf", "remote": "Akai_TV", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -51,6 +51,44 @@
 	    "KEY_SUBTITLE": "DABAAAAACFG",
 	    "Mix": "DABAAAAAACBE",
 	    "Update": "DABAAAAACAAAE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_MUTE": "DBAAAACFFAE",
+	    "KEY_POWER": "DBAAAACBAAAE",
+	    "KEY_1": "DBAAAAACBACE",
+	    "KEY_2": "DBAAAAACBCG",
+	    "KEY_3": "DBAAAAACBCAE",
+	    "KEY_4": "DBAAAAACFBE",
+	    "KEY_5": "DBAAAAACFFE",
+	    "KEY_6": "DBAAAAACFAG",
+	    "KEY_7": "DBAAAAACFAAE",
+	    "KEY_8": "DBAAAAACABAE",
+	    "KEY_9": "DBAAAAACABCE",
+	    "KEY_0": "DBAAAAACBAAE",
+	    "KEY_102ND": "DBAAAAACAFG",
+	    "av/tv": "DBAAAACFFG",
+	    "KEY_MENU": "DBAAAACFBCE",
+	    "KEY_TEXT": "DBAAAACABACE",
+	    "KEY_UP": "DBAAAAACAABE",
+	    "KEY_DOWN": "DBAAAAACAFAE",
+	    "KEY_LEFT": "DBAAAACBCFE",
+	    "KEY_RIGHT": "DBAAAACBCBE",
+	    "KEY_OK": "DBAAAACFBAE",
+	    "Swap": "DBAAAACBCAAE",
+	    "16:9": "DBAAAACBACAE",
+	    "White": "DBAAAACFAAAE",
+	    "KEY_RED": "DBAAAACBCAG",
+	    "KEY_GREEN": "DBAAAACFABE",
+	    "KEY_YELLOW": "DBAAAACFAAG",
+	    "KEY_BLUE": "DBAAAACABCAE",
+	    "KEY_STOP": "DBAAAAAACABE",
+	    "Reveal": "DBAAAAAACAAG",
+	    "Double": "DBAAAAAAACAAE",
+	    "KEY_SUBTITLE": "DBAAAAAACFG",
+	    "Mix": "DBAAAAAAACBE",
+	    "Update": "DBAAAAAACAAAE"
 	}
     }
 }

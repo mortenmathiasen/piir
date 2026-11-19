@@ -1,6 +1,6 @@
 {
     "description": "Sitronics_RC-D010E (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sitronics/RC-D010E.lircd.conf", "remote": "Sitronics_RC-D010E", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sitronics/RC-D010E.lircd.conf", "remote": "Sitronics_RC-D010E", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

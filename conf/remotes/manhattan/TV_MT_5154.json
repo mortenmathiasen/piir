@@ -1,6 +1,6 @@
 {
     "description": "TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/manhattan/TV_MT_5154.lircd.conf", "remote": "TV", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/manhattan/TV_MT_5154.lircd.conf", "remote": "TV", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -55,6 +55,48 @@
 	    "TXT6": "DABAAACFFAE",
 	    "TXT7": "DABAAACFABE",
 	    "TXT8": "DABAAACFAAAE"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_MUTE": "DBAAAAAACAFE",
+	    "KEY_POWER": "DBAAAAAACABE",
+	    "PP": "DBAAAAAACAAG",
+	    "I-II": "DBAAAACBACAE",
+	    "KEY_1": "DBAAAAAAAAACE",
+	    "KEY_2": "DBAAAAAAAACG",
+	    "KEY_3": "DBAAAAAAAACAE",
+	    "KEY_4": "DBAAAAAAACBE",
+	    "KEY_5": "DBAAAAAAACFE",
+	    "KEY_6": "DBAAAAAAACAG",
+	    "KEY_7": "DBAAAAAAACAAE",
+	    "KEY_8": "DBAAAAAACBAE",
+	    "KEY_9": "DBAAAAAACBCE",
+	    "KEY_0": "DBAAAAAAAAAAE",
+	    "KEY_102ND": "DBAAAAAACFG",
+	    "P<P": "DBAAAACBACG",
+	    "KEY_MENU": "DBAAAACABAAE",
+	    "KEY_INFO": "DBAAAAACBCG",
+	    "KEY_CHANNELDOWN": "DBAAAACBAAAE",
+	    "KEY_CHANNELUP": "DBAAAACBAACE",
+	    "KEY_LEFT": "DBAAAAACFFE",
+	    "KEY_RIGHT": "DBAAAAACFAG",
+	    "KEY_VOLUMEDOWN": "DBAAAAACBACE",
+	    "KEY_VOLUMEUP": "DBAAAAACBAAE",
+	    "SOUND": "DBAAAACAFAAE",
+	    "PICTURE": "DBAAAACAFAG",
+	    "FEATURE": "DBAAAACABCG",
+	    "INSTALL": "DBAAAACAFBE",
+	    "KEY_TV": "DBAAAACAAAAAE",
+	    "AV": "DBAAAACAABAE",
+	    "TXT1": "DBAAAACAAABE",
+	    "TXT2": "DBAAAACFAAG",
+	    "TXT3": "DBAAAACFFG",
+	    "TXT4": "DBAAAACFBCE",
+	    "TXT5": "DBAAAACFAFE",
+	    "TXT6": "DBAAAACFFAE",
+	    "TXT7": "DBAAAACFABE",
+	    "TXT8": "DBAAAACFAAAE"
 	}
     }
 }

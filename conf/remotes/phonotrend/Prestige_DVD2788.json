@@ -1,6 +1,6 @@
 {
     "description": "Phonotrend_Prestige_DVD2788 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/phonotrend/Prestige_DVD2788.lircd.conf", "remote": "Phonotrend_Prestige_DVD2788", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/phonotrend/Prestige_DVD2788.lircd.conf", "remote": "Phonotrend_Prestige_DVD2788", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

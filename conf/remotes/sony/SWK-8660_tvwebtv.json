@@ -1,6 +1,6 @@
 {
     "description": "tvwebtv (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/SWK-8660.lircd.conf", "remote": "tvwebtv", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/SWK-8660.lircd.conf", "remote": "tvwebtv", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

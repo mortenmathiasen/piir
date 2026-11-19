@@ -1,6 +1,6 @@
 {
     "description": "Rega_Solar (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/rega/Solar.lircd.conf", "remote": "Rega_Solar", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/rega/Solar.lircd.conf", "remote": "Rega_Solar", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

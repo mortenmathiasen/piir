@@ -1,6 +1,6 @@
 {
     "description": "Acer_AT3201W (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/acer/AT3201W.lircd.conf", "remote": "Acer_AT3201W", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/acer/AT3201W.lircd.conf", "remote": "Acer_AT3201W", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

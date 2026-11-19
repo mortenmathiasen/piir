@@ -1,6 +1,6 @@
 {
     "description": "RC-V8500L (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/kenwood/RC-V8500L.lircd.conf", "remote": "RC-V8500L", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/kenwood/RC-V8500L.lircd.conf", "remote": "RC-V8500L", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

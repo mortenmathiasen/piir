@@ -1,6 +1,6 @@
 {
     "description": "TELEPILOT_84D (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/grundig/TelePilot_84D.lircd.conf", "remote": "TELEPILOT_84D", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/grundig/TelePilot_84D.lircd.conf", "remote": "TELEPILOT_84D", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

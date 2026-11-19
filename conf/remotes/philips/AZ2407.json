@@ -1,14 +1,14 @@
 {
     "description": "AZ2407 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/AZ2407.lircd.conf", "remote": "AZ2407", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/philips/AZ2407.lircd.conf", "remote": "AZ2407", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
 	"A": {"mark": 972, "space": 797},
 	"B": {"mark": 1944, "space": 797},
-	"C": {"mark": 972, "space": 1594},
-	"D": {"mark": 1944, "space": 1594},
+	"C": {"mark": 1944, "space": 1594},
+	"D": {"mark": 972, "space": 1594},
 	"E": {"mark": 1144, "space": 797},
 	"F": {"mark": 972, "space": 0},
 	"G": {"mark": 1944, "space": 0},
@@ -17,20 +17,38 @@
     "template": "------------",
     "features": {
 	"key": {
-	    "KEY_VOLUMEUP": "EAABAAACBAAF",
-	    "KEY_VOLUMEDOWN": "EAABAAACBACF",
-	    "shuffle": "EAADBACAABF",
-	    "KEY_AGAIN": "EAADBACAADF",
-	    "KEY_PLAY": "EAADBCADDF",
-	    "shuffleL": "EAADBCBAACF",
-	    "shuffleR": "EAADBCBAAAF",
-	    "KEY_STOP": "EAADBCADAG",
-	    "searchL": "EAADBCABCG",
-	    "searchR": "EAADBCADBF",
-	    "presetUp": "EAABACABAAAF",
-	    "presetDn": "EAABACABAACF",
-	    "tuningL": "EAABACDAAAAF",
-	    "tuningR": "EAABACDAAAG"
+	    "KEY_VOLUMEUP": "EAABAAADBAAF",
+	    "KEY_VOLUMEDOWN": "EAABAAADBADF",
+	    "shuffle": "EAACBADAABF",
+	    "KEY_AGAIN": "EAACBADAACF",
+	    "KEY_PLAY": "EAACBDACCF",
+	    "shuffleL": "EAACBDBAADF",
+	    "shuffleR": "EAACBDBAAAF",
+	    "KEY_STOP": "EAACBDACAG",
+	    "searchL": "EAACBDABDG",
+	    "searchR": "EAACBDACBF",
+	    "presetUp": "EAABADABAAAF",
+	    "presetDn": "EAABADABAADF",
+	    "tuningL": "EAABADCAAAAF",
+	    "tuningR": "EAABADCAAAG"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_VOLUMEUP": "ECBAAADBAAF",
+	    "KEY_VOLUMEDOWN": "ECBAAADBADF",
+	    "shuffle": "ECCBADAABF",
+	    "KEY_AGAIN": "ECCBADAACF",
+	    "KEY_PLAY": "ECCBDACCF",
+	    "shuffleL": "ECCBDBAADF",
+	    "shuffleR": "ECCBDBAAAF",
+	    "KEY_STOP": "ECCBDACAG",
+	    "searchL": "ECCBDABDG",
+	    "searchR": "ECCBDACBF",
+	    "presetUp": "ECBADABAAAF",
+	    "presetDn": "ECBADABAADF",
+	    "tuningL": "ECBADCAAAAF",
+	    "tuningR": "ECBADCAAAG"
 	}
     }
 }

@@ -33,6 +33,7 @@ piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
   * [Remotes](#remotes)
     + [Choosing the remotes of an installation](#choosing-the-remotes-of-an-installation)
     + [Remotes converted from LIRC](#remotes-converted-from-lirc)
+    + [Toggle bits](#toggle-bits)
   * [Contributing](#contributing)
   * [Versioning](#versioning)
   * [Authors](#authors)
@@ -374,9 +375,23 @@ Not everything converts. [tools/lirc-remotes-report.txt](tools/lirc-remotes-repo
 
 Raw recorded codes have small timing variations, so where a raw remote has too many different durations for PIIR's symbols, they are rounded by at most 2%. LIRC itself accepts 30% when receiving.
 
-PIIR sends every key the same way each time. Remotes with a toggle bit (RC5, RC6 and some others) flip it on every press, so a device may take two presses of the same key in a row for one held press; press another key in between.
+Remotes with a toggle bit (RC5, RC6 and others with a `toggle_bit_mask`) get a `toggle` section holding the code of every key with the bit flipped, see [Toggle bits](#toggle-bits).
 
 Two LIRC 0.10.2 bugs are not copied: durations of 0 in a configuration break the alternation of pulses and spaces there, and raw remotes with a repeat code send the start of the raw code instead of the repeat code.
+
+### Toggle bits
+
+Some protocols, e.g. Philips RC5 and RC6, have a toggle bit that the remote flips on every press of any key. Repeats while a key is held keep it, so a device can tell a held key from a new press: pressing `5` twice gives `55`, not one long press of `5`.
+
+A remote with a toggle bit has a `toggle` section with the same structure as `features`. On every other press PIIR sends the codes of the `toggle` section instead (a value missing there sends its normal code). PIIR remembers the toggle state of each remote in a state file and flips it after every successful transmission:
+
+| Running as | State file |
+|------------|------------|
+| any user, with `PIIR_STATE_DIR` set | `$PIIR_STATE_DIR/toggle-state` |
+| root (e.g. with `sudo`) | `/var/lib/piir/toggle-state` |
+| other users | `$XDG_STATE_HOME/piir/toggle-state`, by default `~/.local/state/piir/toggle-state` |
+
+The file has a line per remote with its state (`0` or `1`) and the path of the remote file. Deleting it starts all remotes from the first press again. If PIIR runs both with and without `sudo`, set `PIIR_STATE_DIR` so both use the same file. If the file cannot be written, PIIR logs a warning and still transmits.
 
 ## Contributing
 

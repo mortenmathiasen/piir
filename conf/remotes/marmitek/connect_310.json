@@ -1,6 +1,6 @@
 {
     "description": "MARMITEK_Connect_310_HDMI_switch (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/marmitek/connect_310.lircd.conf", "remote": "MARMITEK_Connect_310_HDMI_switch", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/marmitek/connect_310.lircd.conf", "remote": "MARMITEK_Connect_310_HDMI_switch", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

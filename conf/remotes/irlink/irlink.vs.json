@@ -1,6 +1,6 @@
 {
     "description": "IRLink.VS (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/irlink/irlink.vs.lircd.conf", "remote": "IRLink.VS", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/irlink/irlink.vs.lircd.conf", "remote": "IRLink.VS", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

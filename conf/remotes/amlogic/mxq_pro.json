@@ -1,6 +1,6 @@
 {
     "description": "Amlogic_MXQ_PRO (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/amlogic/mxq_pro.lircd.conf", "remote": "Amlogic_MXQ_PRO", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/amlogic/mxq_pro.lircd.conf", "remote": "Amlogic_MXQ_PRO", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

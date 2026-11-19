@@ -1,6 +1,6 @@
 {
     "description": "RM-U305_player (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-U305.lircd.conf", "remote": "RM-U305_player", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/sony/RM-U305.lircd.conf", "remote": "RM-U305_player", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

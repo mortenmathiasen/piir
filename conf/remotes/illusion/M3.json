@@ -1,6 +1,6 @@
 {
     "description": "Illusion_M3 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/illusion/M3.lircd.conf", "remote": "Illusion_M3", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/illusion/M3.lircd.conf", "remote": "Illusion_M3", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -56,6 +56,49 @@
 	    "KEY_PREVIOUS": "DAABACAEBG",
 	    "KEY_0": "DAABACAAAAAF",
 	    "KEY_SLEEP": "DAABABAACAF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "DBBACAEACF",
+	    "KEY_MUTE": "DBBABCEAG",
+	    "KEY_A": "DBBACEBAG",
+	    "KEY_B": "DBBACEBAAF",
+	    "KEY_C": "DBBACEACAF",
+	    "KEY_D": "DBBACEACEF",
+	    "game": "DBBACEABG",
+	    "KEY_AUX": "DBBABBBG",
+	    "KEY_INFO": "DBBACEABAF",
+	    "KEY_TEXT": "DBBABAAACF",
+	    "tv/r": "DBBACEBCF",
+	    "KEY_MENU": "DBBABCECF",
+	    "KEY_EPG": "DBBACECEG",
+	    "KEY_PAUSE": "DBBABBCEF",
+	    "KEY_RED": "DBBABABAAF",
+	    "KEY_GREEN": "DBBABABAG",
+	    "KEY_YELLOW": "DBBABACEG",
+	    "KEY_BLUE": "DBBABABCF",
+	    "KEY_UP": "DBBABCAAAF",
+	    "KEY_LEFT": "DBBABAACEF",
+	    "KEY_OK": "DBBABAABAF",
+	    "KEY_RIGHT": "DBBABAABG",
+	    "KEY_DOWN": "DBBABCAAEF",
+	    "KEY_ESC": "DBBABCEAAF",
+	    "f_left": "DBBACAEAAAF",
+	    "f_right": "DBBABCAEAF",
+	    "tick/audio": "DBBACECEAF",
+	    "KEY_1": "DBBACAAAAEF",
+	    "KEY_2": "DBBACAAAEG",
+	    "KEY_3": "DBBACAAAEAF",
+	    "KEY_4": "DBBACAAECF",
+	    "KEY_5": "DBBACAAEBF",
+	    "KEY_6": "DBBACAAEAG",
+	    "KEY_7": "DBBACAAEAAF",
+	    "KEY_8": "DBBACAECAF",
+	    "KEY_9": "DBBACAECEF",
+	    "KEY_PREVIOUS": "DBBACAEBG",
+	    "KEY_0": "DBBACAAAAAF",
+	    "KEY_SLEEP": "DBBABAACAF"
 	}
     }
 }

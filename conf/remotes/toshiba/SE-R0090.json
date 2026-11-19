@@ -1,6 +1,6 @@
 {
     "description": "Toshiba-SE-R0090 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/toshiba/SE-R0090.lircd.conf", "remote": "Toshiba-SE-R0090", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/toshiba/SE-R0090.lircd.conf", "remote": "Toshiba-SE-R0090", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

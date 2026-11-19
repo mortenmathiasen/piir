@@ -1,6 +1,6 @@
 {
     "description": "MyHD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/macro_image_technology/MyHD.lircd.conf", "remote": "MyHD", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/macro_image_technology/MyHD.lircd.conf", "remote": "MyHD", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

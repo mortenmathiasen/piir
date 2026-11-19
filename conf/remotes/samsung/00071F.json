@@ -1,6 +1,6 @@
 {
     "description": "SAMSUNG_00071F (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/samsung/00071F.lircd.conf", "remote": "SAMSUNG_00071F", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/samsung/00071F.lircd.conf", "remote": "SAMSUNG_00071F", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "DSP-A970 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamaha/DSP-A970.lircd.conf", "remote": "DSP-A970", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/yamaha/DSP-A970.lircd.conf", "remote": "DSP-A970", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

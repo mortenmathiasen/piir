@@ -1,6 +1,6 @@
 {
     "description": "Hitachi_VT-RM783E (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/hitachi/VT-RM783E.lircd.conf", "remote": "Hitachi_VT-RM783E", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/hitachi/VT-RM783E.lircd.conf", "remote": "Hitachi_VT-RM783E", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

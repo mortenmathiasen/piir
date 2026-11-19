@@ -1,6 +1,6 @@
 {
     "description": "Fisher_RC720F (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/fisher/RC720F.lircd.conf", "remote": "Fisher_RC720F", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/fisher/RC720F.lircd.conf", "remote": "Fisher_RC720F", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

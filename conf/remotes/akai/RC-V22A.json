@@ -1,6 +1,6 @@
 {
     "description": "Akai-RC-V22A-2 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/akai/RC-V22A.lircd.conf", "remote": "Akai-RC-V22A-2", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/akai/RC-V22A.lircd.conf", "remote": "Akai-RC-V22A-2", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

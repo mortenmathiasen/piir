@@ -1,6 +1,6 @@
 {
     "description": "Technotrend (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/technotrend/TV-Card.lircd.conf", "remote": "Technotrend", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/technotrend/TV-Card.lircd.conf", "remote": "Technotrend", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
@@ -53,6 +53,47 @@
 	    "KEY_PAUSE": "AAABBAAAAAF",
 	    "KEY_FORWARD": "AAABBAAAAAAD",
 	    "KEY_EPG": "AAABBACAEF"
+	}
+    },
+    "toggle": {
+	"key": {
+	    "KEY_POWER": "ABBBCAAAED",
+	    "KEY_MUTE": "ABBBBACAD",
+	    "KEY_1": "ABBBCAAEAD",
+	    "KEY_2": "ABBBCAECD",
+	    "KEY_3": "ABBBCAEBD",
+	    "KEY_4": "ABBBCAEAF",
+	    "KEY_5": "ABBBCAEAAD",
+	    "KEY_6": "ABBBCECAD",
+	    "KEY_7": "ABBBCECED",
+	    "KEY_8": "ABBBCEBF",
+	    "KEY_9": "ABBBCEBAD",
+	    "KEY_0": "ABBBCEACD",
+	    "KEY_AUDIO": "ABBBBABF",
+	    "KEY_AGAIN": "ABBBCAAEF",
+	    "KEY_VOLUMEDOWN": "ABBBACEAF",
+	    "KEY_VOLUMEUP": "ABBBACEBD",
+	    "KEY_TEXT": "ABBBBACED",
+	    "KEY_CHANNELDOWN": "ABBBACECD",
+	    "KEY_CHANNELUP": "ABBBACAEAD",
+	    "KEY_EXIT": "ABBBBCEAD",
+	    "KEY_OK": "ABBBCEAAAD",
+	    "KEY_UP": "ABBBCEABD",
+	    "KEY_DOWN": "ABBBBCAED",
+	    "KEY_LEFT": "ABBBCEAAF",
+	    "KEY_RIGHT": "ABBBBCAAD",
+	    "KEY_RED": "ABBBBBCD",
+	    "KEY_GREEN": "ABBBBBBD",
+	    "KEY_YELLOW": "ABBBBBAF",
+	    "KEY_BLUE": "ABBBBBAAD",
+	    "KEY_RECORD": "ABBBAAABF",
+	    "KEY_PLAY": "ABBBAAABAD",
+	    "KEY_STOP": "ABBBAAAACD",
+	    "KEY_INFO": "ABBBBCEF",
+	    "KEY_REWIND": "ABBBAAAABD",
+	    "KEY_PAUSE": "ABBBAAAAAF",
+	    "KEY_FORWARD": "ABBBAAAAAAD",
+	    "KEY_EPG": "ABBBACAEF"
 	}
     }
 }

@@ -1,6 +1,6 @@
 {
     "description": "Leadtek_Cool_Command_Y04G0033 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/leadtek/Y04G0033.lircd.conf", "remote": "Leadtek_Cool_Command_Y04G0033", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/leadtek/Y04G0033.lircd.conf", "remote": "Leadtek_Cool_Command_Y04G0033", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

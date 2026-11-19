@@ -1,6 +1,6 @@
 {
     "description": "Denon_RC-1017 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/denon/RC-1017.lircd.conf", "remote": "Denon_RC-1017", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/denon/RC-1017.lircd.conf", "remote": "Denon_RC-1017", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 26500,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

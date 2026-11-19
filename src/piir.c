@@ -12,6 +12,7 @@
 
 #include "plugins.h"
 #include "remotes.h"
+#include "state.h"
 
 featureT *requestedFeatures = 0;
 
@@ -275,8 +276,19 @@ int main(int argc, char *argv[])
 
   log_info("Configuration '%s' - %s", configfilepath, description);
   loadConfigSymbols(configSymbols);
-  loadFeaturedCode(requestedFeatures,
-		   &symbolString);
+
+  // Remotes with a toggle bit send a different code on every other press
+  char *stateFile = 0;
+  char *remoteId = 0;
+  int toggled = 0;
+  if (hasToggle()) {
+    stateFile = toggleStateFile();
+    remoteId = realpath(configfilepath, NULL);
+    toggled = readToggleState(stateFile, remoteId ? remoteId : configfilepath);
+    log_debug("Toggle state %d from %s", toggled, stateFile ? stateFile : "(none)");
+  }
+  loadToggledFeaturedCode(requestedFeatures, toggled,
+			  &symbolString);
   loadDescription(&description);
   loadFrequency(&frequency);
   loadDutyCycle(&dutycycle);
@@ -304,7 +316,14 @@ int main(int argc, char *argv[])
 			      configSymbols,
 			      symbolString
 			      );
-  
+
+  // The device received this press, so the next one toggles
+  if (result == 0 && hasToggle())
+    writeToggleState(stateFile, remoteId ? remoteId : configfilepath, !toggled);
+  free(stateFile);
+  free(remoteId);
+  free(symbolString);
+
   return result;
 }
 

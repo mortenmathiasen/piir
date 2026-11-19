@@ -1,6 +1,6 @@
 {
     "description": "dish9 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/jvc/Dish_Network.lircd.conf", "remote": "dish9", "converter": "tools/lirc2piir.py 1.0"},
+    "source": {"lirc-remotes": "remotes/jvc/Dish_Network.lircd.conf", "remote": "dish9", "converter": "tools/lirc2piir.py 1.1"},
     "frequency": 56000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

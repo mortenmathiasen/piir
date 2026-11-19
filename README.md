@@ -90,11 +90,11 @@ The packages contain PIIR's own remotes. Add the remotes you need from the LIRC 
 
 Install the Debian package, e.g. for a Pi Zero W:
 ```
-sudo apt install ./piir_2.1.0_armv6.deb
+sudo apt install ./piir_2.2.0_armv6.deb
 ```
 or extract the tarball into `/`:
 ```
-sudo tar -xzf piir-2.1.0-armv6.tar.gz -C / --strip-components=1
+sudo tar -xzf piir-2.2.0-armv6.tar.gz -C / --strip-components=1
 ```
 
 Then enable the kernel IR transmitter as described below.
@@ -209,8 +209,8 @@ GitHub Actions runs the tests for all three backends, with AddressSanitizer and 
 
 To release, update `VERSION` in `CMakeLists.txt`, commit, and push a matching tag:
 ```
-git tag v2.2.0
-git push origin v2.2.0
+git tag v2.3.0
+git push origin v2.3.0
 ```
 GitHub Actions then runs all tests, builds the packages for every Raspberry Pi architecture and the archive of all remotes (`piir-remotes-<version>.tar.gz`), and publishes them with checksums as a GitHub release.
 

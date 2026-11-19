@@ -27,9 +27,9 @@ static void test_list_merges_directories(void) {
 }
 
 static void test_find_full_name(void) {
-  const char *dirs[] = {MISSING, REMOTES};
+  const char *dirs[] = {MISSING, NULL, REMOTES};
   char *path = NULL;
-  CHECK_EQ_INT(1, findRemote(dirs, 2, "brand2/dup", &path, NULL));
+  CHECK_EQ_INT(1, findRemote(dirs, 3, "brand2/dup", &path, NULL));
   CHECK_EQ_STR(REMOTES "/brand2/dup.json", path);
   free(path);
 }

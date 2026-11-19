@@ -89,11 +89,11 @@ The packages contain PIIR's own remotes. Add the remotes you need from the LIRC 
 
 Install the Debian package, e.g. for a Pi Zero W:
 ```
-sudo apt install ./piir_2.0.0_armv6.deb
+sudo apt install ./piir_2.1.0_armv6.deb
 ```
 or extract the tarball into `/`:
 ```
-sudo tar -xzf piir-2.0.0-armv6.tar.gz -C / --strip-components=1
+sudo tar -xzf piir-2.1.0-armv6.tar.gz -C / --strip-components=1
 ```
 
 Then enable the kernel IR transmitter as described below.
@@ -191,16 +191,25 @@ ctest --test-dir build --output-on-failure
 
 They cover the configuration loader, remote lookup, the remote plugins, the transmitter backend selected at configure time, the `piir` command line, `piir-remotes` and the LIRC converter. Every key of every remote in `conf/remotes/` is checked to produce a code PIIR can send. The `tests` section of a remote lists features and the code a real remote sends for them, and every one of these vectors is checked. Vectors that do not match yet are listed in `tests/known_failures.txt`. No test transmits IR, so they are safe to run on a Pi.
 
+To measure coverage, configure with `-DPIIR_COVERAGE=ON` and run [gcovr](https://gcovr.com) after the tests; the converter is measured too when Python's `coverage` module is installed:
+```
+cmake -B build-coverage -DPIIR_COVERAGE=ON
+cmake --build build-coverage
+ctest --test-dir build-coverage
+gcovr -r . build-coverage --exclude 'src/parson\..*' --exclude 'tests/'
+```
+The transmitter backends are tested against simulated drivers and libraries (the `ioctl` and `write` calls of the `lirc` backend, libgpiod and pigpio are replaced when linking the tests), so the tests cover sending without hardware. CI requires 95% line coverage of the C code and of the converter.
+
 When cross compiling, tests run under qemu if you add for example `-DCMAKE_CROSSCOMPILING_EMULATOR=$(command -v qemu-aarch64)` (from the `qemu-user` package).
 
-GitHub Actions runs the tests for all three backends, with AddressSanitizer and UndefinedBehaviorSanitizer, and for the `armv6`, `armv7` and `aarch64` builds under qemu.
+GitHub Actions runs the tests for all three backends, with AddressSanitizer and UndefinedBehaviorSanitizer, measures coverage, and runs the tests of the `armv6`, `armv7` and `aarch64` builds under qemu.
 
 ### Releases
 
 To release, update `VERSION` in `CMakeLists.txt`, commit, and push a matching tag:
 ```
-git tag v2.1.0
-git push origin v2.1.0
+git tag v2.2.0
+git push origin v2.2.0
 ```
 GitHub Actions then runs all tests, builds the packages for every Raspberry Pi architecture and the archive of all remotes (`piir-remotes-<version>.tar.gz`), and publishes them with checksums as a GitHub release.
 
@@ -209,7 +218,7 @@ GitHub Actions then runs all tests, builds the packages for every Raspberry Pi a
 The command line options and remote files of PIIR 1.x still work. These things changed:
 
 * **Build system.** PIIR is built with CMake instead of autotools: `./autogen.sh && ./configure && make && sudo make install` becomes `cmake -B build && cmake --build build && sudo cmake --install build`. The default installation prefix is still `/usr/local`.
-* **Transmitter.** PIIR 1.x always used pigpio. PIIR 2 prefers the Linux kernel IR driver, which works on every Raspberry Pi including Pi 5, but needs `dtoverlay=gpio-ir-tx,gpio_pin=17` in `/boot/firmware/config.txt` (see [Compilation](#compilation)). The overlay sets the GPIO pin, so `outpin` in a remote file is not used by this backend. Without the overlay PIIR stops with `Cannot open /dev/lirc0`. To keep using pigpio and `outpin`, build with `-DPIIR_GPIO_BACKEND=pigpio` (this does not compile in release 2.0.0; use a later release).
+* **Transmitter.** PIIR 1.x always used pigpio. PIIR 2 prefers the Linux kernel IR driver, which works on every Raspberry Pi including Pi 5, but needs `dtoverlay=gpio-ir-tx,gpio_pin=17` in `/boot/firmware/config.txt` (see [Compilation](#compilation)). The overlay sets the GPIO pin, so `outpin` in a remote file is not used by this backend. Without the overlay PIIR stops with `Cannot open /dev/lirc0`. To keep using pigpio and `outpin`, build with `-DPIIR_GPIO_BACKEND=pigpio` (this does not compile in release 2.0.0; use 2.1.0 or later).
 * **Exit codes and output.** On errors and after `--help`, PIIR 1.x aborted (exit code 134); PIIR 2 exits with 1. The `gpioWaveTxSend OK` line is only printed by the pigpio backend.
 * **Remote locations.** The remotes shipped with PIIR are in manufacturer directories, e.g. `conf/remotes/panasonic/hvac_panasonic.json`. Your own remotes directly in `conf/remotes/` are still found, and `--remote hvac_panasonic` still works. Release packages contain only PIIR's own remotes; add others with [piir-remotes](#choosing-the-remotes-of-an-installation).
 * **Plugins.** A remote now names its plugin, e.g. `"plugin": "hvac_panasonic"`. Remote files without this setting whose path contains `hvac_panasonic` still get the Panasonic checksum, as in PIIR 1.x.

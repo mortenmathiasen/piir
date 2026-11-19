@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(PIIR
-  VERSION 2.0.0
+  VERSION 2.1.0
   DESCRIPTION "Raspberry Pi IR transmitter"
   HOMEPAGE_URL "https://github.com/mortenmathiasen/piir"
   LANGUAGES C)
@@ -59,6 +59,14 @@ if(NOT PIIR_BACKEND)
   message(FATAL_ERROR "No transmitter backend found; need linux/lirc.h, libgpiod >= 2.0 or pigpio")
 else()
   message(STATUS "PIIR GPIO backend: ${PIIR_BACKEND}")
+endif()
+
+# Measure test coverage with gcov (gcovr), and of tools/lirc2piir.py with
+# Python's coverage module when it is installed
+option(PIIR_COVERAGE "Build with coverage instrumentation" OFF)
+if(PIIR_COVERAGE)
+  add_compile_options(--coverage -O0)
+  add_link_options(--coverage)
 endif()
 
 # Everything except main() goes into a library shared by piir and the tests

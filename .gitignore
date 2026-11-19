@@ -1,7 +1,5 @@
 piir
 
-**/.dirstamp
-
 # CMake
 /build*/
 /rpi-sysroot/

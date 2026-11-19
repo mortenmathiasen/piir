@@ -31,10 +31,27 @@ add_test(NAME remotes.all
 # Transmitter backend units
 if(PIIR_BACKEND STREQUAL "lirc")
   piir_unit_test(test_lirc)
+  piir_unit_test(test_lirc_device)
+  target_link_options(test_lirc_device PRIVATE -Wl,--wrap=ioctl -Wl,--wrap=write)
 elseif(PIIR_BACKEND STREQUAL "gpiod")
   piir_unit_test(test_transmitter)
+  piir_unit_test(test_transmitter_device)
+  set(gpiod_wrapped opendir gpiod_is_gpiochip_device gpiod_chip_open gpiod_chip_close
+    gpiod_chip_get_line_offset_from_name gpiod_line_settings_new gpiod_line_settings_free
+    gpiod_line_settings_set_direction gpiod_line_settings_set_output_value
+    gpiod_line_config_new gpiod_line_config_free gpiod_line_config_add_line_settings
+    gpiod_request_config_new gpiod_request_config_free gpiod_request_config_set_consumer
+    gpiod_chip_request_lines gpiod_line_request_release gpiod_line_request_set_value)
+  list(TRANSFORM gpiod_wrapped PREPEND "-Wl,--wrap=")
+  target_link_options(test_transmitter_device PRIVATE ${gpiod_wrapped})
 elseif(PIIR_BACKEND STREQUAL "pigpio")
   piir_unit_test(test_irslinger)
+  piir_unit_test(test_irslinger_device)
+  set(pigpio_wrapped gpioCfgDMAchannels gpioInitialise gpioSetMode gpioWaveClear
+    gpioWaveAddGeneric gpioWaveCreate gpioWaveTxSend gpioWaveTxBusy gpioWaveDelete
+    gpioTerminate time_sleep)
+  list(TRANSFORM pigpio_wrapped PREPEND "-Wl,--wrap=")
+  target_link_options(test_irslinger_device PRIVATE ${pigpio_wrapped})
 endif()
 
 # Command line tests of the piir executable
@@ -113,6 +130,12 @@ piir_cli_test(remote_by_name EXIT nonzero
   WORKDIR ${PROJECT_SOURCE_DIR}
   ARGS -r hvac_panasonic -h
   MATCH "Features in config file .*/conf/remotes/panasonic/hvac_panasonic.json")
+piir_cli_test(second_remote_ignored EXIT nonzero
+  ARGS --remote ${HVAC} --remote ${FIXTURE_DIR}/simple.json --help
+  MATCH "Features in config file .*/hvac_panasonic.json" "temperature:")
+piir_cli_test(invalid_remote_file EXIT nonzero
+  ARGS --remote ${FIXTURE_DIR}/invalid.json
+  MATCH "Cannot load remote '.*/invalid.json'")
 piir_cli_test(unknown_remote EXIT nonzero
   ARGS --remote no_such_remote
   MATCH "Cannot find remote 'no_such_remote'")
@@ -216,24 +239,39 @@ set_tests_properties(cli.piir_remotes_installed_after_remove PROPERTIES DEPENDS 
 find_package(Python3 COMPONENTS Interpreter)
 if(Python3_FOUND)
   set(CONVERTER ${PROJECT_SOURCE_DIR}/tools/lirc2piir.py)
+  set(PYTHON ${Python3_EXECUTABLE})
+  if(PIIR_COVERAGE)
+    execute_process(COMMAND ${Python3_EXECUTABLE} -c "import coverage"
+      RESULT_VARIABLE no_coverage OUTPUT_QUIET ERROR_QUIET)
+    if(no_coverage EQUAL 0)
+      set(PYTHON ${Python3_EXECUTABLE} -m coverage run --parallel-mode
+        --data-file=${PROJECT_BINARY_DIR}/python.coverage
+        --include=${PROJECT_SOURCE_DIR}/tools/*)
+    endif()
+  endif()
+  string(REPLACE ";" "~~" PYTHON_ARGS "${PYTHON}")
   file(GLOB lirc_fixtures ${CMAKE_CURRENT_SOURCE_DIR}/lirc/*.simsend)
   foreach(expected IN LISTS lirc_fixtures)
     get_filename_component(name ${expected} NAME_WE)
     # The .simsend files are what LIRC 0.10.2's irsimsend -c 2 writes
     add_test(NAME converter.simsend.${name}
-      COMMAND ${CMAKE_COMMAND} -DPYTHON=${Python3_EXECUTABLE} -DCONVERTER=${CONVERTER}
+      COMMAND ${CMAKE_COMMAND} -DPYTHON=${PYTHON_ARGS} -DCONVERTER=${CONVERTER}
         -DCONFIG=${CMAKE_CURRENT_SOURCE_DIR}/lirc/${name}.lircd.conf -DEXPECTED=${expected}
         -P ${CMAKE_CURRENT_SOURCE_DIR}/run_simsend.cmake)
   endforeach()
   set(CONVERTED ${CMAKE_CURRENT_BINARY_DIR}/converted)
   add_test(NAME converter.convert
-    COMMAND ${CMAKE_COMMAND} -E env ${Python3_EXECUTABLE} ${CONVERTER}
-      convert -o ${CONVERTED} ${CMAKE_CURRENT_SOURCE_DIR}/lirc)
+    COMMAND ${PYTHON} ${CONVERTER} convert -o ${CONVERTED} ${CMAKE_CURRENT_SOURCE_DIR}/lirc)
   set_tests_properties(converter.convert PROPERTIES
     FIXTURES_SETUP converted
     PASS_REGULAR_EXPRESSION "5 remotes converted, 2 skipped")
   add_test(NAME converter.remotes COMMAND test_remotes ${CONVERTED})
   set_tests_properties(converter.remotes PROPERTIES FIXTURES_REQUIRED converted)
+  add_test(NAME converter.unit
+    COMMAND ${PYTHON} -m unittest -v test_lirc2piir
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+  set_tests_properties(converter.unit PROPERTIES
+    ENVIRONMENT PYTHONPATH=${PROJECT_SOURCE_DIR}/tools)
   piir_cli_test(converter_rc5_help EXIT nonzero FIXTURES converted
     ARGS --remote ${CONVERTED}/rc5.json --help
     MATCH "key:" "KEY_VOLUMEUP")

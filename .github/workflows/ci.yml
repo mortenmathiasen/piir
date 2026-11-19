@@ -51,6 +51,50 @@ jobs:
       - name: Test
         run: ctest --test-dir build --output-on-failure
 
+  # Line coverage of the C code (lirc backend) and of tools/lirc2piir.py
+  coverage:
+    name: Coverage
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install gcovr and coverage
+        run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --quiet gcovr coverage
+          echo "$RUNNER_TEMP/venv/bin" >> "$GITHUB_PATH"
+
+      - name: Configure
+        run: cmake -B build -DPIIR_COVERAGE=ON -DPython3_EXECUTABLE="$RUNNER_TEMP/venv/bin/python"
+
+      - name: Build
+        run: cmake --build build --parallel
+
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
+
+      - name: C coverage
+        run: |
+          mkdir -p coverage
+          gcovr -r . build --exclude 'src/parson\..*' --exclude 'tests/' \
+            --txt --markdown coverage/c.md --html-details coverage/c.html \
+            --fail-under-line 95
+          cat coverage/c.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Converter coverage
+        run: |
+          cd build
+          python -m coverage combine --data-file=python.coverage python.coverage.*
+          python -m coverage report --data-file=python.coverage -m --format=markdown >> "$GITHUB_STEP_SUMMARY"
+          python -m coverage html --data-file=python.coverage -d ../coverage/python
+          python -m coverage report --data-file=python.coverage --fail-under=95
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage
+          path: coverage
+
   # The gpiod backend needs libgpiod >= 2.0, which Ubuntu 24.04 does not have
   test-gpiod:
     name: Test gpiod (sanitizers)
@@ -166,7 +210,7 @@ jobs:
   release:
     name: Release
     if: startsWith(github.ref, 'refs/tags/v')
-    needs: [test, test-gpiod, rpi, remotes]
+    needs: [test, test-gpiod, coverage, rpi, remotes]
     runs-on: ubuntu-24.04
     permissions:
       contents: write

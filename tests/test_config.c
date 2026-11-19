@@ -194,6 +194,38 @@ static void test_featured_code_unknown_value(void) {
   free(code);
 }
 
+static void test_minimal_remote(void) {
+  unloadConfig();
+  loadConfig(FIXTURE_DIR "/minimal.json");
+  CHECK(isConfigLoaded());
+  CHECK_EQ_INT(0, getAllFeaturesCount());
+  CHECK_EQ_INT(0, getSymboldefinitionsCount());
+  symbolDefinition none[1];
+  loadConfigSymbols(none);   // logs that there are no symbol definitions
+  char *code = 0;
+  featureT features[1] = {{0, 0}};
+  loadFeaturedCode(features, &code);
+  CHECK_EQ_STR("", code);
+  free(code);
+  const char *plugin = (const char *)1;
+  loadPlugin(&plugin);
+  CHECK(plugin == NULL);
+}
+
+static void test_feature_longer_than_template(void) {
+  unloadConfig();
+  loadConfig(FIXTURE_DIR "/long_feature.json");
+  featureT features[1] = {{"key", "LONG"}};
+  char *code = 0;
+  loadFeaturedCode(features, &code);
+  CHECK_EQ_STR("BB", code);
+  free(code);
+  features[0].value = "SHORT";
+  loadFeaturedCode(features, &code);
+  CHECK_EQ_STR("BA", code);
+  free(code);
+}
+
 int main(void) {
   log_set_level(LOG_NOTHING);
   RUN_TEST(test_load_missing_file);
@@ -211,6 +243,8 @@ int main(void) {
   RUN_TEST(test_featured_code_later_feature_wins);
   RUN_TEST(test_featured_code_configuration_order);
   RUN_TEST(test_featured_code_unknown_value);
+  RUN_TEST(test_minimal_remote);
+  RUN_TEST(test_feature_longer_than_template);
   unloadConfig();
   return TEST_RESULT();
 }

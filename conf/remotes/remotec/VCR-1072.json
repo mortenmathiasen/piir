@@ -1,0 +1,45 @@
+{
+    "description": "remotec1072 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/remotec/VCR-1072.lircd.conf", "remote": "remotec1072", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 924, "space": 844},
+	"B": {"mark": 1848, "space": 844},
+	"C": {"mark": 924, "space": 1688},
+	"D": {"mark": 1848, "space": 1688},
+	"E": {"mark": 948, "space": 844},
+	"F": {"mark": 924, "space": 0},
+	"G": {"mark": 1848, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "EBACDBCABF",
+	    "KEY_1": "EABCDBAAACF",
+	    "KEY_2": "EBACDBAACG",
+	    "KEY_3": "EABCDBAACAF",
+	    "KEY_4": "EBACDBACBF",
+	    "KEY_5": "EABCDBACDF",
+	    "KEY_6": "EBACDBACAG",
+	    "KEY_7": "EABCDBACAAF",
+	    "KEY_8": "EBACDBCBAF",
+	    "KEY_9": "EABCDBCBCF",
+	    "KEY_0": "EBACDBAAAAF",
+	    "KEY_CHANNELUP": "EABCDABAAAF",
+	    "KEY_CHANNELDOWN": "EBACDABAACF",
+	    "p-p": "EABCDAABACF",
+	    "KEY_102ND": "EBACDBCDAF",
+	    "KEY_REWIND": "EABCDABCDF",
+	    "KEY_PLAY": "EBACDAADDF",
+	    "KEY_FORWARD": "EABCDABCAG",
+	    "KEY_STOP": "EBACDAADAG",
+	    "KEY_PAUSE": "EABCDADBCF",
+	    "KEY_RECORD": "EBACDAADAAF",
+	    "I-II": "EABCDABACAF",
+	    "AV": "EBACDDAADF"
+	}
+    }
+}

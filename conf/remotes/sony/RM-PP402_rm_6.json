@@ -1,0 +1,25 @@
+{
+    "description": "rm (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-PP402.lircd.conf", "remote": "rm", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 595, "space": 0},
+	"H": {"mark": 2404, "space": 572},
+	"1": {"mark": 1185, "space": 572},
+	"0": {"mark": 596, "space": 572},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "vcr_menu": "H10110011110A",
+	    "vcr_left": "H01000111110A",
+	    "vcr_up": "H01000011110A",
+	    "vcr_down": "H11000011110A",
+	    "vcr_right": "H10000111110A",
+	    "vcr_enter": "H10001011110A"
+	}
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "description": "Teac_RC-547 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/teac/RC-547.lircd.conf", "remote": "Teac_RC-547", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 497, "space": 0},
+	"1": {"mark": 1368, "space": 276},
+	"0": {"mark": 497, "space": 1162},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "Program": "11010000001A",
+	    "KEY_PREVIOUS": "11010000010A",
+	    "KEY_NEXT": "11010000100A"
+	}
+    }
+}

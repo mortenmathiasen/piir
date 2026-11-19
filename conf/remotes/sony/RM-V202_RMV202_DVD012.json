@@ -1,0 +1,53 @@
+{
+    "description": "RMV202_DVD012 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-V202.lircd.conf", "remote": "RMV202_DVD012", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 479, "space": 399},
+	"B": {"mark": 479, "space": 798},
+	"C": {"mark": 958, "space": 798},
+	"D": {"mark": 958, "space": 399},
+	"E": {"mark": 479, "space": 0},
+	"F": {"mark": 958, "space": 0},
+	"H": {"mark": 2779, "space": 805},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "Power": "HBAABDAAAACAAAAADBAE",
+	    "1": "HBAABDAAAACAAAAAAAAF",
+	    "2": "HBAABDAAAACAAAAAAACE",
+	    "3": "HBAABDAAAACAAAAAAADE",
+	    "4": "HBAABDAAAACAAAAAACAE",
+	    "5": "HBAABDAAAACAAAAAACF",
+	    "6": "HBAABDAAAACAAAAAADBE",
+	    "7": "HBAABDAAAACAAAAAADAE",
+	    "8": "HBAABDAAAACAAAAACAAE",
+	    "9": "HBAABDAAAACAAAAACAF",
+	    "0": "HBAABDAAAACAAAAAAAAAE",
+	    "PIP": "HBAABDAAAACAADAABAAE",
+	    "Ent": "HBAABDAAAACAACDABAE",
+	    "TV_Video": "HBAABDAAAACAACADABE",
+	    "Display": "HBAABDAAAACAAAAADAAE",
+	    "Sleep": "HBAABDAAAACAACACDE",
+	    "Ch+": "HBAABDAAAACAAACAAAAE",
+	    "Ch-": "HBAABDAAAACAAACAAAF",
+	    "Recall": "HBAABDAAAACAADABAAF",
+	    "Up": "HBAABDAAAACAACDBAAE",
+	    "Down": "HBAABDAAAACAACDBAF",
+	    "Left": "HBAABDAAAACAACDBCE",
+	    "Right": "HBAABDAAAACAACDBDE",
+	    "Menu": "HBAABDAAAACAACCCAE",
+	    "Guide": "HBAABDAAAACAAADABCE",
+	    "OK": "HBAABDAAAACAACDABAE",
+	    "Play": "HBAABDAAAACAAACDBAE",
+	    "Stop": "HBAABDAAAACAAADBAAF",
+	    "Rewind": "HBAABDAAAACAAACCAF",
+	    "FFwd": "HBAABDAAAACAAACCAAE",
+	    "Pause": "HBAABDAAAACAAADBAAAE"
+	}
+    }
+}

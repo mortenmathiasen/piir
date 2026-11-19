@@ -1,0 +1,31 @@
+{
+    "description": "Philips_RC8601_01-TAPE (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC8601_01.lircd.conf", "remote": "Philips_RC8601_01-TAPE", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 932, "space": 843},
+	"B": {"mark": 1864, "space": 843},
+	"C": {"mark": 1864, "space": 1686},
+	"D": {"mark": 932, "space": 1686},
+	"E": {"mark": 969, "space": 843},
+	"F": {"mark": 932, "space": 0},
+	"G": {"mark": 1864, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_SLEEP": "EAABDBADABF",
+	    "side": "EAABDCCAAAF",
+	    "KEY_NEXT": "EAABDCBAAAF",
+	    "KEY_PREVIOUS": "EAABDCBAADF",
+	    "KEY_PLAY": "EAABDCACCF",
+	    "KEY_STOP": "EAABDCACAG",
+	    "KEY_PAUSE": "EAABDCABAAF",
+	    "KEY_FASTFORWARD": "EAABDCACBF",
+	    "KEY_REWIND": "EAABDCABDG"
+	}
+    }
+}

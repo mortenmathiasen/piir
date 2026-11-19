@@ -1,0 +1,23 @@
+{
+    "description": "Dynex_DX-CVS4 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/dynex/DX-CVS4.lircd.conf", "remote": "Dynex_DX-CVS4", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 559, "space": 0},
+	"H": {"mark": 9047, "space": 4470},
+	"1": {"mark": 556, "space": 1653},
+	"0": {"mark": 556, "space": 527},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H01000000101111111011000001001111A",
+	    "KEY_2": "H01000000101111110111000010001111A",
+	    "KEY_3": "H01000000101111111001000001101111A",
+	    "KEY_4": "H01000000101111110101000010101111A"
+	}
+    }
+}

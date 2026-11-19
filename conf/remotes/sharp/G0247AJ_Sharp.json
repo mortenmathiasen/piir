@@ -1,0 +1,29 @@
+{
+    "description": "Sharp (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sharp/G0247AJ.lircd.conf", "remote": "Sharp", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 325, "space": 0},
+	"1": {"mark": 325, "space": 1784},
+	"0": {"mark": 325, "space": 730},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------------------------------------",
+    "features": {
+	"key": {
+	    "TVOperate": "100000110100010AVVVVWWXXXXXXYYZZZZZZZ100001001011101A",
+	    "InputSelect": "100001100100010AVVVVWWXXXXXXYYZZZZZZZ100000011011101A",
+	    "TVChUp": "100001000100010AVVVVWWWXXXXXXYYYYYYYYZ100000111011101A",
+	    "TVChDn": "100000100100010AVVVVWWWXXXXXXYYYYYYYYZ100001011011101A",
+	    "KEY_VOLUMEUP": "100000010100010AVVVVWWWXXXXXXYYYYYYYYZ100001101011101A",
+	    "KEY_VOLUMEDOWN": "100001010100010AVVVVWWXXXXXXYYZZZZZZZ100000101011101A"
+	}
+    }
+}

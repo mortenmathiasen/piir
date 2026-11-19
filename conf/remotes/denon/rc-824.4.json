@@ -1,0 +1,38 @@
+{
+    "description": "/tmp/rc-824.4 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/denon/rc-824.4.lircd.conf", "remote": "/tmp/rc-824.4", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 275, "space": 0},
+	"1": {"mark": 275, "space": 1850},
+	"0": {"mark": 275, "space": 775},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "001101011101100A",
+	    "KEY_1": "001101000001100A",
+	    "KEY_2": "001100100001100A",
+	    "KEY_3": "001101100001100A",
+	    "KEY_4": "001100010001100A",
+	    "KEY_5": "001101010001100A",
+	    "KEY_6": "001100110001100A",
+	    "KEY_7": "001101110001100A",
+	    "KEY_8": "001100001001100A",
+	    "unkown": "001100001111100A",
+	    "KEY_FIND": "001101001111100A",
+	    "KEY_TUNINGUP": "001101001101100A",
+	    "KEY_TUNINGDOWN": "001100101101100A",
+	    "KEY_DISPLAY": "001100111101100A",
+	    "KEY_SHIFT_PTY": "001101011001100A",
+	    "KEY_SAVE": "001100011001100A",
+	    "auto/manu": "001100001101100A",
+	    "band": "001101110101100A",
+	    "KEY_CHANNELUP": "001100110101100A",
+	    "KEY_CHANNELDOWN": "001101010101100A"
+	}
+    }
+}

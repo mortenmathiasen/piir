@@ -1,0 +1,38 @@
+{
+    "description": "/etc/lirc/ab-cryptobox-hd-500.conf (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/cryptobox/hd-500.lircd.conf", "remote": "/etc/lirc/ab-cryptobox-hd-500.conf", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 565, "space": 0},
+	"H": {"mark": 9015, "space": 4514},
+	"1": {"mark": 564, "space": 1698},
+	"0": {"mark": 564, "space": 570},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_OK": "H10000000101111110111001110001100A",
+	    "KEY_LEFT": "H10000000101111111001100101100110A",
+	    "KEY_RIGHT": "H10000000101111111000001101111100A",
+	    "KEY_UP": "H10000000101111110101001110101100A",
+	    "KEY_DOWN": "H10000000101111110100101110110100A",
+	    "KEY_PLAY": "H10000000101111110001101111100100A",
+	    "KEY_PAUSE": "H10000000101111111110001100011100A",
+	    "KEY_STOP": "H10000000101111110010101111010100A",
+	    "KEY_FORWARD": "H10000000101111111010101101010100A",
+	    "KEY_REWIND": "H10000000101111110110001110011100A",
+	    "KEY_MUTE": "H10000000101111110011100111000110A",
+	    "KEY_VOLUMEUP": "H10000000101111111000010101111010A",
+	    "KEY_VOLUMEDOWN": "H10000000101111110001110111100010A",
+	    "KEY_CHANNELUP": "H10000000101111110011010111001010A",
+	    "KEY_CHANNELDOWN": "H10000000101111111010010101011010A",
+	    "KEY_POWER": "H10000000101111110011101111000100A",
+	    "KEY_RECORD": "H10000000101111110000000111111110A",
+	    "KEY_MENU": "H10000000101111111010100101010110A",
+	    "KEY_EXIT": "H10000000101111111010001101011100A"
+	}
+    }
+}

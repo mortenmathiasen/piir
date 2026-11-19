@@ -1,0 +1,21 @@
+{
+    "description": "9600pre (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/nokia/MM9600.lircd.conf", "remote": "9600pre", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 641, "space": 355},
+	"B": {"mark": 641, "space": 0},
+	"C": {"mark": 641, "space": 710},
+	"D": {"mark": 1282, "space": 355},
+	"H": {"mark": 767, "space": 2236},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "KEY_PREVIOUS": "HCDAAAAAAAAAAAAAB"
+	}
+    }
+}

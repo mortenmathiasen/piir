@@ -1,0 +1,33 @@
+{
+    "description": "Teac_RC-558 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/teac/RC-558.lircd.conf", "remote": "Teac_RC-558", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 571, "space": 0},
+	"H": {"mark": 9031, "space": 4474},
+	"1": {"mark": 571, "space": 1680},
+	"0": {"mark": 571, "space": 551},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "counter_clear": "H01000001000111100101000010101111A",
+	    "display": "H01000001000111101111100000000111A",
+	    "auto_monitor": "H01000001000111100011000011001111A",
+	    "CD_sync_left": "H01000001000111100010101011010101A",
+	    "KEY_RECORD": "H01000001000111101110100000010111A",
+	    "rec_mute": "H01000001000111100110100010010111A",
+	    "CPS_back": "H01000001000111101011101001000101A",
+	    "CPS_forward": "H01000001000111100011101011000101A",
+	    "RTZ": "H01000001000111101001001001101101A",
+	    "KEY_BACK": "H01000001000111101010100001010111A",
+	    "KEY_FORWARD": "H01000001000111100100100010110111A",
+	    "KEY_STOP": "H01000001000111100000100011110111A",
+	    "KEY_PAUSE": "H01000001000111101000100001110111A",
+	    "KEY_PLAY": "H01000001000111101100100000110111A"
+	}
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "description": "boombox (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/venturer/CD1832.lircd.conf", "remote": "boombox", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 606, "space": 0},
+	"H": {"mark": 4540, "space": 4417},
+	"1": {"mark": 608, "space": 1640},
+	"0": {"mark": 608, "space": 508},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "random": "H10000001100000010100100010110111A",
+	    "KEY_PREVIOUS": "H10000001100000011001100001100111A",
+	    "KEY_AGAIN": "H10000001100000010100000010111111A",
+	    "KEY_NEXT": "H10000001100000011000100001110111A",
+	    "memory": "H10000001100000010101100010100111A",
+	    "KEY_PLAY": "H10000001100000011000000001111111A",
+	    "KEY_STOP": "H10000001100000011001000001101111A"
+	}
+    }
+}

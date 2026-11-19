@@ -1,0 +1,20 @@
+{
+    "description": "Nakamichi_REPEAT (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/nakamichi/RM-2CD.lircd.conf", "remote": "Nakamichi_REPEAT", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 600, "space": 0},
+	"B": {"mark": 600, "space": 2200},
+	"H": {"mark": 3500, "space": 300},
+	"0": {"mark": 600, "space": 300},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------",
+    "features": {
+	"key": {
+	    "KEY_AGAIN": "H00000BA"
+	}
+    }
+}

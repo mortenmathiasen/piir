@@ -1,0 +1,53 @@
+{
+    "description": "RCA_RCU600M (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/rca/RCU600M.lircd.conf", "remote": "RCA_RCU600M", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 481, "space": 395},
+	"B": {"mark": 481, "space": 790},
+	"C": {"mark": 962, "space": 790},
+	"D": {"mark": 962, "space": 395},
+	"E": {"mark": 481, "space": 0},
+	"F": {"mark": 962, "space": 0},
+	"H": {"mark": 2694, "space": 858},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------------------",
+    "features": {
+	"key": {
+	    "key_power": "HAABBDAAAAAACAAAAAAAAAAADBAE",
+	    "key_aux": "HAABBDAAAAAACAAAAAAAAADBADE",
+	    "key_switchvideomode": "HAABBDAAAAAACAAAAAAAAACCAF",
+	    "key_1": "HAABBDAAAAAACAAAAAAAAAAAAAAF",
+	    "key_2": "HAABBDAAAAAACAAAAAAAAAAAAACE",
+	    "key_3": "HAABBDAAAAAACAAAAAAAAAAAAADE",
+	    "key_4": "HAABBDAAAAAACAAAAAAAAAAAACAE",
+	    "key_5": "HAABBDAAAAAACAAAAAAAAAAAACF",
+	    "key_6": "HAABBDAAAAAACAAAAAAAAAAAADBE",
+	    "key_7": "HAABBDAAAAAACAAAAAAAAAAAADAE",
+	    "key_8": "HAABBDAAAAAACAAAAAAAAAAACAAE",
+	    "key_9": "HAABBDAAAAAACAAAAAAAAAAACAF",
+	    "key_0": "HAABBDAAAAAACAAAAAAAAAAAAAAAE",
+	    "key_menu": "HAABBDAAAAAACAAAAAAAAAADBCE",
+	    "key_info": "HAABBDAAAAAACAAAAAAAAAADABF",
+	    "key_clear": "HAABBDAAAAAACAAAAAAAAAADABAE",
+	    "key_ok": "HAABBDAAAAAACAAAAAAAAAADBDE",
+	    "key_up": "HAABBDAAAAAACAAAAAAAAAACACE",
+	    "key_down": "HAABBDAAAAAACAAAAAAAAAACDBE",
+	    "key_left": "HAABBDAAAAAACAAAAAAAAAADBAAE",
+	    "key_right": "HAABBDAAAAAACAAAAAAAAAACCAE",
+	    "key_next": "HAABBDAAAAAACAAAAAAAAAAADAAE",
+	    "key_previous": "HAABBDAAAAAACAAAAAAAAAACAAAE",
+	    "key_rewind": "HAABBDAAAAAACAAAAAAAAACAADE",
+	    "key_fastforward": "HAABBDAAAAAACAAAAAAAAACAACE",
+	    "key_record": "HAABBDAAAAAACAAAAAAAAAADAAAE",
+	    "key_stop": "HAABBDAAAAAACAAAAAAAAACACAE",
+	    "key_pause": "HAABBDAAAAAACAAAAAAAAACAAAF",
+	    "key_play": "HAABBDAAAAAACAAAAAAAAACAAAAE",
+	    "key_list": "HAABBDAAAAAACAAAAAAAAAADAABE",
+	    "key_goto": "HAABBDAAAAAACAAAAAAAAACADAE"
+	}
+    }
+}

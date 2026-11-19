@@ -1,0 +1,27 @@
+{
+    "description": "PanasonicCarAudio_CARC60EX (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/panasonic/CarAudio_CARC60EX.lircd.conf", "remote": "PanasonicCarAudio_CARC60EX", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 667, "space": 0},
+	"H": {"mark": 9148, "space": 4424},
+	"1": {"mark": 665, "space": 1595},
+	"0": {"mark": 665, "space": 465},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H10000001010101100100100010110111A",
+	    "PRG": "H10000001010101100011100011000111A",
+	    "KEY_MODE": "H10000001010101100101100010100111A",
+	    "ATT": "H10000001010101100010100011010111A",
+	    "KEY_VOLUMEUP": "H10000001010101101011100001000111A",
+	    "KEY_VOLUMEDOWN": "H10000001010101101001100001100111A",
+	    "Tune/Track_Up": "H10000001010101101111100000000111A",
+	    "Tune/Track_Down": "H10000001010101100111100010000111A"
+	}
+    }
+}

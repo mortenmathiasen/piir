@@ -1,0 +1,25 @@
+{
+    "description": "Apple_Mac (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/apple/Mac.lircd.conf", "remote": "Apple_Mac", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 638, "space": 0},
+	"H": {"mark": 9222, "space": 4479},
+	"1": {"mark": 654, "space": 1647},
+	"0": {"mark": 654, "space": 522},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_MENU": "H01110111111000011100000001111111A",
+	    "KEY_KPPLUS": "H01110111111000010101000001111111A",
+	    "KEY_KPMINUS": "H01110111111000010011000001111111A",
+	    "KEY_PLAY": "H01110111111000011010000001111111A",
+	    "KEY_REWIND": "H01110111111000011001000001111111A",
+	    "KEY_FASTFORWARD": "H01110111111000010110000001111111A"
+	}
+    }
+}

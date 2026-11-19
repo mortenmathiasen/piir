@@ -1,0 +1,40 @@
+{
+    "description": "JVC_PQ10543 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/PQ10543.lircd.conf", "remote": "JVC_PQ10543", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 559, "space": 0},
+	"H": {"mark": 2211, "space": 4137},
+	"1": {"mark": 532, "space": 1609},
+	"0": {"mark": 532, "space": 529},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_UP": "H1100101010011000A",
+	    "KEY_DOWN": "H1100101000011000A",
+	    "KEY_MENU": "H1100101011001000A",
+	    "KEY_OK": "H1100101000110000A",
+	    "KEY_BACK": "H1100101011000000A",
+	    "KEY_LEFT": "H1100101011100000A",
+	    "KEY_RIGHT": "H1100101001100000A",
+	    "KEY_RED": "H1100101010001001A",
+	    "KEY_GREEN": "H1100101011011100A",
+	    "KEY_YELLOW": "H1100101011101001A",
+	    "KEY_BLUE": "H1100101010001100A",
+	    "KEY_0": "H1100101011001100A",
+	    "KEY_1": "H1100101010000100A",
+	    "KEY_2": "H1100101001000100A",
+	    "KEY_3": "H1100101011000100A",
+	    "KEY_4": "H1100101000100100A",
+	    "KEY_5": "H1100101010100100A",
+	    "KEY_6": "H1100101001100100A",
+	    "KEY_7": "H1100101011100100A",
+	    "KEY_8": "H1100101000010100A",
+	    "KEY_9": "H1100101010010100A"
+	}
+    }
+}

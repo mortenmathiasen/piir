@@ -1,0 +1,28 @@
+{
+    "description": "RM-U306A_TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-U306A.lircd.conf", "remote": "RM-U306A_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 671, "space": 0},
+	"H": {"mark": 2466, "space": 518},
+	"1": {"mark": 1269, "space": 512},
+	"0": {"mark": 671, "space": 512},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------------------------------------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "TVVOL-": "H11001001000AVVWWWWWXXXXYYYYYYYYYZZZH11001001000AVVWWWWWXXXXYYYYYYYYYZZZH11001001000AVVWWWWWXXXXYYYYYYYYYZZZH11001001000A",
+	    "TVVOL+": "H01001001000AVVWWWWWWYYYYYYYYYZH01001001000AVVWWWWWWYYYYYYYYYZH01001001000AVVWWWWWWYYYYYYYYYZH01001001000A",
+	    "TVCH-": "H10001001000AVVWWWWWWYYYYYYYYYZH10001001000AVVWWWWWWYYYYYYYYYZH10001001000AVVWWWWWWYYYYYYYYYZH10001001000A",
+	    "TVCH+": "H00001001000AVVWWWWWWXXXXXXYYYYYYYYZZZZZZZZZH00001001000AVVWWWWWWXXXXXXYYYYYYYYZZZZZZZZZH00001001000AVVWWWWWWXXXXXXYYYYYYYYZZZZZZZZZH00001001000A"
+	}
+    }
+}

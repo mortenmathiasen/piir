@@ -1,0 +1,24 @@
+{
+    "description": "RCA_DTA800B1_SONY (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/rca/DTA800B1.lircd.conf", "remote": "RCA_DTA800B1_SONY", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 685, "space": 0},
+	"H": {"mark": 2500, "space": 450},
+	"1": {"mark": 1281, "space": 477},
+	"0": {"mark": 685, "space": 477},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_TV": "H10101001000A",
+	    "input": "H10010001000A",
+	    "KEY_MUTE": "H00101001000A",
+	    "KEY_VOLUMEUP": "H01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000A"
+	}
+    }
+}

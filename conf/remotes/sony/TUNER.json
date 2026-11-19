@@ -1,0 +1,24 @@
+{
+    "description": "TUNER (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/TUNER.lircd.conf", "remote": "TUNER", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 40000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 600, "space": 0},
+	"H": {"mark": 2400, "space": 600},
+	"1": {"mark": 1200, "space": 600},
+	"0": {"mark": 600, "space": 600},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------------------------------------------",
+    "features": {
+	"key": {
+	    "BAND": "H11110001011AVVWWWWWH11110001011AVVWWWWWH11110001011A",
+	    "PRESET+": "H00001001011AVVWWWWWH00001001011AVVWWWWWH00001001011A",
+	    "PRESET-": "H10001001011AVVWWWWWH10001001011AVVWWWWWH10001001011A"
+	}
+    }
+}

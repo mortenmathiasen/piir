@@ -1,0 +1,23 @@
+{
+    "description": "AMP (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/supportplus/RC9.lircd.conf", "remote": "AMP", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 563, "space": 0},
+	"H": {"mark": 8511, "space": 4290},
+	"1": {"mark": 563, "space": 1585},
+	"0": {"mark": 563, "space": 511},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "Volume-": "H10100101010110101101000000101111A",
+	    "Volume+": "H10100101010110100101000010101111A",
+	    "Mute": "H10100101010110100100100010110111A",
+	    "Power": "H10100101010110100011100011000111A"
+	}
+    }
+}

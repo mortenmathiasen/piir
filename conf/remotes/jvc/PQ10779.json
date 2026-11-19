@@ -1,0 +1,42 @@
+{
+    "description": "PQ10779 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/PQ10779.lircd.conf", "remote": "PQ10779", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 657, "space": 0},
+	"1": {"mark": 657, "space": 1465},
+	"0": {"mark": 657, "space": 394},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "KEY_KPPLUS": "1100000001111000A",
+	    "KEY_RED": "1100001011100000A",
+	    "KEY_GREEN": "1100001010101000A",
+	    "KEY_BLUE": "1100001001100000A",
+	    "KEY_MENU": "1100001011001000A",
+	    "KEY_6": "1100001001100100A",
+	    "KEY_7": "1100001011100100A",
+	    "KEY_8": "1100001000010100A",
+	    "KEY_9": "1100001010010100A",
+	    "KEY_0": "1100001011001100A",
+	    "KEY_KPMINUS": "1100000011111000A",
+	    "KEY_UP": "1100000010011000A",
+	    "KEY_DOWN": "1100000000011000A",
+	    "KEY_TV": "1100000011101000A",
+	    "KEY_VIDEO": "1100000011001000A",
+	    "KEY_STOP": "1100001011000000A",
+	    "KEY_PAUSE": "1100001010110000A",
+	    "KEY_FORWARD": "1100001000101000A",
+	    "suchl": "1100001001101001A",
+	    "KEY_1": "1100001010000100A",
+	    "KEY_2": "1100001001000100A",
+	    "KEY_3": "1100001011000100A",
+	    "KEY_4": "1100001000100100A",
+	    "KEY_5": "1100001010100100A"
+	}
+    }
+}

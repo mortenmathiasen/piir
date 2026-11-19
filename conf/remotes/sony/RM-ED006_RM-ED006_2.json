@@ -1,0 +1,30 @@
+{
+    "description": "RM-ED006 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-ED006.lircd.conf", "remote": "RM-ED006", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1264, "space": 0},
+	"B": {"mark": 666, "space": 0},
+	"H": {"mark": 2461, "space": 522},
+	"1": {"mark": 1264, "space": 529},
+	"0": {"mark": 666, "space": 529},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------------------------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "DIGITAL": "H01001011110111BVWWWWWWWWWYYYYYYYZZH01001011110111BVWWWWWWWWWYYYYYYYZZH01001011110111BVWWWWWWWWWYYYYYYYZZH01001011110111B",
+	    "screenmode": "H10111100010010AVWWWWWWWWWXXXXXXYYYYYYYH10111100010010AVWWWWWWWWWXXXXXXYYYYYYYH10111100010010AVWWWWWWWWWXXXXXXYYYYYYYH10111100010010A",
+	    "KEY_EPG": "H11011010010010AVWWWWWWWWWXXXXXXYYYYYYYH11011010010010AVWWWWWWWWWXXXXXXYYYYYYYH11011010010010AVWWWWWWWWWXXXXXXYYYYYYYH11011010010010A",
+	    "KEY_ENTER": "H11000101110100AVWWWWWWWWWXXXXXXYYYYYYYH11000101110100AVWWWWWWWWWXXXXXXYYYYYYYH11000101110100AVWWWWWWWWWXXXXXXYYYYYYYH11000101110100A",
+	    "TOOLS": "H01101101110100AVWWWWWWWWWYYYYYYYZZH01101101110100AVWWWWWWWWWYYYYYYYZZH01101101110100AVWWWWWWWWWYYYYYYYZZH01101101110100A"
+	}
+    }
+}

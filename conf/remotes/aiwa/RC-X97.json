@@ -1,0 +1,30 @@
+{
+    "description": "Aiwa_RC-X97 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/aiwa/RC-X97.lircd.conf", "remote": "Aiwa_RC-X97", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 574, "space": 0},
+	"H": {"mark": 9038, "space": 4501},
+	"1": {"mark": 584, "space": 1661},
+	"0": {"mark": 584, "space": 539},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "off": "H01100001110010000000000011111111A",
+	    "KEY_VOLUMEDOWN": "H01100001110010000000100011110111A",
+	    "KEY_VOLUMEUP": "H01100001110010001111000000001111A",
+	    "KEY_TAPE": "H01100001110010000010100011010111A",
+	    "KEY_REWIND": "H01100001110010001110100000010111A",
+	    "ff_next": "H01100001110010000110100010010111A",
+	    "KEY_PLAYPAUSE": "H01100001110010001101100000100111A",
+	    "disc_tune-": "H01100001110010000100100010110111A",
+	    "disc_tune+": "H01100001110010001000100001110111A",
+	    "radio_band": "H01100001110010001100100000110111A",
+	    "preset_scan": "H01100001110010001111100000000111A"
+	}
+    }
+}

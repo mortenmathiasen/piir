@@ -1,0 +1,47 @@
+{
+    "description": "JVC_RM-C678 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-C678.lircd.conf", "remote": "JVC_RM-C678", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 594, "space": 0},
+	"H": {"mark": 8537, "space": 4069},
+	"1": {"mark": 603, "space": 1499},
+	"0": {"mark": 603, "space": 443},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H1100000011101000A",
+	    "KEY_MENU": "H1100000001011110A",
+	    "KEY_1": "H1100000010000100A",
+	    "KEY_2": "H1100000001000100A",
+	    "KEY_3": "H1100000011000100A",
+	    "KEY_4": "H1100000000100100A",
+	    "KEY_5": "H1100000010100100A",
+	    "KEY_6": "H1100000001100100A",
+	    "KEY_7": "H1100000011100100A",
+	    "KEY_8": "H1100000000010100A",
+	    "KEY_9": "H1100000010010100A",
+	    "KEY_0": "H1100000000000100A",
+	    "X_KEY_0+": "H1100000011101110A",
+	    "KEY_ENTER": "H1100000010100000A",
+	    "KEY_AGAIN": "H1100000000111100A",
+	    "KEY_MUTE": "H1100000000111000A",
+	    "AVStatus": "H1100000010110000A",
+	    "KEY_CHANNELUP": "H1100000010011000A",
+	    "KEY_CHANNELDOWN": "H1100000000011000A",
+	    "KEY_VOLUMEUP": "H1100000001111000A",
+	    "KEY_VOLUMEDOWN": "H1100000011111000A",
+	    "KEY_CLOSE": "H1100000001110000A",
+	    "FunctionUp": "H1100000000111110A",
+	    "FunctionDown": "H1100000011011110A",
+	    "Function-": "H1100000011011010A",
+	    "Function+": "H1100000001011010A",
+	    "Display": "H1100000000100000A",
+	    "Main/Sap": "H1100000000000000A"
+	}
+    }
+}

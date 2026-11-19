@@ -1,0 +1,53 @@
+{
+    "description": "Marantz-RC-63CD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/marantz/RC-63CD.lircd.conf", "remote": "Marantz-RC-63CD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 887, "space": 891},
+	"B": {"mark": 1774, "space": 891},
+	"C": {"mark": 1774, "space": 1782},
+	"D": {"mark": 887, "space": 1782},
+	"E": {"mark": 910, "space": 891},
+	"F": {"mark": 887, "space": 0},
+	"G": {"mark": 1774, "space": 0},
+	"I": {"mark": 1797, "space": 1782},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_1": "EAACBAAAAADF",
+	    "KEY_2": "EAACBAAAADG",
+	    "KEY_3": "EAACBAAAADAF",
+	    "KEY_4": "EAACBAAADBF",
+	    "KEY_5": "EAACBAAADCF",
+	    "KEY_6": "EAACBAAADAG",
+	    "KEY_7": "EAACBAAADAAF",
+	    "KEY_8": "EAACBAADBAF",
+	    "KEY_9": "EAACBAADBDF",
+	    "KEY_0": "EAACBAAAAAAF",
+	    "DIMMER": "IACBAAADAAF",
+	    "KEY_OPEN": "EAACBDCACF",
+	    "KEY_CANCEL": "EAACBDABADF",
+	    "PROG": "EAACBDCBDF",
+	    "KEY_EDIT": "IACBDCBAF",
+	    "KEY_TIME": "EAACBAADCAF",
+	    "REPEAT": "EAACBADAACF",
+	    "KEY_AGAIN": "EAACBAADAAAF",
+	    "RANDOM": "EAACBADAABF",
+	    "AMS": "EAACBDCCAF",
+	    "A/B": "EAACBDAACAF",
+	    "KEY_PREVIOUS": "EAACBDBAADF",
+	    "KEY_PLAY": "EAACBDACCF",
+	    "KEY_NEXT": "EAACBDBAAAF",
+	    "BWD": "EAACBDABDG",
+	    "KEY_PAUSE": "EAACBDABAAF",
+	    "KEY_FORWARD": "EAACBDACBF",
+	    "KEY_STOP": "EAACBDACAG",
+	    "KEY_VOLUMEDOWN": "EAACBADBADF",
+	    "KEY_VOLUMEUP": "EAACBADBAAF"
+	}
+    }
+}

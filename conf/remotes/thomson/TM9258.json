@@ -1,0 +1,32 @@
+{
+    "description": "Thomson_TM9258 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/thomson/TM9258.lircd.conf", "remote": "Thomson_TM9258", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 656, "space": 0},
+	"H": {"mark": 9134, "space": 4423},
+	"1": {"mark": 662, "space": 1594},
+	"0": {"mark": 662, "space": 470},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_CYCLEWINDOWS": "H00000001111111110000000111111110A",
+	    "soundEffect": "H00000001111111111100100100110110A",
+	    "presDown": "H00000001111111111011100101000110A",
+	    "presUp": "H00000001111111110011100111000110A",
+	    "band": "H00000001111111110010100111010110A",
+	    "KEY_SELECT": "H00000001111111111001100101100110A",
+	    "KEY_MODE": "H00000001111111111010100101010110A",
+	    "trackBack": "H00000001111111110000100111110110A",
+	    "trackNext": "H00000001111111110011000111001110A",
+	    "KEY_PLAY": "H00000001111111110010000111011110A",
+	    "KEY_STOP": "H00000001111111110001000111101110A",
+	    "KEY_VOLUMEDOWN": "H00000001111111111011000101001110A",
+	    "KEY_VOLUMEUP": "H00000001111111111000100101110110A"
+	}
+    }
+}

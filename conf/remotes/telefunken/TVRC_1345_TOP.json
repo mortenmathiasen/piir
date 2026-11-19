@@ -1,0 +1,40 @@
+{
+    "description": "TELEFUNKEN_TVRC-1345_TOP (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/telefunken/TVRC_1345_TOP.lircd.conf", "remote": "TELEFUNKEN_TVRC-1345_TOP", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 257, "space": 0},
+	"1": {"mark": 257, "space": 5515},
+	"0": {"mark": 257, "space": 8398},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "TOP": "11010100001A",
+	    "FORMAT-": "10010000010A",
+	    "FORMAT+": "01010000011A",
+	    "KEY_TV": "00010000001A",
+	    "KEY_AUDIO": "11010000110A",
+	    "KEY_VIDEO": "01010000100A",
+	    "PROGRAM": "00010000111A",
+	    "VTX": "11010101010A",
+	    "KEY_VOLUMEDOWN": "10010010101A",
+	    "KEY_VOLUMEUP": "01010010110A",
+	    "KEY_1": "00010111111A",
+	    "KEY_2": "11010110111A",
+	    "KEY_3": "10010101111A",
+	    "KEY_4": "01010111110A",
+	    "KEY_5": "00010110110A",
+	    "KEY_6": "11010101110A",
+	    "KEY_7": "10010111101A",
+	    "KEY_8": "01010110101A",
+	    "KEY_9": "00010101101A",
+	    "KEY_0": "11010110001A",
+	    "KEY_MUTE": "10010111010A",
+	    "KEY_POWER": "01010100010A"
+	}
+    }
+}

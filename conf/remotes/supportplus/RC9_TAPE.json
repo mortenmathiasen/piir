@@ -1,0 +1,26 @@
+{
+    "description": "TAPE (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/supportplus/RC9.lircd.conf", "remote": "TAPE", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 563, "space": 0},
+	"H": {"mark": 8512, "space": 4288},
+	"1": {"mark": 563, "space": 1585},
+	"0": {"mark": 563, "space": 510},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "Play": "H01100101100110100101101010100101A",
+	    "Stop": "H10000101011110100011101011000101A",
+	    "REW": "H10000101011110101110101000010101A",
+	    "FF": "H10000101011110100110101010010101A",
+	    "Volume-": "H10100101010110101101000000101111A",
+	    "Mute": "H10100101010110100100100010110111A",
+	    "Volume+": "H10100101010110100101000010101111A"
+	}
+    }
+}

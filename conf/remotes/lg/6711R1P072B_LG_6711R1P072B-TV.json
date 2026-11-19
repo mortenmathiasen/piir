@@ -1,0 +1,28 @@
+{
+    "description": "LG_6711R1P072B-TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/lg/6711R1P072B.lircd.conf", "remote": "LG_6711R1P072B-TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 892, "space": 793},
+	"B": {"mark": 1784, "space": 793},
+	"C": {"mark": 892, "space": 1586},
+	"D": {"mark": 892, "space": 0},
+	"E": {"mark": 904, "space": 793},
+	"F": {"mark": 1784, "space": 1586},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "EABAAAAACABD",
+	    "AV": "EABAAACAABAD",
+	    "KEY_MUTE": "EABAAAAACAFD",
+	    "KEY_CHANNELUP": "EABAAACBAAAD",
+	    "KEY_CHANNELDOWN": "EABAAACBAACD",
+	    "KEY_VOLUMEUP": "EABAAAACBAAD",
+	    "KEY_VOLUMEDOWN": "EABAAAACBACD"
+	}
+    }
+}

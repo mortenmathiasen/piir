@@ -1,0 +1,44 @@
+{
+    "description": "Skymaster_2416 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/skymaster/2416.lircd.conf", "remote": "Skymaster_2416", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 690, "space": 0},
+	"H": {"mark": 2513, "space": 536},
+	"1": {"mark": 1313, "space": 529},
+	"0": {"mark": 689, "space": 529},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "1": "H00000001000A",
+	    "2": "H10000001000A",
+	    "3": "H01000001000A",
+	    "4": "H11000001000A",
+	    "5": "H00100001000A",
+	    "6": "H10100001000A",
+	    "7": "H01100001000A",
+	    "8": "H11100001000A",
+	    "9": "H00010001000A",
+	    "0": "H10010001000A",
+	    "Power": "H10101001000A",
+	    "Back": "H01010011100A",
+	    "Volume-": "H11001001000A",
+	    "Volume+": "H01001001000A",
+	    "Up": "H00001001000A",
+	    "Down": "H10001001000A",
+	    "Left": "H11001001000A",
+	    "Right": "H01001001000A",
+	    "Ok": "H00111111000A",
+	    "Red": "H00110011100A",
+	    "Green": "H10110011100A",
+	    "Yellow": "H01110011100A",
+	    "Blue": "H11110011100A",
+	    "Menu": "H10010011100A",
+	    "Mute": "H00101001000A"
+	}
+    }
+}

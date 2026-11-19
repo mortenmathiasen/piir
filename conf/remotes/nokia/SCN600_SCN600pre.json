@@ -1,0 +1,21 @@
+{
+    "description": "SCN600pre (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/nokia/SCN600.lircd.conf", "remote": "SCN600pre", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 652, "space": 339},
+	"B": {"mark": 652, "space": 0},
+	"C": {"mark": 652, "space": 678},
+	"D": {"mark": 1304, "space": 339},
+	"H": {"mark": 792, "space": 2165},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "KEY_PREVIOUS": "HCDAAAAAAAAAAAAAB"
+	}
+    }
+}

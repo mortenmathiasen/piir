@@ -1,0 +1,27 @@
+{
+    "description": "Panasonic_VSQS1480 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/panasonic/VSQS1480.lircd.conf", "remote": "Panasonic_VSQS1480", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 832, "space": 0},
+	"1": {"mark": 834, "space": 5206},
+	"0": {"mark": 834, "space": 2179},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------------------",
+    "features": {
+	"key": {
+	    "display": "1100100110AVVVVWWWWWXXXYYYYYYYYYZZ1100100110A",
+	    "KEY_CHANNELUP": "1010001011AVVVVWWWWWXXXYYYYYYYYYZZ1010001011A",
+	    "KEY_CHANNELDOWN": "1010101010AVVVVWWWWWXXXYYYYYYYYYZZ1010101010A",
+	    "KEY_POWER": "1000101110AVVVVWWWWWXXXYYYYYYYYYZZ1000101110A"
+	}
+    }
+}

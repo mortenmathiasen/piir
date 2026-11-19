@@ -1,0 +1,44 @@
+{
+    "description": "TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/thomson/TC99.lircd.conf", "remote": "TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 524, "space": 0},
+	"1": {"mark": 524, "space": 8056},
+	"0": {"mark": 524, "space": 5193},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "btn_red": "01111111001A",
+	    "btn_green": "01111111011A",
+	    "btn_yellow": "01111111000A",
+	    "btn_blue": "01111010101A",
+	    "btn_pink": "01111011110A",
+	    "KEY_POWER": "01111011101A",
+	    "display": "01111111110A",
+	    "freeze": "01111100110A",
+	    "KEY_ZOOMOUT": "01111111101A",
+	    "KEY_ZOOMIN": "01111111100A",
+	    "KEY_CHANNELDOWN": "01111100000A",
+	    "KEY_CHANNELUP": "01111011111A",
+	    "KEY_VOLUMEDOWN": "01111101010A",
+	    "KEY_VOLUMEUP": "01111101001A",
+	    "KEY_1": "01111000000A",
+	    "KEY_2": "01111001000A",
+	    "KEY_3": "01111010000A",
+	    "KEY_4": "01111000001A",
+	    "KEY_5": "01111001001A",
+	    "KEY_6": "01111010001A",
+	    "KEY_7": "01111000010A",
+	    "KEY_8": "01111001010A",
+	    "KEY_9": "01111010010A",
+	    "KEY_0": "01111001110A",
+	    "last_prog": "01111100101A",
+	    "KEY_MUTE": "01111000101A"
+	}
+    }
+}

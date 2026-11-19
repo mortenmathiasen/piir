@@ -1,0 +1,30 @@
+{
+    "description": "Pace_DC551P (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pace/DC551P.lircd.conf", "remote": "Pace_DC551P", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 966, "space": 0},
+	"H": {"mark": 3697, "space": 3456},
+	"1": {"mark": 982, "space": 2495},
+	"0": {"mark": 982, "space": 872},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H1101100001000100111101A",
+	    "KEY_2": "H1101110001000100011101A",
+	    "KEY_3": "H1101101001000100101101A",
+	    "KEY_4": "H1101111001000100001101A",
+	    "KEY_5": "H1101100101000100110101A",
+	    "KEY_6": "H1101110101000100010101A",
+	    "KEY_7": "H1101101101000100100101A",
+	    "KEY_8": "H1101111101000100000101A",
+	    "KEY_9": "H1101100011000100111001A",
+	    "KEY_0": "H1101110011000100011001A",
+	    "KEY_OK": "H1101100110000100110011A"
+	}
+    }
+}

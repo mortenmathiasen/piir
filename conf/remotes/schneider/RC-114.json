@@ -1,0 +1,44 @@
+{
+    "description": "schneider (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/schneider/RC-114.lircd.conf", "remote": "schneider", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 469, "space": 1214},
+	"B": {"mark": 1317, "space": 372},
+	"C": {"mark": 469, "space": 0},
+	"D": {"mark": 1340, "space": 347},
+	"E": {"mark": 495, "space": 1188},
+	"F": {"mark": 1317, "space": 399},
+	"G": {"mark": 1340, "space": 372},
+	"I": {"mark": 495, "space": 0},
+	"J": {"mark": 1317, "space": 347},
+	"K": {"mark": 1317, "space": 430},
+	"L": {"mark": 495, "space": 1230},
+	"M": {"mark": 1317, "space": 0},
+	"N": {"mark": 1340, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "standby": "DABAABEAAJEC",
+	    "number_1": "GABAABAABAAC",
+	    "number_2": "BADEABAFAAAC",
+	    "number_3": "BABEADBEAAAI",
+	    "number_4": "BABABEAAAALN",
+	    "number_5": "BADABAAAAABC",
+	    "number_6": "BABFAAAAAABC",
+	    "number_7": "GABFAAAAAJAC",
+	    "number_8": "DADKAAAADAAC",
+	    "band": "BABKAAAAAAAM",
+	    "stop": "GEBABABAAAAI",
+	    "play_pause": "GADABAAFAAAI",
+	    "fast_rewind": "GEBABAAABAEC",
+	    "fast_forward": "BABABAAAABAC",
+	    "volume_-": "BADFAAAFAAAC",
+	    "volume_+": "DABFAABAAAAC"
+	}
+    }
+}

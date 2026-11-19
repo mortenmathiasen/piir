@@ -1,0 +1,20 @@
+{
+    "description": "Sony_RMT-V181N (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V181N.lircd.conf", "remote": "Sony_RMT-V181N", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1244, "space": 0},
+	"H": {"mark": 2414, "space": 583},
+	"1": {"mark": 1244, "space": 551},
+	"0": {"mark": 651, "space": 551},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "WIDE": "H10111100010010A"
+	}
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "description": "dyson (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/dyson/922662-06.lircd.conf", "remote": "dyson", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 789, "space": 0},
+	"H": {"mark": 2256, "space": 794},
+	"1": {"mark": 789, "space": 1545},
+	"0": {"mark": 789, "space": 773},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H100100000000011A",
+	    "KEY_DIRECTION": "H100100010101011A",
+	    "KEY_UP": "H100100001010111A",
+	    "KEY_DOWN": "H100100011111111A",
+	    "KEY_RED": "H100100001111011A",
+	    "KEY_BLUE": "H100100011001110A"
+	}
+    }
+}

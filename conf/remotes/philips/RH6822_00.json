@@ -1,0 +1,43 @@
+{
+    "description": "rh6822 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RH6822_00.lircd.conf", "remote": "rh6822", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1019, "space": 760},
+	"B": {"mark": 2038, "space": 760},
+	"C": {"mark": 1019, "space": 1520},
+	"D": {"mark": 1080, "space": 760},
+	"E": {"mark": 2038, "space": 1520},
+	"F": {"mark": 1019, "space": 0},
+	"G": {"mark": 2038, "space": 0},
+	"I": {"mark": 2099, "space": 1520},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "Standby": "DAAEBAACABF",
+	    "KEY_CD": "DAAEBCAAAAAF",
+	    "KEY_TUNER": "DAABACAAAAAAF",
+	    "BuzzerOff": "DAABAACEAAAF",
+	    "KEY_TAPE": "DAABCEAAAAAF",
+	    "KEY_AUX": "DABAAACAAAAAF",
+	    "KEY_SLEEP": "DAABAACBCAG",
+	    "News": "IABAAACAEG",
+	    "DSC": "IABAAAACAAAF",
+	    "KEY_PREVIOUS": "DAAEBCBAACF",
+	    "Disc": "DAAEBACAAAG",
+	    "KEY_NEXT": "DAAEBCBAAAF",
+	    "SearchLeft": "DAAEBCABCG",
+	    "Shuffle": "DAAEBACAABF",
+	    "SearchRight": "DAAEBCAEBF",
+	    "KEY_STOP": "DAAEBCAEAG",
+	    "KEY_PLAY": "DAAEBCAEEF",
+	    "KEY_VOLUMEUP": "DAABAAACBAAF",
+	    "KEY_VOLUMEDOWN": "DAABAAACBACF",
+	    "KEY_PAUSE": "DAAEBCABAAF"
+	}
+    }
+}

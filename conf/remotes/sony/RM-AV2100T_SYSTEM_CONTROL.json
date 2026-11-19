@@ -1,0 +1,22 @@
+{
+    "description": "SYSTEM_CONTROL (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-AV2100T.lircd.conf", "remote": "SYSTEM_CONTROL", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 500, "space": 0},
+	"H": {"mark": 8500, "space": 4000},
+	"1": {"mark": 500, "space": 1500},
+	"0": {"mark": 500, "space": 500},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H1100111001101100A",
+	    "KEY_2": "H1100111000101100A",
+	    "KEY_3": "H1100111010000000A"
+	}
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "description": "PHILIPS_CD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RD6844.lircd.conf", "remote": "PHILIPS_CD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 940, "space": 840},
+	"B": {"mark": 1880, "space": 840},
+	"C": {"mark": 1880, "space": 1680},
+	"D": {"mark": 940, "space": 1680},
+	"E": {"mark": 940, "space": 0},
+	"F": {"mark": 1880, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "Digit_0": "AAACBAAAAAAE",
+	    "Digit_1": "AAACBAAAAADE",
+	    "Digit_2": "AAACBAAAADF",
+	    "Digit_3": "AAACBAAAADAE",
+	    "Digit_4": "AAACBAAADBE",
+	    "Digit_5": "AAACBAAADCE",
+	    "Digit_6": "AAACBAAADAF",
+	    "Digit_7": "AAACBAAADAAE",
+	    "Digit_8": "AAACBAADBAE",
+	    "Digit_9": "AAACBAADBDE",
+	    "Display": "AAACBAADCAE",
+	    "Disc": "AAACBADAAAF",
+	    "KEY_VOLUMEUP": "AAACBADBAAE",
+	    "KEY_VOLUMEDOWN": "AAACBADBADE",
+	    "Shuffle": "AAACBADAABE",
+	    "KEY_NEXT": "AAACBDBAAAE",
+	    "KEY_PREVIOUS": "AAACBDBAADE",
+	    "KEY_PAUSE": "AAACBDABAAE",
+	    "KEY_PLAY": "AAACBDACCE",
+	    "KEY_STOP": "AAACBDACAF"
+	}
+    }
+}

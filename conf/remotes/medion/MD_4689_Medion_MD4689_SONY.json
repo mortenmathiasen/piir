@@ -1,0 +1,25 @@
+{
+    "description": "Medion_MD4689_SONY (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/medion/MD_4689.lircd.conf", "remote": "Medion_MD4689_SONY", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1315, "space": 0},
+	"H": {"mark": 2513, "space": 472},
+	"1": {"mark": 1315, "space": 467},
+	"0": {"mark": 704, "space": 467},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H0101100100111010010A",
+	    "KEY_PAUSE": "H1001100100111010010A",
+	    "KEY_RECORD": "H1011100100111010010A",
+	    "KEY_NEXT": "H0011100100111010010A",
+	    "KEY_PREVIOUS": "H1101100100111010010A",
+	    "KEY_STOP": "H0001100100111010010A"
+	}
+    }
+}

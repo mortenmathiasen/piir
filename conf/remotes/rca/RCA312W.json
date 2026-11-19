@@ -1,0 +1,28 @@
+{
+    "description": "RCA312W_TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/rca/RCA312W.lircd.conf", "remote": "RCA312W_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 556, "space": 0},
+	"H": {"mark": 4118, "space": 3889},
+	"1": {"mark": 563, "space": 1942},
+	"0": {"mark": 563, "space": 937},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H111100111111000011000000A",
+	    "RIGHT_ARROW": "H111100101111000011010000A",
+	    "LEFT_ARROW": "H111100101110000011010001A",
+	    "KEY_VOLUMEUP": "H111100101101000011010010A",
+	    "KEY_VOLUMEDOWN": "H111100101100000011010011A",
+	    "KEY_POWER": "H111100101010000011010101A",
+	    "GO_BACK": "H111100100111000011011000A",
+	    "KEY_INFO": "H111100111100000011000011A",
+	    "KEY_OK": "H111111110100000000001011A"
+	}
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "description": "CYP_CR-72 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/cypress/cr-72.lircd.conf", "remote": "CYP_CR-72", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 601, "space": 0},
+	"H": {"mark": 9042, "space": 4462},
+	"1": {"mark": 603, "space": 1643},
+	"0": {"mark": 603, "space": 523},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H00000010111101010111000010001111A",
+	    "KEY_1": "H00000010111101011000000001111111A",
+	    "KEY_2": "H00000010111101011100000000111111A",
+	    "KEY_3": "H00000010111101010100000010111111A",
+	    "KEY_4": "H00000010111101011001100001100111A"
+	}
+    }
+}

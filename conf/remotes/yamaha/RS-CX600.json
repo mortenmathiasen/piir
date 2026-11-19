@@ -1,0 +1,28 @@
+{
+    "description": "RS-CX600 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/yamaha/RS-CX600.lircd.conf", "remote": "RS-CX600", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 550, "space": 0},
+	"H": {"mark": 8800, "space": 4400},
+	"1": {"mark": 550, "space": 1650},
+	"0": {"mark": 550, "space": 550},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H01011110101000011111100000000111A",
+	    "DAT": "H01011110101000010001100011100111A",
+	    "KEY_TUNER": "H01011110101000010110100010010111A",
+	    "KEY_CD": "H01011110101000011010100001010111A",
+	    "PHONO": "H01011110101000010010100011010111A",
+	    "VCR_APE": "H01011110101000011111000000001111A",
+	    "CDV": "H01011110101000011110100000010111A",
+	    "KEY_VOLUMEUP": "H01011110101000010101100010100111A",
+	    "KEY_VOLUMEDOWN": "H01011110101000011101100000100111A"
+	}
+    }
+}

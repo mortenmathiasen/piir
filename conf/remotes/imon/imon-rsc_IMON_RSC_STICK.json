@@ -1,0 +1,35 @@
+{
+    "description": "IMON_RSC_STICK (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/imon/imon-rsc.lircd.conf", "remote": "IMON_RSC_STICK", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 625, "space": 0},
+	"H": {"mark": 2125, "space": 1875},
+	"1": {"mark": 625, "space": 1625},
+	"0": {"mark": 625, "space": 375},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------",
+    "features": {
+	"key": {
+	    "STICK_N": "H0000A",
+	    "STICK_S": "H0001A",
+	    "STICK_E": "H0010A",
+	    "STICK_W": "H0011A",
+	    "STICK_NE": "H0100A",
+	    "STICK_SW": "H0101A",
+	    "STICK_SE": "H0110A",
+	    "STICK_NW": "H0111A",
+	    "STICK_NNE": "H1000A",
+	    "STICK_SSW": "H1001A",
+	    "STICK_SEE": "H1010A",
+	    "STICK_NWW": "H1011A",
+	    "STICK_NEE": "H1100A",
+	    "STICK_SWW": "H1101A",
+	    "STICK_SSE": "H1110A",
+	    "STICK_NNW": "H1111A"
+	}
+    }
+}

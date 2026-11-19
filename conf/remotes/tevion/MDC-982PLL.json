@@ -1,0 +1,34 @@
+{
+    "description": "Tevion_MDC-982PLL (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/tevion/MDC-982PLL.lircd.conf", "remote": "Tevion_MDC-982PLL", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 624, "space": 0},
+	"H": {"mark": 4538, "space": 4435},
+	"1": {"mark": 612, "space": 1619},
+	"0": {"mark": 612, "space": 505},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H01000101010001010110000010011111A",
+	    "KEY_KPMINUS": "H01000101010001010000011011111001A",
+	    "KEY_KPPLUS": "H01000101010001010000010011111011A",
+	    "KEY_MUTE": "H01000101010001010000010111111010A",
+	    "EQ": "H01000101010001011011100001000111A",
+	    "BAND": "H01000101010001010111000010001111A",
+	    "KEY_DOWN": "H01000101010001010010000011011111A",
+	    "KEY_UP": "H01000101010001010011000011001111A",
+	    "KEY_PLAYPAUSE": "H01000101010001011100100000110111A",
+	    "M-UP/REPEAT": "H01000101010001010011100011000111A",
+	    "MEMORY/CLOCK": "H01000101010001010010100011010111A",
+	    "KEY_STOP": "H01000101010001011101100000100111A",
+	    "KEY_TUNER": "H01000101010001011110000000011111A",
+	    "KEY_CD": "H01000101010001011111000000001111A",
+	    "KEY_TAPE": "H01000101010001010111100010000111A"
+	}
+    }
+}

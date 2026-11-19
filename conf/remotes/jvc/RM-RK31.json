@@ -1,0 +1,28 @@
+{
+    "description": "RK31 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-RK31.lircd.conf", "remote": "RK31", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 725, "space": 0},
+	"H": {"mark": 8614, "space": 4084},
+	"1": {"mark": 760, "space": 1333},
+	"0": {"mark": 760, "space": 320},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "ATT": "H1111000101110001A",
+	    "SCM": "H1111000110110001A",
+	    "FUNC": "H1111000100010001A",
+	    "DISC+": "H1111000100101001A",
+	    "DISC-": "H1111000110101001A",
+	    "KEY_KPMINUS": "H1111000110100001A",
+	    "KEY_KPPLUS": "H1111000100100001A",
+	    ">": "H1111000101001001A",
+	    "<": "H1111000111001001A"
+	}
+    }
+}

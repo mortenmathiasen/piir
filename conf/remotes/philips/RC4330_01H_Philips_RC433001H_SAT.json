@@ -1,0 +1,43 @@
+{
+    "description": "Philips_RC433001H_SAT (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC4330_01H.lircd.conf", "remote": "Philips_RC433001H_SAT", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 458, "space": 419},
+	"B": {"mark": 458, "space": 838},
+	"C": {"mark": 916, "space": 419},
+	"D": {"mark": 916, "space": 838},
+	"E": {"mark": 458, "space": 0},
+	"F": {"mark": 1374, "space": 1257},
+	"G": {"mark": 916, "space": 0},
+	"H": {"mark": 2726, "space": 849},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------",
+    "features": {
+	"key": {
+	    "Power": "HBAABCADACABAAACBAE",
+	    "OK": "HBAAFADACABDCABAE",
+	    "Up": "HBAABCADACABDCBAAE",
+	    "Down": "HBAAFADACABDCBAG",
+	    "Left": "HBAABCADACABDCBDE",
+	    "Right": "HBAAFADACABDCBCE",
+	    "Menu": "HBAABCADACABDDDAE",
+	    "Ch+": "HBAAFADACABADAAAAE",
+	    "Ch-": "HBAABCADACABADAAAG",
+	    "1": "HBAAFADACABAAAAAAG",
+	    "2": "HBAABCADACABAAAAADE",
+	    "3": "HBAAFADACABAAAAACE",
+	    "4": "HBAABCADACABAAAADAE",
+	    "5": "HBAAFADACABAAAADG",
+	    "6": "HBAABCADACABAAAACBE",
+	    "7": "HBAAFADACABAAAACAE",
+	    "8": "HBAABCADACABAAADAAE",
+	    "9": "HBAAFADACABAAADAG",
+	    "0": "HBAABCADACABAAAAAAAE",
+	    "OSD": "HBAAFADACABAAACAAE"
+	}
+    }
+}

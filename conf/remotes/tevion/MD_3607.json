@@ -1,0 +1,47 @@
+{
+    "description": "TevionMd3607 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/tevion/MD_3607.lircd.conf", "remote": "TevionMd3607", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 189, "space": 0},
+	"1": {"mark": 189, "space": 7438},
+	"0": {"mark": 189, "space": 4888},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "Taste1": "11111011010A",
+	    "KEY_PLAY": "10111110011A",
+	    "KEY_STOP": "11111110110A",
+	    "KEY_PAUSE": "10111000000A",
+	    "KEY_BACK": "11111110010A",
+	    "Vor": "10111110100A",
+	    "Taste2": "11111011011A",
+	    "Taste3": "10111011100A",
+	    "Taste4": "11111011101A",
+	    "Taste5": "10111011110A",
+	    "Taste6": "11111011111A",
+	    "Taste7": "10111100000A",
+	    "Taste8": "11111100001A",
+	    "Taste9": "10111100010A",
+	    "KEY_VOLUMEUP": "11111001000A",
+	    "KEY_VOLUMEDOWN": "10111000111A",
+	    "KEY_CHANNELUP": "11111011001A",
+	    "KEY_CHANNELDOWN": "10111011000A",
+	    "Taste0": "11111100011A",
+	    "AB-Taste": "10111000010A",
+	    "AdvNum": "11111100101A",
+	    "Stumm": "10111000011A",
+	    "TurnOffOn": "11111000100A",
+	    "PauseVideoText": "10111010010A",
+	    "MixText": "11111001111A",
+	    "KEY_RECORD": "10111001111A",
+	    "OffText": "11111100110A",
+	    "KEY_POWER": "10111100111A",
+	    "ShowClock": "11111100111A"
+	}
+    }
+}

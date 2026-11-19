@@ -1,0 +1,53 @@
+{
+    "description": "RM-C670 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-C670.lircd.conf", "remote": "RM-C670", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 599, "space": 0},
+	"H": {"mark": 8522, "space": 4129},
+	"1": {"mark": 599, "space": 1510},
+	"0": {"mark": 599, "space": 454},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H1100000011101000A",
+	    "CC": "H1100000001110000A",
+	    "C1/C2": "H1100000001011011A",
+	    "KEY_REWIND": "H1100000001001101A",
+	    "KEY_PLAY": "H1100000010010001A",
+	    "KEY_FASTFORWARD": "H1100000001101011A",
+	    "KEY_RECORD": "H1100000000100000A",
+	    "KEY_STOP": "H1100000000000000A",
+	    "KEY_PAUSE": "H1100000011010000A",
+	    "KEY_MENU": "H1100000001011110A",
+	    "KEY_1": "H1100000010000100A",
+	    "KEY_2": "H1100000001000100A",
+	    "KEY_3": "H1100000011000100A",
+	    "KEY_4": "H1100000000100100A",
+	    "KEY_5": "H1100000010100100A",
+	    "KEY_6": "H1100000001100100A",
+	    "KEY_7": "H1100000011100100A",
+	    "KEY_8": "H1100000000010100A",
+	    "KEY_9": "H1100000010010100A",
+	    "KEY_0": "H1100000000000100A",
+	    "X_KEY_0+": "H1100000011101110A",
+	    "TV/VIDEO": "H1100000011001000A",
+	    "KEY_ENTER": "H1100000010100000A",
+	    "KEY_AGAIN": "H1100000000111100A",
+	    "ARROW_RIGHT": "H1100000001011010A",
+	    "ARROW_LEFT": "H1100000011011010A",
+	    "ARROW_UP": "H1100000000111110A",
+	    "ARROW_DOWN": "H1100000011011110A",
+	    "AV_STATUS": "H1100000010110000A",
+	    "KEY_MUTE": "H1100000000111000A",
+	    "KEY_CHANNELDOWN": "H1100000000011000A",
+	    "KEY_CHANNELUP": "H1100000010011000A",
+	    "KEY_VOLUMEDOWN": "H1100000011111000A",
+	    "KEY_VOLUMEUP": "H1100000001111000A"
+	}
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "description": "sony_RM-PP411_receiver-AV1 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-PP411.lircd.conf", "remote": "sony_RM-PP411_receiver-AV1", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1224, "space": 0},
+	"H": {"mark": 2429, "space": 582},
+	"1": {"mark": 1224, "space": 574},
+	"0": {"mark": 631, "space": 574},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "VIDEO3": "H01000010000A",
+	    "DVD/LD": "H10111110000A",
+	    "TV/SAT": "H01010110000A",
+	    "MD/TAPE": "H10010110000A",
+	    "CD/SACD": "H10100100000A",
+	    "TUNER": "H10000100000A",
+	    "PHONO": "H00000100000A",
+	    "AUX": "H10111000000A",
+	    "MULTI_CH": "H01001110000A",
+	    "MPX/DUAL": "H11101000000A",
+	    "ANALOG_DIRECT": "H10010010000A",
+	    "MUTING": "H00101000000A",
+	    "MASTER_VOL+": "H01001000000A",
+	    "MASTER_VOL-": "H11001000000A",
+	    "ON_SCREEN": "H11001010000A",
+	    "SYSTEM_STANDBY": "H10101000000A"
+	}
+    }
+}

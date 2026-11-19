@@ -1,0 +1,32 @@
+{
+    "description": "videologic_rm201 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/videologic/RM-201.lircd.conf", "remote": "videologic_rm201", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 584, "space": 0},
+	"H": {"mark": 9062, "space": 4487},
+	"1": {"mark": 606, "space": 1642},
+	"0": {"mark": 606, "space": 516},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H01100001110101100100100010110111A",
+	    "test": "H01100001110101100101100010100111A",
+	    "KEY_MUTE": "H01100001110101100111100010000111A",
+	    "speaker_mode": "H01100001110101101000000001111111A",
+	    "balance": "H01100001110101100100000010111111A",
+	    "bass": "H01100001110101100010000011011111A",
+	    "delay": "H01100001110101101010000001011111A",
+	    "KEY_VOLUMEUP": "H01100001110101101100000000111111A",
+	    "KEY_VOLUMEDOWN": "H01100001110101100110000010011111A",
+	    "input": "H01100001110101100001000011101111A",
+	    "surround": "H01100001110101101001000001101111A",
+	    "pro_logic_auto_on": "H01100001110101100101000010101111A",
+	    "reset": "H01100001110101101111100000000111A"
+	}
+    }
+}

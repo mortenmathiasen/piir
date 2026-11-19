@@ -1,0 +1,28 @@
+{
+    "description": "PHILIPS_RC2084401_WHEEL (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC2084401_01.lircd.conf", "remote": "PHILIPS_RC2084401_WHEEL", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 466, "space": 418},
+	"B": {"mark": 466, "space": 836},
+	"C": {"mark": 932, "space": 836},
+	"D": {"mark": 932, "space": 418},
+	"E": {"mark": 932, "space": 0},
+	"H": {"mark": 2715, "space": 843},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "WHEEL_LEFT": "HBCBDADBACAAAAAAAAAAAAAACAAAEVVVVVVVVWWWWWWWXXXXYYYYYYYYZZZZZZZZHBCBDADBACAAAAAAAAAAAAAACAAAE",
+	    "WHEEL_RIGHT": "HBCBDADBACAAAAAAAAAAAAAAAAAAAEVVVVVVVVWWWWWWWXXXXYYYYYYYYZZZZZZZZHBCBDADBACAAAAAAAAAAAAAAAAAAAE"
+	}
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "description": "Motorola_QIP6200-2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/motorola/QIP6200-2.lircd.conf", "remote": "Motorola_QIP6200-2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 663, "space": 0},
+	"H": {"mark": 2462, "space": 532},
+	"1": {"mark": 1264, "space": 539},
+	"0": {"mark": 663, "space": 539},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_MUTE": "H00101001000A",
+	    "KEY_VOLUMEUP": "H01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000A"
+	}
+    }
+}

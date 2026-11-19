@@ -149,6 +149,11 @@ void loadDevice(const char **device)
   loadConfigText("transmitter.device", device);
 }
 
+void loadPlugin(const char **plugin)
+{
+  loadConfigText("plugin", plugin);
+}
+
 
 void loadFrequency(int *frequency)
 {
@@ -229,9 +234,10 @@ void loadFeaturedCode(const featureT *features,
       log_error("Feature '%s'='%s' not found in %s", featureName, featureValue, CONFIGFILEPATH);
       continue;
     }
+    // A shorter feature code leaves the rest of the template as it is
     size_t featureStrLength = strlen(featureString);
-    if (featureStrLength!=templateStrLength) {
-      log_warn("Length of feature code '%s' does not match 'template' length %zu",
+    if (featureStrLength > templateStrLength) {
+      log_warn("Feature code '%s' is longer than the template (%zu symbols)",
   		featureString, templateStrLength);
     }
     for (size_t charNumber=0 ; charNumber<featureStrLength && charNumber<templateStrLength ; charNumber++) {

@@ -1,0 +1,30 @@
+{
+    "description": "FISHER_FVH-U908 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/fisher/FVH-U908.lircd.conf", "remote": "FISHER_FVH-U908", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 706, "space": 0},
+	"H": {"mark": 9192, "space": 4316},
+	"1": {"mark": 706, "space": 1540},
+	"0": {"mark": 706, "space": 410},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_STOP": "H10001100011100110000100011110111A",
+	    "KEY_RECORD": "H10001100011100111010100001010111A",
+	    "KEY_REWIND": "H10001100011100110100100010110111A",
+	    "KEY_PLAY": "H10001100011100110010100011010111A",
+	    "KEY_FASTFORWARD": "H10001100011100111100100000110111A",
+	    "X_REWIND_PLAY": "H10001100011100110110100010010111A",
+	    "KEY_PAUSE": "H10001100011100111000100001110111A",
+	    "RESET": "H10001100011100110010001011011101A",
+	    "MEMORY": "H10001100011100111100001000111101A",
+	    "KEY_LEFT": "H10001100011100110100000010111111A",
+	    "KEY_RIGHT": "H10001100011100111000000001111111A"
+	}
+    }
+}

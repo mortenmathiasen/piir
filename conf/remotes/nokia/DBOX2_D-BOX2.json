@@ -1,0 +1,49 @@
+{
+    "description": "D-BOX2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/nokia/DBOX2.lircd.conf", "remote": "D-BOX2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 450, "space": 550},
+	"B": {"mark": 450, "space": 1100},
+	"C": {"mark": 900, "space": 1100},
+	"D": {"mark": 900, "space": 550},
+	"E": {"mark": 450, "space": 0},
+	"H": {"mark": 510, "space": 2520},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "HBADBAAAAADABCE",
+	    "KEY_HOME": "HBAAAACAAADABCE",
+	    "d-box": "HAAABACAAADABCE",
+	    "KEY_1": "HABAAAAAAAADABCE",
+	    "KEY_2": "HBCAAAAAAADABCE",
+	    "KEY_3": "HAABAAAAAAADABCE",
+	    "KEY_4": "HBACAAAAAADABCE",
+	    "KEY_5": "HABCAAAAAADABCE",
+	    "KEY_6": "HBDBAAAAAADABCE",
+	    "KEY_7": "HAAABAAAAAADABCE",
+	    "KEY_8": "HBAACAAAAADABCE",
+	    "KEY_9": "HABACAAAAADABCE",
+	    "KEY_0": "HBAAAAAAAAADABCE",
+	    "KEY_BLUE": "HAABDABAAADABCE",
+	    "KEY_YELLOW": "HBCACCAADABCE",
+	    "KEY_GREEN": "HABCCCAADABCE",
+	    "KEY_RED": "HABDBCAAADABCE",
+	    "KEY_OK": "HBAAADBAAADABCE",
+	    "KEY_VOLUMEUP": "HBDBCAAAADABCE",
+	    "KEY_VOLUMEDOWN": "HAAABCAAAADABCE",
+	    "KEY_MUTE": "HBAACCAAADABCE",
+	    "KEY_RIGHT": "HBDABCAAADABCE",
+	    "KEY_UP": "HBDABAAAAADABCE",
+	    "KEY_DOWN": "HAAAABAAAAADABCE",
+	    "KEY_NEXT": "HBACCCAADABCE",
+	    "KEY_PREVIOUS": "HAABACCAADABCE",
+	    "KEY_LEFT": "HAAAABCAAADABCE",
+	    "KEY_HELP": "HBCAAAACADABCE"
+	}
+    }
+}

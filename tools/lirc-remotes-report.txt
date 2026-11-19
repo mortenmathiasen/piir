@@ -1,0 +1,1123 @@
+SKIP adaptec/AVC-2410.lircd.conf [AVC-2410]: no timing: codes are receiver hardware scancodes
+SKIP ads/PTV-334.irman.lircd.conf [adstech]: no timing: codes are receiver hardware scancodes
+SKIP adstech/usbx-707.lircd.conf [ADSTech_USBX-707]: no timing: codes are receiver hardware scancodes
+SKIP akai/RC-V420E.irman.lircd.conf [akai.conf]: no timing: codes are receiver hardware scancodes
+SKIP akai/RC-X626E.irman.lircd.conf [Akai-RC-X626E]: no timing: codes are receiver hardware scancodes
+SKIP animax/animax.lircmd.conf: line 7: ACCELERATOR outside of a remote
+SKIP apple/APPLE.irman.lircd.conf [apple]: no timing: codes are receiver hardware scancodes
+SKIP apple/macmini.lircd.conf [Apple_A1156]: no timing: codes are receiver hardware scancodes
+WARN aristona/37TA1274_03.lircd.conf [37TA1274_03]: durations rounded within 2% to fit the symbol alphabet
+SKIP asus/asus.lircd.conf [Asus_TV-Box_IR]: no timing: codes are receiver hardware scancodes
+SKIP asus/asusdh.lircd.conf [AsusDH]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atilibusb.lircd.conf [ATI_Remote_Wonder_II]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atilibusb.lircd.conf [Medion_MD8800]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atilibusb.lircd.conf [ati_remote_wonder_rf]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atilibusb.lircd.conf [nVidia_UR88A]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atilibusb.lircd.conf [X10_OR22V]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atilibusb.lircd.conf [Medion_20016096]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atilibusb.lircd.conf [Medion_MD8800_X10]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [ATIUSB_5000015900A]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [ATIUSB_5000022000]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [ATIUSB_5000023600]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [SAPPHIRE_ATIUSB_5000023600]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X-10_Lola]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [microapp6in1]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [atiusb_ch1]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [ATIUSB_UR88A]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Medion]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [5000024400]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Niveus_X10]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [ATIUSB_MEDION_MD95700]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [MEDION_X10_RF]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Medion_20014752]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [MEDION_40005927]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Medion_X10]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Medion_8802]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Medion_OR24E]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Q-Sonic_Master_Remote]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [AR_Remote_Control_MCE]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Toshiba_X10]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [ATI_REMOTE_2_2_1]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Medion_X10]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Medion_X10]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Jasco_97685T]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Toshiba_PX1246E-1ETC]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Snapstream_Firefly_R1000]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [Medion_MD1_NBC_Remote]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch1]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch2]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch3]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch4]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch5]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch6]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch7]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch8]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch9]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch10]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch11]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch12]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch13]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch14]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch15]: no timing: codes are receiver hardware scancodes
+SKIP atiusb/atiusb.lircd.conf [X10_Ch16]: no timing: codes are receiver hardware scancodes
+SKIP att/RC1534801_00.irman.lircd.conf [UverseRemote]: no timing: codes are receiver hardware scancodes
+WARN audiosource/SS-Three.lircd.conf [AudioSource_SS-Three]: durations rounded within 2% to fit the symbol alphabet
+SKIP aureal/atwf83.lircd.conf [Aureal_ATWF@83]: no timing: codes are receiver hardware scancodes
+SKIP avermedia/avermedia.lircmd.conf: line 6: PROTOCOL outside of a remote
+SKIP avermedia/avermedia98.lircmd.conf: line 5: PROTOCOL outside of a remote
+SKIP avermedia/tvstudio.lircd.conf [AverMediaTVStudio]: no timing: codes are receiver hardware scancodes
+SKIP awlibusb/awlibusb.lircd.conf [AW_USB_REMOTE_AWOX]: no timing: codes are receiver hardware scancodes
+SKIP awlibusb/awlibusb.lircd.conf [AW_USB_REMOTE_THOMSON]: no timing: codes are receiver hardware scancodes
+SKIP bang&olufsen/Beo4.lircd.conf: line 1: emote outside of a remote
+WARN beko/14B3M04-TXB.lircd.conf [Beko]: durations rounded within 2% to fit the symbol alphabet
+WARN belkin/F5X019.lircd.conf [Belkin_F5X019]: durations rounded within 2% to fit the symbol alphabet
+SKIP beon/Colour_TV.lircd.conf: line 1: emote outside of a remote
+SKIP bestbuy/bestbuy.lircd.conf [BESTBUY]: no timing: codes are receiver hardware scancodes
+SKIP bestbuy/bestbuy.lircmd.conf: line 5: PROTOCOL outside of a remote
+SKIP bestbuy/bestbuy2.lircd.conf [BESTBUY]: no timing: codes are receiver hardware scancodes
+SKIP bestbuy/bestbuy2.lircmd.conf: line 6: PROTOCOL outside of a remote
+SKIP bose/WaveRadioCD.irman.lircd.conf [Bose_Wave]: no timing: codes are receiver hardware scancodes
+SKIP brondell/swash_300.lircd.conf [bidet]: no encoding flag
+WARN cambridge_audio/RC-340AC_540AC_640AC.lircd.conf [Cambridge_Audio_RC-340AC/540AC/640AC_RC5]: duplicate key aux ignored
+WARN cambridge_audio/RC-340AC_540AC_640AC.lircd.conf [Cambridge_Audio_RC-340AC/540AC/640AC_RC5]: durations rounded within 2% to fit the symbol alphabet
+WARN cce/88-X.lircd.conf [VCR-CCE]: durations rounded within 2% to fit the symbol alphabet
+SKIP centrum/Gemini_340.lircd.conf: line 10: (330 outside of a remote
+SKIP chronos/chronos.lircd.conf [Chronos]: no timing: codes are receiver hardware scancodes
+SKIP cisco/RNG-150.lircd.conf [RNG-150]: XMP encoding is not supported
+SKIP comag/6222-N1.lircd.conf [COMAG_6222-N1]: no timing: codes are receiver hardware scancodes
+SKIP comcast/3067BC2-R.lircd.conf [Comcast_3067BC2-R]: XMP encoding is not supported
+SKIP comcast/RNG-150.lircd.conf [RNG-150]: XMP encoding is not supported
+WARN conrad/RSLT2.lircd.conf [Conrad_RSLT2]: durations rounded within 2% to fit the symbol alphabet
+WARN cosmel/TV_3790.lircd.conf [COSMEL]: durations rounded within 2% to fit the symbol alphabet
+SKIP creative/RM-900.irman.lircd.conf [rm-900-good]: no timing: codes are receiver hardware scancodes
+SKIP creative/alsa_usb.lircd.conf [RM-1500]: no timing: codes are receiver hardware scancodes
+SKIP creative/alsa_usb.lircd.conf [Creative_SBL]: no timing: codes are receiver hardware scancodes
+SKIP creative/breakoutbox.lircd.conf [Creative_BreakOut-Box_IR]: no timing: codes are receiver hardware scancodes
+WARN daewoo/97P04701.lircd.conf [Daewoo_97P04701]: durations rounded within 2% to fit the symbol alphabet
+WARN daewoo/97P1RA3AB0.lircd.conf [Daewoo_97P1RA3AB0]: durations rounded within 2% to fit the symbol alphabet
+WARN daewoo/DV-800.lircd.conf [DV-800]: durations rounded within 2% to fit the symbol alphabet
+WARN daewoo/DV-F24D.lircd.conf [Daewoo_DV-F24D]: durations rounded within 2% to fit the symbol alphabet
+WARN daewoo/DV-K281K.lircd.conf [Daewoo_VCR]: durations rounded within 2% to fit the symbol alphabet
+WARN daewoo/R-40A06.lircd.conf [R-40A06]: durations rounded within 2% to fit the symbol alphabet
+WARN daewoo/R-40A10.lircd.conf [R-40A10]: durations rounded within 2% to fit the symbol alphabet
+WARN daewoo/R-40A15.lircd.conf [Daewoo_R-40A15]: durations rounded within 2% to fit the symbol alphabet
+WARN daewoo/R-43A08.lircd.conf [daewoo_R-43A08]: durations rounded within 2% to fit the symbol alphabet
+WARN denon/RC-1163.lircd.conf [Denon_RC-1163]: LIRC cannot send key KEY_ADD
+WARN denon/RC-1163.lircd.conf [Denon_RC-1163]: LIRC cannot send key KEY_CALL
+WARN denon/RC-1163.lircd.conf [Denon_RC-1163]: LIRC cannot send key KEY_NETWORK_SETUP
+SKIP denon/RC-543.irman.lircd.conf [RC-543.irman]: no timing: codes are receiver hardware scancodes
+SKIP devinput/devinput.lircd.conf [devinput]: no timing: codes are receiver hardware scancodes
+SKIP devinput/devinput.lircd.conf [devinput]: no timing: codes are receiver hardware scancodes
+WARN directv/G051204.lircd.conf [DirecTV_G051204]: durations rounded within 2% to fit the symbol alphabet
+WARN directv/H23.lircd.conf [Directv_H23]: durations rounded within 2% to fit the symbol alphabet
+SKIP directv/RC16.irman.lircd.conf [DirecTV_RC16]: no timing: codes are receiver hardware scancodes
+WARN directv/RC16.lircd.conf [DirectTV_RC16]: durations rounded within 2% to fit the symbol alphabet
+WARN directv/RC32.lircd.conf [DirecTV_RC32]: durations rounded within 2% to fit the symbol alphabet
+SKIP dream_multimedia/DM_7000.irman.lircd.conf [DM_7000]: no timing: codes are receiver hardware scancodes
+SKIP dvico/fusionHDTV.lircd.conf [DVICO]: no timing: codes are receiver hardware scancodes
+SKIP dvico/fusionHDTV.lircd.conf [DVICO_MCE]: no timing: codes are receiver hardware scancodes
+SKIP dvico/fusionHDTV.lircd.conf [DVICO_MCE]: no timing: codes are receiver hardware scancodes
+SKIP ea65/ea65.lircd.conf [EA65]: no timing: codes are receiver hardware scancodes
+WARN ecotel/UNIVERSAL.lircd.conf [Ecotel]: duplicate key mute ignored
+WARN ecotel/UNIVERSAL.lircd.conf [Ecotel]: durations rounded within 2% to fit the symbol alphabet
+SKIP ericsson/bte.lircd.conf [bte]: no timing: codes are receiver hardware scancodes
+SKIP evation/RC.irman.lircd.conf [evation]: no timing: codes are receiver hardware scancodes
+WARN finlux/3628.lircd.conf [TV]: duplicate key 1 ignored
+WARN finlux/3628.lircd.conf [TV]: duplicate key 2 ignored
+WARN finlux/3628.lircd.conf [TV]: duplicate key 3 ignored
+WARN finlux/3628.lircd.conf [TV]: duplicate key 4 ignored
+WARN finlux/3628.lircd.conf [TV]: duplicate key 5 ignored
+WARN finlux/3628.lircd.conf [TV]: duplicate key 6 ignored
+WARN finlux/3628.lircd.conf [TV]: duplicate key 7 ignored
+WARN finlux/3628.lircd.conf [TV]: duplicate key 8 ignored
+WARN finlux/3628.lircd.conf [TV]: duplicate key 9 ignored
+WARN finlux/3628.lircd.conf [TV]: durations rounded within 2% to fit the symbol alphabet
+WARN fox/RC_5-Bp2.lircd.conf [FOX_RC5-Bp2]: durations rounded within 2% to fit the symbol alphabet
+WARN foxtel/Digital_Satellite_STB.lircd.conf [foxtel]: durations rounded within 2% to fit the symbol alphabet
+SKIP foxtel/STU-120.lircd.conf [Foxtel_STU-120]: no encoding flag
+SKIP free/Freebox_V5.lircd.conf [Freebox_V5]: RCMM encoding is not supported
+WARN freedomland/SWP-2438WJ1F.lircd.conf [Freedomland_SWP-2438WJ1F]: durations rounded within 2% to fit the symbol alphabet
+SKIP fujitsu_siemens/KWR3020.lircd.conf [Remote.Keys]: RCMM encoding is not supported
+SKIP fujitsu_siemens/KWR3020.lircd.conf [QWERTY.Keys]: RCMM encoding is not supported
+SKIP fujitsu_siemens/RC1124121.lircd.conf [RC1-1241-21]: RCMM encoding is not supported
+SKIP galaxis/RCMM.lircd.conf [Galaxis-RCMM]: RCMM encoding is not supported
+SKIP generic/DENON.lircd.conf: DENON: no codes
+SKIP generic/MOTOROLA.lircd.conf: MOTOROLA: no codes
+SKIP generic/NEC-pulse.lircd.conf: NEC: no codes
+SKIP generic/NEC-short-pulse.lircd.conf: NEC: no codes
+SKIP generic/NEC.lircd.conf: NEC: no codes
+SKIP generic/RC-5.lircd.conf: RC-5: no codes
+SKIP generic/RC-6.lircd.conf: RC-6: no codes
+SKIP generic/RCMM-32.lircd.conf: RCMM-32: no codes
+SKIP generic/RECS80.lircd.conf: RECS80: no codes
+SKIP generic/SANYO.lircd.conf: Sanyo: no codes
+SKIP generic/SONY12.lircd.conf: SONY: no codes
+SKIP generic/SONY20.lircd.conf: SONY: no codes
+SKIP generic/XMP.lircd.conf: XMP: no codes
+WARN golden_media/990.lircd.conf [Golden_Media_990_Reloaded]: duplicate key KEY_REWIND ignored
+WARN golden_media/990.lircd.conf [Golden_Media_990_Reloaded]: duplicate key KEY_FORWARD ignored
+WARN graetz/Graetz.lircd.conf [Graetz]: duplicate key 6 ignored
+WARN graetz/Graetz.lircd.conf [Graetz]: durations rounded within 2% to fit the symbol alphabet
+WARN grandin/TV.lircd.conf [Grandin_TV]: durations rounded within 2% to fit the symbol alphabet
+WARN grundig/FineARTS.lircd.conf [Grundig_FineARTS]: durations rounded within 2% to fit the symbol alphabet
+SKIP grundig/Personal_Remote_10.lircd.conf [Grundig]: GRUNDIG encoding is not supported
+WARN grundig/RC1CD.lircd.conf [Grundig]: durations rounded within 2% to fit the symbol alphabet
+WARN grundig/RC300.lircd.conf [RC300]: durations rounded within 2% to fit the symbol alphabet
+SKIP grundig/RP25.lircd.conf [RP25]: GRUNDIG encoding is not supported
+SKIP grundig/RP75_LCD.lircd.conf [RP75]: GRUNDIG encoding is not supported
+WARN grundig/RP75_LCD.lircd.conf [grundig_rp75]: durations rounded within 2% to fit the symbol alphabet
+WARN grundig/RP75_LCD.lircd.conf [grundig_rp75_video2]: durations rounded within 2% to fit the symbol alphabet
+WARN grundig/RP_35.lircd.conf [RP_35]: duplicate key OK(2) ignored
+WARN grundig/RP_35.lircd.conf [RP_35]: durations rounded within 2% to fit the symbol alphabet
+WARN grundig/System_Series.lircd.conf [grundig]: durations rounded within 2% to fit the symbol alphabet
+WARN grundig/TP660.lircd.conf [Grundig-TP660]: durations rounded within 2% to fit the symbol alphabet
+WARN grundig/TP_160C.lircd.conf [GRUNDIG_TP_160C]: durations rounded within 2% to fit the symbol alphabet
+WARN grundig/TP_623.lircd.conf [TP623]: durations rounded within 2% to fit the symbol alphabet
+WARN grundig/TP_661_TOP.lircd.conf [Grundig_TP661]: durations rounded within 2% to fit the symbol alphabet
+WARN grundig/TP_760.lircd.conf [Grunding_TP_760]: durations rounded within 2% to fit the symbol alphabet
+SKIP harman_kardon/AVR210.irman.lircd.conf [Harman_Kardon_AVR_210]: no timing: codes are receiver hardware scancodes
+WARN hauppauge/DSR-0095.lircd.conf [Hauppauge_DSR-0095]: duplicate key stop ignored
+WARN hauppauge/DSR-0095.lircd.conf [Hauppauge_DSR-0095]: durations rounded within 2% to fit the symbol alphabet
+SKIP hauppauge/SupportPlus7.lircd.conf [SupportPlus7]: no timing: codes are receiver hardware scancodes
+SKIP hauppauge/hauppauge.irman.lircd.conf [hauppauge]: no timing: codes are receiver hardware scancodes
+SKIP hauppauge/hauppauge.irman.lircd.conf [hauppauge]: no timing: codes are receiver hardware scancodes
+SKIP hauppauge/hauppauge.lircmd.conf: line 5: PROTOCOL outside of a remote
+SKIP hercules/smarttv_stereo.lircd.conf [HERCULES_SMARTTV_STEREO]: no timing: codes are receiver hardware scancodes
+WARN hirschmann/RC_426.lircd.conf [RC426]: durations rounded within 2% to fit the symbol alphabet
+SKIP hitachi/VT-RM401E.irman.lircd.conf [HITACHI]: no timing: codes are receiver hardware scancodes
+SKIP hivion/SAT.lircd.conf: line 12: skystar2 outside of a remote
+WARN humax/RT-511V.lircd.conf [Humax_RT-511V]: durations rounded within 2% to fit the symbol alphabet
+WARN imex/IM-1010.lircd.conf [IMEX_IM-1010]: durations rounded within 2% to fit the symbol alphabet
+SKIP imon/imon-2.4g-lt.lircd.conf [lircd.conf.imon-2.4g-lt]: no timing: codes are receiver hardware scancodes
+SKIP imon/imon-2.4g.lircd.conf [lircd.conf.imon-2.4g-lt]: no timing: codes are receiver hardware scancodes
+SKIP imon/imon-antec-veris.lircd.conf [Antec_Veris_RM200]: no timing: codes are receiver hardware scancodes
+SKIP imon/imon-antec-veris.lircd.conf [Antec_Veris_Premiere]: no timing: codes are receiver hardware scancodes
+SKIP imon/imon-antec-veris.lircd.conf [Antec_Veris_RM100]: no timing: codes are receiver hardware scancodes
+SKIP imon/imon-knob.lircd.conf [IMON_KNOB]: no timing: codes are receiver hardware scancodes
+SKIP imon/imon-mceusb.lircd.conf [MCE_via_iMON]: no timing: codes are receiver hardware scancodes
+SKIP imon/imon-mceusb.lircd.conf [Antec_Veris_Premiere]: no timing: codes are receiver hardware scancodes
+SKIP imon/imon-pad.lircd.conf [iMON-PAD]: no timing: codes are receiver hardware scancodes
+SKIP imon/imon-pad.lircd.conf [Antec_Fusion_Wheel]: no timing: codes are receiver hardware scancodes
+SKIP imon/imon-pad.lircd.conf [iMON-PAD]: no timing: codes are receiver hardware scancodes
+SKIP imon/imon-ultrabay.lircd.conf [imon_ultrabay_pad]: no timing: codes are receiver hardware scancodes
+SKIP imon/imon-ultrabay.lircd.conf [imon_ultrabay_panel]: no timing: codes are receiver hardware scancodes
+WARN infomir/MAG-254.lircd.conf [/storage/.config/lircd.conf]: duplicate key KEY_SWITCHVIDEOMODE ignored
+SKIP iodata/gvbctv5pci.lircd.conf [GV-BCTV5/PCI]: no timing: codes are receiver hardware scancodes
+WARN isp/4187.lircd.conf [ISP_4187_TV1_012]: durations rounded within 2% to fit the symbol alphabet
+SKIP jvc/PQ11534.irman.lircd.conf [jvc_pq11534]: no timing: codes are receiver hardware scancodes
+SKIP jvc/RM-C388.irman.lircd.conf [RM-C388]: no timing: codes are receiver hardware scancodes
+SKIP jvc/RM-C601.irman.lircd.conf [JVC_RM-C601]: no timing: codes are receiver hardware scancodes
+WARN jvc/RM-SE31.lircd.conf [JVC/RM-SE31]: duplicate key X_KEY_0.tuner ignored
+SKIP jvc/RM-SEMX-44U.irman.lircd.conf [JVC-RM-SEMX44U]: no timing: codes are receiver hardware scancodes
+WARN jvc/RM-SES200U.lircd.conf [JVC/RM-SES200U]: duplicate key KEY_TUNER ignored
+SKIP jvc/rm-rxut100.lircd.conf [JVC_RM-RXUT100]: no key can be sent
+SKIP kanam_accent/IR-100.lircd.conf [Kanam_Accent_IR-100]: no timing: codes are receiver hardware scancodes
+SKIP kanam_accent/kanam_accent.lircd.conf: line 1: X_KEY_0+ outside of a remote
+WARN kenwood/AVREC.lircd.conf [AVREC]: duplicate key KEY_ENTER ignored
+WARN kenwood/RC-1001.lircd.conf [RC-1001]: duplicate key FWD_MD ignored
+SKIP kenwood/RC-601.irman.lircd.conf [RC-601]: no timing: codes are receiver hardware scancodes
+SKIP kenwood/RC-6030.irman.lircd.conf [RC-6030]: no timing: codes are receiver hardware scancodes
+WARN kenwood/RC-R0503.lircd.conf [RC-RO503]: duplicate key KEY_REWIND ignored
+WARN kenwood/RC-R0900.lircd.conf [RC-R0900]: duplicate key PAUSE ignored
+WARN kenwood/RC-R0900.lircd.conf [RC-R0900]: duplicate key STOP ignored
+WARN kenwood/RC-R0900.lircd.conf [RC-R0900]: duplicate key FFWD ignored
+WARN kenwood/RC-R0900.lircd.conf [RC-R0900]: duplicate key REW ignored
+WARN kenwood/RC-R0900.lircd.conf [RC-R0900]: duplicate key PLAY_REV ignored
+WARN kenwood/RC-R0900.lircd.conf [RC-R0900]: duplicate key PAUSE ignored
+WARN kenwood/RC-R0900.lircd.conf [RC-R0900]: duplicate key STOP ignored
+WARN kenwood/RC-R0900.lircd.conf [RC-R0900]: duplicate key FFWD ignored
+WARN kenwood/RC-R0900.lircd.conf [RC-R0900]: duplicate key REW ignored
+WARN kenwood/RC-R0900.lircd.conf [RC-R0900]: duplicate key REC ignored
+WARN kenwood/RC-S0900.lircd.conf [RC-S0900]: duplicate key KEY_STOP ignored
+WARN kenwood/RC-S0900.lircd.conf [RC-S0900]: duplicate key PLAY_REV ignored
+WARN kenwood/RC-S0900.lircd.conf [RC-S0900]: duplicate key KEY_STOP ignored
+WARN kenwood/RC-S0900.lircd.conf [RC-S0900]: duplicate key KEY_FASTFORWARD ignored
+WARN kenwood/RC-S0900.lircd.conf [RC-S0900]: duplicate key TV/VIDEO ignored
+SKIP knc_one/knc_one.lircd.conf [lircd.conf]: no timing: codes are receiver hardware scancodes
+SKIP kodak/RC-201.irman.lircd.conf [Kodak_RC-201]: no timing: codes are receiver hardware scancodes
+SKIP l&s_electronic/HS-910.irman.lircd.conf [HS-910]: no timing: codes are receiver hardware scancodes
+SKIP leadtek/PVR2000.lircd.conf [PVR2000]: no timing: codes are receiver hardware scancodes
+SKIP leadtek/PVR2000.lircd.conf [PVR2000]: no timing: codes are receiver hardware scancodes
+SKIP leadtek/RM-0007.lircmd.conf: line 8: PROTOCOL outside of a remote
+SKIP leadtek/RM-0010.lircmd.conf: line 5: PROTOCOL outside of a remote
+WARN lg/6710V00049G.lircd.conf [LG.6710V00049G.RAW]: durations rounded within 2% to fit the symbol alphabet
+SKIP lg/6710V00070A.irman.lircd.conf [LG_6710V00070A]: no timing: codes are receiver hardware scancodes
+WARN lg/AKB74475403.lircd.conf [LG]: duplicate key KEY_RIGHT ignored
+WARN lg/BD300.lircd.conf [LG_BD300]: duplicate key KEY_SUBTITLE ignored
+SKIP life-view/flyvideo.lircmd.conf: line 6: PROTOCOL outside of a remote
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_N ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_NNE ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_NE ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_NEE ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_E ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_SEE ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_SE ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_SSE ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_S ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_SSW ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_SW ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_SWW ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_W ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_NWW ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_NW ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_NNW ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_N ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_NNE ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_NE ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_NEE ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_E ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_SEE ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_SE ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_SSE ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_S ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_SSW ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_SW ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_SWW ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_W ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_NWW ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_NW ignored
+WARN logitech/logitech.lircd.conf [Logitech]: duplicate key MOUSE_NWW ignored
+SKIP logitech/logitech.lircmd.conf: line 7: ACCELERATOR outside of a remote
+SKIP mStation/mStation.lircmd.conf: line 5: PROTOCOL outside of a remote
+WARN marmitek/connect_310.lircd.conf [MARMITEK_Connect_310_HDMI_switch]: durations rounded within 2% to fit the symbol alphabet
+WARN mas/HSD400.lircd.conf [HSD-400]: duplicate key KEY_7 ignored
+SKIP mbo/10-in-1.lircd.conf: line 10: Art.Nr. outside of a remote
+WARN mceusb/mceusb.lircd.conf [mceusb_hauppauge]: duplicate key KEY_TV ignored
+SKIP medion/2020.lircd.conf [Medion_2020]: no timing: codes are receiver hardware scancodes
+WARN medion/MD_41169.lircd.conf [Medion_MD_41169_376]: duplicate key key_fn_1 ignored
+SKIP medion/OR30V.conf [Medion_OR30V]: no timing: codes are receiver hardware scancodes
+WARN melectronic/PP3600.lircd.conf [Melectronic_PP3600]: durations rounded within 2% to fit the symbol alphabet
+WARN microsoft/Xbox360.lircd.conf [Microsoft_Xbox360]: duplicate key KEY_PLAY ignored
+WARN microsoft/Xbox_PG-8012.lircd.conf [xbox]: durations rounded within 2% to fit the symbol alphabet
+SKIP moneual/Moncaso_312.lircd.conf [Moncaso_312]: no timing: codes are receiver hardware scancodes
+SKIP motorola/DCT6200.irman.lircd.conf [Motorola_DCT6200]: no timing: codes are receiver hardware scancodes
+SKIP motorola/DTA100.lircd.conf [MotorolaDTA100-PaceDC50X]: XMP encoding is not supported
+SKIP motorola/VIP_1200.lircd.conf [Motorola_VIP_1200]: RCMM encoding is not supported
+WARN msi/Media_Center.lircd.conf [MSI_Media_Center]: duplicate key KEY_DVD ignored
+SKIP nec/RC-1067E.lircd.conf: line 55: code TV_CH_ has no value
+WARN nec/RC-1070E.lircd.conf [RC-1070E]: duplicate key KEY_CHANNELUP ignored
+WARN nec/RC-1070E.lircd.conf [RC-1070E]: duplicate key KEY_CHANNELDOWN ignored
+WARN nec/RD-337E.lircd.conf [NEC_RD-337E]: durations rounded within 2% to fit the symbol alphabet
+WARN nokia/MM9780S.lircd.conf [MM9780S]: durations rounded within 2% to fit the symbol alphabet
+WARN nokia/MM9850T.lircd.conf [Nokia-On-Digital-Mediamaster-9850T]: durations rounded within 2% to fit the symbol alphabet
+WARN nokia/RCN610.lircd.conf [RCN610]: durations rounded within 2% to fit the symbol alphabet
+WARN nokia/RCN_624.lircd.conf [RCN_624]: durations rounded within 2% to fit the symbol alphabet
+SKIP octaltv/WebTV.irman.lircd.conf [octaltv]: no timing: codes are receiver hardware scancodes
+WARN one_for_all/URC-7560.lircd.conf [VCR]: duplicate key VCR_AV ignored
+WARN one_for_all/URC-7562b.lircd.conf [URC-7562]: durations rounded within 2% to fit the symbol alphabet
+WARN one_for_all/URC-8200B00.lircd.conf [URC-8200B00]: durations rounded within 2% to fit the symbol alphabet
+WARN one_for_all/URC-8203.lircd.conf [OneForAll_URC-8203]: durations rounded within 2% to fit the symbol alphabet
+WARN one_for_all/URC-8203.lircd.conf [OneForAll_URC-8203b]: durations rounded within 2% to fit the symbol alphabet
+WARN onida/DFX_7100.lircd.conf [Onida_DFX_7100]: duplicate key KEY_STOP ignored
+WARN onkyo/RC-333c.lircd.conf [Onkyo_RC-333c_tape]: durations rounded within 2% to fit the symbol alphabet
+WARN onkyo/RC-735M.lircd.conf [ONKYO_735M]: duplicate key KEY_MENU ignored
+WARN onkyo/RC-735M.lircd.conf [ONKYO_735M]: duplicate key KEY_BACK ignored
+WARN optoma/hd600x.lircd.conf [OptomaHD600X]: duplicate key KEY_H ignored
+WARN pace/DC621KU.lircd.conf [Pace_DC621]: durations rounded within 2% to fit the symbol alphabet
+WARN pace/DIGIBOX.lircd.conf [SkyDigital]: durations rounded within 2% to fit the symbol alphabet
+WARN pace/DS420.lircd.conf [Pase_DS420]: durations rounded within 2% to fit the symbol alphabet
+SKIP pace/DS830NS.lircd.conf [Pace_DS830NS]: XMP encoding is not supported
+SKIP pace/DTA100.lircd.conf [MotorolaDTA100-PaceDC50X]: XMP encoding is not supported
+WARN pace/RC-24.lircd.conf [Pace_RC-24]: durations rounded within 2% to fit the symbol alphabet
+SKIP pace/TDS460NNZ.lircd.conf [Pace_TDS460NNZ]: RCMM encoding is not supported
+WARN pace/Twin_Digital_TV_Recorder.lircd.conf [pacetwin]: durations rounded within 2% to fit the symbol alphabet
+SKIP palladium/RC-BM.irman.lircd.conf [RC-BM]: no timing: codes are receiver hardware scancodes
+WARN palmbutler/RC1154101_00.lircd.conf [palmbutler]: durations rounded within 2% to fit the symbol alphabet
+SKIP panasonic/EUR511211.irman.lircd.conf [EUR511211]: no timing: codes are receiver hardware scancodes
+SKIP panasonic/EUR51169.irman.lircd.conf [EUR51169]: no timing: codes are receiver hardware scancodes
+SKIP panasonic/EUR7502XJO.irman.lircd.conf [Panasonic_EUR7502XJO]: no timing: codes are receiver hardware scancodes
+SKIP panasonic/EUR7502XJO.irman.lircd.conf [Panasonic_EUR7502XJO_DVD]: no timing: codes are receiver hardware scancodes
+SKIP panasonic/EUR7502XJO.irman.lircd.conf [Panasonic_EUR7502XJO_TV]: no timing: codes are receiver hardware scancodes
+SKIP panasonic/EUR7502XJO.irman.lircd.conf [Panasonic_EUR7502XJO_VCR]: no timing: codes are receiver hardware scancodes
+SKIP panasonic/N2QAJB000051.irman.lircd.conf [PANASONIC]: no timing: codes are receiver hardware scancodes
+WARN panasonic/N2QAYB000048.lircd.conf [Panasonic_N2QAYB000048]: duplicate key SD ignored
+WARN panasonic/VEQ1100.lircd.conf [panasonic.conf]: duplicate key MEMORY ignored
+SKIP panasonic/VEQ1141.irman.lircd.conf [VEQ1141]: no timing: codes are receiver hardware scancodes
+SKIP panasonic/VEQ1475.irman.lircd.conf [VEQ1475]: no timing: codes are receiver hardware scancodes
+SKIP panasonic/VEQ1944.irman.lircd.conf [VEQ1944]: no timing: codes are receiver hardware scancodes
+SKIP panasonic/VEQ2224.irman.lircd.conf [VEQ2224]: no timing: codes are receiver hardware scancodes
+WARN panasonic/VSQS1559.lircd.conf [Panasonic_VSQS1559]: duplicate key 0 ignored
+WARN panasonic/VSQS1559.lircd.conf [Panasonic_VSQS1559]: durations rounded within 18% to fit the symbol alphabet
+WARN pansat/2700a.lircd.conf [Pansat_2700a]: duplicate key KEY_PAUSE ignored
+WARN pansat/SD3500.lircd.conf [Pansat_SD3500_AUX]: duplicate key KEY_EXIT ignored
+WARN pansat/SD3500.lircd.conf [Pansat_SD3500_SAT]: duplicate key KEY_PAUSE ignored
+WARN pansat/SD3500.lircd.conf [Pansat_SD3500_SAT]: duplicate key KEY_UP ignored
+WARN pansat/SD3500.lircd.conf [Pansat_SD3500_SAT]: duplicate key KEY_DOWN ignored
+SKIP pcmak/pcmak.lircmd.conf: line 5: PROTOCOL outside of a remote
+WARN philips/AV5662_67.lircd.conf [AV5662_67_VCR]: duplicate key 9 ignored
+WARN philips/AV5662_67.lircd.conf [AV5662_67_VCR]: durations rounded within 2% to fit the symbol alphabet
+WARN philips/AV5680.lircd.conf [AV5680]: durations rounded within 2% to fit the symbol alphabet
+SKIP philips/KW-1009-01.lircd.conf: PHILIPS-KW-1009-01-MOUSE: no codes
+WARN philips/N9250UD.lircd.conf [Philips_N9250UD]: durations rounded within 2% to fit the symbol alphabet
+SKIP philips/NO314UD.irman.lircd.conf [Philips_N0314UD]: no timing: codes are receiver hardware scancodes
+WARN philips/PRC-01-AJ040641.lircd.conf [PHILIPS_PRC-01-DISK]: duplicate key KEY_ANGLE ignored
+WARN philips/R-48F01.lircd.conf [R-48F01]: durations rounded within 2% to fit the symbol alphabet
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp1-balance_front ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp1-balance_rear ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp2-balance_front ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp2-balance_rear ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key amp2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key cd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key lv2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key phono-sub_mode ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key KEY_RECORD ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-sub_mode ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key sat-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key text-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key text-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key text-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key text-PIP_shift ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key text-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key text-sub_mode ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tuner-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tv1-PIP_shift ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tv1-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tv1-sub_mode ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tv2-PIP_shift ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tv2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tv2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tv2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tv2-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key tv2-sub_mode ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vcr1-erase ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vcr1-sub_mode ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vcr2-erase ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vcr2-sub_mode ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-INVALID ignored
+WARN philips/RC-5.lircd.conf [PhilipsRC5]: duplicate key vd-sub_mode ignored
+WARN philips/RC-J20PHIL-00-00.lircd.conf [PHILIPS]: durations rounded within 2% to fit the symbol alphabet
+WARN philips/RC25271.lircd.conf [Philips_RC_25271]: duplicate key KEY_MUTE ignored
+SKIP philips/RC331702_01.lircd.conf [BEAMER_main]: RCMM encoding is not supported
+SKIP philips/RC331702_01.lircd.conf [BEAMER_cursor]: RCMM encoding is not supported
+SKIP philips/RC380.irman.lircd.conf [Philips_RC-380]: no timing: codes are receiver hardware scancodes
+WARN philips/RC4302.lircd.conf [RC4302-TV]: durations rounded within 2% to fit the symbol alphabet
+WARN philips/RC4302.lircd.conf [RC4302-DVD]: durations rounded within 2% to fit the symbol alphabet
+WARN philips/RC4302.lircd.conf [RC4302-SAT]: durations rounded within 2% to fit the symbol alphabet
+WARN philips/RC4302.lircd.conf [RC4302-TV]: durations rounded within 2% to fit the symbol alphabet
+WARN philips/RC4302.lircd.conf [RC4302-DVD]: durations rounded within 2% to fit the symbol alphabet
+WARN philips/RC4302.lircd.conf [RC4302-SAT]: durations rounded within 2% to fit the symbol alphabet
+WARN philips/RC4496_01.lircd.conf [Philips_RC4496_01]: duplicate key KEY_3 ignored
+SKIP philips/RC4702.lircd.conf: line 10: 1, outside of a remote
+SKIP philips/RC7535.irman.lircd.conf [PhilipsRC7535]: no timing: codes are receiver hardware scancodes
+WARN philips/RCL9BC_JJ03.lircd.conf [RCL9BC]: durations rounded within 2% to fit the symbol alphabet
+SKIP philips/RCL9EA.lircd.conf [RCL9EA]: no timing: codes are receiver hardware scancodes
+SKIP philips/RT736.irman.lircd.conf [PhilipsRT736]: no timing: codes are receiver hardware scancodes
+WARN philips/SBC_RU_545_00.lircd.conf [SBCRU545-TV]: durations rounded within 2% to fit the symbol alphabet
+WARN philips/SRU_5060.lircd.conf [PHILIPS_SRU_5060]: duplicate key TextOff ignored
+WARN philips/SRU_5060.lircd.conf [PHILIPS_SRU_5060]: duplicate key Videotext ignored
+SKIP philips/TIVO.irman.lircd.conf [tivo]: no timing: codes are receiver hardware scancodes
+SKIP philips/srm7500libusb.lircd.conf [SRM-7500]: no timing: codes are receiver hardware scancodes
+SKIP philips/srm7500libusb.lircd.conf [SRM-7500_UP]: no timing: codes are receiver hardware scancodes
+WARN pinnacle_systems/PCTV.lircd.conf [PinnacleSysPCTVRemote]: durations rounded within 2% to fit the symbol alphabet
+SKIP pinnacle_systems/PCTV.lircd.conf [PCTV_DELUXE_REMOTE]: no timing: codes are receiver hardware scancodes
+SKIP pinnacle_systems/mini.lircd.conf [Pinnacle_mini]: no timing: codes are receiver hardware scancodes
+SKIP pinnacle_systems/pctv.lircd.conf [PinnacleSysPCTVRemote]: no timing: codes are receiver hardware scancodes
+WARN pioneer/AXD-1531.lircd.conf [Pioneer_AXD-1531]: duplicate key KEY_ENTER ignored
+WARN pioneer/CU-DV042.lircd.conf [CU-DV042]: durations rounded within 2% to fit the symbol alphabet
+WARN pioneer/CU-PD089.lircd.conf [CU-PD089]: duplicate key KEY_PREVIOUS ignored
+WARN pioneer/VXX2914.lircd.conf [pioneer_VXX2914.conf]: duplicate key KEY_0 ignored
+SKIP pipi/PiPiPC.lircd.conf [PiPiPC]: no timing: codes are receiver hardware scancodes
+SKIP pixelview/playtv.lircd.conf [Pixelview]: no timing: codes are receiver hardware scancodes
+SKIP pixelview/playtv_bt878.lircd.conf [PixelView]: no timing: codes are receiver hardware scancodes
+SKIP pixelview/playtv_pro.lircd.conf [PixelView_PlayTV_MPEG2]: no encoding flag
+SKIP pixelview/playtv_pro.lircmd.conf: line 8: ACCELERATOR outside of a remote
+SKIP pixelview/remotemaster.lircmd.conf: line 10: ACCELERATOR outside of a remote
+SKIP q-sonic/Master_Remote_6in1.lircd.conf [QSonic_6in1]: no timing: codes are receiver hardware scancodes
+WARN q-sonic/Master_Remote_PC_TV.lircd.conf [Q-Sonic]: durations rounded within 2% to fit the symbol alphabet
+WARN rca/33379-1.lircd.conf [rca_33379-1]: durations rounded within 2% to fit the symbol alphabet
+WARN rca/DB200.lircd.conf [Sky_BR-RCA_DB200]: durations rounded within 2% to fit the symbol alphabet
+WARN rca/RCR504BR.lircd.conf [RCR504BR]: duplicate key KEY_BACK ignored
+SKIP remotec/BW6130.lircd.conf [MEDIAMASTER]: no timing: codes are receiver hardware scancodes
+SKIP remotec/BW6130.lircmd.conf: line 6: PROTOCOL outside of a remote
+WARN remotec/RM200-AUX.lircd.conf [AUX]: durations rounded within 2% to fit the symbol alphabet
+WARN remotec/RM200-SAT.lircd.conf [SAT]: durations rounded within 2% to fit the symbol alphabet
+SKIP replaytv/5000.lircd.conf [ReplayTV_5000]: no key can be sent
+WARN ruwido/Cyberclick.lircd.conf [Ruwido]: durations rounded within 2% to fit the symbol alphabet
+WARN ruwido/Easytip_2.lircd.conf [Ruwido_Easytip_2]: durations rounded within 2% to fit the symbol alphabet
+WARN ruwido/Easytip_z1.lircd.conf [Ruwido_Easytip_z1]: durations rounded within 2% to fit the symbol alphabet
+WARN salora/RC-8800.lircd.conf [RC-8800-LearningArea]: durations rounded within 2% to fit the symbol alphabet
+SKIP samsung/00008E.lircd.conf: line 10: remember outside of a remote
+WARN samsung/00011k.lircd.conf [Samsung_00011k]: duplicate key KEY_MEDIA_REPEAT ignored
+WARN samsung/00071F.lircd.conf [SAMSUNG_00071F]: durations rounded within 2% to fit the symbol alphabet
+SKIP samsung/00093G.irman.lircd.conf [Samsung_00093G.irman]: no timing: codes are receiver hardware scancodes
+WARN samsung/10116A.lircd.conf [Samsung_10116A]: durations rounded within 2% to fit the symbol alphabet
+WARN samsung/3F14-00048-180.lircd.conf [Samsung-3F14-00048-180]: durations rounded within 2% to fit the symbol alphabet
+WARN samsung/528Z.lircd.conf [528Z]: durations rounded within 2% to fit the symbol alphabet
+WARN samsung/AA59-00382A.lircd.conf [Samsung_AA59-00382A]: duplicate key KEY_CYCLEWINDOWS ignored
+WARN samsung/AH59-00043E.lircd.conf [Samsung_AH59-00043E]: durations rounded within 10% to fit the symbol alphabet
+WARN samsung/AH59-02434A.lircd.conf [samsung]: durations rounded within 2% to fit the symbol alphabet
+SKIP samsung/BN59-00937A.irman.lircd.conf [Samsung_BN59-00937A]: no timing: codes are receiver hardware scancodes
+SKIP samsung/samsung.lircd.conf [Samsung]: no timing: codes are receiver hardware scancodes
+SKIP samsung/samsung.lircd.conf [Terratec]: no timing: codes are receiver hardware scancodes
+WARN sanyo/CXWY.lircd.conf [plvz2000]: duplicate key KEY_C ignored
+WARN sanyo/CXWY.lircd.conf [plvz2000]: duplicate key KEY_S ignored
+WARN sanyo/RC-105C.lircd.conf [Sanyo_RC-105C]: durations rounded within 2% to fit the symbol alphabet
+SKIP sasem/sasem.lircd.conf [lirc_sasem]: no timing: codes are receiver hardware scancodes
+WARN schneider/FESTIVAL2000.lircd.conf [FESTIVAL2000]: durations rounded within 2% to fit the symbol alphabet
+WARN schneider/RC-114.lircd.conf [schneider]: durations rounded within 2% to fit the symbol alphabet
+WARN scientific_atlanta/E940.lircd.conf [E940]: durations rounded within 2% to fit the symbol alphabet
+WARN scientific_atlanta/Explorer_2000.lircd.conf [SA2000]: durations rounded within 2% to fit the symbol alphabet
+SKIP scientific_atlanta/RNG-150.lircd.conf [RNG-150]: XMP encoding is not supported
+WARN seg/SEG-VCR4300.lircd.conf [SEG-VCR4300]: durations rounded within 2% to fit the symbol alphabet
+WARN sejin_electron/SWP-D3956W-KR1.lircd.conf [Sejin_Electron_SWP-D3956W-KR1]: duplicate key stop ignored
+WARN sejin_electron/SWP-D3956W-KR1.lircd.conf [Sejin_Electron_SWP-D3956W-KR1]: durations rounded within 6% to fit the symbol alphabet
+SKIP shannon/SWK-8630.lircd.conf [SHANNON]: SERIAL encoding is not supported
+WARN sharp/G0206AJ.lircd.conf [Sharp_G0009AJ]: duplicate key OPERATE ignored
+WARN sharp/G0206AJ.lircd.conf [Sharp_G0009AJ]: duplicate key RENATAL ignored
+WARN sharp/G0206AJ.lircd.conf [Sharp_G0009AJ]: duplicate key TRACKINGD ignored
+WARN sharp/G0206AJ.lircd.conf [Sharp_G0009AJ]: duplicate key KEY_PLAY ignored
+WARN sharp/G0206AJ.lircd.conf [Sharp_G0009AJ]: duplicate key KEY_REWIND ignored
+WARN sharp/G0206AJ.lircd.conf [Sharp_G0009AJ]: duplicate key KEY_FORWARD ignored
+WARN sharp/G0206AJ.lircd.conf [Sharp_G0009AJ]: duplicate key KEY_RECORD ignored
+WARN sharp/G0206AJ.lircd.conf [Sharp_G0009AJ]: duplicate key KEY_STOP ignored
+WARN sharp/G0206AJ.lircd.conf [Sharp_G0009AJ]: duplicate key KEY_PAUSE ignored
+WARN sharp/G0206AJ.lircd.conf [Sharp_G0009AJ]: duplicate key KEY_SLOW ignored
+WARN sharp/G0206AJ.lircd.conf [Sharp_G0009AJ]: duplicate key MEMORY ignored
+WARN sharp/G0379GE.lircd.conf [Sharp_G0379GE]: durations rounded within 2% to fit the symbol alphabet
+WARN sharp/G096GE.lircd.conf [SHARP_G096GE]: duplicate key zeroback ignored
+WARN sharp/G1023BMSA.lircd.conf [sharp]: duplicate key SOUND ignored
+WARN sharp/G1071SA.lircd.conf [sharp]: duplicate key SOUND ignored
+WARN sharp/GJ210.lircd.conf [Sharp_GJ210]: duplicate key KEY_VIDEO ignored
+WARN siemens/FB33ATS.lircd.conf [FB33ATS]: durations rounded within 2% to fit the symbol alphabet
+SKIP sigma_designs/realmagic.lircd.conf [REALmagic]: no timing: codes are receiver hardware scancodes
+SKIP silitek/silitek.lircd.conf [SILITEK_SM-1000]: no timing: codes are receiver hardware scancodes
+SKIP silitek/silitek.lircmd.conf: line 5: PROTOCOL outside of a remote
+SKIP sirius/Sportster.lircd.conf: line 10: Sportster outside of a remote
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_TV ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_MENU ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_POWER ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_BACK ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_1 ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_2 ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_3 ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_4 ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_5 ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_6 ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_7 ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_8 ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_9 ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_0 ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_INFO ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_CHANNELUP ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_CHANNELDOWN ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_TEXT ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_Z ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_X ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_C ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_V ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_B ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_N ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_M ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_BACK ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_HELP ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_RED ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_GREEN ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_YELLOW ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_BLUE ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_KEYBOARD ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_UP ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_LEFT ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_DOWN ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_RIGHT ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_OK ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_EPG ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_Q ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_W ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_E ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_R ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_T ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_Y ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_U ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_I ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_O ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_P ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_A ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_S ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_D ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_F ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_G ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_H ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_J ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_K ignored
+WARN sky/Navigator.lircd.conf [Sky_Navigator]: duplicate key KEY_L ignored
+WARN sky/Rev4.lircd.conf [Sky_rev.4]: duplicate key 6 ignored
+WARN sky/Rev4.lircd.conf [Sky_rev.4]: durations rounded within 2% to fit the symbol alphabet
+WARN sky/SkyHD.lircd.conf [SKY]: durations rounded within 2% to fit the symbol alphabet
+WARN sky/Sky_Rev_6.lircd.conf [Sky_Rev._6]: durations rounded within 2% to fit the symbol alphabet
+WARN skymaster/2416.lircd.conf [lircd.conf]: durations rounded within 2% to fit the symbol alphabet
+WARN skymaster/2416.lircd.conf [Skymaster_2416]: duplicate key Volume- ignored
+WARN skymaster/2416.lircd.conf [Skymaster_2416]: duplicate key Volume+ ignored
+WARN skymaster/2416.lircd.conf [Skymaster_2416]: duplicate key Red ignored
+WARN skymaster/2416.lircd.conf [Skymaster_2416]: duplicate key Green ignored
+WARN skymaster/2416.lircd.conf [Skymaster_2416]: duplicate key Yellow ignored
+WARN skymaster/2416.lircd.conf [Skymaster_2416]: duplicate key Blue ignored
+WARN skymaster/2421.lircd.conf [Skymaster_2421]: duplicate key KEY_UP ignored
+WARN skymaster/2421.lircd.conf [Skymaster_2421]: duplicate key KEY_DOWN ignored
+WARN skymaster/XL10.lircd.conf [Skymaster_XL10]: durations rounded within 2% to fit the symbol alphabet
+SKIP smoovietv/SMOOVIETV.irman.lircd.conf [smoovietv]: no timing: codes are receiver hardware scancodes
+WARN sony/RM-839.lircd.conf [RM-839]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RM-921.lircd.conf [Sony-RM-921]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RM-ADP074.lircd.conf [SONY_RM-ADP074]: durations rounded within 2% to fit the symbol alphabet
+SKIP sony/RM-AV2000.irman.lircd.conf [MD/DAT]: no timing: codes are receiver hardware scancodes
+WARN sony/RM-AV3000.lircd.conf [Sony_RM-AV3000]: durations rounded within 18% to fit the symbol alphabet
+WARN sony/RM-D1M.lircd.conf [RM-D1M-MIKI]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RM-D270.lircd.conf [RM-D270]: durations rounded within 2% to fit the symbol alphabet
+SKIP sony/RM-D420.irman.lircd.conf [RM-D420.irman]: no timing: codes are receiver hardware scancodes
+WARN sony/RM-D7M.lircd.conf [RM-D7M]: duplicate key X_KEY_21 ignored
+WARN sony/RM-D7M.lircd.conf [RM-D7M]: duplicate key X_KEY_20 ignored
+WARN sony/RM-D7M.lircd.conf [RM-D7M]: duplicate key KEY_PLAY ignored
+WARN sony/RM-D7M.lircd.conf [RM-D7M]: duplicate key KEY_PAUSE ignored
+WARN sony/RM-D7M.lircd.conf [RM-D7M]: duplicate key KEY_STOP ignored
+WARN sony/RM-D7M.lircd.conf [RM-D7M]: duplicate key KEY_PREVIOUS ignored
+WARN sony/RM-D7M.lircd.conf [RM-D7M]: duplicate key KEY_NEXT ignored
+WARN sony/RM-D7M.lircd.conf [RM-D7M]: duplicate key KEY_REWIND ignored
+WARN sony/RM-PP402.lircd.conf [rm]: duplicate key tv_off ignored
+WARN sony/RM-PP411.lircd.conf [sony_RM-PP411_receiver-AV1-raw]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RM-S315.lircd.conf [Sony_RM-S315]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RM-SD25-3.lircd.conf [sony-rm-sd25]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RM-SD50.lircd.conf [RM-SD50]: durations rounded within 2% to fit the symbol alphabet
+SKIP sony/RM-SD80.irman.lircd.conf [RM-SD80]: no timing: codes are receiver hardware scancodes
+WARN sony/RM-SED2.lircd.conf [RM-SED2]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RM-SM100EW.lircd.conf [Sony_RM-SM100EW]: durations rounded within 2% to fit the symbol alphabet
+SKIP sony/RM-SR210.irman.lircd.conf [RM-SR210]: no timing: codes are receiver hardware scancodes
+WARN sony/RM-SR231.lircd.conf [Sony_RM-SR231]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RM-SR8.lircd.conf [RM-SR8]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RM-SRB5.lircd.conf [rm-srb5.conf]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RM-SV215D.lircd.conf [Sony_RM-SV215D]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RM-U303.lircd.conf [Sony_RM-U303]: durations rounded within 2% to fit the symbol alphabet
+SKIP sony/RM-U305C.irman.lircd.conf [Sony-RM-U305C]: no timing: codes are receiver hardware scancodes
+SKIP sony/RM-V10T.lircd.conf: line 11: This outside of a remote
+WARN sony/RM-V202.lircd.conf [RMV202_CBL016]: LIRC cannot send key Vol+
+WARN sony/RM-V202.lircd.conf [RMV202_CBL016]: LIRC cannot send key Vol-
+WARN sony/RM-V202.lircd.conf [RMV202_CBL016]: LIRC cannot send key Mute
+WARN sony/RM-V301.lircd.conf [RM-V301]: durations rounded within 2% to fit the symbol alphabet
+SKIP sony/RM-Y116.irman.lircd.conf [RM-Y116]: no timing: codes are receiver hardware scancodes
+SKIP sony/RM-Y139.irman.lircd.conf [SonyDSSRemote]: no timing: codes are receiver hardware scancodes
+WARN sony/RM-Y800.lircd.conf [RM-Y800]: duplicate key KEY_EPG ignored
+WARN sony/RM-Y800.lircd.conf [RM-Y800]: duplicate key JUMP ignored
+SKIP sony/RM-YD017.tira.lircd.conf [Sony_RM-YD017:TV]: no timing: codes are receiver hardware scancodes
+SKIP sony/RMT-136.lircd.conf [RMT-136]: no encoding flag
+WARN sony/RMT-814.lircd.conf [RMT-814]: durations rounded within 2% to fit the symbol alphabet
+SKIP sony/RMT-831.lircd.conf [Sony_RMT-831-12]: no encoding flag
+SKIP sony/RMT-831.lircd.conf [Sony_RMT-831-15]: no encoding flag
+SKIP sony/RMT-831.lircd.conf [Sony_RMT-831-20]: no encoding flag
+WARN sony/RMT-D197A.lircd.conf [Sony-RMT-D197A]: duplicate key KEY_ENTER ignored
+WARN sony/RMT-V161.lircd.conf [sony]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RMT-V181A.lircd.conf [Sony_VTR_RMT-V181A]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RMT-V181D.lircd.conf [sony_rmt-v181d]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RMT-V245A.lircd.conf [sony]: durations rounded within 2% to fit the symbol alphabet
+SKIP sony/RMT-V256A.irman.lircd.conf [Sony-RMT-V256A]: no timing: codes are receiver hardware scancodes
+SKIP sony/RMT-V256A.irman.lircd.conf [Sony-RMT-256A-VCR]: no timing: codes are receiver hardware scancodes
+SKIP sony/RMT-V256A.irman.lircd.conf [Sony-RMT-256A-TV]: no timing: codes are receiver hardware scancodes
+WARN sony/RMT-V257B.lircd.conf [Sony-RMT-V257B]: durations rounded within 2% to fit the symbol alphabet
+WARN sony/RMT-V266.lircd.conf [sony_RMT-V266_VIDEO]: durations rounded within 2% to fit the symbol alphabet
+SKIP sony/SCPH-10150.irman.lircd.conf [Sony_SCPH-10150.irman]: no key can be sent
+WARN sony/SWK-8660.lircd.conf [Sony_SWK-8660]: duplicate key b ignored
+WARN sony/SWK-8660.lircd.conf [Sony_SWK-8660]: durations rounded within 2% to fit the symbol alphabet
+SKIP sony/av-system2.conf: line 1: ���� JFIF  H H  ���*Exif  MM *     outside of a remote
+SKIP sonyir/sonyir.lircd.conf [RM-GP4U]: no timing: codes are receiver hardware scancodes
+SKIP sonyir/sonyir.lircd.conf [RM-U304]: no timing: codes are receiver hardware scancodes
+SKIP sonyir/sonyir.lircd.conf [RM-Y1004]: no timing: codes are receiver hardware scancodes
+SKIP sonyir/sonyir.lircd.conf [RM-YD025]: no timing: codes are receiver hardware scancodes
+SKIP sonyir/sonyir.lircd.conf [RM-YD025]: no timing: codes are receiver hardware scancodes
+SKIP sonyir/sonyir.lircd.conf [RMT-B104A]: no timing: codes are receiver hardware scancodes
+SKIP starhub/ABQ-1H57-SCV.lircd.conf [starhub]: RCMM encoding is not supported
+WARN supportplus/RC9.lircd.conf [CD]: durations rounded within 2% to fit the symbol alphabet
+WARN supportplus/RC9.lircd.conf [SAT]: durations rounded within 2% to fit the symbol alphabet
+WARN supportplus/RC9.lircd.conf [TUNER]: durations rounded within 2% to fit the symbol alphabet
+WARN supportplus/RC9.lircd.conf [TV]: durations rounded within 2% to fit the symbol alphabet
+WARN supportplus/SP-URC-81-L.lircd.conf [Support_Plus_SP-URC-81-L]: durations rounded within 2% to fit the symbol alphabet
+WARN system76/Bonobo.lircd.conf [System76_Bonobo]: durations rounded within 2% to fit the symbol alphabet
+SKIP t+a/F100.lircd.conf: line 1: s outside of a remote
+SKIP technics/RAK-CH426WH.irman.lircd.conf [RAK-CH426WH]: no timing: codes are receiver hardware scancodes
+WARN technics/RAK-HDB04WH.lircd.conf [Technics_RAK-HDB04WH]: durations rounded within 2% to fit the symbol alphabet
+WARN technisat/103TS103.lircd.conf [Technisat_103TS103]: duplicate key KEY_EXIT ignored
+WARN technisat/103TS103.lircd.conf [Technisat_103TS103]: duplicate key KEY_EXIT ignored
+WARN technisat/103TS103.lircd.conf [Technisat_103TS103]: duplicate key KEY_EXIT ignored
+SKIP tekram/m230.lircd.conf [M230]: no timing: codes are receiver hardware scancodes
+SKIP tekram/m230.lircmd.conf: line 6: PROTOCOL outside of a remote
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key ? ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_Q ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_W ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_R ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_T ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_Y ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_U ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_I ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_O ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_P ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_A ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_S ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_D ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_F ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_G ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_H ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_J ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_K ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_L ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_Z ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_X ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_C ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_V ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_B ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_N ignored
+WARN telecom_italia/Sirio.lircd.conf [sirio]: duplicate key KEY_M ignored
+WARN telenet/DB-AD100.lircd.conf [Telenet_DB-AD100]: durations rounded within 2% to fit the symbol alphabet
+WARN tevion/DFA_2005.lircd.conf [Tevion_DFA_2005]: duplicate key KEY_CHANNELUP ignored
+WARN tevion/MD_4689.lircd.conf [tv]: duplicate key ch+ ignored
+WARN tevion/MD_4689.lircd.conf [tv]: duplicate key ch- ignored
+WARN tevion/MD_4689.lircd.conf [tv]: duplicate key vol- ignored
+WARN tevion/MD_4689.lircd.conf [tv]: duplicate key vol+ ignored
+WARN tevion/MD_4689.lircd.conf [tv]: duplicate key ent ignored
+WARN tevion/MD_4689.lircd.conf [tv]: durations rounded within 2% to fit the symbol alphabet
+WARN tevion/MD_4689.lircd.conf [vdr]: duplicate key ch+ ignored
+WARN tevion/MD_4689.lircd.conf [vdr]: duplicate key ch- ignored
+WARN tevion/MD_4689.lircd.conf [vdr]: durations rounded within 2% to fit the symbol alphabet
+WARN tevion/MD_4689.lircd.conf [dvd]: durations rounded within 2% to fit the symbol alphabet
+SKIP thermaltake/MediaLAB.lircd.conf [MediaLAB]: no timing: codes are receiver hardware scancodes
+SKIP thomson/DCI104ICS.lircd.conf [MotorolaDTA100-PaceDC50X]: XMP encoding is not supported
+WARN thomson/RC4208x.lircd.conf [Thomson-RC4208x_A_SAT]: durations rounded within 2% to fit the symbol alphabet
+WARN thomson/RCT102.lircd.conf [Thomson_RCT102]: duplicate key KEY_OK ignored
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_UP
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_DOWN
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_MENU
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_OK
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_BACK
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_LEFT
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_RIGHT
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_RED
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_GREEN
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_YELLOW
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_BLUE
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_0
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_5
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_6
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_8
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_9
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_POWER
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_VOLUMEUP
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_VOLUMEDOWN
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_CHANNELUP
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_CHANNELDOWN
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_MUTE
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key KEY_REWIND
+WARN thomson/ROC740.lircd.conf [Thomson_ROC740]: LIRC cannot send key AV
+WARN thomson/ROC85.lircd.conf [THOMSON_ROC85_TV2]: durations rounded within 2% to fit the symbol alphabet
+WARN thomson/ROC85.lircd.conf [THOMSON_ROC85_CD]: durations rounded within 2% to fit the symbol alphabet
+WARN tivo/DTV36.lircd.conf [TIVA_DirecTV_DTV36]: duplicate key KEY_MUTE ignored
+SKIP tivo/TIVO.irman.lircd.conf [tivo]: no timing: codes are receiver hardware scancodes
+SKIP tivo/TIVO_Series_2.tira.lircd.conf [TiVo-Series2-chorn.conf]: no timing: codes are receiver hardware scancodes
+WARN toshiba/CT-90159.lircd.conf [Toshiba_CT-90159_TV]: duplicate key KEY_6 ignored
+WARN toshiba/CT-90388.lircd.conf [Toshiba40TL868G]: duplicate key KEY_BACK ignored
+SKIP toshiba/RMV-329.irman.lircd.conf [toshiba-rmv329]: no timing: codes are receiver hardware scancodes
+SKIP twinhan/MagicBox.lircd.conf [Twinhan_MagicBox]: no key can be sent
+WARN universal/RM-786.lircd.conf [HSVP]: durations rounded within 2% to fit the symbol alphabet
+SKIP universal/URC_R5.irman.lircd.conf [lircd.conf]: no timing: codes are receiver hardware scancodes
+SKIP vlsystem/mplay.lircd.conf [VLSystem_MPlay_Blast]: no timing: codes are receiver hardware scancodes
+WARN watson/FA_7039.lircd.conf [Watson/Hauppauge]: duplicate key KEY_TV ignored
+SKIP x10/atilibusb.lircd.conf [ATI_Remote_Wonder_II]: no timing: codes are receiver hardware scancodes
+SKIP x10/atilibusb.lircd.conf [Medion_MD8800]: no timing: codes are receiver hardware scancodes
+SKIP x10/atilibusb.lircd.conf [ati_remote_wonder_rf]: no timing: codes are receiver hardware scancodes
+SKIP x10/atilibusb.lircd.conf [nVidia_UR88A]: no timing: codes are receiver hardware scancodes
+SKIP x10/atilibusb.lircd.conf [X10_OR22V]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [ATIUSB_5000015900A]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [ATIUSB_5000022000]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [ATIUSB_5000023600]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [SAPPHIRE_ATIUSB_5000023600]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [X-10_Lola]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [microapp6in1]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [atiusb_ch1]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [ATIUSB_UR88A]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Medion]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [5000024400]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Niveus_X10]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [ATIUSB_MEDION_MD95700]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [MEDION_X10_RF]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [MEDION_40005927]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Medion_X10]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Medion_8802]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Medion_OR24E]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Q-Sonic_Master_Remote]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [AR_Remote_Control_MCE]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Toshiba_X10]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [ATI_REMOTE_2_2_1]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Medion_X10]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Medion_X10]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Jasco_97685T]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Toshiba_PX1246E-1ETC]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Snapstream_Firefly_R1000]: no timing: codes are receiver hardware scancodes
+SKIP x10/atiusb.lircd.conf [Medion_MD1_NBC_Remote]: no timing: codes are receiver hardware scancodes
+SKIP x10/mouseremote.lircd.conf [mouseremote]: no timing: codes are receiver hardware scancodes
+SKIP x10/mouseremote.lircmd.conf: line 7: ACCELERATOR outside of a remote
+SKIP x10/mp3anywhere.lircd.conf [mp3anywhere]: no timing: codes are receiver hardware scancodes
+SKIP x10/mp3anywhere.lircd.conf [MP3Anywhere_UR51A]: no timing: codes are receiver hardware scancodes
+WARN yamaha/RAV285.lircd.conf [Yamaha_RAV285]: duplicate key KEY_CHANNELDOWN ignored
+WARN yamaha/RCX.lircd.conf [RCX]: duplicate key KEY_PLAY ignored
+WARN yamaha/VP59250.lircd.conf [VP59250]: duplicate key KEY_PLAY ignored
+WARN zalman/HD160XT.lircd.conf [Zalman_HD160XT]: duplicate key KEY_BACK ignored
+WARN zenith/ZN110.lircd.conf [Zenith_ZD110]: durations rounded within 2% to fit the symbol alphabet
+SKIP zoltrix/zoltrix.lircmd.conf: line 5: PROTOCOL outside of a remote
+SKIP zotac/zotac.lircd.conf [zotac.conf]: no timing: codes are receiver hardware scancodes
+WARN zyxel/DMA-1000.lircd.conf [Zyxel_DMA-1000]: duplicate key KEY_BACK ignored

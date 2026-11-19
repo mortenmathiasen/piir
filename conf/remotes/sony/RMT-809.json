@@ -1,0 +1,40 @@
+{
+    "description": "RMT-809 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-809.lircd.conf", "remote": "RMT-809", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 566, "space": 0},
+	"B": {"mark": 1169, "space": 0},
+	"H": {"mark": 2449, "space": 573},
+	"1": {"mark": 1169, "space": 639},
+	"0": {"mark": 566, "space": 639},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_IMAGES": "H10101001001B",
+	    "Display": "H01011011110A",
+	    "ZeroSetMemory": "H11100011110A",
+	    "SearchMode": "H10110101110B",
+	    "DataCode": "H00110011001B",
+	    "SearchLeft": "H11101011110A",
+	    "SearchRight": "H01101011110A",
+	    "KEY_REWIND": "H11011001110A",
+	    "KEY_PLAY": "H01011001110A",
+	    "KEY_FASTFORWARD": "H00111001110A",
+	    "KEY_LEFT": "H00001101110A",
+	    "KEY_STOP": "H00011001110A",
+	    "KEY_RIGHT": "H10001101110A",
+	    "KEY_PAUSE": "H10011001110A",
+	    "KEY_SLOW": "H11000101110A",
+	    "x2": "H00101001110A",
+	    "AudioDub": "H00010111110A",
+	    "KEY_RECORD": "H10011001001B",
+	    "KEY_T": "H11001001101B",
+	    "KEY_W": "H11011001001B"
+	}
+    }
+}

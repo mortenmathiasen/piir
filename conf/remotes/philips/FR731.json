@@ -1,0 +1,42 @@
+{
+    "description": "fr731vcd (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/FR731.lircd.conf", "remote": "fr731vcd", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 880, "space": 893},
+	"B": {"mark": 1760, "space": 893},
+	"C": {"mark": 880, "space": 1786},
+	"D": {"mark": 867, "space": 893},
+	"E": {"mark": 880, "space": 0},
+	"F": {"mark": 1760, "space": 1786},
+	"G": {"mark": 1760, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_1": "DABCBAAAAACE",
+	    "KEY_2": "DABCBAAAACG",
+	    "KEY_3": "DABCBAAAACAE",
+	    "KEY_4": "DABCBAAACBE",
+	    "KEY_5": "DABCBAAACFE",
+	    "KEY_6": "DABCBAAACAG",
+	    "KEY_7": "DABCBAAACAAE",
+	    "KEY_8": "DABCBAACBAE",
+	    "KEY_9": "DABCBAACBCE",
+	    "KEY_0": "DABCBAAAAAAE",
+	    "search_right": "DABCBCFFG",
+	    "search_left": "DABCBACAAAAE",
+	    "tvvolup": "DABAAAACBAAE",
+	    "tvvoldown": "DABAAAACBACE",
+	    "KEY_PLAY": "DABCBCAFFE",
+	    "KEY_STOP": "DABCBCAFAG",
+	    "KEY_PAUSE": "DABCBCABAAE",
+	    "KEY_NEXT": "DABCBCBAAAE",
+	    "KEY_PREVIOUS": "DABCBCBAACE",
+	    "discplus": "DABCBACAAAG"
+	}
+    }
+}

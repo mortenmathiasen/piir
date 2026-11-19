@@ -1,0 +1,20 @@
+{
+    "description": "SAMSUNG_AA59-00600A_POWER (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/samsung/AA59-00600A.lircd.conf", "remote": "SAMSUNG_AA59-00600A_POWER", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 600, "space": 0},
+	"H": {"mark": 4564, "space": 4478},
+	"1": {"mark": 600, "space": 1646},
+	"0": {"mark": 600, "space": 524},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H11100000111000000100000010111111A"
+	}
+    }
+}

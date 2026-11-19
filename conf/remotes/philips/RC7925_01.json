@@ -1,0 +1,50 @@
+{
+    "description": "Philips_RC7925_01 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC7925_01.lircd.conf", "remote": "Philips_RC7925_01", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 927, "space": 843},
+	"B": {"mark": 1854, "space": 1686},
+	"C": {"mark": 1854, "space": 843},
+	"D": {"mark": 962, "space": 843},
+	"E": {"mark": 927, "space": 0},
+	"F": {"mark": 927, "space": 1686},
+	"G": {"mark": 1854, "space": 0},
+	"I": {"mark": 1889, "space": 1686},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_EJECTCD": "DAAABBBABE",
+	    "INPUT": "DAAABBAACAE",
+	    "DISPLAY": "DAAABCAFBAE",
+	    "KEY_AGAIN": "DAAABCFAABE",
+	    "KEY_1": "DAAABCAAAAFE",
+	    "KEY_2": "DAAABCAAAFG",
+	    "KEY_3": "DAAABCAAAFAE",
+	    "KEY_4": "DAAABCAAFCE",
+	    "KEY_5": "DAAABCAAFBE",
+	    "KEY_6": "DAAABCAAFAG",
+	    "KEY_7": "DAAABCAAFAAE",
+	    "KEY_8": "DAAABCAFCAE",
+	    "KEY_9": "DAAABCAFCFE",
+	    "KEY_0": "DAAABCAAAAAE",
+	    "KEY_PAUSE": "DAAABBACAAE",
+	    "KEY_STOP": "DAAABBABAG",
+	    "KEY_PREVIOUS": "DAAABBCAAFE",
+	    "KEY_PLAY": "DAAABBABBE",
+	    "KEY_NEXT": "DAAABBCAAAE",
+	    "KEY_REWIND": "DAAABBACFG",
+	    "FAST": "DAAABBBAAAE",
+	    "FORW": "DAAABBABCE",
+	    "TRACK_INCR": "IAABBACFG",
+	    "PROGRAM": "DAAABBCFCE",
+	    "FINE_TUNE": "IAABBABCE",
+	    "CD_SYNC": "DAAABBBCAE",
+	    "KEY_RECORD": "DAAABBABAAE"
+	}
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "description": "Apple_A1294 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/apple/A1294.lircd.conf", "remote": "Apple_A1294", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 610, "space": 0},
+	"H": {"mark": 9140, "space": 4390},
+	"1": {"mark": 608, "space": 1618},
+	"0": {"mark": 608, "space": 518},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_UP": "H01110111111000010101000001111001A",
+	    "KEY_DOWN": "H01110111111000010011000001111001A",
+	    "KEY_LEFT": "H01110111111000011001000001111001A",
+	    "KEY_RIGHT": "H01110111111000010110000001111001A",
+	    "KEY_PLAY": "H01110111111000011111101001111001A",
+	    "KEY_MENU": "H01110111111000011100000001111001A",
+	    "KEY_OK": "H01110111111000010011101001111001A"
+	}
+    }
+}

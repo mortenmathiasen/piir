@@ -1,0 +1,46 @@
+{
+    "description": "HS640V (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/mitsubishi/HS640V.lircd.conf", "remote": "HS640V", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 338, "space": 0},
+	"1": {"mark": 335, "space": 2110},
+	"0": {"mark": 335, "space": 888},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "KEY_CHANNELUP": "1110101001010000A",
+	    "KEY_CHANNELDOWN": "1110101001001000A",
+	    "KEY_RIGHT": "1110101010101100A",
+	    "KEY_LEFT": "1110101011010000A",
+	    "KEY_UP": "1110101000101100A",
+	    "KEY_POWER": "1110101001000000A",
+	    "KEY_REWIND": "1110101000110100A",
+	    "KEY_PLAY": "1110101000100000A",
+	    "KEY_STOP": "1110101000101000A",
+	    "KEY_PAUSE": "1110101000111000A",
+	    "KEY_FASTFORWARD": "1110101000100100A",
+	    "KEY_RECORD": "1110101000110000A",
+	    "KEY_EJECTCD": "1110101001101100A",
+	    "KEY_MENU": "1110101001001010A",
+	    "KEY_3MENU": "1110101000001010A",
+	    "KEY_OK": "1110101011001100A",
+	    "AV": "1110101001011000A",
+	    "KEY_AGAIN": "1110101011101000A",
+	    "KEY_NEXT": "1110101010111100A",
+	    "COUNT-RES": "1110101010101000A",
+	    "COUNT-MEM": "1110101010110000A",
+	    "INDEX+": "1110101001110000A",
+	    "INDEX-": "1110101001101000A",
+	    "CH2": "1110101000010000A",
+	    "CH4": "1110101000011000A",
+	    "CH7?": "1110101000001100A",
+	    "CH8": "1110101000011100A",
+	    "CH9": "1110101010000000A"
+	}
+    }
+}

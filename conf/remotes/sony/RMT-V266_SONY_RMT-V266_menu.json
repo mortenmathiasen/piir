@@ -1,0 +1,30 @@
+{
+    "description": "SONY_RMT-V266_menu (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V266.lircd.conf", "remote": "SONY_RMT-V266_menu", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 78, "space": 0},
+	"H": {"mark": 78, "space": 2905},
+	"1": {"mark": 78, "space": 1716},
+	"0": {"mark": 78, "space": 1118},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "play/menu_ok": "H00011000101110AVVWWYYYYYYZZZH00011000101110AVVWWYYYYYYZZZH00011000101110A",
+	    "pause/menu_up": "H01110000101110AVVWXXXXYYYYYYZZZZZH01110000101110AVVWXXXXYYYYYYZZZZZH01110000101110A",
+	    "rew/menu_left": "H00001000101110AVVWWXXXXXXYYYYYYZH00001000101110AVVWWXXXXXXYYYYYYZH00001000101110A",
+	    "ff/menu_right": "H10001000101110AVVWWYYYYYYZZZH10001000101110AVVWWYYYYYYZZZH10001000101110A",
+	    "stop/menu_down": "H11110000101110AVVXXXXXXXXYYYYYYZZZZZZZH11110000101110AVVXXXXXXXXYYYYYYZZZZZZZH11110000101110A",
+	    "VCRplus": "H00000110101110AVVWWYYYYYYZZZH00000110101110AVVWWYYYYYYZZZH00000110101110A"
+	}
+    }
+}

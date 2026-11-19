@@ -1,0 +1,22 @@
+{
+    "description": "Motorola_DCT2224-2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/cox/DCT2224.lircd.conf", "remote": "Motorola_DCT2224-2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 608, "space": 0},
+	"H": {"mark": 9034, "space": 4412},
+	"1": {"mark": 603, "space": 1639},
+	"0": {"mark": 603, "space": 513},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "H00000010111111010101100010100111A",
+	    "KEY_VOLUMEDOWN": "H00000010111111010111100010000111A",
+	    "KEY_MUTE": "H00000010111111010000100011110111A"
+	}
+    }
+}

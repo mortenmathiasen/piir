@@ -1,0 +1,46 @@
+{
+    "description": "Skymaster_XL10 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/skymaster/XL10.lircd.conf", "remote": "Skymaster_XL10", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 521, "space": 507},
+	"B": {"mark": 521, "space": 1556},
+	"C": {"mark": 521, "space": 0},
+	"D": {"mark": 521, "space": 4182},
+	"E": {"mark": 8438, "space": 4182},
+	"F": {"mark": 521, "space": 519},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------",
+    "features": {
+	"key": {
+	    "1": "EABBAAAFADBAAAAAAAC",
+	    "2": "EABBAAAAADABAAAAAAC",
+	    "3": "EABBAAAAADBBAAAAAAC",
+	    "4": "EABBAAAAADAABAAAAAC",
+	    "5": "EABBAAAAADBABAAAAAC",
+	    "6": "EABBAAAAADABBAAAAAC",
+	    "7": "EABBAAAAADBBBAAAAAC",
+	    "8": "EABBAAAAADAAABAAAAC",
+	    "9": "EABBAAAAADBAABAAAAC",
+	    "0": "EABBAAAAADAAAAAAAAC",
+	    "ext": "EABBAAAAADABABBAAAC",
+	    "sys": "EABBAAAAADABBBBAAAC",
+	    "video": "EABBAAAAADAABABAAAC",
+	    "audio": "EABBAAAAADBABABAAAC",
+	    "fav_main": "EABBAAAAADABBABAAAC",
+	    "channel_up": "EABBAAAAADAAAABAAAC",
+	    "channel_down": "EABBAAAAADBAAABAAAC",
+	    "vol_down": "EABBAAAAADABAABAAAC",
+	    "vol_up": "EABBAAAAADBBAABAAAC",
+	    "channel_prev": "EABBAAAAADBAAABAAAC",
+	    "channel_next": "EABBAAAAADAAAABAAAC",
+	    "store": "EABBAAAAADBAABBAAAC",
+	    "sleep": "EABBAAAAADBBABAAAAC",
+	    "mute": "EABBAAAAADBBBABAAAC",
+	    "power": "EABBAAAAADAAABBAAAC"
+	}
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "description": "aux1-power (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/ibm/HD23A.lircd.conf", "remote": "aux1-power", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 657, "space": 0},
+	"H": {"mark": 9063, "space": 4443},
+	"1": {"mark": 658, "space": 1607},
+	"0": {"mark": 658, "space": 461},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "AUX1-POWER": "H11101110000100011111000000001111A"
+	}
+    }
+}

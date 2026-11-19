@@ -1,0 +1,22 @@
+{
+    "description": "silentgliss (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/silent-gliss/autoglide-5090.lircd.conf", "remote": "silentgliss", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 459, "space": 0},
+	"H": {"mark": 3534, "space": 1748},
+	"1": {"mark": 458, "space": 1300},
+	"0": {"mark": 458, "space": 420},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_OPEN": "H110000000000010010000000110100000010111100000000A",
+	    "KEY_CLOSE": "H110000000000010010000000001100001100111100000000A",
+	    "KEY_STOP": "H110000000000010010000000010100001010111100000000A"
+	}
+    }
+}

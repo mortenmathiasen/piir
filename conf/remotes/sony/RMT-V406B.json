@@ -1,0 +1,49 @@
+{
+    "description": "RMT-V406B (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V406B.lircd.conf", "remote": "RMT-V406B", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 711, "space": 0},
+	"H": {"mark": 2511, "space": 466},
+	"1": {"mark": 1311, "space": 466},
+	"0": {"mark": 711, "space": 466},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H10101001101A",
+	    "KEY_EJECTCD": "H01101001101A",
+	    "display": "H01011011101A",
+	    "audiomonitor": "H11101001101A",
+	    "counter/remain": "H10000011101A",
+	    "tvvideo": "H01010101101A",
+	    "KEY_1": "H00000001101A",
+	    "KEY_2": "H10000001101A",
+	    "KEY_3": "H01000001101A",
+	    "KEY_4": "H11000001101A",
+	    "KEY_5": "H00100001101A",
+	    "KEY_6": "H10100001101A",
+	    "KEY_7": "H01100001101A",
+	    "KEY_8": "H11100001101A",
+	    "KEY_9": "H00010001101A",
+	    "KEY_0": "H10010001101A",
+	    "KEY_102ND": "H01010001101A",
+	    "input_select": "H11110011101A",
+	    "KEY_VOLUMEUP": "H01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000A",
+	    "KEY_CHANNELUP": "H00001001101A",
+	    "KEY_CHANNELDOWN": "H10001001101A",
+	    "KEY_RECORD": "H10111001101A",
+	    "KEY_SLOW": "H11000101101A",
+	    "x2": "H00101001101A",
+	    "SP/LP": "H00011011101A",
+	    "index-search-": "H11101011101A",
+	    "index-search+": "H01101011101A",
+	    "KEY_MENU": "H10110011101A",
+	    "timer": "H00000111101A"
+	}
+    }
+}

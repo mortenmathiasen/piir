@@ -1,0 +1,23 @@
+{
+    "description": "Sony_RMT-V124C-15 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V124.lircd.conf", "remote": "Sony_RMT-V124C-15", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 40000,
+    "dutycycle": 0.33,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 600, "space": 0},
+	"H": {"mark": 2400, "space": 600},
+	"1": {"mark": 1200, "space": 600},
+	"0": {"mark": 600, "space": 600},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "VB": "H01101111001110AVWWWWWWWWWXXH01101111001110AVWWWWWWWWWXXH01101111001110A"
+	}
+    }
+}

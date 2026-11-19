@@ -1,0 +1,51 @@
+{
+    "description": "ATT_U-Verse (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/att/U-Verse.lircd.conf", "remote": "ATT_U-Verse", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 256, "space": 0},
+	"H": {"mark": 525, "space": 384},
+	"1": {"mark": 238, "space": 896},
+	"0": {"mark": 238, "space": 471},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_EPG": "H0101000011111010A",
+	    "KEY_OK": "H0101100011111110A",
+	    "KEY_CHANNELUP": "H0101100001110100A",
+	    "KEY_CHANNELDOWN": "H0101000011110101A",
+	    "KEY_UP": "H0101100001110110A",
+	    "KEY_DOWN": "H0101000011110111A",
+	    "KEY_LEFT": "H0101000001111111A",
+	    "KEY_RIGHT": "H0101100011111111A",
+	    "KEY_MENU": "H0101100001111110A",
+	    "KEY_0": "H0101000011110000A",
+	    "KEY_1": "H0101100001110001A",
+	    "KEY_2": "H0101100011110001A",
+	    "KEY_3": "H0101000001110001A",
+	    "KEY_4": "H0101100011110000A",
+	    "KEY_5": "H0101000001110011A",
+	    "KEY_6": "H0101000011110001A",
+	    "KEY_7": "H0101100001110011A",
+	    "KEY_8": "H0101100011110010A",
+	    "KEY_9": "H0101100001110010A",
+	    "KEY_ZOOM": "H0101100001111101A",
+	    "KEY_A": "H0101100011110110A",
+	    "KEY_B": "H0101100001110111A",
+	    "KEY_C": "H0101100011111011A",
+	    "KEY_INFO": "H0101100011110011A",
+	    "KEY_BACK": "H0101100001111001A",
+	    "X_KEY_VOD": "H0101100001111100A",
+	    "KEY_AGAIN": "H0101100001111010A",
+	    "KEY_FORWARD": "H0101100011111010A",
+	    "KEY_PAUSE": "H0101000011110100A",
+	    "KEY_RECORD": "H0101100011110111A",
+	    "KEY_FASTFORWARD": "H0101000011110110A",
+	    "X_KEY_TV_VIDEO": "H0101000001111110A"
+	}
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "description": "GENIUS_SW_5_1_HT (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/genius/SW_5_1_HT.lircd.conf", "remote": "GENIUS_SW_5_1_HT", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 359, "space": 0},
+	"1": {"mark": 1202, "space": 484},
+	"0": {"mark": 359, "space": 1327},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "11001010000A",
+	    "KEY_MUTE": "11001001000A",
+	    "KEY_VOLUMEDOWN": "11010001000A",
+	    "KEY_VOLUMEUP": "11010010000A"
+	}
+    }
+}

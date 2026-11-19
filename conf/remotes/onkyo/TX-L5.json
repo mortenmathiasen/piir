@@ -1,0 +1,45 @@
+{
+    "description": "Onkyo_TX-L5 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/onkyo/TX-L5.lircd.conf", "remote": "Onkyo_TX-L5", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1005, "space": 0},
+	"H": {"mark": 2987, "space": 975},
+	"1": {"mark": 1005, "space": 1967},
+	"0": {"mark": 1005, "space": 976},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H011100011011A",
+	    "KEY_STOP": "H011100011100A",
+	    "KEY_PAUSE": "H011100011111A",
+	    "KEY_FASTFORWARD": "H011100001100A",
+	    "fast_rewind": "H011100001101A",
+	    "KEY_NEXT": "H011100011101A",
+	    "previous_track": "H011100011110A",
+	    "KEY_ENTER": "H011100001001A",
+	    "KEY_SETUP": "H011101001101A",
+	    "top_menu": "H011101001110A",
+	    "KEY_MENU": "H011101001111A",
+	    "KEY_OK": "H011100001000A",
+	    "KEY_UP": "H011101010000A",
+	    "KEY_DOWN": "H011101010001A",
+	    "KEY_LEFT": "H011101010010A",
+	    "KEY_RIGHT": "H011101010011A",
+	    "md_play": "H100000011011A",
+	    "md_stop": "H100000011100A",
+	    "md_pause": "H100000011111A",
+	    "md_rewind": "H100000000001A",
+	    "md_fast_forward": "H100000000000A",
+	    "md_next_track": "H100000011101A",
+	    "md_previous_track": "H100000011110A",
+	    "set_md": "H000000110000A",
+	    "set_dvd": "H000100100000A",
+	    "set_hd": "H000101110000A"
+	}
+    }
+}

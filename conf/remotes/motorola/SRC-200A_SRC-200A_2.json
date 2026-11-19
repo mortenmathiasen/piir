@@ -1,0 +1,36 @@
+{
+    "description": "SRC-200A_2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/motorola/SRC-200A.lircd.conf", "remote": "SRC-200A_2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1039, "space": 0},
+	"H": {"mark": 5030, "space": 2908},
+	"1": {"mark": 1039, "space": 919},
+	"0": {"mark": 1039, "space": 2908},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_SELECT": "H1100111011111111A",
+	    "KEY_1": "H0000111011111111A",
+	    "KEY_2": "H0111011011111111A",
+	    "KEY_3": "H1011011011111111A",
+	    "KEY_4": "H0001011011111111A",
+	    "KEY_5": "H0110011011111111A",
+	    "KEY_6": "H0010011011111111A",
+	    "KEY_7": "H1010111011111111A",
+	    "KEY_8": "H0110111011111111A",
+	    "KEY_9": "H1000111011111111A",
+	    "KEY_0": "H1101101011111111A",
+	    "KEY_CHANNELUP": "H0010111011111111A",
+	    "KEY_CHANNELDOWN": "H1111011011111111A",
+	    "KEY_B": "H1010101011111111A",
+	    "KEY_EXIT": "H1010011011111111A",
+	    "last_chan": "H1110011011111111A",
+	    "call_id": "H1101011011111111A"
+	}
+    }
+}

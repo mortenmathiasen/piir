@@ -1,0 +1,36 @@
+{
+    "description": "Philips_LCD_TV_DISCRETE (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/LCD_TV_DISCRETE.lircd.conf", "remote": "Philips_LCD_TV_DISCRETE", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 36000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 866, "space": 909},
+	"B": {"mark": 1732, "space": 909},
+	"C": {"mark": 866, "space": 1818},
+	"D": {"mark": 858, "space": 909},
+	"E": {"mark": 866, "space": 0},
+	"F": {"mark": 1732, "space": 1818},
+	"G": {"mark": 1724, "space": 1818},
+	"I": {"mark": 1732, "space": 0},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "X_KEY_POWER_ON": "DABAAACAAAAAEVVVVVVVVWWWWWWWWWXXXXXXXYYYYYYYYZZZZZZZZDABAAACAAAAAE",
+	    "X_KEY_POWER_OFF": "DABAAAAACABEVVVVVVVVVXXXXXXYYYYYYYYYZZZZZZZDABAAAAACABE",
+	    "X_KEY_INPUT_HDMI1": "DABACAAAABCEVVVVVVVVWWWWWWWWWXXXXXXXYYYYYYYYZZZZZZZZDABACAAAABCE",
+	    "X_KEY_INPUT_HDMI2": "GBACAAAAFAEVVVVVVVVWWWWWWWWWXXXXXXXYYYYYYYYZZZZZZZZGBACAAAAFAE",
+	    "X_KEY_INPUT_EXT1": "DABACABACBEVVVVVVVVVXXXXXXYYYYYYYYYZZZZZZZDABACABACBE",
+	    "X_KEY_INPUT_EXT2": "DABAAACAABCEVVVVVVVVWWWWWWWWWXXXXXXXYYYYYYYYZZZZZZZZDABAAACAABCE",
+	    "X_KEY_INPUT_EXT3": "DABACAAAABAEVVVVVVVVVXXXXXXYYYYYYYYYZZZZZZZDABACAAAABAE",
+	    "X_KEY_INPUT_SIDE": "DABACAAAAFIVVVVVVVVVXXXXXXYYYYYYYYYZZZZZZZDABACAAAAFI"
+	}
+    }
+}

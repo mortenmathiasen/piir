@@ -1,0 +1,23 @@
+{
+    "description": "Sony_RMT-D143E-TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-D143E.lircd.conf", "remote": "Sony_RMT-D143E-TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 631, "space": 0},
+	"H": {"mark": 2484, "space": 581},
+	"1": {"mark": 1220, "space": 581},
+	"0": {"mark": 632, "space": 581},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "tv-power": "H10101001000A",
+	    "KEY_VOLUMEUP": "H01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000A",
+	    "tv-video": "H10100101000A"
+	}
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "description": "cbl-power (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/ibm/HD23A.lircd.conf", "remote": "cbl-power", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 839, "space": 0},
+	"1": {"mark": 840, "space": 5720},
+	"0": {"mark": 840, "space": 2407},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "CBL-POWER": "1000101110A"
+	}
+    }
+}

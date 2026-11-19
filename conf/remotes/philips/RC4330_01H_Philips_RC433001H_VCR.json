@@ -1,0 +1,51 @@
+{
+    "description": "Philips_RC433001H_VCR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC4330_01H.lircd.conf", "remote": "Philips_RC433001H_VCR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 919, "space": 851},
+	"B": {"mark": 1838, "space": 851},
+	"C": {"mark": 1838, "space": 1702},
+	"D": {"mark": 919, "space": 1702},
+	"E": {"mark": 919, "space": 0},
+	"F": {"mark": 952, "space": 851},
+	"G": {"mark": 1838, "space": 0},
+	"I": {"mark": 1871, "space": 1702},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "Power": "FABDCBDABE",
+	    "Record": "FABDCAACAAE",
+	    "FastRewind": "FABDCAABDG",
+	    "Stop": "FABDCAACAG",
+	    "Play": "FABDCAACCE",
+	    "FastForward": "FABDCAACBE",
+	    "Pause": "FABDCACBDE",
+	    "Menu": "IBDCCBDG",
+	    "OK": "IBDCCCAAE",
+	    "Up": "IBDCCBAAE",
+	    "Down": "IBDCCBADE",
+	    "Left": "IBDCCCCE",
+	    "Right": "IBDCCCAG",
+	    "Ch+": "FABDCABAAAE",
+	    "Ch-": "FABDCABAADE",
+	    "1": "FABDCBAAADE",
+	    "2": "FABDCBAADG",
+	    "3": "FABDCBAADAE",
+	    "4": "FABDCBADBE",
+	    "5": "FABDCBADCE",
+	    "6": "FABDCBADAG",
+	    "7": "FABDCBADAAE",
+	    "8": "FABDCBDBAE",
+	    "9": "FABDCBDBDE",
+	    "0": "FABDCBAAAAE",
+	    "OSD": "FABDCBDAAAE",
+	    "Audio": "FABDCABADAE",
+	    "Timer": "FABDCCAACE"
+	}
+    }
+}

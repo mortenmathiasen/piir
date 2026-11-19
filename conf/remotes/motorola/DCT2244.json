@@ -1,0 +1,29 @@
+{
+    "description": "DCT2244 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/motorola/DCT2244.lircd.conf", "remote": "DCT2244", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 500, "space": 0},
+	"H": {"mark": 9200, "space": 4600},
+	"1": {"mark": 500, "space": 4600},
+	"0": {"mark": 500, "space": 2299},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H1000000000001111A",
+	    "KEY_2": "H0100000000000111A",
+	    "KEY_3": "H1100000000001011A",
+	    "KEY_4": "H0010000000000011A",
+	    "KEY_5": "H1010000000001101A",
+	    "KEY_6": "H0110000000000101A",
+	    "KEY_7": "H1110000000001001A",
+	    "KEY_8": "H0001000000000001A",
+	    "KEY_9": "H1001000000001110A",
+	    "KEY_0": "H0000000000000000A"
+	}
+    }
+}

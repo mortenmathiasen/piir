@@ -1,0 +1,43 @@
+{
+    "description": "Hauppauge (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/hauppauge/hauppauge.lircd.conf", "remote": "Hauppauge", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 950, "space": 830},
+	"B": {"mark": 1900, "space": 830},
+	"C": {"mark": 950, "space": 1660},
+	"D": {"mark": 960, "space": 830},
+	"E": {"mark": 950, "space": 0},
+	"F": {"mark": 1900, "space": 0},
+	"G": {"mark": 1900, "space": 1660},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_TV": "DABAAAAACAAAE",
+	    "KEY_RADIO": "DABAAAAACABE",
+	    "KEY_F11": "DABAAACGAAF",
+	    "KEY_CHANNELUP": "DABAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DABAAACBAACE",
+	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
+	    "KEY_VOLUMEUP": "DABAAAACBAAE",
+	    "KEY_MUTE": "DABAAAAACAGE",
+	    "KEY_CYCLEWINDOWS": "DABAAACBACF",
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACF",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACGE",
+	    "KEY_6": "DABAAAAAACAF",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "RESERVED": "DABAAAACAAAF",
+	    "MINIMIZE": "DABAAACBCAF"
+	}
+    }
+}

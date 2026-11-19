@@ -1,0 +1,22 @@
+{
+    "description": "Schneider_Music-Center (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/schneider/Music-Center.lircd.conf", "remote": "Schneider_Music-Center", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 395, "space": 0},
+	"1": {"mark": 1264, "space": 422},
+	"0": {"mark": 395, "space": 1294},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "11010010000A",
+	    "KEY_VOLUMEDOWN": "11010001000A",
+	    "KEY_MUTE": "11001001000A",
+	    "KEY_POWER": "11001010000A"
+	}
+    }
+}

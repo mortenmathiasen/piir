@@ -1,0 +1,36 @@
+{
+    "description": "Philips_RC8601_01 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC8601_01.lircd.conf", "remote": "Philips_RC8601_01", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 932, "space": 843},
+	"B": {"mark": 1864, "space": 843},
+	"C": {"mark": 932, "space": 1686},
+	"D": {"mark": 932, "space": 0},
+	"E": {"mark": 969, "space": 843},
+	"F": {"mark": 1864, "space": 1686},
+	"G": {"mark": 1901, "space": 1686},
+	"I": {"mark": 1864, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_TUNER": "EAABACAAAAAAD",
+	    "tape1": "EAABCFFABD",
+	    "tape2": "EAABCFFAAI",
+	    "mmedia": "EABCBCAAAAAD",
+	    "tvvcr": "EABAAACAAAAAD",
+	    "KEY_CD": "EAAFBCAAAAAD",
+	    "dbb": "GABAAAAACAI",
+	    "dsc": "GABAAAACAAAD",
+	    "sound": "GABAAAAAAAAD",
+	    "KEY_VOLUMEUP": "EAABAAACBAAD",
+	    "KEY_VOLUMEDOWN": "EAABAAACBACD",
+	    "voltvplus": "EABAAAACBAAD",
+	    "voltvminus": "EABAAAACBACD"
+	}
+    }
+}

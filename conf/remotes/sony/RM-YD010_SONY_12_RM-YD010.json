@@ -1,0 +1,50 @@
+{
+    "description": "SONY_12_RM-YD010 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-YD010.lircd.conf", "remote": "SONY_12_RM-YD010", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 671, "space": 0},
+	"H": {"mark": 2481, "space": 507},
+	"1": {"mark": 1268, "space": 523},
+	"0": {"mark": 671, "space": 523},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "BTN_TV_VIDEO": "H10100101000A",
+	    "BTN_SLEEP": "H01101101000A",
+	    "BTN_POWER": "H10101001000A",
+	    "KEY_1": "H00000001000A",
+	    "KEY_2": "H10000001000A",
+	    "KEY_3": "H01000001000A",
+	    "KEY_4": "H11000001000A",
+	    "KEY_5": "H00100001000A",
+	    "KEY_6": "H10100001000A",
+	    "KEY_7": "H01100001000A",
+	    "KEY_8": "H11100001000A",
+	    "KEY_9": "H00010001000A",
+	    "KEY_0": "H10010001000A",
+	    "KEY_ENTER": "H11010001000A",
+	    "BTN_JUMP": "H11011101000A",
+	    "BTN_ANT": "H01010101000A",
+	    "BTN_FREEZE": "H00111011000A",
+	    "BTN_PICTURE": "H00100111000A",
+	    "BTN_GUIDE": "H01110001000A",
+	    "BTN_DISPLAY": "H01011101000A",
+	    "BTN_MENU": "H00000111000A",
+	    "BTN_UP": "H00101111000A",
+	    "BTN_LEFT": "H00101101000A",
+	    "BTN_DOWN": "H10101111000A",
+	    "BTN_RIGHT": "H11001101000A",
+	    "BTN_SELECT": "H10100111000A",
+	    "BTN_VOLUME_UP": "H01001001000A",
+	    "BTN_VOLUME_DOWN": "H11001001000A",
+	    "BTN_MUTING": "H00101001000A",
+	    "BTN_CHANNEL_UP": "H00001001000A",
+	    "BTN_CHANNEL_dOWN": "H10001001000A"
+	}
+    }
+}

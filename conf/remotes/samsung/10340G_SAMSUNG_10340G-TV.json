@@ -1,0 +1,41 @@
+{
+    "description": "SAMSUNG_10340G-TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/samsung/10340G.lircd.conf", "remote": "SAMSUNG_10340G-TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 877, "space": 886},
+	"B": {"mark": 1754, "space": 886},
+	"C": {"mark": 877, "space": 1772},
+	"D": {"mark": 877, "space": 0},
+	"E": {"mark": 875, "space": 886},
+	"F": {"mark": 1754, "space": 1772},
+	"G": {"mark": 1754, "space": 0},
+	"I": {"mark": 1752, "space": 886},
+	"J": {"mark": 1752, "space": 1772},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER2": "EBAAAAAACABD",
+	    "KEY_1": "EABAAAAAAAACD",
+	    "KEY_2": "EABAAAAAAACG",
+	    "KEY_3": "EBAAAAAAAACAD",
+	    "KEY_4": "EABAAAAAACBD",
+	    "KEY_5": "EBAAAAAAACFD",
+	    "KEY_6": "EABAAAAAACAG",
+	    "KEY_7": "EBAAAAAAACAAD",
+	    "KEY_8": "EABAAAAACBAD",
+	    "KEY_9": "EBAAAAAACBCD",
+	    "KEY_0": "EABAAAAAAAAAD",
+	    "KEY_DISPLAYTOGGLE": "EBAAAACAAAAAD",
+	    "INPUT": "EABAAACAABAD",
+	    "KEY_VOLUMEUP": "IAAAAAACFAG",
+	    "KEY_VOLUMEDOWN": "JBAAAACFFD",
+	    "KEY_CHANNELUP": "IAAAAAACBAAD",
+	    "KEY_CHANNELDOWN": "JBAAAACBACD"
+	}
+    }
+}

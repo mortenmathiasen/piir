@@ -1,0 +1,41 @@
+{
+    "description": "PHILIPS_MULTI_TV3 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/TV3.lircd.conf", "remote": "PHILIPS_MULTI_TV3", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 940, "space": 840},
+	"B": {"mark": 1880, "space": 840},
+	"C": {"mark": 940, "space": 1680},
+	"D": {"mark": 940, "space": 0},
+	"E": {"mark": 1880, "space": 1680},
+	"F": {"mark": 1880, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_1": "AABAAAAAAAACD",
+	    "KEY_2": "AABAAAAAAACF",
+	    "KEY_3": "AABAAAAAAACAD",
+	    "KEY_4": "AABAAAAAACBD",
+	    "KEY_5": "AABAAAAAACED",
+	    "KEY_6": "AABAAAAAACAF",
+	    "KEY_7": "AABAAAAAACAAD",
+	    "KEY_8": "AABAAAAACBAD",
+	    "KEY_9": "AABAAAAACBCD",
+	    "KEY_0": "AABAAAAAAAAAD",
+	    "A/V": "AABAAACEBAD",
+	    "TEXT_TV": "AABAAACAAABD",
+	    "KEY_TV": "AABAAACAAAAAD",
+	    "KEY_POWER": "AABAAAAACABD",
+	    "KEY_102ND": "AABAAAAACEF",
+	    "KEY_VOLUMEUP": "AABAAAACBAAD",
+	    "KEY_VOLUMEDOWN": "AABAAAACBACD",
+	    "KEY_CHANNELUP": "AABAAACBAAAD",
+	    "KEY_CHANNELDOWN": "AABAAACBAACD",
+	    "KEY_MUTE": "AABAAAAACAED"
+	}
+    }
+}

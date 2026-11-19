@@ -1,0 +1,32 @@
+{
+    "description": "MC377Z (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/apple/MC377Z.lircd.conf", "remote": "MC377Z", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 610, "space": 0},
+	"B": {"mark": 9141, "space": 2157},
+	"H": {"mark": 9140, "space": 4390},
+	"1": {"mark": 608, "space": 1618},
+	"0": {"mark": 608, "space": 518},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_UP": "H01110111111000010101000000100000A",
+	    "KEY_DOWN": "H01110111111000010011000000100000A",
+	    "KEY_LEFT": "H01110111111000011001000000100000A",
+	    "KEY_RIGHT": "H01110111111000010110000000100000A",
+	    "KEY_PLAY": "H01110111111000011111101000100000AVVVWWWWWWWWXXXYYYYZZZZZZZBA",
+	    "KEY_MENU": "H01110111111000011100000000100000A",
+	    "KEY_OK": "H01110111111000010011101000100000AVVVVXXXXXYYYYZZZZZZZBA"
+	}
+    }
+}

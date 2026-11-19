@@ -1,0 +1,51 @@
+{
+    "description": "test (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/samsung/T-59.lircd.conf", "remote": "test", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 855, "space": 857},
+	"B": {"mark": 1710, "space": 857},
+	"C": {"mark": 855, "space": 1714},
+	"D": {"mark": 855, "space": 0},
+	"E": {"mark": 897, "space": 857},
+	"F": {"mark": 1710, "space": 1714},
+	"G": {"mark": 1710, "space": 0},
+	"I": {"mark": 1752, "space": 1714},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "EABAAAAACABD",
+	    "TTX/MIX": "EABAAACAAABD",
+	    "KEY_1": "EABAAAAAAAACD",
+	    "KEY_2": "EABAAAAAAACG",
+	    "KEY_3": "EABAAAAAAACAD",
+	    "KEY_4": "EABAAAAAACBD",
+	    "KEY_5": "EABAAAAAACFD",
+	    "KEY_6": "EABAAAAAACAG",
+	    "KEY_7": "EABAAAAAACAAD",
+	    "KEY_8": "EABAAAAACBAD",
+	    "KEY_9": "EABAAAAACBCD",
+	    "KEY_0": "EABAAAAAAAAAD",
+	    "KEY_102ND": "EABAAAAACFG",
+	    "Colour": "EABAAAAACAAG",
+	    "KEY_TV": "EABAAACAAAAAD",
+	    "KEY_VIDEO": "EABAAACAABAD",
+	    "Display": "EABAAAAACAAAD",
+	    "KEY_SLEEP": "EABAAACBCAG",
+	    "KEY_MUTE": "EABAAAAACAFD",
+	    "KEY_RED": "IBAAACFFAD",
+	    "KEY_GREEN": "IBAAACFABD",
+	    "KEY_YELLOW": "IBAAACFAFD",
+	    "KEY_BLUE": "IBAAACFAAG",
+	    "P.size": "EABAAAACFAG",
+	    "CH/P+": "IBAAAACBAAD",
+	    "CH/P-": "IBAAAACBACD",
+	    "KEY_VOLUMEDOWN": "IBAAAACFFD",
+	    "KEY_VOLUMEUP": "IBAAAACFAG"
+	}
+    }
+}

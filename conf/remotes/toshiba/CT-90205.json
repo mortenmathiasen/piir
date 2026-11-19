@@ -1,0 +1,31 @@
+{
+    "description": "Toshiba_CT-90205 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/toshiba/CT-90205.lircd.conf", "remote": "Toshiba_CT-90205", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 530, "space": 0},
+	"H": {"mark": 8998, "space": 4546},
+	"1": {"mark": 530, "space": 1709},
+	"0": {"mark": 530, "space": 592},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H11100111010100000100100010110111A",
+	    "input": "H11100111010100000010100011010111A",
+	    "KEY_SETUP": "H11100111010100001010100001010111A",
+	    "KEY_MENU": "H11100111010100001101100000100111A",
+	    "KEY_MUTE": "H11100111010100001000100001110111A",
+	    "freeze": "H11100111010100001010001001011101A",
+	    "KEY_ENTER": "H11100111010100001011100001000111A",
+	    "KEY_VOLUMEDOWN": "H11100111010100000100001010111101A",
+	    "KEY_VOLUMEUP": "H11100111010100001100001000111101A",
+	    "KEY_UP": "H11100111010100000000001011111101A",
+	    "KEY_DOWN": "H11100111010100001000001001111101A",
+	    "KEY_OK": "H11100111010100001100100000110111A"
+	}
+    }
+}

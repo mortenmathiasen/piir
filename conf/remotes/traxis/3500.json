@@ -1,0 +1,32 @@
+{
+    "description": "Traxis_3500 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/traxis/3500.lircd.conf", "remote": "Traxis_3500", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 264, "space": 0},
+	"1": {"mark": 270, "space": 7280},
+	"0": {"mark": 270, "space": 4763},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "10100011110A",
+	    "KEY_1": "11100110101A",
+	    "KEY_2": "10100101101A",
+	    "KEY_3": "11100100101A",
+	    "KEY_4": "10100011101A",
+	    "KEY_5": "11100110100A",
+	    "KEY_6": "10100101100A",
+	    "KEY_7": "11100100100A",
+	    "KEY_8": "10100011100A",
+	    "KEY_9": "11100110011A",
+	    "KEY_0": "10100101011A",
+	    "KEY_CHANNELUP": "11100101000A",
+	    "KEY_CHANNELDOWN": "10100101010A",
+	    "KEY_OK": "11100101001A"
+	}
+    }
+}

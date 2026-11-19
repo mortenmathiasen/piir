@@ -1,0 +1,27 @@
+{
+    "description": "Sony_RM-SV236_15 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-SV236.lircd.conf", "remote": "Sony_RM-SV236_15", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1265, "space": 0},
+	"H": {"mark": 2466, "space": 527},
+	"1": {"mark": 1265, "space": 530},
+	"0": {"mark": 668, "space": 530},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "game_mixing": "H11001100000100A",
+	    "spectrum": "H00101100000100A",
+	    "cinema_effect": "H00000010000100A",
+	    "surround_speaker_mode": "H11111010000100A",
+	    "music_eq": "H00000110000100A",
+	    "movie_eq": "H10000110000100A",
+	    "game_eq": "H01000110000100A",
+	    "p_file": "H10011100000100A"
+	}
+    }
+}

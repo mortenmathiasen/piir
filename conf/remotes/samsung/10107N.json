@@ -1,0 +1,47 @@
+{
+    "description": "Samsung_10107N (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/samsung/10107N.lircd.conf", "remote": "Samsung_10107N", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 929, "space": 862},
+	"B": {"mark": 1858, "space": 862},
+	"C": {"mark": 929, "space": 1724},
+	"D": {"mark": 986, "space": 862},
+	"E": {"mark": 929, "space": 0},
+	"F": {"mark": 1858, "space": 0},
+	"G": {"mark": 1858, "space": 1724},
+	"I": {"mark": 1915, "space": 1724},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACF",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACGE",
+	    "KEY_6": "DABAAAAAACAF",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "KEY_TV": "DABAAACAAAAAE",
+	    "KEY_POWER": "DABAAAAACABE",
+	    "KEY_VIDEO": "DABAAACAABAE",
+	    "Display": "DABAAAAACAAAE",
+	    "KEY_SLEEP": "DABAAACBCAF",
+	    "KEY_102ND": "DABAAAAACGF",
+	    "P.STD": "DABAAAAACAAF",
+	    "KEY_MUTE": "DABAAAAACAGE",
+	    "P.Size": "DABAAAACGAF",
+	    "KEY_VOLUMEDOWN": "IBAAAACGGE",
+	    "KEY_VOLUMEUP": "IBAAAACGAF",
+	    "KEY_CHANNELUP": "IBAAAACBAAE",
+	    "KEY_CHANNELDOWN": "IBAAAACBACE",
+	    "KEY_MENU": "IBAAAACBCF"
+	}
+    }
+}

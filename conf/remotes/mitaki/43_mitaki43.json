@@ -1,0 +1,38 @@
+{
+    "description": "mitaki43 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/mitaki/43.lircd.conf", "remote": "mitaki43", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 630, "space": 0},
+	"H": {"mark": 9657, "space": 4252},
+	"1": {"mark": 630, "space": 1454},
+	"0": {"mark": 630, "space": 407},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H1100001010000100A",
+	    "KEY_2": "H1100001001000100A",
+	    "KEY_3": "H1100001011000100A",
+	    "KEY_4": "H1100001000100100A",
+	    "KEY_5": "H1100001010100100A",
+	    "KEY_6": "H1100001001100100A",
+	    "KEY_7": "H1100001011100100A",
+	    "KEY_8": "H1100001000010100A",
+	    "KEY_9": "H1100001010010100A",
+	    "KEY_0": "H1100001011001100A",
+	    "KEY_POWER": "H1100001011010000A",
+	    "KEY_CHANNELUP": "H1100001010011000A",
+	    "KEY_CHANNELDOWN": "H1100001000011000A",
+	    "KEY_STOP": "H1100001011000000A",
+	    "KEY_PLAY": "H1100001000110000A",
+	    "KEY_FASTFORWARD": "H1100001001100000A",
+	    "KEY_REWIND": "H1100001011100000A",
+	    "KEY_PAUSE": "H1100001010110000A",
+	    "KEY_RECORD": "H1100001000110011A"
+	}
+    }
+}

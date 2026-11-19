@@ -1,0 +1,20 @@
+{
+    "description": "Olympus_RM-2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/olympus/RM-2.lircd.conf", "remote": "Olympus_RM-2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 590, "space": 0},
+	"H": {"mark": 8931, "space": 4536},
+	"1": {"mark": 590, "space": 1671},
+	"0": {"mark": 590, "space": 524},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "CAPTURE": "H01100001110111001000000001111111A"
+	}
+    }
+}

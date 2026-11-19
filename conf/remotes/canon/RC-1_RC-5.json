@@ -1,0 +1,20 @@
+{
+    "description": "CANON-RC1/RC5 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/canon/RC-1_RC-5.lircd.conf", "remote": "CANON-RC1/RC5", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 550, "space": 0},
+	"1": {"mark": 550, "space": 5250},
+	"0": {"mark": 550, "space": 7143},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--",
+    "features": {
+	"key": {
+	    "KEY_S": "0A",
+	    "X_KEY_2S": "1A"
+	}
+    }
+}

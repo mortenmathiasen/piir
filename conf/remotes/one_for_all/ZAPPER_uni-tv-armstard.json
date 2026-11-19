@@ -1,0 +1,25 @@
+{
+    "description": "uni-tv-armstard (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/one_for_all/ZAPPER.lircd.conf", "remote": "uni-tv-armstard", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 908, "space": 0},
+	"H": {"mark": 3574, "space": 3387},
+	"1": {"mark": 913, "space": 2567},
+	"0": {"mark": 913, "space": 825},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------",
+    "features": {
+	"key": {
+	    "KEY_UP": "H011010000100100101111011A",
+	    "KEY_DOWN": "H011010100100100101011011A",
+	    "KEY_LEFT": "H011010111000100101000111A",
+	    "KEY_RIGHT": "H011010011000100101100111A",
+	    "KEY_OK": "H011010000000100101111111A",
+	    "KEY_POWER": "H011010010100100101101011A"
+	}
+    }
+}

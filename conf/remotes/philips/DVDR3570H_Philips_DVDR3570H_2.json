@@ -1,0 +1,21 @@
+{
+    "description": "Philips_DVDR3570H (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/DVDR3570H.lircd.conf", "remote": "Philips_DVDR3570H", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 36000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 889, "space": 889},
+	"B": {"mark": 1778, "space": 889},
+	"C": {"mark": 889, "space": 1778},
+	"D": {"mark": 889, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "AABAAAACBAAD",
+	    "KEY_VOLUMEDOWN": "AABAAAACBACD"
+	}
+    }
+}

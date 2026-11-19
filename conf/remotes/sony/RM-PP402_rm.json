@@ -1,0 +1,40 @@
+{
+    "description": "rm (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-PP402.lircd.conf", "remote": "rm", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 607, "space": 0},
+	"H": {"mark": 2429, "space": 561},
+	"1": {"mark": 1200, "space": 561},
+	"0": {"mark": 607, "space": 561},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "md_record": "H10110101111A",
+	    "md_play": "H01010101111A",
+	    "md_stop": "H00010101111A",
+	    "md_pause": "H10010101111A",
+	    "md_last": "H00000101111A",
+	    "md_next": "H10000101111A",
+	    "md_ffwd": "H00110101111A",
+	    "md_rwnd": "H11010101111A",
+	    "md_enter": "H11011101111A",
+	    "md_shift": "H01010001111A",
+	    "md_off": "H10101001111A",
+	    "md_1": "H00000001111A",
+	    "md_2": "H10000001111A",
+	    "md_3": "H01000001111A",
+	    "md_4": "H11000001111A",
+	    "md_5": "H00100001111A",
+	    "md_6": "H10100001111A",
+	    "md_7": "H01100001111A",
+	    "md_8": "H11100001111A",
+	    "md_9": "H00010001111A",
+	    "md_0": "H10010001111A"
+	}
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "description": "528Z (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/samsung/528Z.lircd.conf", "remote": "528Z", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 510, "space": 539},
+	"B": {"mark": 528, "space": 539},
+	"C": {"mark": 510, "space": 1576},
+	"D": {"mark": 528, "space": 1576},
+	"E": {"mark": 510, "space": 4213},
+	"F": {"mark": 8436, "space": 4213},
+	"G": {"mark": 510, "space": 0},
+	"I": {"mark": 510, "space": 23929},
+	"J": {"mark": 510, "space": 24980},
+	"K": {"mark": 510, "space": 26035},
+	"L": {"mark": 510, "space": 22870},
+	"M": {"mark": 510, "space": 559},
+	"N": {"mark": 546, "space": 539},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------------",
+    "features": {
+	"key": {
+	    "1": "FBCBAAAAAEBAAACBAAKFBCBAAAAAEBAAACBAAG",
+	    "2": "FBCBAAAAAEDBAACBAAJFBCBAAAAAEDBABCBAAG",
+	    "3": "FBCBAAAAAEBCBACBAAJFBCBAAAAAEBCBACBAAG",
+	    "4": "FBCBAAAAAEDDBACBAAIFBCBAAAAAEDDBACBAAG",
+	    "5": "FBCBAAAAAEBACBCBAAJFBCBAAAAAEBACBCBAAG",
+	    "6": "FBCBAAAAAEDBCBCBAAIFBCBAAAAAEDBCBCBAAG",
+	    "7": "FBCBAAAAAEBCDBCBAAIFBCBAAAAAEBCDBCBAAG",
+	    "8": "FBCBAABAAEDDDBCBAALFBCBAAAAAEDDDBCBAAG",
+	    "9": "FBCBAAAAAEBAACDBAAJFBCBAAAAAEBAACDBAAG",
+	    "0": "FBCBAAAAAEDBACDBAAIFBCBAAAAAEDBACDBAAG",
+	    "1-": "FBCBAAABAEBCBCDBAAIFBCBAAAAAEBCBCDBAAG",
+	    "2-": "FBCNAAAAAEDDBCDBAALFBCBAAAAAEDDBCDBAAG",
+	    "tv/video": "FBCBAAAAAEDBCDBAAAIFBCBAAAAAEDBCDBAAAG",
+	    "mute": "FBCBAAAAAEDBACBAAAJFBCBAAAAAEDBACBAAAG",
+	    "standby": "FBCBAAMAAEBCDDBAAAIFBCBAAAAAEBCDDBAAAG",
+	    "c/p+": "FBCBAAAAAEDBAAAAAAKFBCBAAAAAEDBABAAAAG",
+	    "c/p-": "FBDBAAAAAEBCBAAAAAKFBCBAAAAAEBCBAAAABG",
+	    "vol+": "FBCBAAAAAEDDBAAAAAJFBCBAAAAAEDDBAAAAAG",
+	    "vol-": "FBCBAAAAAEBACBAAAAKFBCBAAAAAEBACBAAAAG",
+	    "contrast+": "FBCBAAAAAEBCDBAAAAJFBCBAAAAAEBCDBAAAAG",
+	    "contrast-": "FBCBAAAAAEDBCBAAAAJFBCBAAAAAEDBCBAAAAG",
+	    "color+": "FBCBAAAAAEBAACBAAAKFBCBAAAAAEBAACBAAAG",
+	    "color-": "FBCBAAAAAEDDDBAAAAIFBCBAAAAAEDDDBAAAAG"
+	}
+    }
+}

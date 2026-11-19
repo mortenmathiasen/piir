@@ -1,0 +1,34 @@
+{
+    "description": "Philips_CD720 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/CD720.lircd.conf", "remote": "Philips_CD720", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 869, "space": 903},
+	"B": {"mark": 1738, "space": 1806},
+	"C": {"mark": 1738, "space": 903},
+	"D": {"mark": 869, "space": 1806},
+	"E": {"mark": 947, "space": 903},
+	"F": {"mark": 869, "space": 0},
+	"G": {"mark": 1738, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_TIME": "EAABCAADBAF",
+	    "SCAN": "EAABCDBBAF",
+	    "KEY_AGAIN": "EAABCADAABF",
+	    "KEY_OPEN": "EAABCDBABF",
+	    "KEY_PAUSE": "EAABCDACAAF",
+	    "SHUFFLE": "EAABCADAACF",
+	    "KEY_STOP": "EAABCDABAG",
+	    "KEY_PLAY": "EAABCDABBF",
+	    "KEY_PREVIOUS": "EAABCDCAADF",
+	    "KEY_NEXT": "EAABCDCAAAF",
+	    "KEY_VOLUMEDOWN": "EAABCADCADF",
+	    "KEY_VOLUMEUP": "EAABCADCAAF"
+	}
+    }
+}

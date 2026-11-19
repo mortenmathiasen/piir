@@ -1,0 +1,42 @@
+{
+    "description": "ZENITH_VCR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/zenith/VCR.lircd.conf", "remote": "ZENITH_VCR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 631, "space": 0},
+	"1": {"mark": 692, "space": 4908},
+	"0": {"mark": 692, "space": 304},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "110101101101110110110A",
+	    "KEY_1": "101110110110101110110A",
+	    "KEY_2": "101110110101110110110A",
+	    "KEY_3": "101110110101101110110A",
+	    "KEY_4": "101110101110110110110A",
+	    "KEY_5": "101110101110101110110A",
+	    "KEY_6": "101110101101110110110A",
+	    "KEY_7": "101110101101101110110A",
+	    "KEY_8": "101101110110110110110A",
+	    "KEY_9": "101101110110101110110A",
+	    "KEY_0": "101110110110110110110A",
+	    "KEY_ENTER": "101101101110110110110A",
+	    "KEY_CHANNELUP": "110101110110101110110A",
+	    "KEY_CHANNELDOWN": "110110110110101110110A",
+	    "KEY_VOLUMEUP": "110101110101110110110A",
+	    "KEY_VOLUMEDOWN": "110110110101110110110A",
+	    "KEY_REWIND": "110110110101101110110A",
+	    "KEY_PLAY": "110110101110101110110A",
+	    "KEY_FASTFORWARD": "110101101110110110110A",
+	    "KEY_STOP": "110110101110110110110A",
+	    "rev": "110101101101101110110A",
+	    "KEY_FORWARD": "101101101101101110110A",
+	    "KEY_PAUSE": "101101110101101110110A",
+	    "KEY_MUTE": "110101110101101110110A"
+	}
+    }
+}

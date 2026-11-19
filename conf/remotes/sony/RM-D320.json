@@ -1,0 +1,45 @@
+{
+    "description": "RM-D320 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-D320.lircd.conf", "remote": "RM-D320", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1253, "space": 0},
+	"H": {"mark": 2457, "space": 539},
+	"1": {"mark": 652, "space": 539},
+	"0": {"mark": 1253, "space": 539},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H10110010111A",
+	    "KEY_PAUSE": "H01100010111A",
+	    "KEY_STOP": "H11100010111A",
+	    "track_down": "H11110010111A",
+	    "track_up": "H01110010111A",
+	    "rev": "H00110010111A",
+	    "KEY_FASTFORWARD": "H11010010111A",
+	    "KEY_AGAIN": "H11001010111A",
+	    "fader": "H00000100111A",
+	    "KEY_TIME": "H11101010111A",
+	    "check": "H01001110111A",
+	    "KEY_CLEAR": "H00001110111A",
+	    ">10": "H00011010111A",
+	    "KEY_0": "H11111010111A",
+	    "KEY_9": "H11101110111A",
+	    "KEY_8": "H00011110111A",
+	    "KEY_7": "H10011110111A",
+	    "KEY_6": "H01011110111A",
+	    "KEY_5": "H11011110111A",
+	    "KEY_4": "H00111110111A",
+	    "KEY_3": "H10111110111A",
+	    "KEY_2": "H01111110111A",
+	    "KEY_1": "H11111110111A",
+	    "continue": "H01000110111A",
+	    "shuffle": "H01010010111A",
+	    "program": "H00000110111A"
+	}
+    }
+}

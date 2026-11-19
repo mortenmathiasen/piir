@@ -1,0 +1,21 @@
+{
+    "description": "One_for_All_URC-7830 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/one_for_all/URC-7830.lircd.conf", "remote": "One_for_All_URC-7830", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1286, "space": 0},
+	"H": {"mark": 2498, "space": 493},
+	"1": {"mark": 1286, "space": 505},
+	"0": {"mark": 694, "space": 505},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "H10111101010011A",
+	    "KEY_VOLUMEDOWN": "H10111001100011A"
+	}
+    }
+}

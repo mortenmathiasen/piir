@@ -1,0 +1,38 @@
+{
+    "description": "Philips_RC19335003/01P (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC19335003_01P.lircd.conf", "remote": "Philips_RC19335003/01P", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 991, "space": 802},
+	"B": {"mark": 1982, "space": 802},
+	"C": {"mark": 991, "space": 1604},
+	"D": {"mark": 1009, "space": 802},
+	"E": {"mark": 991, "space": 0},
+	"F": {"mark": 1982, "space": 0},
+	"G": {"mark": 1982, "space": 1604},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACF",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACGE",
+	    "KEY_6": "DABAAAAAACAF",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "KEY_POWER": "DABAAAAACABE",
+	    "KEY_VOLUMEUP": "DABAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
+	    "KEY_CHANNELUP": "DABAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DABAAACBAACE",
+	    "KEY_MUTE": "DABAAAAACAGE"
+	}
+    }
+}

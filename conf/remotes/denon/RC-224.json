@@ -1,0 +1,44 @@
+{
+    "description": "RC-224 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/denon/RC-224.lircd.conf", "remote": "RC-224", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 306, "space": 0},
+	"1": {"mark": 300, "space": 1813},
+	"0": {"mark": 300, "space": 738},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_OPEN": "000100000101000A",
+	    "fader": "000100110111000A",
+	    "prog": "000101011001000A",
+	    "KEY_1": "000100100001000A",
+	    "KEY_2": "000101100001000A",
+	    "KEY_3": "000100010001000A",
+	    "KEY_4": "000101010001000A",
+	    "KEY_5": "000100110001000A",
+	    "KEY_6": "000101110001000A",
+	    "KEY_7": "000100001001000A",
+	    "KEY_8": "000101001001000A",
+	    "KEY_9": "000100101001000A",
+	    "KEY_0": "000101000001000A",
+	    "KEY_10CHANNELSUP": "000100011001000A",
+	    "call": "000100100101000A",
+	    "KEY_PLAY": "000100011101000A",
+	    "KEY_PAUSE": "000101011101000A",
+	    "KEY_STOP": "000100111101000A",
+	    "KEY_VOLUMEUP": "000100111001000A",
+	    "KEY_VOLUMEDOWN": "000101111001000A",
+	    "KEY_NEXT": "000100001101000A",
+	    "KEY_PREVIOUS": "000101001101000A",
+	    "KEY_AGAIN": "000100010101000A",
+	    "random": "000100101011000A",
+	    "KEY_REWIND": "000101101101000A",
+	    "KEY_FASTFORWARD": "000100101101000A"
+	}
+    }
+}

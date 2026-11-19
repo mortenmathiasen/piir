@@ -1,0 +1,38 @@
+{
+    "description": "Marantz_RC8000PM (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/marantz/RC8000PM.lircd.conf", "remote": "Marantz_RC8000PM", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 874, "space": 874},
+	"B": {"mark": 896, "space": 853},
+	"C": {"mark": 896, "space": 832},
+	"D": {"mark": 1792, "space": 874},
+	"E": {"mark": 874, "space": 1770},
+	"F": {"mark": 917, "space": 832},
+	"G": {"mark": 874, "space": 896},
+	"I": {"mark": 874, "space": 1749},
+	"J": {"mark": 874, "space": 4437},
+	"K": {"mark": 896, "space": 0},
+	"L": {"mark": 896, "space": 4416},
+	"M": {"mark": 896, "space": 1728},
+	"N": {"mark": 917, "space": 853},
+	"O": {"mark": 1792, "space": 0},
+	"P": {"mark": 1792, "space": 1749},
+	"Q": {"mark": 1813, "space": 0},
+	"R": {"mark": 1813, "space": 832},
+	"S": {"mark": 1813, "space": 853},
+	"T": {"mark": 1813, "space": 1728},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------",
+    "features": {
+	"key": {
+	    "POWER_ON": "BPDAAJAICDAAAAAEK",
+	    "POWER_OFF": "NCCDAAJAEBDAAGGEO",
+	    "AUX-1": "BTSBBLBBBBBABBMFQ",
+	    "AUX-2": "FCCRBBLBAAAAAAAICFK"
+	}
+    }
+}

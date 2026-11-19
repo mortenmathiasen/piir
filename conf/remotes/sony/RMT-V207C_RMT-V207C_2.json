@@ -1,0 +1,21 @@
+{
+    "description": "RMT-V207C (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V207C.lircd.conf", "remote": "RMT-V207C", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1200, "space": 0},
+	"H": {"mark": 2494, "space": 605},
+	"1": {"mark": 1203, "space": 599},
+	"0": {"mark": 602, "space": 599},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "SHOWVIEW": "H00000110101110A",
+	    "VPS/PDC": "H00011010101110A"
+	}
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "description": "ONIDA_TVE_21 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/onida/TVE_21.lircd.conf", "remote": "ONIDA_TVE_21", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 577, "space": 0},
+	"H": {"mark": 8505, "space": 4153},
+	"1": {"mark": 576, "space": 1527},
+	"0": {"mark": 576, "space": 477},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H1100000011101000A",
+	    "tv-video": "H1100000011001000A",
+	    "color-system": "H1100000001001001A",
+	    "display": "H1100000000100000A",
+	    "KEY_MENU": "H1100000001011110A",
+	    "sleep-timer": "H1100000011000000A",
+	    "surround": "H1100000001000010A",
+	    "vsm": "H1100000010011110A",
+	    "ssm": "H1100000000001001A",
+	    "chdn": "H1100000000011000A",
+	    "KEY_CHANNELUP": "H1100000010011000A",
+	    "KEY_VOLUMEDOWN": "H1100000011111000A",
+	    "KEY_VOLUMEUP": "H1100000001111000A",
+	    "KEY_MUTE": "H1100000000111000A",
+	    "picture-sound": "H1100000011011110A",
+	    "picsnd-up": "H1100000001011010A",
+	    "picsnd-dn": "H1100000011011010A",
+	    "digits": "H1100000010111001A",
+	    "KEY_1": "H1100000010000100A",
+	    "KEY_2": "H1100000001000100A",
+	    "KEY_3": "H1100000011000100A",
+	    "KEY_4": "H1100000000100100A",
+	    "KEY_5": "H1100000010100100A",
+	    "KEY_6": "H1100000001100100A",
+	    "KEY_7": "H1100000011100100A",
+	    "KEY_8": "H1100000000010100A",
+	    "KEY_9": "H1100000010010100A",
+	    "KEY_0": "H1100000000000100A"
+	}
+    }
+}

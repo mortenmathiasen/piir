@@ -1,0 +1,35 @@
+{
+    "description": "ANIMAX_MOUSE_PAD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/animax/animax.lircd.conf", "remote": "ANIMAX_MOUSE_PAD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 562, "space": 0},
+	"H": {"mark": 4500, "space": 4500},
+	"1": {"mark": 562, "space": 1682},
+	"0": {"mark": 562, "space": 562},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------",
+    "features": {
+	"key": {
+	    "MOUSE_NNW": "H000011111111011000001001A",
+	    "MOUSE_NW": "H000011111111010000001011A",
+	    "MOUSE_NWW": "H000011110111011010001001A",
+	    "MOUSE_W": "H000011110111010010001011A",
+	    "MOUSE_SWW": "H000011111011011001001001A",
+	    "MOUSE_SW": "H000011111011010001001011A",
+	    "MOUSE_SSW": "H000011110011011011001001A",
+	    "MOUSE_S": "H000011110011010011001011A",
+	    "MOUSE_SSE": "H000011111101011000101001A",
+	    "MOUSE_SE": "H000011111101010000101011A",
+	    "MOUSE_SEE": "H000011110101011010101001A",
+	    "MOUSE_E": "H000011110101010010101011A",
+	    "MOUSE_NEE": "H000011111001011001101001A",
+	    "MOUSE_NE": "H000011111001010001101011A",
+	    "MOUSE_NNE": "H000011110001011011101001A",
+	    "MOUSE_N": "H000011110001010011101011A"
+	}
+    }
+}

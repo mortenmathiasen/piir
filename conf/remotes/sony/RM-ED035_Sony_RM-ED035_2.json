@@ -1,0 +1,42 @@
+{
+    "description": "Sony_RM-ED035 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-ED035.lircd.conf", "remote": "Sony_RM-ED035", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1257, "space": 0},
+	"B": {"mark": 652, "space": 0},
+	"H": {"mark": 2494, "space": 555},
+	"1": {"mark": 1257, "space": 539},
+	"0": {"mark": 652, "space": 539},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "SYNC_MENU": "H00011010101100B",
+	    "KEY_PREVIOUS": "H00111101110100A",
+	    "KEY_STOP": "H00011001110100A",
+	    "KEY_NEXT": "H10111101110100A",
+	    "I-MANUAL": "H11011110101100B",
+	    "SCENE": "H00011110101100B",
+	    "ASPECT_RATIO": "H10111100010010A",
+	    "DIGITAL_ANALOG": "H10110001110111B",
+	    "THEATRE": "H00000111110111B",
+	    "FBACKWARD": "H11011001110100A",
+	    "KEY_PLAY": "H01011001110100A",
+	    "KEY_FASTFORWARD": "H00111001110100A",
+	    "INTERNET_VIDEO": "H10011110101100B",
+	    "KEY_EPG": "H11011010010010A",
+	    "KEY_FAVORITES": "H01101111110111B",
+	    "KEY_OPTION": "H01101101110100A",
+	    "KEY_ENTER": "H11000101110100A",
+	    "KEY_RED": "H10100101110100A",
+	    "KEY_GREEN": "H01100101110100A",
+	    "KEY_YELLOW": "H11100101110100A",
+	    "KEY_BLUE": "H00100101110100A",
+	    "KEY_SUBTITLE": "H00010101110100A"
+	}
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "description": "Sony_RM-V302-DVD010 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-V302.lircd.conf", "remote": "Sony_RM-V302-DVD010", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 889, "space": 889},
+	"B": {"mark": 1778, "space": 889},
+	"C": {"mark": 1778, "space": 1778},
+	"D": {"mark": 889, "space": 1778},
+	"E": {"mark": 889, "space": 0},
+	"F": {"mark": 1778, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "AAACBAADABE",
+	    "KEY_1": "AAACBDBDCE",
+	    "KEY_2": "AAACBDBDAF",
+	    "KEY_3": "AAACBDBDAAE",
+	    "KEY_4": "AAACBADABDE",
+	    "KEY_5": "AAACBDAAACE",
+	    "KEY_6": "AAACBADCAF",
+	    "KEY_7": "AAACBADCAAE",
+	    "KEY_8": "AAACBADABAE",
+	    "KEY_9": "AAACBDCCAE",
+	    "KEY_0": "AAACBADAACE",
+	    "KEY_VOLUMEUP": "AABAAAADBAAE",
+	    "KEY_VOLUMEDOWN": "AABAAAADBADE",
+	    "KEY_CHANNELUP": "AAACBDACBE",
+	    "KEY_CHANNELDOWN": "AAACBDABDAE",
+	    "TV/VIDEO": "AAACBAAAAAAE",
+	    "DISPLAY": "AAACBDABDF",
+	    "KEY_SLEEP": "AAACBADBAAE",
+	    "KEY_MUTE": "AABAAAAADACE",
+	    "KEY_AGAIN": "AAACBAAAAADE",
+	    "KEY_UP": "AAACBAAAADF",
+	    "KEY_DOWN": "AAACBAADBAE",
+	    "KEY_LEFT": "AAACBAAADBE",
+	    "KEY_RIGHT": "AAACBAAADAF",
+	    "KEY_MENU": "AAACBAAAADAE",
+	    "KEY_OK": "AAACBAAADCE",
+	    "SEEK-": "AAACBDACCE",
+	    "KEY_PLAY": "AAACBDABAAE",
+	    "SEEK+": "AAACBDACAF",
+	    "KEY_PAUSE": "AAACBDAAABE",
+	    "KEY_STOP": "AAACBDBAAAE"
+	}
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "description": "HITACHI_VM-rmE55A (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/hitachi/VM-rmE55A.lircd.conf", "remote": "HITACHI_VM-rmE55A", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 634, "space": 0},
+	"H": {"mark": 9080, "space": 4389},
+	"1": {"mark": 634, "space": 1587},
+	"0": {"mark": 634, "space": 463},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_REWIND": "H00000110011110010101000010101111A",
+	    "KEY_FASTFORWARD": "H00000110011110011001000001101111A",
+	    "KEY_STOP": "H00000110011110011101000000101111A",
+	    "KEY_PLAY": "H00000110011110010010100011010111A",
+	    "KEY_PAUSE": "H00000110011110010101100010100111A",
+	    "A/V_DUB": "H00000110011110010101110010100011A",
+	    "ZOOM_T": "H10000110111110011001100101100110A",
+	    "ZOOM_W": "H10000110111110011101100100100110A",
+	    "DISPLAY": "H00000110011110010100001010111101A",
+	    "COUNTER_RESET": "H00000110011110011000001001111101A",
+	    "KEY_TITLE": "H10000110111110011010110101010010A",
+	    "S._EDIT": "H00000110011110011011001001001101A"
+	}
+    }
+}

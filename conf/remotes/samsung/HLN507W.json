@@ -1,0 +1,33 @@
+{
+    "description": "Samsung_HLN507W (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/samsung/HLN507W.lircd.conf", "remote": "Samsung_HLN507W", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 604, "space": 0},
+	"H": {"mark": 4503, "space": 4301},
+	"1": {"mark": 605, "space": 1540},
+	"0": {"mark": 605, "space": 411},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "off": "H11100000111000000001100111100110A",
+	    "KEY_POWER": "H11100000111000001001100101100110A",
+	    "KEY_VIDEO": "H11100000111000001000001101111100A",
+	    "video2": "H11100000111000000001111111100000A",
+	    "video3": "H11100000111000001001111101100000A",
+	    "svideo1": "H11100000111000001010000101011110A",
+	    "svideo2": "H11100000111000001101111100100000A",
+	    "svideo3": "H11100000111000000100001110111100A",
+	    "component1": "H11100000111000001100001000111101A",
+	    "component2": "H11100000111000001011111101000000A",
+	    "component3": "H11100000111000001100001100111100A",
+	    "antenna": "H11100000111000001101100000100111A",
+	    "dvi": "H11100000111000001111111100000000A",
+	    "KEY_PC": "H11100000111000001001011001101001A"
+	}
+    }
+}

@@ -1,0 +1,68 @@
+name: LIRC remotes
+
+# Checks the LIRC remote converter against LIRC itself and that the remotes in
+# conf/remotes are exactly what it produces from the revision of the LIRC
+# remote database in tools/lirc-remotes.txt.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'tools/lirc2piir.py'
+      - 'tools/lirc-remotes*.txt'
+      - 'conf/remotes/**'
+      - 'tests/lirc/**'
+      - '.github/workflows/lirc-remotes.yml'
+  pull_request:
+    paths:
+      - 'tools/lirc2piir.py'
+      - 'tools/lirc-remotes*.txt'
+      - 'conf/remotes/**'
+      - 'tests/lirc/**'
+      - '.github/workflows/lirc-remotes.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lirc-remotes:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install LIRC
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends lirc
+          irsimsend --version
+
+      - name: Fetch the LIRC remote database
+        run: |
+          repo=$(awk '$1 == "repository" {print $2}' tools/lirc-remotes.txt)
+          revision=$(awk '$1 == "revision" {print $2}' tools/lirc-remotes.txt)
+          git clone --quiet "$repo" "$RUNNER_TEMP/lirc-remotes"
+          git -C "$RUNNER_TEMP/lirc-remotes" checkout --quiet "$revision"
+          latest=$(git -C "$RUNNER_TEMP/lirc-remotes" rev-parse origin/HEAD)
+          if [ "$latest" != "$revision" ]; then
+            echo "::notice::The LIRC remote database has newer commits than $revision"
+          fi
+
+      - name: Compare the converter with irsimsend
+        run: python3 tools/lirc2piir.py verify "$RUNNER_TEMP/lirc-remotes/remotes"
+
+      - name: Regenerate the converted remotes
+        run: |
+          # Remove the converted remotes, keeping PIIR's own
+          find conf/remotes -name '*.json' -exec grep -l '"lirc-remotes":' {} + | xargs rm -f
+          find conf/remotes -type d -empty -delete
+          python3 tools/lirc2piir.py convert -o conf/remotes \
+            --report tools/lirc-remotes-report.txt "$RUNNER_TEMP/lirc-remotes/remotes"
+
+      - name: Check they are unchanged
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git status --short | head -50
+            echo "::error::conf/remotes differs from the converter output, run tools/lirc2piir.py convert"
+            exit 1
+          fi

@@ -1,0 +1,50 @@
+{
+    "description": "Philips_DVP-5982 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/DVP-5982.lircd.conf", "remote": "Philips_DVP-5982", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 444, "space": 444},
+	"B": {"mark": 444, "space": 888},
+	"C": {"mark": 888, "space": 444},
+	"D": {"mark": 888, "space": 888},
+	"E": {"mark": 444, "space": 0},
+	"F": {"mark": 888, "space": 0},
+	"H": {"mark": 2667, "space": 889},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "HBAABCAAAADACBAACAE",
+	    "KEY_UP": "HBAABCAAAADAADCBAAE",
+	    "KEY_MENU": "HBAABCAAAADACBDAAF",
+	    "Display": "HBAABCAAAADAAAAACAAE",
+	    "KEY_OK": "HBAABCAAAADAADCABAE",
+	    "KEY_RIGHT": "HBAABCAAAADAADCBCE",
+	    "KEY_LEFT": "HBAABCAAAADAADCBDE",
+	    "KEY_DOWN": "HBAABCAAAADAADCBAF",
+	    "KEY_PLAYPAUSE": "HBAABCAAAADAAADCBAE",
+	    "KEY_NEXT": "HBAABCAAAADAAADAAAAE",
+	    "KEY_PREVIOUS": "HBAABCAAAADAAADAAAF",
+	    "KEY_STOP": "HBAABCAAAADAAACBAAF",
+	    "USB": "HBAABCAAAADAACAAAABE",
+	    "KEY_1": "HBAABCAAAADAAAAAAAAF",
+	    "KEY_2": "HBAABCAAAADAAAAAAADE",
+	    "KEY_3": "HBAABCAAAADAAAAAAACE",
+	    "KEY_4": "HBAABCAAAADAAAAAADAE",
+	    "KEY_5": "HBAABCAAAADAAAAAADF",
+	    "KEY_6": "HBAABCAAAADAAAAAACBE",
+	    "KEY_7": "HBAABCAAAADAAAAAACAE",
+	    "KEY_8": "HBAABCAAAADAAAAADAAE",
+	    "KEY_9": "HBAABCAAAADAAAAADAF",
+	    "KEY_0": "HBAABCAAAADAAAAAAAAAE",
+	    "KEY_AUDIO": "HBAABCAAAADAADACABE",
+	    "KEY_SUBTITLE": "HBAABCAAAADAADADCE",
+	    "KEY_ZOOM": "HBAABCAAAADACAABCAE",
+	    "KEY_AGAIN": "HBAABCAAAADAAAACABF",
+	    "Repeat_A-B": "HBAABCAAAADAAACABCE"
+	}
+    }
+}

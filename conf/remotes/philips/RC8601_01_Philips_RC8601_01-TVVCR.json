@@ -1,0 +1,40 @@
+{
+    "description": "Philips_RC8601_01-TVVCR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC8601_01.lircd.conf", "remote": "Philips_RC8601_01-TVVCR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 932, "space": 843},
+	"B": {"mark": 1864, "space": 843},
+	"C": {"mark": 932, "space": 1686},
+	"D": {"mark": 969, "space": 843},
+	"E": {"mark": 932, "space": 0},
+	"F": {"mark": 1864, "space": 1686},
+	"G": {"mark": 1864, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_SLEEP": "DABAAAAACABE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACG",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACFE",
+	    "KEY_6": "DABAAAAAACAG",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "KEY_NEXT": "DABAAACBAAAE",
+	    "KEY_PREVIOUS": "DABAAACBAACE",
+	    "KEY_PLAY": "DABCFAAFFE",
+	    "KEY_STOP": "DABCFAAFAG",
+	    "KEY_PAUSE": "DABCFAABAAE",
+	    "KEY_FASTFORWARD": "DABCFAAFBE",
+	    "KEY_REWIND": "DABCFAABCG"
+	}
+    }
+}

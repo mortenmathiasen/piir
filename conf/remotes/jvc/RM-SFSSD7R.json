@@ -1,0 +1,50 @@
+{
+    "description": "RM-SFSSD7R (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-SFSSD7R.lircd.conf", "remote": "RM-SFSSD7R", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 593, "space": 0},
+	"H": {"mark": 8587, "space": 4221},
+	"1": {"mark": 596, "space": 1533},
+	"0": {"mark": 596, "space": 478},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "DIMMER": "H1100110101001010A",
+	    "KEY_SLEEP": "H1100010111000000A",
+	    "KEY_POWER": "H1100010111101000A",
+	    "DISPLAY": "H1100010100001110A",
+	    "AUTO_PRESET": "H1100010111101110A",
+	    "FM_MODE": "H1100010101011010A",
+	    "PROGRAM": "H1100110101010110A",
+	    "RANDOM": "H1100110101001110A",
+	    "KEY_AGAIN": "H1100110111011010A",
+	    "AHB_PRO": "H1100010110101110A",
+	    "DOOR_SLIDE": "H1111010100010101A",
+	    "CD_EJECT": "H1100110100100010A",
+	    "BASS": "H1100010110001100A",
+	    "TREBLE": "H1100010111101100A",
+	    "KEY_CANCEL": "H1100110110110110A",
+	    "PTY/EON": "H1111010110100001A",
+	    "KEY_UP": "H1111010100000011A",
+	    "DISPLAY_MODE": "H1111010111000001A",
+	    "KEY_LEFT": "H1111010111000011A",
+	    "SET": "H1111010110001001A",
+	    "KEY_RIGHT": "H1111010101000011A",
+	    "FADE_MUTING": "H1100010100111000A",
+	    "KEY_DOWN": "H1111010110000011A",
+	    "MD/AUX": "H1100010101111100A",
+	    "CD_PLAY": "H1100110111010110A",
+	    "FM/AM": "H1100010111010000A",
+	    "KEY_FORWARD": "H1111010110100000A",
+	    "BWD": "H1111010101100000A",
+	    "KEY_STOP": "H1100110111000010A",
+	    "KEY_KPPLUS": "H1100010101111000A",
+	    "KEY_KPMINUS": "H1100010111111000A"
+	}
+    }
+}

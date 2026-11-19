@@ -1,0 +1,44 @@
+{
+    "description": "RC-241 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/denon/RC-241.lircd.conf", "remote": "RC-241", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 336, "space": 0},
+	"1": {"mark": 336, "space": 717},
+	"0": {"mark": 336, "space": 1773},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_OPEN": "111011111010111A",
+	    "call": "111011011010111A",
+	    "direct": "111010001010111A",
+	    "KEY_1": "111011011110111A",
+	    "KEY_2": "111010011110111A",
+	    "KEY_3": "111011101110111A",
+	    "KEY_4": "111010101110111A",
+	    "KEY_5": "111011001110111A",
+	    "KEY_6": "111010001110111A",
+	    "KEY_7": "111011110110111A",
+	    "KEY_8": "111010110110111A",
+	    "KEY_9": "111011010110111A",
+	    "KEY_0": "111010010110111A",
+	    "KEY_10CHANNELSUP": "111011100110111A",
+	    "KEY_PLAY": "111011100010111A",
+	    "KEY_VOLUMEUP": "111011000110111A",
+	    "KEY_VOLUMEDOWN": "111010000110111A",
+	    "KEY_PAUSE": "111010100010111A",
+	    "KEY_STOP": "111011000010111A",
+	    "a_space": "111010111100111A",
+	    "all": "111011101010111A",
+	    "a-b": "111010101010111A",
+	    "KEY_REWIND": "111010010010111A",
+	    "wind": "111011010010111A",
+	    "KEY_PREVIOUS": "111010110010111A",
+	    "KEY_NEXT": "111011110010111A"
+	}
+    }
+}

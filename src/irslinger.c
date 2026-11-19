@@ -94,8 +94,8 @@ int transmitWave(uint32_t outPin, gpioPulse_t *irSignal, unsigned int *pulseCoun
   gpioWaveClear();
 
   if (log_get_level() <= LOG_TRACE) {
-    for (int i ; i < *pulseCount ; i++)
-      log_trace("%s=%zu", irSignal[i].gpioOn?"On":"Off", irSignal[i].usDelay);
+    for (unsigned int i = 0 ; i < *pulseCount ; i++)
+      log_trace("%s=%u", irSignal[i].gpioOn?"On":"Off", irSignal[i].usDelay);
   }
   
   int result = gpioWaveAddGeneric(*pulseCount, irSignal);
@@ -106,7 +106,7 @@ int transmitWave(uint32_t outPin, gpioPulse_t *irSignal, unsigned int *pulseCoun
     }
   else if (result!=*pulseCount)
     {
-      log_trace("gpioWaveAddGeneric: added %zu different from expected %zu", result, *pulseCount);
+      log_trace("gpioWaveAddGeneric: added %d different from expected %u", result, *pulseCount);
       abort();
     }
   int waveID = gpioWaveCreate();

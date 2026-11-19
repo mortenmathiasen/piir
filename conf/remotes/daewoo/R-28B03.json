@@ -1,0 +1,50 @@
+{
+    "description": "DAEWOO (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/daewoo/R-28B03.lircd.conf", "remote": "DAEWOO", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 933, "space": 855},
+	"B": {"mark": 1866, "space": 855},
+	"C": {"mark": 933, "space": 1710},
+	"D": {"mark": 990, "space": 855},
+	"E": {"mark": 933, "space": 0},
+	"F": {"mark": 1866, "space": 1710},
+	"G": {"mark": 1866, "space": 0},
+	"I": {"mark": 1923, "space": 1710},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "Standby": "DABAAAAACABE",
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACG",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACFE",
+	    "KEY_6": "DABAAAAAACAG",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "Src": "DABAAACAABAE",
+	    "KEY_MENU": "IBAAAACBCG",
+	    "KEY_UP": "DABAAACBAAAE",
+	    "KEY_LEFT": "DABAAAACBACE",
+	    "KEY_OK": "IBAAAACFAAE",
+	    "KEY_RIGHT": "DABAAAACBAAE",
+	    "KEY_DOWN": "DABAAACBAACE",
+	    "KEY_SLEEP": "DABAAACBCAG",
+	    "KEY_MUTE": "DABAAAAACAFE",
+	    "KEY_AGAIN": "DABAAAAACAAAE",
+	    "Del": "DABAAACAFAAE",
+	    "Move": "DABAAACAFAG",
+	    "KEY_NEXT": "DABAAACFAFE",
+	    "KEY_TIME": "DABAAACABCG",
+	    "KEY_MODE": "DABAAACAFBE",
+	    "KEY_TEXT": "DABAAACAAABE"
+	}
+    }
+}

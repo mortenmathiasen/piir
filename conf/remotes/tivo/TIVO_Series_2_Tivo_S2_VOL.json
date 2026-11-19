@@ -1,0 +1,22 @@
+{
+    "description": "Tivo_S2_VOL (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/tivo/TIVO_Series_2.lircd.conf", "remote": "Tivo_S2_VOL", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1250, "space": 0},
+	"H": {"mark": 2432, "space": 517},
+	"1": {"mark": 1250, "space": 572},
+	"0": {"mark": 686, "space": 572},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "Mute": "H00101000000A",
+	    "Vol_up": "H01001000000A",
+	    "Vol_down": "H11001000000A"
+	}
+    }
+}

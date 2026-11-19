@@ -1,0 +1,42 @@
+{
+    "description": "Pace_DC621 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pace/DC621KU.lircd.conf", "remote": "Pace_DC621", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 205, "space": 212},
+	"B": {"mark": 276, "space": 168},
+	"C": {"mark": 248, "space": 168},
+	"D": {"mark": 276, "space": 544},
+	"E": {"mark": 205, "space": 568},
+	"F": {"mark": 205, "space": 403},
+	"G": {"mark": 276, "space": 709},
+	"I": {"mark": 510, "space": 168},
+	"J": {"mark": 205, "space": 0},
+	"K": {"mark": 248, "space": 180},
+	"L": {"mark": 276, "space": 378},
+	"M": {"mark": 248, "space": 0},
+	"N": {"mark": 205, "space": 733},
+	"O": {"mark": 276, "space": 0},
+	"V": {"mark": 0, "space": 10000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------------------------",
+    "features": {
+	"key": {
+	    "1": "IBDACGACBBDFEACBLJVVVVVVVVVXXYYYYYIBDACGACBBDFEACBLJ",
+	    "2": "IBDACGACBDEFEAKBDJVVVVVVVVVXXYYYYYIBDACGACBDEFEAKBDJ",
+	    "3": "IBDACGAKBBDFEACBGJVVVVVVVVVXXYYYYYIBDACGAKBBDFEACBGJ",
+	    "4": "IBDACGAKBDEFEACLAMVVVVVVVVVXXYYYYYIBDACGAKBDEFEACLAM",
+	    "5": "IBDACGACBBDFEACLFJVVVVVVVVVXXYYYYYIBDACGACBBDFEACLFJ",
+	    "6": "IBDACGACBDEFEACLEJVVVVVVVVVXXYYYYYIBDACGACBDEFEACLEJ",
+	    "7": "IBDACGACBDEFEACLNJVVVVVVVVVXXYYYYYIBDACGACBDEFEACLNJ",
+	    "8": "IBDACGAKBBDFEACDAMVVVVVVVVVXXYYYYYIBDACGAKBBDFEACDAM",
+	    "9": "IBDACGACBDEFEACDFJVVVVVVVVVXXYYYYYIBDACGACBDEFEACDFJ",
+	    "0": "IBDAKGACBBDFEAKBBOVVVVVVVVVXXYYYYYIBDAKGACBBDFEAKBBO"
+	}
+    }
+}

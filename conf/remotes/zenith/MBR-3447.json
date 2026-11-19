@@ -1,0 +1,48 @@
+{
+    "description": "zenith (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/zenith/MBR-3447.lircd.conf", "remote": "zenith", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 42000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 736, "space": 0},
+	"1": {"mark": 736, "space": 4444},
+	"0": {"mark": 736, "space": 253},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "KEY_0": "0101110110110110A",
+	    "KEY_1": "0101110110110101A",
+	    "KEY_2": "0101110110101110A",
+	    "KEY_3": "0101110110101101A",
+	    "KEY_4": "0101110101110110A",
+	    "KEY_5": "0101110101110101A",
+	    "KEY_6": "0101110101101110A",
+	    "KEY_7": "0101110101101101A",
+	    "KEY_8": "0101101110110110A",
+	    "KEY_9": "0101101110110101A",
+	    "KEY_A": "0110110101101101A",
+	    "KEY_B": "0110101110110110A",
+	    "KEY_C": "0101101110101110A",
+	    "cc": "0110110110110110A",
+	    "chdn": "0110110110110101A",
+	    "KEY_CHANNELUP": "0110101110110101A",
+	    "KEY_ENTER": "0101101101110110A",
+	    "flashbk": "0101101110101101A",
+	    "KEY_MENU": "0101101101101101A",
+	    "menudown": "0101101101110101A",
+	    "menuleft": "0110110101101110A",
+	    "menuright": "0110101101101101A",
+	    "menuup": "0101101101101110A",
+	    "KEY_MUTE": "0110101110101101A",
+	    "KEY_POWER": "0110101101101110A",
+	    "surf": "0110110101110110A",
+	    "timer": "0110110110101101A",
+	    "tvvcr": "0110101101110101A",
+	    "KEY_VOLUMEDOWN": "0110110110101110A",
+	    "KEY_VOLUMEUP": "0110101110101110A"
+	}
+    }
+}

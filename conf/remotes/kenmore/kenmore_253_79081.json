@@ -1,0 +1,30 @@
+{
+    "description": "KENMORE_253-79081 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/kenmore/kenmore_253_79081.lircd.conf", "remote": "KENMORE_253-79081", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 637, "space": 0},
+	"H": {"mark": 9159, "space": 4455},
+	"1": {"mark": 639, "space": 1615},
+	"0": {"mark": 639, "space": 486},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H00010000101011111000100001110111A",
+	    "KEY_TIME": "H00010000101011110110000010011111A",
+	    "KEY_VOLUMEUP": "H00010000101011111000000001111111A",
+	    "KEY_VOLUMEDOWN": "H00010000101011110010000011011111A",
+	    "KEY_PLAY": "H00010000101011111001000001101111A",
+	    "KEY_UP": "H00010000101011110111000010001111A",
+	    "KEY_DOWN": "H00010000101011111011000001001111A",
+	    "KEY_SAVE": "H00010000101011110100000010111111A",
+	    "KEY_SHUFFLE": "H00010000101011111111000000001111A",
+	    "KEY_SLEEP": "H00010000101011110000000011111111A",
+	    "KEY_PAUSE": "H00010000101011111110000000011111A"
+	}
+    }
+}

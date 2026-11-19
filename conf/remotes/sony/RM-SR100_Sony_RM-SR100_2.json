@@ -1,0 +1,29 @@
+{
+    "description": "Sony_RM-SR100_2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-SR100.lircd.conf", "remote": "Sony_RM-SR100_2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 682, "space": 0},
+	"B": {"mark": 1286, "space": 0},
+	"H": {"mark": 2551, "space": 499},
+	"1": {"mark": 1286, "space": 508},
+	"0": {"mark": 682, "space": 508},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H0100110010111001110A",
+	    "KEY_PAUSE": "H1001110010111001110A",
+	    "KEY_STOP": "H0001110010111001110A",
+	    "KEY_PREVIOUS": "H0000110010111001110A",
+	    "KEY_NEXT": "H1000110010111001110A",
+	    "KEY_ENTER": "H0011111010111001110A",
+	    "PRESET-": "H1100110010111001110A",
+	    "PRESET+": "H0010110010111001110A",
+	    "FLASH": "H1110111010111001100B"
+	}
+    }
+}

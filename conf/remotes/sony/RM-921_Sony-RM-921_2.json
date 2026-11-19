@@ -1,0 +1,33 @@
+{
+    "description": "Sony-RM-921 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-921.lircd.conf", "remote": "Sony-RM-921", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1253, "space": 514},
+	"B": {"mark": 1253, "space": 528},
+	"C": {"mark": 655, "space": 528},
+	"D": {"mark": 655, "space": 514},
+	"E": {"mark": 1279, "space": 496},
+	"F": {"mark": 679, "space": 496},
+	"G": {"mark": 1253, "space": 496},
+	"I": {"mark": 2444, "space": 514},
+	"J": {"mark": 655, "space": 0},
+	"K": {"mark": 1253, "space": 0},
+	"L": {"mark": 2444, "space": 496},
+	"M": {"mark": 1279, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "YUV": "IDCCACCADCADCACK",
+	    "Zoom": "IBDAAAAADDADDACK",
+	    "Degauss": "LFEEEEEEFFEFFEFM",
+	    "IDMode_On": "ICCBBABBABBCBBAJ",
+	    "IDMode_Set": "ICABABAAAABCBBAJ",
+	    "IDMode_Off": "LADAAGGAAGGDAGAJ"
+	}
+    }
+}

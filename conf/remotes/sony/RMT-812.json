@@ -1,0 +1,45 @@
+{
+    "description": "RMT-812 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-812.lircd.conf", "remote": "RMT-812", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1200, "space": 600},
+	"B": {"mark": 600, "space": 600},
+	"C": {"mark": 2400, "space": 600},
+	"D": {"mark": 600, "space": 0},
+	"E": {"mark": 1200, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "Play": "CBABAABBAAABD",
+	    "Stop": "CBBBAABBAAABD",
+	    "FF": "CBBAAABBAAABD",
+	    "Rew": "CAABAABBAAABD",
+	    "Photo": "CABABABBABBAAABE",
+	    "ZeroSetMemory": "CAAABBBAAAABD",
+	    "RecStartStop": "CABBAABBABBAAABE",
+	    "Display": "CBABAABAAAABD",
+	    "DataCode": "CBBAABBAABBAAABE",
+	    "MemoryPlay": "CBABABABBABAAABBBAAAE",
+	    "MemoryIndex": "CBBBBBABBABAAABBBAAAE",
+	    "MemoryMinus": "CAABABABBABAAABBBAAAE",
+	    "MemoryPlus": "CBBAABABBABAAABBBAAAE",
+	    "T": "CBABAABBABBAABAE",
+	    "W": "CAABAABBABBAABAE",
+	    "SearchMode": "CABAABABABBAAABE",
+	    "SearchLeft": "CAAABABAAAABD",
+	    "SearchRight": "CBAABABAAAABD",
+	    "Left": "CBBBBAABAAABD",
+	    "Right": "CABBBAABAAABD",
+	    "Pause": "CABBAABBAAABD",
+	    "Slow": "CAABBBABAAABD",
+	    "x2": "CBBABABBAAABD",
+	    "Mark": "CAABABAAAAABD",
+	    "AudioDub": "CBBBABAAAAABD"
+	}
+    }
+}

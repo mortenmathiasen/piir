@@ -1,0 +1,45 @@
+{
+    "description": "Sharp_RRMCG0012SJSB (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sharp/RRMCG0012SJSB.lircd.conf", "remote": "Sharp_RRMCG0012SJSB", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 275, "space": 0},
+	"1": {"mark": 275, "space": 1829},
+	"0": {"mark": 275, "space": 776},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "001000110100010A",
+	    "KEY_VOLUMEDOWN": "001001010100010A",
+	    "KEY_VOLUMEUP": "001000010100010A",
+	    "KEY_CD": "001001101100010A",
+	    "KEY_TUNER": "001000110110010A",
+	    "KEY_TAPE": "001000101100010A",
+	    "BASS-": "001000000011010A",
+	    "BASS+": "001001000011010A",
+	    "TREBLE-": "001000010101010A",
+	    "TREBLE+": "001001010101010A",
+	    "KEY_SLEEP": "001000001000110A",
+	    "TIMER": "001001110000110A",
+	    "KEY_TIME": "001001001000110A",
+	    "TAPE-RECSTOP": "001000001010010A",
+	    "TAPE-STOP": "001001110010010A",
+	    "TAPE-PLAY": "001000100010010A",
+	    "TAPE-REW": "001001100010010A",
+	    "TAPE-FWD": "001001000010010A",
+	    "RANDOM/REPEAT": "001000101110010A",
+	    "KEY_CLEAR": "001000000110010A",
+	    "MEMORY": "001001100100010A",
+	    "CD-STOP": "001001001010010A",
+	    "CD-PLAY/PAUSE": "001001111100010A",
+	    "CD-REW": "001000000010010A",
+	    "CD-FWD": "001000001100010A",
+	    "PRESET-": "001000100100010A",
+	    "PRESET+": "001001000100010A"
+	}
+    }
+}

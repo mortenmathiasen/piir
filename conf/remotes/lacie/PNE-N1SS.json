@@ -1,0 +1,35 @@
+{
+    "description": "Lacie_PNE-N1SS (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/lacie/PNE-N1SS.lircd.conf", "remote": "Lacie_PNE-N1SS", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 604, "space": 0},
+	"H": {"mark": 9200, "space": 4550},
+	"1": {"mark": 606, "space": 1672},
+	"0": {"mark": 606, "space": 531},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_NEXT": "H00000000111111100011101011000101A",
+	    "KEY_UP": "H00000000111111100011010111001010A",
+	    "KEY_DOWN": "H00000000111111100010110111010010A",
+	    "KEY_RIGHT": "H00000000111111100011111011000001A",
+	    "KEY_LEFT": "H00000000111111100110011010011001A",
+	    "KEY_PAUSE": "H00000000111111100010010111011010A",
+	    "KEY_PREVIOUS": "H00000000111111100110101010010101A",
+	    "KEY_VOLUMEUP": "H00000000111111100010011011011001A",
+	    "KEY_VOLUMEDOWN": "H00000000111111100111111010000001A",
+	    "KEY_STOP": "H00000000111111100011001011001101A",
+	    "KEY_PLAY": "H00000000111111100011000111001110A",
+	    "KEY_HOME": "H00000000111111100111110010000011A",
+	    "X_KEY_SETTINGS": "H00000000111111100010100111010110A",
+	    "KEY_MUTE": "H00000000111111100110010010011011A",
+	    "KEY_INFO": "H00000000111111100111111110000000A",
+	    "X_KEY_SHUTDOWN": "H00000000111111100010001111011100A"
+	}
+    }
+}

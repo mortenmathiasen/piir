@@ -1,0 +1,34 @@
+{
+    "description": "Sony_RM-Y118_cable_pos (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-Y118.lircd.conf", "remote": "Sony_RM-Y118_cable_pos", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 56000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 827, "space": 0},
+	"H": {"mark": 3397, "space": 3372},
+	"1": {"mark": 827, "space": 2557},
+	"0": {"mark": 827, "space": 855},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------",
+    "features": {
+	"key": {
+	    "cable_power": "H1101100111000100110001A",
+	    "KEY_1": "H1101100001000100111101A",
+	    "KEY_2": "H1101110001000100011101A",
+	    "KEY_3": "H1101101001000100101101A",
+	    "KEY_4": "H1101111001000100001101A",
+	    "KEY_5": "H1101100101000100110101A",
+	    "KEY_6": "H1101110101000100010101A",
+	    "KEY_7": "H1101101101000100100101A",
+	    "KEY_8": "H1101111101000100000101A",
+	    "KEY_9": "H1101100011000100111001A",
+	    "KEY_0": "H1101110011000100011001A",
+	    "KEY_ENTER": "H1101101011000100101001A",
+	    "jump": "H1101111111000100000001A",
+	    "KEY_CHANNELUP": "H1101110111000100010001A",
+	    "KEY_CHANNELDOWN": "H1101101111000100100001A"
+	}
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "description": "THOMSON_ROC45 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/thomson/ROC45.lircd.conf", "remote": "THOMSON_ROC45", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 628, "space": 0},
+	"H": {"mark": 2526, "space": 543},
+	"1": {"mark": 1244, "space": 543},
+	"0": {"mark": 628, "space": 543},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_MENU": "H00000111000A",
+	    "KEY_EXIT": "H00101101000A",
+	    "KEY_MUTE": "H00101001000A",
+	    "KEY_UP": "H00001001000A",
+	    "KEY_DOWN": "H10001001000A",
+	    "KEY_LEFT": "H11001001000A",
+	    "KEY_RIGHT": "H01001001000A",
+	    "SCREEN": "H11111101000A",
+	    "KEY_CLEAR": "H00011101000A",
+	    "KEY_POWER": "H10101001000A",
+	    "KEY_REWIND": "H00110011100A",
+	    "KEY_FORWARD": "H11110011100A",
+	    "KEY_PLAY": "H01110011100A",
+	    "KEY_RECORD": "H11011011000A",
+	    "KEY_STOP": "H10110011100A",
+	    "KEY_PAUSE": "H00010011100A",
+	    "AV": "H10100101000A",
+	    "KEY_102ND": "H10111001000A",
+	    "KEY_1": "H00000001000A",
+	    "KEY_2": "H10000001000A",
+	    "KEY_3": "H01000001000A",
+	    "KEY_4": "H11000001000A",
+	    "KEY_5": "H00100001000A",
+	    "KEY_6": "H10100001000A",
+	    "KEY_7": "H01100001000A",
+	    "KEY_8": "H11100001000A",
+	    "KEY_9": "H00010001000A",
+	    "KEY_0": "H10010001000A"
+	}
+    }
+}

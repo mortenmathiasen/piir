@@ -1,0 +1,49 @@
+{
+    "description": "Sony-RM-921 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-921.lircd.conf", "remote": "Sony-RM-921", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 660, "space": 0},
+	"H": {"mark": 2440, "space": 513},
+	"1": {"mark": 660, "space": 513},
+	"0": {"mark": 1258, "space": 513},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "Muting": "H11010110111A",
+	    "Display": "H10100010111A",
+	    "Power": "H01010110111A",
+	    "RGB1": "H00111100111A",
+	    "RGB2": "H11011100111A",
+	    "Line": "H11111100111A",
+	    "Y-C": "H01001100111A",
+	    "MTS-MPX": "H00010110111A",
+	    "1": "H11111110111A",
+	    "2": "H01111110111A",
+	    "3": "H10111110111A",
+	    "4": "H00111110111A",
+	    "5": "H11011110111A",
+	    "6": "H01011110111A",
+	    "7": "H10011110111A",
+	    "8": "H00011110111A",
+	    "9": "H11101110111A",
+	    "10": "H01101110111A",
+	    "CH": "H00101110111A",
+	    "Still": "H11000100111A",
+	    "PowerOn": "H10001010111A",
+	    "PowerOff": "H00001010111A",
+	    "SelectUp": "H11010000111A",
+	    "SelectDown": "H01010000111A",
+	    "Menu": "H11111000111A",
+	    "Enter": "H01011000111A",
+	    "Volume+": "H10110110111A",
+	    "Volume-": "H00110110111A",
+	    "Channel+": "H11110110111A",
+	    "Channel-": "H01110110111A"
+	}
+    }
+}

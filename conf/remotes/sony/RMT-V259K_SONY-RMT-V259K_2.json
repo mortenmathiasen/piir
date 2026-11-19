@@ -1,0 +1,30 @@
+{
+    "description": "SONY-RMT-V259K (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V259K.lircd.conf", "remote": "SONY-RMT-V259K", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1276, "space": 0},
+	"H": {"mark": 2494, "space": 518},
+	"1": {"mark": 1276, "space": 518},
+	"0": {"mark": 677, "space": 518},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H00011000101110AVVXXYYYYYYYZZZZZH00011000101110AVVXXYYYYYYYZZZZZH00011000101110A",
+	    "KEY_PAUSE": "H01110000101110AVWWWWWWWWWXXXXXXYYYYYYYZZZZZZH01110000101110AVWWWWWWWWWXXXXXXYYYYYYYZZZZZZH01110000101110A",
+	    "KEY_STOP": "H11110000101110AVWWWWWWWWWYYYYYYYZZZZZZZH11110000101110AVWWWWWWWWWYYYYYYYZZZZZZZH11110000101110A",
+	    "KEY_REWIND": "H00001000101110AVVXXXXXXXXYYYYYYYZZZZH00001000101110AVVXXXXXXXXYYYYYYYZZZZH00001000101110A",
+	    "KEY_FASTFORWARD": "H10001000101110AVVXXYYYYYYYZZZZZH10001000101110AVVXXYYYYYYYZZZZZH10001000101110A",
+	    "SMART-SEARCH": "H00111000101110AVWWWWWWWWWXXXXXXYYYYYYYZZZZZZH00111000101110AVWWWWWWWWWXXXXXXYYYYYYYZZZZZZH00111000101110A"
+	}
+    }
+}

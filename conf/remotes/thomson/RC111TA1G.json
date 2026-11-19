@@ -1,0 +1,48 @@
+{
+    "description": "Thomson_RC111TA1G (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/thomson/RC111TA1G.lircd.conf", "remote": "Thomson_RC111TA1G", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 492, "space": 0},
+	"1": {"mark": 492, "space": 2008},
+	"0": {"mark": 492, "space": 4541},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "110011100010A",
+	    "KEY_VOLUMEUP": "110011010110A",
+	    "KEY_VOLUMEDOWN": "110011010101A",
+	    "KEY_MUTE": "110011111010A",
+	    "KEY_ENTER": "110011010111A",
+	    "CHNEXT": "110011011010A",
+	    "CHPREV": "110011011000A",
+	    "KEY_EXIT": "110011000001A",
+	    "KEY_MENU": "110011001110A",
+	    "KEY_OK": "110011110011A",
+	    "KEY_UP": "110011110100A",
+	    "KEY_LEFT": "110011001001A",
+	    "KEY_RIGHT": "110011001000A",
+	    "KEY_DOWN": "110011110010A",
+	    "PRESETS": "110011000110A",
+	    "KEY_LIST": "110011000100A",
+	    "KEY_INFO": "110011000111A",
+	    "KEY_EPG": "110011101010A",
+	    "KEY_TEXT": "110011100001A",
+	    "KEY_1": "110011111111A",
+	    "KEY_2": "110011110111A",
+	    "KEY_3": "110011101111A",
+	    "KEY_4": "110011111110A",
+	    "KEY_5": "110011110110A",
+	    "KEY_6": "110011101110A",
+	    "KEY_7": "110011111101A",
+	    "KEY_8": "110011110101A",
+	    "KEY_9": "110011101101A",
+	    "AV": "110011100111A",
+	    "KEY_0": "110011110001A"
+	}
+    }
+}

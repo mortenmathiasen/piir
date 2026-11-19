@@ -1,0 +1,32 @@
+{
+    "description": "LG (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/lg/CL172TW.lircd.conf", "remote": "LG", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 634, "space": 0},
+	"H": {"mark": 9052, "space": 4382},
+	"1": {"mark": 634, "space": 479},
+	"0": {"mark": 634, "space": 1600},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "OPR": "H10001001011101100000101011110101A",
+	    "KEY_EJECTCD": "H10001001011101101111111100000000A",
+	    "KEY_POWER": "H10001001011101101101011100101000A",
+	    "KEY_RECORD": "H10001001011101100110111110010000A",
+	    "SPEED": "H10001001011101101110110100010010A",
+	    "TRACKING(-)": "H10001001011101100101110110100010A",
+	    "TRACKING(+)": "H10001001011101101101110100100010A",
+	    "KEY_PLAY": "H10001001011101101110111100010000A",
+	    "KEY_STOP": "H10001001011101100111111110000000A",
+	    "KEY_REWIND": "H10001001011101101011111101000000A",
+	    "KEY_FASTFORWARD": "H10001001011101100011111111000000A",
+	    "A.REPEAT": "H10001001011101101001001001101101A",
+	    "P/STIIL": "H10001001011101100010111111010000A"
+	}
+    }
+}

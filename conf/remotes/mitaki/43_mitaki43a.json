@@ -1,0 +1,21 @@
+{
+    "description": "mitaki43a (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/mitaki/43.lircd.conf", "remote": "mitaki43a", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 714, "space": 0},
+	"1": {"mark": 714, "space": 305},
+	"0": {"mark": 714, "space": 3821},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "KEY_MUTE": "1001010001010010A",
+	    "KEY_VOLUMEUP": "1001010001010001A",
+	    "KEY_VOLUMEDOWN": "1001001001010001A"
+	}
+    }
+}

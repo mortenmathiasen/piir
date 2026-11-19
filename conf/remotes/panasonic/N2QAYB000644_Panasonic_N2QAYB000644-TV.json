@@ -1,0 +1,25 @@
+{
+    "description": "Panasonic_N2QAYB000644-TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/panasonic/N2QAYB000644.lircd.conf", "remote": "Panasonic_N2QAYB000644-TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 415, "space": 0},
+	"H": {"mark": 3454, "space": 1750},
+	"1": {"mark": 414, "space": 1338},
+	"0": {"mark": 414, "space": 461},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H010000000000010000000001000000001011110010111101A",
+	    "KEY_INPUTAV": "H010000000000010000000001000000001010000010100001A",
+	    "KEY_VOLUMEUP": "H010000000000010000000001000000000000010000000101A",
+	    "KEY_VOLUMEDOWN": "H010000000000010000000001000000001000010010000101A",
+	    "KEY_CHANNELUP": "H010000000000010000000001000000000010110000101101A",
+	    "KEY_CHANNELDOWN": "H010000000000010000000001000000001010110010101101A"
+	}
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "description": "SIEMENS (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/siemens/FB31top.lircd.conf", "remote": "SIEMENS", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 580, "space": 460},
+	"B": {"mark": 580, "space": 920},
+	"C": {"mark": 580, "space": 0},
+	"D": {"mark": 1160, "space": 920},
+	"E": {"mark": 1160, "space": 460},
+	"H": {"mark": 612, "space": 2576},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_1": "HABAADAAAC",
+	    "KEY_2": "HBDADAAAC",
+	    "KEY_3": "HAABADAAAC",
+	    "KEY_4": "HBADDAAAC",
+	    "KEY_5": "HABDDAAAC",
+	    "KEY_6": "HBEBDAAAC",
+	    "KEY_7": "HAAABDAAAC",
+	    "KEY_8": "HBAAEBAAAC",
+	    "KEY_9": "HABAEBAAAC",
+	    "KEY_0": "HBAAADAAAC",
+	    "TEXT_DOWN": "HBDEABAAC",
+	    "TEXT_UP": "HBEAAABAAC",
+	    "TEXT_STOP": "HAABEABAAC",
+	    "TEXT_QUESTION": "HBEABDAAC",
+	    "TEXT_TV": "HBAAAEBAAC",
+	    "KEY_CHANNELUP": "HBDDDAAC",
+	    "KEY_CHANNELDOWN": "HAABDDAAC",
+	    "KEY_VOLUMEUP": "HBAADAAAAC",
+	    "KEY_VOLUMEDOWN": "HABADAAAAC",
+	    "KEY_INFO": "HABEBDAAC",
+	    "KEY_MUTE": "HABAAAAAAAC",
+	    "KEY_OK": "HBAAAAAAAAC",
+	    "PROGRAM_OR_CHANNEL": "HBDEBAAAC",
+	    "FARBKONTRAST_UP": "HBAEBAAAAC",
+	    "FARBKONTRAST_DOWN": "HABEBAAAAC",
+	    "BRT_UP": "HBDDAAAAC",
+	    "BRT_DOWN": "HAABDAAAAC",
+	    "CONT_UP": "HBADAAAAAC",
+	    "CONT_DOWN": "HABDAAAAAC",
+	    "KEY_POWER": "HBDAAAAAAC"
+	}
+    }
+}

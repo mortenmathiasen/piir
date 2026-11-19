@@ -1,0 +1,32 @@
+{
+    "description": "Fixture with an unknown plugin",
+    "plugin": "no_such_plugin",
+    "frequency": 36000,
+    "dutycycle": 0.33,
+    "transmitter": {
+	"outpin": 22,
+	"device": "/dev/lirc7"
+    },
+    "symboldefinitions": {
+	"S": {"mark": 9000, "space": 4500},
+	"0": {"mark": 560, "space": 560},
+	"1": {"mark": 560, "space": 1690},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "S-0000-0000",
+    "features": {
+	"power": {
+	    "ON":  "  1111     ",
+	    "OFF": "  0000     "
+	},
+	"level": {
+	    "LOW":  "       0001",
+	    "HIGH": "       1000",
+	    "MAX":  "       1111"
+	},
+	"preset": {
+	    "NIGHT": "  0011 0000",
+	    "NONE":  "           "
+	}
+    }
+}

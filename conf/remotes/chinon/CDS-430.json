@@ -1,0 +1,23 @@
+{
+    "description": "CHINON (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/chinon/CDS-430.lircd.conf", "remote": "CHINON", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 628, "space": 0},
+	"H": {"mark": 9113, "space": 4403},
+	"1": {"mark": 628, "space": 502},
+	"0": {"mark": 628, "space": 1620},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_STOP": "H111111011111100000010000000011111111000000A",
+	    "KEY_PREVIOUS": "H111111011111100000010000001011111101000000A",
+	    "KEY_NEXT": "H111111011111100000010000000111111110000000A",
+	    "KEY_PLAYPAUSE": "H111111011111100000010000001111111100000000A"
+	}
+    }
+}

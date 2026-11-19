@@ -1,0 +1,31 @@
+{
+    "description": "Harman_Kardon_AVR240 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/harman_kardon/AVR240.lircd.conf", "remote": "Harman_Kardon_AVR240", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 607, "space": 0},
+	"H": {"mark": 9141, "space": 4399},
+	"1": {"mark": 640, "space": 1595},
+	"0": {"mark": 640, "space": 474},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "pow_off": "H00000001000011101111100100000110A",
+	    "pow_on": "H00000001000011100000001111111100A",
+	    "KEY_VOLUMEUP": "H00000001000011101110001100011100A",
+	    "KEY_VOLUMEDOWN": "H00000001000011100001001111101100A",
+	    "source_dvd": "H00000001000011100000101111110100A",
+	    "source_cd": "H00000001000011100010001111011100A",
+	    "source_tape": "H00000001000011100011001111001100A",
+	    "source_vid1": "H00000001000011100101001110101100A",
+	    "source_vid2": "H00000001000011101101001100101100A",
+	    "source_vid3": "H00000001000011100111001110001100A",
+	    "source_vid4": "H00000001000011101000101101110100A",
+	    "source_6/8ch": "H01000001010011101101101100100100A"
+	}
+    }
+}

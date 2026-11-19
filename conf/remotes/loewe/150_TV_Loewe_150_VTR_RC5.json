@@ -1,0 +1,52 @@
+{
+    "description": "Loewe_150_VTR_RC5 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/loewe/150_TV.lircd.conf", "remote": "Loewe_150_VTR_RC5", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 912, "space": 852},
+	"B": {"mark": 1824, "space": 852},
+	"C": {"mark": 1824, "space": 1704},
+	"D": {"mark": 912, "space": 1704},
+	"E": {"mark": 912, "space": 0},
+	"F": {"mark": 939, "space": 852},
+	"G": {"mark": 1851, "space": 1704},
+	"I": {"mark": 1824, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_UP": "GBDCCBAAE",
+	    "KEY_DOWN": "GBDCCBADE",
+	    "KEY_LEFT": "GBDCCCCE",
+	    "KEY_RIGHT": "GBDCCCAI",
+	    "KEY_OK": "GBDCCCAAE",
+	    "KEY_RED": "FABDCAABDI",
+	    "KEY_GREEN": "FABDCAACAI",
+	    "KEY_YELLOW": "FABDCAACCE",
+	    "KEY_BLUE": "FABDCAACBE",
+	    "KEY_1": "FABDCBAAADE",
+	    "KEY_2": "FABDCBAADI",
+	    "KEY_3": "FABDCBAADAE",
+	    "KEY_4": "FABDCBADBE",
+	    "KEY_5": "FABDCBADCE",
+	    "KEY_6": "FABDCBADAI",
+	    "KEY_7": "FABDCBADAAE",
+	    "KEY_8": "FABDCBDBAE",
+	    "KEY_9": "FABDCBDBDE",
+	    "KEY_0": "FABDCBAAAAE",
+	    "KEY_T": "FABDCACBDE",
+	    "KEY_M": "GBDCCBDI",
+	    "KEY_E": "GBDCCBDAE",
+	    "KEY_POWER": "FABDCBDABE",
+	    "KEY_MUTE": "FABDCCAACE",
+	    "KEY_VIDEO": "GBDCAAAAAI",
+	    "KEY_AUDIO": "FABDCBDCAE",
+	    "PiP": "GBDCBADCE",
+	    "V=": "FABDCAAACI",
+	    "Timer": "FABDCAABADE"
+	}
+    }
+}

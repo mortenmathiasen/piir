@@ -1,0 +1,51 @@
+{
+    "description": "Bluesky_DV900 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/bluesky/DV900.lircd.conf", "remote": "Bluesky_DV900", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 244, "space": 0},
+	"1": {"mark": 246, "space": 7290},
+	"0": {"mark": 246, "space": 4769},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "11101011110A",
+	    "KEY_EJECTCD": "11101100110A",
+	    "KEY_MUTE": "11101011000A",
+	    "KEY_1": "11101110101A",
+	    "KEY_2": "11101101101A",
+	    "KEY_3": "11101100101A",
+	    "KEY_4": "11101011101A",
+	    "KEY_5": "11101110100A",
+	    "KEY_6": "11101101100A",
+	    "KEY_7": "11101100100A",
+	    "KEY_8": "11101011100A",
+	    "KEY_9": "11101110011A",
+	    "KEY_0": "11101101011A",
+	    "KEY_INFO": "11101100000A",
+	    "KEY_CLEAR": "11101100011A",
+	    "KEY_CAMERA": "11101101110A",
+	    "KEY_MENU": "11101010111A",
+	    "KEY_TITLE": "11101100111A",
+	    "KEY_EXIT": "11101110000A",
+	    "KEY_REWIND": "11101110111A",
+	    "KEY_FORWARD": "11101110010A",
+	    "KEY_ZOOM": "11101010010A",
+	    "KEY_UP": "11101101000A",
+	    "KEY_DOWN": "11101101010A",
+	    "KEY_LEFT": "11101110001A",
+	    "KEY_RIGHT": "11101100001A",
+	    "KEY_OK": "11101101001A",
+	    "KEY_NEXT": "11101010110A",
+	    "KEY_PREVIOUS": "11101010101A",
+	    "KEY_STOP": "11101100010A",
+	    "KEY_PLAY": "11101011001A",
+	    "KEY_PAUSE": "11101011010A",
+	    "KEY_DIRECTORY": "11101011111A"
+	}
+    }
+}

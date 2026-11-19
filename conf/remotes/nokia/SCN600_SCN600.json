@@ -1,0 +1,48 @@
+{
+    "description": "SCN600 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/nokia/SCN600.lircd.conf", "remote": "SCN600", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 652, "space": 339},
+	"B": {"mark": 652, "space": 678},
+	"C": {"mark": 1304, "space": 678},
+	"D": {"mark": 1304, "space": 339},
+	"E": {"mark": 652, "space": 0},
+	"H": {"mark": 792, "space": 2165},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_1": "HABAAAAAAAADBACE",
+	    "KEY_2": "HBCAAAAAAADBACE",
+	    "KEY_3": "HAABAAAAAAADBACE",
+	    "KEY_4": "HBACAAAAAADBACE",
+	    "KEY_5": "HABCAAAAAADBACE",
+	    "KEY_6": "HBDBAAAAAADBACE",
+	    "KEY_7": "HAAABAAAAAADBACE",
+	    "KEY_8": "HBAACAAAAADBACE",
+	    "KEY_9": "HABACAAAAADBACE",
+	    "KEY_0": "HBAAAAAAAAADBACE",
+	    "KEY_UP": "HBDABAAAAADBACE",
+	    "KEY_DOWN": "HAAAABAAAAADBACE",
+	    "KEY_I": "HABDBCAAADBACE",
+	    "KEY_MUTE": "HBAACCAAADBACE",
+	    "KEY_RADIO": "HBAAAACAAADBACE",
+	    "KEY_LAST": "HBCCCAAADBACE",
+	    "KEY_LEFT": "HAAAABCAAADBACE",
+	    "KEY_RIGHT": "HBDABCAAADBACE",
+	    "TV/SAT": "HAAABACAAADBACE",
+	    "KEY_OK": "HBAAADBAAADBACE",
+	    "KEY_MENU": "HAABDABAAADBACE",
+	    "REV": "HBACDBAAADBACE",
+	    "SIZE": "HBAADABAAADBACE",
+	    "KEY_STOP": "HABCDBAAADBACE",
+	    "KEY_TEXT": "HAABADBAAADBACE",
+	    "UPD": "HBDBDBAAADBACE",
+	    "OFF": "HBADBAAAAADBACE"
+	}
+    }
+}

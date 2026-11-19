@@ -1,0 +1,22 @@
+{
+    "description": "RMT-D141P.3 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-D141P.lircd.conf", "remote": "RMT-D141P.3", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 653, "space": 0},
+	"H": {"mark": 2521, "space": 490},
+	"1": {"mark": 1280, "space": 525},
+	"0": {"mark": 673, "space": 525},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "TVPOWER": "H10101001000A",
+	    "KEY_VOLUMEUP": "H01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000A"
+	}
+    }
+}

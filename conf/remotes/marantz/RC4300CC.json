@@ -1,0 +1,51 @@
+{
+    "description": "Marantz_RC4300CC (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/marantz/RC4300CC.lircd.conf", "remote": "Marantz_RC4300CC", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 957, "space": 816},
+	"B": {"mark": 1914, "space": 816},
+	"C": {"mark": 1914, "space": 1632},
+	"D": {"mark": 957, "space": 1632},
+	"E": {"mark": 981, "space": 816},
+	"F": {"mark": 957, "space": 0},
+	"G": {"mark": 1914, "space": 0},
+	"I": {"mark": 1938, "space": 1632},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_1": "EAACBAAAAADF",
+	    "KEY_2": "EAACBAAAADG",
+	    "KEY_3": "EAACBAAAADAF",
+	    "KEY_4": "EAACBAAADBF",
+	    "KEY_5": "EAACBAAADCF",
+	    "KEY_6": "EAACBAAADAG",
+	    "KEY_7": "EAACBAAADAAF",
+	    "KEY_8": "EAACBAADBAF",
+	    "KEY_9": "EAACBAADBDF",
+	    "KEY_0": "EAACBAAAAAAF",
+	    "Program": "EAACBDBDBF",
+	    "Disc": "EAACBADAAAG",
+	    "KEY_POWER": "EAACBAADABF",
+	    "KEY_AGAIN": "EAACBADAACF",
+	    "AB": "EAACBDAACAF",
+	    "Random": "EAACBADAABF",
+	    "Intro": "EAACBDCCAF",
+	    "KEY_DELETE": "EAACBDABADF",
+	    "KEY_PLAY": "EAACBDACCF",
+	    "KEY_PAUSE": "EAACBDABAAF",
+	    "KEY_STOP": "EAACBDACAG",
+	    "KEY_REWIND": "EAACBDBAADF",
+	    "KEY_FASTFORWARD": "EAACBDBAAAF",
+	    "KEY_FORWARD": "EAACBDACBF",
+	    "KEY_BACK": "EAACBDABDG",
+	    "KEY_EDIT": "IACBDCBAF",
+	    "Dimmer": "IACBAAADAAF",
+	    "KEY_TIME": "EAACBAADCAF"
+	}
+    }
+}

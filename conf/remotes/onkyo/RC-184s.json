@@ -1,0 +1,23 @@
+{
+    "description": "Onkyo_RC-184s (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/onkyo/RC-184s.lircd.conf", "remote": "Onkyo_RC-184s", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 679, "space": 0},
+	"H": {"mark": 9118, "space": 4375},
+	"1": {"mark": 675, "space": 1571},
+	"0": {"mark": 675, "space": 450},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H01001011101101100111001010001101A",
+	    "KEY_STOP": "H01001011101101101011001001001101A",
+	    "KEY_FASTFORWARD": "H01001011101101101000101001110101A",
+	    "KEY_REWIND": "H01001011101101100100101010110101A"
+	}
+    }
+}

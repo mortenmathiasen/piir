@@ -1,0 +1,29 @@
+{
+    "description": "oneforall_vcr (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/one_for_all/URC-5065.lircd.conf", "remote": "oneforall_vcr", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 950, "space": 0},
+	"H": {"mark": 3600, "space": 3280},
+	"1": {"mark": 950, "space": 2500},
+	"0": {"mark": 950, "space": 750},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H000101010100111010101011AVVVWWWXXXXXXXXZZZZZZZH000101010100111010101011A",
+	    "KEY_STOP": "H000101001110111010110001AVVVWWWXXXXXXXXZZZZZZZH000101001110111010110001A",
+	    "KEY_REWIND": "H000101001100111010110011AVVVWWWXXXXXXXXZZZZZZZH000101001100111010110011A",
+	    "KEY_FASTFORWARD": "H000101001000111010110111AVVVWWWXXXXXXXXZZZZZZZH000101001000111010110111A",
+	    "KEY_PAUSE": "H000101110100111010001011AVVVWWWXXXXXXXXZZZZZZZH000101110100111010001011A",
+	    "KEY_RECORD": "H000101010110111010101001AVVVWWWXXXXXXXXZZZZZZZH000101010110111010101001A"
+	}
+    }
+}

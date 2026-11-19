@@ -1,0 +1,33 @@
+{
+    "description": "Robot_Kit (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/tab_electronics/Robot_Kit.lircd.conf", "remote": "Robot_Kit", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 615, "space": 0},
+	"H": {"mark": 9076, "space": 4405},
+	"1": {"mark": 615, "space": 1635},
+	"0": {"mark": 615, "space": 502},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "forewardright": "H00000000111111110110100010010111A",
+	    "foreward": "H00000000111111111010100001010111A",
+	    "seeklight": "H00000000111111110010100011010111A",
+	    "turnleft": "H00000000111111110111000010001111A",
+	    "KEY_STOP": "H00000000111111111011000001001111A",
+	    "turnright": "H00000000111111110011000011001111A",
+	    "awaylight": "H00000000111111110101000010101111A",
+	    "KEY_BACK": "H00000000111111111001000001101111A",
+	    "maze": "H00000000111111110001000011101111A",
+	    "KEY_1": "H00000000111111110110000010011111A",
+	    "KEY_2": "H00000000111111111010000001011111A",
+	    "KEY_3": "H00000000111111110010000011011111A",
+	    "wallleft": "H00000000111111111000000001111111A",
+	    "wallright": "H00000000111111110000000011111111A"
+	}
+    }
+}

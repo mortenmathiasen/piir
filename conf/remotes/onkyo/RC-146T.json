@@ -1,0 +1,28 @@
+{
+    "description": "Onkyo_RC-146T (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/onkyo/RC-146T.lircd.conf", "remote": "Onkyo_RC-146T", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 604, "space": 0},
+	"H": {"mark": 9032, "space": 4445},
+	"1": {"mark": 604, "space": 1641},
+	"0": {"mark": 604, "space": 517},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "Autospace": "H01001011101100001101100000100111A",
+	    "Pause-Record": "H01001011101100000001100011100111A",
+	    "KEY_REWIND": "H01001011101100000101100010100111A",
+	    "KEY_FASTFORWARD": "H01001011101100001001100001100111A",
+	    "PlayReverse": "H01001011101100000110100010010111A",
+	    "KEY_PLAY": "H01001011101100001010100001010111A",
+	    "SkipForward": "H01001011101100001011100001000111A",
+	    "KEY_STOP": "H01001011101100001100100000110111A",
+	    "Reset": "H01001011101100001011101001000101A"
+	}
+    }
+}

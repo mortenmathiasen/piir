@@ -1,0 +1,28 @@
+{
+    "description": "Clarion (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/clarion/RCB-130.lircd.conf", "remote": "Clarion", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 641, "space": 0},
+	"H": {"mark": 9061, "space": 4361},
+	"1": {"mark": 641, "space": 458},
+	"0": {"mark": 641, "space": 1578},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H10011110111110011110111100010000A",
+	    "KEY_STOP": "H10011110111110011010111101010000A",
+	    "KEY_FASTFORWARD": "H10011110111110010001011111101000A",
+	    "KEY_REWIND": "H10011110111110011001011101101000A",
+	    "KEY_VOLUMEUP": "H01011110101101110010011111011000A",
+	    "KEY_VOLUMEDOWN": "H01011110101101110100011110111000A",
+	    "Arret": "H10011110111110010110011110011000A",
+	    "list-up": "H10011110111110010101111110100000A",
+	    "List-Down": "H10011110111110010111011110001000A"
+	}
+    }
+}

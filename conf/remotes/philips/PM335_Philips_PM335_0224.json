@@ -1,0 +1,53 @@
+{
+    "description": "Philips_PM335_0224 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/PM335.lircd.conf", "remote": "Philips_PM335_0224", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 300, "space": 0},
+	"1": {"mark": 312, "space": 1788},
+	"0": {"mark": 312, "space": 737},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "100001001011101A",
+	    "KEY_1": "100000111111101A",
+	    "KEY_2": "100000100000010A",
+	    "KEY_3": "100000011111101A",
+	    "KEY_4": "100001101111101A",
+	    "KEY_5": "100001010000010A",
+	    "KEY_6": "100001001111101A",
+	    "KEY_7": "100000001111101A",
+	    "KEY_8": "100001110111101A",
+	    "KEY_9": "100001001000010A",
+	    "KEY_0": "100000101000010A",
+	    "KEY_ENTER": "110000100111101A",
+	    "input": "100000011011101A",
+	    "KEY_EPG": "110001011100010A",
+	    "KEY_MENU": "100000000010010A",
+	    "KEY_INFO": "100001101100010A",
+	    "KEY_QUIT": "100001111010101A",
+	    "KEY_VOLUMEUP": "100000010100010A",
+	    "KEY_VOLUMEDOWN": "100000101011101A",
+	    "KEY_CHANNELUP": "100000111011101A",
+	    "KEY_CHANNELDOWN": "100000100100010A",
+	    "KEY_UP": "110001100011101A",
+	    "KEY_DOWN": "110000110011101A",
+	    "KEY_RIGHT": "110000100101101A",
+	    "KEY_LEFT": "110001000101101A",
+	    "KEY_OK": "110001000011101A",
+	    "KEY_PREVIOUS": "100000000101101A",
+	    "KEY_MUTE": "100000001011101A",
+	    "cc": "100001111111111A",
+	    "scan-": "110001100010010A",
+	    "KEY_PLAY": "110000100010010A",
+	    "scan+": "110000111101101A",
+	    "KEY_RECORD": "110000001010010A",
+	    "KEY_STOP": "110000001101101A",
+	    "KEY_PAUSE": "110001010010010A"
+	}
+    }
+}

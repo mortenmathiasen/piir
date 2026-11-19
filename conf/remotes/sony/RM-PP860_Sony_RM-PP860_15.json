@@ -1,0 +1,38 @@
+{
+    "description": "Sony_RM-PP860_15 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-PP860.lircd.conf", "remote": "Sony_RM-PP860_15", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 669, "space": 0},
+	"B": {"mark": 1265, "space": 0},
+	"H": {"mark": 2494, "space": 492},
+	"1": {"mark": 1265, "space": 528},
+	"0": {"mark": 669, "space": 528},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "wide": "H10111100010010B",
+	    "mastervol+": "H01001000000110A",
+	    "mastervol-": "H11001000000110A",
+	    "mainmenu": "H11101110000110B",
+	    "KEY_2ch": "H10000010000110B",
+	    "afd": "H01000010000110B",
+	    "movie": "H11000010000110B",
+	    "KEY_AUDIO": "H10010010000110B",
+	    "KEY_VIDEO": "H01000100000110A",
+	    "KEY_DVD": "H10111110000110A",
+	    "mdtape": "H10010110000110A",
+	    "sacd": "H10100100000110A",
+	    "KEY_TUNER": "H10000100000110A",
+	    "multich": "H01001110000110A",
+	    "VIDEO2": "H01111000000110A",
+	    "dualmono": "H11101000000110A",
+	    "sbdecoding": "H01100010000110B",
+	    "masterpower": "H10101000000110A"
+	}
+    }
+}

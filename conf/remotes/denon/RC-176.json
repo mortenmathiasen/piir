@@ -1,0 +1,46 @@
+{
+    "description": "DENON_RC-176 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/denon/RC-176.lircd.conf", "remote": "DENON_RC-176", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 315, "space": 0},
+	"1": {"mark": 315, "space": 740},
+	"0": {"mark": 315, "space": 1812},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "TAPE_AB": "110110011010111A",
+	    "TAPE_REC": "110110000010111A",
+	    "TAPE_PAUSE": "110110100010111A",
+	    "TAPE_STOP": "110111000010111A",
+	    "TAPE_REW": "110110010010111A",
+	    "TAPE_FF": "110111010010111A",
+	    "TAPE_PLAYREV": "110110001010111A",
+	    "TAPE_PLAY": "110111100010111A",
+	    "CD_TRACK_-": "111010110010111A",
+	    "CD_TRACK_+": "111011110010111A",
+	    "CD_RANDOM": "111011010100111A",
+	    "CD_REPEAT": "111011101010111A",
+	    "CD_SKIP": "111010010100111A",
+	    "CD_PAUSE": "111010100010111A",
+	    "CD_STOP": "111011000010111A",
+	    "CD_PLAY": "111011100010111A",
+	    "AMP_TAPE2": "101111010011011A",
+	    "AMP_TAPE1": "101110110011011A",
+	    "AMP_AUX": "101111101111011A",
+	    "AMP_TUNER": "101110011111011A",
+	    "AMP_CD": "101111011111011A",
+	    "AMP_PHONO": "101110111111011A",
+	    "AMP_VOL_UP": "101110100111011A",
+	    "AMP_VOL_DOWN": "101111100111011A",
+	    "AMP_POWER": "101111111011011A",
+	    "AMP_MUTE": "101110010111011A",
+	    "TUN_CH_UP": "110011001010011A",
+	    "TUN_CH_DOWN": "110010101010011A"
+	}
+    }
+}

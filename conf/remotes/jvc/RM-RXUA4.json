@@ -1,0 +1,52 @@
+{
+    "description": "RM-RXUA4 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-RXUA4.lircd.conf", "remote": "RM-RXUA4", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 513, "space": 0},
+	"H": {"mark": 8435, "space": 4239},
+	"1": {"mark": 513, "space": 1599},
+	"0": {"mark": 513, "space": 541},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H1111100110000100A",
+	    "KEY_2": "H1111100101000100A",
+	    "KEY_3": "H1111100111000100A",
+	    "KEY_4": "H1111100100100100A",
+	    "KEY_5": "H1111100110100100A",
+	    "KEY_6": "H1111100101100100A",
+	    "KEY_7": "H1111100111100100A",
+	    "KEY_8": "H1111100100010100A",
+	    "KEY_9": "H1111100110010100A",
+	    "KEY_0": "H1111100101010100A",
+	    "KEY_10CHANNELSUP": "H1111100101110100A",
+	    "KEY_POWER": "H1111100100000000A",
+	    "KEY_SLEEP": "H1111100101001100A",
+	    "CDDOOR": "H1111100111011110A",
+	    "CDPLAY": "H1111100100001110A",
+	    "CDSTOP": "H1111100110001110A",
+	    "CDNEXT": "H1111100110111100A",
+	    "CDPREV": "H1111100101111100A",
+	    "KEY_TUNER": "H1111100111010000A",
+	    "AUTOPRESET": "H1111100111001000A",
+	    "TAPELEFT": "H1111100110110010A",
+	    "TAPESTOP": "H1111100110000010A",
+	    "TAPERIGHT": "H1111100100110010A",
+	    "TAPEREC": "H1111100111010010A",
+	    "TAPEPREV": "H1111100110100010A",
+	    "TAPENEXT": "H1111100100100010A",
+	    "SOUND": "H1111100111110001A",
+	    "BASSUP": "H1111100111100001A",
+	    "BASSDOWN": "H1111100100010001A",
+	    "TREBLEUP": "H1111100110010001A",
+	    "TREBLEDOWN": "H1111100101010001A",
+	    "KEY_VOLUMEUP": "H1111100110000000A",
+	    "KEY_VOLUMEDOWN": "H1111100101000000A"
+	}
+    }
+}

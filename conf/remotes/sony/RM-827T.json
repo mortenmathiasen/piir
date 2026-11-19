@@ -1,0 +1,48 @@
+{
+    "description": "sonytv (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-827T.lircd.conf", "remote": "sonytv", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 563, "space": 0},
+	"H": {"mark": 2356, "space": 634},
+	"1": {"mark": 1161, "space": 634},
+	"0": {"mark": 563, "space": 634},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H10101001000A",
+	    "KEY_MUTE": "H00101001000A",
+	    "KEY_TV": "H00011101000A",
+	    "KEY_TEXT": "H11111101000A",
+	    "display": "H01011101000A",
+	    "KEY_1": "H00000001000A",
+	    "KEY_2": "H10000001000A",
+	    "KEY_3": "H01000001000A",
+	    "KEY_4": "H11000001000A",
+	    "KEY_5": "H00100001000A",
+	    "KEY_6": "H10100001000A",
+	    "KEY_7": "H01100001000A",
+	    "KEY_8": "H11100001000A",
+	    "KEY_9": "H00010001000A",
+	    "KEY_0": "H10010001000A",
+	    "KEY_1_": "H00110001000A",
+	    "KEY_2_": "H10110001000A",
+	    "KEY_SLEEP": "H01101101000A",
+	    "KEY_KPPLUS": "H00101111000A",
+	    "KEY_KPMINUS": "H10101111000A",
+	    "KEY_SELECT": "H00111111000A",
+	    "picmode": "H01101001000A",
+	    "a/b": "H11101001000A",
+	    "KEY_TIME": "H11010101000A",
+	    "tv/video": "H10100101000A",
+	    "KEY_VOLUMEUP": "H01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000A",
+	    "prg+": "H00001001000A",
+	    "prg-": "H10001001000A"
+	}
+    }
+}

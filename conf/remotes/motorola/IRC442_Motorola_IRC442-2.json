@@ -1,0 +1,49 @@
+{
+    "description": "Motorola_IRC442-2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/motorola/IRC442.lircd.conf", "remote": "Motorola_IRC442-2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 951, "space": 0},
+	"H": {"mark": 4954, "space": 1985},
+	"1": {"mark": 951, "space": 3044},
+	"0": {"mark": 951, "space": 1035},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H011000000101A",
+	    "KEY_CYCLEWINDOWS": "H101001001010A",
+	    "PPV": "H101100000010A",
+	    "KEY_UP": "H110001001111A",
+	    "KEY_DOWN": "H000001000101A",
+	    "KEY_LEFT": "H101110001000A",
+	    "KEY_RIGHT": "H100000001100A",
+	    "GOBACK": "H011010001111A",
+	    "KEY_EPG": "H011110000010A",
+	    "KEY_INFO": "H111001001100A",
+	    "INTERESTS": "H010110000001A",
+	    "BROWSE": "H100001001001A",
+	    "KEY_EXIT": "H101000001111A",
+	    "KEY_OPTION": "H001010001001A",
+	    "FUTURE": "H010001000011A",
+	    "LAST_CH": "H000110000111A",
+	    "KEY_CHANNELUP": "H110100000111A",
+	    "KEY_CHANNELDOWN": "H000010001010A",
+	    "KEY_1": "H111100000100A",
+	    "KEY_2": "H100010000110A",
+	    "KEY_3": "H010010001100A",
+	    "KEY_4": "H111010000011A",
+	    "KEY_5": "H100110001011A",
+	    "KEY_6": "H110110001101A",
+	    "KEY_7": "H010100001011A",
+	    "KEY_8": "H100100000001A",
+	    "KEY_9": "H011100001000A",
+	    "KEY_0": "H001001000110A",
+	    "KEY_HELP": "H111110001110A",
+	    "KEY_ENTER": "H001110000100A"
+	}
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "description": "Thomson_ROC740 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/thomson/ROC740.lircd.conf", "remote": "Thomson_ROC740", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 559, "space": 0},
+	"1": {"mark": 560, "space": 4450},
+	"0": {"mark": 560, "space": 1930},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "001110000000AWWWWXXXXXYYYYYYYYZZZZZZZ001110000000A",
+	    "KEY_2": "001110001000AWWYYYYYYZZZZZZZ001110001000A",
+	    "KEY_3": "001110010000AWWYYYYYYZZZZZZZ001110010000A",
+	    "KEY_4": "001110000001AWWYYYYYYZZZZZZZ001110000001A",
+	    "KEY_7": "001110000010AWWYYYYYYZZZZZZZ001110000010A",
+	    "KEY_PLAY": "000010100000AWWWWWWWXZZZZZZZ000010100000A",
+	    "KEY_STOP": "000010100100AWWWWXXXXXYYYYYYYYZZZZZZZ000010100100A",
+	    "KEY_FASTFORWARD": "000010100001AWWWWXXXXXYYYYYYYYZZZZZZZ000010100001A",
+	    "KEY_PAUSE": "000010100010AWWWWXXXXXYYYYYYYYZZZZZZZ000010100010A",
+	    "KEY_RECORD": "000010100011AWWYYYYYYZZZZZZZ000010100011A"
+	}
+    }
+}

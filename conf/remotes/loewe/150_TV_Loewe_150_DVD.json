@@ -1,0 +1,52 @@
+{
+    "description": "Loewe_150_DVD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/loewe/150_TV.lircd.conf", "remote": "Loewe_150_DVD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 468, "space": 411},
+	"B": {"mark": 468, "space": 822},
+	"C": {"mark": 936, "space": 822},
+	"D": {"mark": 936, "space": 411},
+	"E": {"mark": 468, "space": 0},
+	"F": {"mark": 936, "space": 0},
+	"H": {"mark": 2723, "space": 847},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------",
+    "features": {
+	"key": {
+	    "KEY_UP": "HBAABDAAAACAACDBAAE",
+	    "KEY_DOWN": "HBAABDAAAACAACDBAF",
+	    "KEY_LEFT": "HBAABDAAAACAACDBCE",
+	    "KEY_RIGHT": "HBAABDAAAACAACDBDE",
+	    "KEY_OK": "HBAABDAAAACAACDABAE",
+	    "KEY_RED": "HBAABDAAAACAAACAAAF",
+	    "KEY_GREEN": "HBAABDAAAACAAADBAAF",
+	    "KEY_YELLOW": "HBAABDAAAACAAACDBAE",
+	    "KEY_BLUE": "HBAABDAAAACAAACAAAAE",
+	    "KEY_T": "HBAABDAAAACAAADBAAAE",
+	    "KEY_M": "HBAABDAAAACADBCAAF",
+	    "KEY_E": "HBAABDAAAACACAAAADE",
+	    "KEY_I": "HBAABDAAAACAAACAACE",
+	    "KEY_1": "HBAABDAAAACAAAAAAAAF",
+	    "KEY_2": "HBAABDAAAACAAAAAAACE",
+	    "KEY_3": "HBAABDAAAACAAAAAAADE",
+	    "KEY_4": "HBAABDAAAACAAAAAACAE",
+	    "KEY_5": "HBAABDAAAACAAAAAACF",
+	    "KEY_6": "HBAABDAAAACAAAAAADBE",
+	    "KEY_7": "HBAABDAAAACAAAAAADAE",
+	    "KEY_8": "HBAABDAAAACAAAAACAAE",
+	    "KEY_9": "HBAABDAAAACAAAAACAF",
+	    "KEY_0": "HBAABDAAAACAAAAAAAAAE",
+	    "KEY_POWER": "HBAABDAAAACAAAAADBAE",
+	    "KEY_VIDEO": "HBAABDAAAACAACACDE",
+	    "KEY_AUDIO": "HBAABDAAAACAACADABE",
+	    "KEY_MUTE": "HBAABDAAAACAAAAADAAE",
+	    "Timer": "HBAABDAAAACADBACAAE",
+	    "V=": "HBAABDAAAACAAAADABF",
+	    "PiP": "HBAABDAAAACACAAACF"
+	}
+    }
+}

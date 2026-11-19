@@ -1,0 +1,37 @@
+{
+    "description": "rm (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-PP402.lircd.conf", "remote": "rm", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 618, "space": 0},
+	"H": {"mark": 2428, "space": 561},
+	"1": {"mark": 618, "space": 561},
+	"0": {"mark": 1214, "space": 561},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "tv_1": "H11111110111A",
+	    "tv_2": "H01111110111A",
+	    "tv_3": "H10111110111A",
+	    "tv_4": "H00111110111A",
+	    "tv_5": "H11011110111A",
+	    "tv_6": "H01011110111A",
+	    "tv_7": "H10011110111A",
+	    "tv_8": "H00011110111A",
+	    "tv_9": "H11101110111A",
+	    "tv_0": "H01101110111A",
+	    "tv_shift": "H01000110111A",
+	    "tv_enter": "H00101110111A",
+	    "tv_ch_inc": "H11110110111A",
+	    "tv_ch_dec": "H01110110111A",
+	    "tv_off": "H01010110111A",
+	    "tv_vol_inc": "H10110110111A",
+	    "tv_vol_dec": "H00110110111A",
+	    "tv_mute": "H11010110111A"
+	}
+    }
+}

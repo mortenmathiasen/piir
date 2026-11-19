@@ -1,0 +1,35 @@
+{
+    "description": "tvuniversum (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/universum/TV.lircd.conf", "remote": "tvuniversum", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1170, "space": 3331},
+	"B": {"mark": 1186, "space": 1091},
+	"C": {"mark": 1204, "space": 1040},
+	"D": {"mark": 1205, "space": 1041},
+	"E": {"mark": 1223, "space": 1040},
+	"F": {"mark": 1224, "space": 1042},
+	"G": {"mark": 1225, "space": 1043},
+	"I": {"mark": 1230, "space": 1036},
+	"J": {"mark": 2335, "space": 0},
+	"K": {"mark": 2337, "space": 0},
+	"L": {"mark": 2339, "space": 0},
+	"M": {"mark": 2339, "space": 2163},
+	"N": {"mark": 2341, "space": 0},
+	"O": {"mark": 3471, "space": 1037},
+	"P": {"mark": 6848, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----",
+    "features": {
+	"key": {
+	    "power": "EP",
+	    "channel-": "BCDJ",
+	    "channel+": "IOL",
+	    "vol-": "FAN",
+	    "vol+": "GMK"
+	}
+    }
+}

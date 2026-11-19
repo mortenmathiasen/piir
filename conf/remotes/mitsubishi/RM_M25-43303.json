@@ -1,0 +1,41 @@
+{
+    "description": "RM_M25-43303 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/mitsubishi/RM_M25-43303.lircd.conf", "remote": "RM_M25-43303", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 333, "space": 0},
+	"1": {"mark": 333, "space": 2083},
+	"0": {"mark": 333, "space": 861},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "1110101000100000A",
+	    "KEY_STOP": "1110101000101000A",
+	    "KEY_PAUSE": "1110101000111000A",
+	    "Aufnahme": "1110101000110000A",
+	    "vorwärts": "1110101000100100A",
+	    "Zurück": "1110101000110100A",
+	    "Hoch": "1110101001010000A",
+	    "Runter": "1110101001001000A",
+	    "KEY_KPPLUS": "1110101001110000A",
+	    "KEY_KPMINUS": "1110101001101000A",
+	    "ein/aus": "1110101001000000A",
+	    "Daten": "1110101011100100A",
+	    "Vorwahl": "1110101011011100A",
+	    "ausschub": "1110101001101100A",
+	    "KEY_5sec": "1110101010100000A",
+	    "skipsuche": "1110101011000000A",
+	    "aufnahme_zeit": "1110101011110100A",
+	    "StartZeit": "1110101011101100A",
+	    "KEY_0": "1110101010101000A",
+	    "KEY_0-stop": "1110101010110000A",
+	    "löschen": "1110101001100000A",
+	    "eingabe": "1110101011110000A",
+	    "programierung": "1110101011011000A"
+	}
+    }
+}

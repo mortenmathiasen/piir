@@ -1,0 +1,25 @@
+{
+    "description": "PHILIPS_STEREO (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/FW11.lircd.conf", "remote": "PHILIPS_STEREO", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 610, "space": 0},
+	"H": {"mark": 4575, "space": 4445},
+	"1": {"mark": 610, "space": 1620},
+	"0": {"mark": 610, "space": 500},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "unknown1": "H00100101001001010110100010010111A",
+	    "unknown2": "H00100101001001010000010011111011A",
+	    "unknown3": "H00100101001001010000011011111001A",
+	    "unknown4": "H00100101001001010011000011001111A",
+	    "unknown5": "H00100101001001011101100000100111A",
+	    "unknown6": "H00100101001001011110100000010111A"
+	}
+    }
+}

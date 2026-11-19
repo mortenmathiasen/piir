@@ -1,0 +1,44 @@
+{
+    "description": "rd5860.conf (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RD5860.lircd.conf", "remote": "rd5860.conf", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 937, "space": 837},
+	"B": {"mark": 1874, "space": 1674},
+	"C": {"mark": 1874, "space": 837},
+	"D": {"mark": 937, "space": 1674},
+	"E": {"mark": 980, "space": 837},
+	"F": {"mark": 937, "space": 0},
+	"G": {"mark": 1874, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_OPEN": "EAABCDBABF",
+	    "KEY_1": "EAABCAAAAADF",
+	    "KEY_2": "EAABCAAAADG",
+	    "KEY_3": "EAABCAAAADAF",
+	    "KEY_4": "EAABCAAADCF",
+	    "KEY_5": "EAABCAAADBF",
+	    "KEY_6": "EAABCAAADAG",
+	    "KEY_7": "EAABCAAADAAF",
+	    "KEY_8": "EAABCAADCAF",
+	    "KEY_9": "EAABCAADCDF",
+	    "KEY_0": "EAABCAAAAAAF",
+	    "KEY_STOP": "EAABCDABAG",
+	    "KEY_PAUSE": "EAABCDACAAF",
+	    "KEY_PLAY": "EAABCDABBF",
+	    "track-down": "EAABCDCAADF",
+	    "track-up": "EAABCDCAAAF",
+	    "random": "EAABCADAACF",
+	    "search-down": "EAABCDACDG",
+	    "search-up": "EAABCDABCF",
+	    "a/b": "EAABCDAABAF",
+	    "KEY_AGAIN": "EAABCADAABF",
+	    "scan": "EAABCDBBAF"
+	}
+    }
+}

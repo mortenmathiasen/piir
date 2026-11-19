@@ -1,0 +1,51 @@
+{
+    "description": "RC6X03FE (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/saba/RC6X03FE.lircd.conf", "remote": "RC6X03FE", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 462, "space": 0},
+	"1": {"mark": 462, "space": 2031},
+	"0": {"mark": 462, "space": 4586},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "111101100010A",
+	    "Install": "111101000110A",
+	    "KEY_CHANNELUP": "111111000100A",
+	    "KEY_TIME": "111111000111A",
+	    "Timer": "111111101010A",
+	    "KEY_EXIT": "111111100001A",
+	    "KEY_UP": "111111001011A",
+	    "KEY_DOWN": "111111001010A",
+	    "KEY_LEFT": "111111001001A",
+	    "KEY_RIGHT": "111111001000A",
+	    "KEY_OK": "111111001100A",
+	    "KEY_1": "111111111111A",
+	    "KEY_2": "111111110111A",
+	    "KEY_3": "111111101111A",
+	    "KEY_4": "111111111110A",
+	    "KEY_5": "111111110110A",
+	    "KEY_6": "111111101110A",
+	    "KEY_7": "111111111101A",
+	    "KEY_8": "111111110101A",
+	    "KEY_9": "111111101101A",
+	    "KEY_0/--": "111111110001A",
+	    "AV": "111111100111A",
+	    "AutoTrack": "111111010011A",
+	    "P/T-": "111111010101A",
+	    "P/T+": "111111010110A",
+	    "KEY_REWIND": "111111100000A",
+	    "KEY_PLAY": "111101011111A",
+	    "KEY_FASTFORWARD": "111101011110A",
+	    "KEY_RECORD": "111111011100A",
+	    "KEY_STOP": "111111011011A",
+	    "KEY_PAUSE": "111111011101A",
+	    "SP/LP": "111111111010A",
+	    "Scan/Erase": "111111000010A"
+	}
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "description": "Yamaha_RX-450 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/yamaha/RX-450.lircd.conf", "remote": "Yamaha_RX-450", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 533, "space": 0},
+	"H": {"mark": 8853, "space": 4532},
+	"1": {"mark": 533, "space": 1714},
+	"0": {"mark": 533, "space": 589},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H01011110101000011111100000000111A",
+	    "KEY_CD": "H01011110101000011010100001010111A",
+	    "KEY_TUNER": "H01011110101000010110100010010111A",
+	    "KEY_VIDEO": "H01011110101000011001100001100111A",
+	    "KEY_TAPE": "H01011110101000010001100011100111A",
+	    "KEY_VOLUMEUP": "H01011110101000010101100010100111A",
+	    "KEY_VOLUMEDOWN": "H01011110101000011101100000100111A",
+	    "tuner+": "H01011110101000010000100011110111A",
+	    "tuner-": "H01011110101000011000100001110111A",
+	    "tuner-toggle": "H01011110101000010100100010110111A"
+	}
+    }
+}

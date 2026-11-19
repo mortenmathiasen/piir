@@ -1,0 +1,46 @@
+{
+    "description": "Sony_RM-U25 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-U25.lircd.conf", "remote": "Sony_RM-U25", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 691, "space": 0},
+	"H": {"mark": 2496, "space": 530},
+	"1": {"mark": 1260, "space": 530},
+	"0": {"mark": 691, "space": 530},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H01011001110A",
+	    "KEY_PAUSE": "H10011001110A",
+	    "KEY_STOP": "H00011001110A",
+	    "KEY_UP": "H01000011110A",
+	    "KEY_DOWN": "H11000011110A",
+	    "KEY_LEFT": "H01000111110A",
+	    "KEY_RIGHT": "H10000111110A",
+	    "KEY_OK": "H10001011110A",
+	    "More": "H10110011110A",
+	    "KEY_BACK": "H01011011110A",
+	    "KEY_REWIND": "H11011001110A",
+	    "KEY_FORWARD": "H00111001110A",
+	    "KEY_AGAIN": "H11101011110A",
+	    "KEY_NEXT": "H01101011110A",
+	    "KEY_1": "H00000001110A",
+	    "KEY_2": "H10000001110A",
+	    "KEY_3": "H01000001110A",
+	    "KEY_4": "H11000001110A",
+	    "KEY_5": "H00100001110A",
+	    "KEY_6": "H10100001110A",
+	    "KEY_7": "H01100001110A",
+	    "KEY_8": "H11100001110A",
+	    "KEY_9": "H00010001110A",
+	    "KEY_0": "H10010001110A",
+	    "X_KEY_11": "H01010001110A",
+	    "X_KEY_12": "H11010001110A",
+	    "Ant": "H01010101110A"
+	}
+    }
+}

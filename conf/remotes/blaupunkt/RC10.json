@@ -1,0 +1,38 @@
+{
+    "description": "BLAUPUNKT (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/blaupunkt/RC10.lircd.conf", "remote": "BLAUPUNKT", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 660, "space": 0},
+	"B": {"mark": 2050, "space": 2000},
+	"C": {"mark": 2650, "space": 2580},
+	"D": {"mark": 3250, "space": 3200},
+	"E": {"mark": 3850, "space": 3850},
+	"F": {"mark": 4450, "space": 4400},
+	"G": {"mark": 5050, "space": 5000},
+	"I": {"mark": 5660, "space": 5630},
+	"J": {"mark": 6280, "space": 6200},
+	"K": {"mark": 6875, "space": 6850},
+	"L": {"mark": 7500, "space": 7400},
+	"M": {"mark": 8050, "space": 8050},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--",
+    "features": {
+	"key": {
+	    "SRC": "KA",
+	    "SRC+": "MA",
+	    "UP": "EA",
+	    "OK": "LA",
+	    "DOWN": "FA",
+	    "RIGHT": "IA",
+	    "LEFT": "JA",
+	    "V+": "CA",
+	    "V-": "DA",
+	    "MUTE": "GA",
+	    ".": "BA"
+	}
+    }
+}

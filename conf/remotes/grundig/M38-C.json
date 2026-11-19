@@ -1,0 +1,43 @@
+{
+    "description": "Grundig-M38C (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/grundig/M38-C.lircd.conf", "remote": "Grundig-M38C", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 881, "space": 894},
+	"B": {"mark": 1762, "space": 894},
+	"C": {"mark": 881, "space": 1788},
+	"D": {"mark": 1762, "space": 1788},
+	"E": {"mark": 904, "space": 894},
+	"F": {"mark": 881, "space": 0},
+	"G": {"mark": 1762, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "EAADBCADBCBACABF",
+	    "KEY_CD": "EAADBCADDBCAAAAAF",
+	    "KEY_VCR": "EAADBCAABAAACAAAAAF",
+	    "KEY_TUNER": "EAADBCADBACAAAAAAF",
+	    "KEY_AUX": "EAADBCAAADDAAAAAAF",
+	    "TAPE1": "EAADBCADBCDDABF",
+	    "TAPE2": "EAADBCADBCDDAAG",
+	    "KEY_VOLUMEDOWN": "EAADBCAAABAAACBACF",
+	    "KEY_VOLUMEUP": "EAADBCADBAAACBAAF",
+	    "DSC": "EAADBCDABAAAACAAAF",
+	    "Incredible_Sound": "EAADBCBCBAAAAAAAAF",
+	    "DBB": "EAADBCDABAAAAACAG",
+	    "DISC_UP": "EAADBCADDBACAAAG",
+	    "SHUFFLE": "EAADBCAAADBACAABF",
+	    "KEY_PLAY": "EAADBCBAAAAAACDDF",
+	    "KEY_PREVIOUS": "EAADBCBAAAAAAAAAACF",
+	    "KEY_NEXT": "EAADBCBAAAAAAAAAAAF",
+	    "KEY_STOP": "EAADBCBAAAAAACDAG",
+	    "REV": "EAADBCBAAAAAACBCG",
+	    "KEY_PAUSE": "EAADBCBAAAAAACBAAF",
+	    "KEY_FORWARD": "EAADBCBAAAAAACDBF"
+	}
+    }
+}

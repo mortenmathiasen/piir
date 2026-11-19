@@ -1,0 +1,47 @@
+{
+    "description": "JVC_RM-RXQ1002 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-RXQ1002.lircd.conf", "remote": "JVC_RM-RXQ1002", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 627, "space": 0},
+	"1": {"mark": 629, "space": 1479},
+	"0": {"mark": 629, "space": 427},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "KEY_1": "1111100110000100A",
+	    "KEY_2": "1111100101000100A",
+	    "KEY_3": "1111100111000100A",
+	    "KEY_4": "1111100100100100A",
+	    "KEY_5": "1111100110100100A",
+	    "KEY_6": "1111100101100100A",
+	    "KEY_7": "1111100111100100A",
+	    "KEY_8": "1111100100010100A",
+	    "KEY_9": "1111100110010100A",
+	    "KEY_0": "1111100101010100A",
+	    "X_KEY_0+": "1111100101110100A",
+	    "KEY_POWER": "1111100100000000A",
+	    "KEY_SLEEP": "1111100101001100A",
+	    "display": "1111100100111000A",
+	    "auto_preset": "1111100111001000A",
+	    "intro": "1111100101101110A",
+	    "KEY_AGAIN": "1111100100011110A",
+	    "program": "1111100100101110A",
+	    "stop_clear": "1111100110001110A",
+	    "KEY_PLAYPAUSE": "1111100100001110A",
+	    "KEY_OPEN": "1111100111011110A",
+	    "band": "1111100111010000A",
+	    "auto_mono": "1111100111111000A",
+	    "search_back": "1111100101111100A",
+	    "search_forward": "1111100110111100A",
+	    "bass": "1111100100100000A",
+	    "tone": "1111100101100001A",
+	    "KEY_VOLUMEDOWN": "1111100101000000A",
+	    "KEY_VOLUMEUP": "1111100110000000A"
+	}
+    }
+}

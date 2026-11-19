@@ -1,0 +1,46 @@
+{
+    "description": "Denon (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/denon/RC-174.lircd.conf", "remote": "Denon", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 323, "space": 0},
+	"1": {"mark": 319, "space": 1808},
+	"0": {"mark": 319, "space": 734},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "a/b": "001001100101000A",
+	    "KEY_RECORD": "001001111101000A",
+	    "KEY_PAUSE": "001001011101000A",
+	    "KEY_STOP": "001000111101000A",
+	    "KEY_REWIND": "001000010010111A",
+	    "KEY_FORWARD": "001000101101000A",
+	    "KEY_FASTFORWARD": "001001110101000A",
+	    "KEY_PLAY": "001000011101000A",
+	    "KEY_PREVIOUS": "000101001101000A",
+	    "KEY_NEXT": "000100001101000A",
+	    "random": "000100101011000A",
+	    "KEY_AGAIN": "000101101010111A",
+	    "disksk": "000101101011000A",
+	    "KEY_PAUSECD": "000101011101000A",
+	    "KEY_STOPCD": "000100111101000A",
+	    "KEY_PLAYCD": "000100011101000A",
+	    "panel": "001100111111000A",
+	    "tape_mon": "001100011101000A",
+	    "tape2": "001100111101000A",
+	    "KEY_TAPE": "001101011101000A",
+	    "KEY_VIDEO": "001101100101000A",
+	    "KEY_TUNER": "001101001101000A",
+	    "KEY_CD": "001100101101000A",
+	    "phono": "001100001101000A",
+	    "KEY_CHANNELUP": "001101000110111A",
+	    "KEY_CHANNELDOWN": "001101111001000A",
+	    "KEY_VOLUMEUP": "001100100110111A",
+	    "KEY_VOLUMEDOWN": "001100011001000A"
+	}
+    }
+}

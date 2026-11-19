@@ -1,0 +1,51 @@
+{
+    "description": "sony (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-D250.lircd.conf", "remote": "sony", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1248, "space": 0},
+	"H": {"mark": 2441, "space": 551},
+	"1": {"mark": 649, "space": 551},
+	"0": {"mark": 1248, "space": 551},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H11111110111A",
+	    "KEY_2": "H01111110111A",
+	    "KEY_3": "H10111110111A",
+	    "KEY_4": "H00111110111A",
+	    "KEY_5": "H11011110111A",
+	    "KEY_6": "H01011110111A",
+	    "KEY_7": "H10011110111A",
+	    "KEY_8": "H00011110111A",
+	    "KEY_9": "H11101110111A",
+	    "X_KEY_10": "H11111010111A",
+	    "X_KEY_11": "H01111010111A",
+	    "X_KEY_12": "H10111010111A",
+	    "X_KEY_13": "H00111010111A",
+	    "X_KEY_14": "H11011010111A",
+	    "X_KEY_15": "H01011010111A",
+	    "X_KEY_16": "H10011010111A",
+	    "clear_repeat": "H11001010111A",
+	    "a-b": "H10101010111A",
+	    "display": "H11101010111A",
+	    "X_KEY_17": "H00011010111A",
+	    "KEY_PLAY": "H10110010111A",
+	    "prew": "H11110010111A",
+	    "KEY_NEXT": "H01110010111A",
+	    "KEY_PAUSE": "H01100010111A",
+	    "volmin": "H10010010111A",
+	    "volmax": "H00010010111A",
+	    "KEY_STOP": "H11100010111A",
+	    "seek_prev": "H00110010111A",
+	    "seek_forw": "H11010010111A",
+	    "continue": "H01000110111A",
+	    "pgm": "H00000110111A",
+	    "shuffle": "H01010010111A"
+	}
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "description": "SONY-TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/TV.lircd.conf", "remote": "SONY-TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 580, "space": 0},
+	"H": {"mark": 2574, "space": 444},
+	"1": {"mark": 1246, "space": 557},
+	"0": {"mark": 625, "space": 557},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_RED": "H00110011100AVVWWWWWXXXXXYYYZZZZH00110011100AVVWWWWWXXXXXYYYZZZZH00110011100A",
+	    "KEY_GREEN": "H10110011100AVVWWWWXXXXXXXXXYZZZH10110011100AVVWWWWXXXXXXXXXYZZZH10110011100A",
+	    "KEY_YELLOW": "H01110011100AVVWWWWXXXXXXXXXYZZZH01110011100AVVWWWWXXXXXXXXXYZZZH01110011100A",
+	    "KEY_BLUE": "H11110011100AVVWWWWXXYYYYYYYYYZZH11110011100AVVWWWWXXYYYYYYYYYZZH11110011100A"
+	}
+    }
+}

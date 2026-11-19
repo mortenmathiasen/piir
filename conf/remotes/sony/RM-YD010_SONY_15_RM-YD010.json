@@ -1,0 +1,34 @@
+{
+    "description": "SONY_15_RM-YD010 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-YD010.lircd.conf", "remote": "SONY_15_RM-YD010", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1268, "space": 0},
+	"H": {"mark": 2482, "space": 506},
+	"1": {"mark": 1268, "space": 522},
+	"0": {"mark": 673, "space": 522},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_DOT": "H10111001110100A",
+	    "BTN_SURROUMD": "H11111000010010A",
+	    "BTN_SOUND": "H11011111110100A",
+	    "BTN_WIDE": "H10111100010010A",
+	    "BTN_RETURN": "H11000101110100A",
+	    "BTN_TOOLS": "H01101101110100A",
+	    "BTN_PREV": "H00111101110100A",
+	    "BTN_REPLAY": "H10011111110100A",
+	    "BTN_ADVANCE": "H00011111110100A",
+	    "BTN_NEXT": "H10111101110100A",
+	    "BTN_REWIND": "H11011001110100A",
+	    "BTN_PLAY": "H01011001110100A",
+	    "BTN_FAST_FORWARD": "H00111001110100A",
+	    "BTN_PAUSE": "H10011001110100A",
+	    "BTN_STOP": "H00011001110100A"
+	}
+    }
+}

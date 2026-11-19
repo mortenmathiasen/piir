@@ -1,0 +1,50 @@
+{
+    "description": "Philips_RCLE012 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RCLE012.lircd.conf", "remote": "Philips_RCLE012", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 988, "space": 786},
+	"B": {"mark": 1976, "space": 786},
+	"C": {"mark": 988, "space": 1572},
+	"D": {"mark": 1018, "space": 786},
+	"E": {"mark": 988, "space": 0},
+	"F": {"mark": 1976, "space": 1572},
+	"G": {"mark": 1976, "space": 0},
+	"I": {"mark": 2006, "space": 1572},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "DABAAAAACABE",
+	    "KEY_UP": "IBAAAACBAAE",
+	    "KEY_DOWN": "IBAAAACBACE",
+	    "KEY_LEFT": "IBAAAACFFE",
+	    "KEY_RIGHT": "IBAAAACFAG",
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACG",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACFE",
+	    "KEY_6": "DABAAAAAACAG",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "KEY_VOLUMEUP": "DABAAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
+	    "KEY_MUTE": "DABAAAAACAFE",
+	    "KEY_CHANNELUP": "DABAAACBAAAE",
+	    "KEY_CHANNELDOWN": "DABAAACBAACE",
+	    "Sound": "DABAAAACFBE",
+	    "P<P": "DABAAACBACG",
+	    "Screen": "DABAAAACFFE",
+	    "KEY_MENU": "IBAAAACBCG",
+	    "i+": "DABAAAAACAAAE",
+	    "KEY_TIME": "DABAAACBCAG",
+	    "KEY_LAST": "DABAAACAABAE"
+	}
+    }
+}

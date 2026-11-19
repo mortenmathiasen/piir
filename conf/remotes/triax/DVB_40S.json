@@ -1,0 +1,44 @@
+{
+    "description": "TRIAX_DVB_40S (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/triax/DVB_40S.lircd.conf", "remote": "TRIAX_DVB_40S", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 887, "space": 898},
+	"B": {"mark": 1774, "space": 1796},
+	"C": {"mark": 1774, "space": 898},
+	"D": {"mark": 887, "space": 1796},
+	"E": {"mark": 887, "space": 0},
+	"F": {"mark": 875, "space": 898},
+	"G": {"mark": 1762, "space": 1796},
+	"I": {"mark": 1774, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "FABBCADACE",
+	    "KEY_1": "FABBCAAAADE",
+	    "KEY_2": "FABBCAAADI",
+	    "KEY_3": "FABBCAAADAE",
+	    "KEY_4": "FABBCAADCE",
+	    "KEY_5": "FABBCAADBE",
+	    "KEY_6": "FABBCAADAI",
+	    "KEY_7": "FABBCAADAAE",
+	    "KEY_8": "FABBCADCAE",
+	    "KEY_9": "FABBCADCDE",
+	    "KEY_0": "FABBCAAAAAE",
+	    "KEY_MUTE": "GBBCAADAI",
+	    "KEY_HELP": "FABBCADAAAE",
+	    "KEY_LEFT": "GBBCDBBE",
+	    "KEY_RIGHT": "GBBCDBAI",
+	    "KEY_UP": "GBBCDCAAE",
+	    "KEY_DOWN": "GBBCDCADE",
+	    "KEY_EPG": "GBBCADAAAE",
+	    "KEY_MENU": "GBBBBBI",
+	    "TV/Sat": "FABBBBCAE",
+	    "KEY_KPPLUS": "FABBBBAAAE"
+	}
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "description": "Sony_RM-V310-VCR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-V310.lircd.conf", "remote": "Sony_RM-V310-VCR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 714, "space": 0},
+	"H": {"mark": 2503, "space": 486},
+	"1": {"mark": 1311, "space": 478},
+	"0": {"mark": 714, "space": 478},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H10101001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH10101001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH10101001101A",
+	    "KEY_PLAY": "H01011001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH01011001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH01011001101A",
+	    "KEY_REWIND": "H11011001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH11011001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH11011001101A",
+	    "KEY_FORWARD": "H00111001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH00111001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH00111001101A",
+	    "KEY_PAUSE": "H10011001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH10011001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH10011001101A",
+	    "KEY_STOP": "H00011001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH00011001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH00011001101A",
+	    "KEY_RECORD": "H10111001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH10111001101AVVWWXXXXXXXYYYYYYYYYZZZZZZZH10111001101A"
+	}
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "description": "Salora_PayTV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/salora/PayTV.lircd.conf", "remote": "Salora_PayTV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 522, "space": 0},
+	"1": {"mark": 522, "space": 5080},
+	"0": {"mark": 522, "space": 464},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "110101101101110A",
+	    "KEY_1": "101110110110101A",
+	    "KEY_2": "101110110101110A",
+	    "KEY_3": "101110110101101A",
+	    "KEY_4": "101110101110110A",
+	    "KEY_5": "101110101110101A",
+	    "KEY_6": "101110101101110A",
+	    "KEY_7": "101110101101101A",
+	    "KEY_8": "101101110110110A",
+	    "KEY_9": "101101110110101A",
+	    "KEY_0": "101110110110110A",
+	    "KEY_ENTER": "101101101110110A",
+	    "KEY_CHANNELUP": "110101110110101A",
+	    "ch_dwn": "110110110110101A",
+	    "fc": "110110110110110A",
+	    "KEY_PC": "101101110101110A",
+	    "ce": "110110110101101A",
+	    "buy": "110101101110110A",
+	    "pgm": "101101101110101A",
+	    "sw": "101101110101101A",
+	    "clk": "101101101101101A",
+	    "timer": "101101101101110A"
+	}
+    }
+}

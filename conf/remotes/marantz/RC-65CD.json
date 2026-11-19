@@ -1,0 +1,45 @@
+{
+    "description": "Marantz_RC-65CD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/marantz/RC-65CD.lircd.conf", "remote": "Marantz_RC-65CD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 945, "space": 819},
+	"B": {"mark": 1890, "space": 1638},
+	"C": {"mark": 1890, "space": 819},
+	"D": {"mark": 945, "space": 1638},
+	"E": {"mark": 991, "space": 819},
+	"F": {"mark": 945, "space": 0},
+	"G": {"mark": 1890, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_1": "EAABCAAAAADF",
+	    "KEY_2": "EAABCAAAADG",
+	    "KEY_3": "EAABCAAAADAF",
+	    "KEY_4": "EAABCAAADCF",
+	    "KEY_5": "EAABCAAADBF",
+	    "KEY_6": "EAABCAAADAG",
+	    "KEY_7": "EAABCAAADAAF",
+	    "KEY_8": "EAABCAADCAF",
+	    "KEY_9": "EAABCAADCDF",
+	    "KEY_0": "EAABCAAAAAAF",
+	    "KEY_NEXT": "EAABCDCAAAF",
+	    "KEY_PREVIOUS": "EAABCDCAADF",
+	    "MEMO": "EAABCDBCDF",
+	    "KEY_PAUSE": "EAABCDACAAF",
+	    "SEARCH-": "EAABCDACDG",
+	    "SEARCH+": "EAABCDABCF",
+	    "KEY_PLAY": "EAABCDABBF",
+	    "KEY_STOP": "EAABCDABAG",
+	    "KEY_SELECT": "EAABCAADBG",
+	    "LAP": "EAABCAADBAF",
+	    "REVIEW": "EAABCAADAAAF",
+	    "KEY_AGAIN": "EAABCADAABF",
+	    "AMS": "EAABCDBBAF"
+	}
+    }
+}

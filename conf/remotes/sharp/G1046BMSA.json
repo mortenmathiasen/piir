@@ -1,0 +1,45 @@
+{
+    "description": "SHARP (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sharp/G1046BMSA.lircd.conf", "remote": "SHARP", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 316, "space": 0},
+	"1": {"mark": 316, "space": 1773},
+	"0": {"mark": 316, "space": 736},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "off": "100000110100010A",
+	    "off_timer": "100000101100010A",
+	    "KEY_POWER": "100001001100010A",
+	    "KEY_1": "100001000000010A",
+	    "KEY_2": "100000100000010A",
+	    "KEY_3": "100001100000010A",
+	    "KEY_4": "100000010000010A",
+	    "KEY_5": "100001010000010A",
+	    "KEY_6": "100000110000010A",
+	    "KEY_7": "100001110000010A",
+	    "KEY_8": "100000001000010A",
+	    "KEY_9": "100001001000010A",
+	    "KEY_0": "100000101000010A",
+	    "dual": "100000011110010A",
+	    "KEY_LAST": "100001110010010A",
+	    "KEY_VIDEO": "100001100100010A",
+	    "KEY_CHANNELDOWN": "100000100100010A",
+	    "KEY_CHANNELUP": "100001000100010A",
+	    "KEY_MUTE": "100001110100010A",
+	    "KEY_VOLUMEDOWN": "100001010100010A",
+	    "KEY_VOLUMEUP": "100000010100010A",
+	    "save_ch": "100001000001010A",
+	    "del_ch": "100001011110010A",
+	    "KEY_MENU": "100001101100010A",
+	    "sig_down": "100000000101010A",
+	    "sig_up": "100001111001010A",
+	    "KEY_MODE": "100001011001010A"
+	}
+    }
+}

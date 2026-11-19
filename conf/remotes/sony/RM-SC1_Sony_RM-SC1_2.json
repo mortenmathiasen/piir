@@ -1,0 +1,21 @@
+{
+    "description": "Sony_RM-SC1_2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-SC1.lircd.conf", "remote": "Sony_RM-SC1_2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1260, "space": 0},
+	"H": {"mark": 2450, "space": 500},
+	"1": {"mark": 1260, "space": 541},
+	"0": {"mark": 650, "space": 541},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "function": "H10010110000100A",
+	    "eq": "H11000110000100A"
+	}
+    }
+}

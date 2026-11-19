@@ -1,0 +1,26 @@
+{
+    "description": "LD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pioneer/CU-VSX107.lircd.conf", "remote": "LD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 506, "space": 0},
+	"H": {"mark": 8492, "space": 4308},
+	"1": {"mark": 506, "space": 1626},
+	"0": {"mark": 506, "space": 560},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "ldstop": "H00010101111010100110100010010111A",
+	    "ldplay": "H00010101111010101110100000010111A",
+	    "ld<<": "H00010101111010101000100001110111A",
+	    "ld>>": "H00010101111010100000100011110111A",
+	    "ldsidea": "H00010101111010101011001001001101A",
+	    "ldsideb": "H00010101111010100111001010001101A",
+	    "ldpower": "H00010101111010100011100011000111A"
+	}
+    }
+}

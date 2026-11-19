@@ -1,0 +1,53 @@
+{
+    "description": "Marantz_RC8000PM_RC-5 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/marantz/RC8000PM.lircd.conf", "remote": "Marantz_RC8000PM_RC-5", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 897, "space": 859},
+	"B": {"mark": 1794, "space": 1718},
+	"C": {"mark": 1794, "space": 859},
+	"D": {"mark": 916, "space": 859},
+	"E": {"mark": 897, "space": 0},
+	"F": {"mark": 897, "space": 1718},
+	"G": {"mark": 1794, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "SOURCE_ON-OFF": "DAACAAAAFACE",
+	    "PHONO": "DAABBAAAAAAE",
+	    "CD": "DAABCFAAAAAE",
+	    "TUNER": "DAACAFAAAAAAE",
+	    "CD-R": "DAABAAAAAAAAE",
+	    "TAPE": "DAACFBAAAAAE",
+	    "1": "DAABAACAAAFE",
+	    "2": "DAABAACAAFG",
+	    "3": "DAABAACAAFAE",
+	    "4": "DAABAACAFCE",
+	    "5": "DAABAACAFBE",
+	    "6": "DAABAACAFAG",
+	    "7": "DAABAACAFAAE",
+	    "8": "DAABAACFCAE",
+	    "9": "DAABAACFCFE",
+	    "MINUS": "DAABAAACAAFE",
+	    "0": "DAABAACAAAAE",
+	    "PLUS": "DAABAAACAAAE",
+	    "MEMO": "DAABAAABCFE",
+	    "SCROLL": "DAABAACFAAAE",
+	    "CANCEL": "DAABAAAAABG",
+	    "TEXT": "DAABAACFBAE",
+	    "TIME": "DAABAACFBAE",
+	    "PLAY": "DAABAAAABBE",
+	    "REW": "DAABAAAACFG",
+	    "FF": "DAABAAAABCE",
+	    "MUTE": "DAACAAAAFABE",
+	    "VOLUME_UP": "DAACAAAFCAAE",
+	    "VOLUME_DOWN": "DAACAAAFCAFE",
+	    "PAUSE": "DAABAAAACAAE",
+	    "OPEN_CLOSE": "DAABAAABABE"
+	}
+    }
+}

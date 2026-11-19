@@ -1,0 +1,22 @@
+{
+    "description": "Hinen_Electronics_HSW0301 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/hinen_electronics/HSW0301.lircd.conf", "remote": "Hinen_Electronics_HSW0301", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.33,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 563, "space": 0},
+	"H": {"mark": 9000, "space": 4500},
+	"1": {"mark": 563, "space": 1687},
+	"0": {"mark": 563, "space": 562},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H00000000111111110010000011011111A",
+	    "KEY_2": "H00000000111111110001000011101111A",
+	    "KEY_3": "H00000000111111110101000010101111A"
+	}
+    }
+}

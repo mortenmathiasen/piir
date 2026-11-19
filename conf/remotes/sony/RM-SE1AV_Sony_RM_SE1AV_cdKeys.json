@@ -1,0 +1,30 @@
+{
+    "description": "Sony_RM_SE1AV_cdKeys (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-SE1AV.lircd.conf", "remote": "Sony_RM_SE1AV_cdKeys", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 611, "space": 0},
+	"H": {"mark": 2437, "space": 589},
+	"1": {"mark": 1211, "space": 588},
+	"0": {"mark": 611, "space": 588},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_PREVIOUS": "H0000110010111001110AVWWWXYYYYYYYYZZZZZZZZZH0000110010111001110AVWWWXYYYYYYYYZZZZZZZZZH0000110010111001110A",
+	    "KEY_NEXT": "H1000110010111001110AVWWXXXXXYYYYYYYYZZZZZZZZZH1000110010111001110AVWWXXXXXYYYYYYYYZZZZZZZZZH1000110010111001110A",
+	    "KEY_STOP": "H0001110010111001110AVWWXXXXXYYYYYYYYZZZZZZZZZH0001110010111001110AVWWXXXXXYYYYYYYYZZZZZZZZZH0001110010111001110A",
+	    "KEY_BACK": "H1100110010111001110AVWXXXXXXXXXYYYYYYYYZZZZZZZZZH1100110010111001110AVWXXXXXXXXXYYYYYYYYZZZZZZZZZH1100110010111001110A",
+	    "KEY_FORWARD": "H0010110010111001110AVWWXXXXXYYYYYYYYZZZZZZZZZH0010110010111001110AVWWXXXXXYYYYYYYYZZZZZZZZZH0010110010111001110A",
+	    "KEY_PAUSE": "H1001110010111001110AVWXXXXXXXXXYYYYYYYYZZZZZZZZZH1001110010111001110AVWXXXXXXXXXYYYYYYYYZZZZZZZZZH1001110010111001110A"
+	}
+    }
+}

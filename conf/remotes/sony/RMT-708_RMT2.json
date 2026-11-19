@@ -1,0 +1,27 @@
+{
+    "description": "RMT2 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-708.lircd.conf", "remote": "RMT2", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1250, "space": 0},
+	"H": {"mark": 2462, "space": 544},
+	"1": {"mark": 1253, "space": 546},
+	"0": {"mark": 651, "space": 546},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------------------------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_T": "H01011001001101AVWWWWWWWWWXXXXXXXYYYYYYYYH01011001001101AVWWWWWWWWWXXXXXXXYYYYYYYYH01011001001101AVWWWWWWWWWXXXXXXXYYYYYYYYH01011001001101A",
+	    "KEY_W": "H11011001001101AVWWWWWWWWWXYYYYYYYZZZZZZZZH11011001001101AVWWWWWWWWWXYYYYYYYZZZZZZZZH11011001001101AVWWWWWWWWWXYYYYYYYZZZZZZZZH11011001001101A",
+	    "StartStop": "H10011001001110AVWWWWWWWWWXXXXXXXYYYYYYYYH10011001001110AVWWWWWWWWWXXXXXXXYYYYYYYYH10011001001110AVWWWWWWWWWXXXXXXXYYYYYYYYH10011001001110A"
+	}
+    }
+}

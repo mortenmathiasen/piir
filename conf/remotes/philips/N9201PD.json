@@ -1,0 +1,39 @@
+{
+    "description": "Philips_N9201PD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/N9201PD.lircd.conf", "remote": "Philips_N9201PD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 935, "space": 844},
+	"B": {"mark": 1870, "space": 844},
+	"C": {"mark": 935, "space": 1688},
+	"D": {"mark": 1870, "space": 1688},
+	"E": {"mark": 965, "space": 844},
+	"F": {"mark": 935, "space": 0},
+	"G": {"mark": 1870, "space": 0},
+	"I": {"mark": 1900, "space": 1688},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "VCR-POWER": "EABCDBCABF",
+	    "KEY_MUTE": "EABAAAAACADF",
+	    "KEY_EJECTCD": "EABCDADADF",
+	    "TV-POWER": "EABAAAAACABF",
+	    "TVCH-UP": "EABAAACBAAAF",
+	    "TVCH-DOWN": "EABAAACBAACF",
+	    "TVVOL-UP": "EABAAAACBAAF",
+	    "TVVOL-DOWN": "EABAAAACBACF",
+	    "KEY_REWIND": "EABCDAABCG",
+	    "KEY_PLAY": "EABCDAADDF",
+	    "KEY_FASTFORWARD": "EABCDAADBF",
+	    "KEY_STOP": "EABCDAADAG",
+	    "KEY_RECORD": "EABCDAADAAF",
+	    "TRACKING-UP": "IBCDBCAAG",
+	    "TRACKING-DOWN": "IBCDBCADF",
+	    "KEY_PAUSE": "EABCDADBCF"
+	}
+    }
+}

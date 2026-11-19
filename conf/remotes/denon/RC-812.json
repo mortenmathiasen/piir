@@ -1,0 +1,47 @@
+{
+    "description": "DENON_RC812 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/denon/RC-812.lircd.conf", "remote": "DENON_RC812", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 304, "space": 0},
+	"1": {"mark": 303, "space": 1819},
+	"0": {"mark": 303, "space": 749},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "001100000101000A",
+	    "TAPE_AB": "001001100101000A",
+	    "TAPE_REC": "001001111101000A",
+	    "TAPE_PAUSE": "001001011101000A",
+	    "TAPE_STOP": "001000111101000A",
+	    "TAPE_REW": "001001101101000A",
+	    "TAPE_FORW": "001000101101000A",
+	    "TAPE_PLAY_REV": "001001110101000A",
+	    "TAPE_PLAY_FORW": "001000011101000A",
+	    "CD_PREV": "000101001101000A",
+	    "CD_NEXT": "000100001101000A",
+	    "CD_RANDOM": "000100101011000A",
+	    "CD_REPEAT": "000100010101000A",
+	    "CD_SKIP": "000101101011000A",
+	    "CD_PAUSE": "000101011101000A",
+	    "CD_STOP": "000100111101000A",
+	    "CD_PLAY": "000100011101000A",
+	    "RCVR_PANEL": "001100111111000A",
+	    "RCVR_TAPE_MON": "001100011101000A",
+	    "RCVR_TAPE2": "001100111101000A",
+	    "RCVR_TAPE1": "001101011101000A",
+	    "RCVR_VIDEO": "001101100101000A",
+	    "RCVR_TUNER": "001101001101000A",
+	    "RCVR_CD": "001101010010111A",
+	    "RCVR_PHONO": "001100001101000A",
+	    "PRESET_UP": "001100111001000A",
+	    "PRESET_DOWN": "001101111001000A",
+	    "KEY_VOLUMEUP": "001101011001000A",
+	    "KEY_VOLUMEDOWN": "001100011001000A"
+	}
+    }
+}

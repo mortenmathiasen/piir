@@ -1,0 +1,28 @@
+{
+    "description": "Sony_RM-Y168_TV-raw (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-Y168.lircd.conf", "remote": "Sony_RM-Y168_TV-raw", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 681, "space": 514},
+	"B": {"mark": 682, "space": 513},
+	"C": {"mark": 1279, "space": 513},
+	"D": {"mark": 1279, "space": 514},
+	"E": {"mark": 681, "space": 513},
+	"F": {"mark": 683, "space": 513},
+	"G": {"mark": 706, "space": 488},
+	"I": {"mark": 1278, "space": 513},
+	"J": {"mark": 1278, "space": 514},
+	"K": {"mark": 1278, "space": 515},
+	"L": {"mark": 1279, "space": 0},
+	"M": {"mark": 2472, "space": 507},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "TV/SAT_auto-volume-on/off": "MDKICDAGBFJAECBL"
+	}
+    }
+}

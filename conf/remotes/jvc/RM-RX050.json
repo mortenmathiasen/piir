@@ -1,0 +1,46 @@
+{
+    "description": "JVC (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-RX050.lircd.conf", "remote": "JVC", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 563, "space": 0},
+	"H": {"mark": 8539, "space": 4157},
+	"1": {"mark": 593, "space": 1505},
+	"0": {"mark": 593, "space": 470},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_STOP": "H1111100110001110A",
+	    "KEY_VOLUMEDOWN": "H1111100101000000A",
+	    "KEY_VOLUMEUP": "H1111100110000000A",
+	    "KEY_PLAY": "H1111100100001110A",
+	    "KEY_UP": "H1111100110111100A",
+	    "KEY_DOWN": "H1111100101111100A",
+	    "KEY_1": "H1111100110000100A",
+	    "KEY_2": "H1111100101000100A",
+	    "KEY_3": "H1111100111000100A",
+	    "KEY_4": "H1111100100100100A",
+	    "KEY_5": "H1111100110100100A",
+	    "KEY_6": "H1111100101100100A",
+	    "KEY_7": "H1111100111100100A",
+	    "KEY_8": "H1111100100010100A",
+	    "KEY_9": "H1111100110010100A",
+	    "KEY_0": "H1111100101010100A",
+	    "X_KEY_0+": "H1111100101110100A",
+	    "KEY_ENTER": "H1111100110001000A",
+	    "KEY_AGAIN": "H1111100100011110A",
+	    "random": "H1111100111101110A",
+	    "intro": "H1111100101101110A",
+	    "memory": "H1111100100101110A",
+	    "call": "H1111100111111110A",
+	    "display": "H1111100100111000A",
+	    "KEY_SLEEP": "H1111100101001100A",
+	    "KEY_POWER": "H1111100100000000A",
+	    "band": "H1111100111010000A"
+	}
+    }
+}

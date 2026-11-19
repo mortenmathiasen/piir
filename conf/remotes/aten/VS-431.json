@@ -1,0 +1,25 @@
+{
+    "description": "Aten_VS-431 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/aten/VS-431.lircd.conf", "remote": "Aten_VS-431", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 582, "space": 0},
+	"H": {"mark": 9021, "space": 4428},
+	"1": {"mark": 579, "space": 1616},
+	"0": {"mark": 579, "space": 493},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H00000000111111110010000011011111A",
+	    "KEY_2": "H00000000111111111010000001011111A",
+	    "KEY_3": "H00000000111111110110000010011111A",
+	    "KEY_4": "H00000000111111110111100010000111A",
+	    "KEY_DOWN": "H00000000111111111011100001000111A",
+	    "KEY_UP": "H00000000111111110011100011000111A"
+	}
+    }
+}

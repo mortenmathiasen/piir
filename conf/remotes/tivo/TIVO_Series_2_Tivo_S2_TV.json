@@ -1,0 +1,20 @@
+{
+    "description": "Tivo_S2_TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/tivo/TIVO_Series_2.lircd.conf", "remote": "Tivo_S2_TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 375, "space": 0},
+	"1": {"mark": 403, "space": 1986},
+	"0": {"mark": 403, "space": 814},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "TV_power": "1110001001000000A",
+	    "TV_input": "1110001001011100A"
+	}
+    }
+}

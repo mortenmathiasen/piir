@@ -1,0 +1,28 @@
+{
+    "description": "General_VCR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/general/VCR.lircd.conf", "remote": "General_VCR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 623, "space": 0},
+	"H": {"mark": 9055, "space": 4425},
+	"1": {"mark": 623, "space": 496},
+	"0": {"mark": 623, "space": 1621},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H10010111011010001011011101001000A",
+	    "ch_dwn": "H10010111011010000001011111101000A",
+	    "KEY_CHANNELUP": "H10010111011010001001011101101000A",
+	    "KEY_RECORD": "H10010111011010001110011100011000A",
+	    "KEY_REWIND": "H10010111011010000110011110011000A",
+	    "KEY_FORWARD": "H10010111011010000010011111011000A",
+	    "KEY_PLAY": "H10010111011010001101011100101000A",
+	    "pause/still": "H10010111011010000111011110001000A",
+	    "KEY_STOP": "H10010111011010001010011101011000A"
+	}
+    }
+}

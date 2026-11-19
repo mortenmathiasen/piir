@@ -1,0 +1,34 @@
+{
+    "description": "itvcontrol-frontside-cursors (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/itv_media/iTV_Control.lircd.conf", "remote": "itvcontrol-frontside-cursors", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 420, "space": 860},
+	"B": {"mark": 420, "space": 540},
+	"C": {"mark": 420, "space": 1180},
+	"D": {"mark": 420, "space": 220},
+	"E": {"mark": 420, "space": 0},
+	"F": {"mark": 1060, "space": 860},
+	"G": {"mark": 420, "space": 1820},
+	"I": {"mark": 420, "space": 1500},
+	"J": {"mark": 730, "space": 860},
+	"K": {"mark": 730, "space": 1820},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "b_upleft": "FAABDGAAJACBAACCE",
+	    "b_upright": "FAABDAACBAACBAAGAE",
+	    "b_downleft": "FAABDGAAKAAJAGDE",
+	    "b_downright": "FAABDAACBGAAJACCE",
+	    "b_ok": "FAABBBAAAAAAAAAIDE",
+	    "b_hoch": "FAABDAAAAAACBAAICE",
+	    "b_links": "FAABDGAAJAAAAAAIE",
+	    "b_runter": "FAABDAAAAGAAJAAIE",
+	    "b_rechts": "FAABDAACBAAAAAAICE"
+	}
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "description": "MAXY1708 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/universal/MAXY1708.lircd.conf", "remote": "MAXY1708", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 649, "space": 0},
+	"1": {"mark": 644, "space": 1435},
+	"0": {"mark": 644, "space": 413},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "1100000011101000A",
+	    "KEY_1": "1100000010000100A",
+	    "KEY_2": "1100000001000100A",
+	    "KEY_3": "1100000011000100A",
+	    "KEY_4": "1100000000100100A",
+	    "KEY_5": "1100000010100100A",
+	    "KEY_6": "1100000001100100A",
+	    "KEY_7": "1100000011100100A",
+	    "KEY_8": "1100000000010100A",
+	    "KEY_9": "1100000010010100A",
+	    "1-/11": "1100000001001110A",
+	    "0/10": "1100000000000100A",
+	    "2-/12": "1100000011000000A",
+	    "LMB": "1100010000100000A",
+	    "RMB": "1100000011011110A",
+	    "KEY_UP": "1100010001000000A",
+	    "KEY_DOWN": "1100010010010000A",
+	    "KEY_LEFT": "1100010001001100A",
+	    "KEY_RIGHT": "1100010001100000A",
+	    "KEY_PAUSE": "1100010001001000A",
+	    "KEY_PLAY": "1100010000001100A",
+	    "KEY_STOP": "1100010010001000A",
+	    "KEY_CHANNELUP": "1100000010011000A",
+	    "KEY_CHANNELDOWN": "1100000000011000A",
+	    "KEY_MUTE": "1100000000111000A",
+	    "KEY_VOLUMEUP": "1100000001111000A",
+	    "KEY_VOLUMEDOWN": "1100000011111000A",
+	    "CONTRAST_MINUS": "1100000001111010A",
+	    "CONTRAST_PLUS": "1100000011111010A",
+	    "BRIGHTNESS_MINUS": "1100000010011010A",
+	    "BRIGHTNESS_PLUS": "1100000000011010A",
+	    "KEY_RED": "1100010000111100A",
+	    "KEY_GREEN": "1100010010111100A",
+	    "KEY_YELLOW": "1100010001111100A",
+	    "KEY_BLUE": "1100010011111100A"
+	}
+    }
+}

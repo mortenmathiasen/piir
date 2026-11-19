@@ -1,0 +1,34 @@
+{
+    "description": "CFT2000 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jerrold/CFT2000.lircd.conf", "remote": "CFT2000", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 526, "space": 0},
+	"H": {"mark": 8862, "space": 4470},
+	"1": {"mark": 526, "space": 2183},
+	"0": {"mark": 526, "space": 4418},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_CHANNELUP": "H0010111111110101A",
+	    "KEY_CHANNELDOWN": "H1100111111111101A",
+	    "KEY_A": "H0001011111111110A",
+	    "KEY_B": "H0001101111110001A",
+	    "KEY_C": "H1110101111111001A",
+	    "KEY_1": "H0111111111110000A",
+	    "KEY_2": "H1011111111111000A",
+	    "KEY_3": "H0011111111110100A",
+	    "KEY_4": "H1101111111111100A",
+	    "KEY_5": "H0101111111110010A",
+	    "KEY_6": "H1001111111111010A",
+	    "KEY_7": "H0001111111110110A",
+	    "KEY_8": "H1110111111111110A",
+	    "KEY_9": "H0110111111110001A",
+	    "KEY_0": "H1111111111111111A"
+	}
+    }
+}

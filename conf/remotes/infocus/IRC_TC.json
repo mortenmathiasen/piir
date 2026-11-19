@@ -1,0 +1,29 @@
+{
+    "description": "My_remote (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/infocus/IRC_TC.lircd.conf", "remote": "My_remote", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 615, "space": 0},
+	"H": {"mark": 9055, "space": 4370},
+	"1": {"mark": 615, "space": 1605},
+	"0": {"mark": 615, "space": 516},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H11100001011100101110100000010111A",
+	    "Comp": "H11100001011100101001100001100111A",
+	    "KEY_VIDEO": "H11100001011100100101100010100111A",
+	    "KEY_SLEEP": "H11100001011100101011000001001111A",
+	    "Brigthness+": "H11100001011100101100000000111111A",
+	    "Brigthness-": "H11100001011100101110000000011111A",
+	    "Freeze": "H11100001011100100111000010001111A",
+	    "KEY_VOLUMEDOWN": "H11100001011100100010000011011111A",
+	    "KEY_VOLUMEUP": "H11100001011100100001000011101111A",
+	    "PageN...": "H11100001011100100100000010111111A"
+	}
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "description": "T+A_FAKE (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/t+a/F1.lircd.conf", "remote": "T+A_FAKE", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 512, "space": 512},
+	"B": {"mark": 512, "space": 0},
+	"H": {"mark": 512, "space": 2560},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "SST": "HAAAAAAAAAB"
+	}
+    }
+}

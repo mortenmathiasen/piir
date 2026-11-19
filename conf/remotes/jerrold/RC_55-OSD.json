@@ -1,0 +1,46 @@
+{
+    "description": "rc_550-osd (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jerrold/RC_55-OSD.lircd.conf", "remote": "rc_550-osd", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 526, "space": 0},
+	"H": {"mark": 8888, "space": 4444},
+	"1": {"mark": 526, "space": 4444},
+	"0": {"mark": 526, "space": 2208},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "fc": "H1010100000000101A",
+	    "KEY_POWER": "H0101000000000110A",
+	    "KEY_1": "H1000000000001111A",
+	    "KEY_2": "H0100000000000111A",
+	    "KEY_3": "H1100000000001011A",
+	    "KEY_4": "H0010000000000011A",
+	    "KEY_5": "H1010000000001101A",
+	    "KEY_6": "H0110000000000101A",
+	    "KEY_7": "H1110000000001001A",
+	    "KEY_8": "H0001000000000001A",
+	    "KEY_9": "H1001000000001110A",
+	    "KEY_0": "H0000000000000000A",
+	    "KEY_SELECT": "H1000100000000111A",
+	    "KEY_ENTER": "H0000100000001111A",
+	    "ab": "H0010100000001101A",
+	    "lc": "H1100100000000011A",
+	    "KEY_VOLUMEUP": "H1011000000001100A",
+	    "KEY_VOLUMEDOWN": "H0111000000000100A",
+	    "KEY_CHANNELUP": "H1101000000001010A",
+	    "KEY_CHANNELDOWN": "H0011000000000010A",
+	    "KEY_MUTE": "H1111000000001000A",
+	    "pcpm": "H0100110000001101A",
+	    "tcp": "H0100100000001011A",
+	    "KEY_F": "H0001100000001110A",
+	    "learn": "H1001100000000110A",
+	    "prgm": "H0110100000001001A",
+	    "KEY_DELETE": "H1110100000000001A"
+	}
+    }
+}

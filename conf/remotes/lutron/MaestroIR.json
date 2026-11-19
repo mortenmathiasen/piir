@@ -1,0 +1,34 @@
+{
+    "description": "Lutron_MaestroIR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/lutron/MaestroIR.lircd.conf", "remote": "Lutron_MaestroIR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 40000,
+    "dutycycle": 0.4,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 2288, "space": 6864},
+	"B": {"mark": 10000, "space": 6864},
+	"C": {"mark": 10592, "space": 75},
+	"D": {"mark": 2288, "space": 0},
+	"E": {"mark": 2288, "space": 2200},
+	"F": {"mark": 2288, "space": 4400},
+	"G": {"mark": 2288, "space": 9100},
+	"I": {"mark": 2288, "space": 11440},
+	"J": {"mark": 6800, "space": 0},
+	"K": {"mark": 2288, "space": 2100},
+	"L": {"mark": 2288, "space": 6700},
+	"M": {"mark": 2288, "space": 9000},
+	"N": {"mark": 4500, "space": 2200},
+	"O": {"mark": 9180, "space": 2160},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------",
+    "features": {
+	"key": {
+	    "UP": "CBAIAAD",
+	    "DOWN": "CBAIMKD",
+	    "ON": "CBAGFEJ",
+	    "OFF": "CBAEOLFD",
+	    "SCENE": "CBAGFENJ"
+	}
+    }
+}

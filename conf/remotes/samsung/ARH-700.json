@@ -1,0 +1,35 @@
+{
+    "description": "ARH-700 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/samsung/ARH-700.lircd.conf", "remote": "ARH-700", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 651, "space": 0},
+	"H": {"mark": 4576, "space": 4377},
+	"1": {"mark": 647, "space": 1595},
+	"0": {"mark": 647, "space": 475},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "TIMER": "H10000000010010100100AVVWWXYYYYYYYYYH10000000010010100100A",
+	    "KEY_SLEEP": "H10000000010011100100AVVWYYYYYYYH10000000010011100100A",
+	    "TEMP+": "H10000000010001001100AVVWWXYYYYYYYYYH10000000010001001100A",
+	    "TEMP-": "H10000000010010001100AVVWWXYYYYYYYYYH10000000010010001100A",
+	    "FAN": "H10000000010010011100AVVWYYYYYYYH10000000010010011100A",
+	    "COOL": "H10000000010000111100AVVWYYYYYYYH10000000010000111100A",
+	    "HEAT": "H10000000010001011100AVVWYYYYYYYH10000000010001011100A",
+	    "FAN_HIGH": "H10000000010011101100AVWWWWWWWWWXXXXXXXXXYYYYYH10000000010011101100A",
+	    "FAN_MED": "H10000000010001101100AVVWYYYYYYYH10000000010001101100A",
+	    "FAN_LOW": "H10000000010010101100AVVWYYYYYYYH10000000010010101100A",
+	    "SWING": "H10000000010010010100AVVWWXYYYYYYYYYH10000000010010010100A",
+	    "KEY_POWER": "H10000000010011111100AVWWWWWWWWXXXXXXXXYYYH10000000010011111100A"
+	}
+    }
+}

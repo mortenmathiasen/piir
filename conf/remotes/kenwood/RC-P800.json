@@ -1,0 +1,28 @@
+{
+    "description": "kenwood_rc-p800 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/kenwood/RC-P800.lircd.conf", "remote": "kenwood_rc-p800", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 596, "space": 0},
+	"H": {"mark": 9046, "space": 4671},
+	"1": {"mark": 596, "space": 558},
+	"0": {"mark": 596, "space": 1727},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_STOP": "H10010010011011010111011110001000A",
+	    "KEY_PLAY": "H10010010011011010011011111001000A",
+	    "KEY_BACK": "H10010010011011011001011101101000A",
+	    "KEY_FORWARD": "H10010010011011010001011111101000A",
+	    "pmode": "H10010010011011010000011111111000A",
+	    "KEY_AGAIN": "H10010010011011010110011110011000A",
+	    "bboost": "H10010010011011010111110010000011A",
+	    "KEY_VOLUMEUP": "H10010010011011010110110110010010A",
+	    "KEY_VOLUMEDOWN": "H10010010011011011110110100010010A"
+	}
+    }
+}

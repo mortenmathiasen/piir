@@ -1,0 +1,53 @@
+{
+    "description": "Philips_Gold_BOX (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/Gold_BOX.lircd.conf", "remote": "Philips_Gold_BOX", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 2200, "space": 1600},
+	"B": {"mark": 1100, "space": 800},
+	"C": {"mark": 2200, "space": 800},
+	"D": {"mark": 1100, "space": 1600},
+	"E": {"mark": 1100, "space": 0},
+	"F": {"mark": 2059, "space": 1600},
+	"G": {"mark": 959, "space": 800},
+	"I": {"mark": 2200, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "PILOTA": "GBAACBDBBBE",
+	    "GUIDA": "FAACBDBBBE",
+	    "SU": "FAACDCBBE",
+	    "SINISTRA": "FAACDAAE",
+	    "KEY_OK": "FAACDABBE",
+	    "DESTRA": "FAACDABI",
+	    "GIU": "FAACDCBDE",
+	    "KEY_1": "GBAACBBBBDE",
+	    "KEY_2": "GBAACBBBDI",
+	    "KEY_3": "GBAACBBBDBE",
+	    "KEY_4": "GBAACBBDCE",
+	    "KEY_5": "GBAACBBDAE",
+	    "KEY_6": "GBAACBBDBI",
+	    "KEY_7": "GBAACBBDBBE",
+	    "KEY_8": "GBAACBDCBE",
+	    "KEY_9": "GBAACBDCDE",
+	    "PREF": "FAAACBBDE",
+	    "KEY_0": "GBAACBBBBBE",
+	    "KEY_EXIT": "FAACDCDBE",
+	    "SERV": "FAACDCDI",
+	    "KEY_KPPLUS": "GBAAAABBBE",
+	    "PERS": "FAAAAAI",
+	    "KEY_A": "FAAAAABE",
+	    "KEY_B": "FAAAABCE",
+	    "KEY_C": "FAAAABAE",
+	    "KEY_D": "FAAAABBI",
+	    "KEY_E": "FAAAABBBE",
+	    "MUTO": "FAACBBDBI",
+	    "TV/SAT": "GBAAAACBE",
+	    "STANBY": "GBAACBDBCE"
+	}
+    }
+}

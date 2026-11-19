@@ -1,0 +1,37 @@
+{
+    "description": "AVEX-AV5609 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/avex/AV5609.lircd.conf", "remote": "AVEX-AV5609", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 902, "space": 875},
+	"B": {"mark": 1804, "space": 1750},
+	"C": {"mark": 1804, "space": 875},
+	"D": {"mark": 902, "space": 1750},
+	"E": {"mark": 969, "space": 875},
+	"F": {"mark": 902, "space": 0},
+	"G": {"mark": 1804, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------",
+    "features": {
+	"key": {
+	    "KEY_RECORD": "EACDBAABAAF",
+	    "reset": "EACDBAACADF",
+	    "timer": "EACDBBAABF",
+	    "KEY_KPPLUS": "EACDBACAAAF",
+	    "KEY_KPMINUS": "EACDBACAADF",
+	    "KEY_LEFT": "EACDBABAAAF",
+	    "KEY_RIGHT": "EACDBAABBF",
+	    "scan_left": "EACDBABACF",
+	    "scan_right": "EACDBABAAG",
+	    "KEY_PAUSE": "EACDBABCDF",
+	    "KEY_STOP": "EACDBAABAG",
+	    "KEY_REWIND": "EACDBAACDG",
+	    "KEY_FORWARD": "EACDBAABCF",
+	    "x_right": "EACDBABBG",
+	    "KEY_SLEEP": "EACDBCDACF"
+	}
+    }
+}

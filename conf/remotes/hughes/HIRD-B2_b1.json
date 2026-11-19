@@ -1,0 +1,31 @@
+{
+    "description": "b1 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/hughes/HIRD-B2.lircd.conf", "remote": "b1", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 672, "space": 0},
+	"H": {"mark": 9176, "space": 4391},
+	"1": {"mark": 673, "space": 1591},
+	"0": {"mark": 673, "space": 454},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_LAST": "H00110000110111110110100010010111A",
+	    "KEY_EPG": "H00110000110111110100100010110111A",
+	    "KEY_UP": "H00110000110111111001100001100111A",
+	    "KEY_DOWN": "H00110000110111110000100011110111A",
+	    "KEY_LEFT": "H00110000110111110010100011010111A",
+	    "KEY_RIGHT": "H00110000110111111110100000010111A",
+	    "KEY_SELECT": "H00110000110111110001100011100111A",
+	    "action": "H00110000110111110111000010001111A",
+	    "KEY_LIST": "H00110000110111111000100001110111A",
+	    "KEY_INFO": "H00110000110111111100100000110111A",
+	    "KEY_BACK": "H00110000110111111111000000001111A",
+	    "KEY_POWER": "H00110000110111111010100001010111A"
+	}
+    }
+}

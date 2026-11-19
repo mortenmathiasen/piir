@@ -1,0 +1,42 @@
+{
+    "description": "sharp1781 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sharp/1781.lircd.conf", "remote": "sharp1781", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 39, "space": 0},
+	"1": {"mark": 39, "space": 2032},
+	"0": {"mark": 39, "space": 996},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "100000110100010A",
+	    "txt_off": "100000100110010A",
+	    "txt_100": "100000100101010A",
+	    "txt_on": "100000010110010A",
+	    "txt_size": "100001100110010A",
+	    "KEY_CHANNELUP": "100001000100010A",
+	    "KEY_CHANNELDOWN": "100000100100010A",
+	    "KEY_VOLUMEUP": "100000010100010A",
+	    "KEY_VOLUMEDOWN": "100001010100010A",
+	    "sound_off": "100001110100010A",
+	    "b1": "100001000000010A",
+	    "b2": "100000100000010A",
+	    "b3": "100001100000010A",
+	    "b4": "100000010000010A",
+	    "b5": "100001010000010A",
+	    "b6": "100000110000010A",
+	    "b7": "100001110000010A",
+	    "b8": "100000001000010A",
+	    "b9": "100001001000010A",
+	    "b0": "100000101000010A",
+	    "big_prog": "100000011110010A",
+	    "c_p": "100001011110010A",
+	    "av": "100001100100010A",
+	    "stereo": "100000001100010A"
+	}
+    }
+}

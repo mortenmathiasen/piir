@@ -1,0 +1,35 @@
+{
+    "description": "RM-L310.band (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-L310.lircd.conf", "remote": "RM-L310.band", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 645, "space": 0},
+	"H": {"mark": 2468, "space": 553},
+	"1": {"mark": 1247, "space": 553},
+	"0": {"mark": 648, "space": 553},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_1": "H00000001011A",
+	    "KEY_2": "H10000001011A",
+	    "KEY_3": "H01000001011A",
+	    "KEY_4": "H11000001011A",
+	    "KEY_5": "H00100001011A",
+	    "KEY_6": "H10100001011A",
+	    "KEY_7": "H01100001011A",
+	    "KEY_8": "H11100001011A",
+	    "KEY_9": "H00010001011A",
+	    "X_KEY_10": "H10010001011A",
+	    "X_KEY_11": "H01010001011A",
+	    "X_KEY_12": "H11010001011A",
+	    "X_KEY_13": "H00011101011A",
+	    "X_KEY_14": "H10011101011A",
+	    "X_KEY_16": "H11011101011A",
+	    "X_KEY_15": "H01011101011A"
+	}
+    }
+}

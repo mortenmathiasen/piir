@@ -1,0 +1,38 @@
+{
+    "description": "Cable (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/ibm/HD23A.lircd.conf", "remote": "Cable", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 841, "space": 0},
+	"1": {"mark": 838, "space": 5725},
+	"0": {"mark": 838, "space": 2408},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------------------------",
+    "features": {
+	"key": {
+	    "CBL-1": "0000111110AVVVVVWXXXXXXYYZZZZZZ0000111110A",
+	    "CBL-2": "0001011101AVVVVVWXXXXXXYYZZZZZZ0001011101A",
+	    "CBL-3": "0001111100AVVVVVWXXXXXXYYZZZZZZ0001111100A",
+	    "CBL-4": "0010011011AVVVVVWXXXXXXYYZZZZZZ0010011011A",
+	    "CBL-5": "0010111010AVVVVVWXXXXXXYYZZZZZZ0010111010A",
+	    "CBL-6": "0011011001AVVVVVWXXXXXXYYZZZZZZ0011011001A",
+	    "CBL-7": "0011111000AVVVVVWXXXXXXYYZZZZZZ0011111000A",
+	    "CBL-8": "0100010111AVVVVVWXXXXXXYYZZZZZZ0100010111A",
+	    "CBL-9": "0100110110AVVVVVWXXXXXXYYZZZZZZ0100110110A",
+	    "CBL-0": "0000011111AVVVVVWXXXXXXYYZZZZZZ0000011111A",
+	    "CBL-A|B": "1000001111AVVVVVWXXXXXXYYZZZZZZ1000001111A",
+	    "CBL-ENT": "1100100110AVVVVVWXXXXXXYYZZZZZZ1100100110A",
+	    "CBL-CHAN-UP": "1010001011AVVVVVWXXXXXXYYZZZZZZ1010001011A",
+	    "CBL-CHAN-DOWN": "1010101010AVVVVVWXXXXXXYYZZZZZZ1010101010A",
+	    "CBL-LAST": "1110100010AVVVVVWXXXXXXYYZZZZZZ1110100010A"
+	}
+    }
+}

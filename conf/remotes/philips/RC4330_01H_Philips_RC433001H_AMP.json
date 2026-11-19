@@ -1,0 +1,25 @@
+{
+    "description": "Philips_RC433001H_AMP (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RC4330_01H.lircd.conf", "remote": "Philips_RC433001H_AMP", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 919, "space": 851},
+	"B": {"mark": 1838, "space": 851},
+	"C": {"mark": 919, "space": 1702},
+	"D": {"mark": 919, "space": 0},
+	"E": {"mark": 952, "space": 851},
+	"F": {"mark": 1838, "space": 1702},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "Power": "EAABACBCABD",
+	    "Vol+": "EAABAAACBAAD",
+	    "Vol-": "EAABAAACBACD",
+	    "Mute": "EAABAAAACAFD"
+	}
+    }
+}

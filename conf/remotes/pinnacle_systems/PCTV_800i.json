@@ -1,0 +1,47 @@
+{
+    "description": "PCTV_800i (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pinnacle_systems/PCTV_800i.lircd.conf", "remote": "PCTV_800i", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 913, "space": 842},
+	"B": {"mark": 1826, "space": 842},
+	"C": {"mark": 913, "space": 1684},
+	"D": {"mark": 932, "space": 842},
+	"E": {"mark": 913, "space": 0},
+	"F": {"mark": 1826, "space": 1684},
+	"G": {"mark": 1826, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "key_mute": "DABCAABAAAAE",
+	    "key_menu": "DABCAABAAACE",
+	    "key_power": "DABCAAAAABCE",
+	    "key_volumeup": "DABCAABAACAE",
+	    "key_volumedown": "DABCAABCBCE",
+	    "key_channelup": "DABCAABACAG",
+	    "key_channeldown": "DABCAABCABE",
+	    "btn_1": "DABCAABCAAAE",
+	    "btn_2": "DABCAAFFFE",
+	    "btn_3": "DABCAAFBAAE",
+	    "btn_4": "DABCAAFABAE",
+	    "btn_5": "DABCAAFAFAE",
+	    "btn_6": "DABCAAFAAAG",
+	    "btn_7": "DABCAAFBACE",
+	    "btn_8": "DABCAAABAACE",
+	    "btn_9": "DABCAAFBCG",
+	    "btn_0": "DABCAAABCAAE",
+	    "key_screen": "DABCAAABCBE",
+	    "key_t": "DABCAAAFFG",
+	    "key_rewind": "DABCAAAFAFE",
+	    "key_playpause": "DABCAAAABAAE",
+	    "key_fastforward": "DABCAAAABCAE",
+	    "key_record": "DABCAAAAFAG",
+	    "key_stop": "DABCAAAAAABE",
+	    "key_question": "DABCAAAAAAAAE"
+	}
+    }
+}

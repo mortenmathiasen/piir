@@ -1,0 +1,50 @@
+{
+    "description": "Atlanta_DTH_8009_DSR (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/atlanta_dth/8009_DSR.lircd.conf", "remote": "Atlanta_DTH_8009_DSR", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 163, "space": 0},
+	"1": {"mark": 165, "space": 7374},
+	"0": {"mark": 165, "space": 4850},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_MUTE": "11101011000A",
+	    "SYS": "11101100000A",
+	    "FUNC": "11101100010A",
+	    "KEY_POWER": "11101011110A",
+	    "KEY_EPG": "11101101111A",
+	    "KEY_MENU": "11101100111A",
+	    "KEY_RIGHT": "11101011010A",
+	    "KEY_LEFT": "11101011111A",
+	    "KEY_CHANNELUP": "11101101000A",
+	    "KEY_CHANNELDOWN": "11101101010A",
+	    "KEY_VOLUMEDOWN": "11101110001A",
+	    "KEY_VOLUMEUP": "11101100001A",
+	    "KEY_OK": "11101101001A",
+	    "KEY_1": "11101110101A",
+	    "KEY_2": "11101101101A",
+	    "KEY_3": "11101100101A",
+	    "KEY_4": "11101011101A",
+	    "KEY_5": "11101110100A",
+	    "KEY_6": "11101101100A",
+	    "KEY_7": "11101100100A",
+	    "KEY_8": "11101011100A",
+	    "KEY_9": "11101110011A",
+	    "KEY_0": "11101101011A",
+	    "KEY_CLEAR": "11101011001A",
+	    "FAV+": "11101110010A",
+	    "FAV-": "11101110111A",
+	    "DISPLAY": "11101110000A",
+	    "SIGNAL": "11101011011A",
+	    "D_A": "11101100011A",
+	    "TV_RADIO": "11101101110A",
+	    "KEY_TEXT": "11101100110A",
+	    "R_L": "11101110110A"
+	}
+    }
+}

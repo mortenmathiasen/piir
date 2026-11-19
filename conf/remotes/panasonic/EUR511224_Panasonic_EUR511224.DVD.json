@@ -1,0 +1,24 @@
+{
+    "description": "Panasonic_EUR511224.DVD (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/panasonic/EUR511224.lircd.conf", "remote": "Panasonic_EUR511224.DVD", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 537, "space": 0},
+	"H": {"mark": 3595, "space": 1642},
+	"1": {"mark": 539, "space": 1206},
+	"0": {"mark": 539, "space": 332},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "--------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H010000000000010000001101000000001011110010110001A",
+	    "KEY_PLAY": "H010000000000010000001101000000000101000001011101A",
+	    "KEY_STOP": "H010000000000010000001101000000000000000000001101A",
+	    "KEY_FORWARD": "H010000000000010000001101000000000101001001011111A",
+	    "KEY_REWIND": "H010000000000010000001101000000001001001010011111A"
+	}
+    }
+}

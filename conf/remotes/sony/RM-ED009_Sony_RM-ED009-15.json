@@ -1,0 +1,26 @@
+{
+    "description": "Sony_RM-ED009-15 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-ED009.lircd.conf", "remote": "Sony_RM-ED009-15", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1267, "space": 0},
+	"B": {"mark": 658, "space": 0},
+	"H": {"mark": 2482, "space": 475},
+	"1": {"mark": 1267, "space": 520},
+	"0": {"mark": 658, "space": 520},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "aspect": "H10111100010010A",
+	    "KEY_EPG": "H11011010010010A",
+	    "KEY_ENTER": "H11000101110100A",
+	    "tools": "H01101101110100A",
+	    "digital": "H01001011110111B",
+	    "theatre": "H00000111110111B"
+	}
+    }
+}

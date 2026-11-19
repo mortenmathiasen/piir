@@ -1,0 +1,50 @@
+{
+    "description": "TP720_VIDEO (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/grundig/TP_720.lircd.conf", "remote": "TP720_VIDEO", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 512, "space": 512},
+	"B": {"mark": 1024, "space": 1024},
+	"C": {"mark": 512, "space": 1024},
+	"D": {"mark": 512, "space": 0},
+	"E": {"mark": 1024, "space": 512},
+	"H": {"mark": 512, "space": 2560},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "HCBAAAABD",
+	    "KEY_BACK": "HACAABABD",
+	    "KEY_FORWARD": "HCBABABD",
+	    "KEY_3": "HAACABABD",
+	    "KEY_DOWN": "HCABBABD",
+	    "KEY_UP": "HACBBABD",
+	    "KEY_6": "HCECBABD",
+	    "KEY_REWIND": "HAAACBABD",
+	    "KEY_FASTFORWARD": "HCAAECABD",
+	    "KEY_9": "HACAECABD",
+	    "KEY_PC": "HCBECABD",
+	    "KEY_0": "HCAAABABD",
+	    "KEY_PLAY": "HCBBAABD",
+	    "KEY_PAUSE": "HAACBAABD",
+	    "KEY_STOP": "HCAECAABD",
+	    "KEY_EJECTCD": "HACECAABD",
+	    "KEY_AUX": "HAAACAAABD",
+	    "KEY_I": "HACECBBD",
+	    "KEY_TEXT": "HCAAAECBD",
+	    "KEY_CHANNELUP": "HCBBBBD",
+	    "KEY_VOLUMEDOWN": "HACABAABD",
+	    "KEY_OK": "HCAAAAAABD",
+	    "KEY_VOLUMEUP": "HCAABAABD",
+	    "KEY_CHANNELDOWN": "HAACBBBD",
+	    "KEY_MUTE": "HACAAAAABD",
+	    "KEY_BLUE": "HCEACBBD",
+	    "KEY_YELLOW": "HAACEACBD",
+	    "KEY_GREEN": "HCEAAACBD",
+	    "KEY_RED": "HCBEACBD"
+	}
+    }
+}

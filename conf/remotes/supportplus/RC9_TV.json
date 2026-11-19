@@ -1,0 +1,40 @@
+{
+    "description": "TV (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/supportplus/RC9.lircd.conf", "remote": "TV", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 704, "space": 2873},
+	"B": {"mark": 704, "space": 6454},
+	"C": {"mark": 704, "space": 10028},
+	"D": {"mark": 704, "space": 0},
+	"E": {"mark": 684, "space": 2873},
+	"F": {"mark": 734, "space": 2873},
+	"G": {"mark": 684, "space": 2912},
+	"I": {"mark": 684, "space": 6454},
+	"J": {"mark": 684, "space": 10028},
+	"K": {"mark": 734, "space": 10028},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-----------------",
+    "features": {
+	"key": {
+	    "Power": "GJACACAAAAAAAAABD",
+	    "Volume-": "ACACACAAABBBBD",
+	    "Mute": "ACACACAAABEAAAAAD",
+	    "Volume+": "ACACACAAAAABBBD",
+	    "Ok": "ACACACAAABAAAABD",
+	    "1": "ACACACABBAAAABD",
+	    "2": "ACACACEBBBAABD",
+	    "3": "ACACACABBAABBD",
+	    "4": "ACACACABBBBBD",
+	    "5": "ACACACABAFAAAABD",
+	    "6": "ACACACABAABAABD",
+	    "7": "ACACACAIAAFABBD",
+	    "8": "AKACACABAEBBBD",
+	    "9": "ACACACABBAAAAAAD",
+	    "0": "ACACACABAABBAAD"
+	}
+    }
+}

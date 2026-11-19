@@ -1,0 +1,39 @@
+{
+    "description": "k (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/thomson/ROC40.lircd.conf", "remote": "k", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 517, "space": 0},
+	"1": {"mark": 517, "space": 1939},
+	"0": {"mark": 517, "space": 4470},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "110011000111A",
+	    "forw": "110001101010A",
+	    "KEY_REWIND": "110011000110A",
+	    "KEY_STOP": "110001000100A",
+	    "KEY_PAUSE": "110011100001A",
+	    "shutdown": "110001100010A",
+	    "KEY_NEXT": "110011011010A",
+	    "KEY_PREVIOUS": "110001011000A",
+	    "KEY_VOLUMEUP": "110011010110A",
+	    "KEY_VOLUMEDOWN": "110001010101A",
+	    "KEY_MUTE": "110011111010A",
+	    "KEY_1": "110001111111A",
+	    "KEY_2": "110011110111A",
+	    "KEY_3": "110001101111A",
+	    "KEY_4": "110011111110A",
+	    "KEY_5": "110001110110A",
+	    "KEY_6": "110011101110A",
+	    "KEY_7": "110001111101A",
+	    "KEY_8": "110011110101A",
+	    "KEY_9": "110001101101A",
+	    "KEY_0": "110011110001A"
+	}
+    }
+}

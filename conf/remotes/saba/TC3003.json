@@ -1,0 +1,40 @@
+{
+    "description": "SABA_TC3003 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/saba/TC3003.lircd.conf", "remote": "SABA_TC3003", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 170, "space": 0},
+	"1": {"mark": 170, "space": 8500},
+	"0": {"mark": 170, "space": 5600},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "11111011101A",
+	    "KEY_MUTE": "11111000101A",
+	    "KEY_0": "11111001110A",
+	    "KEY_1": "11111000000A",
+	    "KEY_2": "11111001000A",
+	    "KEY_3": "11111010000A",
+	    "KEY_4": "11111000001A",
+	    "KEY_5": "11111001001A",
+	    "KEY_6": "11111010001A",
+	    "KEY_7": "11111000010A",
+	    "KEY_8": "11111001010A",
+	    "KEY_9": "11111010010A",
+	    "KEY_CHANNELUP": "11111011111A",
+	    "KEY_CHANNELDOWN": "11111100000A",
+	    "KEY_TV": "11111111110A",
+	    "KEY_TIME": "11111011110A",
+	    "PAGE": "11111111001A",
+	    "HIDDEN": "11111111011A",
+	    "KEY_MENU": "11111111000A",
+	    "VT": "11111010101A",
+	    "KEY_STOP": "11111101010A",
+	    "FUNC.VT": "11111101001A"
+	}
+    }
+}

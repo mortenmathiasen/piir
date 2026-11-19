@@ -1,0 +1,44 @@
+{
+    "description": "PHILIPS_multi_VCR3 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/VCR3.lircd.conf", "remote": "PHILIPS_multi_VCR3", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 940, "space": 840},
+	"B": {"mark": 1880, "space": 840},
+	"C": {"mark": 940, "space": 1680},
+	"D": {"mark": 940, "space": 0},
+	"E": {"mark": 1880, "space": 1680},
+	"F": {"mark": 1880, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "1": "AABCABAAAACD",
+	    "2": "AABCABAAACF",
+	    "3": "AABCABAAACAD",
+	    "4": "AABCABAACBD",
+	    "5": "AABCABAACED",
+	    "6": "AABCABAACAF",
+	    "7": "AABCABAACAAD",
+	    "8": "AABCABACBAD",
+	    "9": "AABCABACBCD",
+	    "0": "AABCABAAAAAD",
+	    "POWER": "AABCABACABD",
+	    "-/--": "AABCABACEF",
+	    "2-": "AABCABACEAD",
+	    "REW": "AABCAEEABD",
+	    "FF": "AABCAEEAAF",
+	    "PLAY": "AABCAEAEED",
+	    "REC": "AABCAEAEAAD",
+	    "STOP": "AABCAEAEAF",
+	    "VOL_UP": "AABCABCBAAD",
+	    "VOL_DOWN": "AABCABCBACD",
+	    "CH_UP": "AABCAEBAAAD",
+	    "CH_DOWN": "AABCAEBAACD",
+	    "MUTE": "AABCABACAED"
+	}
+    }
+}

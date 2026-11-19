@@ -1,0 +1,41 @@
+{
+    "description": "Philips_RC_6830 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/RD_6830.lircd.conf", "remote": "Philips_RC_6830", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 973, "space": 806},
+	"B": {"mark": 1946, "space": 1612},
+	"C": {"mark": 1946, "space": 806},
+	"D": {"mark": 973, "space": 1612},
+	"E": {"mark": 1000, "space": 806},
+	"F": {"mark": 973, "space": 0},
+	"G": {"mark": 1946, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "EAABCDABBF",
+	    "KEY_STOP": "EAABCDABAG",
+	    "KEY_NEXT": "EAABCDCAAAF",
+	    "KEY_PREVIOUS": "EAABCDCAADF",
+	    "shuffle": "EAABCADAACF",
+	    "KEY_PAUSE": "EAABCDACAAF",
+	    "KEY_AGAIN": "EAABCADAABF",
+	    "KEY_OPEN": "EAABCDBABF",
+	    "scan": "EAABCDBBAF",
+	    "n0": "EAABCAAAAAAF",
+	    "n1": "EAABCAAAAADF",
+	    "n2": "EAABCAAAADG",
+	    "n3": "EAABCAAAADAF",
+	    "n4": "EAABCAAADCF",
+	    "n5": "EAABCAAADBF",
+	    "n6": "EAABCAAADAG",
+	    "n7": "EAABCAAADAAF",
+	    "n8": "EAABCAADCAF",
+	    "n9": "EAABCAADCDF"
+	}
+    }
+}

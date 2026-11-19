@@ -1,0 +1,27 @@
+{
+    "description": "TWC_UR4-P360-SONY (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/pioneer/UR4-P360.lircd.conf", "remote": "TWC_UR4-P360-SONY", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 582, "space": 0},
+	"H": {"mark": 2370, "space": 598},
+	"1": {"mark": 1179, "space": 598},
+	"0": {"mark": 582, "space": 598},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "---------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "H01001001000AVVWWWWWWXXXXXXYYYYYYYZZZZZZZZZH01001001000AVVWWWWWWXXXXXXYYYYYYYZZZZZZZZZH01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000AVVWWWWWWYYYYYYYYZZH11001001000AVVWWWWWWYYYYYYYYZZH11001001000A",
+	    "KEY_MUTE": "H00101001000AVVWWWWWWXXXXXXYYYYYYYZZZZZZZZZH00101001000AVVWWWWWWXXXXXXYYYYYYYZZZZZZZZZH00101001000A"
+	}
+    }
+}

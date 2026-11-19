@@ -1,0 +1,49 @@
+{
+    "description": "RM-SA5U (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/jvc/RM-SA5U.lircd.conf", "remote": "RM-SA5U", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 682, "space": 0},
+	"H": {"mark": 8614, "space": 4072},
+	"1": {"mark": 682, "space": 1428},
+	"0": {"mark": 682, "space": 371},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H1100010111101000A",
+	    "KEY_1": "H1100110110000110A",
+	    "KEY_2": "H1100110101000110A",
+	    "KEY_3": "H1100110111000110A",
+	    "KEY_4": "H1100110100100110A",
+	    "KEY_5": "H1100110110100110A",
+	    "KEY_6": "H1100110101100110A",
+	    "KEY_7": "H1100110111100110A",
+	    "KEY_8": "H1100110100010110A",
+	    "KEY_9": "H1100110110010110A",
+	    "KEY_102ND": "H1100110101110110A",
+	    "KEY_10CHANNELSUP": "H1100110111110110A",
+	    "KEY_0": "H1100110100000110A",
+	    "KEY_TUNER": "H1100010111010000A",
+	    "KEY_VCR": "H1100001000100100A",
+	    "KEY_CD": "H1100010110111100A",
+	    "PHONO": "H1100010100111100A",
+	    "TAPE1": "H1100010111111100A",
+	    "MONITOR/TAPE2": "H1100010111100000A",
+	    "KEY_VIDEO": "H1100010101111100A",
+	    "STOP2": "H1100000111000010A",
+	    "STILL/PAUSE": "H1100000110110000A",
+	    "KEY_STOP": "H1100000111000000A",
+	    "KEY_RECORD": "H1100000100110011A",
+	    "FORWARDS": "H1100000101100000A",
+	    "BACKWARDS": "H1100000111100000A",
+	    "KEY_PLAY": "H1100000100110000A",
+	    "KEY_KPPLUS": "H1100010101111000A",
+	    "KEY_KPMINUS": "H1100010111111000A",
+	    "FADE_MUTING": "H1100010100111000A"
+	}
+    }
+}

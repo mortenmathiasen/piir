@@ -1,0 +1,49 @@
+{
+    "description": "RMT-814 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-814.lircd.conf", "remote": "RMT-814", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1286, "space": 526},
+	"B": {"mark": 689, "space": 509},
+	"C": {"mark": 1286, "space": 509},
+	"D": {"mark": 675, "space": 509},
+	"E": {"mark": 689, "space": 526},
+	"F": {"mark": 2482, "space": 526},
+	"G": {"mark": 689, "space": 0},
+	"I": {"mark": 2482, "space": 509},
+	"J": {"mark": 1266, "space": 526},
+	"K": {"mark": 1286, "space": 0},
+	"L": {"mark": 675, "space": 0},
+	"M": {"mark": 675, "space": 526},
+	"N": {"mark": 1266, "space": 0},
+	"O": {"mark": 1266, "space": 509},
+	"P": {"mark": 1266, "space": 543},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "START/STOP": "ICBBACBBABBCAABK",
+	    "PHOTO": "FCDAEADBABBCAADK",
+	    "DISPLAY": "IBAEAAEACCAEG",
+	    "ZERO_SET_MEMORY": "FCCABBBCJAABL",
+	    "SEARCH_MODE": "ICBCABCBCEBCCCBK",
+	    "DATA_CODE": "FBBCABBCABBCAAEN",
+	    "ZOOM_OUT": "FAADAABEOEDAABCK",
+	    "ZOOM_IN": "FDCBACBBABBACBAK",
+	    "SEARCH_NEXT": "FBAABCBCACCBG",
+	    "SEARCH_PREV": "FCAAEABAAACDG",
+	    "REW": "IACBAAEDAAJBG",
+	    "PLAY": "IDABCCBEPACBG",
+	    "FF": "IBBAACDBAAABG",
+	    "STOP": "FBBBAADBAAJBL",
+	    "PLAYBACK_REVERSE": "FBBBBACBAAABL",
+	    "PLAYBACK_FWD": "ICBBMAABCCCBG",
+	    "PAUSE": "FABBAAEBAAABG",
+	    "PLAYBACK_SLOW": "IAABBDABJJADG",
+	    "PLAYBACK_DOUBLE_SPEED": "FBDABADBAAJBG"
+	}
+    }
+}

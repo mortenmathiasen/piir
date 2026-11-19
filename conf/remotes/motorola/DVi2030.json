@@ -1,0 +1,52 @@
+{
+    "description": "Motorola_DVi2030 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/motorola/DVi2030.lircd.conf", "remote": "Motorola_DVi2030", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 504, "space": 0},
+	"H": {"mark": 8968, "space": 4472},
+	"1": {"mark": 504, "space": 4456},
+	"0": {"mark": 504, "space": 2221},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "H1011000000001100A",
+	    "KEY_VOLUMEDOWN": "H0111000000000100A",
+	    "KEY_CHANNELUP": "H1101000000001010A",
+	    "KEY_CHANNELDOWN": "H0011000000000010A",
+	    "KEY_OK": "H1000100000000111A",
+	    "KEY_UP": "H0010110000001001A",
+	    "KEY_DOWN": "H1010110000000001A",
+	    "KEY_LEFT": "H0110110000001110A",
+	    "KEY_RIGHT": "H1110110000000110A",
+	    "KEY_0": "H0000000000000000A",
+	    "KEY_1": "H1000000000001111A",
+	    "KEY_2": "H0100000000000111A",
+	    "KEY_3": "H1100000000001011A",
+	    "KEY_4": "H0010000000000011A",
+	    "KEY_5": "H1010000000001101A",
+	    "KEY_6": "H0110000000000101A",
+	    "KEY_7": "H1110000000001001A",
+	    "KEY_8": "H0001000000000001A",
+	    "KEY_9": "H1001000000001110A",
+	    "KEY_MUTE": "H1111000000001000A",
+	    "KEY_LANGUAGE": "H1110100000000001A",
+	    "KEY_POWER": "H0101000000000110A",
+	    "KEY_RED": "H0111011000000011A",
+	    "KEY_GREEN": "H1111011000001101A",
+	    "yelow": "H0000111000001001A",
+	    "KEY_BLUE": "H1000111000000001A",
+	    "grey": "H0100111000001110A",
+	    "KEY_HELP": "H0100110000001101A",
+	    "KEY_INFO": "H1100110000000101A",
+	    "KEY_EXIT": "H1101111100000110A",
+	    "KEY_BACK": "H1100100000000011A",
+	    "ojo": "H0001101100001101A",
+	    "ono": "H1001100000000110A"
+	}
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "description": "remotec (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/remotec/RM900.lircd.conf", "remote": "remotec", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 820, "space": 920},
+	"B": {"mark": 1640, "space": 920},
+	"C": {"mark": 820, "space": 1840},
+	"D": {"mark": 943, "space": 920},
+	"E": {"mark": 820, "space": 0},
+	"F": {"mark": 1640, "space": 1840},
+	"G": {"mark": 1640, "space": 0},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "DABAAAAACABE",
+	    "KEY_VOLUMEDOWN": "DABAAAACBACE",
+	    "KEY_VOLUMEUP": "DABAAAACBAAE",
+	    "p_up": "DABAAACBAAAE",
+	    "p_down": "DABAAACBAACE",
+	    "KEY_MUTE": "DABAAAAACAFE",
+	    "1_2": "DABAAACAABAE",
+	    "i-ii": "DABAAACBACAE",
+	    "KEY_1": "DABAAAAAAAACE",
+	    "KEY_2": "DABAAAAAAACG",
+	    "KEY_3": "DABAAAAAAACAE",
+	    "KEY_4": "DABAAAAAACBE",
+	    "KEY_5": "DABAAAAAACFE",
+	    "KEY_6": "DABAAAAAACAG",
+	    "KEY_7": "DABAAAAAACAAE",
+	    "KEY_8": "DABAAAAACBAE",
+	    "KEY_9": "DABAAAAACBCE",
+	    "KEY_0": "DABAAAAAAAAAE",
+	    "X_KEY_11": "DABAAAAACFG",
+	    "X_KEY_12": "DABAAAAACFAE",
+	    "KEY_BACK": "DABAAACFAAG",
+	    "KEY_PLAY": "DABAAACAAAAAE",
+	    "KEY_FORWARD": "DABAAACAFFE",
+	    "KEY_STOP": "DABAAACAAABE",
+	    "KEY_PAUSE": "DABAAACFBCE"
+	}
+    }
+}

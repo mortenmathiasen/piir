@@ -1,0 +1,48 @@
+{
+    "description": "Sharp_GA447SA (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sharp/GA447SA.lircd.conf", "remote": "Sharp_GA447SA", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 266, "space": 0},
+	"1": {"mark": 263, "space": 1776},
+	"0": {"mark": 263, "space": 750},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "100000110100010A",
+	    "input": "100001100100010A",
+	    "KEY_1": "100001000000010A",
+	    "KEY_2": "100000100000010A",
+	    "KEY_3": "100001100000010A",
+	    "KEY_4": "100000010000010A",
+	    "KEY_5": "100001010000010A",
+	    "KEY_6": "100000110000010A",
+	    "KEY_7": "100001110000010A",
+	    "KEY_8": "100000001000010A",
+	    "KEY_9": "100001001000010A",
+	    "KEY_0": "100000101000010A",
+	    "KEY_ENTER": "100001101000010A",
+	    "KEY_DOT": "100001111010010A",
+	    "display": "100001101100010A",
+	    "KEY_DVD": "110000110100010A",
+	    "KEY_MUTE": "100001110100010A",
+	    "KEY_MENU": "100000000010010A",
+	    "KEY_CHANNELUP": "100001000100010A",
+	    "KEY_CHANNELDOWN": "100000100100010A",
+	    "KEY_VOLUMEUP": "100000010100010A",
+	    "KEY_VOLUMEDOWN": "100001010100010A",
+	    "KEY_REWIND": "110001100010010A",
+	    "KEY_PLAY": "100000111110110A",
+	    "KEY_FASTFORWARD": "110001000010010A",
+	    "KEY_PAUSE": "110001010010010A",
+	    "KEY_STOP": "110001110010010A",
+	    "KEY_RECORD": "110000001010010A",
+	    "ch/skip+": "110001000100010A",
+	    "ch/skip-": "110000100100010A"
+	}
+    }
+}

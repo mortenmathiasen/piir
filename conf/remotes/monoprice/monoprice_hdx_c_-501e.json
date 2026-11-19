@@ -1,0 +1,27 @@
+{
+    "description": "HDX(C)-501E (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/monoprice/monoprice_hdx(c)-501e.lircd.conf", "remote": "HDX(C)-501E", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 606, "space": 0},
+	"H": {"mark": 9104, "space": 4511},
+	"1": {"mark": 609, "space": 1667},
+	"0": {"mark": 609, "space": 527},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_POWER": "H00000000111111110000000011111111A",
+	    "KEY_1": "H00000000111111110001000011101111A",
+	    "KEY_2": "H00000000111111111001000001101111A",
+	    "KEY_3": "H00000000111111110101000010101111A",
+	    "KEY_4": "H00000000111111110011000011001111A",
+	    "KEY_5": "H00000000111111110111000010001111A",
+	    "KEY_RIGHT": "H00000000111111110110100010010111A",
+	    "KEY_LEFT": "H00000000111111110010100011010111A"
+	}
+    }
+}

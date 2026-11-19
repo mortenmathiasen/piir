@@ -1,0 +1,52 @@
+{
+    "description": "Melectronic_PP3600 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/melectronic/PP3600.lircd.conf", "remote": "Melectronic_PP3600", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 548, "space": 509},
+	"B": {"mark": 548, "space": 1554},
+	"C": {"mark": 571, "space": 487},
+	"D": {"mark": 8496, "space": 4184},
+	"E": {"mark": 548, "space": 0},
+	"F": {"mark": 571, "space": 1554},
+	"G": {"mark": 571, "space": 509},
+	"I": {"mark": 548, "space": 4184},
+	"J": {"mark": 571, "space": 4184},
+	"K": {"mark": 548, "space": 487},
+	"L": {"mark": 548, "space": 1568},
+	"M": {"mark": 594, "space": 487},
+	"N": {"mark": 594, "space": 466},
+	"O": {"mark": 571, "space": 0},
+	"P": {"mark": 594, "space": 1554},
+	"Q": {"mark": 571, "space": 466},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------",
+    "features": {
+	"key": {
+	    "one": "DABAAAAACIGAAABAAKO",
+	    "two": "DGBCAAACAIBAAABAAAE",
+	    "three": "DGBAAAAAAIGBAABAAAE",
+	    "four": "DNFAAAAAAIPBKGBAAAE",
+	    "five": "DGBCACAKGIAABABAAAE",
+	    "six": "DABAAAAAAIFAFABAAAE",
+	    "seven": "DABKGAACAJABBABACAE",
+	    "eight": "DGBAAAAAAJBBBCBAAAE",
+	    "nine": "DGBAAAAAAIAAABBAAAE",
+	    "zero": "DABAAAAAAIFCABBAAAE",
+	    "ten": "DAFAAACAAIABABFAANE",
+	    "twenty": "DCBAACAAAIFBAFBAAAE",
+	    "gainup": "DAFAAAAACIBBAAAACAO",
+	    "contrastup": "DMBAAAACAJCACBCAAAE",
+	    "brightup": "DGBACAAAAJGBBAAAAAE",
+	    "gaindown": "DGFCAACACICCLCAAACE",
+	    "contrastdown": "DGLAAAAAAJFBBCAAAAE",
+	    "brightdown": "DMBCAAAAAIBCBAAAACE",
+	    "on": "DMFACAACCJGFFLACCCE",
+	    "tvav": "DAFACACACIBNFFAACCE",
+	    "mute": "DMBACCQCAJPCALAKACE"
+	}
+    }
+}

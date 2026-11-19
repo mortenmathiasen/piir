@@ -1,0 +1,31 @@
+{
+    "description": "RN800AW (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/goldstar/RN800AW.lircd.conf", "remote": "RN800AW", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 617, "space": 0},
+	"H": {"mark": 9078, "space": 4445},
+	"1": {"mark": 617, "space": 499},
+	"0": {"mark": 617, "space": 1631},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "KEY_PLAY": "H10001001011101101110111100010000A",
+	    "KEY_STOP": "H10001001011101100111111110000000A",
+	    "KEY_FASTFORWARD": "H10001001011101100011111111000000A",
+	    "KEY_REWIND": "H10001001011101101011111101000000A",
+	    "OPERATE": "H10001001011101101101011100101000A",
+	    "TRK+": "H10001001011101100111011110001000A",
+	    "TRK-": "H10001001011101101011011101001000A",
+	    "A.TRK": "H10001001011101100001011111101000A",
+	    "A.REPEART": "H10001001011101101010111101010000A",
+	    "TV/VCR": "H10001001011101100101011110101000A",
+	    "STILL/F.ADV": "H10001001011101100010111111010000A",
+	    "KEY_RECORD": "H10001001011101100110111110010000A"
+	}
+    }
+}

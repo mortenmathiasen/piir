@@ -1,0 +1,42 @@
+{
+    "description": "Arcam (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/arcam/ARCAM.lircd.conf", "remote": "Arcam", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 905, "space": 854},
+	"B": {"mark": 1810, "space": 854},
+	"C": {"mark": 905, "space": 1708},
+	"D": {"mark": 907, "space": 854},
+	"E": {"mark": 905, "space": 0},
+	"F": {"mark": 1810, "space": 1708},
+	"G": {"mark": 1810, "space": 0},
+	"I": {"mark": 1812, "space": 1708},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_SAT": "DAABAAAAAAAAE",
+	    "KEY_DVD": "DAABAAAAACBE",
+	    "KEY_VCR": "DAABAAAAACAG",
+	    "KEY_AUX": "DAABAAAACBAE",
+	    "KEY_TAPE": "DAABAAAAACFE",
+	    "KEY_CD": "DAABAAAAACAAE",
+	    "KEY_RADIO": "DAABAACAFFE",
+	    "am": "DAABAACAFBE",
+	    "KEY_INFO": "DAABAACAFAAE",
+	    "tmode": "DAABAACAFAG",
+	    "KEY_CHANNELDOWN": "DAABAACAABCE",
+	    "KEY_CHANNELUP": "DAABAACAABAE",
+	    "KEY_VOLUMEUP": "DAABAAACBAAE",
+	    "KEY_VOLUMEDOWN": "DAABAAACBACE",
+	    "KEY_MUTE": "DAABAAAACAFE",
+	    "KEY_OK": "IABAAACFAAE",
+	    "KEY_MODE": "DAABAACBAAAE",
+	    "dyn": "DAABAACAAAAG",
+	    "trim": "DAABAACBCFE"
+	}
+    }
+}

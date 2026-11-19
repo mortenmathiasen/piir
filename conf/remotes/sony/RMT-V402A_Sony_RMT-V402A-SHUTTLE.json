@@ -1,0 +1,30 @@
+{
+    "description": "Sony_RMT-V402A-SHUTTLE (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RMT-V402A.lircd.conf", "remote": "Sony_RMT-V402A-SHUTTLE", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 40000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 1200, "space": 0},
+	"H": {"mark": 2400, "space": 600},
+	"1": {"mark": 1200, "space": 600},
+	"0": {"mark": 600, "space": 600},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------------------------------------------------------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_AGAIN": "H11011010101110AVWWWWWWWWXXXXYYYZZZZZH11011010101110AVWWWWWWWWXXXXYYYZZZZZH11011010101110A",
+	    "PAUSE/UP": "H01110000101110AVWWWWWWWWWXXXXXXYYYZZZZZH01110000101110AVWWWWWWWWWXXXXXXYYYZZZZZH01110000101110A",
+	    "FF/RIGHT": "H10001000101110AVVXXYYYZZZZZH10001000101110AVVXXYYYZZZZZH10001000101110A",
+	    "STOP/DOWN": "H11110000101110AVWWWWWWWWWYYYZZZZZH11110000101110AVWWWWWWWWWYYYZZZZZH11110000101110A",
+	    "KEY_REWIND": "H00001000101110AVVXXXXXXXXYYYZZZZZH00001000101110AVVXXXXXXXXYYYZZZZZH00001000101110A",
+	    "KEY_PLAY": "H00011000101110AVVXXYYYZZZZZH00011000101110AVVXXYYYZZZZZH00011000101110A"
+	}
+    }
+}

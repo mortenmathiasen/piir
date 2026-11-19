@@ -1,0 +1,32 @@
+{
+    "description": "clarion (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/clarion/RCB-130.lircd.conf", "remote": "clarion", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 641, "space": 0},
+	"H": {"mark": 9061, "space": 4361},
+	"1": {"mark": 641, "space": 1578},
+	"0": {"mark": 641, "space": 458},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------",
+    "features": {
+	"key": {
+	    "func": "H01100001000001101100000000111111A",
+	    "KEY_VOLUMEUP": "H01100001000001101101100000100111A",
+	    "KEY_PREVIOUS": "H01100001000001100110100010010111A",
+	    "KEY_PLAYPAUSE": "H01100001000001100001000011101111A",
+	    "KEY_NEXT": "H01100001000001101110100000010111A",
+	    "KEY_VOLUMEDOWN": "H01100001000001101011100001000111A",
+	    "band": "H01100001000001100101000010101111A",
+	    "KEY_MUTE": "H01100001000001101010000001011111A",
+	    "ta": "H01100001000001100010000011011111A",
+	    "disp": "H01100001000001100001110011100011A",
+	    "ps/as": "H01100001000001101000100001110111A",
+	    "af": "H01100001000001100001100011100111A",
+	    "pty": "H01100001000001101001100001100111A"
+	}
+    }
+}

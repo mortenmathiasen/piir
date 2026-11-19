@@ -1,0 +1,50 @@
+{
+    "description": "FB1320 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/telefunken/FB1320.lircd.conf", "remote": "FB1320", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 429, "space": 0},
+	"1": {"mark": 429, "space": 4628},
+	"0": {"mark": 429, "space": 2098},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_RED": "000010111001A",
+	    "KEY_GREEN": "000010111011A",
+	    "KEY_YELLOW": "000010111000A",
+	    "KEY_BLUE": "000010010101A",
+	    "VIOLET": "000010011110A",
+	    "TIMER": "000010101011A",
+	    "0000": "000010111101A",
+	    "VCR->TV": "000010101101A",
+	    "DISPLAY": "000010111110A",
+	    "SP/LP": "000010000101A",
+	    "SETMARK": "000010111100A",
+	    "TRACK": "000010101100A",
+	    "SELECTINPUT": "000010011000A",
+	    "KEY_1": "000010000000A",
+	    "KEY_2": "000010001000A",
+	    "KEY_3": "000010010000A",
+	    "KEY_4": "000010000001A",
+	    "KEY_5": "000010001001A",
+	    "KEY_6": "000010010001A",
+	    "KEY_7": "000010000010A",
+	    "KEY_8": "000010001010A",
+	    "KEY_9": "000010010010A",
+	    "KEY_0": "000010001110A",
+	    "KEY_CHANNELDOWN": "000010101010A",
+	    "KEY_CHANNELUP": "000010101001A",
+	    "KEY_REWIND": "000010011111A",
+	    "KEY_PLAY": "000010100000A",
+	    "KEY_FASTFORWARD": "000010100001A",
+	    "KEY_RECORD": "000010100011A",
+	    "KEY_STOP": "000010100100A",
+	    "KEY_PAUSE": "000010100010A",
+	    "KEY_POWER": "000010011101A"
+	}
+    }
+}

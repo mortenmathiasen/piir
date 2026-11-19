@@ -1,0 +1,22 @@
+{
+    "description": "Philips-SBC_RU_545_00 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/SBC_RU_545_00.lircd.conf", "remote": "Philips-SBC_RU_545_00", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 616, "space": 0},
+	"H": {"mark": 8449, "space": 4115},
+	"1": {"mark": 617, "space": 1474},
+	"0": {"mark": 617, "space": 429},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------------",
+    "features": {
+	"key": {
+	    "Power": "H1100000011101000A",
+	    "Back": "H1100000010111001A",
+	    "Recordings": "H1100000011001000A"
+	}
+    }
+}

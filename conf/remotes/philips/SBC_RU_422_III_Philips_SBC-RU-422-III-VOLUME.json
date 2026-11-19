@@ -1,0 +1,22 @@
+{
+    "description": "Philips/SBC-RU-422-III-VOLUME (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/philips/SBC_RU_422_III.lircd.conf", "remote": "Philips/SBC-RU-422-III-VOLUME", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 632, "space": 0},
+	"H": {"mark": 2451, "space": 545},
+	"1": {"mark": 633, "space": 545},
+	"0": {"mark": 1236, "space": 545},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "KEY_VOLUMEUP": "H10110110111A",
+	    "KEY_VOLUMEDOWN": "H00110110111A",
+	    "KEY_MUTE": "H11010110111A"
+	}
+    }
+}

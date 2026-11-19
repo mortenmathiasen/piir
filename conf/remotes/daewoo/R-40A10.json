@@ -1,0 +1,52 @@
+{
+    "description": "R-40A10 (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/daewoo/R-40A10.lircd.conf", "remote": "R-40A10", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 499, "space": 492},
+	"B": {"mark": 499, "space": 1481},
+	"C": {"mark": 487, "space": 492},
+	"D": {"mark": 499, "space": 477},
+	"E": {"mark": 7983, "space": 3972},
+	"F": {"mark": 499, "space": 0},
+	"G": {"mark": 487, "space": 1481},
+	"I": {"mark": 499, "space": 3972},
+	"J": {"mark": 487, "space": 3972},
+	"K": {"mark": 487, "space": 0},
+	"L": {"mark": 487, "space": 477},
+	"M": {"mark": 499, "space": 1496},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------------",
+    "features": {
+	"key": {
+	    "1": "EAABABCAAIBAAAAAAAF",
+	    "2": "EAABABAAAIABAAAAAAF",
+	    "3": "EAABABAAAIBBAAAAAAF",
+	    "4": "EAABABAAAIAABAAAAAF",
+	    "5": "EAABABAAAIGAGAAAAAF",
+	    "6": "EAABABAAAIABBAAAAAF",
+	    "7": "EAAGABAAAIGBBDDDAAF",
+	    "8": "EACBABAAAIAAABAAAAF",
+	    "9": "EAABABAAAIBAABAAAAF",
+	    "VIDEO": "EAABABDAAIDBBDBDDDF",
+	    "0": "ECCGCGCCCJCCCCCCCCK",
+	    "NORMAL/OK": "EAABABAAAIBBBDABAAF",
+	    "ON": "EAABABAAAIBDBDBDDAF",
+	    "PRUP": "EAABABAAAIBMBABAAAF",
+	    "PRDOWN": "ECCGCGCCCJDDDBBDDDF",
+	    "TIHO": "ECCGCGCCCJDDGABDACK",
+	    "GROMKO": "ECCGCGACCIBBDDBDDAF",
+	    "MENU": "EAABABAAAICBAAABAAF",
+	    "SLEEP": "ECABABCADIGCGBCAAAF",
+	    "MUTE": "ECABCBAAAIABAAMAAAF",
+	    "RECALL": "EAABABAAAIBAAABAAAF",
+	    "SKIP": "ECCGCGCCCJLGLCGBLCK",
+	    "MOVE": "EAABABAAAIBBDDBBDDF",
+	    "DELETE": "EAAGABAAAJDDBDBBDDF",
+	    "MODE": "EAABABDAAIBDBDBBDDF"
+	}
+    }
+}

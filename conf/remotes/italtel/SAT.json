@@ -1,0 +1,46 @@
+{
+    "description": "italtel (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/italtel/SAT.lircd.conf", "remote": "italtel", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 494, "space": 0},
+	"1": {"mark": 493, "space": 11351},
+	"0": {"mark": 493, "space": 7403},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "------------",
+    "features": {
+	"key": {
+	    "TV/SAT": "11001011110A",
+	    "KEY_POWER": "11001111100A",
+	    "KEY_0": "11001000000A",
+	    "KEY_1": "11001000001A",
+	    "KEY_2": "11001000010A",
+	    "KEY_3": "11001000011A",
+	    "KEY_4": "11001000100A",
+	    "KEY_5": "11001000101A",
+	    "KEY_6": "11001000110A",
+	    "KEY_7": "11001000111A",
+	    "KEY_8": "11001001000A",
+	    "KEY_9": "11001001001A",
+	    "KEY_CHANNELUP": "11001110001A",
+	    "KEY_CHANNELDOWN": "11001110011A",
+	    "KEY_VOLUMEUP": "11001110101A",
+	    "KEY_VOLUMEDOWN": "11001111010A",
+	    "KEY_MUTE": "11001111000A",
+	    "CHANNEL": "11001100101A",
+	    "STREAM": "11001101000A",
+	    "TV/RADIO": "11001011111A",
+	    "KEY_MENU": "11001100100A",
+	    "KEY_INFO": "11001010100A",
+	    "KEY_ESC": "11001101101A",
+	    "KEY_OK": "11001001111A",
+	    "ARROW_UP": "11001010110A",
+	    "ARROW_DOWN": "11001011101A",
+	    "ARROW_LEFT": "11001010111A",
+	    "ARROW_RIGHT": "11001011001A"
+	}
+    }
+}

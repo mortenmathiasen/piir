@@ -1,0 +1,42 @@
+{
+    "description": "rm (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/sony/RM-PP402.lircd.conf", "remote": "rm", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 617, "space": 0},
+	"H": {"mark": 2436, "space": 561},
+	"1": {"mark": 617, "space": 561},
+	"0": {"mark": 1214, "space": 561},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "-------------",
+    "features": {
+	"key": {
+	    "v3_play": "H10100110001A",
+	    "v3_pause": "H01100110001A",
+	    "v3_stop": "H11100110001A",
+	    "v3_last": "H00010100001A",
+	    "v3_next": "H10010100001A",
+	    "v3_rwnd": "H00100110001A",
+	    "v3_ffwd": "H11000110001A",
+	    "v3_av": "H10101010001A",
+	    "v3_ch_inc": "H11110110001A",
+	    "v3_cd_dec": "H01110110001A",
+	    "v3_shift": "H10101110001A",
+	    "v3_enter": "H00101110001A",
+	    "v3_1": "H11111110001A",
+	    "v3_2": "H01111110001A",
+	    "v3_3": "H10111110001A",
+	    "v3_4": "H00111110001A",
+	    "v3_5": "H11011110001A",
+	    "v3_6": "H01011110001A",
+	    "v3_7": "H10011110001A",
+	    "v3_8": "H00011110001A",
+	    "v3_9": "H11101110001A",
+	    "v3_0": "H01101110001A",
+	    "v3_off": "H01010110001A"
+	}
+    }
+}

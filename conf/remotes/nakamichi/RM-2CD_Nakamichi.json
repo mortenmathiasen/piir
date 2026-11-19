@@ -1,0 +1,33 @@
+{
+    "description": "Nakamichi (LIRC remote)",
+    "source": {"lirc-remotes": "remotes/nakamichi/RM-2CD.lircd.conf", "remote": "Nakamichi", "converter": "tools/lirc2piir.py 1.0"},
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+	"A": {"mark": 600, "space": 0},
+	"B": {"mark": 600, "space": 4400},
+	"H": {"mark": 3500, "space": 300},
+	"1": {"mark": 600, "space": 1500},
+	"0": {"mark": 600, "space": 300},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "----------------------------------------",
+    "features": {
+	"key": {
+	    "KEY_NEXT": "H00000B11100110000110010001001111101100A",
+	    "KEY_FASTFORWARD": "H00000B11100110000110011110001100011100A",
+	    "KEY_REWIND": "H00000B11100110000110011000001101111100A",
+	    "call": "H00000B11100110000110010101001110101100A",
+	    "memory": "H00000B11100110000110011001001101101100A",
+	    "KEY_AGAIN": "H00000B11100110000110010010001111011100A",
+	    "display": "H00000B11100110000110010000001111111100A",
+	    "KEY_PLAY": "H00000B11100110000110010110001110011100A",
+	    "KEY_STOP": "H00000B11100110000110011010001101011100A",
+	    "KEY_PAUSE": "H00000B11100110000110011101001100101100A",
+	    "KEY_PREVIOUS": "H00000B11100110000110010100001110111100A",
+	    "KEY_EJECTCD": "H00000B11100110000110010011001111001100A",
+	    "KEY_CLEAR": "H00000B11100110000110011100001100111100A"
+	}
+    }
+}

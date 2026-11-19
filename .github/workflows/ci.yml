@@ -225,8 +225,10 @@ jobs:
             exit 1
           fi
 
+      # Only the packages, not e.g. the coverage report
       - uses: actions/download-artifact@v4
         with:
+          pattern: piir-*
           path: dist
           merge-multiple: true
 

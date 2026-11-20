@@ -39,6 +39,7 @@ test vectors. The exit code is 1 when some captures cannot be reproduced.
 """
 
 import argparse
+import itertools
 import json
 import sys
 from collections import Counter, OrderedDict
@@ -351,14 +352,14 @@ def _search(unit_lists, width, msb, taken):
     for u in varying:
         first_of.setdefault(tuple(units[u] for units in unit_lists), u)
     representative = {u: first_of[tuple(units[u] for units in unit_lists)] for u in varying}
+    varying_set = set(varying)
     found = []
     for at in varying:
         if at in taken:
             continue
-        twins = [u for u in varying if u != at and representative[u] == representative[at]]
+        # A copy points to an earlier twin (its representative), never to a
+        # later one: in a frame sent twice the second frame is the copy
         others = [u for u in varying if u != at and representative[u] == u]
-        if twins and twins[0] not in others:
-            others = sorted(others + twins[:1])
         m = len(others)
         for kind in ("xor", "sum"):
             planes = range(width) if kind == "xor" else range(1)
@@ -391,10 +392,11 @@ def _search(unit_lists, width, msb, taken):
                         elif need != init:
                             break
                     else:
-                        spec = OrderedDict(type=kind)
+                        spec = _Spec(type=kind)
+                        spec.varying = sum(1 for u in covered if u in varying_set)
                         if width == 4:
                             spec["unit"] = "nibble"
-                        init = _shape(spec, covered, at, init, kind, unit_lists, set(varying), mask)
+                        init = _shape(spec, covered, at, init, kind, unit_lists, varying_set, mask)
                         if kind == "xor" and init == mask:
                             spec["invert"] = True
                         elif init:
@@ -408,12 +410,19 @@ def _search(unit_lists, width, msb, taken):
     return found
 
 
+class _Spec(OrderedDict):
+    """A checksum found, remembering how many changing units it covers"""
+    varying = 0
+
+
 def _preference(spec):
-    """Prefer no start value, a checksum after its data, no negation, ranges
-    and wide ones"""
+    """Prefer no start value, a checksum after its data, no negation, ranges,
+    and the fewest changing units covered: a relation over more units may
+    hold only through another checksum (e.g. a copy of a byte also equals
+    the XOR of the bytes around it and their checksum)"""
     covered = _covered(spec)
     return ("init" in spec, spec["at"] < max(covered), "negate" in spec or "invert" in spec,
-            "data" in spec, -len(covered))
+            "data" in spec, getattr(spec, "varying", len(covered)))
 
 
 def _covers(code, a, b):
@@ -611,6 +620,65 @@ def derive_features(captures, codes, excluded):
                     positions[(n, v)].discard(p)
                     for w, symbol in when.items():
                         conditional.setdefault((n, v, m, w), {})[p] = symbol
+        # A conditional override can also match the base code in all its
+        # bits, e.g. a fan mode forcing the base temperature only while the
+        # power is on. Then the bits are the same in all captures with both
+        # values, although the other feature's values there set them
+        # otherwise. Bits set by accepted overrides are not counted.
+        def condition_holds(i, key):
+            n2, v2, m2, w2 = key
+            f = captures[i]["features"]
+            return f[n2] == v2 and f[m2] == w2
+
+        def explained(i, p, n, exclude=()):
+            """Bit p of capture i is set by an override of another feature
+            or by a conditional override already found"""
+            return overridden(i, p, n) or any(
+                p in bits and key not in exclude and condition_holds(i, key)
+                for key, bits in conditional.items())
+
+        conditioned = {}
+        for (n, v, m, w) in conditional:
+            conditioned.setdefault((n, v), set()).update(conditional[(n, v, m, w)])
+        candidates = []
+        for n in names:
+            for v in values[n]:
+                for g in names:
+                    if g == n:
+                        continue
+                    for p in sorted(owned[g] - positions[(n, v)] - conditioned.get((n, v), set())):
+                        group = [i for i in groups[(n, v)] if not explained(i, p, n)]
+                        if len({codes[i][p] for i in group}) <= 1:
+                            continue   # unconditional, or not forced
+                        # The condition may be the forced feature's own value,
+                        # e.g. a temperature only some modes accept
+                        for m in names:
+                            if m == n:
+                                continue
+                            for w in values[m]:
+                                sub = [i for i in group if captures[i]["features"][m] == w]
+                                found = {codes[i][p] for i in sub}
+                                if len(found) != 1:
+                                    continue
+                                symbol = found.pop()
+                                contra = [i for i in sub
+                                          if single[g][captures[i]["features"][g]][p] != symbol]
+                                if len(contra) >= 2:
+                                    candidates.append(((n, v, m, w), p, symbol, contra))
+        # A candidate whose captures all match another candidate's condition
+        # for the same bit is a coincidence (the same condition seen from the
+        # other side counts as the same).
+        by_bit = {}
+        for key, p, symbol, contra in candidates:
+            by_bit.setdefault(p, []).append(key)
+        for key, p, symbol, contra in candidates:
+            n, v, m, w = key
+            mirror = (m, w, n, v)
+            rivals = [k for k in by_bit[p] if k not in (key, mirror)]
+            if all(any(condition_holds(i, k) for k in rivals) for i in contra):
+                continue
+            target = mirror if mirror in conditional else key
+            conditional.setdefault(target, {})[p] = symbol
         # Under the same condition, the other bits of a feature it forces may
         # be forced to the base's symbols, which changes nothing from the base
         for (n, v, m, w), bits in conditional.items():
@@ -804,7 +872,62 @@ def _derive_definition(captures, codes):
     definition["features"] = features
     if overrides:
         definition["overrides"] = overrides
+    _repair(definition, captures, codes, excluded)
     return definition
+
+
+# The most features an override found by _repair() may depend on
+MAX_CONDITION = 3
+
+
+def _repair(definition, captures, codes, excluded):
+    """Add overrides for the bits the definition still gets wrong: for each,
+    the fewest feature values (up to MAX_CONDITION) under which the bit is
+    the same in every capture, held by at least two captures. Such an
+    override only sets what was recorded, so the order of overrides does not
+    matter."""
+    names = list(captures[0]["features"])
+    overrides = definition.setdefault("overrides", [])
+    matching = {}
+
+    def captures_with(condition):
+        if condition not in matching:
+            matching[condition] = [i for i, c in enumerate(captures)
+                                   if all(c["features"][n] == v for n, v in condition)]
+        return matching[condition]
+
+    for _ in range(10):
+        wrong = []
+        for i, c in enumerate(captures):
+            got = encode(definition["template"], definition.get("features", {}), [],
+                         c["features"], overrides)
+            wrong += [(i, p) for p, (a, b) in enumerate(zip(got, codes[i]))
+                      if a != b and p not in excluded]
+        if not wrong:
+            break
+        fixes = OrderedDict()
+        for i, p in wrong:
+            items = [(n, captures[i]["features"][n]) for n in names]
+            best = None
+            for size in range(1, MAX_CONDITION + 1):
+                for condition in itertools.combinations(items, size):
+                    members = captures_with(condition)
+                    if len(members) < 2 or len({codes[j][p] for j in members}) != 1:
+                        continue
+                    if best is None or len(members) > len(captures_with(best)):
+                        best = condition
+                if best:
+                    break
+            if best:
+                fixes.setdefault(best, {})[p] = codes[i][p]
+        if not fixes:
+            break
+        for condition, bits in fixes.items():
+            overrides.append(OrderedDict([
+                ("when", OrderedDict(condition)),
+                ("code", "".join(bits.get(p, " ") for p in range(len(codes[0]))).rstrip())]))
+    if not overrides:
+        del definition["overrides"]
 
 
 def _hard_coded(captures, codes):

@@ -177,7 +177,7 @@ class ChecksumTest(unittest.TestCase):
             frame = "".join(bits(b) for b in d + [sum(d) & 0xff])
             return frame + "W" + frame
         found = ir2piir.find_checksums(self.codes(make))
-        self.assertEqual({"type": "sum", "from": 0, "to": 3, "at": 4}, found[0])
+        self.assertIn({"type": "sum", "from": 0, "to": 3, "at": 4}, found)
         for code in self.codes(make, seed=2):
             broken = code[:32] + ("1" if code[32] == "0" else "0") + code[33:]
             self.assertEqual(code, ir2piir.apply_checksums(code, found))
@@ -336,6 +336,43 @@ class RemoteTest(unittest.TestCase):
         captures.insert(1, capture([("mode", "COOL"), ("fan", "1")], aircon("AUTO", "3")))
         with self.assertRaisesRegex(ir2piir.Ir2PiirError, "two different codes"):
             ir2piir.build_remote(captures, "test")
+    def test_conditional_override_matching_the_base(self):
+        # DRY forces fan 1, the base fan, only while the power is on: no bit
+        # of it ever differs from the base code
+        def code(power, mode, fan):
+            if mode == "DRY" and power == "ON":
+                fan = "1"
+            data = [MODES[mode] | FANS[fan] << 4, 1 if power == "ON" else 0]
+            return "H" + "".join(bits(b) for b in data + [sum(data) & 0xff]) + "0"
+        captures = [capture(c["features"].items(), code(*c["features"].values()))
+                    for c in conditional_captures(count=80)]
+        remote, failures = ir2piir.build_remote(captures, "test")
+        self.assertEqual([], failures)
+        self.assertEqual([{"mode": "DRY", "power": "ON"}],
+                         [dict(o["when"]) for o in remote["overrides"]])
+        everything = [capture([("power", p), ("mode", m), ("fan", f)], code(p, m, f))
+                      for p in ("ON", "OFF") for m in MODES for f in FANS]
+        self.assertEqual([], ir2piir.check_remote(remote, everything))
+
+    def test_repair_three_way_condition(self):
+        # DRY with fan 2 sends fan 1, but only while the power is on: a
+        # condition on three features (fan 1 and 2 share no bit, so no
+        # smaller condition holds)
+        def code(power, mode, fan):
+            if mode == "DRY" and fan == "2" and power == "ON":
+                fan = "1"
+            data = [MODES[mode] | FANS[fan] << 4, 1 if power == "ON" else 0]
+            return "H" + "".join(bits(b) for b in data + [sum(data) & 0xff]) + "0"
+        captures = [capture(c["features"].items(), code(*c["features"].values()))
+                    for c in conditional_captures(count=150)]
+        remote, failures = ir2piir.build_remote(captures, "test")
+        self.assertEqual([], failures)
+        self.assertIn({"power": "ON", "mode": "DRY", "fan": "2"},
+                      [dict(o["when"]) for o in remote["overrides"]])
+        everything = [capture([("power", p), ("mode", m), ("fan", f)], code(p, m, f))
+                      for p in ("ON", "OFF") for m in MODES for f in FANS]
+        self.assertEqual([], ir2piir.check_remote(remote, everything))
+
     def test_variant_for_another_length(self):
         # Power off sends one short code
         def code(power, mode, fan):

@@ -2,9 +2,11 @@
 //
 // usage: heatpumpir_capture list
 //        heatpumpir_capture MODEL [RANDOM [SEED]]
+//        heatpumpir_capture MODEL all
 //
 // Prints JSON Lines on standard output: a base setting, every value of every
-// feature changed alone, and RANDOM (default 300) random combinations.
+// feature changed alone, and RANDOM (default 300) random combinations, or
+// with "all" every combination (for ir2piir --fallback).
 // Features: power, mode, fan, temperature, vertical, horizontal. The
 // temperature range and the fan speeds come from the model's info().
 //
@@ -149,7 +151,7 @@ static void capture(HeatpumpIR *heatpump, const std::vector<Feature> &fs,
 
 int main(int argc, char *argv[]) {
   if (argc < 2) {
-    fprintf(stderr, "usage: %s list | MODEL [RANDOM [SEED]]\n", argv[0]);
+    fprintf(stderr, "usage: %s list | MODEL [RANDOM [SEED]] | MODEL all\n", argv[0]);
     return 2;
   }
   if (strcmp(argv[1], "list") == 0) {
@@ -162,7 +164,8 @@ int main(int argc, char *argv[]) {
     fprintf(stderr, "Unknown model %s, see: %s list\n", argv[1], argv[0]);
     return 2;
   }
-  int randomCount = argc > 2 ? atoi(argv[2]) : 300;
+  bool all = argc > 2 && strcmp(argv[2], "all") == 0;
+  int randomCount = argc > 2 && !all ? atoi(argv[2]) : 300;
   unsigned seed = argc > 3 ? atoi(argv[3]) : 1;
 
   std::vector<Feature> fs = features(heatpump);
@@ -178,6 +181,19 @@ int main(int argc, char *argv[]) {
         chosen[i] = v;
         capture(heatpump, fs, chosen);
       }
+  if (all) {
+    std::vector<size_t> chosen(fs.size(), 0);
+    while (true) {
+      capture(heatpump, fs, chosen);
+      size_t i = 0;
+      while (i < fs.size() && ++chosen[i] == fs[i].values.size())
+        chosen[i++] = 0;
+      if (i == fs.size())
+        break;
+    }
+    delete heatpump;
+    return 0;
+  }
   std::mt19937 rng(seed);
   for (int n = 0; n < randomCount; n++) {
     std::vector<size_t> chosen;

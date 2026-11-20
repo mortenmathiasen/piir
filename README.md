@@ -409,6 +409,18 @@ tools/ir2piir.py captures.jsonl --check more-captures.jsonl -o aircon.json
 
 Limitations: all codes must have the same length and structure; every symbol must be a mark followed by a space (pulse distance or pulse width coding, used by most air conditioners, not RC5/RC6); a code must end with a stop mark, since the space after the last mark cannot be recorded; CRCs and counts of set bits are not searched; and an override depending on two other features is not found, only one depending on one (see [Overrides](#overrides)).
 
+[tools/heatpumpir](tools/heatpumpir) records the codes of the [arduino-heatpumpir](https://github.com/ToniA/arduino-heatpumpir) library as captures, for every air conditioner model it supports. The library (GPL-2.0) is not part of PIIR; build the recorder against a checkout of it:
+```
+git clone https://github.com/ToniA/arduino-heatpumpir.git
+cmake -S tools/heatpumpir -B build/heatpumpir -DHEATPUMPIR_DIR=$PWD/arduino-heatpumpir
+cmake --build build/heatpumpir
+build/heatpumpir/heatpumpir_capture list
+build/heatpumpir/heatpumpir_capture gree 300 1 > gree.jsonl
+build/heatpumpir/heatpumpir_capture gree 1000 2 > gree-check.jsonl
+tools/ir2piir.py gree.jsonl --check gree-check.jsonl -o gree.json
+```
+Of its 46 models, ir2piir derives a remote sending the same codes for 34 (checked with 1000 random combinations each). The others send codes of different lengths, use checksums PIIR cannot express (a CRC, a count of set bits), or combine features in ways not found yet. Models that send the time of day get 00:00.
+
 The tests derive `panasonic/hvac_panasonic` from 340 codes PIIR sends for it. The result finds its checksum (`{"type": "sum", "from": 8, "to": 25, "at": 26}`) and its overrides, and sends exactly the same pulses for 1000 other random combinations.
 
 ### Toggle bits

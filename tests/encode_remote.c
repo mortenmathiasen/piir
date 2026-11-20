@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     return 2;
   const char *plugin = NULL;
   loadPlugin(&plugin);
-  if (!plugin && !loadChecksums())
+  if (!plugin && !loadChecksums() && !hasVariants())
     plugin = legacyRemotePlugin(argv[1]);
 
   size_t featureCount = getAllFeaturesCount();

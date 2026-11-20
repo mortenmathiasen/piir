@@ -1,10 +1,12 @@
 #include <stdlib.h>
 #include "unittest.h"
 #include "config.h"
+#include "checksum.h"
 #include "log.h"
 
 #define SIMPLE FIXTURE_DIR "/simple.json"
 #define OVERRIDES FIXTURE_DIR "/overrides.json"
+#define VARIANTS FIXTURE_DIR "/variants.json"
 
 static void test_load_missing_file(void) {
   unloadConfig();
@@ -275,6 +277,44 @@ static void test_overrides(void) {
   free(code);
 }
 
+static char *variantCode(const char *power, const char *mode) {
+  featureT features[2] = {{power ? "power" : 0, power}, {mode ? "mode" : 0, mode}};
+  char *code = 0;
+  loadFeaturedCode(features, &code);
+  return code;
+}
+
+static void test_variants(void) {
+  loadConfig(VARIANTS);
+  CHECK(hasVariants());
+  char *code = variantCode("ON", "DRY");
+  CHECK_EQ_STR("S-1-01", code);
+  CHECK(loadChecksums() == NULL);
+  free(code);
+  // The first matching variant is used, with only its own features
+  code = variantCode("OFF", "DRY");
+  CHECK_EQ_STR("S-0", code);
+  CHECK(loadChecksums() == NULL);
+  free(code);
+  code = variantCode("OFF", "SWING");
+  CHECK_EQ_STR("S-0", code);
+  free(code);
+  // A variant's features, overrides and checksums
+  code = variantCode("ON", "SWING");
+  CHECK_EQ_STR("S-1-1000-0000", code);
+  CHECK(loadChecksums() != NULL);
+  CHECK_EQ_INT(0, applyConfigChecksums(code));
+  CHECK_EQ_STR("S-1-1000-1000", code);
+  free(code);
+  // Without features the remote itself
+  code = 0;
+  loadFeaturedCode(NULL, &code);
+  CHECK_EQ_STR("S-1-00", code);
+  free(code);
+  loadConfig(SIMPLE);
+  CHECK(!hasVariants());
+}
+
 int main(void) {
   log_set_level(LOG_NOTHING);
   RUN_TEST(test_load_missing_file);
@@ -296,6 +336,7 @@ int main(void) {
   RUN_TEST(test_feature_longer_than_template);
   RUN_TEST(test_toggle);
   RUN_TEST(test_overrides);
+  RUN_TEST(test_variants);
   unloadConfig();
   return TEST_RESULT();
 }

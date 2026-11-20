@@ -188,17 +188,6 @@ def add_separators(code):
     return "".join(out)
 
 
-def check_structure(captures, codes):
-    """All codes must have the same symbols apart from the bits"""
-    shape = lambda code: "".join("b" if s in "01" else s for s in code)
-    first = shape(codes[0])
-    for c, code in zip(captures, codes):
-        if shape(code) != first:
-            raise Ir2PiirError("%s has another structure than the first capture "
-                               "(codes of different lengths are not supported):\n  %s\n  %s"
-                               % (c["where"], codes[0], code))
-
-
 # -------------------------------------------------------------- checksums
 
 def bit_positions(code, bits="01"):
@@ -750,9 +739,7 @@ def check_remote(remote, captures, tolerance=0.2):
     failures = []
     for c in captures:
         unknown = [n for n, v in c["features"].items() if v not in features.get(n, {})]
-        sent = pulses(encode(remote["template"], features, remote.get("checksums", []),
-                             c["features"], remote.get("overrides", [])),
-                      remote["symboldefinitions"])
+        sent = pulses(encode_remote(remote, c["features"]), remote["symboldefinitions"])
         recorded = c["durations"][:len(c["durations"]) // 2 * 2 + 1]  # without a final space
         if unknown or len(sent) != len(recorded) or any(
                 abs(a - b) > tolerance * max(a, b) for a, b in zip(sent, recorded)):
@@ -775,32 +762,161 @@ def to_json(obj, indent=0):
     return json.dumps(obj)
 
 
-def build_remote(captures, description, dutycycle=0.5, outpin=17, tolerance=0.2,
-                 test_count=30, separators=True):
-    """Returns the remote and the captures it does not reproduce"""
-    symbols, codes = derive_symbols(captures, tolerance)
-    if separators:
-        codes = [add_separators(code) for code in codes]
-    check_structure(captures, codes)
+def _structure(code):
+    return "".join("b" if s in "01" else s for s in code)
 
+
+def _selector(captures, members):
+    """The feature whose values in the captures numbered in members never
+    occur in the others, with the fewest such values: (name, values) or None"""
+    inside = set(members)
+    best = None
+    for name in captures[0]["features"]:
+        values_in = {captures[i]["features"][name] for i in inside}
+        values_out = {c["features"][name] for i, c in enumerate(captures) if i not in inside}
+        if not values_in & values_out and (best is None or len(values_in) < len(best[1])):
+            best = (name, values_in)
+    if best is None:
+        return None
+    ordered = []
+    for c in captures:
+        v = c["features"][best[0]]
+        if v in best[1] and v not in ordered:
+            ordered.append(v)
+    return best[0], ordered
+
+
+def _derive_definition(captures, codes):
+    """The template, features, checksums and overrides for captures whose
+    codes have the same structure. A single code is a fixed template."""
+    definition = OrderedDict()
+    if len(set(codes)) == 1:
+        definition["template"] = codes[0]
+        return definition
     checksums = find_checksums(codes)
     excluded = set()
     for spec in checksums:
         excluded.update(unit_positions(codes[0], spec))
     features, template, overrides = derive_features(captures, codes, excluded)
+    if checksums:
+        definition["checksums"] = checksums
+    definition["template"] = template
+    definition["features"] = features
+    if overrides:
+        definition["overrides"] = overrides
+    return definition
 
-    failures = []
-    for c, code in zip(captures, codes):
-        got = encode(template, features, checksums, c["features"], overrides)
-        if got != code:
-            failures.append((c, code, got))
 
-    frequency = Counter(c["frequency"] for c in captures).most_common(1)[0][0]
+def _hard_coded(captures, codes):
+    """A definition sending the recorded codes of exactly these captures"""
+    definition = OrderedDict(template=codes[0])
+    definition["overrides"] = [OrderedDict([("when", OrderedDict(c["features"])), ("code", code)])
+                               for c, code in zip(captures, codes)]
+    return definition
+
+
+def select_definition(remote, wanted):
+    """The first variant whose "when" features are all wanted, else the remote"""
+    for variant in remote.get("variants", []):
+        if all(wanted.get(n) == v for n, v in variant["when"].items()):
+            return variant
+    return remote
+
+
+def encode_remote(remote, wanted):
+    """Encode like PIIR, including variants"""
+    definition = select_definition(remote, wanted)
+    return encode(definition["template"], definition.get("features", {}),
+                  definition.get("checksums", []), wanted, definition.get("overrides", []))
+
+
+def build_remote(captures, description, dutycycle=0.5, outpin=17, tolerance=0.2,
+                 test_count=30, separators=True, fallback=False):
+    """Returns the remote and the captures it does not reproduce. Codes of
+    different structures (e.g. a short power off code) become variants,
+    selected by the feature values only their captures have. With fallback,
+    the codes of captures the remote does not reproduce are hard-coded."""
+    symbols, codes = derive_symbols(captures, tolerance)
+    if separators:
+        codes = [add_separators(code) for code in codes]
+
+    groups = OrderedDict()
+    for i, code in enumerate(codes):
+        groups.setdefault(_structure(code), []).append(i)
+    ordered = sorted(groups.values(), key=lambda g: (-len(g), 0 not in g))
+    main_group, others = ordered[0], ordered[1:]
+
+    def derive(members, what):
+        cs = [captures[i] for i in members]
+        cc = [codes[i] for i in members]
+        try:
+            return _derive_definition(cs, cc)
+        except Ir2PiirError as e:
+            if not fallback:
+                raise Ir2PiirError("%s: %s" % (what, e))
+            print("warning: %s: %s; hard-coding its %d captures" % (what, e, len(cs)),
+                  file=sys.stderr)
+            return _hard_coded(cs, cc)
+
+    variants = []
+    for members in others:
+        selector = _selector(captures, members)
+        if selector:
+            name, values = selector
+            definition = derive(members, "codes with %s=%s" % (name, "/".join(values)))
+            for v in values:
+                variant = OrderedDict(when=OrderedDict([(name, v)]))
+                variant.update(definition)
+                variants.append(variant)
+        elif fallback:
+            for i in members:
+                variant = OrderedDict(when=OrderedDict(captures[i]["features"]))
+                variant["template"] = codes[i]
+                variants.append(variant)
+        else:
+            raise Ir2PiirError(
+                "%d codes have another structure than the first capture, and no feature "
+                "value selects them (codes of different lengths need one, or --fallback); "
+                "e.g. %s:\n  %s\n  %s" % (len(members), captures[members[0]]["where"],
+                                            codes[main_group[0]], codes[members[0]]))
+    main = derive(main_group, "codes of the most common structure")
+
+    # Every value is known at the top, also those only selecting variants
+    features = main.setdefault("features", OrderedDict())
+    for c in captures:
+        for n, v in c["features"].items():
+            features.setdefault(n, OrderedDict()).setdefault(v, "")
+
+    remote = OrderedDict()
+    remote["description"] = description
+    remote["frequency"] = Counter(c["frequency"] for c in captures).most_common(1)[0][0]
+    remote["dutycycle"] = dutycycle
+    remote["transmitter"] = OrderedDict(outpin=outpin)
     symboldefinitions = OrderedDict()
     if separators:
         symboldefinitions[SEPARATOR] = OrderedDict(mark=0, space=0)
     for name, (mark, space) in symbols.items():
         symboldefinitions[name] = OrderedDict(mark=mark, space=space)
+    remote["symboldefinitions"] = symboldefinitions
+    remote.update(main)
+    if variants:
+        remote["variants"] = variants
+
+    def failures():
+        result = []
+        for c, code in zip(captures, codes):
+            got = encode_remote(remote, c["features"])
+            if got != code:
+                result.append((c, code, got))
+        return result
+
+    failed = failures()
+    if fallback and failed:
+        for c, code, _ in failed:
+            definition = select_definition(remote, c["features"])
+            definition.setdefault("overrides", []).append(
+                OrderedDict([("when", OrderedDict(c["features"])), ("code", code)]))
+        failed = failures()
 
     step = max(1, len(captures) // test_count) if test_count else 0
     tests = []
@@ -808,28 +924,15 @@ def build_remote(captures, description, dutycycle=0.5, outpin=17, tolerance=0.2,
         for i in range(0, len(captures), step):
             if len(tests) == test_count:
                 break
-            if any(f[0] is captures[i] for f in failures):
+            if any(f[0] is captures[i] for f in failed):
                 continue
             tests.append(OrderedDict([
                 ("description", "Capture %d" % (i + 1)),
                 ("features", captures[i]["features"]),
                 ("outcome", codes[i])]))
-
-    remote = OrderedDict()
-    remote["description"] = description
-    remote["frequency"] = frequency
-    remote["dutycycle"] = dutycycle
-    remote["transmitter"] = OrderedDict(outpin=outpin)
-    remote["symboldefinitions"] = symboldefinitions
-    if checksums:
-        remote["checksums"] = checksums
-    remote["template"] = template
-    remote["features"] = features
-    if overrides:
-        remote["overrides"] = overrides
     if tests:
         remote["tests"] = tests
-    return remote, failures
+    return remote, failed
 
 
 def main(argv=None):
@@ -847,6 +950,9 @@ def main(argv=None):
     p.add_argument("--check", metavar="FILE", action="append", default=[],
                    help="also check the remote against these captures, which are not "
                         "used to derive it")
+    p.add_argument("--fallback", action="store_true",
+                   help="hard-code the codes of captures the remote does not reproduce "
+                        "(only these combinations are then sent exactly)")
     p.add_argument("--no-separators", dest="separators", action="store_false",
                    help="do not insert '-' between bytes")
     args = p.parse_args(argv)
@@ -855,7 +961,7 @@ def main(argv=None):
         captures = load_captures(args.captures)
         remote, failures = build_remote(captures, args.description, args.dutycycle,
                                         args.outpin, args.tolerance, args.tests,
-                                        args.separators)
+                                        args.separators, args.fallback)
         held_out = load_captures(args.check) if args.check else []
     except Ir2PiirError as e:
         print("ir2piir: %s" % e, file=sys.stderr)
@@ -872,6 +978,15 @@ def main(argv=None):
     print("%d captures, %d symbols, %d checksums, %d features: %s" % (
         len(captures), len(remote["symboldefinitions"]), len(checksums),
         len(remote["features"]), ", ".join(remote["features"])), file=sys.stderr)
+    variants = remote.get("variants", [])
+    if variants:
+        print("  %d variants: %s" % (len(variants), ", ".join(
+            " ".join("%s=%s" % kv for kv in v["when"].items()) for v in variants[:5])
+            + (", ..." if len(variants) > 5 else "")), file=sys.stderr)
+    hard = sum(1 for d in [remote] + variants for o in d.get("overrides", [])
+               if len(o["when"]) == len(remote["features"]))
+    if hard:
+        print("  %d hard-coded codes" % hard, file=sys.stderr)
     for spec in checksums:
         print("  checksum %s" % json.dumps(spec), file=sys.stderr)
     result = 0

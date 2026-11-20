@@ -1,0 +1,22 @@
+{
+    "description": "Test remote with conditional overrides: mode DRY forces fan 1 while the power is on",
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "symboldefinitions": {
+	"S": {"mark": 9000, "space": 4500},
+	"0": {"mark": 560, "space": 560},
+	"1": {"mark": 560, "space": 1690},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "S-1-00-00",
+    "features": {
+	"power": {"ON": "  1", "OFF": "  0"},
+	"mode": {"COOL": "    00", "DRY": "    01"},
+	"fan": {"1": "       01", "3": "       11"}
+    },
+    "overrides": [
+	{"when": {"mode": "DRY", "power": "ON"}, "code": "       01"},
+	{"when": {"fan": "3", "power": "OFF"}, "code": "    1"},
+	{"when": {"fan": "3", "power": "OFF", "mode": "COOL"}, "code": "    0"}
+    ]
+}

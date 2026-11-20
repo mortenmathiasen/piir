@@ -33,7 +33,10 @@ piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
   * [Remotes](#remotes)
     + [Choosing the remotes of an installation](#choosing-the-remotes-of-an-installation)
     + [Remotes converted from LIRC](#remotes-converted-from-lirc)
+    + [Remotes derived from recordings](#remotes-derived-from-recordings)
     + [Toggle bits](#toggle-bits)
+    + [Checksums](#checksums)
+    + [Overrides](#overrides)
   * [Contributing](#contributing)
   * [Versioning](#versioning)
   * [Authors](#authors)
@@ -52,6 +55,7 @@ piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
 To control an IR-receiver you need to know the IR-signals to transmit to it. Either, you can:
 * Use the protocol definitions that exists already inside PIIRs remote folder [conf/remotes](https://github.com/mortenmathiasen/piir/tree/master/conf/remotes): more than 3000 remotes from over 500 manufacturers, most of them converted from the [LIRC remote database](https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes), see [Remotes](#remotes)
 * Convert a LIRC configuration (`lircd.conf`) you already have with [tools/lirc2piir.py](tools/lirc2piir.py)
+* Derive a remote from recorded codes with [tools/ir2piir.py](tools/ir2piir.py), see [Remotes derived from recordings](#remotes-derived-from-recordings)
 * Reverse engineer your remote control, e.g. using [IR decoder for Arduino](https://github.com/ToniA/Raw-IR-decoder-for-Arduino.git) which I did for [Panasonic airconditioner](https://github.com/mortenmathiasen/piir/blob/master/conf/remotes/panasonic/hvac_panasonic.pdf)
 
 ### Supported systems
@@ -191,7 +195,7 @@ cmake --build build
 ctest --test-dir build --output-on-failure
 ```
 
-They cover the configuration loader, remote lookup, the remote plugins, the transmitter backend selected at configure time, the `piir` command line, `piir-remotes` and the LIRC converter. Every key of every remote in `conf/remotes/` is checked to produce a code PIIR can send. The `tests` section of a remote lists features and the code a real remote sends for them, and every one of these vectors is checked. Vectors that do not match yet are listed in `tests/known_failures.txt`. No test transmits IR, so they are safe to run on a Pi.
+They cover the configuration loader, remote lookup, checksums, the remote plugins, the transmitter backend selected at configure time, the `piir` command line, `piir-remotes`, the LIRC converter and `ir2piir.py`, which must derive `panasonic/hvac_panasonic` again from the codes it sends. Every key of every remote in `conf/remotes/` is checked to produce a code PIIR can send. The `tests` section of a remote lists features and the code a real remote sends for them, and every one of these vectors is checked. Vectors that do not match yet are listed in `tests/known_failures.txt`. No test transmits IR, so they are safe to run on a Pi.
 
 To measure coverage, configure with `-DPIIR_COVERAGE=ON` and run [gcovr](https://gcovr.com) after the tests; the converter is measured too when Python's `coverage` module is installed:
 ```
@@ -223,7 +227,7 @@ The command line options and remote files of PIIR 1.x still work. These things c
 * **Transmitter.** PIIR 1.x always used pigpio. PIIR 2 prefers the Linux kernel IR driver, which works on every Raspberry Pi including Pi 5, but needs `dtoverlay=gpio-ir-tx,gpio_pin=17` in `/boot/firmware/config.txt` (see [Compilation](#compilation)). The overlay sets the GPIO pin, so `outpin` in a remote file is not used by this backend. Without the overlay PIIR stops with `Cannot open /dev/lirc0`. To keep using pigpio and `outpin`, build with `-DPIIR_GPIO_BACKEND=pigpio` (this does not compile in release 2.0.0; use 2.1.0 or later).
 * **Exit codes and output.** On errors and after `--help`, PIIR 1.x aborted (exit code 134); PIIR 2 exits with 1. The `gpioWaveTxSend OK` line is only printed by the pigpio backend.
 * **Remote locations.** The remotes shipped with PIIR are in manufacturer directories, e.g. `conf/remotes/panasonic/hvac_panasonic.json`. Your own remotes directly in `conf/remotes/` are still found, and `--remote hvac_panasonic` still works. Release packages contain only PIIR's own remotes; add others with [piir-remotes](#choosing-the-remotes-of-an-installation).
-* **Plugins.** A remote now names its plugin, e.g. `"plugin": "hvac_panasonic"`. Remote files without this setting whose path contains `hvac_panasonic` still get the Panasonic checksum, as in PIIR 1.x.
+* **Plugins.** A remote now names its plugin, e.g. `"plugin": "hvac_panasonic"`, or defines its checksums in the remote file, see [Checksums](#checksums). Remote files with neither setting whose path contains `hvac_panasonic` still get the Panasonic checksum, as in PIIR 1.x.
 * **Codes sent.** PIIR 1.x only applied the last `--feature` given; PIIR 2 applies all of them, in the order of the remote file (see [How to use](#how-to-use)). For `hvac_panasonic`, `mode=FAN` now sends the fixed 27 degrees and `option=QUIET`, `option=8` and `option=10` override the fan speed and mode, as the original remote does. The same command can therefore send a different, correct code than PIIR 1.x.
 
 ## How to use
@@ -380,6 +384,45 @@ Remotes with a toggle bit (RC5, RC6 and others with a `toggle_bit_mask`) get a `
 
 Two LIRC 0.10.2 bugs are not copied: durations of 0 in a configuration break the alternation of pulses and spaces there, and raw remotes with a repeat code send the start of the raw code instead of the repeat code.
 
+### Remotes derived from recordings
+
+[tools/ir2piir.py](tools/ir2piir.py) derives a remote, e.g. an air conditioner's, from recorded codes and the settings each was sent for. It needs only Python 3. Record the codes with an IR receiver, or from software that generates them, and write one code per line in a [JSON Lines](https://jsonlines.org/) file:
+```
+{"features": {"mode": "HEAT", "temperature": "21", "fan": "AUTO"}, "frequency": 38000, "durations": [3500, 1750, 435, 435, 435, 1300, ...]}
+```
+`durations` alternate mark and space in microseconds, starting with a mark. Every line names the same features. Then:
+```
+tools/ir2piir.py captures.jsonl -o conf/remotes/mybrand/aircon.json --description "My air conditioner"
+```
+
+The captures must contain:
+* a base code: the first line
+* for every value of every feature, a code where only that feature differs from the base
+* random combinations of the features: about 300 for six features. They are used to find values that override other features, e.g. a fan mode forcing a temperature. Without them, an override that happens to match the base code is not found.
+
+ir2piir clusters the durations into symbols (`0`, `1`, header, gaps), searches [checksums](#checksums) (sums, negated sums and XORs of bytes or nibbles, adjacent or not, found by solving their lowest bits as linear equations), gives each feature the bits its values change, puts a feature that overrides another after it, and writes overrides that only happen together with another feature's value as [overrides](#overrides). It then encodes every capture again and reports those it cannot reproduce (exit code 1). A sample of the captures is stored as the remote's `tests`.
+
+To see whether the remote also works for combinations that were not recorded, record more and check them without using them to derive the remote:
+```
+tools/ir2piir.py captures.jsonl --check more-captures.jsonl -o aircon.json
+```
+
+Limitations: all codes must have the same length and structure; every symbol must be a mark followed by a space (pulse distance or pulse width coding, used by most air conditioners, not RC5/RC6); a code must end with a stop mark, since the space after the last mark cannot be recorded; CRCs and counts of set bits are not searched; and an override depending on two other features is not found, only one depending on one (see [Overrides](#overrides)).
+
+[tools/heatpumpir](tools/heatpumpir) records the codes of the [arduino-heatpumpir](https://github.com/ToniA/arduino-heatpumpir) library as captures, for every air conditioner model it supports. The library (GPL-2.0) is not part of PIIR; build the recorder against a checkout of it:
+```
+git clone https://github.com/ToniA/arduino-heatpumpir.git
+cmake -S tools/heatpumpir -B build/heatpumpir -DHEATPUMPIR_DIR=$PWD/arduino-heatpumpir
+cmake --build build/heatpumpir
+build/heatpumpir/heatpumpir_capture list
+build/heatpumpir/heatpumpir_capture gree 300 1 > gree.jsonl
+build/heatpumpir/heatpumpir_capture gree 1000 2 > gree-check.jsonl
+tools/ir2piir.py gree.jsonl --check gree-check.jsonl -o gree.json
+```
+Of its 46 models, ir2piir derives a remote sending the same codes for 34 (checked with 1000 random combinations each). The others send codes of different lengths, use checksums PIIR cannot express (a CRC, a count of set bits), or combine features in ways not found yet. Models that send the time of day get 00:00.
+
+The tests derive `panasonic/hvac_panasonic` from 340 codes PIIR sends for it. The result finds its checksum (`{"type": "sum", "from": 8, "to": 25, "at": 26}`) and its overrides, and sends exactly the same pulses for 1000 other random combinations.
+
 ### Toggle bits
 
 Some protocols, e.g. Philips RC5 and RC6, have a toggle bit that the remote flips on every press of any key. Repeats while a key is held keep it, so a device can tell a held key from a new press: pressing `5` twice gives `55`, not one long press of `5`.
@@ -393,6 +436,50 @@ A remote with a toggle bit has a `toggle` section with the same structure as `fe
 | other users | `$XDG_STATE_HOME/piir/toggle-state`, by default `~/.local/state/piir/toggle-state` |
 
 The file has a line per remote with its state (`0` or `1`) and the path of the remote file. Deleting it starts all remotes from the first press again. If PIIR runs both with and without `sudo`, set `PIIR_STATE_DIR` so both use the same file. If the file cannot be written, PIIR logs a warning and still transmits.
+
+### Checksums
+
+Many air conditioner protocols end a frame with a checksum of its bytes. A remote computes it with a `checksums` array instead of a plugin. `panasonic/hvac_panasonic` sums bytes 8 to 25 (its second frame) into byte 26:
+```json
+"checksums": [
+    {"type": "sum", "from": 8, "to": 25, "at": 26}
+]
+```
+
+After the features are applied, the bit symbols of the code (`0` and `1`) are read as bytes of 8 bits, or nibbles of 4 bits, numbered from 0 in the order they are sent. All other symbols, such as headers and separators, are skipped, so bytes do not need to line up with the separators. Each checksum combines the bytes (or nibbles) `from` to `to`, or those listed in `data`, and writes the result into byte `at`:
+
+| Setting | Meaning | Default |
+|---------|---------|---------|
+| `type` | `sum` (modulo 256, or 16 for nibbles) or `xor` | required |
+| `unit` | `byte` or `nibble`; `from`, `to`, `data`, `at` and `init` then count in that unit | `byte` |
+| `from`, `to` | first and last byte covered | required unless `data` is given |
+| `data` | list of the bytes covered, e.g. `[0, 2, 4]`, instead of `from` and `to` | |
+| `at` | byte the checksum is written to, not one of those covered | required |
+| `init` | start value, 0-255 (0-15 for nibbles) | `0` |
+| `invert` | complement the result (`~x`) | `false` |
+| `negate` | negate the result (`0 - x`), after `invert` | `false` |
+| `bitorder` | `lsb` when a byte is sent lowest bit first, `msb` when highest bit first | `lsb` |
+| `bits` | the zero and one symbols | `"01"` |
+| `restart` | symbols after which units are counted from a new bit, e.g. the gap between frames; the bits of a partial byte (or nibble) before them are skipped | none |
+
+Nibbles are numbered in the order they are sent: in a byte sent lowest bit first (`lsb`), nibble 0 is its low nibble, while with `msb` it is its high nibble. For example, a 4-bit checksum summing the nibbles 0, 2 and 4 into nibble 7, sent highest bit first:
+```json
+{"type": "sum", "unit": "nibble", "data": [0, 2, 4], "at": 7, "bitorder": "msb"}
+```
+
+Some protocols end a frame with a few extra bits, which shifts all bytes of the next frame. With `"restart": "W"`, counting starts again after the gap symbol `W`, so the next frame's first bits are a new byte.
+
+Checksums are applied in order, so a later checksum can cover the byte an earlier one wrote. PIIR stops with `Invalid checksum` when a checksum is malformed or refers to bytes beyond the end of the code. The `plugin` setting still works for checksums these settings cannot express.
+
+### Overrides
+
+Features are applied in the order of the remote file, so a later feature can force bits of an earlier one, e.g. a fan mode forcing a temperature. When a value forces bits only together with another feature's value, e.g. the dry mode forcing the lowest fan speed only while the power is on, an `overrides` entry does it:
+```json
+"overrides": [
+    {"when": {"mode": "DRY", "power": "ON"}, "code": "      10"}
+]
+```
+After all features, every override whose `when` features are all requested with these values is applied, in order, in the same way as a feature's code: its symbols replace the code's, spaces leave it as it is. Checksums are computed afterwards.
 
 ## Contributing
 

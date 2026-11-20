@@ -37,7 +37,10 @@ void loadDevice(const char **device);
 void loadPlugin(const char **plugin);
 void loadFrequency(int *frequency);
 void loadDutyCycle(double *dutycycle);
-// The "checksums" array of the remote, NULL when it has none (see checksum.h)
+// The "checksums" array of the definition (the remote or one of its
+// variants) the last loadFeaturedCode() used, NULL when it has none (see
+// checksum.h)
 JSON_Array *loadChecksums(void);
+int hasVariants(void);
 
 #endif

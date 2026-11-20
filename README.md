@@ -401,9 +401,9 @@ Codes of another length or structure, e.g. a short power off code, become [varia
 The captures must contain:
 * a base code: the first line
 * for every value of every feature, a code where only that feature differs from the base
-* random combinations of the features: about 300 for six features. They are used to find values that override other features, e.g. a fan mode forcing a temperature. Without them, an override that happens to match the base code is not found.
+* random combinations of the features: about 300 for six features, and 1000 or more when settings interact (e.g. a temperature only some modes accept). They are used to find values that override other features, e.g. a fan mode forcing a temperature. Without them, an override that happens to match the base code is not found.
 
-ir2piir clusters the durations into symbols (`0`, `1`, header, gaps), searches [checksums](#checksums) (sums, negated sums and XORs of bytes or nibbles, adjacent or not, found by solving their lowest bits as linear equations), gives each feature the bits its values change, puts a feature that overrides another after it, and writes overrides that only happen together with another feature's value as [overrides](#overrides). It then encodes every capture again and reports those it cannot reproduce (exit code 1). A sample of the captures is stored as the remote's `tests`.
+ir2piir clusters the durations into symbols (`0`, `1`, header, gaps), searches [checksums](#checksums) (sums, negated sums and XORs of bytes or nibbles, adjacent or not, found by solving their lowest bits as linear equations), gives each feature the bits its values change, puts a feature that overrides another after it, and writes overrides that only happen together with another feature's value as [overrides](#overrides). Bits still wrong then get overrides for the fewest feature values (up to three) under which they are the same in every capture. It then encodes every capture again and reports those it cannot reproduce (exit code 1). A sample of the captures is stored as the remote's `tests`.
 
 To see whether the remote also works for combinations that were not recorded, record more and check them without using them to derive the remote:
 ```
@@ -424,7 +424,7 @@ build/heatpumpir/heatpumpir_capture gree 300 1 > gree.jsonl
 build/heatpumpir/heatpumpir_capture gree 1000 2 > gree-check.jsonl
 tools/ir2piir.py gree.jsonl --check gree-check.jsonl -o gree.json
 ```
-Of its 46 models, ir2piir derives a remote sending the same codes for 35 (checked with 1000 random combinations each). The others use checksums PIIR cannot express (a CRC, a count of set bits) or combine features in ways not found yet. For those, `heatpumpir_capture MODEL all` records every combination for `--fallback`: for `samsung_fjm` that is 29433 codes, giving a 3.8 MB remote with 12356 hard-coded codes that sends every combination exactly. Models that send the time of day get 00:00.
+Of its 46 models, ir2piir derives a remote sending the same codes for 38 from 300 random combinations, and for 42 from 1000 to 3000 (checked with 1000 other random combinations each). The other four use checksums PIIR cannot express: a CRC, a count of set bits, and a sum with corrections depending on the mode. For those, `heatpumpir_capture MODEL all` records every combination for `--fallback`: for `samsung_fjm` that is 29433 codes, giving a 3.8 MB remote with 12356 hard-coded codes that sends every combination exactly. Models that send the time of day get 00:00.
 
 The tests derive `panasonic/hvac_panasonic` from 340 codes PIIR sends for it. The result finds its checksum (`{"type": "sum", "from": 8, "to": 25, "at": 26}`) and its overrides, and sends exactly the same pulses for 1000 other random combinations.
 

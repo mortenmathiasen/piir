@@ -57,29 +57,35 @@ class Ir2PiirError(Exception):
 def load_captures(paths):
     captures = []
     for path in paths:
-        with open(path) as f:
-            for number, line in enumerate(f, 1):
-                line = line.strip()
-                if not line or line.startswith("#"):
-                    continue
-                where = "%s:%d" % (path, number)
-                try:
-                    data = json.loads(line)
-                except ValueError as e:
-                    raise Ir2PiirError("%s: %s" % (where, e))
-                features = data.get("features")
-                durations = data.get("durations")
-                if not isinstance(features, dict) or not features:
-                    raise Ir2PiirError("%s: no features" % where)
-                if (not isinstance(durations, list) or len(durations) < 2 or
-                        not all(isinstance(d, (int, float)) and d > 0 for d in durations)):
-                    raise Ir2PiirError("%s: durations must be positive numbers" % where)
-                captures.append({
-                    "features": OrderedDict((str(k), str(v)) for k, v in features.items()),
-                    "durations": [int(round(d)) for d in durations],
-                    "frequency": int(data.get("frequency", 38000)),
-                    "where": where,
-                })
+        try:
+            with open(path) as f:
+                lines = f.readlines()
+        except OSError as e:
+            raise Ir2PiirError("cannot read %s: %s" % (path, e.strerror))
+        for number, line in enumerate(lines, 1):
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            where = "%s:%d" % (path, number)
+            try:
+                data = json.loads(line)
+            except ValueError as e:
+                raise Ir2PiirError("%s: %s" % (where, e))
+            if not isinstance(data, dict):
+                raise Ir2PiirError("%s: not a JSON object" % where)
+            features = data.get("features")
+            durations = data.get("durations")
+            if not isinstance(features, dict) or not features:
+                raise Ir2PiirError("%s: no features" % where)
+            if (not isinstance(durations, list) or len(durations) < 2 or
+                    not all(isinstance(d, (int, float)) and d > 0 for d in durations)):
+                raise Ir2PiirError("%s: durations must be positive numbers" % where)
+            captures.append({
+                "features": OrderedDict((str(k), str(v)) for k, v in features.items()),
+                "durations": [int(round(d)) for d in durations],
+                "frequency": int(data.get("frequency", 38000)),
+                "where": where,
+            })
     if not captures:
         raise Ir2PiirError("no captures")
     names = list(captures[0]["features"])

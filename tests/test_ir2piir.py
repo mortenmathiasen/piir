@@ -1,7 +1,12 @@
 """Unit tests of tools/ir2piir.py (run with PYTHONPATH=tools)"""
 
+import contextlib
+import io
 import itertools
+import json
+import os
 import random
+import tempfile
 import unittest
 from collections import OrderedDict
 
@@ -67,6 +72,22 @@ class SymbolTest(unittest.TestCase):
         jittered.append(capture({"k": "b"}, "H1001W01110"))
         symbols, codes = ir2piir.derive_symbols(jittered)
         self.assertEqual(["H0110W10000", "H1001W01110"], codes)
+
+    def test_marks_and_spaces_differ(self):
+        # The bits differ in both mark and space: the shorter one is 0
+        table = {"S": (3000, 3000), "0": (500, 500), "1": (1000, 1500)}
+        captures = [capture({"k": "a"}, "S0110", table), capture({"k": "b"}, "S1001", table)]
+        symbols, codes = ir2piir.derive_symbols(captures)
+        self.assertEqual((500, 500), symbols["0"])
+        self.assertEqual((1000, 1500), symbols["1"])
+
+    def test_final_mark_of_its_own(self):
+        # A final mark no other symbol has becomes a symbol without space
+        table = dict(SYMBOLS, E=(2000, 0))
+        captures = [capture({"k": "a"}, "H0110E", table), capture({"k": "b"}, "H1001E", table)]
+        symbols, codes = ir2piir.derive_symbols(captures)
+        self.assertEqual(["H0110W", "H1001W"], codes)
+        self.assertEqual((2000, 0), symbols["W"])
 
     def test_one_kind_of_pair(self):
         with self.assertRaises(ir2piir.Ir2PiirError):
@@ -161,6 +182,24 @@ class ChecksumTest(unittest.TestCase):
             broken = code[:32] + ("1" if code[32] == "0" else "0") + code[33:]
             self.assertEqual(code, ir2piir.apply_checksums(code, found))
             self.assertNotEqual(broken, ir2piir.apply_checksums(broken, found))
+
+    def test_frames_ending_with_a_partial_byte(self):
+        # The first frame has 3 extra bits, so bytes are counted again after
+        # the gap
+        def make(d):
+            return ("H" + bits(d[0]) + bits(d[1]) + "010" + "W" + bits(d[2]) +
+                    bits(d[0] ^ d[1] ^ d[2]) + "0")
+        found = ir2piir.find_checksums([ir2piir.add_separators(c) for c in self.codes(make)])
+        self.assertEqual([{"type": "xor", "from": 0, "to": 2, "at": 3, "restart": "HW"}], found)
+
+    def test_range_over_constant_bytes(self):
+        # Bytes 2 and 3 never change but are covered: the range is extended
+        # over them so that no start value is needed
+        def make(d):
+            data = [d[0], d[1], 0x05, 0x00]
+            return "".join(bits(b) for b in data + [sum(data) & 0xff])
+        self.assertEqual([{"type": "sum", "from": 0, "to": 3, "at": 4}],
+                         ir2piir.find_checksums(self.codes(make)))
 
     def test_none(self):
         self.assertEqual([], ir2piir.find_checksums(
@@ -273,11 +312,156 @@ class RemoteTest(unittest.TestCase):
         late["durations"] = [d * 1.5 for d in late["durations"]]
         self.assertEqual(1, len(ir2piir.check_remote(remote, [late])))
 
+    def test_tied_bit_breaks_cycle(self):
+        # Bits 0-2 are the mode, bit 3 the power. Power off forces the mode
+        # bits to 100 (HEAT's code), so bit 2 is changed once by mode=HEAT
+        # and once by power=OFF from the base. Given to power (listed first),
+        # each feature would override the other.
+        modes = {"AUTO": 0, "COOL": 1, "DRY": 2, "FAN": 3, "HEAT": 4}
+        def code(power, mode):
+            byte = modes[mode] | 8 if power == "ON" else 4
+            return "H" + bits(byte) + "0"
+        sets = [("ON", "COOL"), ("OFF", "COOL")] + [("ON", m) for m in modes if m != "COOL"]
+        sets += list(itertools.product(("ON", "OFF"), modes))
+        captures = [capture([("power", p), ("mode", m)], code(p, m)) for p, m in sets]
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            remote, failures = ir2piir.build_remote(captures, "test")
+        self.assertEqual([], failures)
+        self.assertNotIn("override each other", err.getvalue())
+        self.assertEqual(["mode", "power"], list(remote["features"]))
+
+    def test_two_codes_for_one_setting(self):
+        captures = aircon_captures()
+        captures.insert(1, capture([("mode", "COOL"), ("fan", "1")], aircon("AUTO", "3")))
+        with self.assertRaisesRegex(ir2piir.Ir2PiirError, "two different codes"):
+            ir2piir.build_remote(captures, "test")
+
     def test_json_output(self):
         remote, _ = ir2piir.build_remote(aircon_captures(), "test")
         text = ir2piir.to_json(remote)
         self.assertIn('"0": {"mark": 435, "space": 435}', text)
         self.assertIn('{"type": "sum", "from": 0, "to": 1, "at": 2}', text)
+
+
+def write_captures(path, captures):
+    with open(path, "w") as f:
+        f.write("# recorded\n\n")
+        for c in captures:
+            f.write(json.dumps({"features": c["features"], "frequency": c["frequency"],
+                                "durations": c["durations"]}) + "\n")
+
+
+class LoadTest(unittest.TestCase):
+    def setUp(self):
+        self.dir = tempfile.TemporaryDirectory()
+        self.path = os.path.join(self.dir.name, "captures.jsonl")
+
+    def tearDown(self):
+        self.dir.cleanup()
+
+    def load(self, text):
+        with open(self.path, "w") as f:
+            f.write(text)
+        return ir2piir.load_captures([self.path])
+
+    def test_load(self):
+        write_captures(self.path, aircon_captures()[:2])
+        captures = ir2piir.load_captures([self.path])
+        self.assertEqual(2, len(captures))
+        self.assertEqual({"mode": "AUTO", "fan": "1"}, dict(captures[0]["features"]))
+        self.assertEqual(38000, captures[0]["frequency"])
+        self.assertTrue(captures[0]["where"].endswith("captures.jsonl:3"))
+
+    def test_default_frequency_and_numbers_as_values(self):
+        captures = self.load('{"features": {"temperature": 21}, "durations": [100.4, 200]}\n')
+        self.assertEqual(38000, captures[0]["frequency"])
+        self.assertEqual("21", captures[0]["features"]["temperature"])
+        self.assertEqual([100, 200], captures[0]["durations"])
+
+    def test_invalid(self):
+        for text, message in (
+                ("{\n", "captures.jsonl:1"),
+                ("[1]\n", "not a JSON object"),
+                ('{"durations": [1, 2]}\n', "no features"),
+                ('{"features": {}, "durations": [1, 2]}\n', "no features"),
+                ('{"features": {"a": "1"}, "durations": [1]}\n', "positive numbers"),
+                ('{"features": {"a": "1"}, "durations": [1, -2]}\n', "positive numbers"),
+                ('{"features": {"a": "1"}, "durations": [1, 2]}\n'
+                 '{"features": {"b": "1"}, "durations": [1, 2]}\n', "differ"),
+                ("# nothing\n", "no captures")):
+            with self.assertRaisesRegex(ir2piir.Ir2PiirError, message):
+                self.load(text)
+
+
+class MainTest(unittest.TestCase):
+    def setUp(self):
+        self.dir = tempfile.TemporaryDirectory()
+        self.captures = os.path.join(self.dir.name, "captures.jsonl")
+        self.output = os.path.join(self.dir.name, "remote.json")
+
+    def tearDown(self):
+        self.dir.cleanup()
+
+    def run_main(self, *args):
+        out, err = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            result = ir2piir.main(list(args))
+        return result, out.getvalue(), err.getvalue()
+
+    def test_derive_and_check(self):
+        write_captures(self.captures, aircon_captures())
+        check = os.path.join(self.dir.name, "check.jsonl")
+        write_captures(check, [capture([("mode", "DRY"), ("fan", "3")], aircon("DRY", "3"))])
+        result, out, err = self.run_main(self.captures, "-o", self.output, "--check", check,
+                                         "--description", "Test aircon")
+        self.assertEqual(0, result, err)
+        self.assertIn("checksum", err)
+        self.assertIn("all captures reproduced", err)
+        self.assertIn("0 of 1 checked captures", err)
+        with open(self.output) as f:
+            remote = json.load(f)
+        self.assertEqual("Test aircon", remote["description"])
+
+    def test_standard_output(self):
+        write_captures(self.captures, aircon_captures())
+        result, out, err = self.run_main(self.captures, "--no-separators", "--tests", "0")
+        self.assertEqual(0, result, err)
+        remote = json.loads(out)
+        self.assertNotIn("tests", remote)
+        self.assertNotIn("-", remote["symboldefinitions"])
+
+    def test_check_fails(self):
+        # Without combinations the DRY override is not found
+        write_captures(self.captures, aircon_captures(False))
+        check = os.path.join(self.dir.name, "check.jsonl")
+        write_captures(check, [capture([("mode", "DRY"), ("fan", "3")], aircon("DRY", "3"))])
+        result, out, err = self.run_main(self.captures, "-o", self.output, "--check", check)
+        self.assertEqual(1, result)
+        self.assertIn("1 of 1 checked captures are not sent", err)
+
+    def test_not_reproduced(self):
+        # A checksum counting set bits cannot be expressed
+        def code(mode, fan):
+            data = MODES[mode] | FANS[fan] << 4
+            return "H" + bits(data) + bits(bin(data).count("1")) + "0"
+        sets = [("AUTO", "1"), ("COOL", "1"), ("DRY", "1"), ("AUTO", "2"), ("AUTO", "3"),
+                ("COOL", "3"), ("DRY", "2")]
+        write_captures(self.captures, [capture([("mode", m), ("fan", f)], code(m, f))
+                                       for m, f in sets])
+        result, out, err = self.run_main(self.captures, "-o", self.output)
+        self.assertEqual(1, result)
+        self.assertIn("captures are not reproduced", err)
+        self.assertIn("expected", err)
+
+    def test_error(self):
+        result, out, err = self.run_main(os.path.join(self.dir.name, "empty.jsonl"))
+        self.assertEqual(2, result)
+        with open(self.captures, "w") as f:
+            f.write("# nothing\n")
+        result, out, err = self.run_main(self.captures)
+        self.assertEqual(2, result)
+        self.assertIn("ir2piir: no captures", err)
 
 
 if __name__ == "__main__":

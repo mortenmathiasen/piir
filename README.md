@@ -396,6 +396,8 @@ Two LIRC 0.10.2 bugs are not copied: durations of 0 in a configuration break the
 tools/ir2piir.py captures.jsonl -o conf/remotes/mybrand/aircon.json --description "My air conditioner"
 ```
 
+Codes of another length or structure, e.g. a short power off code, become [variants](#variants), selected by the feature values only their captures have.
+
 The captures must contain:
 * a base code: the first line
 * for every value of every feature, a code where only that feature differs from the base
@@ -408,7 +410,9 @@ To see whether the remote also works for combinations that were not recorded, re
 tools/ir2piir.py captures.jsonl --check more-captures.jsonl -o aircon.json
 ```
 
-Limitations: all codes must have the same length and structure; every symbol must be a mark followed by a space (pulse distance or pulse width coding, used by most air conditioners, not RC5/RC6); a code must end with a stop mark, since the space after the last mark cannot be recorded; CRCs and counts of set bits are not searched; and an override depending on two other features is not found, only one depending on one (see [Overrides](#overrides)).
+For protocols ir2piir cannot describe, `--fallback` hard-codes the recorded codes it does not reproduce as [overrides](#overrides) listing every feature. Only the recorded combinations are then sent exactly, so record every combination of the features. That can be tens of thousands of codes and a remote of several megabytes, which is fine on a Raspberry Pi.
+
+Limitations: codes of different lengths need a feature value that selects them (or `--fallback`); every symbol must be a mark followed by a space (pulse distance or pulse width coding, used by most air conditioners, not RC5/RC6); a code must end with a stop mark, since the space after the last mark cannot be recorded; CRCs and counts of set bits are not searched; and an override depending on two other features is not found, only one depending on one (see [Overrides](#overrides)).
 
 [tools/heatpumpir](tools/heatpumpir) records the codes of the [arduino-heatpumpir](https://github.com/ToniA/arduino-heatpumpir) library as captures, for every air conditioner model it supports. The library (GPL-2.0) is not part of PIIR; build the recorder against a checkout of it:
 ```
@@ -420,7 +424,7 @@ build/heatpumpir/heatpumpir_capture gree 300 1 > gree.jsonl
 build/heatpumpir/heatpumpir_capture gree 1000 2 > gree-check.jsonl
 tools/ir2piir.py gree.jsonl --check gree-check.jsonl -o gree.json
 ```
-Of its 46 models, ir2piir derives a remote sending the same codes for 34 (checked with 1000 random combinations each). The others send codes of different lengths, use checksums PIIR cannot express (a CRC, a count of set bits), or combine features in ways not found yet. Models that send the time of day get 00:00.
+Of its 46 models, ir2piir derives a remote sending the same codes for 35 (checked with 1000 random combinations each). The others use checksums PIIR cannot express (a CRC, a count of set bits) or combine features in ways not found yet. For those, `heatpumpir_capture MODEL all` records every combination for `--fallback`: for `samsung_fjm` that is 29433 codes, giving a 3.8 MB remote with 12356 hard-coded codes that sends every combination exactly. Models that send the time of day get 00:00.
 
 The tests derive `panasonic/hvac_panasonic` from 340 codes PIIR sends for it. The result finds its checksum (`{"type": "sum", "from": 8, "to": 25, "at": 26}`) and its overrides, and sends exactly the same pulses for 1000 other random combinations.
 

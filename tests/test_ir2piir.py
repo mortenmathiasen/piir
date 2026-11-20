@@ -336,6 +336,50 @@ class RemoteTest(unittest.TestCase):
         captures.insert(1, capture([("mode", "COOL"), ("fan", "1")], aircon("AUTO", "3")))
         with self.assertRaisesRegex(ir2piir.Ir2PiirError, "two different codes"):
             ir2piir.build_remote(captures, "test")
+    def test_variant_for_another_length(self):
+        # Power off sends one short code
+        def code(power, mode, fan):
+            return "H" + bits(0x5A) + "0" if power == "OFF" else conditional_aircon("ON", mode, fan)
+        captures = [capture(c["features"].items(), code(*c["features"].values()))
+                    for c in conditional_captures()]
+        remote, failures = ir2piir.build_remote(captures, "test")
+        self.assertEqual([], failures)
+        self.assertEqual(1, len(remote["variants"]))
+        variant = remote["variants"][0]
+        self.assertEqual({"power": "OFF"}, dict(variant["when"]))
+        self.assertEqual(["when", "template"], list(variant))
+        self.assertIn("OFF", remote["features"]["power"])
+        everything = [capture([("power", p), ("mode", m), ("fan", f)], code(p, m, f))
+                      for p in ("ON", "OFF") for m in MODES for f in FANS]
+        self.assertEqual([], ir2piir.check_remote(remote, everything))
+
+    def test_fallback(self):
+        # A checksum counting the set bits cannot be expressed
+        def code(mode, fan):
+            data = [MODES[mode] | FANS[fan] << 4]
+            return "H" + bits(data[0]) + bits(bin(data[0]).count("1")) + "0"
+        sets = [("AUTO", "1"), ("COOL", "1"), ("DRY", "1"), ("AUTO", "2"), ("AUTO", "3"),
+                ("COOL", "3")]
+        captures = [capture([("mode", m), ("fan", f)], code(m, f)) for m, f in sets]
+        remote, failures = ir2piir.build_remote(captures, "test")
+        self.assertTrue(failures)
+        remote, failures = ir2piir.build_remote(captures, "test", fallback=True)
+        self.assertEqual([], failures)
+        self.assertEqual([], ir2piir.check_remote(remote, captures))
+        hard = [o for o in remote["overrides"] if len(o["when"]) == 2]
+        self.assertTrue(hard)
+        # Only the recorded combinations are hard-coded
+        unrecorded = capture([("mode", "DRY"), ("fan", "3")], code("DRY", "3"))
+        self.assertEqual(1, len(ir2piir.check_remote(remote, [unrecorded])))
+
+    def test_fallback_without_selector(self):
+        # A longer code no feature value selects: hard-coded as a variant
+        captures = [c for c in aircon_captures()
+                    if dict(c["features"]) != {"mode": "COOL", "fan": "2"}]
+        captures.append(capture([("mode", "COOL"), ("fan", "2")], aircon("COOL", "2") + "0"))
+        remote, failures = ir2piir.build_remote(captures, "test", fallback=True)
+        self.assertEqual([], failures)
+        self.assertEqual({"mode": "COOL", "fan": "2"}, dict(remote["variants"][0]["when"]))
 
     def test_json_output(self):
         remote, _ = ir2piir.build_remote(aircon_captures(), "test")

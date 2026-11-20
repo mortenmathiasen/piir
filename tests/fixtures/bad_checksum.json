@@ -1,0 +1,21 @@
+{
+    "description": "Test remote with a checksum outside its code",
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {
+	"device": "/nonexistent/piir-test/lirc0"
+    },
+    "symboldefinitions": {
+	"0": {"mark": 560, "space": 560},
+	"1": {"mark": 560, "space": 1690}
+    },
+    "checksums": [
+	{"type": "sum", "from": 0, "to": 0, "at": 1}
+    ],
+    "template": "00000000",
+    "features": {
+	"power": {
+	    "ON": "11111111"
+	}
+    }
+}

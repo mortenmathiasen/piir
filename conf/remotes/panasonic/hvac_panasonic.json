@@ -1,6 +1,8 @@
 {
     "description": "Panasonic HVAC remotes, e.g. JKE models",
-    "plugin": "hvac_panasonic",
+    "checksums": [
+	{"type": "sum", "from": 8, "to": 25, "at": 26}
+    ],
     "frequency":38000,
     "dutycycle":0.5,
     "transmitter": {

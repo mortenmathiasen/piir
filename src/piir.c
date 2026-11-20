@@ -11,6 +11,7 @@
 #include "config.h"
 
 #include "plugins.h"
+#include "checksum.h"
 #include "remotes.h"
 #include "state.h"
 
@@ -294,10 +295,17 @@ int main(int argc, char *argv[])
   loadDutyCycle(&dutycycle);
   log_info("%s", description);
 
-  // Remote specific plugin
+  // Declarative checksums
+  if (applyConfigChecksums(symbolString)) {
+    printf("Invalid checksum in %s\n", configfilepath);
+    exit(EXIT_FAILURE);
+  }
+
+  // Remote specific plugin. Files from PIIR 1.x name none, but get the
+  // Panasonic checksum from their file name unless they define checksums.
   const char *plugin = 0;
   loadPlugin(&plugin);
-  if (!plugin)
+  if (!plugin && !loadChecksums())
     plugin = legacyRemotePlugin(configfilepath);
   if (applyRemotePlugin(plugin, symbolString)) {
     printf("Unknown plugin '%s' in %s\n", plugin, configfilepath);

@@ -73,6 +73,7 @@ endif()
 add_library(piir_core STATIC
   src/hvac_panasonic_plugin.c
   src/plugins.c
+  src/checksum.c
   src/remotes.c
   src/state.c
   src/irslinger.c

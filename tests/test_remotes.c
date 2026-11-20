@@ -16,6 +16,7 @@
 #include "config.h"
 #include "irgeneric.h"
 #include "plugins.h"
+#include "checksum.h"
 #include "parson.h"
 #include "log.h"
 
@@ -119,6 +120,12 @@ static void checkKeys(const char *path, const symbolDefinition *symbols, size_t 
       for (int toggled = 0; toggled <= hasToggle(); toggled++) {
         char *code = NULL;
         loadToggledFeaturedCode(features, toggled, &code);
+        int checksumOk = applyConfigChecksums(code) == 0;
+        unittest_checks++;
+        if (!checksumOk) {
+          unittest_failures++;
+          printf("FAIL %s: invalid checksum\n", path);
+        }
         int pluginOk = applyRemotePlugin(plugin, code) == 0;
         unittest_checks++;
         if (!pluginOk) {
@@ -163,6 +170,7 @@ static void checkVectors(const char *path, JSON_Array *tests) {
     char *code = 0;
     if (valid) {
       loadFeaturedCode(features, &code);
+      valid = applyConfigChecksums(code) == 0;
       applyRemotePlugin(plugin, code);
     }
     int ok = valid && outcome && strcmp(outcome, code) == 0;
@@ -181,7 +189,7 @@ static void checkVectors(const char *path, JSON_Array *tests) {
       unittest_failures++;
       printf("FAIL %s: %s\n", remote, description);
       if (!valid)
-        printf("  features do not match the configuration\n");
+        printf("  features do not match the configuration, or a checksum is invalid\n");
       else
         printf("  expected %s\n  got      %s\n", outcome ? outcome : "(no outcome)", code);
     }

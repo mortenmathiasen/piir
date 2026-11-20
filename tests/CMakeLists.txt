@@ -20,6 +20,7 @@ endfunction()
 piir_unit_test(test_log)
 piir_unit_test(test_config)
 piir_unit_test(test_hvac_panasonic)
+piir_unit_test(test_checksum)
 piir_unit_test(test_remote_lookup)
 piir_unit_test(test_state)
 
@@ -132,6 +133,9 @@ piir_cli_test(unknown_plugin EXIT nonzero
   WORKDIR ${FIXTURE_DIR}
   ARGS --remote only --feature power=ON
   MATCH "Unknown plugin 'no_such_plugin'")
+piir_cli_test(invalid_checksum EXIT nonzero
+  ARGS --remote ${FIXTURE_DIR}/bad_checksum.json --feature power=ON
+  MATCH "Invalid checksum in .*/bad_checksum.json")
 piir_cli_test(converted_remote_help EXIT nonzero
   WORKDIR ${PROJECT_SOURCE_DIR}
   ARGS --remote sony/RM-ED011 --help
@@ -191,9 +195,9 @@ if(PIIR_BACKEND STREQUAL "lirc" AND NOT CMAKE_VERSION VERSION_LESS 3.19)
          --verbose DEBUG
     MATCH "Transmitting: ${outcome}")
 
-  # A remote file from PIIR 1.x without a "plugin" setting still gets the
+  # A remote file from PIIR 1.x without "plugin" or "checksums" settings gets the
   # hvac_panasonic checksum from its file name
-  string(JSON legacy_json REMOVE "${hvac_json}" plugin)
+  string(JSON legacy_json REMOVE "${hvac_json}" checksums)
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/remotes/legacy/hvac_panasonic.json "${legacy_json}")
   # Test vector No 2 (mode OFF): its checksum differs from the template's
   string(JSON outcome GET "${hvac_json}" tests 1 outcome)

@@ -2,6 +2,7 @@
 #define CONFIG_H
 
 #include "symboldefinition.h"
+#include "parson.h"
 
 typedef struct q {
   const char *name;
@@ -36,5 +37,7 @@ void loadDevice(const char **device);
 void loadPlugin(const char **plugin);
 void loadFrequency(int *frequency);
 void loadDutyCycle(double *dutycycle);
+// The "checksums" array of the remote, NULL when it has none (see checksum.h)
+JSON_Array *loadChecksums(void);
 
 #endif

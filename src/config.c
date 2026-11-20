@@ -167,6 +167,11 @@ void loadDutyCycle(double *dutycycle)
   loadConfigNumber("dutycycle", dutycycle);
 }
 
+JSON_Array *loadChecksums(void)
+{
+  return json_object_get_array(ROOT_OBJECT, "checksums");
+}
+
 void loadTemplateCode(const char **symbolString)
 {
   loadConfigText("template", symbolString);

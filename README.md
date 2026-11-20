@@ -33,6 +33,7 @@ piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
   * [Remotes](#remotes)
     + [Choosing the remotes of an installation](#choosing-the-remotes-of-an-installation)
     + [Remotes converted from LIRC](#remotes-converted-from-lirc)
+    + [Remotes derived from recordings](#remotes-derived-from-recordings)
     + [Toggle bits](#toggle-bits)
     + [Checksums](#checksums)
     + [Overrides](#overrides)
@@ -54,6 +55,7 @@ piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
 To control an IR-receiver you need to know the IR-signals to transmit to it. Either, you can:
 * Use the protocol definitions that exists already inside PIIRs remote folder [conf/remotes](https://github.com/mortenmathiasen/piir/tree/master/conf/remotes): more than 3000 remotes from over 500 manufacturers, most of them converted from the [LIRC remote database](https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes), see [Remotes](#remotes)
 * Convert a LIRC configuration (`lircd.conf`) you already have with [tools/lirc2piir.py](tools/lirc2piir.py)
+* Derive a remote from recorded codes with [tools/ir2piir.py](tools/ir2piir.py), see [Remotes derived from recordings](#remotes-derived-from-recordings)
 * Reverse engineer your remote control, e.g. using [IR decoder for Arduino](https://github.com/ToniA/Raw-IR-decoder-for-Arduino.git) which I did for [Panasonic airconditioner](https://github.com/mortenmathiasen/piir/blob/master/conf/remotes/panasonic/hvac_panasonic.pdf)
 
 ### Supported systems
@@ -193,7 +195,7 @@ cmake --build build
 ctest --test-dir build --output-on-failure
 ```
 
-They cover the configuration loader, remote lookup, checksums, the remote plugins, the transmitter backend selected at configure time, the `piir` command line, `piir-remotes` and the LIRC converter. Every key of every remote in `conf/remotes/` is checked to produce a code PIIR can send. The `tests` section of a remote lists features and the code a real remote sends for them, and every one of these vectors is checked. Vectors that do not match yet are listed in `tests/known_failures.txt`. No test transmits IR, so they are safe to run on a Pi.
+They cover the configuration loader, remote lookup, checksums, the remote plugins, the transmitter backend selected at configure time, the `piir` command line, `piir-remotes`, the LIRC converter and `ir2piir.py`, which must derive `panasonic/hvac_panasonic` again from the codes it sends. Every key of every remote in `conf/remotes/` is checked to produce a code PIIR can send. The `tests` section of a remote lists features and the code a real remote sends for them, and every one of these vectors is checked. Vectors that do not match yet are listed in `tests/known_failures.txt`. No test transmits IR, so they are safe to run on a Pi.
 
 To measure coverage, configure with `-DPIIR_COVERAGE=ON` and run [gcovr](https://gcovr.com) after the tests; the converter is measured too when Python's `coverage` module is installed:
 ```
@@ -381,6 +383,33 @@ Raw recorded codes have small timing variations, so where a raw remote has too m
 Remotes with a toggle bit (RC5, RC6 and others with a `toggle_bit_mask`) get a `toggle` section holding the code of every key with the bit flipped, see [Toggle bits](#toggle-bits).
 
 Two LIRC 0.10.2 bugs are not copied: durations of 0 in a configuration break the alternation of pulses and spaces there, and raw remotes with a repeat code send the start of the raw code instead of the repeat code.
+
+### Remotes derived from recordings
+
+[tools/ir2piir.py](tools/ir2piir.py) derives a remote, e.g. an air conditioner's, from recorded codes and the settings each was sent for. It needs only Python 3. Record the codes with an IR receiver, or from software that generates them, and write one code per line in a [JSON Lines](https://jsonlines.org/) file:
+```
+{"features": {"mode": "HEAT", "temperature": "21", "fan": "AUTO"}, "frequency": 38000, "durations": [3500, 1750, 435, 435, 435, 1300, ...]}
+```
+`durations` alternate mark and space in microseconds, starting with a mark. Every line names the same features. Then:
+```
+tools/ir2piir.py captures.jsonl -o conf/remotes/mybrand/aircon.json --description "My air conditioner"
+```
+
+The captures must contain:
+* a base code: the first line
+* for every value of every feature, a code where only that feature differs from the base
+* random combinations of the features: about 300 for six features. They are used to find values that override other features, e.g. a fan mode forcing a temperature. Without them, an override that happens to match the base code is not found.
+
+ir2piir clusters the durations into symbols (`0`, `1`, header, gaps), searches [checksums](#checksums) (sums, negated sums and XORs of bytes or nibbles, adjacent or not, found by solving their lowest bits as linear equations), gives each feature the bits its values change, puts a feature that overrides another after it, and writes overrides that only happen together with another feature's value as [overrides](#overrides). It then encodes every capture again and reports those it cannot reproduce (exit code 1). A sample of the captures is stored as the remote's `tests`.
+
+To see whether the remote also works for combinations that were not recorded, record more and check them without using them to derive the remote:
+```
+tools/ir2piir.py captures.jsonl --check more-captures.jsonl -o aircon.json
+```
+
+Limitations: all codes must have the same length and structure; every symbol must be a mark followed by a space (pulse distance or pulse width coding, used by most air conditioners, not RC5/RC6); a code must end with a stop mark, since the space after the last mark cannot be recorded; CRCs and counts of set bits are not searched; and an override depending on two other features is not found, only one depending on one (see [Overrides](#overrides)).
+
+The tests derive `panasonic/hvac_panasonic` from 340 codes PIIR sends for it. The result finds its checksum (`{"type": "sum", "from": 8, "to": 25, "at": 26}`) and its overrides, and sends exactly the same pulses for 1000 other random combinations.
 
 ### Toggle bits
 

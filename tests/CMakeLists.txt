@@ -352,6 +352,21 @@ if(Python3_FOUND)
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
   set_tests_properties(converter.unit PROPERTIES
     ENVIRONMENT PYTHONPATH=${PROJECT_SOURCE_DIR}/tools)
+  add_test(NAME ir2piir.unit
+    COMMAND ${PYTHON} -m unittest -v test_ir2piir
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+  set_tests_properties(ir2piir.unit PROPERTIES
+    ENVIRONMENT PYTHONPATH=${PROJECT_SOURCE_DIR}/tools)
+  # ir2piir: derive the Panasonic remote again from the codes it sends
+  piir_test_executable(encode_remote)
+  add_test(NAME ir2piir.panasonic
+    COMMAND ${PYTHON} ${CMAKE_CURRENT_SOURCE_DIR}/ir2piir_roundtrip.py
+      --encoder $<TARGET_FILE:encode_remote>
+      --test-remotes $<TARGET_FILE:test_remotes>
+      --ir2piir ${PROJECT_SOURCE_DIR}/tools/ir2piir.py
+      --out ${CMAKE_CURRENT_BINARY_DIR}/ir2piir/panasonic
+      --expect-checksums [{"type":"sum","from":8,"to":25,"at":26}]
+      ${HVAC})
   piir_cli_test(converter_rc5_help EXIT nonzero FIXTURES converted
     ARGS --remote ${CONVERTED}/rc5.json --help
     MATCH "key:" "KEY_VOLUMEUP")

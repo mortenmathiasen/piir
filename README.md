@@ -37,6 +37,7 @@ piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
     + [Toggle bits](#toggle-bits)
     + [Checksums](#checksums)
     + [Overrides](#overrides)
+    + [Variants](#variants)
   * [Contributing](#contributing)
   * [Versioning](#versioning)
   * [Authors](#authors)
@@ -480,6 +481,16 @@ Features are applied in the order of the remote file, so a later feature can for
 ]
 ```
 After all features, every override whose `when` features are all requested with these values is applied, in order, in the same way as a feature's code: its symbols replace the code's, spaces leave it as it is. Checksums are computed afterwards.
+
+### Variants
+
+Some remotes send codes of another length for some settings, e.g. a short code for power off. A remote can hold such codes in `variants`, each with the feature values that select it (`when`) and its own `template`, and optionally its own `features`, `overrides` and `checksums`, whose positions refer to its template:
+```json
+"variants": [
+    {"when": {"power": "OFF"}, "template": "H-00101000-11000110-00000000-00001000-00001000-01000000-10111111-0"}
+]
+```
+The first variant whose `when` features are all requested is used instead of the remote's own template, features, overrides and checksums; the symbol definitions are shared. The values selecting a variant must still be listed in the remote's `features` (with an empty code), so that PIIR accepts them.
 
 ## Contributing
 

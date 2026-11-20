@@ -1,0 +1,23 @@
+{
+    "description": "Test remote with variants: power off sends a short fixed code, swing a longer one with its own feature and checksum",
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "symboldefinitions": {
+	"S": {"mark": 9000, "space": 4500},
+	"0": {"mark": 560, "space": 560},
+	"1": {"mark": 560, "space": 1690},
+	"-": {"mark": 0, "space": 0}
+    },
+    "template": "S-1-00",
+    "features": {
+	"power": {"ON": "  1", "OFF": ""},
+	"mode": {"COOL": "    00", "DRY": "    01", "SWING": ""}
+    },
+    "variants": [
+	{"when": {"power": "OFF"}, "template": "S-0"},
+	{"when": {"mode": "SWING"}, "template": "S-1-0000-0000",
+	 "features": {"power": {"ON": "  1"}},
+	 "checksums": [{"type": "xor", "unit": "nibble", "from": 0, "to": 0, "at": 1, "restart": "-"}],
+	 "overrides": [{"when": {"power": "ON"}, "code": "    1"}]}
+    ]
+}

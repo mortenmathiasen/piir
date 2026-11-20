@@ -6,12 +6,16 @@
 
 static JSON_Object *ROOT_OBJECT = 0;
 static char *CONFIGFILEPATH = 0;
+// The definition (the remote itself or one of its "variants") the last
+// loadFeaturedCode() used
+static JSON_Object *SELECTED = 0;
 
 void unloadConfig() {
   if (ROOT_OBJECT) {
     json_value_free(json_object_get_wrapping_value(ROOT_OBJECT));
     ROOT_OBJECT = 0;
   }
+  SELECTED = 0;
   if (CONFIGFILEPATH) {
       free(CONFIGFILEPATH);
       CONFIGFILEPATH = 0;
@@ -169,7 +173,12 @@ void loadDutyCycle(double *dutycycle)
 
 JSON_Array *loadChecksums(void)
 {
-  return json_object_get_array(ROOT_OBJECT, "checksums");
+  return json_object_get_array(SELECTED ? SELECTED : ROOT_OBJECT, "checksums");
+}
+
+int hasVariants(void)
+{
+  return json_array_get_count(json_object_get_array(ROOT_OBJECT, "variants")) > 0;
 }
 
 void loadTemplateCode(const char **symbolString)
@@ -203,7 +212,10 @@ void loadConfigSymbols(symbolDefinition configSymbols[]) {
 }
 
 // Apply the requested features to the template, then the "overrides" whose
-// features are all requested. features holds up to
+// features are all requested. When the "when" features of one of the
+// "variants" are all requested, the first such variant's template, features,
+// overrides (and checksums, see loadChecksums()) are used instead. features
+// holds up to
 // getAllFeaturesCount() entries, unused ones with a NULL value. Features are
 // applied in the order of the configuration file, so a feature defined later
 // (e.g. an option forcing a fan speed) overrides an earlier one regardless of
@@ -241,11 +253,25 @@ static const char *requestedValue(const featureT *features, size_t count, const 
   return value;
 }
 
-// Apply the "overrides" whose "when" features are all requested with the
-// given values, in order, after the features
-static void applyOverrides(const featureT *features, size_t count, char *code, size_t codeLength)
+// All features of a "when" object are requested with its values
+static int whenMatches(JSON_Object *when, const featureT *features, size_t count)
 {
-  JSON_Array *overrides = json_object_get_array(ROOT_OBJECT, "overrides");
+  for (size_t j = 0; j < json_object_get_count(when); j++) {
+    const char *name = json_object_get_name(when, j);
+    const char *wanted = json_object_get_string(when, name);
+    const char *value = requestedValue(features, count, name);
+    if (!wanted || !value || strcmp(wanted, value) != 0)
+      return 0;
+  }
+  return 1;
+}
+
+// Apply the "overrides" of a definition whose "when" features are all
+// requested with the given values, in order, after the features
+static void applyOverrides(JSON_Object *definition, const featureT *features, size_t count,
+			   char *code, size_t codeLength)
+{
+  JSON_Array *overrides = json_object_get_array(definition, "overrides");
   for (size_t i = 0; i < json_array_get_count(overrides); i++) {
     JSON_Object *override = json_array_get_object(overrides, i);
     JSON_Object *when = json_object_get_object(override, "when");
@@ -254,16 +280,27 @@ static void applyOverrides(const featureT *features, size_t count, char *code, s
       log_error("Override %zu in %s needs \"when\" and \"code\"", i, CONFIGFILEPATH);
       continue;
     }
-    int matches = 1;
-    for (size_t j = 0; j < json_object_get_count(when) && matches; j++) {
-      const char *name = json_object_get_name(when, j);
-      const char *wanted = json_object_get_string(when, name);
-      const char *value = requestedValue(features, count, name);
-      matches = wanted && value && strcmp(wanted, value) == 0;
-    }
-    if (matches)
+    if (whenMatches(when, features, count))
       applyOverlay(overlay, code, codeLength);
   }
+}
+
+// The first of the "variants" whose "when" features are all requested, or
+// the remote itself
+static JSON_Object *selectDefinition(const featureT *features, size_t count)
+{
+  JSON_Array *variants = json_object_get_array(ROOT_OBJECT, "variants");
+  for (size_t i = 0; features && i < json_array_get_count(variants); i++) {
+    JSON_Object *variant = json_array_get_object(variants, i);
+    JSON_Object *when = json_object_get_object(variant, "when");
+    if (!when || !json_object_get_string(variant, "template")) {
+      log_error("Variant %zu in %s needs \"when\" and \"template\"", i, CONFIGFILEPATH);
+      continue;
+    }
+    if (whenMatches(when, features, count))
+      return variant;
+  }
+  return ROOT_OBJECT;
 }
 
 // Like loadFeaturedCode(). When toggled is set, a feature value that has a
@@ -272,8 +309,12 @@ static void applyOverrides(const featureT *features, size_t count, char *code, s
 void loadToggledFeaturedCode(const featureT *features, int toggled,
 			     char **featuredCode)
 {
-  const char *templateCode = 0;
-  loadTemplateCode(&templateCode);
+  // Requested features are stored at the index of the remote's features
+  size_t requestedCount = getAllFeaturesCount();
+  JSON_Object *definition = selectDefinition(features, requestedCount);
+  SELECTED = definition;
+
+  const char *templateCode = json_object_get_string(definition, "template");
   if (!templateCode) {
     log_error("JSON file %s has no template", CONFIGFILEPATH);
     templateCode = "";
@@ -283,17 +324,19 @@ void loadToggledFeaturedCode(const featureT *features, int toggled,
   if (!features)
     return;
 
-  JSON_Object *features_object = getAllFeaturesObject();
+  // A variant has its own features, if any: their codes refer to its template
+  JSON_Object *features_object = definition == ROOT_OBJECT ? getAllFeaturesObject()
+    : json_object_get_object(definition, "features");
   size_t featuresCount = json_object_get_count(features_object);
   for (size_t configIndex = 0 ; configIndex < featuresCount ; configIndex++) {
     const char *featureName = json_object_get_name(features_object, configIndex);
-    const char *featureValue = requestedValue(features, featuresCount, featureName);
+    const char *featureValue = requestedValue(features, requestedCount, featureName);
     if (!featureValue)
       continue;
 
     JSON_Object *feature_object = json_object_get_object(features_object, featureName);
     const char *featureString = json_object_get_string(feature_object, featureValue);
-    if (featureString && toggled) {
+    if (featureString && toggled && definition == ROOT_OBJECT) {
       JSON_Object *toggle_object = json_object_get_object(
 	json_object_get_object(ROOT_OBJECT, "toggle"), featureName);
       const char *toggleString = json_object_get_string(toggle_object, featureValue);
@@ -306,5 +349,5 @@ void loadToggledFeaturedCode(const featureT *features, int toggled,
     }
     applyOverlay(featureString, *featuredCode, templateStrLength);
   }
-  applyOverrides(features, featuresCount, *featuredCode, templateStrLength);
+  applyOverrides(definition, features, requestedCount, *featuredCode, templateStrLength);
 }

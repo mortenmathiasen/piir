@@ -305,7 +305,7 @@ int main(int argc, char *argv[])
   // Panasonic checksum from their file name unless they define checksums.
   const char *plugin = 0;
   loadPlugin(&plugin);
-  if (!plugin && !loadChecksums())
+  if (!plugin && !loadChecksums() && !hasVariants())
     plugin = legacyRemotePlugin(configfilepath);
   if (applyRemotePlugin(plugin, symbolString)) {
     printf("Unknown plugin '%s' in %s\n", plugin, configfilepath);

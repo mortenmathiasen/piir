@@ -35,6 +35,7 @@ piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
     + [Remotes converted from LIRC](#remotes-converted-from-lirc)
     + [Toggle bits](#toggle-bits)
     + [Checksums](#checksums)
+    + [Overrides](#overrides)
   * [Contributing](#contributing)
   * [Versioning](#versioning)
   * [Authors](#authors)
@@ -428,6 +429,16 @@ Nibbles are numbered in the order they are sent: in a byte sent lowest bit first
 Some protocols end a frame with a few extra bits, which shifts all bytes of the next frame. With `"restart": "W"`, counting starts again after the gap symbol `W`, so the next frame's first bits are a new byte.
 
 Checksums are applied in order, so a later checksum can cover the byte an earlier one wrote. PIIR stops with `Invalid checksum` when a checksum is malformed or refers to bytes beyond the end of the code. The `plugin` setting still works for checksums these settings cannot express.
+
+### Overrides
+
+Features are applied in the order of the remote file, so a later feature can force bits of an earlier one, e.g. a fan mode forcing a temperature. When a value forces bits only together with another feature's value, e.g. the dry mode forcing the lowest fan speed only while the power is on, an `overrides` entry does it:
+```json
+"overrides": [
+    {"when": {"mode": "DRY", "power": "ON"}, "code": "      10"}
+]
+```
+After all features, every override whose `when` features are all requested with these values is applied, in order, in the same way as a feature's code: its symbols replace the code's, spaces leave it as it is. Checksums are computed afterwards.
 
 ## Contributing
 

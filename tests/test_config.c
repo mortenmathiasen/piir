@@ -4,6 +4,7 @@
 #include "log.h"
 
 #define SIMPLE FIXTURE_DIR "/simple.json"
+#define OVERRIDES FIXTURE_DIR "/overrides.json"
 
 static void test_load_missing_file(void) {
   unloadConfig();
@@ -248,6 +249,32 @@ static void test_toggle(void) {
   CHECK(!hasToggle());
 }
 
+static const char *overridden(const char *power, const char *mode, const char *fan) {
+  static char result[32];
+  featureT features[3] = {{"power", power}, {"mode", mode}, {"fan", fan}};
+  char *code = 0;
+  loadFeaturedCode(features, &code);
+  snprintf(result, sizeof(result), "%s", code);
+  free(code);
+  return result;
+}
+
+static void test_overrides(void) {
+  loadConfig(OVERRIDES);
+  // DRY forces fan 1 only while the power is on
+  CHECK_EQ_STR("S-1-00-11", overridden("ON", "COOL", "3"));
+  CHECK_EQ_STR("S-1-01-01", overridden("ON", "DRY", "3"));
+  CHECK_EQ_STR("S-0-11-11", overridden("OFF", "DRY", "3"));
+  // Every override that matches applies, in order
+  CHECK_EQ_STR("S-0-00-11", overridden("OFF", "COOL", "3"));
+  // A feature that is not requested does not match
+  featureT features[3] = {{"mode", "DRY"}, {0, 0}, {0, 0}};
+  char *code = 0;
+  loadFeaturedCode(features, &code);
+  CHECK_EQ_STR("S-1-01-00", code);
+  free(code);
+}
+
 int main(void) {
   log_set_level(LOG_NOTHING);
   RUN_TEST(test_load_missing_file);
@@ -268,6 +295,7 @@ int main(void) {
   RUN_TEST(test_minimal_remote);
   RUN_TEST(test_feature_longer_than_template);
   RUN_TEST(test_toggle);
+  RUN_TEST(test_overrides);
   unloadConfig();
   return TEST_RESULT();
 }

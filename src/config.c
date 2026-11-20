@@ -202,7 +202,8 @@ void loadConfigSymbols(symbolDefinition configSymbols[]) {
   }
 }
 
-// Apply the requested features to the template. features holds up to
+// Apply the requested features to the template, then the "overrides" whose
+// features are all requested. features holds up to
 // getAllFeaturesCount() entries, unused ones with a NULL value. Features are
 // applied in the order of the configuration file, so a feature defined later
 // (e.g. an option forcing a fan speed) overrides an earlier one regardless of
@@ -216,6 +217,53 @@ void loadFeaturedCode(const featureT *features,
 
 int hasToggle() {
   return json_object_get_count(json_object_get_object(ROOT_OBJECT, "toggle")) > 0;
+}
+
+// Copy the symbols of an overlay to code, except spaces. A shorter overlay
+// leaves the rest of the code as it is.
+static void applyOverlay(const char *overlay, char *code, size_t codeLength)
+{
+  size_t length = strlen(overlay);
+  if (length > codeLength)
+    log_warn("Feature code '%s' is longer than the template (%zu symbols)", overlay, codeLength);
+  for (size_t i = 0; i < length && i < codeLength; i++)
+    if (overlay[i] != ' ')
+      code[i] = overlay[i];
+}
+
+// The requested value of a feature, NULL when it is not requested
+static const char *requestedValue(const featureT *features, size_t count, const char *name)
+{
+  const char *value = 0;
+  for (size_t i = 0; i < count; i++)
+    if (features[i].name && features[i].value && strcmp(features[i].name, name) == 0)
+      value = features[i].value;
+  return value;
+}
+
+// Apply the "overrides" whose "when" features are all requested with the
+// given values, in order, after the features
+static void applyOverrides(const featureT *features, size_t count, char *code, size_t codeLength)
+{
+  JSON_Array *overrides = json_object_get_array(ROOT_OBJECT, "overrides");
+  for (size_t i = 0; i < json_array_get_count(overrides); i++) {
+    JSON_Object *override = json_array_get_object(overrides, i);
+    JSON_Object *when = json_object_get_object(override, "when");
+    const char *overlay = json_object_get_string(override, "code");
+    if (!when || !overlay) {
+      log_error("Override %zu in %s needs \"when\" and \"code\"", i, CONFIGFILEPATH);
+      continue;
+    }
+    int matches = 1;
+    for (size_t j = 0; j < json_object_get_count(when) && matches; j++) {
+      const char *name = json_object_get_name(when, j);
+      const char *wanted = json_object_get_string(when, name);
+      const char *value = requestedValue(features, count, name);
+      matches = wanted && value && strcmp(wanted, value) == 0;
+    }
+    if (matches)
+      applyOverlay(overlay, code, codeLength);
+  }
 }
 
 // Like loadFeaturedCode(). When toggled is set, a feature value that has a
@@ -239,10 +287,7 @@ void loadToggledFeaturedCode(const featureT *features, int toggled,
   size_t featuresCount = json_object_get_count(features_object);
   for (size_t configIndex = 0 ; configIndex < featuresCount ; configIndex++) {
     const char *featureName = json_object_get_name(features_object, configIndex);
-    const char *featureValue = 0;
-    for (size_t i = 0 ; i < featuresCount ; i++)
-      if (features[i].name && features[i].value && strcmp(features[i].name, featureName) == 0)
-	featureValue = features[i].value;
+    const char *featureValue = requestedValue(features, featuresCount, featureName);
     if (!featureValue)
       continue;
 
@@ -259,15 +304,7 @@ void loadToggledFeaturedCode(const featureT *features, int toggled,
       log_error("Feature '%s'='%s' not found in %s", featureName, featureValue, CONFIGFILEPATH);
       continue;
     }
-    // A shorter feature code leaves the rest of the template as it is
-    size_t featureStrLength = strlen(featureString);
-    if (featureStrLength > templateStrLength) {
-      log_warn("Feature code '%s' is longer than the template (%zu symbols)",
-  		featureString, templateStrLength);
-    }
-    for (size_t charNumber=0 ; charNumber<featureStrLength && charNumber<templateStrLength ; charNumber++) {
-      if (featureString[charNumber]!=' ')
-      	(*featuredCode)[charNumber] = featureString[charNumber];
-    }
+    applyOverlay(featureString, *featuredCode, templateStrLength);
   }
+  applyOverrides(features, featuresCount, *featuredCode, templateStrLength);
 }

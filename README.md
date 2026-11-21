@@ -455,14 +455,17 @@ After the features are applied, the bit symbols of the code (`0` and `1`) are re
 
 | Setting | Meaning | Default |
 |---------|---------|---------|
-| `type` | `sum` (modulo 256, or 16 for nibbles) or `xor` | required |
+| `type` | `sum` (modulo 256, or 16 for nibbles), `xor`, `popcount` (the number of bits set to 1) or `crc` | required |
 | `unit` | `byte` or `nibble`; `from`, `to`, `data`, `at` and `init` then count in that unit | `byte` |
 | `from`, `to` | first and last byte covered | required unless `data` is given |
 | `data` | list of the bytes covered, e.g. `[0, 2, 4]`, instead of `from` and `to` | |
-| `at` | byte the checksum is written to, not one of those covered | required |
-| `init` | start value, 0-255 (0-15 for nibbles) | `0` |
+| `at` | byte the checksum is written to, not one of those covered, or a list of bytes for a wider result | required |
+| `init` | start value, 0-255 (0-15 for nibbles, more for a wider result) | `0` |
 | `invert` | complement the result (`~x`) | `false` |
 | `negate` | negate the result (`0 - x`), after `invert` | `false` |
+| `xorout` | XOR the result with this value, after `invert` and `negate` | `0` |
+| `poly` | `crc` only: the polynomial, without its highest bit, e.g. `7` for x⁸ + x² + x + 1 | required for `crc` |
+| `reflect` | `crc` only: the CRC is reflected (each unit enters lowest bit first, the result is reversed) | `false` |
 | `bitorder` | `lsb` when a byte is sent lowest bit first, `msb` when highest bit first | `lsb` |
 | `bits` | the zero and one symbols | `"01"` |
 | `restart` | symbols after which units are counted from a new bit, e.g. the gap between frames; the bits of a partial byte (or nibble) before them are skipped | none |
@@ -470,6 +473,22 @@ After the features are applied, the bit symbols of the code (`0` and `1`) are re
 Nibbles are numbered in the order they are sent: in a byte sent lowest bit first (`lsb`), nibble 0 is its low nibble, while with `msb` it is its high nibble. For example, a 4-bit checksum summing the nibbles 0, 2 and 4 into nibble 7, sent highest bit first:
 ```json
 {"type": "sum", "unit": "nibble", "data": [0, 2, 4], "at": 7, "bitorder": "msb"}
+```
+
+A count of set bits, e.g. 28 minus the number of bits set in bytes 2 to 5, in the high nibble of byte 1, is a `popcount` with a start value of 4 negated: 0 - (4 + count) is 28 - count modulo 16:
+```json
+{"type": "popcount", "unit": "nibble", "from": 4, "to": 11, "at": 3, "init": 4, "negate": true}
+```
+
+A result wider than a unit is written into the units listed in `at`: with `lsb` the first one holds the lowest bits, with `msb` the highest. Samsung AQV sends the complement of its count of set bits, 8 bits, in the high nibble of byte 1 and the low nibble of byte 2:
+```json
+{"type": "popcount", "unit": "nibble", "data": [0, 1, 2, 5, 6, 7, 8, 9, 10, 11, 12, 13], "at": [3, 4], "invert": true}
+```
+
+A `crc` takes the parameters of the [CRC catalogue](https://reveng.sourceforge.io/crc-catalogue/): `poly`, `init`, `reflect` (its `refin` and `refout`, which must be the same) and `xorout`, and its width is that of `at`. The covered units enter the CRC as read with `bitorder`, so `"bitorder": "msb"` sends the bits in the order a CRC without `reflect` reads them. CRC-8/SAE-J1850 over bytes 0 to 8 into byte 9, and CRC-16/MODBUS into bytes 9 and 10, low byte first:
+```json
+{"type": "crc", "poly": 29, "init": 255, "xorout": 255, "from": 0, "to": 8, "at": 9, "bitorder": "msb"}
+{"type": "crc", "poly": 32773, "init": 65535, "reflect": true, "from": 0, "to": 8, "at": [9, 10]}
 ```
 
 Some protocols end a frame with a few extra bits, which shifts all bytes of the next frame. With `"restart": "W"`, counting starts again after the gap symbol `W`, so the next frame's first bits are a new byte.

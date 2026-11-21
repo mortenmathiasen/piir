@@ -13,6 +13,9 @@ connect one to a Raspberry Pi or an ESP32.
 - [Finding the right pins](#finding-the-right-pins)
   - [On a Raspberry Pi](#on-a-raspberry-pi)
   - [On an ESP32](#on-an-esp32)
+- [Testing with a visible LED](#testing-with-a-visible-led)
+  - [On an ESP32: the board's blue LED](#on-an-esp32-the-boards-blue-led)
+  - [On a Raspberry Pi](#on-a-raspberry-pi-1)
 - [Checking that the LED sends](#checking-that-the-led-sends)
 
 ## Parts
@@ -215,6 +218,61 @@ e.g. `GPIO2 is a strapping pin and should only be used for I/O with care`; an
 input-only pin (`GPIO35 (34-39) does not support output pin mode`) or a flash
 pin (`This pin cannot be used on ESP32s and is already used by the flash
 interface`) is an error.
+
+## Testing with a visible LED
+
+An ordinary visible LED in place of the IR LED shows that the pin, the wiring,
+the transistor and the software work, before you point anything at a device.
+A transmission shows up as one short, dim blink: the 38 kHz carrier and the
+code's pulses are too fast to see one by one. It does not test the IR LED
+itself, nor whether the device accepts the code.
+
+A visible LED needs a larger resistor than an IR LED: red LEDs drop about 2 V
+(green and blue about 3 V) and most take at most 20 mA.
+
+| Circuit | Resistor for a red LED |
+|---------|------------------------|
+| Transistor circuit from 5 V | 150 Ω (about 19 mA) |
+| Directly on a Raspberry Pi GPIO pin | 150-220 Ω (6-9 mA; the Pi allows 16 mA per pin) |
+| Directly on an ESP32 GPIO pin | 100 Ω (about 13 mA) |
+
+### On an ESP32: the board's blue LED
+
+Many ESP32 development boards, e.g. "DOIT ESP32 DevKit V1" and NodeMCU-32S
+style boards, have a blue LED on GPIO2 besides the red power LED. They can test
+the transmitter with no wiring at all:
+
+1. Install ESPHome, e.g. `pip install esphome` (see the
+   [ESPHome installation guide](https://esphome.io/guides/installing_esphome/)).
+2. Connect the board by USB and flash
+   [examples/esphome-led-test.yaml](examples/esphome-led-test.yaml):
+   ```
+   esphome run doc/examples/esphome-led-test.yaml --device /dev/ttyUSB0
+   ```
+   On Linux your user needs to be in the `dialout` group to use the port:
+   `sudo usermod -aG dialout $USER`, then log in again.
+3. The blue LED blinks every 3 seconds, and the log shows `Sending NEC` for
+   every transmission.
+
+The example uses only ESPHome's own `remote_transmitter`, so it does not need
+irlingo. ESPHome warns that GPIO2 is a strapping pin, which is harmless with
+the board's own LED. Boards without a blue LED, such as Espressif's
+ESP32-DevKitC: connect a visible LED (with the resistor above) to GPIO4 and set
+`pin: GPIO4` in the example. Later, replace the visible LED with the IR LED
+circuit on the same pin.
+
+### On a Raspberry Pi
+
+The Pi's own LEDs cannot be used as the IR transmitter. Connect a visible LED
+instead of the IR LED, enable the transmitter on its pin (see
+[Raspberry Pi](#raspberry-pi)), and send any key, e.g.:
+
+```
+sudo irlingo-remotes add sony
+irlingo --remote sony/RM-ED011 --feature key=KEY_POWER --verbose INFO
+```
+
+The LED blinks once per command. Then replace it with the IR LED circuit.
 
 ## Checking that the LED sends
 

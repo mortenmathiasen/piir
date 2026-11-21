@@ -1,0 +1,210 @@
+{
+    "description": "Nibe air to air heat pumps, as the Nibe protocol of arduino-heatpumpir (the clock is sent as 00:00)",
+    "frequency": 38000,
+    "dutycycle": 0.5,
+    "transmitter": {"outpin": 17},
+    "symboldefinitions": {
+        "-": {"mark": 0, "space": 0},
+        "0": {"mark": 412, "space": 823},
+        "1": {"mark": 412, "space": 2102},
+        "H": {"mark": 6382, "space": 3144}
+    },
+    "checksums": [
+        {"type": "sum", "from": 0, "to": 9, "at": 10, "init": 2, "restart": "-"}
+    ],
+    "template": "H-00110101-10101111-00000101-00100000-01000000-00000111-00000000-11100000-00000000-00001101-01-00000000-0",
+    "features": {
+        "power": {"ON": "                                                                                        1", "OFF": "                                                                                        0"},
+        "mode": {"AUTO": "                       101", "HEAT": "                       001", "COOL": "                       000", "DRY": "                       100", "FAN": "                       110"},
+        "fan": {"AUTO": "                                00", "1": "                                00", "2": "                                10", "3": "                                01", "4": "                                11", "5": "                                00"},
+        "temperature": {"10": "                          01 100", "11": "                          11 100", "12": "                          00 010", "13": "                          10 010", "14": "                          01 010", "15": "                          11 010", "16": "                          00 110", "17": "                          10 110", "18": "                          01 110", "19": "                          11 110", "20": "                          00 001", "21": "                          10 001", "22": "                          01 001", "23": "                          11 001", "24": "                          00 101", "25": "                          10 101", "26": "                          01 101", "27": "                          11 101", "28": "                          00 011", "29": "                          10 011", "30": "                          01 011", "31": "                          11 011", "32": "                          00 111"},
+        "vertical": {"AUTO": "                                        000", "SWING": "                                        111", "UP": "                                        100", "MUP": "                                        010", "MIDDLE": "                                        110", "MDOWN": "                                        001", "DOWN": "                                        101"},
+        "horizontal": {"AUTO": "", "SWING": "", "MIDDLE": "", "LEFT": "", "MLEFT": "", "MRIGHT": "", "RIGHT": ""}
+    },
+    "overrides": [
+        {
+            "when": {"power": "OFF"},
+            "code": "                       001"
+        },
+        {
+            "when": {"power": "ON", "mode": "FAN", "fan": "AUTO"},
+            "code": "                                11"
+        },
+        {
+            "when": {"mode": "HEAT", "vertical": "UP"},
+            "code": "                                        110"
+        },
+        {
+            "when": {"mode": "HEAT", "vertical": "MUP"},
+            "code": "                                        110"
+        },
+        {
+            "when": {"power": "OFF", "vertical": "UP"},
+            "code": "                                        110"
+        },
+        {
+            "when": {"power": "OFF", "vertical": "MUP"},
+            "code": "                                        110"
+        },
+        {
+            "when": {"power": "ON", "mode": "COOL", "vertical": "DOWN"},
+            "code": "                                        001"
+        },
+        {
+            "when": {"power": "ON", "mode": "DRY", "vertical": "DOWN"},
+            "code": "                                        001"
+        }
+    ],
+    "tests": [
+        {
+            "description": "power ON, mode COOL, fan AUTO, temperature 22, vertical AUTO, horizontal AUTO",
+            "features": {"power": "ON", "mode": "COOL", "fan": "AUTO", "temperature": "22", "vertical": "AUTO", "horizontal": "AUTO"},
+            "outcome": "H-00110101-10101111-00000001-00100000-01000000-00000111-00000000-11100000-00000000-00001101-01-00000011-0"
+        },
+        {
+            "description": "power ON, mode DRY, fan 4, temperature 26, vertical MDOWN, horizontal SWING",
+            "features": {"power": "ON", "mode": "DRY", "fan": "4", "temperature": "26", "vertical": "MDOWN", "horizontal": "SWING"},
+            "outcome": "H-00110101-10101111-00010001-10111000-01001000-00000111-00000000-11100000-00000000-00001101-01-10001111-0"
+        },
+        {
+            "description": "power ON, mode DRY, fan AUTO, temperature 32, vertical MDOWN, horizontal AUTO",
+            "features": {"power": "ON", "mode": "DRY", "fan": "AUTO", "temperature": "32", "vertical": "MDOWN", "horizontal": "AUTO"},
+            "outcome": "H-00110101-10101111-00010000-11100000-01001000-00000111-00000000-11100000-00000000-00001101-01-11011010-0"
+        },
+        {
+            "description": "power OFF, mode DRY, fan 2, temperature 14, vertical MUP, horizontal LEFT",
+            "features": {"power": "OFF", "mode": "DRY", "fan": "2", "temperature": "14", "vertical": "MUP", "horizontal": "LEFT"},
+            "outcome": "H-00110101-10101111-00000101-01010000-01110000-00000111-00000000-11100000-00000000-00001001-01-01001011-0"
+        },
+        {
+            "description": "power ON, mode AUTO, fan 5, temperature 13, vertical MIDDLE, horizontal SWING",
+            "features": {"power": "ON", "mode": "AUTO", "fan": "5", "temperature": "13", "vertical": "MIDDLE", "horizontal": "SWING"},
+            "outcome": "H-00110101-10101111-00010110-01000000-01110000-00000111-00000000-11100000-00000000-00001101-01-01001101-0"
+        },
+        {
+            "description": "power ON, mode HEAT, fan 3, temperature 10, vertical MDOWN, horizontal RIGHT",
+            "features": {"power": "ON", "mode": "HEAT", "fan": "3", "temperature": "10", "vertical": "MDOWN", "horizontal": "RIGHT"},
+            "outcome": "H-00110101-10101111-00000101-10001000-01001000-00000111-00000000-11100000-00000000-00001101-01-10111111-0"
+        },
+        {
+            "description": "power ON, mode AUTO, fan 1, temperature 25, vertical AUTO, horizontal RIGHT",
+            "features": {"power": "ON", "mode": "AUTO", "fan": "1", "temperature": "25", "vertical": "AUTO", "horizontal": "RIGHT"},
+            "outcome": "H-00110101-10101111-00010110-10100000-01000000-00000111-00000000-11100000-00000000-00001101-01-10010101-0"
+        },
+        {
+            "description": "power OFF, mode HEAT, fan 5, temperature 28, vertical UP, horizontal RIGHT",
+            "features": {"power": "OFF", "mode": "HEAT", "fan": "5", "temperature": "28", "vertical": "UP", "horizontal": "RIGHT"},
+            "outcome": "H-00110101-10101111-00000100-01100000-01110000-00000111-00000000-11100000-00000000-00001001-01-01110010-0"
+        },
+        {
+            "description": "power OFF, mode AUTO, fan 3, temperature 10, vertical SWING, horizontal MRIGHT",
+            "features": {"power": "OFF", "mode": "AUTO", "fan": "3", "temperature": "10", "vertical": "SWING", "horizontal": "MRIGHT"},
+            "outcome": "H-00110101-10101111-00000101-10001000-01111000-00000111-00000000-11100000-00000000-00001001-01-10010111-0"
+        },
+        {
+            "description": "power ON, mode COOL, fan 5, temperature 30, vertical MDOWN, horizontal MIDDLE",
+            "features": {"power": "ON", "mode": "COOL", "fan": "5", "temperature": "30", "vertical": "MDOWN", "horizontal": "MIDDLE"},
+            "outcome": "H-00110101-10101111-00000001-01100000-01001000-00000111-00000000-11100000-00000000-00001101-01-01001011-0"
+        },
+        {
+            "description": "power OFF, mode DRY, fan 1, temperature 30, vertical SWING, horizontal SWING",
+            "features": {"power": "OFF", "mode": "DRY", "fan": "1", "temperature": "30", "vertical": "SWING", "horizontal": "SWING"},
+            "outcome": "H-00110101-10101111-00000101-01100000-01111000-00000111-00000000-11100000-00000000-00001001-01-01111011-0"
+        },
+        {
+            "description": "power OFF, mode FAN, fan 5, temperature 16, vertical MIDDLE, horizontal RIGHT",
+            "features": {"power": "OFF", "mode": "FAN", "fan": "5", "temperature": "16", "vertical": "MIDDLE", "horizontal": "RIGHT"},
+            "outcome": "H-00110101-10101111-00000100-11000000-01110000-00000111-00000000-11100000-00000000-00001001-01-11010010-0"
+        },
+        {
+            "description": "power ON, mode AUTO, fan 1, temperature 25, vertical UP, horizontal AUTO",
+            "features": {"power": "ON", "mode": "AUTO", "fan": "1", "temperature": "25", "vertical": "UP", "horizontal": "AUTO"},
+            "outcome": "H-00110101-10101111-00010110-10100000-01100000-00000111-00000000-11100000-00000000-00001101-01-10110101-0"
+        },
+        {
+            "description": "power ON, mode FAN, fan 4, temperature 32, vertical SWING, horizontal MRIGHT",
+            "features": {"power": "ON", "mode": "FAN", "fan": "4", "temperature": "32", "vertical": "SWING", "horizontal": "MRIGHT"},
+            "outcome": "H-00110101-10101111-00011000-11111000-01111000-00000111-00000000-11100000-00000000-00001101-01-11110001-0"
+        },
+        {
+            "description": "power ON, mode FAN, fan 3, temperature 11, vertical DOWN, horizontal MRIGHT",
+            "features": {"power": "ON", "mode": "FAN", "fan": "3", "temperature": "11", "vertical": "DOWN", "horizontal": "MRIGHT"},
+            "outcome": "H-00110101-10101111-00011011-10001000-01101000-00000111-00000000-11100000-00000000-00001101-01-10011100-0"
+        },
+        {
+            "description": "power OFF, mode AUTO, fan 5, temperature 13, vertical AUTO, horizontal AUTO",
+            "features": {"power": "OFF", "mode": "AUTO", "fan": "5", "temperature": "13", "vertical": "AUTO", "horizontal": "AUTO"},
+            "outcome": "H-00110101-10101111-00000110-01000000-01000000-00000111-00000000-11100000-00000000-00001001-01-01111110-0"
+        },
+        {
+            "description": "power ON, mode HEAT, fan 1, temperature 16, vertical AUTO, horizontal RIGHT",
+            "features": {"power": "ON", "mode": "HEAT", "fan": "1", "temperature": "16", "vertical": "AUTO", "horizontal": "RIGHT"},
+            "outcome": "H-00110101-10101111-00000100-11000000-01000000-00000111-00000000-11100000-00000000-00001101-01-11111010-0"
+        },
+        {
+            "description": "power OFF, mode HEAT, fan AUTO, temperature 16, vertical MIDDLE, horizontal LEFT",
+            "features": {"power": "OFF", "mode": "HEAT", "fan": "AUTO", "temperature": "16", "vertical": "MIDDLE", "horizontal": "LEFT"},
+            "outcome": "H-00110101-10101111-00000100-11000000-01110000-00000111-00000000-11100000-00000000-00001001-01-11010010-0"
+        },
+        {
+            "description": "power OFF, mode FAN, fan 5, temperature 25, vertical AUTO, horizontal LEFT",
+            "features": {"power": "OFF", "mode": "FAN", "fan": "5", "temperature": "25", "vertical": "AUTO", "horizontal": "LEFT"},
+            "outcome": "H-00110101-10101111-00000110-10100000-01000000-00000111-00000000-11100000-00000000-00001001-01-10000001-0"
+        },
+        {
+            "description": "power ON, mode COOL, fan 3, temperature 25, vertical UP, horizontal SWING",
+            "features": {"power": "ON", "mode": "COOL", "fan": "3", "temperature": "25", "vertical": "UP", "horizontal": "SWING"},
+            "outcome": "H-00110101-10101111-00000010-10101000-01100000-00000111-00000000-11100000-00000000-00001101-01-10101001-0"
+        },
+        {
+            "description": "power OFF, mode AUTO, fan 4, temperature 12, vertical UP, horizontal MLEFT",
+            "features": {"power": "OFF", "mode": "AUTO", "fan": "4", "temperature": "12", "vertical": "UP", "horizontal": "MLEFT"},
+            "outcome": "H-00110101-10101111-00000100-01011000-01110000-00000111-00000000-11100000-00000000-00001001-01-01000110-0"
+        },
+        {
+            "description": "power ON, mode COOL, fan AUTO, temperature 30, vertical UP, horizontal AUTO",
+            "features": {"power": "ON", "mode": "COOL", "fan": "AUTO", "temperature": "30", "vertical": "UP", "horizontal": "AUTO"},
+            "outcome": "H-00110101-10101111-00000001-01100000-01100000-00000111-00000000-11100000-00000000-00001101-01-01100011-0"
+        },
+        {
+            "description": "power ON, mode AUTO, fan AUTO, temperature 12, vertical UP, horizontal AUTO",
+            "features": {"power": "ON", "mode": "AUTO", "fan": "AUTO", "temperature": "12", "vertical": "UP", "horizontal": "AUTO"},
+            "outcome": "H-00110101-10101111-00010100-01000000-01100000-00000111-00000000-11100000-00000000-00001101-01-01010110-0"
+        },
+        {
+            "description": "power ON, mode AUTO, fan 5, temperature 18, vertical UP, horizontal AUTO",
+            "features": {"power": "ON", "mode": "AUTO", "fan": "5", "temperature": "18", "vertical": "UP", "horizontal": "AUTO"},
+            "outcome": "H-00110101-10101111-00010101-11000000-01100000-00000111-00000000-11100000-00000000-00001101-01-11010111-0"
+        },
+        {
+            "description": "power OFF, mode AUTO, fan 2, temperature 29, vertical AUTO, horizontal AUTO",
+            "features": {"power": "OFF", "mode": "AUTO", "fan": "2", "temperature": "29", "vertical": "AUTO", "horizontal": "AUTO"},
+            "outcome": "H-00110101-10101111-00000110-01110000-01000000-00000111-00000000-11100000-00000000-00001001-01-01010001-0"
+        },
+        {
+            "description": "power ON, mode AUTO, fan AUTO, temperature 14, vertical SWING, horizontal MRIGHT",
+            "features": {"power": "ON", "mode": "AUTO", "fan": "AUTO", "temperature": "14", "vertical": "SWING", "horizontal": "MRIGHT"},
+            "outcome": "H-00110101-10101111-00010101-01000000-01111000-00000111-00000000-11100000-00000000-00001101-01-01000000-0"
+        },
+        {
+            "description": "power OFF, mode COOL, fan 2, temperature 22, vertical DOWN, horizontal MIDDLE",
+            "features": {"power": "OFF", "mode": "COOL", "fan": "2", "temperature": "22", "vertical": "DOWN", "horizontal": "MIDDLE"},
+            "outcome": "H-00110101-10101111-00000101-00110000-01101000-00000111-00000000-11100000-00000000-00001001-01-00111011-0"
+        },
+        {
+            "description": "power ON, mode HEAT, fan 2, temperature 11, vertical MDOWN, horizontal MRIGHT",
+            "features": {"power": "ON", "mode": "HEAT", "fan": "2", "temperature": "11", "vertical": "MDOWN", "horizontal": "MRIGHT"},
+            "outcome": "H-00110101-10101111-00000111-10010000-01001000-00000111-00000000-11100000-00000000-00001101-01-10101100-0"
+        },
+        {
+            "description": "power OFF, mode AUTO, fan 4, temperature 26, vertical UP, horizontal AUTO",
+            "features": {"power": "OFF", "mode": "AUTO", "fan": "4", "temperature": "26", "vertical": "UP", "horizontal": "AUTO"},
+            "outcome": "H-00110101-10101111-00000101-10111000-01110000-00000111-00000000-11100000-00000000-00001001-01-10100111-0"
+        },
+        {
+            "description": "power ON, mode HEAT, fan 3, temperature 10, vertical AUTO, horizontal LEFT",
+            "features": {"power": "ON", "mode": "HEAT", "fan": "3", "temperature": "10", "vertical": "AUTO", "horizontal": "LEFT"},
+            "outcome": "H-00110101-10101111-00000101-10001000-01000000-00000111-00000000-11100000-00000000-00001101-01-10110111-0"
+        }
+    ]
+}

@@ -2,7 +2,7 @@ set(FIXTURE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/fixtures)
 
 function(irlingo_test_executable name)
   add_executable(${name} ${name}.c)
-  target_link_libraries(${name} PRIVATE irlingo_core)
+  target_link_libraries(${name} PRIVATE irlingo_linux)
   target_compile_definitions(${name} PRIVATE
     FIXTURE_DIR="${FIXTURE_DIR}"
     PROJECT_DIR="${PROJECT_SOURCE_DIR}")
@@ -21,6 +21,7 @@ irlingo_unit_test(test_log)
 irlingo_unit_test(test_config)
 irlingo_unit_test(test_hvac_panasonic)
 irlingo_unit_test(test_checksum)
+irlingo_unit_test(test_pulses)
 irlingo_unit_test(test_remote_lookup)
 irlingo_unit_test(test_state)
 
@@ -240,7 +241,7 @@ if(IRLINGO_BACKEND STREQUAL "lirc")
   # Complete runs with a simulated kernel driver: every successful press
   # flips the toggle state
   add_executable(irlingo_fake_lirc ${PROJECT_SOURCE_DIR}/src/irlingo.c fake_lirc_driver.c)
-  target_link_libraries(irlingo_fake_lirc PRIVATE irlingo_core)
+  target_link_libraries(irlingo_fake_lirc PRIVATE irlingo_linux)
   target_link_options(irlingo_fake_lirc PRIVATE -Wl,--wrap=ioctl -Wl,--wrap=__ioctl_time64)
   if(IRLINGO_STATIC)
     target_link_options(irlingo_fake_lirc PRIVATE -static)

@@ -9,15 +9,23 @@
 
 ## Source layout
 
+The code is in two parts. `components/irlingo/` holds the portable core, which
+also an ESPHome component for the ESP32 will compile: it must not use anything
+specific to Linux. `src/` holds the Linux parts: the command line, finding
+installed remotes, the toggle state file and the transmitter backends. CMake
+builds them as the libraries `irlingo_core` and `irlingo_linux`.
+
 | Path | Contents |
 |------|----------|
+| `components/irlingo/config.c` | loading a remote from a file or from text: symbols, template, features, overrides, variants, toggle |
+| `components/irlingo/checksum.c` | the declarative `checksums` |
+| `components/irlingo/pulses.c` | turning a code into pulse and space durations |
+| `components/irlingo/plugins.c`, `components/irlingo/hvac_panasonic_plugin.c` | remote plugins |
+| `components/irlingo/log.c`, `components/irlingo/parson.c` | logging, the JSON parser |
 | `src/irlingo.c` | the command line |
-| `src/config.c` | loading a remote: symbols, template, features, overrides, variants, toggle |
-| `src/checksum.c` | the declarative `checksums` |
 | `src/remotes.c` | finding remotes by name |
 | `src/lirc.c`, `src/transmitter.c`, `src/irslinger.c` | the `lirc`, `gpiod` and `pigpio` backends |
 | `src/state.c` | the toggle state file |
-| `src/plugins.c`, `src/hvac_panasonic_plugin.c` | remote plugins |
 | `conf/remotes/` | the remotes |
 | `tools/lirc2irlingo.py` | the LIRC converter |
 | `tools/ir2irlingo.py` | derives remotes from recorded codes |
@@ -53,7 +61,7 @@ When cross compiling, tests run under qemu if you add e.g. `-DCMAKE_CROSSCOMPILI
 cmake -B build-coverage -DIRLINGO_COVERAGE=ON
 cmake --build build-coverage
 ctest --test-dir build-coverage
-gcovr -r . build-coverage --exclude 'src/parson\..*' --exclude 'tests/'
+gcovr -r . build-coverage --exclude 'components/irlingo/parson\..*' --exclude 'tests/'
 ```
 
 The converters are measured too when Python's `coverage` module is installed. CI requires 95% line coverage of the C code and of the converters.

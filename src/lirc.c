@@ -10,72 +10,7 @@
 #include "log.h"
 #include "config.h"
 #include "irgeneric.h"
-#include "lirc.h"
-
-// Append a pulse (mark) or space to the buffer, merging with the previous
-// value of the same kind. Buffer index 0, 2, 4... are pulses, 1, 3, 5... spaces.
-static int addDuration(int pulse, unsigned duration, unsigned int *buffer, size_t *count)
-{
-  if (duration == 0)
-    return 0;
-
-  // A space cannot come first
-  if (*count == 0 && !pulse)
-    return 0;
-
-  int lastIsPulse = *count % 2 == 1;
-  if (*count > 0 && lastIsPulse == pulse)
-    {
-      buffer[*count-1] += duration;
-      return 0;
-    }
-
-  if (*count >= MAX_LIRC_VALUES)
-    {
-      log_fatal("Code needs more than %d pulses and spaces", MAX_LIRC_VALUES);
-      return 1;
-    }
-
-  buffer[(*count)++] = duration;
-  return 0;
-}
-
-// Convert a symbol string to alternating pulse and space durations ready to
-// be written to a LIRC device. Returns 0 on success.
-int lircBuildPulses(size_t sdDefCount,
-		    const symbolDefinition *sdDef,
-		    const char *code,
-		    unsigned int *buffer,
-		    size_t *count)
-{
-  *count = 0;
-  for (size_t i = 0; code[i]; i++)
-    {
-      const symbolDefinition *symdef = 0;
-      for (size_t j = 0 ; j < sdDefCount ; j++)
-	if (sdDef[j].symbol == code[i])
-	  symdef = &sdDef[j];
-      if (!symdef)
-	{
-	  log_fatal("Undefined symbol '%c'", code[i]);
-	  return 1;
-	}
-
-      if (addDuration(1, symdef->markDuration, buffer, count) ||
-	  addDuration(0, symdef->spaceDuration, buffer, count))
-	return 1;
-    }
-
-  // The kernel requires the signal to end with a pulse
-  if (*count % 2 == 0 && *count > 0)
-    (*count)--;
-  if (*count == 0)
-    {
-      log_fatal("Nothing to transmit");
-      return 1;
-    }
-  return 0;
-}
+#include "pulses.h"
 
 // Transmit using the kernel IR transmitter driver (e.g. dtoverlay=gpio-ir-tx).
 // The GPIO pin is set by the device tree overlay, so outPin is not used.
@@ -97,11 +32,11 @@ int irSlingGeneric(uint32_t outPin,
       return 1;
     }
 
-  unsigned int buffer[MAX_LIRC_VALUES];
+  unsigned int buffer[MAX_PULSE_VALUES];
   size_t count = 0;
 
   log_debug("Build pulses");
-  if (lircBuildPulses(sdDefCount, sdDef, code, buffer, &count))
+  if (irlingoBuildPulses(sdDefCount, sdDef, code, buffer, &count))
     return 1;
   log_trace("pulse count is %zu", count);
 

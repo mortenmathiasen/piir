@@ -18,10 +18,11 @@
 #include "plugins.h"
 #include "checksum.h"
 #include "parson.h"
+#include "pulses.h"
 #include "log.h"
 
-// Values the kernel accepts in one write (src/lirc.h)
-#define MAX_VALUES 1024
+// Values the kernel accepts in one write (pulses.h)
+#define MAX_VALUES MAX_PULSE_VALUES
 
 static char *knownFailures = NULL;
 static size_t remotesChecked = 0, keysChecked = 0, vectorsChecked = 0, knownFailed = 0;

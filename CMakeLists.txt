@@ -69,38 +69,49 @@ if(IRLINGO_COVERAGE)
   add_link_options(--coverage)
 endif()
 
-# Everything except main() goes into a library shared by irlingo and the tests
+# The portable core in components/irlingo/: loading remotes, features,
+# overrides, variants, checksums, plugins and turning codes into pulses. The
+# ESPHome component compiles the same files, so they must not use anything
+# specific to Linux.
 add_library(irlingo_core STATIC
-  src/hvac_panasonic_plugin.c
-  src/plugins.c
-  src/checksum.c
+  components/irlingo/hvac_panasonic_plugin.c
+  components/irlingo/plugins.c
+  components/irlingo/checksum.c
+  components/irlingo/pulses.c
+  components/irlingo/log.c
+  components/irlingo/config.c
+  components/irlingo/parson.c)
+target_include_directories(irlingo_core PUBLIC components/irlingo)
+
+# The Linux parts: finding installed remotes, the toggle state file and the
+# transmitter backends. Everything except main() is shared by irlingo and
+# the tests.
+add_library(irlingo_linux STATIC
   src/remotes.c
   src/state.c
   src/irslinger.c
   src/transmitter.c
-  src/lirc.c
-  src/log.c
-  src/config.c
-  src/parson.c)
-target_include_directories(irlingo_core PUBLIC src)
+  src/lirc.c)
+target_include_directories(irlingo_linux PUBLIC src)
+target_link_libraries(irlingo_linux PUBLIC irlingo_core)
 
-target_compile_definitions(irlingo_core PUBLIC
+target_compile_definitions(irlingo_linux PUBLIC
   DATADIR="${CMAKE_INSTALL_FULL_DATADIR}/irlingo")
 
 if(IRLINGO_BACKEND STREQUAL "lirc")
-  target_compile_definitions(irlingo_core PUBLIC HAVE_LINUX_LIRC_H=1 LIRC_DEVICE="${IRLINGO_LIRC_DEVICE}")
+  target_compile_definitions(irlingo_linux PUBLIC HAVE_LINUX_LIRC_H=1 LIRC_DEVICE="${IRLINGO_LIRC_DEVICE}")
 elseif(IRLINGO_BACKEND STREQUAL "gpiod")
-  target_compile_definitions(irlingo_core PUBLIC HAVE_GPIOD_H=1)
-  target_include_directories(irlingo_core PUBLIC ${GPIOD_INCLUDE_DIR})
-  target_link_libraries(irlingo_core PUBLIC ${GPIOD_LIBRARY})
+  target_compile_definitions(irlingo_linux PUBLIC HAVE_GPIOD_H=1)
+  target_include_directories(irlingo_linux PUBLIC ${GPIOD_INCLUDE_DIR})
+  target_link_libraries(irlingo_linux PUBLIC ${GPIOD_LIBRARY})
 elseif(IRLINGO_BACKEND STREQUAL "pigpio")
-  target_compile_definitions(irlingo_core PUBLIC HAVE_PIGPIO_H=1)
-  target_include_directories(irlingo_core PUBLIC ${PIGPIO_INCLUDE_DIR})
-  target_link_libraries(irlingo_core PUBLIC ${PIGPIO_LIBRARY})
+  target_compile_definitions(irlingo_linux PUBLIC HAVE_PIGPIO_H=1)
+  target_include_directories(irlingo_linux PUBLIC ${PIGPIO_INCLUDE_DIR})
+  target_link_libraries(irlingo_linux PUBLIC ${PIGPIO_LIBRARY})
 endif()
 
 add_executable(irlingo src/irlingo.c)
-target_link_libraries(irlingo PRIVATE irlingo_core)
+target_link_libraries(irlingo PRIVATE irlingo_linux)
 
 # A static binary runs on any Raspberry Pi OS release regardless of its glibc
 option(IRLINGO_STATIC "Link irlingo statically" OFF)

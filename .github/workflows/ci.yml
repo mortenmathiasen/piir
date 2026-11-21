@@ -76,7 +76,7 @@ jobs:
       - name: C coverage
         run: |
           mkdir -p coverage
-          gcovr -r . build --exclude 'src/parson\..*' --exclude 'tests/' \
+          gcovr -r . build --exclude 'components/irlingo/parson\..*' --exclude 'tests/' \
             --txt --markdown coverage/c.md --html-details coverage/c.html \
             --fail-under-line 95
           cat coverage/c.md >> "$GITHUB_STEP_SUMMARY"

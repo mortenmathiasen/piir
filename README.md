@@ -218,7 +218,7 @@ To measure coverage, configure with `-DIRLINGO_COVERAGE=ON` and run [gcovr](http
 cmake -B build-coverage -DIRLINGO_COVERAGE=ON
 cmake --build build-coverage
 ctest --test-dir build-coverage
-gcovr -r . build-coverage --exclude 'src/parson\..*' --exclude 'tests/'
+gcovr -r . build-coverage --exclude 'components/irlingo/parson\..*' --exclude 'tests/'
 ```
 The transmitter backends are tested against simulated drivers and libraries (the `ioctl` and `write` calls of the `lirc` backend, libgpiod and pigpio are replaced when linking the tests), so the tests cover sending without hardware. CI requires 95% line coverage of the C code and of the converter.
 

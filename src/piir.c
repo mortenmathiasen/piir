@@ -275,7 +275,9 @@ int main(int argc, char *argv[])
   size_t noOfConfigSymbols = getSymboldefinitionsCount();
   symbolDefinition configSymbols[noOfConfigSymbols];
 
-  log_info("Configuration '%s' - %s", configfilepath, description);
+  loadDescription(&description);
+  log_info("Configuration '%s' - %s", configfilepath,
+	   description ? description : "(no description)");
   loadConfigSymbols(configSymbols);
 
   // Remotes with a toggle bit send a different code on every other press
@@ -290,10 +292,8 @@ int main(int argc, char *argv[])
   }
   loadToggledFeaturedCode(requestedFeatures, toggled,
 			  &symbolString);
-  loadDescription(&description);
   loadFrequency(&frequency);
   loadDutyCycle(&dutycycle);
-  log_info("%s", description);
 
   // Declarative checksums
   if (applyConfigChecksums(symbolString)) {

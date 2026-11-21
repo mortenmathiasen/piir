@@ -1,6 +1,6 @@
 {
     "description": "TCUAG_TVOON (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/tcuag/TVOON.lircd.conf", "remote": "TCUAG_TVOON", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/tcuag/TVOON.lircd.conf", "remote": "TCUAG_TVOON", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38400,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

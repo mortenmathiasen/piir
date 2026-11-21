@@ -1,6 +1,6 @@
 {
     "description": "NAD_451 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/nad/451.lircd.conf", "remote": "NAD_451", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/nad/451.lircd.conf", "remote": "NAD_451", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "RM-SXV008J (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/jvc/RM-SXV08J.lircd.conf", "remote": "RM-SXV008J", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/jvc/RM-SXV08J.lircd.conf", "remote": "RM-SXV008J", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

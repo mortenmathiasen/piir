@@ -1,6 +1,6 @@
 {
     "description": "LG_6710T00009B (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lg/6710T00009B.lircd.conf", "remote": "LG_6710T00009B", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/lg/6710T00009B.lircd.conf", "remote": "LG_6710T00009B", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

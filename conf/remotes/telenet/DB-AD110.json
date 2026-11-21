@@ -1,6 +1,6 @@
 {
     "description": "Telenet_DB-AD110 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/telenet/DB-AD110.lircd.conf", "remote": "Telenet_DB-AD110", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/telenet/DB-AD110.lircd.conf", "remote": "Telenet_DB-AD110", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

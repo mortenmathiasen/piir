@@ -1,6 +1,6 @@
 {
     "description": "FW_530C (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/FW_530C.lircd.conf", "remote": "FW_530C", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/philips/FW_530C.lircd.conf", "remote": "FW_530C", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

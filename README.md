@@ -1,16 +1,16 @@
-# PIIR
+# irlingo
 
-[![CI](https://github.com/mortenmathiasen/piir/actions/workflows/ci.yml/badge.svg)](https://github.com/mortenmathiasen/piir/actions/workflows/ci.yml)
+[![CI](https://github.com/mortenmathiasen/irlingo/actions/workflows/ci.yml/badge.svg)](https://github.com/mortenmathiasen/irlingo/actions/workflows/ci.yml)
 
-PIIR is a command line tool to transmit IR-signals like remote controls do. PIIR is created as a generic tool that supports configuration and transmission of any signal, eg. including long aircondition signals.
+irlingo (formerly PIIR) is a command line tool to transmit IR-signals like remote controls do. irlingo is created as a generic tool that supports configuration and transmission of any signal, eg. including long aircondition signals.
 
-![alt text](https://github.com/mortenmathiasen/piir/blob/master/doc/remote-sommerhus.png?raw=true)
+![alt text](https://github.com/mortenmathiasen/irlingo/blob/master/doc/remote-sommerhus.png?raw=true)
 
 Examples:
 ```
-piir --remote sony/RM-ED011 --feature key=KEY_POWER
+irlingo --remote sony/RM-ED011 --feature key=KEY_POWER
 
-piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
+irlingo --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
 ```
 
 ## Documentation
@@ -41,6 +41,7 @@ The [documentation](doc/README.md) has a guide for each step:
       - [Cross compiling for Raspberry Pi](#cross-compiling-for-raspberry-pi)
     + [Testing](#testing)
     + [Releases](#releases)
+    + [Upgrading from PIIR 2.x](#upgrading-from-piir-2x)
     + [Upgrading from PIIR 1.x](#upgrading-from-piir-1x)
   * [How to use](#how-to-use)
   * [Remotes](#remotes)
@@ -67,10 +68,10 @@ The [documentation](doc/README.md) has a guide for each step:
 ### IR-protocol
 
 To control an IR-receiver you need to know the IR-signals to transmit to it. Either, you can:
-* Use the protocol definitions that exists already inside PIIRs remote folder [conf/remotes](https://github.com/mortenmathiasen/piir/tree/master/conf/remotes): more than 3000 remotes from over 500 manufacturers, most of them converted from the [LIRC remote database](https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes), see [Remotes](#remotes)
-* Convert a LIRC configuration (`lircd.conf`) you already have with [tools/lirc2piir.py](tools/lirc2piir.py)
-* Derive a remote from recorded codes with [tools/ir2piir.py](tools/ir2piir.py), see [Remotes derived from recordings](#remotes-derived-from-recordings)
-* Reverse engineer your remote control, e.g. using [IR decoder for Arduino](https://github.com/ToniA/Raw-IR-decoder-for-Arduino.git) which I did for [Panasonic airconditioner](https://github.com/mortenmathiasen/piir/blob/master/conf/remotes/panasonic/hvac_panasonic.pdf)
+* Use the protocol definitions that exists already inside irlingo's remote folder [conf/remotes](https://github.com/mortenmathiasen/irlingo/tree/master/conf/remotes): more than 3000 remotes from over 500 manufacturers, most of them converted from the [LIRC remote database](https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes), see [Remotes](#remotes)
+* Convert a LIRC configuration (`lircd.conf`) you already have with [tools/lirc2irlingo.py](tools/lirc2irlingo.py)
+* Derive a remote from recorded codes with [tools/ir2irlingo.py](tools/ir2irlingo.py), see [Remotes derived from recordings](#remotes-derived-from-recordings)
+* Reverse engineer your remote control, e.g. using [IR decoder for Arduino](https://github.com/ToniA/Raw-IR-decoder-for-Arduino.git) which I did for [Panasonic airconditioner](https://github.com/mortenmathiasen/irlingo/blob/master/conf/remotes/panasonic/hvac_panasonic.pdf)
 
 ### Supported systems
 
@@ -95,7 +96,7 @@ You need to identify a device you want to control by IR-signals, e.g. an aircond
 
 ### Prebuilt packages
 
-Every [release](https://github.com/mortenmathiasen/piir/releases) has ready-made packages using the kernel driver (`lirc`) backend. The binaries are statically linked, so they run on any Raspberry Pi OS release:
+Every [release](https://github.com/mortenmathiasen/irlingo/releases) has ready-made packages using the kernel driver (`lirc`) backend. The binaries are statically linked, so they run on any Raspberry Pi OS release:
 
 | Package | Raspberry Pi models | OS |
 |---------|---------------------|----|
@@ -105,15 +106,15 @@ Every [release](https://github.com/mortenmathiasen/piir/releases) has ready-made
 
 If you are unsure, run `dpkg --print-architecture` on the Pi: `arm64` needs the `aarch64` package, and `armhf` needs `armv6` or `armv7` (`armv6` works on every model).
 
-The packages contain PIIR's own remotes. Add the remotes you need from the LIRC database afterwards with `piir-remotes`, see [Choosing the remotes of an installation](#choosing-the-remotes-of-an-installation).
+The packages contain irlingo's own remotes. Add the remotes you need from the LIRC database afterwards with `irlingo-remotes`, see [Choosing the remotes of an installation](#choosing-the-remotes-of-an-installation).
 
 Install the Debian package, e.g. for a Pi Zero W:
 ```
-sudo apt install ./piir_2.3.0_armv6.deb
+sudo apt install ./irlingo_3.0.0_armv6.deb
 ```
 or extract the tarball into `/`:
 ```
-sudo tar -xzf piir-2.3.0-armv6.tar.gz -C / --strip-components=1
+sudo tar -xzf irlingo-3.0.0-armv6.tar.gz -C / --strip-components=1
 ```
 
 Then enable the kernel IR transmitter as described below.
@@ -125,46 +126,46 @@ Update package list:
 sudo apt update
 ```
 
-By default PIIR sends IR through the Linux kernel's IR transmitter driver, which generates the carrier with accurate timing on every Raspberry Pi model including Pi 5. No extra library is needed. Enable the driver by adding this line to `/boot/firmware/config.txt` and rebooting:
+By default irlingo sends IR through the Linux kernel's IR transmitter driver, which generates the carrier with accurate timing on every Raspberry Pi model including Pi 5. No extra library is needed. Enable the driver by adding this line to `/boot/firmware/config.txt` and rebooting:
 ```
 dtoverlay=gpio-ir-tx,gpio_pin=17
 ```
-Use the GPIO pin your IR LED is connected to. This creates `/dev/lirc0`. If that is not your transmitter device (for example because an IR receiver overlay is also enabled), set `"device": "/dev/lirc1"` in the `transmitter` section of the remote's JSON file. The user running PIIR must be allowed to write to the device: check its group with `ls -l /dev/lirc0` and add your user to that group, or run PIIR with `sudo`.
+Use the GPIO pin your IR LED is connected to. This creates `/dev/lirc0`. If that is not your transmitter device (for example because an IR receiver overlay is also enabled), set `"device": "/dev/lirc1"` in the `transmitter` section of the remote's JSON file. The user running irlingo must be allowed to write to the device: check its group with `ls -l /dev/lirc0` and add your user to that group, or run irlingo with `sudo`.
 
-Alternatively PIIR can drive the pin itself through [libgpiod](https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/) version 2.0 or newer (`sudo apt install -y libgpiod-dev`) or [PIGPIO](http://abyz.me.uk/rpi/pigpio/) (`sudo apt install -y pigpio`, not supported on Pi 5). With libgpiod the carrier is generated from user space, so its timing is much less accurate. With these backends the pin is taken from `outpin` in the remote's JSON file.
+Alternatively irlingo can drive the pin itself through [libgpiod](https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/) version 2.0 or newer (`sudo apt install -y libgpiod-dev`) or [PIGPIO](http://abyz.me.uk/rpi/pigpio/) (`sudo apt install -y pigpio`, not supported on Pi 5). With libgpiod the carrier is generated from user space, so its timing is much less accurate. With these backends the pin is taken from `outpin` in the remote's JSON file.
 
 Install CMake to enable compilation
 ```
 sudo apt-get install -y cmake build-essential
 ```
 
-Download and extract latest released PIIR software:
+Download and extract latest released irlingo software:
 ```
-curl -s https://api.github.com/repos/mortenmathiasen/piir/releases/latest | sed -n 's/.*tarball_url":\s"\(.*\)".*/\1 -O piir.tar/p' | xargs wget
-mkdir piir
-tar xf piir.tar -C ./piir
-mv ./piir/*/* ./piir
+curl -s https://api.github.com/repos/mortenmathiasen/irlingo/releases/latest | sed -n 's/.*tarball_url":\s"\(.*\)".*/\1 -O irlingo.tar/p' | xargs wget
+mkdir irlingo
+tar xf irlingo.tar -C ./irlingo
+mv ./irlingo/*/* ./irlingo
 ```
 
 Now compile it:
 ```
-cd piir
+cd irlingo
 cmake -B build
 cmake --build build
 ```
 
-PIIR uses the kernel driver (`lirc`) when the kernel headers provide `linux/lirc.h`, which they do on any Linux system, and otherwise falls back to libgpiod and then pigpio. To pick one explicitly, add `-DPIIR_GPIO_BACKEND=lirc`, `gpiod` or `pigpio` to the first `cmake` command.
+irlingo uses the kernel driver (`lirc`) when the kernel headers provide `linux/lirc.h`, which they do on any Linux system, and otherwise falls back to libgpiod and then pigpio. To pick one explicitly, add `-DIRLINGO_GPIO_BACKEND=lirc`, `gpiod` or `pigpio` to the first `cmake` command.
 
 ### Installation
 
-After compilation you can install the PIIR tool by:
+After compilation you can install the irlingo tool by:
 ```
 sudo cmake --install build
 ```
 
 ### Deployment
 
-You can deploy the PIIR tool to any live system. Either you can compile the sourced code directly on the live system as explained above or you can compile it on another development system and then move the  execution file to your live system.
+You can deploy the irlingo tool to any live system. Either you can compile the sourced code directly on the live system as explained above or you can compile it on another development system and then move the  execution file to your live system.
 
 #### Cross compiling for Raspberry Pi
 
@@ -173,7 +174,7 @@ Toolchain files for 64-bit (`aarch64`) and 32-bit (`armhf`) Raspberry Pi OS are 
 sudo apt install -y gcc-aarch64-linux-gnu
 ```
 
-The default `lirc` backend needs nothing beyond the cross compiler. Only for the `gpiod` or `pigpio` backend must PIIR link against the library built for the Pi. Either install the Debian multiarch package:
+The default `lirc` backend needs nothing beyond the cross compiler. Only for the `gpiod` or `pigpio` backend must irlingo link against the library built for the Pi. Either install the Debian multiarch package:
 ```
 sudo dpkg --add-architecture arm64
 sudo apt update
@@ -194,11 +195,11 @@ cmake -B build-rpi -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain-rpi-aarch64.cmake -DRP
 cmake --build build-rpi
 ```
 
-Copy `build-rpi/piir` to the Pi and the remotes you need from `conf/remotes/` to `/usr/local/share/piir/conf/remotes/` (or whatever `CMAKE_INSTALL_PREFIX` you configured with). For 32-bit Raspberry Pi OS use `cmake/toolchain-rpi-armhf.cmake`, `gcc-arm-linux-gnueabihf` and `libgpiod-dev:armhf` instead. That toolchain targets ARMv7, so it does not support the Pi 1 or Pi Zero/Zero W.
+Copy `build-rpi/irlingo` to the Pi and the remotes you need from `conf/remotes/` to `/usr/local/share/irlingo/conf/remotes/` (or whatever `CMAKE_INSTALL_PREFIX` you configured with). For 32-bit Raspberry Pi OS use `cmake/toolchain-rpi-armhf.cmake`, `gcc-arm-linux-gnueabihf` and `libgpiod-dev:armhf` instead. That toolchain targets ARMv7, so it does not support the Pi 1 or Pi Zero/Zero W.
 
 For the Pi 1 and Pi Zero/Zero W (ARMv6) use `cmake/toolchain-rpi-armv6.cmake` with `gcc-arm-linux-gnueabi`. It builds a static binary with the `lirc` backend that runs on every 32-bit Pi. For the `gpiod` or `pigpio` backend on ARMv6, compile on the Pi itself.
 
-Add `-DPIIR_STATIC=ON` to link statically, so the binary does not depend on the C library version of the Pi's OS. `cpack` in the build directory creates `.tar.gz` and `.deb` packages; configure with `-DCMAKE_INSTALL_PREFIX=/usr` first so the packaged binary finds its remotes in `/usr/share/piir`.
+Add `-DIRLINGO_STATIC=ON` to link statically, so the binary does not depend on the C library version of the Pi's OS. `cpack` in the build directory creates `.tar.gz` and `.deb` packages; configure with `-DCMAKE_INSTALL_PREFIX=/usr` first so the packaged binary finds its remotes in `/usr/share/irlingo`.
 
 ### Testing
 
@@ -209,11 +210,11 @@ cmake --build build
 ctest --test-dir build --output-on-failure
 ```
 
-They cover the configuration loader, remote lookup, checksums, the remote plugins, the transmitter backend selected at configure time, the `piir` command line, `piir-remotes`, the LIRC converter and `ir2piir.py`, which must derive `panasonic/hvac_panasonic` again from the codes it sends. Every key of every remote in `conf/remotes/` is checked to produce a code PIIR can send. The `tests` section of a remote lists features and the code a real remote sends for them, and every one of these vectors is checked. Vectors that do not match yet are listed in `tests/known_failures.txt`. No test transmits IR, so they are safe to run on a Pi.
+They cover the configuration loader, remote lookup, checksums, the remote plugins, the transmitter backend selected at configure time, the `irlingo` command line, `irlingo-remotes`, the LIRC converter and `ir2irlingo.py`, which must derive `panasonic/hvac_panasonic` again from the codes it sends. Every key of every remote in `conf/remotes/` is checked to produce a code irlingo can send. The `tests` section of a remote lists features and the code a real remote sends for them, and every one of these vectors is checked. Vectors that do not match yet are listed in `tests/known_failures.txt`. No test transmits IR, so they are safe to run on a Pi.
 
-To measure coverage, configure with `-DPIIR_COVERAGE=ON` and run [gcovr](https://gcovr.com) after the tests; the converter is measured too when Python's `coverage` module is installed:
+To measure coverage, configure with `-DIRLINGO_COVERAGE=ON` and run [gcovr](https://gcovr.com) after the tests; the converter is measured too when Python's `coverage` module is installed:
 ```
-cmake -B build-coverage -DPIIR_COVERAGE=ON
+cmake -B build-coverage -DIRLINGO_COVERAGE=ON
 cmake --build build-coverage
 ctest --test-dir build-coverage
 gcovr -r . build-coverage --exclude 'src/parson\..*' --exclude 'tests/'
@@ -228,19 +229,42 @@ GitHub Actions runs the tests for all three backends, with AddressSanitizer and 
 
 To release, update `VERSION` in `CMakeLists.txt`, commit, and push a matching tag:
 ```
-git tag v2.3.0
-git push origin v2.3.0
+git tag v3.1.0
+git push origin v3.1.0
 ```
-GitHub Actions then runs all tests, builds the packages for every Raspberry Pi architecture and the archive of all remotes (`piir-remotes-<version>.tar.gz`), and publishes them with checksums as a GitHub release.
+GitHub Actions then runs all tests, builds the packages for every Raspberry Pi architecture and the archive of all remotes (`irlingo-remotes-<version>.tar.gz`), and publishes them with checksums as a GitHub release.
+
+### Upgrading from PIIR 2.x
+
+irlingo 3.0.0 is PIIR under a new name. Remote files and command line options are unchanged; the names of everything else changed, without aliases for the old ones:
+
+| PIIR 2.x | irlingo 3.0 |
+|----------|-------------|
+| `piir`, `piir-remotes` | `irlingo`, `irlingo-remotes` |
+| package `piir` | package `irlingo`; installing the `.deb` removes the `piir` package |
+| `/usr/share/piir/conf/remotes/` (`/usr/local/...` when built from source) | `/usr/share/irlingo/conf/remotes/` |
+| `/var/lib/piir/toggle-state`, `~/.local/state/piir/toggle-state` | `/var/lib/irlingo/toggle-state`, `~/.local/state/irlingo/toggle-state` |
+| `PIIR_STATE_DIR` | `IRLINGO_STATE_DIR` |
+| `~/.cache/piir` | `~/.cache/irlingo` |
+| build options `PIIR_GPIO_BACKEND`, `PIIR_REMOTES`, `PIIR_STATIC`, `PIIR_COVERAGE` | `IRLINGO_GPIO_BACKEND`, `IRLINGO_REMOTES`, `IRLINGO_STATIC`, `IRLINGO_COVERAGE` |
+| `tools/lirc2piir.py`, `tools/ir2piir.py` | `tools/lirc2irlingo.py`, `tools/ir2irlingo.py` |
+| `github.com/mortenmathiasen/piir` | `github.com/mortenmathiasen/irlingo` (the old address redirects) |
+
+To upgrade:
+
+1. Install the irlingo package as described in [Prebuilt packages](#prebuilt-packages). With the tarball, also delete `/usr/bin/piir`, `/usr/bin/piir-remotes` and `/usr/share/piir` (`/usr/local/...` when built from source).
+2. Add the LIRC remotes you used again, e.g. `sudo irlingo-remotes add sony`, and copy remotes of your own from the old remote directory to the new one. Remotes added with `piir-remotes` stay in the old directory after the `piir` package is removed; delete it afterwards.
+3. Keep the toggle state of RC5/RC6 style remotes, if you like: `sudo mv /var/lib/piir /var/lib/irlingo`, and `mv ~/.local/state/piir ~/.local/state/irlingo` for each user. Without it, those remotes simply start from the first press again.
+4. Replace `piir` with `irlingo`, and `PIIR_STATE_DIR` with `IRLINGO_STATE_DIR`, in your scripts, crontabs, systemd units, Home Assistant or Node-RED configuration and sudoers rules.
 
 ### Upgrading from PIIR 1.x
 
 The command line options and remote files of PIIR 1.x still work. These things changed:
 
-* **Build system.** PIIR is built with CMake instead of autotools: `./autogen.sh && ./configure && make && sudo make install` becomes `cmake -B build && cmake --build build && sudo cmake --install build`. The default installation prefix is still `/usr/local`.
-* **Transmitter.** PIIR 1.x always used pigpio. PIIR 2 prefers the Linux kernel IR driver, which works on every Raspberry Pi including Pi 5, but needs `dtoverlay=gpio-ir-tx,gpio_pin=17` in `/boot/firmware/config.txt` (see [Compilation](#compilation)). The overlay sets the GPIO pin, so `outpin` in a remote file is not used by this backend. Without the overlay PIIR stops with `Cannot open /dev/lirc0`. To keep using pigpio and `outpin`, build with `-DPIIR_GPIO_BACKEND=pigpio` (this does not compile in release 2.0.0; use 2.1.0 or later).
+* **Build system.** irlingo is built with CMake instead of autotools: `./autogen.sh && ./configure && make && sudo make install` becomes `cmake -B build && cmake --build build && sudo cmake --install build`. The default installation prefix is still `/usr/local`.
+* **Transmitter.** PIIR 1.x always used pigpio. PIIR 2 prefers the Linux kernel IR driver, which works on every Raspberry Pi including Pi 5, but needs `dtoverlay=gpio-ir-tx,gpio_pin=17` in `/boot/firmware/config.txt` (see [Compilation](#compilation)). The overlay sets the GPIO pin, so `outpin` in a remote file is not used by this backend. Without the overlay irlingo stops with `Cannot open /dev/lirc0`. To keep using pigpio and `outpin`, build with `-DIRLINGO_GPIO_BACKEND=pigpio` (this does not compile in release 2.0.0; use 2.1.0 or later).
 * **Exit codes and output.** On errors and after `--help`, PIIR 1.x aborted (exit code 134); PIIR 2 exits with 1. The `gpioWaveTxSend OK` line is only printed by the pigpio backend.
-* **Remote locations.** The remotes shipped with PIIR are in manufacturer directories, e.g. `conf/remotes/panasonic/hvac_panasonic.json`. Your own remotes directly in `conf/remotes/` are still found, and `--remote hvac_panasonic` still works. Release packages contain only PIIR's own remotes; add others with [piir-remotes](#choosing-the-remotes-of-an-installation).
+* **Remote locations.** The remotes shipped with irlingo are in manufacturer directories, e.g. `conf/remotes/panasonic/hvac_panasonic.json`. Your own remotes directly in `conf/remotes/` are still found, and `--remote hvac_panasonic` still works. Release packages contain only irlingo's own remotes; add others with [irlingo-remotes](#choosing-the-remotes-of-an-installation).
 * **Plugins.** A remote now names its plugin, e.g. `"plugin": "hvac_panasonic"`, or defines its checksums in the remote file, see [Checksums](#checksums). Remote files with neither setting whose path contains `hvac_panasonic` still get the Panasonic checksum, as in PIIR 1.x.
 * **Codes sent.** PIIR 1.x only applied the last `--feature` given; PIIR 2 applies all of them, in the order of the remote file (see [How to use](#how-to-use)). For `hvac_panasonic`, `mode=FAN` now sends the fixed 27 degrees and `option=QUIET`, `option=8` and `option=10` override the fan speed and mode, as the original remote does. The same command can therefore send a different, correct code than PIIR 1.x.
 
@@ -248,14 +272,14 @@ The command line options and remote files of PIIR 1.x still work. These things c
 
 You kan get command line help running:
 ```
-piir --help
+irlingo --help
 ```
 
 Output will be like:
 ```
-3112 remotes available in /home/pi/piir/conf/remotes/ and /usr/local/share/piir/conf/remotes/, list them with: piir --list
+3112 remotes available in /home/pi/irlingo/conf/remotes/ and /usr/local/share/irlingo/conf/remotes/, list them with: irlingo --list
 
-usage:      piir
+usage:      irlingo
             --remote, -r REMOTE
             [--feature, -f NAME=VALUE]
             [--verbose, -v (TRACE|DEBUG|INFO|WARN|ERROR|FATAL|NOTHING)]
@@ -265,26 +289,26 @@ usage:      piir
 REMOTE is a remote name from --list, e.g. sony/RM-ED011, a file name
 that is unique among the remotes, e.g. RM-ED011, or a path to a JSON file.
 
-examples:   piir --help
-            piir --list
-            piir --remote hvac_panasonic --help
-            piir --remote hvac_panasonic --feature temperature=21
-            piir --remote sony/RM-ED011 --feature key=KEY_POWER
+examples:   irlingo --help
+            irlingo --list
+            irlingo --remote hvac_panasonic --help
+            irlingo --remote hvac_panasonic --feature temperature=21
+            irlingo --remote sony/RM-ED011 --feature key=KEY_POWER
 ```
 
-PIIR looks for remotes in `conf/remotes/` below the current directory and then in its installation directory (`/usr/local/share/piir/conf/remotes/` or `/usr/share/piir/conf/remotes/` for the packages). Remotes are named `<manufacturer>/<model>`, like the files in those directories. List them with:
+irlingo looks for remotes in `conf/remotes/` below the current directory and then in its installation directory (`/usr/local/share/irlingo/conf/remotes/` or `/usr/share/irlingo/conf/remotes/` for the packages). Remotes are named `<manufacturer>/<model>`, like the files in those directories. List them with:
 ```
-piir --list | grep -i sony
+irlingo --list | grep -i sony
 ```
 
 Specific help on available features for a particular remote can be achieved by:
 ```
-piir --remote hvac_panasonic --help
+irlingo --remote hvac_panasonic --help
 ```
 
 Output will be like:
 ```
-Features in config file /home/pi/piir/conf/remotes/panasonic/hvac_panasonic.json:
+Features in config file /home/pi/irlingo/conf/remotes/panasonic/hvac_panasonic.json:
        temperature:
               8
               10
@@ -335,13 +359,13 @@ Features in config file /home/pi/piir/conf/remotes/panasonic/hvac_panasonic.json
               RIGHT
               VERYRIGHT
 
-usage:      piir
+usage:      irlingo
             ...
 ```
 
 A working example combining more features into the IR signal:
 ```
-sudo piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT --feature option=AUTO --feature fan=AUTO --feature updown=HIGH --feature leftright=MIDDLE --verbose=DEBUG
+sudo irlingo --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT --feature option=AUTO --feature fan=AUTO --feature updown=HIGH --feature leftright=MIDDLE --verbose=DEBUG
 ```
 
 Features are applied in the order they appear in the remote's JSON file, not the order given on the command line, so a feature listed later in the file wins where two set the same bits. For `hvac_panasonic` this means `option=QUIET` and the frost protection `option=8` override the fan speed and mode, and `mode=FAN` sends the fixed 27 degrees the original remote uses. Giving the same feature twice uses the last value.
@@ -350,46 +374,46 @@ If everything goes well the command prints nothing and exits with status 0 (the 
 
 A remote converted from LIRC has a single feature, `key`, with a value for every button:
 ```
-piir --remote sony/RM-ED011 --help
-piir --remote sony/RM-ED011 --feature key=KEY_POWER
+irlingo --remote sony/RM-ED011 --help
+irlingo --remote sony/RM-ED011 --feature key=KEY_POWER
 ```
 
 ## Remotes
 
-Remotes are JSON files in `conf/remotes/<manufacturer>/`, in the same structure as the [LIRC remote database](https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes). `panasonic/hvac_panasonic` is PIIR's own; the others are converted from LIRC.
+Remotes are JSON files in `conf/remotes/<manufacturer>/`, in the same structure as the [LIRC remote database](https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes). `panasonic/hvac_panasonic` is irlingo's own; the others are converted from LIRC.
 
 ### Choosing the remotes of an installation
 
-The release packages only contain PIIR's own remotes. Each release also has `piir-remotes-<version>.tar.gz` with all remotes, and the `piir-remotes` command installed with PIIR adds remotes from it to the installation. It downloads the archive of the installed version, or uses one given with `--archive`:
+The release packages only contain irlingo's own remotes. Each release also has `irlingo-remotes-<version>.tar.gz` with all remotes, and the `irlingo-remotes` command installed with irlingo adds remotes from it to the installation. It downloads the archive of the installed version, or uses one given with `--archive`:
 ```
-piir-remotes available sony              # remotes in the archive containing "sony"
-sudo piir-remotes add sony               # every Sony remote
-sudo piir-remotes add samsung/AA59-00600A 'lg/AKB*'
-piir-remotes installed
-sudo piir-remotes remove sony
-sudo piir-remotes add all                # everything
+irlingo-remotes available sony              # remotes in the archive containing "sony"
+sudo irlingo-remotes add sony               # every Sony remote
+sudo irlingo-remotes add samsung/AA59-00600A 'lg/AKB*'
+irlingo-remotes installed
+sudo irlingo-remotes remove sony
+sudo irlingo-remotes add all                # everything
 ```
 
-When compiling PIIR yourself, `PIIR_REMOTES` chooses the remotes `cmake --install` installs: `all` (the default), `native` (PIIR's own), `none`, manufacturers, remotes and patterns separated by semicolons, for example:
+When compiling irlingo yourself, `IRLINGO_REMOTES` chooses the remotes `cmake --install` installs: `all` (the default), `native` (irlingo's own), `none`, manufacturers, remotes and patterns separated by semicolons, for example:
 ```
-cmake -B build -DPIIR_REMOTES="native;sony;lg/AKB*"
+cmake -B build -DIRLINGO_REMOTES="native;sony;lg/AKB*"
 ```
 
 ### Remotes converted from LIRC
 
-[tools/lirc2piir.py](tools/lirc2piir.py) converts LIRC configuration files to PIIR remotes. It needs only Python 3:
+[tools/lirc2irlingo.py](tools/lirc2irlingo.py) converts LIRC configuration files to irlingo remotes. It needs only Python 3:
 ```
-tools/lirc2piir.py convert -o conf/remotes my-remote.lircd.conf
-tools/lirc2piir.py convert -o conf/remotes path/to/lirc-remotes/remotes
+tools/lirc2irlingo.py convert -o conf/remotes my-remote.lircd.conf
+tools/lirc2irlingo.py convert -o conf/remotes path/to/lirc-remotes/remotes
 ```
 
-Its encoder follows the LIRC 0.10.2 sources, so a converted key sends what `irsend SEND_ONCE` sends, including the repeats a remote needs (`min_repeat`) and the gaps between them. `tools/lirc2piir.py verify` compares it with LIRC's own `irsimsend`: for every file in the LIRC database that LIRC can read, the encoder produces exactly the same pulses and spaces. The converted remotes differ from that only where noted below. CI runs this check and also checks that `conf/remotes` is exactly what the converter makes from the revision of the LIRC database given in `tools/lirc-remotes.txt`.
+Its encoder follows the LIRC 0.10.2 sources, so a converted key sends what `irsend SEND_ONCE` sends, including the repeats a remote needs (`min_repeat`) and the gaps between them. `tools/lirc2irlingo.py verify` compares it with LIRC's own `irsimsend`: for every file in the LIRC database that LIRC can read, the encoder produces exactly the same pulses and spaces. The converted remotes differ from that only where noted below. CI runs this check and also checks that `conf/remotes` is exactly what the converter makes from the revision of the LIRC database given in `tools/lirc-remotes.txt`.
 
 Not everything converts. [tools/lirc-remotes-report.txt](tools/lirc-remotes-report.txt) lists what was skipped and why:
 * remotes made for IR receivers (e.g. irman) that store scan codes instead of IR timings, and remotes using the rarely used RCMM, XMP, Grundig, B&O and serial encodings
-* keys LIRC cannot send, keys PIIR cannot send because they need more than 1024 pulses and spaces, and duplicate key names (the first one is used, as in LIRC)
+* keys LIRC cannot send, keys irlingo cannot send because they need more than 1024 pulses and spaces, and duplicate key names (the first one is used, as in LIRC)
 
-Raw recorded codes have small timing variations, so where a raw remote has too many different durations for PIIR's symbols, they are rounded by at most 2%. LIRC itself accepts 30% when receiving.
+Raw recorded codes have small timing variations, so where a raw remote has too many different durations for irlingo's symbols, they are rounded by at most 2%. LIRC itself accepts 30% when receiving.
 
 Remotes with a toggle bit (RC5, RC6 and others with a `toggle_bit_mask`) get a `toggle` section holding the code of every key with the bit flipped, see [Toggle bits](#toggle-bits).
 
@@ -397,13 +421,13 @@ Two LIRC 0.10.2 bugs are not copied: durations of 0 in a configuration break the
 
 ### Remotes derived from recordings
 
-[tools/ir2piir.py](tools/ir2piir.py) derives a remote, e.g. an air conditioner's, from recorded codes and the settings each was sent for. It needs only Python 3. Record the codes with an IR receiver, or from software that generates them, and write one code per line in a [JSON Lines](https://jsonlines.org/) file:
+[tools/ir2irlingo.py](tools/ir2irlingo.py) derives a remote, e.g. an air conditioner's, from recorded codes and the settings each was sent for. It needs only Python 3. Record the codes with an IR receiver, or from software that generates them, and write one code per line in a [JSON Lines](https://jsonlines.org/) file:
 ```
 {"features": {"mode": "HEAT", "temperature": "21", "fan": "AUTO"}, "frequency": 38000, "durations": [3500, 1750, 435, 435, 435, 1300, ...]}
 ```
 `durations` alternate mark and space in microseconds, starting with a mark. Every line names the same features. Then:
 ```
-tools/ir2piir.py captures.jsonl -o conf/remotes/mybrand/aircon.json --description "My air conditioner"
+tools/ir2irlingo.py captures.jsonl -o conf/remotes/mybrand/aircon.json --description "My air conditioner"
 ```
 
 Codes of another length or structure, e.g. a short power off code, become [variants](#variants), selected by the feature values only their captures have.
@@ -413,18 +437,18 @@ The captures must contain:
 * for every value of every feature, a code where only that feature differs from the base
 * random combinations of the features: about 300 for six features, and 1000 or more when settings interact (e.g. a temperature only some modes accept). They are used to find values that override other features, e.g. a fan mode forcing a temperature. Without them, an override that happens to match the base code is not found.
 
-ir2piir clusters the durations into symbols (`0`, `1`, header, gaps), searches [checksums](#checksums) (sums, negated sums, XORs and counts of set bits of bytes or nibbles, adjacent or not, found by solving their lowest bits as linear equations, and 8-bit and 4-bit CRCs of the units before them), gives each feature the bits its values change, puts a feature that overrides another after it, and writes overrides that only happen together with another feature's value as [overrides](#overrides). Bits still wrong then get overrides for the fewest feature values (up to three) under which they are the same in every capture. It then encodes every capture again and reports those it cannot reproduce (exit code 1). A sample of the captures is stored as the remote's `tests`.
+ir2irlingo clusters the durations into symbols (`0`, `1`, header, gaps), searches [checksums](#checksums) (sums, negated sums, XORs and counts of set bits of bytes or nibbles, adjacent or not, found by solving their lowest bits as linear equations, and 8-bit and 4-bit CRCs of the units before them), gives each feature the bits its values change, puts a feature that overrides another after it, and writes overrides that only happen together with another feature's value as [overrides](#overrides). Bits still wrong then get overrides for the fewest feature values (up to three) under which they are the same in every capture. It then encodes every capture again and reports those it cannot reproduce (exit code 1). A sample of the captures is stored as the remote's `tests`.
 
 To see whether the remote also works for combinations that were not recorded, record more and check them without using them to derive the remote:
 ```
-tools/ir2piir.py captures.jsonl --check more-captures.jsonl -o aircon.json
+tools/ir2irlingo.py captures.jsonl --check more-captures.jsonl -o aircon.json
 ```
 
-For protocols ir2piir cannot describe, `--fallback` hard-codes the recorded codes it does not reproduce as [overrides](#overrides) listing every feature. Only the recorded combinations are then sent exactly, so record every combination of the features. That can be tens of thousands of codes and a remote of several megabytes, which is fine on a Raspberry Pi.
+For protocols ir2irlingo cannot describe, `--fallback` hard-codes the recorded codes it does not reproduce as [overrides](#overrides) listing every feature. Only the recorded combinations are then sent exactly, so record every combination of the features. That can be tens of thousands of codes and a remote of several megabytes, which is fine on a Raspberry Pi.
 
 Limitations: codes of different lengths need a feature value that selects them (or `--fallback`); every symbol must be a mark followed by a space (pulse distance or pulse width coding, used by most air conditioners, not RC5/RC6); a code must end with a stop mark, since the space after the last mark cannot be recorded; CRCs wider than a unit are not searched; and an override depending on two other features is not found, only one depending on one (see [Overrides](#overrides)).
 
-[tools/heatpumpir](tools/heatpumpir) records the codes of the [arduino-heatpumpir](https://github.com/ToniA/arduino-heatpumpir) library as captures, for every air conditioner model it supports. The library (GPL-2.0) is not part of PIIR; build the recorder against a checkout of it:
+[tools/heatpumpir](tools/heatpumpir) records the codes of the [arduino-heatpumpir](https://github.com/ToniA/arduino-heatpumpir) library as captures, for every air conditioner model it supports. The library (GPL-2.0) is not part of irlingo; build the recorder against a checkout of it:
 ```
 git clone https://github.com/ToniA/arduino-heatpumpir.git
 cmake -S tools/heatpumpir -B build/heatpumpir -DHEATPUMPIR_DIR=$PWD/arduino-heatpumpir
@@ -432,25 +456,25 @@ cmake --build build/heatpumpir
 build/heatpumpir/heatpumpir_capture list
 build/heatpumpir/heatpumpir_capture gree 300 1 > gree.jsonl
 build/heatpumpir/heatpumpir_capture gree 1000 2 > gree-check.jsonl
-tools/ir2piir.py gree.jsonl --check gree-check.jsonl -o gree.json
+tools/ir2irlingo.py gree.jsonl --check gree-check.jsonl -o gree.json
 ```
-Of its 46 models, ir2piir derives a remote sending the same codes for 38 from 300 random combinations, and for 44 from 1000 to 3000 (checked with 1000 other random combinations each), the two Samsung models with counts of set bits among them. ir2piir cannot derive the other two: `nibe` sends a 2-bit byte before its checksum, so the checksum does not line up with the bytes, and `carrier_nqv` adds corrections depending on the mode and fan speed to its sum. Their remotes are written from the library's source instead and send every combination exactly: [nibe/hvac_nibe](conf/remotes/nibe/hvac_nibe.json) restarts counting bytes after the 2-bit byte (a `-` separator with `"restart": "-"`), and [carrier/hvac_carrier_nqv](conf/remotes/carrier/hvac_carrier_nqv.json) has a [variant](#variants) with its own checksum for each mode and fan speed needing a correction. For models no remote describes, `heatpumpir_capture MODEL all` records every combination for `--fallback`: for `samsung_fjm`, which no longer needs it, that was 29433 codes, giving a 3.8 MB remote with 12356 hard-coded codes that sends every combination exactly. Models that send the time of day get 00:00.
+Of its 46 models, ir2irlingo derives a remote sending the same codes for 38 from 300 random combinations, and for 44 from 1000 to 3000 (checked with 1000 other random combinations each), the two Samsung models with counts of set bits among them. ir2irlingo cannot derive the other two: `nibe` sends a 2-bit byte before its checksum, so the checksum does not line up with the bytes, and `carrier_nqv` adds corrections depending on the mode and fan speed to its sum. Their remotes are written from the library's source instead and send every combination exactly: [nibe/hvac_nibe](conf/remotes/nibe/hvac_nibe.json) restarts counting bytes after the 2-bit byte (a `-` separator with `"restart": "-"`), and [carrier/hvac_carrier_nqv](conf/remotes/carrier/hvac_carrier_nqv.json) has a [variant](#variants) with its own checksum for each mode and fan speed needing a correction. For models no remote describes, `heatpumpir_capture MODEL all` records every combination for `--fallback`: for `samsung_fjm`, which no longer needs it, that was 29433 codes, giving a 3.8 MB remote with 12356 hard-coded codes that sends every combination exactly. Models that send the time of day get 00:00.
 
-The tests derive `panasonic/hvac_panasonic` from 340 codes PIIR sends for it. The result finds its checksum (`{"type": "sum", "from": 8, "to": 25, "at": 26}`) and its overrides, and sends exactly the same pulses for 1000 other random combinations.
+The tests derive `panasonic/hvac_panasonic` from 340 codes irlingo sends for it. The result finds its checksum (`{"type": "sum", "from": 8, "to": 25, "at": 26}`) and its overrides, and sends exactly the same pulses for 1000 other random combinations.
 
 ### Toggle bits
 
 Some protocols, e.g. Philips RC5 and RC6, have a toggle bit that the remote flips on every press of any key. Repeats while a key is held keep it, so a device can tell a held key from a new press: pressing `5` twice gives `55`, not one long press of `5`.
 
-A remote with a toggle bit has a `toggle` section with the same structure as `features`. On every other press PIIR sends the codes of the `toggle` section instead (a value missing there sends its normal code). PIIR remembers the toggle state of each remote in a state file and flips it after every successful transmission:
+A remote with a toggle bit has a `toggle` section with the same structure as `features`. On every other press irlingo sends the codes of the `toggle` section instead (a value missing there sends its normal code). irlingo remembers the toggle state of each remote in a state file and flips it after every successful transmission:
 
 | Running as | State file |
 |------------|------------|
-| any user, with `PIIR_STATE_DIR` set | `$PIIR_STATE_DIR/toggle-state` |
-| root (e.g. with `sudo`) | `/var/lib/piir/toggle-state` |
-| other users | `$XDG_STATE_HOME/piir/toggle-state`, by default `~/.local/state/piir/toggle-state` |
+| any user, with `IRLINGO_STATE_DIR` set | `$IRLINGO_STATE_DIR/toggle-state` |
+| root (e.g. with `sudo`) | `/var/lib/irlingo/toggle-state` |
+| other users | `$XDG_STATE_HOME/irlingo/toggle-state`, by default `~/.local/state/irlingo/toggle-state` |
 
-The file has a line per remote with its state (`0` or `1`) and the path of the remote file. Deleting it starts all remotes from the first press again. If PIIR runs both with and without `sudo`, set `PIIR_STATE_DIR` so both use the same file. If the file cannot be written, PIIR logs a warning and still transmits.
+The file has a line per remote with its state (`0` or `1`) and the path of the remote file. Deleting it starts all remotes from the first press again. If irlingo runs both with and without `sudo`, set `IRLINGO_STATE_DIR` so both use the same file. If the file cannot be written, irlingo logs a warning and still transmits.
 
 ### Checksums
 
@@ -503,7 +527,7 @@ A `crc` takes the parameters of the [CRC catalogue](https://reveng.sourceforge.i
 
 Some protocols end a frame with a few extra bits, which shifts all bytes of the next frame. With `"restart": "W"`, counting starts again after the gap symbol `W`, so the next frame's first bits are a new byte.
 
-Checksums are applied in order, so a later checksum can cover the byte an earlier one wrote. PIIR stops with `Invalid checksum` when a checksum is malformed or refers to bytes beyond the end of the code. The `plugin` setting still works for checksums these settings cannot express.
+Checksums are applied in order, so a later checksum can cover the byte an earlier one wrote. irlingo stops with `Invalid checksum` when a checksum is malformed or refers to bytes beyond the end of the code. The `plugin` setting still works for checksums these settings cannot express.
 
 ### Overrides
 
@@ -523,7 +547,7 @@ Some remotes send codes of another length for some settings, e.g. a short code f
     {"when": {"power": "OFF"}, "template": "H-00101000-11000110-00000000-00001000-00001000-01000000-10111111-0"}
 ]
 ```
-The first variant whose `when` features are all requested is used instead of the remote's own template, features, overrides and checksums; the symbol definitions are shared. The values selecting a variant must still be listed in the remote's `features` (with an empty code), so that PIIR accepts them.
+The first variant whose `when` features are all requested is used instead of the remote's own template, features, overrides and checksums; the symbol definitions are shared. The values selecting a variant must still be listed in the remote's `features` (with an empty code), so that irlingo accepts them.
 
 ## Contributing
 
@@ -533,13 +557,13 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mortenmathiasen/piir/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mortenmathiasen/irlingo/tags). 
 
 ## Authors
 
 * **Morten Mathiasen** - *Initial work* - [repositories](https://github.com/mortenmathiasen)
 
-See also the list of [contributors](https://github.com/piir/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/irlingo/contributors) who participated in this project.
 
 ## License
 

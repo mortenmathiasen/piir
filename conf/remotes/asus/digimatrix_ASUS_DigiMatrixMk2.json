@@ -1,6 +1,6 @@
 {
     "description": "ASUS_DigiMatrixMk2 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/asus/digimatrix.lircd.conf", "remote": "ASUS_DigiMatrixMk2", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/asus/digimatrix.lircd.conf", "remote": "ASUS_DigiMatrixMk2", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

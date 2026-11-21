@@ -1,6 +1,6 @@
 {
     "description": "Toshiba40TL868G (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/toshiba/CT-90388.lircd.conf", "remote": "Toshiba40TL868G", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/toshiba/CT-90388.lircd.conf", "remote": "Toshiba40TL868G", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

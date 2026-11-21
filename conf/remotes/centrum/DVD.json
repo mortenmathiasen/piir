@@ -1,6 +1,6 @@
 {
     "description": "rc5 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/centrum/DVD.lircd.conf", "remote": "rc5", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/centrum/DVD.lircd.conf", "remote": "rc5", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

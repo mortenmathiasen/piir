@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-"""Round trip test of tools/ir2piir.py with an existing remote.
+"""Round trip test of tools/ir2irlingo.py with an existing remote.
 
-1. encode feature sets with the remote using PIIR itself (encode_remote):
+1. encode feature sets with the remote using irlingo itself (encode_remote):
    a base, every value of every feature changed alone, and random
    combinations
-2. turn the codes into the pulses and spaces PIIR would transmit: these are
+2. turn the codes into the pulses and spaces irlingo would transmit: these are
    the captures, as if recorded from a real remote
-3. derive a remote from the captures with ir2piir.py
+3. derive a remote from the captures with ir2irlingo.py
 4. encode all feature sets, and as many random ones not used as captures,
-   with the derived remote using PIIR again: every pulse train must be the
+   with the derived remote using irlingo again: every pulse train must be the
    same as the original's
 5. check the derived remote, including its test vectors, with test_remotes
 
-usage: ir2piir_roundtrip.py --encoder encode_remote --test-remotes test_remotes
-           --ir2piir tools/ir2piir.py --out DIR [--expect-checksums JSON] REMOTE.json
+usage: ir2irlingo_roundtrip.py --encoder encode_remote --test-remotes test_remotes
+           --ir2irlingo tools/ir2irlingo.py --out DIR [--expect-checksums JSON] REMOTE.json
 """
 
 import argparse
@@ -56,7 +56,7 @@ def main():
     p.add_argument("remote")
     p.add_argument("--encoder", required=True)
     p.add_argument("--test-remotes", required=True)
-    p.add_argument("--ir2piir", required=True)
+    p.add_argument("--ir2irlingo", required=True)
     p.add_argument("--out", required=True)
     p.add_argument("--random", type=int, default=300)
     p.add_argument("--holdout", type=int, default=1000,
@@ -100,12 +100,12 @@ def main():
     print("%d captures written to %s" % (len(feature_sets), captures))
 
     derived = os.path.join(args.out, "derived.json")
-    rc = subprocess.run([sys.executable, "-I", args.ir2piir, captures, "-o", derived,
+    rc = subprocess.run([sys.executable, "-I", args.ir2irlingo, captures, "-o", derived,
                          "--dutycycle", str(remote.get("dutycycle", 0.5)),
-                         "--description", "Derived from %s by ir2piir"
+                         "--description", "Derived from %s by ir2irlingo"
                          % os.path.basename(args.remote)]).returncode
     if rc:
-        sys.exit("ir2piir failed with exit code %d" % rc)
+        sys.exit("ir2irlingo failed with exit code %d" % rc)
 
     with open(derived) as f:
         result = json.load(f, object_pairs_hook=OrderedDict)

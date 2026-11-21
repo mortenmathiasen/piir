@@ -1,6 +1,6 @@
 {
     "description": "SONY-RM-SD70 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-SD70.lircd.conf", "remote": "SONY-RM-SD70", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sony/RM-SD70.lircd.conf", "remote": "SONY-RM-SD70", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

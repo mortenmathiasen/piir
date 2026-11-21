@@ -1,6 +1,6 @@
 {
     "description": "RT260_95 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RT260_95.lircd.conf", "remote": "RT260_95", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/philips/RT260_95.lircd.conf", "remote": "RT260_95", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

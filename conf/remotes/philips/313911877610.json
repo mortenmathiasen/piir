@@ -1,6 +1,6 @@
 {
     "description": "Philips_313911877610 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/313911877610.lircd.conf", "remote": "Philips_313911877610", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/philips/313911877610.lircd.conf", "remote": "Philips_313911877610", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

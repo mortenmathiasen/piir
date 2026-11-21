@@ -1,6 +1,6 @@
 {
     "description": "AOpen_RC-R470 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/aopen/RC-R470.lircd.conf", "remote": "AOpen_RC-R470", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/aopen/RC-R470.lircd.conf", "remote": "AOpen_RC-R470", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

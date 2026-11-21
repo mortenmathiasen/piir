@@ -1,6 +1,6 @@
 {
     "description": "Pinnacle_PCTV_USB_STICK (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/pinnacle_systems/PCTV_USB_STICK.lircd.conf", "remote": "Pinnacle_PCTV_USB_STICK", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/pinnacle_systems/PCTV_USB_STICK.lircd.conf", "remote": "Pinnacle_PCTV_USB_STICK", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

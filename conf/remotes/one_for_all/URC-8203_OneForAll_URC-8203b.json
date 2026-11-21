@@ -1,6 +1,6 @@
 {
     "description": "OneForAll_URC-8203b (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/one_for_all/URC-8203.lircd.conf", "remote": "OneForAll_URC-8203b", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/one_for_all/URC-8203.lircd.conf", "remote": "OneForAll_URC-8203b", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

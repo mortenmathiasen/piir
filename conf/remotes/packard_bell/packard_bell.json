@@ -1,6 +1,6 @@
 {
     "description": "PackBell (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/packard_bell/packard_bell.lircd.conf", "remote": "PackBell", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/packard_bell/packard_bell.lircd.conf", "remote": "PackBell", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

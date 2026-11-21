@@ -1,6 +1,6 @@
 {
     "description": "Yamada_DVX-6xxx (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamada/DVX-6xxx.lircd.conf", "remote": "Yamada_DVX-6xxx", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/yamada/DVX-6xxx.lircd.conf", "remote": "Yamada_DVX-6xxx", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

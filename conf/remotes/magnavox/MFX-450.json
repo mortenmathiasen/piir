@@ -1,6 +1,6 @@
 {
     "description": "Magnavox_HCC-MFX-450 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/magnavox/MFX-450.lircd.conf", "remote": "Magnavox_HCC-MFX-450", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/magnavox/MFX-450.lircd.conf", "remote": "Magnavox_HCC-MFX-450", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

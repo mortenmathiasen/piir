@@ -1,6 +1,6 @@
 {
     "description": "EUR511515A.DVD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/EUR511515A.lircd.conf", "remote": "EUR511515A.DVD", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/panasonic/EUR511515A.lircd.conf", "remote": "EUR511515A.DVD", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

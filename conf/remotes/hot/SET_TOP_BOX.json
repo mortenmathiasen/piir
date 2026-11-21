@@ -1,6 +1,6 @@
 {
     "description": "Hot_SET_TOP_BOX (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/hot/SET_TOP_BOX.lircd.conf", "remote": "Hot_SET_TOP_BOX", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/hot/SET_TOP_BOX.lircd.conf", "remote": "Hot_SET_TOP_BOX", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

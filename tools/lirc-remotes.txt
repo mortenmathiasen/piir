@@ -1,5 +1,5 @@
 # Source of the remotes in conf/remotes converted from the LIRC remote
-# database by tools/lirc2piir.py. CI regenerates them from this revision and
+# database by tools/lirc2irlingo.py. CI regenerates them from this revision and
 # checks they are unchanged; update the revision and run the converter again
 # to pick up new LIRC remotes.
 repository https://git.code.sf.net/p/lirc-remotes/code

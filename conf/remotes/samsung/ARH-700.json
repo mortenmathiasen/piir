@@ -1,6 +1,6 @@
 {
     "description": "ARH-700 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/samsung/ARH-700.lircd.conf", "remote": "ARH-700", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/samsung/ARH-700.lircd.conf", "remote": "ARH-700", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

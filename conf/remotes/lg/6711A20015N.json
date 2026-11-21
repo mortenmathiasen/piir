@@ -1,6 +1,6 @@
 {
     "description": "LGE_6711A20015N (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lg/6711A20015N.lircd.conf", "remote": "LGE_6711A20015N", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/lg/6711A20015N.lircd.conf", "remote": "LGE_6711A20015N", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

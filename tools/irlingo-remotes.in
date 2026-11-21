@@ -1,14 +1,14 @@
 #!/bin/sh
-# piir-remotes: choose which remote configurations an installation of PIIR has.
+# irlingo-remotes: choose which remote configurations an installation of irlingo has.
 #
-# Release packages contain only PIIR's own remotes. Every release also has
-# piir-remotes-<version>.tar.gz with all remotes, including those converted
+# Release packages contain only irlingo's own remotes. Every release also has
+# irlingo-remotes-<version>.tar.gz with all remotes, including those converted
 # from the LIRC remote database. This tool installs remotes from it.
 
 set -e
 
 VERSION="@PROJECT_VERSION@"
-REMOTES_DIR="@CMAKE_INSTALL_FULL_DATADIR@/piir/conf/remotes"
+REMOTES_DIR="@CMAKE_INSTALL_FULL_DATADIR@/irlingo/conf/remotes"
 RELEASES_URL="@PROJECT_HOMEPAGE_URL@/releases/download"
 ARCHIVE=""
 PROG=$(basename "$0")
@@ -28,14 +28,14 @@ REMOTE is a manufacturer (sony), a remote (sony/RM-ED009), a pattern
 ('samsung/AA59-*', quote it for the shell) or all.
 
 Options:
-  --archive FILE     use this piir-remotes-*.tar.gz instead of downloading it
+  --archive FILE     use this irlingo-remotes-*.tar.gz instead of downloading it
   --dir DIR          remote directory (default $REMOTES_DIR)
   --version VERSION  release to download the archive of (default $VERSION)
   -h, --help         show this help
 
 Without --archive the archive of the release is downloaded from
-$RELEASES_URL/v<version>/piir-remotes-<version>.tar.gz
-and kept in \${XDG_CACHE_HOME:-~/.cache}/piir.
+$RELEASES_URL/v<version>/irlingo-remotes-<version>.tar.gz
+and kept in \${XDG_CACHE_HOME:-~/.cache}/irlingo.
 
 examples:
   $PROG available sony
@@ -56,10 +56,10 @@ archive() {
     echo "$ARCHIVE"
     return
   fi
-  cache="${XDG_CACHE_HOME:-$HOME/.cache}/piir"
-  file="$cache/piir-remotes-$VERSION.tar.gz"
+  cache="${XDG_CACHE_HOME:-$HOME/.cache}/irlingo"
+  file="$cache/irlingo-remotes-$VERSION.tar.gz"
   if [ ! -s "$file" ]; then
-    url="$RELEASES_URL/v$VERSION/piir-remotes-$VERSION.tar.gz"
+    url="$RELEASES_URL/v$VERSION/irlingo-remotes-$VERSION.tar.gz"
     mkdir -p "$cache"
     echo "Downloading $url" >&2
     if command -v curl >/dev/null 2>&1; then

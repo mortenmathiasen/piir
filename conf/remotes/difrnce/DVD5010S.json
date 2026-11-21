@@ -1,6 +1,6 @@
 {
     "description": "DIFRNCE_DVD5010S (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/difrnce/DVD5010S.lircd.conf", "remote": "DIFRNCE_DVD5010S", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/difrnce/DVD5010S.lircd.conf", "remote": "DIFRNCE_DVD5010S", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

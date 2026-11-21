@@ -10,30 +10,30 @@
 
 ## Where remotes come from
 
-PIIR has more than 3000 remotes from over 500 manufacturers in [conf/remotes](../conf/remotes):
+irlingo has more than 3000 remotes from over 500 manufacturers in [conf/remotes](../conf/remotes):
 
-- **PIIR's own remotes**, made for PIIR: `panasonic/hvac_panasonic`, `nibe/hvac_nibe` and `carrier/hvac_carrier_nqv`. The release packages contain these.
-- **Remotes converted from the [LIRC remote database](https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes)**, for TVs, receivers, set-top boxes, projectors and much more. Each release has them in `piir-remotes-<version>.tar.gz`.
+- **irlingo's own remotes**, made for irlingo: `panasonic/hvac_panasonic`, `nibe/hvac_nibe` and `carrier/hvac_carrier_nqv`. The release packages contain these.
+- **Remotes converted from the [LIRC remote database](https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes)**, for TVs, receivers, set-top boxes, projectors and much more. Each release has them in `irlingo-remotes-<version>.tar.gz`.
 
 If your device is not among them, make a remote:
 
 | You have | Use |
 |----------|-----|
-| a `lircd.conf` file for the remote | [lirc2piir.py](#converting-a-lirc-configuration) |
-| the remote and an IR receiver, or software that generates the codes | [ir2piir.py](#deriving-a-remote-from-recorded-codes) |
+| a `lircd.conf` file for the remote | [lirc2irlingo.py](#converting-a-lirc-configuration) |
+| the remote and an IR receiver, or software that generates the codes | [ir2irlingo.py](#deriving-a-remote-from-recorded-codes) |
 | a description of the protocol | [write the remote file](#writing-a-remote-by-hand) |
 
 ## Adding remotes to an installation
 
-`piir-remotes`, installed with PIIR, adds remotes from the archive of all remotes to the installation. It downloads the archive of the installed PIIR version from GitHub (and keeps it in `~/.cache/piir`), or uses one you downloaded:
+`irlingo-remotes`, installed with irlingo, adds remotes from the archive of all remotes to the installation. It downloads the archive of the installed irlingo version from GitHub (and keeps it in `~/.cache/irlingo`), or uses one you downloaded:
 
 ```
-piir-remotes available sony                 # remotes in the archive containing "sony"
-sudo piir-remotes add sony                  # every Sony remote
-sudo piir-remotes add samsung/AA59-00600A 'lg/AKB*'
-piir-remotes installed                      # what is installed
-sudo piir-remotes remove sony
-sudo piir-remotes add all                   # everything: a 2.7 MB download, about 21 MB installed
+irlingo-remotes available sony                 # remotes in the archive containing "sony"
+sudo irlingo-remotes add sony                  # every Sony remote
+sudo irlingo-remotes add samsung/AA59-00600A 'lg/AKB*'
+irlingo-remotes installed                      # what is installed
+sudo irlingo-remotes remove sony
+sudo irlingo-remotes add all                   # everything: a 2.7 MB download, about 21 MB installed
 ```
 
 | Command | |
@@ -47,29 +47,29 @@ sudo piir-remotes add all                   # everything: a 2.7 MB download, abo
 
 | Option | |
 |--------|--|
-| `--archive FILE` | use this `piir-remotes-*.tar.gz` instead of downloading it, e.g. on a Pi without internet access |
+| `--archive FILE` | use this `irlingo-remotes-*.tar.gz` instead of downloading it, e.g. on a Pi without internet access |
 | `--dir DIR` | the remote directory to change (default: the installation's) |
 | `--version VERSION` | the release to download the archive of (default: the installed version) |
 
-When building from source, `-DPIIR_REMOTES` chooses the remotes `cmake --install` installs, see [Installation](installation.md#build-options).
+When building from source, `-DIRLINGO_REMOTES` chooses the remotes `cmake --install` installs, see [Installation](installation.md#build-options).
 
 ## Your own remotes
 
-PIIR finds remotes in `conf/remotes/` below the current directory before the installed ones, and `--remote` also takes a path. So a remote of your own can be:
+irlingo finds remotes in `conf/remotes/` below the current directory before the installed ones, and `--remote` also takes a path. So a remote of your own can be:
 
-- in the installation directory, e.g. `/usr/local/share/piir/conf/remotes/mybrand/aircon.json` (`--remote mybrand/aircon`),
-- in `conf/remotes/` of the directory you run PIIR from, or
+- in the installation directory, e.g. `/usr/local/share/irlingo/conf/remotes/mybrand/aircon.json` (`--remote mybrand/aircon`),
+- in `conf/remotes/` of the directory you run irlingo from, or
 - anywhere, given by its path: `--remote /home/pi/remotes/aircon.json`.
 
-A remote in the installation directory is replaced when you reinstall the same name with `piir-remotes`, so give your own remotes their own manufacturer directory or file name.
+A remote in the installation directory is replaced when you reinstall the same name with `irlingo-remotes`, so give your own remotes their own manufacturer directory or file name.
 
 ## Converting a LIRC configuration
 
-[tools/lirc2piir.py](../tools/lirc2piir.py) converts LIRC configuration files (`lircd.conf`) to PIIR remotes. It needs only Python 3:
+[tools/lirc2irlingo.py](../tools/lirc2irlingo.py) converts LIRC configuration files (`lircd.conf`) to irlingo remotes. It needs only Python 3:
 
 ```
-tools/lirc2piir.py convert -o conf/remotes my-remote.lircd.conf
-tools/lirc2piir.py convert -o conf/remotes path/to/lirc-remotes/remotes      # a whole directory
+tools/lirc2irlingo.py convert -o conf/remotes my-remote.lircd.conf
+tools/lirc2irlingo.py convert -o conf/remotes path/to/lirc-remotes/remotes      # a whole directory
 ```
 
 | Option | |
@@ -77,17 +77,17 @@ tools/lirc2piir.py convert -o conf/remotes path/to/lirc-remotes/remotes      # a
 | `-o`, `--output DIR` | where to write the JSON files. A file is written as `DIR/<name>.json`; converting a directory keeps its subdirectories, so the LIRC database's `<manufacturer>/<remote>` layout is kept |
 | `--report FILE` | write the remotes and keys that were skipped, and why, to FILE |
 
-The converted remote has one feature, `key`, with a value for every button. Its encoder follows the LIRC 0.10.2 sources, so a key sends exactly what `irsend SEND_ONCE` sends, including the repeats the remote needs (`min_repeat`) and the gaps between them. `tools/lirc2piir.py verify PATH` compares the encoder with LIRC's own `irsimsend`, and `tools/lirc2piir.py simsend FILE` prints the pulses for a file as `irsimsend` would.
+The converted remote has one feature, `key`, with a value for every button. Its encoder follows the LIRC 0.10.2 sources, so a key sends exactly what `irsend SEND_ONCE` sends, including the repeats the remote needs (`min_repeat`) and the gaps between them. `tools/lirc2irlingo.py verify PATH` compares the encoder with LIRC's own `irsimsend`, and `tools/lirc2irlingo.py simsend FILE` prints the pulses for a file as `irsimsend` would.
 
 Not everything converts:
 - remotes made for IR receivers (e.g. irman) that store scan codes instead of timings, and the rarely used RCMM, XMP, Grundig, B&O and serial encodings
 - keys that need more than 1024 pulses and spaces, keys LIRC cannot send, and duplicate key names (the first one is used, as in LIRC)
 
-Raw recorded codes whose many different durations do not fit PIIR's symbols are rounded by at most 2%; LIRC itself accepts 30% when receiving. Remotes with a toggle bit (RC5, RC6 and others with `toggle_bit_mask`) get a [toggle](remote-format.md#toggle) section.
+Raw recorded codes whose many different durations do not fit irlingo's symbols are rounded by at most 2%; LIRC itself accepts 30% when receiving. Remotes with a toggle bit (RC5, RC6 and others with `toggle_bit_mask`) get a [toggle](remote-format.md#toggle) section.
 
 ## Deriving a remote from recorded codes
 
-[tools/ir2piir.py](../tools/ir2piir.py) builds a remote from recorded codes and the settings each was sent for. It is made for air conditioners and similar remotes that send all settings in every code, but works for any remote whose codes use pulse distance or pulse width coding. It needs only Python 3.
+[tools/ir2irlingo.py](../tools/ir2irlingo.py) builds a remote from recorded codes and the settings each was sent for. It is made for air conditioners and similar remotes that send all settings in every code, but works for any remote whose codes use pulse distance or pulse width coding. It needs only Python 3.
 
 ### 1. Record
 
@@ -109,16 +109,16 @@ The captures must contain:
 ### 2. Derive
 
 ```
-tools/ir2piir.py captures.jsonl -o conf/remotes/mybrand/aircon.json --description "My air conditioner"
+tools/ir2irlingo.py captures.jsonl -o conf/remotes/mybrand/aircon.json --description "My air conditioner"
 ```
 
-ir2piir prints the symbols, checksums and features it found. It then encodes every capture again and lists those the remote does not reproduce; the exit status is 1 if there are any. Fix the captures (often: record more combinations) and run it again.
+ir2irlingo prints the symbols, checksums and features it found. It then encodes every capture again and lists those the remote does not reproduce; the exit status is 1 if there are any. Fix the captures (often: record more combinations) and run it again.
 
 ### 3. Check
 
 To see whether the remote also gets combinations right that were not recorded, record another set and check against it:
 ```
-tools/ir2piir.py captures.jsonl --check more-captures.jsonl -o conf/remotes/mybrand/aircon.json
+tools/ir2irlingo.py captures.jsonl --check more-captures.jsonl -o conf/remotes/mybrand/aircon.json
 ```
 
 | Option | |
@@ -134,13 +134,13 @@ tools/ir2piir.py captures.jsonl --check more-captures.jsonl -o conf/remotes/mybr
 
 ### What it finds
 
-ir2piir clusters the durations into symbols (`0`, `1`, headers, gaps), finds [checksums](remote-format.md#checksums) (sums, XORs, counts of set bits and CRCs of bytes or nibbles), gives each feature the bits its values change, finds values that force other features (e.g. a fan mode forcing a temperature) and writes those that only happen together with another value as [overrides](remote-format.md#overrides). Codes of another length, e.g. a short power off code, become [variants](remote-format.md#variants).
+ir2irlingo clusters the durations into symbols (`0`, `1`, headers, gaps), finds [checksums](remote-format.md#checksums) (sums, XORs, counts of set bits and CRCs of bytes or nibbles), gives each feature the bits its values change, finds values that force other features (e.g. a fan mode forcing a temperature) and writes those that only happen together with another value as [overrides](remote-format.md#overrides). Codes of another length, e.g. a short power off code, become [variants](remote-format.md#variants).
 
 It cannot handle: RC5/RC6 style (Manchester) coding, codes without a final stop mark, CRCs wider than one byte, and checksums or settings it cannot describe. For those, `--fallback` hard-codes the recorded codes it does not reproduce: record every combination, because only recorded combinations are then sent exactly. That can be tens of thousands of codes and a remote of several megabytes.
 
 ## Air conditioners supported by arduino-heatpumpir
 
-The [arduino-heatpumpir](https://github.com/ToniA/arduino-heatpumpir) library knows the protocols of 46 air conditioner and heat pump models. [tools/heatpumpir](../tools/heatpumpir) records its codes as captures, so ir2piir can make PIIR remotes of them. The library (GPL-2.0) is not part of PIIR; build the recorder against a checkout of it:
+The [arduino-heatpumpir](https://github.com/ToniA/arduino-heatpumpir) library knows the protocols of 46 air conditioner and heat pump models. [tools/heatpumpir](../tools/heatpumpir) records its codes as captures, so ir2irlingo can make irlingo remotes of them. The library (GPL-2.0) is not part of irlingo; build the recorder against a checkout of it:
 
 ```
 git clone https://github.com/ToniA/arduino-heatpumpir.git
@@ -149,12 +149,12 @@ cmake --build build/heatpumpir
 build/heatpumpir/heatpumpir_capture list                    # the models
 build/heatpumpir/heatpumpir_capture gree 3000 1 > gree.jsonl
 build/heatpumpir/heatpumpir_capture gree 1000 2 > gree-check.jsonl
-tools/ir2piir.py gree.jsonl --check gree-check.jsonl -o conf/remotes/gree/hvac_gree.json
+tools/ir2irlingo.py gree.jsonl --check gree-check.jsonl -o conf/remotes/gree/hvac_gree.json
 ```
 
 `heatpumpir_capture MODEL [COUNT [SEED]]` records the base code, every single change and COUNT random combinations; `heatpumpir_capture MODEL all` records every combination. Models that send the time of day get 00:00.
 
-ir2piir derives a remote that sends the same codes as the library for 44 of the models (from 1000 to 3000 random combinations, checked against 1000 others). The remaining two, Nibe and Carrier NQV, are in PIIR as `nibe/hvac_nibe` and `carrier/hvac_carrier_nqv`, written from the library's source.
+ir2irlingo derives a remote that sends the same codes as the library for 44 of the models (from 1000 to 3000 random combinations, checked against 1000 others). The remaining two, Nibe and Carrier NQV, are in irlingo as `nibe/hvac_nibe` and `carrier/hvac_carrier_nqv`, written from the library's source.
 
 ## Writing a remote by hand
 

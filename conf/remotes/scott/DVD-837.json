@@ -1,6 +1,6 @@
 {
     "description": "scott-dvd (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/scott/DVD-837.lircd.conf", "remote": "scott-dvd", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/scott/DVD-837.lircd.conf", "remote": "scott-dvd", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

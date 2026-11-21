@@ -1,6 +1,6 @@
 {
     "description": "VU71330 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamaha/VU71330.lircd.conf", "remote": "VU71330", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/yamaha/VU71330.lircd.conf", "remote": "VU71330", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

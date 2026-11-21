@@ -1,6 +1,6 @@
 {
     "description": "BUSH_WS6680 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/bush/WS6680.lircd.conf", "remote": "BUSH_WS6680", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/bush/WS6680.lircd.conf", "remote": "BUSH_WS6680", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

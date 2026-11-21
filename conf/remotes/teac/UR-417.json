@@ -1,6 +1,6 @@
 {
     "description": "TEAC_UR-417 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/teac/UR-417.lircd.conf", "remote": "TEAC_UR-417", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/teac/UR-417.lircd.conf", "remote": "TEAC_UR-417", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

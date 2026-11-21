@@ -1,6 +1,6 @@
 {
     "description": "GamingEdge_GE1002 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/hip_interactive/GE1002.lircd.conf", "remote": "GamingEdge_GE1002", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/hip_interactive/GE1002.lircd.conf", "remote": "GamingEdge_GE1002", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

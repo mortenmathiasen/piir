@@ -1,5 +1,5 @@
-// A kernel IR driver that accepts everything, linked into piir_fake_lirc
-// with -Wl,--wrap so complete piir runs succeed without hardware. The
+// A kernel IR driver that accepts everything, linked into irlingo_fake_lirc
+// with -Wl,--wrap so complete irlingo runs succeed without hardware. The
 // device file named in the remote is a regular file receiving the pulses.
 #include <stdarg.h>
 #include <stdint.h>

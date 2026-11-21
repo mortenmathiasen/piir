@@ -62,7 +62,7 @@ ssize_t __wrap_write(int fd, const void *buf, size_t count) {
 }
 
 // --- test setup
-static char dir[] = "/tmp/piir-lirc-XXXXXX";
+static char dir[] = "/tmp/irlingo-lirc-XXXXXX";
 static char device[64], remote[64];
 
 static const symbolDefinition SYMBOLS[] = {
@@ -151,7 +151,7 @@ static void test_write_failures(void) {
 
 static void test_open_failures(void) {
   reset();
-  useDevice("/nonexistent/piir/lirc0");
+  useDevice("/nonexistent/irlingo/lirc0");
   CHECK_EQ_INT(1, send(0.5, "H1"));
 
   if (geteuid() != 0) {   // root may open anything

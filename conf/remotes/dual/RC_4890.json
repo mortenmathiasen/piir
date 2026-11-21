@@ -1,6 +1,6 @@
 {
     "description": "Dual_RC_4890 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/dual/RC_4890.lircd.conf", "remote": "Dual_RC_4890", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/dual/RC_4890.lircd.conf", "remote": "Dual_RC_4890", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

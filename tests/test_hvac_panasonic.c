@@ -68,7 +68,7 @@ static void test_plugin_dispatch(void) {
 static void test_legacy_plugin(void) {
   CHECK_EQ_STR("hvac_panasonic", legacyRemotePlugin("/home/pi/conf/remotes/hvac_panasonic.json"));
   CHECK_EQ_STR("hvac_panasonic", legacyRemotePlugin("my_hvac_panasonic_copy.json"));
-  CHECK(legacyRemotePlugin("/usr/share/piir/conf/remotes/sony/RM-ED011.json") == NULL);
+  CHECK(legacyRemotePlugin("/usr/share/irlingo/conf/remotes/sony/RM-ED011.json") == NULL);
   CHECK(legacyRemotePlugin(NULL) == NULL);
 }
 

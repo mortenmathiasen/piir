@@ -1,6 +1,6 @@
 {
     "description": "Cyberhome_CH-DVD_402 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/cyberhome/CH-DVD_402.lircd.conf", "remote": "Cyberhome_CH-DVD_402", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/cyberhome/CH-DVD_402.lircd.conf", "remote": "Cyberhome_CH-DVD_402", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

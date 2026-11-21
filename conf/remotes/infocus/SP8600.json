@@ -1,6 +1,6 @@
 {
     "description": "InFocus-SP8600 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/infocus/SP8600.lircd.conf", "remote": "InFocus-SP8600", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/infocus/SP8600.lircd.conf", "remote": "InFocus-SP8600", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

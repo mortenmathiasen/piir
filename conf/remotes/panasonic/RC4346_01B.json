@@ -1,6 +1,6 @@
 {
     "description": "Philips_RC4346/01B (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/RC4346_01B.lircd.conf", "remote": "Philips_RC4346/01B", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/panasonic/RC4346_01B.lircd.conf", "remote": "Philips_RC4346/01B", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

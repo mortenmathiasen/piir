@@ -1,6 +1,6 @@
 {
     "description": "Loewe_150_DVD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/loewe/150_TV.lircd.conf", "remote": "Loewe_150_DVD", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/loewe/150_TV.lircd.conf", "remote": "Loewe_150_DVD", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

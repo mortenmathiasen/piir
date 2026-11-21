@@ -1,6 +1,6 @@
 {
     "description": "00104J (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/samsung/00104J.lircd.conf", "remote": "00104J", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/samsung/00104J.lircd.conf", "remote": "00104J", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "RAK-SC304W (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/technics/RAK-SC304W.lircd.conf", "remote": "RAK-SC304W", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/technics/RAK-SC304W.lircd.conf", "remote": "RAK-SC304W", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "IMON_RSC (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/imon/imon-rsc.lircd.conf", "remote": "IMON_RSC", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/imon/imon-rsc.lircd.conf", "remote": "IMON_RSC", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

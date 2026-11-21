@@ -1,6 +1,6 @@
 {
     "description": "TTS35AI (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/technisat/TS35.lircd.conf", "remote": "TTS35AI", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/technisat/TS35.lircd.conf", "remote": "TTS35AI", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

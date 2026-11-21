@@ -1,7 +1,7 @@
-"""Unit tests for tools/lirc2piir.py.
+"""Unit tests for tools/lirc2irlingo.py.
 
 Run from the tests directory with tools/ on PYTHONPATH:
-    PYTHONPATH=../tools python3 -m unittest test_lirc2piir
+    PYTHONPATH=../tools python3 -m unittest test_lirc2irlingo
 """
 
 import contextlib
@@ -14,7 +14,7 @@ import tempfile
 import textwrap
 import unittest
 
-import lirc2piir as L
+import lirc2irlingo as L
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -235,7 +235,7 @@ class Encoder(unittest.TestCase):
         values = durations(sig)
         # frame, gap, repeat code, gap, repeat code
         self.assertEqual([40000, 9000, 2250, 560, 40000, 9000, 2250, 560], values[-8:])
-        # gaps are marked as gap so PIIR writes them with gap symbols
+        # gaps are marked as gap so irlingo writes them with gap symbols
         self.assertEqual([40000, 40000], [g for _, g in sig if g])
 
     def test_min_repeat_resends_code_without_repeat_code(self):
@@ -492,7 +492,7 @@ class Conversion(unittest.TestCase):
             "gap 40000", "gap 99999\nrepeat 1 1\nmin_repeat 50").replace("0x02", "0x01")
         with self.assertRaises(L.ConfigError) as cm:
             self.convert(text)
-        self.assertIn("no key fits PIIR's limits", str(cm.exception))
+        self.assertIn("no key fits irlingo's limits", str(cm.exception))
 
     def test_raw_rounding(self):
         # Many slightly different durations must be rounded to fit the alphabet
@@ -614,7 +614,7 @@ class Commands(unittest.TestCase):
         """An irsimsend replacement writing simsend.out."""
         path = os.path.join(self.dir, "irsimsend")
         with open(path, "w") as f:
-            f.write("#!%s\nimport sys\nsys.path.insert(0, %r)\nimport lirc2piir as L\n"
+            f.write("#!%s\nimport sys\nsys.path.insert(0, %r)\nimport lirc2irlingo as L\n"
                     % (sys.executable, os.path.dirname(L.__file__)))
             f.write("args = sys.argv[1:]\ncount = int(args[args.index('-c') + 1])\n")
             f.write("path = args[-1]\n")

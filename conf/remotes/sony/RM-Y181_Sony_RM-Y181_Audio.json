@@ -1,6 +1,6 @@
 {
     "description": "Sony_RM-Y181_Audio (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-Y181.lircd.conf", "remote": "Sony_RM-Y181_Audio", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sony/RM-Y181.lircd.conf", "remote": "Sony_RM-Y181_Audio", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 40000,
     "dutycycle": 0.33,
     "transmitter": {"outpin": 17},

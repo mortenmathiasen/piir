@@ -1,6 +1,6 @@
 {
     "description": "strong_srt8540 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/strong/SRT8540.lircd.conf", "remote": "strong_srt8540", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/strong/SRT8540.lircd.conf", "remote": "strong_srt8540", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

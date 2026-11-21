@@ -1,6 +1,6 @@
 {
     "description": "Pace_DSL_4000_Mute (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/pace/MKT900A-A00.lircd.conf", "remote": "Pace_DSL_4000_Mute", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/pace/MKT900A-A00.lircd.conf", "remote": "Pace_DSL_4000_Mute", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

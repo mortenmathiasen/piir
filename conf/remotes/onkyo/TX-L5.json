@@ -1,6 +1,6 @@
 {
     "description": "Onkyo_TX-L5 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/onkyo/TX-L5.lircd.conf", "remote": "Onkyo_TX-L5", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/onkyo/TX-L5.lircd.conf", "remote": "Onkyo_TX-L5", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

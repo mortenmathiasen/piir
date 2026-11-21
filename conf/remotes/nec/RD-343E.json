@@ -1,6 +1,6 @@
 {
     "description": "RD-343E (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/nec/RD-343E.lircd.conf", "remote": "RD-343E", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/nec/RD-343E.lircd.conf", "remote": "RD-343E", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

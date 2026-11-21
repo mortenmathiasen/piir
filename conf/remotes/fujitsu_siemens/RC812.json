@@ -1,6 +1,6 @@
 {
     "description": "Fujitsu-Siemens_RC812 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/fujitsu_siemens/RC812.lircd.conf", "remote": "Fujitsu-Siemens_RC812", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/fujitsu_siemens/RC812.lircd.conf", "remote": "Fujitsu-Siemens_RC812", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

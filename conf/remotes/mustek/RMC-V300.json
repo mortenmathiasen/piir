@@ -1,6 +1,6 @@
 {
     "description": "Mustek_RMC-V300 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/mustek/RMC-V300.lircd.conf", "remote": "Mustek_RMC-V300", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/mustek/RMC-V300.lircd.conf", "remote": "Mustek_RMC-V300", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

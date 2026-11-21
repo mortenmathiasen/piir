@@ -1,6 +1,6 @@
 {
     "description": "Kiss_DP-1500s (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/kiss/DP-1500s.lircd.conf", "remote": "Kiss_DP-1500s", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/kiss/DP-1500s.lircd.conf", "remote": "Kiss_DP-1500s", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

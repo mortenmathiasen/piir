@@ -1,6 +1,6 @@
 {
     "description": "urc6012-2 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/one_for_all/URC-6012.lircd.conf", "remote": "urc6012-2", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/one_for_all/URC-6012.lircd.conf", "remote": "urc6012-2", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

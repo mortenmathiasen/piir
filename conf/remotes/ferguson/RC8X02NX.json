@@ -1,6 +1,6 @@
 {
     "description": "RC8X02NX (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/ferguson/RC8X02NX.lircd.conf", "remote": "RC8X02NX", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/ferguson/RC8X02NX.lircd.conf", "remote": "RC8X02NX", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

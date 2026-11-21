@@ -1,6 +1,6 @@
 {
     "description": "United-DVD4057M (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/united/DVD4057M.lircd.conf", "remote": "United-DVD4057M", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/united/DVD4057M.lircd.conf", "remote": "United-DVD4057M", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

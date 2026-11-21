@@ -120,7 +120,7 @@ int irSlingGeneric(uint32_t outPin,
 	log_fatal("Enable the kernel IR transmitter by adding 'dtoverlay=gpio-ir-tx,gpio_pin=%u' "
 		  "to /boot/firmware/config.txt and reboot", outPin);
       else if (openError == EACCES)
-	log_fatal("Run piir with sudo or add your user to the group owning %s", device);
+	log_fatal("Run irlingo with sudo or add your user to the group owning %s", device);
       return 1;
     }
 

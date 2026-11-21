@@ -1,6 +1,6 @@
 {
     "description": "Elite_9361-3EL (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/elite/9361-3EL.lircd.conf", "remote": "Elite_9361-3EL", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/elite/9361-3EL.lircd.conf", "remote": "Elite_9361-3EL", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

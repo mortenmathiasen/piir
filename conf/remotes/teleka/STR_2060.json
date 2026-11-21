@@ -1,6 +1,6 @@
 {
     "description": "Teleka_STR2060 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/teleka/STR_2060.lircd.conf", "remote": "Teleka_STR2060", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/teleka/STR_2060.lircd.conf", "remote": "Teleka_STR2060", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

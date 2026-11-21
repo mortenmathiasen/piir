@@ -1,6 +1,6 @@
 {
     "description": "Hitachi_VT-RM621A-VCR (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/hitachi/VT-RM621A.lircd.conf", "remote": "Hitachi_VT-RM621A-VCR", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/hitachi/VT-RM621A.lircd.conf", "remote": "Hitachi_VT-RM621A-VCR", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

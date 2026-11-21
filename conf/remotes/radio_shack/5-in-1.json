@@ -1,6 +1,6 @@
 {
     "description": "radioshack_5-in-one (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/radio_shack/5-in-1.lircd.conf", "remote": "radioshack_5-in-one", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/radio_shack/5-in-1.lircd.conf", "remote": "radioshack_5-in-one", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

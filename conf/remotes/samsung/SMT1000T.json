@@ -1,6 +1,6 @@
 {
     "description": "Samsung_SMT-1000T (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/samsung/SMT1000T.lircd.conf", "remote": "Samsung_SMT-1000T", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/samsung/SMT1000T.lircd.conf", "remote": "Samsung_SMT-1000T", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "audiolab (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/audiolab/M-DAC.conf", "remote": "audiolab", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/audiolab/M-DAC.conf", "remote": "audiolab", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

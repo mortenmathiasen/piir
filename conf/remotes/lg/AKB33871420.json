@@ -1,6 +1,6 @@
 {
     "description": "LG_AKB33871420_for_TV-LCD_Mxx62D (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lg/AKB33871420.lircd.conf", "remote": "LG_AKB33871420_for_TV-LCD_Mxx62D", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/lg/AKB33871420.lircd.conf", "remote": "LG_AKB33871420_for_TV-LCD_Mxx62D", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

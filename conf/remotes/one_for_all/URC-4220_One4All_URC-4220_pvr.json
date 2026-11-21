@@ -1,6 +1,6 @@
 {
     "description": "One4All_URC-4220_pvr (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/one_for_all/URC-4220.lircd.conf", "remote": "One4All_URC-4220_pvr", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/one_for_all/URC-4220.lircd.conf", "remote": "One4All_URC-4220_pvr", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

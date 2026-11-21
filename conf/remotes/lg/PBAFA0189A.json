@@ -1,6 +1,6 @@
 {
     "description": "LG_PBAFA0189A (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lg/PBAFA0189A.lircd.conf", "remote": "LG_PBAFA0189A", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/lg/PBAFA0189A.lircd.conf", "remote": "LG_PBAFA0189A", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

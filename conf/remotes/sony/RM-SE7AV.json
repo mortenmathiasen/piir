@@ -1,6 +1,6 @@
 {
     "description": "RM-SE7AV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-SE7AV.lircd.conf", "remote": "RM-SE7AV", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sony/RM-SE7AV.lircd.conf", "remote": "RM-SE7AV", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

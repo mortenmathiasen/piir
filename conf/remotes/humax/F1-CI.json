@@ -1,6 +1,6 @@
 {
     "description": "Humax_F1CI (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/humax/F1-CI.lircd.conf", "remote": "Humax_F1CI", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/humax/F1-CI.lircd.conf", "remote": "Humax_F1CI", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Cambridge_Audio_RC-340AC/540AC/640AC (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/cambridge_audio/RC-340AC_540AC_640AC.lircd.conf", "remote": "Cambridge_Audio_RC-340AC/540AC/640AC", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/cambridge_audio/RC-340AC_540AC_640AC.lircd.conf", "remote": "Cambridge_Audio_RC-340AC/540AC/640AC", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

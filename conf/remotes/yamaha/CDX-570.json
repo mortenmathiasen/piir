@@ -1,6 +1,6 @@
 {
     "description": "YAMAHA_CD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamaha/CDX-570.lircd.conf", "remote": "YAMAHA_CD", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/yamaha/CDX-570.lircd.conf", "remote": "YAMAHA_CD", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

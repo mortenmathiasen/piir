@@ -1,6 +1,6 @@
 {
     "description": "Cambridge_X40A_Amplifier (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/cambridge_audio/X40A.lircd.conf", "remote": "Cambridge_X40A_Amplifier", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/cambridge_audio/X40A.lircd.conf", "remote": "Cambridge_X40A_Amplifier", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "KONKA_KK-Y250A (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/konka/KK-Y250A.lircd.conf", "remote": "KONKA_KK-Y250A", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/konka/KK-Y250A.lircd.conf", "remote": "KONKA_KK-Y250A", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

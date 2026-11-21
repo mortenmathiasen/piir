@@ -1,6 +1,6 @@
 {
     "description": "BEKO_TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/beko/NR_KK14T61_TX.lircd.conf", "remote": "BEKO_TV", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/beko/NR_KK14T61_TX.lircd.conf", "remote": "BEKO_TV", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

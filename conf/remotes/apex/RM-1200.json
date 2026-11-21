@@ -1,6 +1,6 @@
 {
     "description": "Apex_RM-1200 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/apex/RM-1200.lircd.conf", "remote": "Apex_RM-1200", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/apex/RM-1200.lircd.conf", "remote": "Apex_RM-1200", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

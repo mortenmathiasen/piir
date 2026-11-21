@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert LIRC remote configurations (lircd.conf) to PIIR remote JSON files.
+"""Convert LIRC remote configurations (lircd.conf) to irlingo remote JSON files.
 
 The encoder is a port of lib/transmit.c and the repeat handling in lircd of
 LIRC 0.10.2, the release Linux distributions ship, so a converted key sends
@@ -11,7 +11,7 @@ and raw remotes with a repeat code send the start of the raw signal instead
 of the repeat code.
 
 Commands:
-  convert  PATH...   write PIIR JSON files (default) for lircd.conf files or
+  convert  PATH...   write irlingo JSON files (default) for lircd.conf files or
                      directories of them
   simsend  FILE      print the pulses and spaces LIRC's irsimsend would write
                      for FILE, using this script's encoder
@@ -41,9 +41,9 @@ FLAG_NAMES = set(PROTOCOLS) | {"SHIFT_ENC", "REVERSE", "NO_HEAD_REP",
                                "NO_FOOT_REP", "CONST_LENGTH", "REPEAT_HEADER"}
 UNSUPPORTED = ("RCMM", "GRUNDIG", "BO", "SERIAL", "XMP")
 
-# PIIR limits (src/irgeneric.h, src/lirc.h)
-PIIR_MAX_COMMAND_SIZE = 2048
-PIIR_MAX_LIRC_VALUES = 1024
+# irlingo limits (src/irgeneric.h, src/lirc.h)
+IRLINGO_MAX_COMMAND_SIZE = 2048
+IRLINGO_MAX_LIRC_VALUES = 1024
 
 # Symbols: '-' is the no-op padding symbol, U-Z are pure spaces used to write
 # gaps between repeated frames in decimal (U = 100 ms ... Z = 1 us).
@@ -358,7 +358,7 @@ def finalize_remote(rem):
 
 class SendBuffer:
     """The send buffer of lib/transmit.c. Spaces also record how much of
-    them is gap, so PIIR can write gaps with dedicated symbols."""
+    them is gap, so irlingo can write gaps with dedicated symbols."""
 
     def __init__(self, zero_bug=False):
         self.zero_bug = zero_bug    # emulate LIRC 0.10.2 for zero durations
@@ -708,7 +708,7 @@ def simsend(remote_list, count=1, keysym=None):
     return lines
 
 
-# --- conversion to PIIR
+# --- conversion to irlingo
 
 def cluster(values, tolerance):
     """Group sorted durations, starting a new group when a value is more than
@@ -754,7 +754,7 @@ def gap_symbols(duration):
 
 
 def expand(code, symbols):
-    """Durations PIIR sends for a symbol string (merging like src/lirc.c)."""
+    """Durations irlingo sends for a symbol string (merging like src/lirc.c)."""
     out = []
     for ch in code:
         mark, space = symbols[ch]
@@ -773,7 +773,7 @@ def expand(code, symbols):
 
 
 def convert_remote(remote, source=None):
-    """Return (piir_json_dict, warnings) or raise ConfigError."""
+    """Return (irlingo_json_dict, warnings) or raise ConfigError."""
     proto = remote.protocol()
     if not remote.has_timing():
         raise ConfigError("no timing: codes are receiver hardware scancodes")
@@ -796,15 +796,15 @@ def convert_remote(remote, source=None):
         if signal is None:
             warnings.append("LIRC cannot send key %s" % code.name)
             continue
-        if len(signal) > PIIR_MAX_LIRC_VALUES - 1:
-            warnings.append("key %s needs %d pulses and spaces, more than PIIR supports"
+        if len(signal) > IRLINGO_MAX_LIRC_VALUES - 1:
+            warnings.append("key %s needs %d pulses and spaces, more than irlingo supports"
                             % (code.name, len(signal)))
             continue
         keys[code.name] = signal
         if remote.toggle_bit_mask:
             other = send_once(remote, code, press=1)
             if other is not None and other != signal \
-                    and len(other) <= PIIR_MAX_LIRC_VALUES - 1:
+                    and len(other) <= IRLINGO_MAX_LIRC_VALUES - 1:
                 toggled[code.name] = other
     if not keys:
         raise ConfigError("no key can be sent")
@@ -874,19 +874,19 @@ def convert_remote(remote, source=None):
     toggle_features = {}
     for name in keys:
         text = texts[("key", name)]
-        if len(text) > PIIR_MAX_COMMAND_SIZE:
-            warnings.append("key %s needs %d symbols, more than PIIR supports"
+        if len(text) > IRLINGO_MAX_COMMAND_SIZE:
+            warnings.append("key %s needs %d symbols, more than irlingo supports"
                             % (name, len(text)))
             continue
         features[name] = text
         other = texts.get(("toggle", name))
-        if other is not None and len(other) <= PIIR_MAX_COMMAND_SIZE:
+        if other is not None and len(other) <= IRLINGO_MAX_COMMAND_SIZE:
             toggle_features[name] = other
 
     if not features:
-        raise ConfigError("no key fits PIIR's limits")
+        raise ConfigError("no key fits irlingo's limits")
 
-    # Self check: PIIR must send what LIRC sends
+    # Self check: irlingo must send what LIRC sends
     all_symbols = dict(symbols)
     all_symbols["-"] = (0, 0)
     for s, unit in GAP_SYMBOLS:
@@ -929,7 +929,7 @@ def convert_remote(remote, source=None):
         "features": {"key": features},
     })
     if toggle_features:
-        # PIIR sends these instead of the features on every other press
+        # irlingo sends these instead of the features on every other press
         result["toggle"] = {"key": toggle_features}
     return result, warnings
 
@@ -1032,7 +1032,7 @@ def cmd_convert(args):
             names.add(name)
             source = {"lirc-remotes": "remotes/" + rel.replace(os.sep, "/"),
                       "remote": remote.name,
-                      "converter": "tools/lirc2piir.py " + VERSION}
+                      "converter": "tools/lirc2irlingo.py " + VERSION}
             try:
                 data, warnings = convert_remote(remote, source)
             except ConfigError as e:
@@ -1064,7 +1064,7 @@ def cmd_verify(args):
     """Compare simsend() with LIRC's irsimsend for every config file."""
     failures = 0
     checked = 0
-    workdir = tempfile.mkdtemp(prefix="lirc2piir-")
+    workdir = tempfile.mkdtemp(prefix="lirc2irlingo-")
     for path, rel in find_configs(args.paths):
         try:
             remotes = parse_config(read_text(path))
@@ -1111,7 +1111,7 @@ def main(argv=None):
     parser.add_argument("--version", action="version", version="%(prog)s " + VERSION)
     sub = parser.add_subparsers(dest="command", required=True)
 
-    p = sub.add_parser("convert", help="convert lircd.conf files to PIIR JSON")
+    p = sub.add_parser("convert", help="convert lircd.conf files to irlingo JSON")
     p.add_argument("paths", nargs="+", help="lircd.conf files or directories")
     p.add_argument("-o", "--output", default=".", help="output directory")
     p.add_argument("--report", help="write skipped remotes and warnings to this file")

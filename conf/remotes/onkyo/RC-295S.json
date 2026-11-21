@@ -1,6 +1,6 @@
 {
     "description": "Onkyo (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/onkyo/RC-295S.lircd.conf", "remote": "Onkyo", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/onkyo/RC-295S.lircd.conf", "remote": "Onkyo", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

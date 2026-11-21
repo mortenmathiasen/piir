@@ -1,6 +1,6 @@
 {
     "description": "Panasonic_EUR7613Z6A (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/EUR7613Z6A.lircd.conf", "remote": "Panasonic_EUR7613Z6A", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/panasonic/EUR7613Z6A.lircd.conf", "remote": "Panasonic_EUR7613Z6A", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

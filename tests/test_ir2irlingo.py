@@ -1,4 +1,4 @@
-"""Unit tests of tools/ir2piir.py (run with PYTHONPATH=tools)"""
+"""Unit tests of tools/ir2irlingo.py (run with PYTHONPATH=tools)"""
 
 import contextlib
 import io
@@ -10,7 +10,7 @@ import tempfile
 import unittest
 from collections import OrderedDict
 
-import ir2piir
+import ir2irlingo
 
 SYMBOLS = {"H": (3500, 1750), "0": (435, 435), "1": (435, 1300), "W": (435, 10000)}
 
@@ -34,14 +34,14 @@ def bits(value, width=8, msb=False):
 
 class ClusterTest(unittest.TestCase):
     def test_groups_within_tolerance(self):
-        index, means = ir2piir.cluster([430, 440, 435, 1300, 1290, 1750], 0.2)
+        index, means = ir2irlingo.cluster([430, 440, 435, 1300, 1290, 1750], 0.2)
         self.assertEqual(3, len(means))
         self.assertEqual(index[430], index[440])
         self.assertNotEqual(index[1300], index[1750])
         self.assertEqual(435, means[index[430]])
 
     def test_weighted_mean(self):
-        index, means = ir2piir.cluster([400, 400, 400, 460], 0.2)
+        index, means = ir2irlingo.cluster([400, 400, 400, 460], 0.2)
         self.assertEqual([415], means)
 
 
@@ -49,7 +49,7 @@ class SymbolTest(unittest.TestCase):
     def test_pulse_distance(self):
         # Codes end with a stop mark, the space after it is not recorded
         captures = [capture({"k": "a"}, "H0110W10000"), capture({"k": "b"}, "H1001W01110")]
-        symbols, codes = ir2piir.derive_symbols(captures)
+        symbols, codes = ir2irlingo.derive_symbols(captures)
         self.assertEqual((435, 435), symbols["0"])
         self.assertEqual((435, 1300), symbols["1"])
         self.assertEqual((3500, 1750), symbols["H"])
@@ -60,7 +60,7 @@ class SymbolTest(unittest.TestCase):
     def test_pulse_width(self):
         table = {"S": (2400, 600), "0": (600, 600), "1": (1200, 600)}
         captures = [capture({"k": "a"}, "S0110", table), capture({"k": "b"}, "S1001", table)]
-        symbols, codes = ir2piir.derive_symbols(captures)
+        symbols, codes = ir2irlingo.derive_symbols(captures)
         self.assertEqual((600, 600), symbols["0"])
         self.assertEqual((1200, 600), symbols["1"])
         self.assertEqual(["H0110", "H1001"], codes)
@@ -70,14 +70,14 @@ class SymbolTest(unittest.TestCase):
         jittered[0]["durations"] = [d + random.Random(i).randint(-30, 30)
                                     for i, d in enumerate(jittered[0]["durations"])]
         jittered.append(capture({"k": "b"}, "H1001W01110"))
-        symbols, codes = ir2piir.derive_symbols(jittered)
+        symbols, codes = ir2irlingo.derive_symbols(jittered)
         self.assertEqual(["H0110W10000", "H1001W01110"], codes)
 
     def test_marks_and_spaces_differ(self):
         # The bits differ in both mark and space: the shorter one is 0
         table = {"S": (3000, 3000), "0": (500, 500), "1": (1000, 1500)}
         captures = [capture({"k": "a"}, "S0110", table), capture({"k": "b"}, "S1001", table)]
-        symbols, codes = ir2piir.derive_symbols(captures)
+        symbols, codes = ir2irlingo.derive_symbols(captures)
         self.assertEqual((500, 500), symbols["0"])
         self.assertEqual((1000, 1500), symbols["1"])
 
@@ -85,17 +85,17 @@ class SymbolTest(unittest.TestCase):
         # A final mark no other symbol has becomes a symbol without space
         table = dict(SYMBOLS, E=(2000, 0))
         captures = [capture({"k": "a"}, "H0110E", table), capture({"k": "b"}, "H1001E", table)]
-        symbols, codes = ir2piir.derive_symbols(captures)
+        symbols, codes = ir2irlingo.derive_symbols(captures)
         self.assertEqual(["H0110W", "H1001W"], codes)
         self.assertEqual((2000, 0), symbols["W"])
 
     def test_one_kind_of_pair(self):
-        with self.assertRaises(ir2piir.Ir2PiirError):
-            ir2piir.derive_symbols([capture({"k": "a"}, "000")])
+        with self.assertRaises(ir2irlingo.Ir2IrlingoError):
+            ir2irlingo.derive_symbols([capture({"k": "a"}, "000")])
 
     def test_separators(self):
-        self.assertEqual("H-00001111-0101-W-1", ir2piir.add_separators("H000011110101W1"))
-        self.assertEqual("00000000-11111111", ir2piir.add_separators("0000000011111111"))
+        self.assertEqual("H-00001111-0101-W-1", ir2irlingo.add_separators("H000011110101W1"))
+        self.assertEqual("00000000-11111111", ir2irlingo.add_separators("0000000011111111"))
 
 
 class ChecksumTest(unittest.TestCase):
@@ -106,14 +106,14 @@ class ChecksumTest(unittest.TestCase):
     def test_byte_sum(self):
         codes = self.codes(lambda d: "H" + "".join(bits(b) for b in d + [sum(d) & 0xff]))
         self.assertEqual([{"type": "sum", "from": 0, "to": 3, "at": 4}],
-                         ir2piir.find_checksums(codes))
+                         ir2irlingo.find_checksums(codes))
 
     def test_sum_msb_first_with_start_value(self):
         def make(d):
             return "H" + "".join(bits(b, msb=True) for b in d + [(0x5A + sum(d)) & 0xff])
         self.assertEqual([{"type": "sum", "from": 0, "to": 3, "at": 4, "init": 0x5A,
                            "bitorder": "msb"}],
-                         ir2piir.find_checksums(self.codes(make)))
+                         ir2irlingo.find_checksums(self.codes(make)))
 
     def test_xor(self):
         def make(d):
@@ -122,30 +122,30 @@ class ChecksumTest(unittest.TestCase):
                 x ^= b
             return "".join(bits(b) for b in d + [x])
         self.assertEqual([{"type": "xor", "from": 0, "to": 3, "at": 4}],
-                         ir2piir.find_checksums(self.codes(make)))
+                         ir2irlingo.find_checksums(self.codes(make)))
 
     def test_negated_sum(self):
         codes = self.codes(lambda d: "".join(bits(b) for b in d + [-sum(d) & 0xff]))
         self.assertEqual([{"type": "sum", "from": 0, "to": 3, "at": 4, "negate": True}],
-                         ir2piir.find_checksums(codes))
+                         ir2irlingo.find_checksums(codes))
 
     def test_inverted_copies(self):
         # Every byte followed by its complement
         codes = self.codes(lambda d: "".join(bits(b) + bits(~b & 0xff) for b in d[:2]))
-        found = ir2piir.find_checksums(codes)
+        found = ir2irlingo.find_checksums(codes)
         # Byte 3 may also be found as the XOR of bytes 0-2; either is right
         self.assertEqual([1, 3], sorted(spec["at"] for spec in found))
         for spec in found:
             self.assertLess(spec["to"], spec["at"])
         for code in codes:
-            self.assertEqual(code, ir2piir.apply_checksums(code, found))
+            self.assertEqual(code, ir2irlingo.apply_checksums(code, found))
 
     def test_nibble_sum(self):
         def make(d):
             nibbles = [n for b in d for n in (b & 15, b >> 4)]
             return "".join(bits(b) for b in d) + bits(sum(nibbles) & 15, 4) + "0000"
         self.assertEqual([{"type": "sum", "unit": "nibble", "from": 0, "to": 7, "at": 8}],
-                         ir2piir.find_checksums(self.codes(make)))
+                         ir2irlingo.find_checksums(self.codes(make)))
 
     def test_nibbles_not_next_to_each_other(self):
         # A 4-bit sum of the low nibbles of bytes 0-1 and the high nibble of
@@ -155,13 +155,13 @@ class ChecksumTest(unittest.TestCase):
             return "".join(bits(b) for b in d[:3] + [check << 4 | d[3] & 15])
         self.assertEqual([{"type": "sum", "unit": "nibble", "data": [0, 2, 5], "at": 7,
                            "init": 10}],
-                         ir2piir.find_checksums(self.codes(make)))
+                         ir2irlingo.find_checksums(self.codes(make)))
 
     def test_bytes_not_next_to_each_other(self):
         def make(d):
             return "".join(bits(b) for b in d + [d[0] ^ d[2]])
         self.assertEqual([{"type": "xor", "data": [0, 2], "at": 4}],
-                         ir2piir.find_checksums(self.codes(make)))
+                         ir2irlingo.find_checksums(self.codes(make)))
 
     def test_constant_byte_inside_range(self):
         # Byte 1 never changes, but the checksum covers it
@@ -169,19 +169,19 @@ class ChecksumTest(unittest.TestCase):
             data = [d[0], 0x37, d[1], d[2]]
             return "".join(bits(b) for b in data + [sum(data) & 0xff])
         self.assertEqual([{"type": "sum", "from": 0, "to": 3, "at": 4}],
-                         ir2piir.find_checksums(self.codes(make)))
+                         ir2irlingo.find_checksums(self.codes(make)))
 
     def test_frame_sent_twice(self):
         # The sum is found on the first frame, not as a mix of both copies
         def make(d):
             frame = "".join(bits(b) for b in d + [sum(d) & 0xff])
             return frame + "W" + frame
-        found = ir2piir.find_checksums(self.codes(make))
+        found = ir2irlingo.find_checksums(self.codes(make))
         self.assertIn({"type": "sum", "from": 0, "to": 3, "at": 4}, found)
         for code in self.codes(make, seed=2):
             broken = code[:32] + ("1" if code[32] == "0" else "0") + code[33:]
-            self.assertEqual(code, ir2piir.apply_checksums(code, found))
-            self.assertNotEqual(broken, ir2piir.apply_checksums(broken, found))
+            self.assertEqual(code, ir2irlingo.apply_checksums(code, found))
+            self.assertNotEqual(broken, ir2irlingo.apply_checksums(broken, found))
 
     def test_frames_ending_with_a_partial_byte(self):
         # The first frame has 3 extra bits, so bytes are counted again after
@@ -189,7 +189,7 @@ class ChecksumTest(unittest.TestCase):
         def make(d):
             return ("H" + bits(d[0]) + bits(d[1]) + "010" + "W" + bits(d[2]) +
                     bits(d[0] ^ d[1] ^ d[2]) + "0")
-        found = ir2piir.find_checksums([ir2piir.add_separators(c) for c in self.codes(make)])
+        found = ir2irlingo.find_checksums([ir2irlingo.add_separators(c) for c in self.codes(make)])
         self.assertEqual([{"type": "xor", "from": 0, "to": 2, "at": 3, "restart": "HW"}], found)
 
     def test_range_over_constant_bytes(self):
@@ -199,7 +199,7 @@ class ChecksumTest(unittest.TestCase):
             data = [d[0], d[1], 0x05, 0x00]
             return "".join(bits(b) for b in data + [sum(data) & 0xff])
         self.assertEqual([{"type": "sum", "from": 0, "to": 3, "at": 4}],
-                         ir2piir.find_checksums(self.codes(make)))
+                         ir2irlingo.find_checksums(self.codes(make)))
 
     def test_popcount(self):
         # Samsung FJM style: 28 minus the set bits of bytes 2-3, in the high
@@ -207,7 +207,7 @@ class ChecksumTest(unittest.TestCase):
         def make(d):
             check = (28 - sum(bin(b).count("1") for b in d[2:4])) & 15
             return "".join(bits(b) for b in [d[0], check << 4 | 2, d[2], d[3]])
-        found = ir2piir.find_checksums(self.codes(make))
+        found = ir2irlingo.find_checksums(self.codes(make))
         self.assertEqual([{"type": "popcount", "unit": "nibble", "from": 4, "to": 7, "at": 3,
                            "init": 4, "negate": True}], found)
 
@@ -221,12 +221,12 @@ class ChecksumTest(unittest.TestCase):
             data[2] |= check >> 4
             return "".join(bits(b) for b in data)
         codes = self.codes(make, count=200)
-        found = ir2piir.find_checksums(codes)
+        found = ir2irlingo.find_checksums(codes)
         self.assertEqual([{"type": "popcount", "unit": "nibble",
                            "data": [0, 1, 2, 5, 6, 7, 8, 9], "at": [3, 4], "invert": True}],
                          found)
         for code in codes:
-            self.assertEqual(code, ir2piir.apply_checksums(code, found))
+            self.assertEqual(code, ir2irlingo.apply_checksums(code, found))
 
     def test_crc(self):
         # CRC-8/MAXIM-DOW (reflected, lowest bit first) is found as the same
@@ -254,22 +254,22 @@ class ChecksumTest(unittest.TestCase):
             for _ in range(40):
                 d = [0x5 if width == 4 else 0x5A] + [rng.randrange(1 << width)
                                                      for _ in range(spec["to"])]
-                d.append(ir2piir.checksum_value(spec, d, width))
+                d.append(ir2irlingo.checksum_value(spec, d, width))
                 codes.append("".join(bits(b, width, msb) for b in d) + "0" * (8 - width))
             if expected:
                 del expected["reflect"]
-            found = ir2piir.find_checksums(codes)
+            found = ir2irlingo.find_checksums(codes)
             self.assertEqual([expected or spec], found)
             for code in codes:
-                self.assertEqual(code, ir2piir.apply_checksums(code, found))
+                self.assertEqual(code, ir2irlingo.apply_checksums(code, found))
 
     def test_none(self):
-        self.assertEqual([], ir2piir.find_checksums(
+        self.assertEqual([], ir2irlingo.find_checksums(
             self.codes(lambda d: "".join(bits(b) for b in d))))
 
-    def test_apply_like_piir(self):
+    def test_apply_like_irlingo(self):
         # Vectors from tests/test_checksum.c
-        apply = ir2piir.apply_checksums
+        apply = ir2irlingo.apply_checksums
         self.assertEqual("10000000-01000000-11000000", apply(
             "10000000-01000000-00000000", [{"type": "sum", "from": 0, "to": 1, "at": 2}]))
         self.assertEqual("0001-1111-0010-1111-0011", apply(
@@ -340,7 +340,7 @@ def conditional_captures(seed=1, count=60):
 
 class RemoteTest(unittest.TestCase):
     def test_conditional_override(self):
-        remote, failures = ir2piir.build_remote(conditional_captures(), "test")
+        remote, failures = ir2irlingo.build_remote(conditional_captures(), "test")
         self.assertEqual([], failures)
         self.assertEqual(1, len(remote["overrides"]))
         override = remote["overrides"][0]
@@ -349,46 +349,46 @@ class RemoteTest(unittest.TestCase):
         self.assertEqual(2, len(override["code"].replace(" ", "")))
         everything = [capture([("power", p), ("mode", m), ("fan", f)], conditional_aircon(p, m, f))
                       for p in ("ON", "OFF") for m in MODES for f in FANS]
-        self.assertEqual([], ir2piir.check_remote(remote, everything))
+        self.assertEqual([], ir2irlingo.check_remote(remote, everything))
 
     def test_aircon(self):
         captures = aircon_captures()
-        remote, failures = ir2piir.build_remote(captures, "test")
+        remote, failures = ir2irlingo.build_remote(captures, "test")
         self.assertEqual([], failures)
         self.assertEqual([{"type": "sum", "from": 0, "to": 1, "at": 2}], remote["checksums"])
         # Mode overrides the fan, so it comes after it
         self.assertEqual(["fan", "mode"], list(remote["features"]))
-        self.assertEqual([], ir2piir.check_remote(remote, captures))
+        self.assertEqual([], ir2irlingo.check_remote(remote, captures))
         self.assertTrue(remote["tests"])
 
     def test_override_needs_combinations(self):
-        remote, failures = ir2piir.build_remote(aircon_captures(False), "test")
+        remote, failures = ir2irlingo.build_remote(aircon_captures(False), "test")
         self.assertEqual([], failures)
         # Without combinations DRY with fan 3 cannot be known
-        wrong = ir2piir.check_remote(remote, [capture([("mode", "DRY"), ("fan", "3")],
+        wrong = ir2irlingo.check_remote(remote, [capture([("mode", "DRY"), ("fan", "3")],
                                                       aircon("DRY", "3"))])
         self.assertEqual(1, len(wrong))
 
     def test_missing_single_change(self):
         captures = [c for c in aircon_captures()
                     if dict(c["features"]) != {"mode": "COOL", "fan": "1"}]
-        with self.assertRaisesRegex(ir2piir.Ir2PiirError, "mode=COOL"):
-            ir2piir.build_remote(captures, "test")
+        with self.assertRaisesRegex(ir2irlingo.Ir2IrlingoError, "mode=COOL"):
+            ir2irlingo.build_remote(captures, "test")
 
     def test_different_lengths(self):
         captures = aircon_captures()
         captures.append(capture([("mode", "AUTO"), ("fan", "1")], aircon("AUTO", "1") + "0"))
-        with self.assertRaisesRegex(ir2piir.Ir2PiirError, "structure"):
-            ir2piir.build_remote(captures, "test")
+        with self.assertRaisesRegex(ir2irlingo.Ir2IrlingoError, "structure"):
+            ir2irlingo.build_remote(captures, "test")
 
     def test_check_tolerance(self):
         captures = aircon_captures()
-        remote, _ = ir2piir.build_remote(captures, "test")
+        remote, _ = ir2irlingo.build_remote(captures, "test")
         late = capture([("mode", "COOL"), ("fan", "2")], aircon("COOL", "2"))
         late["durations"] = [d * 1.1 for d in late["durations"]]
-        self.assertEqual([], ir2piir.check_remote(remote, [late]))
+        self.assertEqual([], ir2irlingo.check_remote(remote, [late]))
         late["durations"] = [d * 1.5 for d in late["durations"]]
-        self.assertEqual(1, len(ir2piir.check_remote(remote, [late])))
+        self.assertEqual(1, len(ir2irlingo.check_remote(remote, [late])))
 
     def test_tied_bit_breaks_cycle(self):
         # Bits 0-2 are the mode, bit 3 the power. Power off forces the mode
@@ -404,7 +404,7 @@ class RemoteTest(unittest.TestCase):
         captures = [capture([("power", p), ("mode", m)], code(p, m)) for p, m in sets]
         err = io.StringIO()
         with contextlib.redirect_stderr(err):
-            remote, failures = ir2piir.build_remote(captures, "test")
+            remote, failures = ir2irlingo.build_remote(captures, "test")
         self.assertEqual([], failures)
         self.assertNotIn("override each other", err.getvalue())
         self.assertEqual(["mode", "power"], list(remote["features"]))
@@ -412,8 +412,8 @@ class RemoteTest(unittest.TestCase):
     def test_two_codes_for_one_setting(self):
         captures = aircon_captures()
         captures.insert(1, capture([("mode", "COOL"), ("fan", "1")], aircon("AUTO", "3")))
-        with self.assertRaisesRegex(ir2piir.Ir2PiirError, "two different codes"):
-            ir2piir.build_remote(captures, "test")
+        with self.assertRaisesRegex(ir2irlingo.Ir2IrlingoError, "two different codes"):
+            ir2irlingo.build_remote(captures, "test")
     def test_conditional_override_matching_the_base(self):
         # DRY forces fan 1, the base fan, only while the power is on: no bit
         # of it ever differs from the base code
@@ -424,13 +424,13 @@ class RemoteTest(unittest.TestCase):
             return "H" + "".join(bits(b) for b in data + [sum(data) & 0xff]) + "0"
         captures = [capture(c["features"].items(), code(*c["features"].values()))
                     for c in conditional_captures(count=80)]
-        remote, failures = ir2piir.build_remote(captures, "test")
+        remote, failures = ir2irlingo.build_remote(captures, "test")
         self.assertEqual([], failures)
         self.assertEqual([{"mode": "DRY", "power": "ON"}],
                          [dict(o["when"]) for o in remote["overrides"]])
         everything = [capture([("power", p), ("mode", m), ("fan", f)], code(p, m, f))
                       for p in ("ON", "OFF") for m in MODES for f in FANS]
-        self.assertEqual([], ir2piir.check_remote(remote, everything))
+        self.assertEqual([], ir2irlingo.check_remote(remote, everything))
 
     def test_repair_three_way_condition(self):
         # DRY with fan 2 sends fan 1, but only while the power is on: a
@@ -443,13 +443,13 @@ class RemoteTest(unittest.TestCase):
             return "H" + "".join(bits(b) for b in data + [sum(data) & 0xff]) + "0"
         captures = [capture(c["features"].items(), code(*c["features"].values()))
                     for c in conditional_captures(count=150)]
-        remote, failures = ir2piir.build_remote(captures, "test")
+        remote, failures = ir2irlingo.build_remote(captures, "test")
         self.assertEqual([], failures)
         self.assertIn({"power": "ON", "mode": "DRY", "fan": "2"},
                       [dict(o["when"]) for o in remote["overrides"]])
         everything = [capture([("power", p), ("mode", m), ("fan", f)], code(p, m, f))
                       for p in ("ON", "OFF") for m in MODES for f in FANS]
-        self.assertEqual([], ir2piir.check_remote(remote, everything))
+        self.assertEqual([], ir2irlingo.check_remote(remote, everything))
 
     def test_variant_for_another_length(self):
         # Power off sends one short code
@@ -457,7 +457,7 @@ class RemoteTest(unittest.TestCase):
             return "H" + bits(0x5A) + "0" if power == "OFF" else conditional_aircon("ON", mode, fan)
         captures = [capture(c["features"].items(), code(*c["features"].values()))
                     for c in conditional_captures()]
-        remote, failures = ir2piir.build_remote(captures, "test")
+        remote, failures = ir2irlingo.build_remote(captures, "test")
         self.assertEqual([], failures)
         self.assertEqual(1, len(remote["variants"]))
         variant = remote["variants"][0]
@@ -466,7 +466,7 @@ class RemoteTest(unittest.TestCase):
         self.assertIn("OFF", remote["features"]["power"])
         everything = [capture([("power", p), ("mode", m), ("fan", f)], code(p, m, f))
                       for p in ("ON", "OFF") for m in MODES for f in FANS]
-        self.assertEqual([], ir2piir.check_remote(remote, everything))
+        self.assertEqual([], ir2irlingo.check_remote(remote, everything))
 
     def test_fallback(self):
         # A checksum squaring the data cannot be expressed
@@ -476,29 +476,29 @@ class RemoteTest(unittest.TestCase):
         sets = [("AUTO", "1"), ("COOL", "1"), ("DRY", "1"), ("AUTO", "2"), ("AUTO", "3"),
                 ("COOL", "3")]
         captures = [capture([("mode", m), ("fan", f)], code(m, f)) for m, f in sets]
-        remote, failures = ir2piir.build_remote(captures, "test")
+        remote, failures = ir2irlingo.build_remote(captures, "test")
         self.assertTrue(failures)
-        remote, failures = ir2piir.build_remote(captures, "test", fallback=True)
+        remote, failures = ir2irlingo.build_remote(captures, "test", fallback=True)
         self.assertEqual([], failures)
-        self.assertEqual([], ir2piir.check_remote(remote, captures))
+        self.assertEqual([], ir2irlingo.check_remote(remote, captures))
         hard = [o for o in remote["overrides"] if len(o["when"]) == 2]
         self.assertTrue(hard)
         # Only the recorded combinations are hard-coded
         unrecorded = capture([("mode", "DRY"), ("fan", "3")], code("DRY", "3"))
-        self.assertEqual(1, len(ir2piir.check_remote(remote, [unrecorded])))
+        self.assertEqual(1, len(ir2irlingo.check_remote(remote, [unrecorded])))
 
     def test_fallback_without_selector(self):
         # A longer code no feature value selects: hard-coded as a variant
         captures = [c for c in aircon_captures()
                     if dict(c["features"]) != {"mode": "COOL", "fan": "2"}]
         captures.append(capture([("mode", "COOL"), ("fan", "2")], aircon("COOL", "2") + "0"))
-        remote, failures = ir2piir.build_remote(captures, "test", fallback=True)
+        remote, failures = ir2irlingo.build_remote(captures, "test", fallback=True)
         self.assertEqual([], failures)
         self.assertEqual({"mode": "COOL", "fan": "2"}, dict(remote["variants"][0]["when"]))
 
     def test_json_output(self):
-        remote, _ = ir2piir.build_remote(aircon_captures(), "test")
-        text = ir2piir.to_json(remote)
+        remote, _ = ir2irlingo.build_remote(aircon_captures(), "test")
+        text = ir2irlingo.to_json(remote)
         self.assertIn('"0": {"mark": 435, "space": 435}', text)
         self.assertIn('{"type": "sum", "from": 0, "to": 1, "at": 2}', text)
 
@@ -522,11 +522,11 @@ class LoadTest(unittest.TestCase):
     def load(self, text):
         with open(self.path, "w") as f:
             f.write(text)
-        return ir2piir.load_captures([self.path])
+        return ir2irlingo.load_captures([self.path])
 
     def test_load(self):
         write_captures(self.path, aircon_captures()[:2])
-        captures = ir2piir.load_captures([self.path])
+        captures = ir2irlingo.load_captures([self.path])
         self.assertEqual(2, len(captures))
         self.assertEqual({"mode": "AUTO", "fan": "1"}, dict(captures[0]["features"]))
         self.assertEqual(38000, captures[0]["frequency"])
@@ -549,7 +549,7 @@ class LoadTest(unittest.TestCase):
                 ('{"features": {"a": "1"}, "durations": [1, 2]}\n'
                  '{"features": {"b": "1"}, "durations": [1, 2]}\n', "differ"),
                 ("# nothing\n", "no captures")):
-            with self.assertRaisesRegex(ir2piir.Ir2PiirError, message):
+            with self.assertRaisesRegex(ir2irlingo.Ir2IrlingoError, message):
                 self.load(text)
 
 
@@ -565,7 +565,7 @@ class MainTest(unittest.TestCase):
     def run_main(self, *args):
         out, err = io.StringIO(), io.StringIO()
         with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
-            result = ir2piir.main(list(args))
+            result = ir2irlingo.main(list(args))
         return result, out.getvalue(), err.getvalue()
 
     def test_derive_and_check(self):
@@ -620,7 +620,7 @@ class MainTest(unittest.TestCase):
             f.write("# nothing\n")
         result, out, err = self.run_main(self.captures)
         self.assertEqual(2, result)
-        self.assertIn("ir2piir: no captures", err)
+        self.assertIn("ir2irlingo: no captures", err)
 
 
 if __name__ == "__main__":

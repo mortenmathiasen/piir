@@ -1,6 +1,6 @@
 {
     "description": "Panasonic_VEQ1883 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/VEQ1883.lircd.conf", "remote": "Panasonic_VEQ1883", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/panasonic/VEQ1883.lircd.conf", "remote": "Panasonic_VEQ1883", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Samsung (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/samsung/AA59-00489A.lircd.conf", "remote": "Samsung", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/samsung/AA59-00489A.lircd.conf", "remote": "Samsung", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

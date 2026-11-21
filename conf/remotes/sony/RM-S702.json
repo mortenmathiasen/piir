@@ -1,6 +1,6 @@
 {
     "description": "RM-S702 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-S702.lircd.conf", "remote": "RM-S702", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sony/RM-S702.lircd.conf", "remote": "RM-S702", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

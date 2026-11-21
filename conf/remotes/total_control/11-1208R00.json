@@ -1,6 +1,6 @@
 {
     "description": "Total_Control_11-1208R00 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/total_control/11-1208R00.lircd.conf", "remote": "Total_Control_11-1208R00", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/total_control/11-1208R00.lircd.conf", "remote": "Total_Control_11-1208R00", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

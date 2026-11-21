@@ -1,6 +1,6 @@
 {
     "description": "DVD-RC (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamaha/AVPhile_715_RC.lircd.conf", "remote": "DVD-RC", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/yamaha/AVPhile_715_RC.lircd.conf", "remote": "DVD-RC", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

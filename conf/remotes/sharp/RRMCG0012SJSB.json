@@ -1,6 +1,6 @@
 {
     "description": "Sharp_RRMCG0012SJSB (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sharp/RRMCG0012SJSB.lircd.conf", "remote": "Sharp_RRMCG0012SJSB", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sharp/RRMCG0012SJSB.lircd.conf", "remote": "Sharp_RRMCG0012SJSB", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "AIWA-RC-TZ650-HiFi (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/aiwa/RC-TZ650.irman.lircd.conf", "remote": "AIWA-RC-TZ650-HiFi", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/aiwa/RC-TZ650.irman.lircd.conf", "remote": "AIWA-RC-TZ650-HiFi", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

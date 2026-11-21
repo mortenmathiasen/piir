@@ -1,6 +1,6 @@
 {
     "description": "RCA-F20507CP (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/rca/F20507CP.lircd.conf", "remote": "RCA-F20507CP", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/rca/F20507CP.lircd.conf", "remote": "RCA-F20507CP", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

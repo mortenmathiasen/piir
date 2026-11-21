@@ -1,4 +1,4 @@
-// Print the codes PIIR sends for feature sets, without transmitting.
+// Print the codes irlingo sends for feature sets, without transmitting.
 //
 // usage: encode_remote REMOTE.json < FEATURES
 // Each line of FEATURES holds NAME=VALUE pairs separated by spaces; the code

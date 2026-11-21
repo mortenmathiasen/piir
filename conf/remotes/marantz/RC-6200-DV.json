@@ -1,6 +1,6 @@
 {
     "description": "marantz_rc_6200_dv (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/marantz/RC-6200-DV.lircd.conf", "remote": "marantz_rc_6200_dv", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/marantz/RC-6200-DV.lircd.conf", "remote": "marantz_rc_6200_dv", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

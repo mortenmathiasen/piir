@@ -1,6 +1,6 @@
 {
     "description": "IM1313-TVTXT1-027 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/imex/IM-1313_027.lircd.conf", "remote": "IM1313-TVTXT1-027", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/imex/IM-1313_027.lircd.conf", "remote": "IM1313-TVTXT1-027", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

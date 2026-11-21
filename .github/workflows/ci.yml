@@ -41,7 +41,7 @@ jobs:
         run: >
           cmake -B build
           -DCMAKE_BUILD_TYPE=Debug
-          -DPIIR_GPIO_BACKEND=${{ matrix.backend }}
+          -DIRLINGO_GPIO_BACKEND=${{ matrix.backend }}
           -DCMAKE_C_FLAGS="-Wall ${{ matrix.sanitize && '-fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer' || '' }}"
           $PIGPIO_ARGS
 
@@ -51,7 +51,7 @@ jobs:
       - name: Test
         run: ctest --test-dir build --output-on-failure
 
-  # Line coverage of the C code (lirc backend) and of tools/lirc2piir.py
+  # Line coverage of the C code (lirc backend) and of tools/lirc2irlingo.py
   coverage:
     name: Coverage
     runs-on: ubuntu-24.04
@@ -65,7 +65,7 @@ jobs:
           echo "$RUNNER_TEMP/venv/bin" >> "$GITHUB_PATH"
 
       - name: Configure
-        run: cmake -B build -DPIIR_COVERAGE=ON -DPython3_EXECUTABLE="$RUNNER_TEMP/venv/bin/python"
+        run: cmake -B build -DIRLINGO_COVERAGE=ON -DPython3_EXECUTABLE="$RUNNER_TEMP/venv/bin/python"
 
       - name: Build
         run: cmake --build build --parallel
@@ -114,7 +114,7 @@ jobs:
         run: >
           cmake -B build
           -DCMAKE_BUILD_TYPE=Debug
-          -DPIIR_GPIO_BACKEND=gpiod
+          -DIRLINGO_GPIO_BACKEND=gpiod
           -DCMAKE_C_FLAGS="-Wall -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer"
 
       - name: Build
@@ -161,10 +161,10 @@ jobs:
           -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain-rpi-${{ matrix.toolchain }}.cmake
           -DCMAKE_BUILD_TYPE=Release
           -DCMAKE_INSTALL_PREFIX=/usr
-          -DPIIR_GPIO_BACKEND=lirc
-          -DPIIR_STATIC=ON
-          -DPIIR_REMOTES=native
-          -DPIIR_PACKAGE_ARCH=${{ matrix.arch }}
+          -DIRLINGO_GPIO_BACKEND=lirc
+          -DIRLINGO_STATIC=ON
+          -DIRLINGO_REMOTES=native
+          -DIRLINGO_PACKAGE_ARCH=${{ matrix.arch }}
           -DCMAKE_CROSSCOMPILING_EMULATOR=$(command -v ${{ matrix.qemu }})
 
       - name: Build
@@ -177,20 +177,20 @@ jobs:
 
       - name: Package
         run: |
-          file build/piir
+          file build/irlingo
           cd build && cpack
 
       - uses: actions/upload-artifact@v4
         with:
-          name: piir-${{ matrix.arch }}
+          name: irlingo-${{ matrix.arch }}
           # Only this architecture's packages: the tests also build the
           # remotes archive, which the remotes job provides
           path: |
-            build/piir-*-${{ matrix.arch }}.tar.gz
-            build/piir_*_${{ matrix.arch }}.deb
+            build/irlingo-*-${{ matrix.arch }}.tar.gz
+            build/irlingo_*_${{ matrix.arch }}.deb
           if-no-files-found: error
 
-  # All remotes, for piir-remotes to install from
+  # All remotes, for irlingo-remotes to install from
   remotes:
     name: Remotes archive
     runs-on: ubuntu-24.04
@@ -201,12 +201,12 @@ jobs:
         run: |
           cmake -B build -DBUILD_TESTING=OFF
           cmake --build build --target remotes_archive
-          tar -tzf build/piir-remotes-*.tar.gz | sed -n 's/\.json$//p' | wc -l
+          tar -tzf build/irlingo-remotes-*.tar.gz | sed -n 's/\.json$//p' | wc -l
 
       - uses: actions/upload-artifact@v4
         with:
-          name: piir-remotes
-          path: build/piir-remotes-*.tar.gz
+          name: irlingo-remotes
+          path: build/irlingo-remotes-*.tar.gz
           if-no-files-found: error
 
   release:
@@ -230,7 +230,7 @@ jobs:
       # Only the packages, not e.g. the coverage report
       - uses: actions/download-artifact@v4
         with:
-          pattern: piir-*
+          pattern: irlingo-*
           path: dist
           merge-multiple: true
 
@@ -241,7 +241,7 @@ jobs:
           for f in *.tar.gz; do gzip -t "$f"; done
           for f in *.deb; do dpkg-deb --info "$f" > /dev/null; done
           test "$(ls *.deb | wc -l)" -eq 3
-          test "$(ls piir-remotes-*.tar.gz | wc -l)" -eq 1
+          test "$(ls irlingo-remotes-*.tar.gz | wc -l)" -eq 1
 
       - name: Checksums
         run: cd dist && sha256sum * | tee SHA256SUMS
@@ -251,6 +251,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release create "$GITHUB_REF_NAME" dist/* \
-            --title "PIIR ${GITHUB_REF_NAME#v}" \
+            --title "irlingo ${GITHUB_REF_NAME#v}" \
             --generate-notes \
             --verify-tag

@@ -1,6 +1,6 @@
 {
     "description": "NEC_RC-1065E (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/nec/RC-1065E.lircd.conf", "remote": "NEC_RC-1065E", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/nec/RC-1065E.lircd.conf", "remote": "NEC_RC-1065E", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

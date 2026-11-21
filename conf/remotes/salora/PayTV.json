@@ -1,6 +1,6 @@
 {
     "description": "Salora_PayTV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/salora/PayTV.lircd.conf", "remote": "Salora_PayTV", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/salora/PayTV.lircd.conf", "remote": "Salora_PayTV", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

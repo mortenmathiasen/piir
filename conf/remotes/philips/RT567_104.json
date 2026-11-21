@@ -1,6 +1,6 @@
 {
     "description": "RT567_104.conf (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RT567_104.lircd.conf", "remote": "RT567_104.conf", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/philips/RT567_104.lircd.conf", "remote": "RT567_104.conf", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

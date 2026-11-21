@@ -1,6 +1,6 @@
 {
     "description": "UNIFIED6TRANS (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/magnavox/TV_XK4353_CH02.lircd.conf", "remote": "UNIFIED6TRANS", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/magnavox/TV_XK4353_CH02.lircd.conf", "remote": "UNIFIED6TRANS", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -18,21 +18,21 @@ static char *join(const char *a, const char *b) {
 }
 
 char *toggleStateFile(void) {
-  const char *dir = getenv("PIIR_STATE_DIR");
+  const char *dir = getenv("IRLINGO_STATE_DIR");
   if (dir && *dir)
     return join(dir, STATE_FILE);
   if (geteuid() == 0)
-    return strdup("/var/lib/piir/" STATE_FILE);
+    return strdup("/var/lib/irlingo/" STATE_FILE);
   const char *xdg = getenv("XDG_STATE_HOME");
   if (xdg && *xdg) {
-    char *piirDir = join(xdg, "piir");
-    char *path = join(piirDir, STATE_FILE);
-    free(piirDir);
+    char *irlingoDir = join(xdg, "irlingo");
+    char *path = join(irlingoDir, STATE_FILE);
+    free(irlingoDir);
     return path;
   }
   const char *home = getenv("HOME");
   if (home && *home)
-    return join(home, ".local/state/piir/" STATE_FILE);
+    return join(home, ".local/state/irlingo/" STATE_FILE);
   return NULL;
 }
 

@@ -1,6 +1,6 @@
 {
     "description": "SABA_TC3003 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/saba/TC3003.lircd.conf", "remote": "SABA_TC3003", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/saba/TC3003.lircd.conf", "remote": "SABA_TC3003", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

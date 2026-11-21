@@ -1,4 +1,4 @@
-# Compares "lirc2piir.py simsend -c 2 CONFIG" with the EXPECTED irsimsend output.
+# Compares "lirc2irlingo.py simsend -c 2 CONFIG" with the EXPECTED irsimsend output.
 # PYTHON is the interpreter command, its parts separated by ~~
 string(REPLACE "~~" ";" PYTHON "${PYTHON}")
 execute_process(

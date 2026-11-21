@@ -1,6 +1,6 @@
 {
     "description": "Daas_Color_RCS_9085 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/robotron/RCS-9085.lircd.conf", "remote": "Daas_Color_RCS_9085", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/robotron/RCS-9085.lircd.conf", "remote": "Daas_Color_RCS_9085", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

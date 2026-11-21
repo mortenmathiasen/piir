@@ -1,6 +1,6 @@
 {
     "description": "remotec1072 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/remotec/VCR-1072.lircd.conf", "remote": "remotec1072", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/remotec/VCR-1072.lircd.conf", "remote": "remotec1072", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

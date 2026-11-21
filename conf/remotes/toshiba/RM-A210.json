@@ -1,6 +1,6 @@
 {
     "description": "toshiba-RM-A210 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/toshiba/RM-A210.lircd.conf", "remote": "toshiba-RM-A210", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/toshiba/RM-A210.lircd.conf", "remote": "toshiba-RM-A210", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Fresat_SER-3000PL_A (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/fresat/SER-3000PL_A.lircd.conf", "remote": "Fresat_SER-3000PL_A", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/fresat/SER-3000PL_A.lircd.conf", "remote": "Fresat_SER-3000PL_A", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

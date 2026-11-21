@@ -1,6 +1,6 @@
 {
     "description": "Olympus_RM-2 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/olympus/RM-2.lircd.conf", "remote": "Olympus_RM-2", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/olympus/RM-2.lircd.conf", "remote": "Olympus_RM-2", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

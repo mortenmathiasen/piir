@@ -1,6 +1,6 @@
 {
     "description": "GRUNDIG_TelePilot_100C (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/grundig/TelePilot_100C.lircd.conf", "remote": "GRUNDIG_TelePilot_100C", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/grundig/TelePilot_100C.lircd.conf", "remote": "GRUNDIG_TelePilot_100C", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 32000,
     "dutycycle": 0.25,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "ADB_ICAN3000 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/adb/I-CAN_3000.lircd.conf", "remote": "ADB_ICAN3000", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/adb/I-CAN_3000.lircd.conf", "remote": "ADB_ICAN3000", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "denon_RC-818 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/denon/RC-818.lircd.conf", "remote": "denon_RC-818", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/denon/RC-818.lircd.conf", "remote": "denon_RC-818", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

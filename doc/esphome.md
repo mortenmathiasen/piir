@@ -4,13 +4,15 @@ irlingo can run on an ESP32 as an [ESPHome](https://esphome.io/) external
 component. The remotes are the same JSON files as on the Raspberry Pi, and the
 same C code encodes them, so a remote sends the same code on both.
 
-Status: preview. The component sends codes from automations (`irlingo.send`);
-buttons and air conditioner (climate) entities for Home Assistant are planned,
-see [the plan](esphome-plan.md).
+Status: preview. The component sends codes from automations (`irlingo.send`),
+and gives Home Assistant buttons and air conditioner (climate) entities. See
+[the plan](esphome-plan.md) for what is next.
 
 - [Requirements](#requirements)
 - [Configuration](#configuration)
 - [Sending codes](#sending-codes)
+- [Buttons](#buttons)
+- [Air conditioners](#air-conditioners)
 - [Remotes](#remotes)
 - [Toggle bits](#toggle-bits)
 - [Memory and limits](#memory-and-limits)
@@ -87,6 +89,75 @@ on_...:
 The action works in any ESPHome automation: `on_boot`, a button's `on_press`,
 `interval`, or a Home Assistant action through ESPHome's
 [native API](https://esphome.io/components/api/).
+
+## Buttons
+
+A button sends a code with fixed features when pressed, from Home Assistant or
+with ESPHome's `button.press` action:
+
+```yaml
+button:
+  - platform: irlingo
+    remote_id: tv
+    name: TV power
+    features:
+      key: Power
+```
+
+## Air conditioners
+
+A climate entity turns an air conditioner remote into a thermostat in Home
+Assistant. Every change sends one code with the features of the mode, the
+target temperature and the fan speed:
+
+```yaml
+climate:
+  - platform: irlingo
+    remote_id: aircon
+    name: Living room air conditioner
+    fixed: {option: AUTO, updown: AUTO, leftright: AUTO}
+```
+
+For most remotes that is all: the mapping is guessed from the remote's
+features.
+
+| Home Assistant | Guessed from |
+|----------------|--------------|
+| Modes | the `mode` feature: `AUTO` becomes heat/cool, `HEAT` heat, `COOL` cool, `DRY` dry, `FAN` fan only, `OFF` off |
+| Off | `mode: OFF`, or a `power` feature with `ON` and `OFF` (the other modes then also send `power: ON`) |
+| Target temperature | the `temperature` feature's numeric values; the nearest one is sent |
+| Fan speed | the `fan` feature: `AUTO` becomes auto, the other values are offered by their names |
+
+Settings, all optional:
+
+| Setting | Meaning |
+|---------|---------|
+| `modes` | Home Assistant modes (`off`, `heat_cool`, `cool`, `heat`, `dry`, `fan_only`, `auto`) and the features each sends, e.g. `heat: {mode: HEAT, power: ON}` |
+| `temperature` | the feature for the target temperature, if it is not called `temperature` |
+| `fan` | the feature for the fan speed, if it is not called `fan` |
+| `fixed` | features sent with every code, e.g. the vanes |
+| `sensor` | a sensor giving the current room temperature |
+
+```yaml
+climate:
+  - platform: irlingo
+    remote_id: carrier
+    name: Bedroom air conditioner
+    modes:
+      cool: {mode: COOL, power: ON}
+      heat: {mode: HEAT, power: ON}
+      off: {power: OFF}
+    fixed: {vertical: AUTO, horizontal: AUTO}
+    sensor: bedroom_temperature
+```
+
+The modes and their features are checked when compiling. After a restart the
+entity shows its last state again without sending it, so a restart does not
+switch the air conditioner. An IR remote cannot tell whether the air
+conditioner received a code, so Home Assistant shows what was sent last.
+
+Avoid `/` in names (e.g. "A/C"): ESPHome replaces it and from version 2027.7
+rejects it.
 
 ## Remotes
 

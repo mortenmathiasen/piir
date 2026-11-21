@@ -111,6 +111,24 @@ REMOTE_SCHEMA = cv.All(
 CONFIG_SCHEMA = cv.ensure_list(REMOTE_SCHEMA)
 
 
+def remote_name(conf):
+    """How a remote's configuration entry names it in messages"""
+    return conf.get(CONF_REMOTE) or str(conf.get(CONF_FILE))
+
+
+def find_remote_config(full_config, remote_id):
+    """The irlingo: entry with this id"""
+    for conf in full_config.get(DOMAIN, []):
+        if str(conf[CONF_ID]) == str(remote_id):
+            return conf
+    raise cv.Invalid(f"No irlingo remote with id {remote_id}")
+
+
+def check_features(conf, features):
+    """Feature names and fixed values must exist in the remote"""
+    _check_features(remote_name(conf), load_remote(conf), features)
+
+
 def _check_features(remote_name, remote, features):
     known = remote.get("features", {})
     for name, value in features.items():
@@ -137,8 +155,7 @@ def _final_validate(config):
                 if key == "irlingo.send" and isinstance(value, dict):
                     conf = remotes.get(str(value[CONF_REMOTE_ID]))
                     if conf is not None:
-                        name = conf.get(CONF_REMOTE) or str(conf.get(CONF_FILE))
-                        _check_features(name, load_remote(conf), value.get(CONF_FEATURES, {}))
+                        check_features(conf, value.get(CONF_FEATURES, {}))
                 walk(value)
         elif isinstance(node, list):
             for value in node:

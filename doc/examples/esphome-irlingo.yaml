@@ -6,18 +6,6 @@
 
 esphome:
   name: irlingo-example
-  on_boot:
-    then:
-      # Heat to 21 degrees when the device starts
-      - irlingo.send:
-          remote_id: aircon
-          features:
-            mode: HEAT
-            temperature: "21"
-            fan: AUTO
-            option: AUTO
-            updown: AUTO
-            leftright: AUTO
 
 esp32:
   board: esp32dev
@@ -50,6 +38,21 @@ irlingo:
   # Or your own remote file, next to this YAML file:
   # - id: tv
   #   file: my-remotes/livingroom-tv.json
+
+climate:
+  # The air conditioner as a thermostat in Home Assistant; the modes,
+  # temperature and fan speed are guessed from the remote's features
+  - platform: irlingo
+    remote_id: aircon
+    name: Living room air conditioner
+    fixed: {option: AUTO, updown: AUTO, leftright: AUTO}
+
+button:
+  - platform: irlingo
+    remote_id: amp
+    name: Amplifier power
+    features:
+      key: Power
 
 binary_sensor:
   # The board's BOOT button sends the amplifier's power key

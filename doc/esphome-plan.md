@@ -3,7 +3,8 @@
 Status: phase 0 done, apart from a transmission to the air conditioner (see
 "Phase 0 results"); phase 1 done (the portable core is in `components/irlingo/`,
 with `pulses.c` and `loadConfigString()`); phase 2 done (the component with the
-`irlingo.send` action, see [esphome.md](esphome.md)).
+`irlingo.send` action, see [esphome.md](esphome.md)); phase 3 done (button and
+climate platforms).
 
 ## Goal
 

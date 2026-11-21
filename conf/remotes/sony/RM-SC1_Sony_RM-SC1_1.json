@@ -1,7 +1,7 @@
 {
     "description": "Sony_RM-SC1_1 (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RM-SC1.lircd.conf", "remote": "Sony_RM-SC1_1", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
@@ -9,22 +9,27 @@
 	"H": {"mark": 2476, "space": 491},
 	"1": {"mark": 1270, "space": 532},
 	"0": {"mark": 659, "space": 532},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "-------------",
+    "template": "-----------------------------------------------------------------------",
     "features": {
 	"key": {
-	    "KEY_SLEEP": "H00000110000A",
-	    "KEY_POWER": "H10101000000A",
-	    "display": "H11010010000A",
-	    "clock_timer_select": "H01000110000A",
-	    "clock_timer_set": "H10100110000A",
-	    "tuner_memory": "H01110000000A",
-	    "KEY_TAPE": "H11000100000A",
-	    "KEY_CD": "H10100100000A",
-	    "tuner-band": "H11110000000A",
-	    "KEY_VOLUMEUP": "H01001000000A",
-	    "KEY_VOLUMEDOWN": "H11001000000A"
+	    "KEY_SLEEP": "H00000110000AVVWWWWWWXXYYZZZH00000110000AVVWWWWWWXXYYZZZH00000110000A",
+	    "KEY_POWER": "H10101000000AVVWWWWWXXXXXXYZZH10101000000AVVWWWWWXXXXXXYZZH10101000000A",
+	    "display": "H11010010000AVVWWWWWZH11010010000AVVWWWWWZH11010010000A",
+	    "clock_timer_select": "H01000110000AVVWWWWWXXXXXXYZZH01000110000AVVWWWWWXXXXXXYZZH01000110000A",
+	    "clock_timer_set": "H10100110000AVVWWWWWZH10100110000AVVWWWWWZH10100110000A",
+	    "tuner_memory": "H01110000000AVVWWWWWXXXXXXYZZH01110000000AVVWWWWWXXXXXXYZZH01110000000A",
+	    "KEY_TAPE": "H11000100000AVVWWWWWXXXXXXYZZH11000100000AVVWWWWWXXXXXXYZZH11000100000A",
+	    "KEY_CD": "H10100100000AVVWWWWWXXXXXXYZZH10100100000AVVWWWWWXXXXXXYZZH10100100000A",
+	    "tuner-band": "H11110000000AVVWWWWWZH11110000000AVVWWWWWZH11110000000A",
+	    "KEY_VOLUMEUP": "H01001000000AVVWWWWWWXXYYZZZH01001000000AVVWWWWWWXXYYZZZH01001000000A",
+	    "KEY_VOLUMEDOWN": "H11001000000AVVWWWWWXXXXXXYZZH11001000000AVVWWWWWXXXXXXYZZH11001000000A"
 	}
     }
 }

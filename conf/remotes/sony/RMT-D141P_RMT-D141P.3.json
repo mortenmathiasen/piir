@@ -1,7 +1,7 @@
 {
     "description": "RMT-D141P.3 (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RMT-D141P.lircd.conf", "remote": "RMT-D141P.3", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
@@ -9,14 +9,18 @@
 	"H": {"mark": 2521, "space": 490},
 	"1": {"mark": 1280, "space": 525},
 	"0": {"mark": 673, "space": 525},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Z": {"mark": 0, "space": 1},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "-------------",
+    "template": "---------------------------------------------------------------------------------",
     "features": {
 	"key": {
-	    "TVPOWER": "H10101001000A",
-	    "KEY_VOLUMEUP": "H01001001000A",
-	    "KEY_VOLUMEDOWN": "H11001001000A"
+	    "TVPOWER": "H10101001000AVVWWWWWXXXXXXXXZZH10101001000AVVWWWWWXXXXXXXXZZH10101001000A",
+	    "KEY_VOLUMEUP": "H01001001000AVVWWWWWWXXXXZZZZZZZZZH01001001000AVVWWWWWWXXXXZZZZZZZZZH01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000AVVWWWWWXXXXXXXXZZH11001001000AVVWWWWWXXXXXXXXZZH11001001000A"
 	}
     }
 }

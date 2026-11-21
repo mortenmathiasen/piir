@@ -1,7 +1,7 @@
 {
     "description": "Sony_RMT-V256_TV (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RMT-V256.lircd.conf", "remote": "Sony_RMT-V256_TV", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
@@ -9,16 +9,21 @@
 	"H": {"mark": 2469, "space": 547},
 	"1": {"mark": 1231, "space": 547},
 	"0": {"mark": 633, "space": 547},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "-------------",
+    "template": "-------------------------------------------------------------------------------------------------",
     "features": {
 	"key": {
-	    "tv_power": "H10101001000A",
-	    "tv_tv/video": "H10100101000A",
-	    "tv_display": "H01011101000A",
-	    "tv_prog+": "H00001001000A",
-	    "tv_prog-": "H10001001000A"
+	    "tv_power": "H10101001000AVVWWWWWXXXXXXXXXYYYYYYZZZZZZZH10101001000AVVWWWWWXXXXXXXXXYYYYYYZZZZZZZH10101001000A",
+	    "tv_tv/video": "H10100101000AVVWWWWWXXXXXXXXXYYYYYYZZZZZZZH10100101000AVVWWWWWXXXXXXXXXYYYYYYZZZZZZZH10100101000A",
+	    "tv_display": "H01011101000AVVWWWWWXXXXXXXXXYYYYYYZZZZZZZH01011101000AVVWWWWWXXXXXXXXXYYYYYYZZZZZZZH01011101000A",
+	    "tv_prog+": "H00001001000AVVWWWWWXXXXXXXXXYYYYYYZZZZZZZH00001001000AVVWWWWWXXXXXXXXXYYYYYYZZZZZZZH00001001000A",
+	    "tv_prog-": "H10001001000AVVWWWWWXXXXXXXXXYYYYYYZZZZZZZH10001001000AVVWWWWWXXXXXXXXXYYYYYYZZZZZZZH10001001000A"
 	}
     }
 }

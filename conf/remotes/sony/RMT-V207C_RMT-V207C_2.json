@@ -1,7 +1,7 @@
 {
     "description": "RMT-V207C (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RMT-V207C.lircd.conf", "remote": "RMT-V207C", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
@@ -9,13 +9,18 @@
 	"H": {"mark": 2494, "space": 605},
 	"1": {"mark": 1203, "space": 599},
 	"0": {"mark": 602, "space": 599},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "----------------",
+    "template": "----------------------------------------------------------------------------------------------------",
     "features": {
 	"key": {
-	    "SHOWVIEW": "H00000110101110A",
-	    "VPS/PDC": "H00011010101110A"
+	    "SHOWVIEW": "H00000110101110AVVXXXYYYYYYYZZZH00000110101110AVVXXXYYYYYYYZZZH00000110101110A",
+	    "VPS/PDC": "H00011010101110AVWWWWWWWWWXXXXXXXYYYYYYYZZH00011010101110AVWWWWWWWWWXXXXXXXYYYYYYYZZH00011010101110A"
 	}
     }
 }

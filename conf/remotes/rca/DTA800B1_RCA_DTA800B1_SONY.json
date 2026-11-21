@@ -1,7 +1,7 @@
 {
     "description": "RCA_DTA800B1_SONY (LIRC remote)",
     "source": {"lirc-remotes": "remotes/rca/DTA800B1.lircd.conf", "remote": "RCA_DTA800B1_SONY", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
@@ -9,16 +9,21 @@
 	"H": {"mark": 2500, "space": 450},
 	"1": {"mark": 1281, "space": 477},
 	"0": {"mark": 685, "space": 477},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "-------------",
+    "template": "-----------------------------------------------------------------------------------------",
     "features": {
 	"key": {
-	    "KEY_TV": "H10101001000A",
-	    "input": "H10010001000A",
-	    "KEY_MUTE": "H00101001000A",
-	    "KEY_VOLUMEUP": "H01001001000A",
-	    "KEY_VOLUMEDOWN": "H11001001000A"
+	    "KEY_TV": "H10101001000AVVVVWWWWWXYYYYYYYYYZZZZH10101001000AVVVVWWWWWXYYYYYYYYYZZZZH10101001000A",
+	    "input": "H10010001000AVVVVWWWWWXXXXXXXYYYYYYYYYH10010001000AVVVVWWWWWXXXXXXXYYYYYYYYYH10010001000A",
+	    "KEY_MUTE": "H00101001000AVVVVWWWWWXXXXXXXYYYYYYYYYH00101001000AVVVVWWWWWXXXXXXXYYYYYYYYYH00101001000A",
+	    "KEY_VOLUMEUP": "H01001001000AVVVVWWWWWXXXXXXXYYYYYYYYYH01001001000AVVVVWWWWWXXXXXXXYYYYYYYYYH01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000AVVVVWWWWWXYYYYYYYYYZZZZH11001001000AVVVVWWWWWXYYYYYYYYYZZZZH11001001000A"
 	}
     }
 }

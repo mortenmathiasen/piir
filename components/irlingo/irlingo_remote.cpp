@@ -67,7 +67,7 @@ void IrlingoRemote::dump_config() {
   }
 }
 
-bool IrlingoRemote::send(const FeatureValues &features) {
+bool IrlingoRemote::send(const FeatureValues &features, uint32_t send_times, uint32_t send_wait) {
   loadConfigString(this->json_);
   if (!isConfigLoaded()) {
     ESP_LOGE(TAG, "Remote %s cannot be loaded", this->name_);
@@ -131,8 +131,11 @@ bool IrlingoRemote::send(const FeatureValues &features) {
       data->space(pulses[i]);
     }
   }
+  call.set_send_times(send_times);
+  call.set_send_wait(send_wait);
   call.perform();
-  ESP_LOGI(TAG, "Sent %s (%u pulses and spaces at %d Hz)", this->name_, (unsigned) pulse_count, frequency);
+  ESP_LOGI(TAG, "Sent %s (%u pulses and spaces at %d Hz, %u times)", this->name_, (unsigned) pulse_count, frequency,
+           (unsigned) send_times);
 
   if (this->has_toggle_) {
     this->toggled_ = !this->toggled_;

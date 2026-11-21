@@ -49,6 +49,7 @@ invalid "missing file" "own-missing.json" 's#file: ../../doc/examples/example-ai
 invalid "button value" "has no feature key=Pow" 's/      key: Power/      key: Pow/'
 invalid "climate mode name" "Unknown value 'warm'" 's/      heat: {mode: HEAT, power: ON}/      warm: {mode: HEAT, power: ON}/'
 invalid "climate mode value" "has no feature mode=WARM" 's/      heat: {mode: HEAT, power: ON}/      heat: {mode: WARM, power: ON}/'
+invalid "repeat zero times" "must be at least 1" 's/            times: 2/            times: 0/'
 invalid "climate without modes" "Cannot guess the modes" '/^  - platform: irlingo$/{n;s/remote_id: aircon/remote_id: amp/}'
 
 if [ "${1:-}" = "--compile" ]; then

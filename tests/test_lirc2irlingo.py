@@ -549,6 +549,58 @@ class Conversion(unittest.TestCase):
         self.assertEqual(data, json.loads(L.format_json(data)))
 
 
+SONY = """
+begin remote
+  name  Sony_RM-ED011
+  bits           12
+  flags SPACE_ENC|CONST_LENGTH
+  eps            30
+  aeps          100
+  header       2453   529
+  one          1257   532
+  zero          660   532
+  gap          44813
+  begin codes
+    KEY_POWER                0xA90
+  end codes
+end remote
+"""
+
+
+def headers(signal):
+    """How many frames a signal has: its 2.4 ms Sony header marks"""
+    return sum(1 for value in durations(signal) if 2000 < value < 3000)
+
+
+class SonyCorrection(unittest.TestCase):
+    def test_is_sony(self):
+        self.assertTrue(L.is_sony(remote(SONY)))
+        self.assertFalse(L.is_sony(remote(NEC)))
+
+    def test_three_frames_at_40khz(self):
+        sony = remote(SONY)
+        result, _ = L.convert_remote(sony)
+        self.assertEqual(40000, result["frequency"])
+        corrected = L.sony_corrected(sony)
+        self.assertEqual(3, headers(L.send_once(corrected, corrected.codes[0])))
+        # The file itself is unchanged, and LIRC's encoder sends one frame
+        self.assertEqual(0, sony.min_repeat)
+        self.assertEqual(1, headers(L.send_once(sony, sony.codes[0])))
+
+    def test_given_frequency_and_more_repeats_kept(self):
+        sony = remote(SONY.replace("  gap", "  frequency 38000\n  min_repeat 4\n  gap"))
+        result, _ = L.convert_remote(sony)
+        self.assertEqual(38000, result["frequency"])
+        corrected = L.sony_corrected(sony)
+        self.assertEqual(5, headers(L.send_once(corrected, corrected.codes[0])))
+
+    def test_other_remotes_unchanged(self):
+        nec = remote(NEC)
+        self.assertIs(nec, L.sony_corrected(nec))
+        result, _ = L.convert_remote(nec)
+        self.assertEqual(38000, result["frequency"])
+
+
 class Commands(unittest.TestCase):
     def setUp(self):
         self.dir = tempfile.mkdtemp()

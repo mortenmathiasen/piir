@@ -1,7 +1,7 @@
 {
     "description": "Sony_RMT-D143E-TV (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RMT-D143E.lircd.conf", "remote": "Sony_RMT-D143E-TV", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
@@ -9,15 +9,20 @@
 	"H": {"mark": 2484, "space": 581},
 	"1": {"mark": 1220, "space": 581},
 	"0": {"mark": 632, "space": 581},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "-------------",
+    "template": "-------------------------------------------------------------------------------------------",
     "features": {
 	"key": {
-	    "tv-power": "H10101001000A",
-	    "KEY_VOLUMEUP": "H01001001000A",
-	    "KEY_VOLUMEDOWN": "H11001001000A",
-	    "tv-video": "H10100101000A"
+	    "tv-power": "H10101001000AVVWWWWWXXXXXXYYYYYYYZZZZZZH10101001000AVVWWWWWXXXXXXYYYYYYYZZZZZZH10101001000A",
+	    "KEY_VOLUMEUP": "H01001001000AVVWWWWWWXXYYYYYYZZZZH01001001000AVVWWWWWWXXYYYYYYZZZZH01001001000A",
+	    "KEY_VOLUMEDOWN": "H11001001000AVVWWWWWXXXXXXYYYYYYYZZZZZZH11001001000AVVWWWWWXXXXXXYYYYYYYZZZZZZH11001001000A",
+	    "tv-video": "H10100101000AVVWWWWWXXXXXXYYYYYYYZZZZZZH10100101000AVVWWWWWXXXXXXYYYYYYYZZZZZZH10100101000A"
 	}
     }
 }

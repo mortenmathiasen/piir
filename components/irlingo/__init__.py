@@ -37,6 +37,9 @@ CONF_REMOTE = "remote"
 CONF_REMOTE_ID = "remote_id"
 CONF_TRANSMITTER_ID = "transmitter_id"
 CONF_FEATURES = "features"
+CONF_REPEAT = "repeat"
+CONF_TIMES = "times"
+CONF_WAIT_TIME = "wait_time"
 
 # Remotes over this size work, but use much of the heap while being parsed
 LARGE_REMOTE = 64 * 1024
@@ -186,10 +189,28 @@ async def to_code(config):
         cg.add(var.set_name(conf.get(CONF_REMOTE) or Path(str(conf[CONF_FILE])).name))
 
 
+# Send the code several times, e.g. for Sony remotes, whose devices ignore a
+# single code: wait_time is the pause between the end of one and the next
+REPEAT_SCHEMA = cv.Schema(
+    {
+        cv.Optional(CONF_TIMES, default=1): cv.int_range(min=1, max=50),
+        cv.Optional(CONF_WAIT_TIME, default="0ms"): cv.positive_time_period_microseconds,
+    }
+)
+
+
+async def set_repeat(var, config):
+    """Pass a repeat: setting to an action or a button"""
+    if CONF_REPEAT in config:
+        cg.add(var.set_send_times(config[CONF_REPEAT][CONF_TIMES]))
+        cg.add(var.set_send_wait(config[CONF_REPEAT][CONF_WAIT_TIME].total_microseconds))
+
+
 SEND_SCHEMA = cv.Schema(
     {
         cv.GenerateID(CONF_REMOTE_ID): cv.use_id(IrlingoRemote),
         cv.Required(CONF_FEATURES): cv.Schema({cv.string_strict: cv.templatable(cv.string)}),
+        cv.Optional(CONF_REPEAT): REPEAT_SCHEMA,
     }
 )
 
@@ -201,4 +222,5 @@ async def send_action_to_code(config, action_id, template_arg, args):
     for name, value in config[CONF_FEATURES].items():
         template = await cg.templatable(value, args, cg.std_string)
         cg.add(var.add_feature(name, template))
+    await set_repeat(var, config)
     return var

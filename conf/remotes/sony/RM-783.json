@@ -1,7 +1,7 @@
 {
     "description": "tv (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RM-783.lircd.conf", "remote": "tv", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {

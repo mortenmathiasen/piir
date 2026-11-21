@@ -1,7 +1,7 @@
 {
     "description": "Sony_RMT-D142P (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RMT-D142P.lircd.conf", "remote": "Sony_RMT-D142P", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {

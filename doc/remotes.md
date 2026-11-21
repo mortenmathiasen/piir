@@ -85,6 +85,8 @@ Not everything converts:
 
 Raw recorded codes whose many different durations do not fit irlingo's symbols are rounded by at most 2%; LIRC itself accepts 30% when receiving. Remotes with a toggle bit (RC5, RC6 and others with `toggle_bit_mask`) get a [toggle](remote-format.md#toggle) section.
 
+Remotes using Sony's protocol (SIRC) are converted to send every code at least 3 times, at 40 kHz unless the LIRC file gives a frequency. Sony devices ignore a code sent only once, as Sony's own remotes always repeat it, and their receivers are tuned to 40 kHz. Many LIRC files leave out `min_repeat` and the frequency, so LIRC itself sends such codes once at 38 kHz; a Sony TV tested with `sony/RM-ED011` switched on with 3 codes and ignored a single one. This concerns about 310 remotes, recognised by Sony's timing (a 2.4 ms header, 1.2 ms marks for 1 and 0.6 ms marks for 0), including universal remotes sending Sony codes.
+
 ## Deriving a remote from recorded codes
 
 [tools/ir2irlingo.py](../tools/ir2irlingo.py) builds a remote from recorded codes and the settings each was sent for. It is made for air conditioners and similar remotes that send all settings in every code, but works for any remote whose codes use pulse distance or pulse width coding. It needs only Python 3.

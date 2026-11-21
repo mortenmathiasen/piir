@@ -13,7 +13,17 @@ from esphome.components import button
 import esphome.config_validation as cv
 import esphome.final_validate as fv
 
-from .. import CONF_FEATURES, CONF_REMOTE_ID, IrlingoRemote, check_features, find_remote_config, irlingo_ns
+from .. import (
+    CONF_FEATURES,
+    CONF_REMOTE_ID,
+    CONF_REPEAT,
+    REPEAT_SCHEMA,
+    IrlingoRemote,
+    check_features,
+    find_remote_config,
+    irlingo_ns,
+    set_repeat,
+)
 
 DEPENDENCIES = ["irlingo"]
 
@@ -23,6 +33,7 @@ CONFIG_SCHEMA = button.button_schema(IrlingoButton).extend(
     {
         cv.GenerateID(CONF_REMOTE_ID): cv.use_id(IrlingoRemote),
         cv.Required(CONF_FEATURES): cv.Schema({cv.string_strict: cv.string}),
+        cv.Optional(CONF_REPEAT): REPEAT_SCHEMA,
     }
 )
 
@@ -40,3 +51,4 @@ async def to_code(config):
     await cg.register_parented(var, config[CONF_REMOTE_ID])
     for name, value in config[CONF_FEATURES].items():
         cg.add(var.add_feature(name, value))
+    await set_repeat(var, config)

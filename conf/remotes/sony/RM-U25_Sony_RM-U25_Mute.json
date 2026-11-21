@@ -1,7 +1,7 @@
 {
     "description": "Sony_RM-U25_Mute (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RM-U25.lircd.conf", "remote": "Sony_RM-U25_Mute", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
@@ -9,12 +9,17 @@
 	"H": {"mark": 2550, "space": 523},
 	"1": {"mark": 1262, "space": 523},
 	"0": {"mark": 690, "space": 523},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "----------------",
+    "template": "------------------------------------------------------------------------------------------",
     "features": {
 	"key": {
-	    "KEY_MUTE": "H00101000000101A"
+	    "KEY_MUTE": "H00101000000101AVVWWWWXXXYYYYYYYYYZZZH00101000000101AVVWWWWXXXYYYYYYYYYZZZH00101000000101A"
 	}
     }
 }

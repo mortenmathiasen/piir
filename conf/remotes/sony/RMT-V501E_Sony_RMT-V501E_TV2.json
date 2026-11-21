@@ -1,7 +1,7 @@
 {
     "description": "Sony_RMT-V501E_TV2 (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RMT-V501E.lircd.conf", "remote": "Sony_RMT-V501E_TV2", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
@@ -9,13 +9,18 @@
 	"H": {"mark": 2392, "space": 587},
 	"1": {"mark": 1201, "space": 605},
 	"0": {"mark": 603, "space": 605},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "---------------------",
+    "template": "---------------------------------------------------------------------------------------------",
     "features": {
 	"key": {
-	    "KEY_RECORD": "H1011100010111100101A",
-	    "sp/ep": "H0001101010111100101A"
+	    "KEY_RECORD": "H1011100010111100101AVWXXXXXXXYZH1011100010111100101AVWXXXXXXXYZH1011100010111100101A",
+	    "sp/ep": "H0001101010111100101AVWWXXXZZZZZZZZZH0001101010111100101AVWWXXXZZZZZZZZZH0001101010111100101A"
 	}
     }
 }

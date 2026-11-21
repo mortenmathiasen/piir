@@ -119,9 +119,10 @@ your board and which are free.
 
 ## ESP32
 
-irlingo's ESPHome component for the ESP32 is being developed. The wiring is the
-same as for the Raspberry Pi, and works with ESPHome's own
-[remote_transmitter](https://esphome.io/components/remote_transmitter/) today.
+irlingo runs on the ESP32 as an ESPHome component (a preview, see
+[irlingo on ESPHome](esphome.md)). The wiring is the same as for the Raspberry
+Pi, and works with ESPHome's own
+[remote_transmitter](https://esphome.io/components/remote_transmitter/) too.
 
 | Signal | ESP32 dev board pin |
 |--------|---------------------|

@@ -19,6 +19,7 @@ The [documentation](doc/README.md) has a guide for each step:
 
 * [Installation](doc/installation.md): hardware, packages, enabling the IR transmitter, building from source
 * [Connecting an IR LED](doc/hardware.md): circuits, parts and pins for a Raspberry Pi or an ESP32
+* [irlingo on ESPHome](doc/esphome.md): sending irlingo remotes from an ESP32 (preview)
 * [Usage](doc/usage.md): finding a remote, sending keys and air conditioner settings
 * [Managing remotes](doc/remotes.md): adding remotes, converting LIRC files, deriving remotes from recordings
 * [Remote file format](doc/remote-format.md): every setting of a remote, with a worked example

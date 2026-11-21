@@ -1,0 +1,67 @@
+# irlingo on an ESP32 with ESPHome: an air conditioner and an amplifier.
+#
+# Wiring: an IR LED circuit on GPIO4, see doc/hardware.md.
+# Flash it over USB:
+#   esphome run esphome-irlingo.yaml --device /dev/ttyUSB0
+
+esphome:
+  name: irlingo-example
+  on_boot:
+    then:
+      # Heat to 21 degrees when the device starts
+      - irlingo.send:
+          remote_id: aircon
+          features:
+            mode: HEAT
+            temperature: "21"
+            fan: AUTO
+            option: AUTO
+            updown: AUTO
+            leftright: AUTO
+
+esp32:
+  board: esp32dev
+  framework:
+    type: esp-idf
+
+logger:
+
+external_components:
+  # Until the component is released, use a local copy of the irlingo
+  # repository: replace the path with yours
+  - source:
+      type: local
+      path: /home/pi/irlingo/components
+    components: [irlingo]
+
+remote_transmitter:
+  id: ir_tx
+  pin: GPIO4
+  carrier_duty_percent: 50%
+  non_blocking: true
+
+irlingo:
+  # A remote from the repository's conf/remotes, by name
+  - id: aircon
+    remote: panasonic/hvac_panasonic
+  # Its file name alone is enough when it is unique
+  - id: amp
+    remote: RC4330_01H_Philips_RC433001H_AMP
+  # Or your own remote file, next to this YAML file:
+  # - id: tv
+  #   file: my-remotes/livingroom-tv.json
+
+binary_sensor:
+  # The board's BOOT button sends the amplifier's power key
+  - platform: gpio
+    pin:
+      number: GPIO0
+      inverted: true
+      mode: INPUT_PULLUP
+      ignore_strapping_warning: true # the button is meant to be on GPIO0
+    name: Boot button
+    on_press:
+      - irlingo.send:
+          remote_id: amp
+          features:
+            key: Power

@@ -1,0 +1,56 @@
+{
+  "description": "Example air conditioner: power, mode, fan and temperature, with a checksum",
+  "frequency": 38000,
+  "dutycycle": 0.5,
+  "transmitter": {"outpin": 17},
+  "symboldefinitions": {
+    "H": {"mark": 9000, "space": 4500},
+    "0": {"mark": 560, "space": 560},
+    "1": {"mark": 560, "space": 1690},
+    "-": {"mark": 0, "space": 0}
+  },
+  "template": "H-10000000-01100000-00000000-0",
+  "features": {
+    "power": {
+      "ON":  "  1",
+      "OFF": "  0"
+    },
+    "mode": {
+      "AUTO": "   00",
+      "COOL": "   10",
+      "HEAT": "   01",
+      "DRY":  "   11"
+    },
+    "fan": {
+      "AUTO": "     00",
+      "LOW":  "     10",
+      "HIGH": "     01"
+    },
+    "temperature": {
+      "16": "           0000",
+      "17": "           1000",
+      "18": "           0100",
+      "19": "           1100",
+      "20": "           0010",
+      "21": "           1010",
+      "22": "           0110"
+    }
+  },
+  "overrides": [
+    {"when": {"power": "ON", "mode": "DRY"}, "code": "     10"}
+  ],
+  "checksums": [
+    {"type": "sum", "from": 0, "to": 1, "at": 2}
+  ],
+  "tests": [
+    {"description": "heating to 21 degrees",
+     "features": {"power": "ON", "mode": "HEAT", "fan": "AUTO", "temperature": "21"},
+     "outcome": "H-10100000-10100000-01010000-0"},
+    {"description": "drying forces the low fan speed",
+     "features": {"power": "ON", "mode": "DRY", "fan": "HIGH", "temperature": "20"},
+     "outcome": "H-11110000-00100000-11001000-0"},
+    {"description": "but not while the power is off",
+     "features": {"power": "OFF", "mode": "DRY", "fan": "HIGH", "temperature": "20"},
+     "outcome": "H-01101000-00100000-01011000-0"}
+  ]
+}

@@ -18,6 +18,7 @@ irlingo --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
 The [documentation](doc/README.md) has a guide for each step:
 
 * [Installation](doc/installation.md): hardware, packages, enabling the IR transmitter, building from source
+* [Connecting an IR LED](doc/hardware.md): circuits, parts and pins for a Raspberry Pi or an ESP32
 * [Usage](doc/usage.md): finding a remote, sending keys and air conditioner settings
 * [Managing remotes](doc/remotes.md): adding remotes, converting LIRC files, deriving remotes from recordings
 * [Remote file format](doc/remote-format.md): every setting of a remote, with a worked example
@@ -87,7 +88,7 @@ The tool transmits IR on:
 ### Prerequisites
 
 To be able to transmit IR signal you need an IR led, either:
-* build the electronics yourself, e.g. as mentioned at [Raspberry-PI-Geek](https://www.raspberry-pi-geek.com/Archive/2015/10/Raspberry-Pi-IR-remote)
+* build the electronics yourself, see [Connecting an IR LED](doc/hardware.md) for the circuit, parts and pins
 * apply an premade pHAT, eg. [ANAVI Infrared pHAT](https://anavi.technology/)
 
 ## Getting Started

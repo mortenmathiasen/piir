@@ -1,6 +1,6 @@
 {
     "description": "Thomson_RC8002N (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/thomson/RC8002N.lircd.conf", "remote": "Thomson_RC8002N", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/thomson/RC8002N.lircd.conf", "remote": "Thomson_RC8002N", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

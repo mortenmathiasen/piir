@@ -1,6 +1,6 @@
 {
     "description": "Visionetics_Cable_Box (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/visionetics/Cable_Box.lircd.conf", "remote": "Visionetics_Cable_Box", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/visionetics/Cable_Box.lircd.conf", "remote": "Visionetics_Cable_Box", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "CU-PD089 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/pioneer/CU-PD089.lircd.conf", "remote": "CU-PD089", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/pioneer/CU-PD089.lircd.conf", "remote": "CU-PD089", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

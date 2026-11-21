@@ -1,6 +1,6 @@
 {
     "description": "EchoStar_132578 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/echostar/132578.lircd.conf", "remote": "EchoStar_132578", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/echostar/132578.lircd.conf", "remote": "EchoStar_132578", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 56800,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

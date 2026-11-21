@@ -1,6 +1,6 @@
 {
     "description": "RM-SFSSD7R (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/jvc/RM-SFSSD7R.lircd.conf", "remote": "RM-SFSSD7R", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/jvc/RM-SFSSD7R.lircd.conf", "remote": "RM-SFSSD7R", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

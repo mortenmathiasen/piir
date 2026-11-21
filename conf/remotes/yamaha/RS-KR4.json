@@ -1,6 +1,6 @@
 {
     "description": "RS-KR4 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamaha/RS-KR4.lircd.conf", "remote": "RS-KR4", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/yamaha/RS-KR4.lircd.conf", "remote": "RS-KR4", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

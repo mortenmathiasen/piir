@@ -1,6 +1,6 @@
 {
     "description": "PHILIPS_RCD-01-AUX (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/PRC-01-AJ040641.lircd.conf", "remote": "PHILIPS_RCD-01-AUX", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/philips/PRC-01-AJ040641.lircd.conf", "remote": "PHILIPS_RCD-01-AUX", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

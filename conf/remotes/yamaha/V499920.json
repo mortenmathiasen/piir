@@ -1,6 +1,6 @@
 {
     "description": "Yamaha_V499920 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamaha/V499920.lircd.conf", "remote": "Yamaha_V499920", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/yamaha/V499920.lircd.conf", "remote": "Yamaha_V499920", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

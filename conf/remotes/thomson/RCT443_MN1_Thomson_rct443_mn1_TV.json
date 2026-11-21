@@ -1,6 +1,6 @@
 {
     "description": "Thomson_rct443_mn1_TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/thomson/RCT443_MN1.lircd.conf", "remote": "Thomson_rct443_mn1_TV", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/thomson/RCT443_MN1.lircd.conf", "remote": "Thomson_rct443_mn1_TV", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

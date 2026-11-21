@@ -1,6 +1,6 @@
 {
     "description": "Vizio_VX37L (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/vizio/VX37L.lircd.conf", "remote": "Vizio_VX37L", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/vizio/VX37L.lircd.conf", "remote": "Vizio_VX37L", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

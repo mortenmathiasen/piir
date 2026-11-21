@@ -1,6 +1,6 @@
 {
     "description": "GRUNDIG_TP_160C (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/grundig/TP_160C.lircd.conf", "remote": "GRUNDIG_TP_160C", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/grundig/TP_160C.lircd.conf", "remote": "GRUNDIG_TP_160C", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

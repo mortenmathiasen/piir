@@ -1,6 +1,6 @@
 {
     "description": "samsung-10095T (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/samsung/10095T.lircd.conf", "remote": "samsung-10095T", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/samsung/10095T.lircd.conf", "remote": "samsung-10095T", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

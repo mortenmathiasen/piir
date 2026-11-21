@@ -1,6 +1,6 @@
 {
     "description": "Marantz_RC1400-MD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/marantz/RC1400-MD.lircd.conf", "remote": "Marantz_RC1400-MD", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/marantz/RC1400-MD.lircd.conf", "remote": "Marantz_RC1400-MD", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

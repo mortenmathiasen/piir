@@ -1,6 +1,6 @@
 {
     "description": "RC_9067 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/aristona/RC9067.lircd.conf", "remote": "RC_9067", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/aristona/RC9067.lircd.conf", "remote": "RC_9067", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

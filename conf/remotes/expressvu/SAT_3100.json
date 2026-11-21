@@ -1,6 +1,6 @@
 {
     "description": "3100 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/expressvu/SAT_3100.lircd.conf", "remote": "3100", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/expressvu/SAT_3100.lircd.conf", "remote": "3100", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 56000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

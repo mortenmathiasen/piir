@@ -1,6 +1,6 @@
 {
     "description": "NOKIA_VCR_3018_CE (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/nokia/VCR_3018_CE.lircd.conf", "remote": "NOKIA_VCR_3018_CE", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/nokia/VCR_3018_CE.lircd.conf", "remote": "NOKIA_VCR_3018_CE", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

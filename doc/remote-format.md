@@ -1,6 +1,6 @@
 # Remote file format
 
-A remote is a JSON file. It describes the symbols a remote sends (a mark and a space each), a template code made of those symbols, and for each feature value the symbols it changes in the template. PIIR applies the requested features, then overrides and checksums, and transmits the result.
+A remote is a JSON file. It describes the symbols a remote sends (a mark and a space each), a template code made of those symbols, and for each feature value the symbols it changes in the template. irlingo applies the requested features, then overrides and checksums, and transmits the result.
 
 - [A worked example](#a-worked-example)
 - [How a code is built](#how-a-code-is-built)
@@ -76,8 +76,8 @@ A remote is a JSON file. It describes the symbols a remote sends (a mark and a s
 
 Try it from the root of the source:
 ```
-piir --remote doc/examples/example-aircon.json --help
-sudo piir --remote doc/examples/example-aircon.json -f mode=HEAT -f temperature=21 --verbose=INFO
+irlingo --remote doc/examples/example-aircon.json --help
+sudo irlingo --remote doc/examples/example-aircon.json -f mode=HEAT -f temperature=21 --verbose=INFO
 ```
 
 For `mode=HEAT`, `temperature=21`:
@@ -86,12 +86,12 @@ For `mode=HEAT`, `temperature=21`:
 2. `mode` `HEAT` (`   01`) replaces the symbols at positions 3 and 4 (counting from 0), `temperature` `21` (`           1010`) those at 11 to 14: `H-10100000-10100000-00000000-0`. `power` and `fan` are not given, so they keep the template's symbols.
 3. The override does not apply: its `when` needs `mode` `DRY`.
 4. The checksum reads the bytes lowest bit first: byte 0 is `10100000` = 0x05, byte 1 is 0x05, so byte 2 becomes 0x0A, `01010000`.
-5. PIIR transmits `H-10100000-10100000-01010000-0`: a 9000 µs mark and 4500 µs space, 24 marks of 560 µs with short or long spaces, and the stop mark. The `-` separators send nothing.
+5. irlingo transmits `H-10100000-10100000-01010000-0`: a 9000 µs mark and 4500 µs space, 24 marks of 560 µs with short or long spaces, and the stop mark. The `-` separators send nothing.
 
 ## How a code is built
 
 1. **Variant.** If the remote has `variants`, the first one whose `when` matches the requested features is used instead of the remote's own template, features, overrides and checksums.
-2. **Template.** PIIR starts from a copy of `template`.
+2. **Template.** irlingo starts from a copy of `template`.
 3. **Features.** Each feature given on the command line is applied, in the order the features appear in the file (not the order on the command line). A feature's code is laid over the code: each symbol replaces the one at the same position, a space keeps it.
 4. **Overrides.** Every override whose `when` matches is applied the same way, in order.
 5. **Checksums.** The `checksums` are computed, in order, into the code.
@@ -117,7 +117,7 @@ For `mode=HEAT`, `temperature=21`:
 | `plugin` | no | a built-in post-processing step |
 | `tests` | no | codes the real remote sends, checked by the test suite |
 
-Settings PIIR does not know, e.g. `source`, are ignored.
+Settings irlingo does not know, e.g. `source`, are ignored.
 
 ### description, source
 
@@ -194,7 +194,7 @@ After all features, every override whose `when` features are all requested with 
 
 Some remotes send codes of another length or structure for some settings, e.g. a short code for power off. Each variant has the feature values that select it (`when`), its own `template`, and optionally its own `features`, `overrides` and `checksums`, whose positions refer to its template. The first variant whose `when` features are all requested is used instead of the remote's own template, features, overrides and checksums; the symbol definitions are shared.
 
-A variant's `features` do not inherit the remote's: a variant without `features` sends its template unchanged. The values that select a variant must still be listed in the remote's own `features` (possibly with an empty code), so that PIIR accepts them on the command line.
+A variant's `features` do not inherit the remote's: a variant without `features` sends its template unchanged. The values that select a variant must still be listed in the remote's own `features` (possibly with an empty code), so that irlingo accepts them on the command line.
 
 Variants are also useful when a checksum depends on feature values in a way a checksum setting cannot express: `carrier/hvac_carrier_nqv` has a variant with its own checksum start value for each mode and fan speed that needs one.
 
@@ -225,7 +225,7 @@ After features and overrides, the bit symbols of the code (`0` and `1`) are read
 | `bits` | the zero and one symbols | `"01"` |
 | `restart` | symbols after which units are counted from a new bit; the bits of a partial unit before them are skipped | none |
 
-Checksums are applied in order, so a later one can cover the unit an earlier one wrote. PIIR stops with `Invalid checksum` when a checksum is malformed or refers to units beyond the end of the code.
+Checksums are applied in order, so a later one can cover the unit an earlier one wrote. irlingo stops with `Invalid checksum` when a checksum is malformed or refers to units beyond the end of the code.
 
 **Nibbles** are numbered in the order they are sent: in a byte sent lowest bit first (`lsb`), nibble 0 is its low nibble; with `msb` it is its high nibble. A 4-bit sum of nibbles 0, 2 and 4 into nibble 7, sent highest bit first:
 ```json
@@ -256,7 +256,7 @@ Checksums are applied in order, so a later one can cover the unit an earlier one
 "toggle": {"key": {"KEY_POWER": "000000011001A"}}
 ```
 
-Protocols such as RC5 and RC6 flip a bit on every new press. A remote with a `toggle` section, with the same structure as `features`, sends the toggle codes on every other press (a value missing there sends its normal code). PIIR keeps the state per remote in a file, see [Usage](usage.md#remotes-with-a-toggle-bit). Variants do not use the toggle section.
+Protocols such as RC5 and RC6 flip a bit on every new press. A remote with a `toggle` section, with the same structure as `features`, sends the toggle codes on every other press (a value missing there sends its normal code). irlingo keeps the state per remote in a file, see [Usage](usage.md#remotes-with-a-toggle-bit). Variants do not use the toggle section.
 
 ### plugin
 
@@ -264,7 +264,7 @@ Protocols such as RC5 and RC6 flip a bit on every new press. A remote with a `to
 "plugin": "hvac_panasonic"
 ```
 
-A post-processing step compiled into PIIR, for what the settings above cannot express. The only plugin is `hvac_panasonic`, the checksum of Panasonic air conditioners, which `panasonic/hvac_panasonic` now computes with a `checksums` entry instead. Remote files from PIIR 1.x without `plugin`, `checksums` or `variants`, whose path contains `hvac_panasonic`, still get it.
+A post-processing step compiled into irlingo, for what the settings above cannot express. The only plugin is `hvac_panasonic`, the checksum of Panasonic air conditioners, which `panasonic/hvac_panasonic` now computes with a `checksums` entry instead. Remote files from PIIR 1.x without `plugin`, `checksums` or `variants`, whose path contains `hvac_panasonic`, still get it.
 
 ### tests
 
@@ -276,7 +276,7 @@ A post-processing step compiled into PIIR, for what the settings above cannot ex
 ]
 ```
 
-Codes a real remote sends, with the features they were sent for. PIIR does not use them when sending; the test suite checks that every remote in `conf/remotes/` produces exactly each `outcome`, separators included. Vectors that do not match yet are listed in `tests/known_failures.txt`. They are the best way to make sure a hand-written remote is right.
+Codes a real remote sends, with the features they were sent for. irlingo does not use them when sending; the test suite checks that every remote in `conf/remotes/` produces exactly each `outcome`, separators included. Vectors that do not match yet are listed in `tests/known_failures.txt`. They are the best way to make sure a hand-written remote is right.
 
 ## Limits
 

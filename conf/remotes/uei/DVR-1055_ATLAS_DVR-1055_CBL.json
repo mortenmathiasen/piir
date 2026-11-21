@@ -1,6 +1,6 @@
 {
     "description": "ATLAS_DVR-1055_CBL (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/uei/DVR-1055.lircd.conf", "remote": "ATLAS_DVR-1055_CBL", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/uei/DVR-1055.lircd.conf", "remote": "ATLAS_DVR-1055_CBL", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

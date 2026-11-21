@@ -1,6 +1,6 @@
 {
     "description": "veq2249 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/VEQ2249.lircd.conf", "remote": "veq2249", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/panasonic/VEQ2249.lircd.conf", "remote": "veq2249", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

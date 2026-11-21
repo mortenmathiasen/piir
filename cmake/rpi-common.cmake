@@ -1,4 +1,4 @@
-# Shared settings for cross compiling PIIR to Raspberry Pi.
+# Shared settings for cross compiling irlingo to Raspberry Pi.
 # Included by the toolchain-rpi-*.cmake files, which set RPI_TRIPLE and
 # CMAKE_SYSTEM_PROCESSOR first.
 #

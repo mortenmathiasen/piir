@@ -1,6 +1,6 @@
 {
     "description": "Aki_DVD-838W (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/aki/DVD-838W.lircd.conf", "remote": "Aki_DVD-838W", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/aki/DVD-838W.lircd.conf", "remote": "Aki_DVD-838W", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

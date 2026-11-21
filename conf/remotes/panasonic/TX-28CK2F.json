@@ -1,6 +1,6 @@
 {
     "description": "Panasonic_TX-28CK2F (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/panasonic/TX-28CK2F.lircd.conf", "remote": "Panasonic_TX-28CK2F", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/panasonic/TX-28CK2F.lircd.conf", "remote": "Panasonic_TX-28CK2F", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "HQ_RC_Univers20 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/hq/RC_Univers_20.lircd.conf", "remote": "HQ_RC_Univers20", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/hq/RC_Univers_20.lircd.conf", "remote": "HQ_RC_Univers20", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "JVC-RM-SR509U (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/jvc/RM-SR509U.lircd.conf", "remote": "JVC-RM-SR509U", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/jvc/RM-SR509U.lircd.conf", "remote": "JVC-RM-SR509U", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

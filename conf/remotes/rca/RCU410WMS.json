@@ -1,6 +1,6 @@
 {
     "description": "RCA_RCU410WMS (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/rca/RCU410WMS.lircd.conf", "remote": "RCA_RCU410WMS", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/rca/RCU410WMS.lircd.conf", "remote": "RCA_RCU410WMS", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

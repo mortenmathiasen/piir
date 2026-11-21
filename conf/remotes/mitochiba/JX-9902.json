@@ -1,6 +1,6 @@
 {
     "description": "Mitochiba_JX-9902 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/mitochiba/JX-9902.lircd.conf", "remote": "Mitochiba_JX-9902", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/mitochiba/JX-9902.lircd.conf", "remote": "Mitochiba_JX-9902", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Technotrend (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/technotrend/TV-Card.lircd.conf", "remote": "Technotrend", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/technotrend/TV-Card.lircd.conf", "remote": "Technotrend", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

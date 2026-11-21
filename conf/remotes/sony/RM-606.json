@@ -1,6 +1,6 @@
 {
     "description": "rm-606 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-606.lircd.conf", "remote": "rm-606", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sony/RM-606.lircd.conf", "remote": "rm-606", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

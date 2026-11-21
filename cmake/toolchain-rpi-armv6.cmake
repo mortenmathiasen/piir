@@ -9,5 +9,5 @@
 set(RPI_TRIPLE arm-linux-gnueabi)
 set(CMAKE_SYSTEM_PROCESSOR arm)
 set(CMAKE_C_FLAGS_INIT "-march=armv6 -marm")
-set(PIIR_STATIC ON CACHE BOOL "Link piir statically")
+set(IRLINGO_STATIC ON CACHE BOOL "Link irlingo statically")
 include(${CMAKE_CURRENT_LIST_DIR}/rpi-common.cmake)

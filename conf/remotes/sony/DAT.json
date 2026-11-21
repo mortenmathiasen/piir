@@ -1,6 +1,6 @@
 {
     "description": "DAT (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/DAT.lircd.conf", "remote": "DAT", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sony/DAT.lircd.conf", "remote": "DAT", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

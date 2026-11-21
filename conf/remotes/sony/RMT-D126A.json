@@ -1,6 +1,6 @@
 {
     "description": "Sony_RMT-D126A (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RMT-D126A.lircd.conf", "remote": "Sony_RMT-D126A", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sony/RMT-D126A.lircd.conf", "remote": "Sony_RMT-D126A", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

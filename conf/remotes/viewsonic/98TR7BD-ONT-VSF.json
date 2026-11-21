@@ -1,6 +1,6 @@
 {
     "description": "ViewSonic_98TR7BD-ONT-VSF (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/viewsonic/98TR7BD-ONT-VSF.lircd.conf", "remote": "ViewSonic_98TR7BD-ONT-VSF", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/viewsonic/98TR7BD-ONT-VSF.lircd.conf", "remote": "ViewSonic_98TR7BD-ONT-VSF", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

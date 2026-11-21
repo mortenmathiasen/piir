@@ -1,6 +1,6 @@
 {
     "description": "RM-D7M (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RM-D7M.lircd.conf", "remote": "RM-D7M", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sony/RM-D7M.lircd.conf", "remote": "RM-D7M", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

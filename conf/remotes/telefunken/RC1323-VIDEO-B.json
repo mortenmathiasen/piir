@@ -1,6 +1,6 @@
 {
     "description": "Telefunken_RC1323-Video-B (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/telefunken/RC1323-VIDEO-B.lircd.conf", "remote": "Telefunken_RC1323-Video-B", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/telefunken/RC1323-VIDEO-B.lircd.conf", "remote": "Telefunken_RC1323-Video-B", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

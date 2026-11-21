@@ -1,6 +1,6 @@
 {
     "description": "Sagem_DVB-T-Receiver (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sagem/DVB-T-Receiver.lircd.conf", "remote": "Sagem_DVB-T-Receiver", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sagem/DVB-T-Receiver.lircd.conf", "remote": "Sagem_DVB-T-Receiver", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

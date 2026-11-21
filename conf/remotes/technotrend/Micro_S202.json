@@ -1,6 +1,6 @@
 {
     "description": "TT_Micro_S202 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/technotrend/Micro_S202.lircd.conf", "remote": "TT_Micro_S202", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/technotrend/Micro_S202.lircd.conf", "remote": "TT_Micro_S202", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

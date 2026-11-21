@@ -1,4 +1,4 @@
-// Record the IR codes arduino-heatpumpir sends, as captures for ir2piir.py.
+// Record the IR codes arduino-heatpumpir sends, as captures for ir2irlingo.py.
 //
 // usage: heatpumpir_capture list
 //        heatpumpir_capture MODEL [RANDOM [SEED]]
@@ -6,12 +6,12 @@
 //
 // Prints JSON Lines on standard output: a base setting, every value of every
 // feature changed alone, and RANDOM (default 300) random combinations, or
-// with "all" every combination (for ir2piir --fallback).
+// with "all" every combination (for ir2irlingo --fallback).
 // Features: power, mode, fan, temperature, vertical, horizontal. The
 // temperature range and the fan speeds come from the model's info().
 //
 // Models that put the time of day into their codes get 00:00: time() is
-// replaced below, as PIIR cannot send a clock.
+// replaced below, as irlingo cannot send a clock.
 #include <HeatpumpIRFactory.h>
 #include <IRSender.h>
 

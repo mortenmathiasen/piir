@@ -1,6 +1,6 @@
 {
     "description": "Asus_TVBox (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/asus/TVBox.lircd.conf", "remote": "Asus_TVBox", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/asus/TVBox.lircd.conf", "remote": "Asus_TVBox", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

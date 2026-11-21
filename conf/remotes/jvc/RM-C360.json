@@ -1,6 +1,6 @@
 {
     "description": "JVC_RM-C360 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/jvc/RM-C360.lircd.conf", "remote": "JVC_RM-C360", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/jvc/RM-C360.lircd.conf", "remote": "JVC_RM-C360", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

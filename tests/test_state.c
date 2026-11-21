@@ -5,32 +5,32 @@
 #include "state.h"
 #include "log.h"
 
-static char dir[] = "/tmp/piir-state-XXXXXX";
+static char dir[] = "/tmp/irlingo-state-XXXXXX";
 static char file[128];
 
 static void test_state_file_location(void) {
-  setenv("PIIR_STATE_DIR", "/some/dir", 1);
+  setenv("IRLINGO_STATE_DIR", "/some/dir", 1);
   char *path = toggleStateFile();
   CHECK_EQ_STR("/some/dir/toggle-state", path);
   free(path);
-  unsetenv("PIIR_STATE_DIR");
+  unsetenv("IRLINGO_STATE_DIR");
 
   if (geteuid() == 0) {
     path = toggleStateFile();
-    CHECK_EQ_STR("/var/lib/piir/toggle-state", path);
+    CHECK_EQ_STR("/var/lib/irlingo/toggle-state", path);
     free(path);
     return;
   }
   setenv("XDG_STATE_HOME", "/xdg", 1);
   path = toggleStateFile();
-  CHECK_EQ_STR("/xdg/piir/toggle-state", path);
+  CHECK_EQ_STR("/xdg/irlingo/toggle-state", path);
   free(path);
   unsetenv("XDG_STATE_HOME");
 
   char *home = getenv("HOME") ? strdup(getenv("HOME")) : NULL;
   setenv("HOME", "/home/pi", 1);
   path = toggleStateFile();
-  CHECK_EQ_STR("/home/pi/.local/state/piir/toggle-state", path);
+  CHECK_EQ_STR("/home/pi/.local/state/irlingo/toggle-state", path);
   free(path);
   unsetenv("HOME");
   CHECK(toggleStateFile() == NULL);

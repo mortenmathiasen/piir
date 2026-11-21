@@ -1,5 +1,5 @@
-# Runs piir and checks its exit code and output.
-#   PROG        path to piir
+# Runs irlingo and checks its exit code and output.
+#   PROG        path to irlingo
 #   EMULATOR    optional emulator command (e.g. qemu-aarch64), parts separated by ~~
 #   ARGS        arguments separated by ~~
 #   WORKDIR     working directory
@@ -22,7 +22,7 @@ string(REPLACE ";" " " cmdline "${PROG} ${ARGS}")
 message("$ ${cmdline}\n${output}exit: ${result}")
 
 if(NOT result MATCHES "^[0-9]+$")
-  message(FATAL_ERROR "piir did not exit normally: ${result}")
+  message(FATAL_ERROR "irlingo did not exit normally: ${result}")
 endif()
 if(EXIT STREQUAL "0" AND NOT result EQUAL 0)
   message(FATAL_ERROR "expected exit code 0")

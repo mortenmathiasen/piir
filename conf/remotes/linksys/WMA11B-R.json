@@ -1,6 +1,6 @@
 {
     "description": "Linksys_WMA11B-R (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/linksys/WMA11B-R.lircd.conf", "remote": "Linksys_WMA11B-R", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/linksys/WMA11B-R.lircd.conf", "remote": "Linksys_WMA11B-R", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

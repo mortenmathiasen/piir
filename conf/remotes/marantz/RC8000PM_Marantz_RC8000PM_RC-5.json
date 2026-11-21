@@ -1,6 +1,6 @@
 {
     "description": "Marantz_RC8000PM_RC-5 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/marantz/RC8000PM.lircd.conf", "remote": "Marantz_RC8000PM_RC-5", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/marantz/RC8000PM.lircd.conf", "remote": "Marantz_RC8000PM_RC-5", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

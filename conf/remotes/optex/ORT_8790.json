@@ -1,6 +1,6 @@
 {
     "description": "Optex_ORT_8790 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/optex/ORT_8790.lircd.conf", "remote": "Optex_ORT_8790", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/optex/ORT_8790.lircd.conf", "remote": "Optex_ORT_8790", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

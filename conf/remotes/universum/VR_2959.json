@@ -1,6 +1,6 @@
 {
     "description": "universum_vcr (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/universum/VR_2959.lircd.conf", "remote": "universum_vcr", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/universum/VR_2959.lircd.conf", "remote": "universum_vcr", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

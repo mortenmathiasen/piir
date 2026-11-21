@@ -10,7 +10,7 @@
 #include "log.h"
 
 // --- simulated libgpiod
-static char devDir[] = "/tmp/piir-gpiod-XXXXXX";
+static char devDir[] = "/tmp/irlingo-gpiod-XXXXXX";
 static const char *chipWithLine;     // "/dev/gpiochipN" holding the line, or NULL
 static const char *failFunction;     // name of the libgpiod function that fails
 static int lineOffset;

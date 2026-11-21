@@ -1,6 +1,6 @@
 {
     "description": "BBK_DV963SM (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/bbk/DV963SM.lircd.conf", "remote": "BBK_DV963SM", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/bbk/DV963SM.lircd.conf", "remote": "BBK_DV963SM", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

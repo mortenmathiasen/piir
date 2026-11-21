@@ -1,6 +1,6 @@
 {
     "description": "Hauppauge_DSR-0095 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/hauppauge/DSR-0095.lircd.conf", "remote": "Hauppauge_DSR-0095", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/hauppauge/DSR-0095.lircd.conf", "remote": "Hauppauge_DSR-0095", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

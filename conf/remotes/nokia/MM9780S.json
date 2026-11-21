@@ -1,6 +1,6 @@
 {
     "description": "MM9780S (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/nokia/MM9780S.lircd.conf", "remote": "MM9780S", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/nokia/MM9780S.lircd.conf", "remote": "MM9780S", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

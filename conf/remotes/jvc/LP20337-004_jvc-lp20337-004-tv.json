@@ -1,6 +1,6 @@
 {
     "description": "jvc-lp20337-004-tv (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/jvc/LP20337-004.lircd.conf", "remote": "jvc-lp20337-004-tv", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/jvc/LP20337-004.lircd.conf", "remote": "jvc-lp20337-004-tv", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

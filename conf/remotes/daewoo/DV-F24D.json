@@ -1,6 +1,6 @@
 {
     "description": "Daewoo_DV-F24D (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/daewoo/DV-F24D.lircd.conf", "remote": "Daewoo_DV-F24D", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/daewoo/DV-F24D.lircd.conf", "remote": "Daewoo_DV-F24D", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

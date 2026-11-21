@@ -1,6 +1,6 @@
 {
     "description": "SAT_SEZAM (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sezam/HST317.lircd.conf", "remote": "SAT_SEZAM", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sezam/HST317.lircd.conf", "remote": "SAT_SEZAM", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 55560,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

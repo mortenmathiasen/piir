@@ -1,6 +1,6 @@
 {
     "description": "jvc-lp20465-005-vcr (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/jvc/LP20465-005.lircd.conf", "remote": "jvc-lp20465-005-vcr", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/jvc/LP20465-005.lircd.conf", "remote": "jvc-lp20465-005-vcr", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

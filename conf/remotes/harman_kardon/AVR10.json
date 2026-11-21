@@ -1,6 +1,6 @@
 {
     "description": "AVR10 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/harman_kardon/AVR10.lircd.conf", "remote": "AVR10", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/harman_kardon/AVR10.lircd.conf", "remote": "AVR10", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 39200,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

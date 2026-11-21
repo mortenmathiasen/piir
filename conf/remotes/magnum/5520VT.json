@@ -1,6 +1,6 @@
 {
     "description": "Magnum_5520VT (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/magnum/5520VT.lircd.conf", "remote": "Magnum_5520VT", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/magnum/5520VT.lircd.conf", "remote": "Magnum_5520VT", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

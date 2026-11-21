@@ -165,7 +165,7 @@ int transmitWave(uint32_t outPin, gpioPulse_t *irSignal, unsigned int *pulseCoun
     log_error("gpiod_request_config_new");
     goto cleanup;
   }
-  gpiod_request_config_set_consumer(requestConfig, "piir");
+  gpiod_request_config_set_consumer(requestConfig, "irlingo");
 
   // request output line for pin
   request = gpiod_chip_request_lines(chip, requestConfig, lineConfig);

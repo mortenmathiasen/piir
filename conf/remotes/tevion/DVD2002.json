@@ -1,6 +1,6 @@
 {
     "description": "MD-5410 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/tevion/DVD2002.lircd.conf", "remote": "MD-5410", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/tevion/DVD2002.lircd.conf", "remote": "MD-5410", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Philips_N9250UD (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/N9250UD.lircd.conf", "remote": "Philips_N9250UD", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/philips/N9250UD.lircd.conf", "remote": "Philips_N9250UD", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

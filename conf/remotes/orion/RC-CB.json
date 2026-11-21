@@ -1,6 +1,6 @@
 {
     "description": "Orion_RC-CB (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/orion/RC-CB.lircd.conf", "remote": "Orion_RC-CB", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/orion/RC-CB.lircd.conf", "remote": "Orion_RC-CB", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

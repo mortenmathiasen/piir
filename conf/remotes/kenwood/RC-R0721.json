@@ -1,6 +1,6 @@
 {
     "description": "RC-R0721 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/kenwood/RC-R0721.lircd.conf", "remote": "RC-R0721", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/kenwood/RC-R0721.lircd.conf", "remote": "RC-R0721", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "UR5U-8700L-TWY (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/time_warner_cable/ur5u-8700l.lircd.conf", "remote": "UR5U-8700L-TWY", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/time_warner_cable/ur5u-8700l.lircd.conf", "remote": "UR5U-8700L-TWY", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "tevion_md6461_dvd_saba_373 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/tevion/MD6461.lircd.conf", "remote": "tevion_md6461_dvd_saba_373", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/tevion/MD6461.lircd.conf", "remote": "tevion_md6461_dvd_saba_373", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

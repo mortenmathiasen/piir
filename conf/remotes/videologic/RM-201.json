@@ -1,6 +1,6 @@
 {
     "description": "videologic_rm201 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/videologic/RM-201.lircd.conf", "remote": "videologic_rm201", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/videologic/RM-201.lircd.conf", "remote": "videologic_rm201", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

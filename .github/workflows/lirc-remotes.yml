@@ -8,14 +8,14 @@ on:
   push:
     branches: [master]
     paths:
-      - 'tools/lirc2piir.py'
+      - 'tools/lirc2irlingo.py'
       - 'tools/lirc-remotes*.txt'
       - 'conf/remotes/**'
       - 'tests/lirc/**'
       - '.github/workflows/lirc-remotes.yml'
   pull_request:
     paths:
-      - 'tools/lirc2piir.py'
+      - 'tools/lirc2irlingo.py'
       - 'tools/lirc-remotes*.txt'
       - 'conf/remotes/**'
       - 'tests/lirc/**'
@@ -49,20 +49,20 @@ jobs:
           fi
 
       - name: Compare the converter with irsimsend
-        run: python3 tools/lirc2piir.py verify "$RUNNER_TEMP/lirc-remotes/remotes"
+        run: python3 tools/lirc2irlingo.py verify "$RUNNER_TEMP/lirc-remotes/remotes"
 
       - name: Regenerate the converted remotes
         run: |
-          # Remove the converted remotes, keeping PIIR's own
+          # Remove the converted remotes, keeping irlingo's own
           find conf/remotes -name '*.json' -exec grep -l '"lirc-remotes":' {} + | xargs rm -f
           find conf/remotes -type d -empty -delete
-          python3 tools/lirc2piir.py convert -o conf/remotes \
+          python3 tools/lirc2irlingo.py convert -o conf/remotes \
             --report tools/lirc-remotes-report.txt "$RUNNER_TEMP/lirc-remotes/remotes"
 
       - name: Check they are unchanged
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git status --short | head -50
-            echo "::error::conf/remotes differs from the converter output, run tools/lirc2piir.py convert"
+            echo "::error::conf/remotes differs from the converter output, run tools/lirc2irlingo.py convert"
             exit 1
           fi

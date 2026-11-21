@@ -1,6 +1,6 @@
 {
     "description": "VK34080 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamaha/VK34080.lircd.conf", "remote": "VK34080", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/yamaha/VK34080.lircd.conf", "remote": "VK34080", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

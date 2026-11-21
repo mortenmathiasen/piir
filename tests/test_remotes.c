@@ -1,6 +1,6 @@
 // Checks remote configurations:
 // - every value of every feature produces a code that only uses defined
-//   symbols and fits PIIR's limits
+//   symbols and fits irlingo's limits
 // - the "tests" section of a remote, where present, lists features and the
 //   code a real remote sends for them, and each must match
 //

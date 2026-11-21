@@ -1,6 +1,6 @@
 {
     "description": "AVREC (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/kenwood/AVREC.lircd.conf", "remote": "AVREC", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/kenwood/AVREC.lircd.conf", "remote": "AVREC", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 39200,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

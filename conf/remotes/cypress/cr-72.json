@@ -1,6 +1,6 @@
 {
     "description": "CYP_CR-72 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/cypress/cr-72.lircd.conf", "remote": "CYP_CR-72", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/cypress/cr-72.lircd.conf", "remote": "CYP_CR-72", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "flyvideo (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/life-view/flyvideo.lircd.conf", "remote": "flyvideo", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/life-view/flyvideo.lircd.conf", "remote": "flyvideo", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 37916,
     "dutycycle": 0.33,
     "transmitter": {"outpin": 17},

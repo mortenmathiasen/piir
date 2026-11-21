@@ -1,6 +1,6 @@
 {
     "description": "Dell_XPS_Remote_MR425 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/dell/MR425.lircd.conf", "remote": "Dell_XPS_Remote_MR425", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/dell/MR425.lircd.conf", "remote": "Dell_XPS_Remote_MR425", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

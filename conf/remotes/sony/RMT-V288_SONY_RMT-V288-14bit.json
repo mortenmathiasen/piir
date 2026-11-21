@@ -1,6 +1,6 @@
 {
     "description": "SONY_RMT-V288-14bit (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sony/RMT-V288.lircd.conf", "remote": "SONY_RMT-V288-14bit", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sony/RMT-V288.lircd.conf", "remote": "SONY_RMT-V288-14bit", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

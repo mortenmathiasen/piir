@@ -1,6 +1,6 @@
 {
     "description": "Dream_Multimedia_URC-39930 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/dream_multimedia/URC-39930RJ0-03.lircd.conf", "remote": "Dream_Multimedia_URC-39930", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/dream_multimedia/URC-39930RJ0-03.lircd.conf", "remote": "Dream_Multimedia_URC-39930", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

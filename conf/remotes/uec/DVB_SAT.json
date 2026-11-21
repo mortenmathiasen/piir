@@ -1,6 +1,6 @@
 {
     "description": "UEC_DVB_SAT (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/uec/DVB_SAT.lircd.conf", "remote": "UEC_DVB_SAT", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/uec/DVB_SAT.lircd.conf", "remote": "UEC_DVB_SAT", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "4dtv (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/motorola/920.lircd.conf", "remote": "4dtv", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/motorola/920.lircd.conf", "remote": "4dtv", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

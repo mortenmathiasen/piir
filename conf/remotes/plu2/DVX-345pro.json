@@ -1,6 +1,6 @@
 {
     "description": "PLU2_DVX-345pro (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/plu2/DVX-345pro.lircd.conf", "remote": "PLU2_DVX-345pro", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/plu2/DVX-345pro.lircd.conf", "remote": "PLU2_DVX-345pro", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "technics_sl-ps670a (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/technics/SL-PS670A.lircd.conf", "remote": "technics_sl-ps670a", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/technics/SL-PS670A.lircd.conf", "remote": "technics_sl-ps670a", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

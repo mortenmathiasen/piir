@@ -1,6 +1,6 @@
 {
     "description": "RD6834 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/RD6834.lircd.conf", "remote": "RD6834", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/philips/RD6834.lircd.conf", "remote": "RD6834", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

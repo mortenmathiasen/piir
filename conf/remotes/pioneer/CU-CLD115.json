@@ -1,6 +1,6 @@
 {
     "description": "Pioneer_CU-CLD115 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/pioneer/CU-CLD115.lircd.conf", "remote": "Pioneer_CU-CLD115", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/pioneer/CU-CLD115.lircd.conf", "remote": "Pioneer_CU-CLD115", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

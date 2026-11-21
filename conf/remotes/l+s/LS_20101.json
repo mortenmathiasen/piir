@@ -1,6 +1,6 @@
 {
     "description": "LS (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/l+s/LS_20101.lircd.conf", "remote": "LS", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/l+s/LS_20101.lircd.conf", "remote": "LS", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "AS-218 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/cph03x/cph03x.lircd.conf", "remote": "AS-218", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/cph03x/cph03x.lircd.conf", "remote": "AS-218", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

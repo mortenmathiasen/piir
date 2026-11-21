@@ -1,6 +1,6 @@
 {
     "description": "SE-R0058 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/toshiba/SE-R0058.lircd.conf", "remote": "SE-R0058", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/toshiba/SE-R0058.lircd.conf", "remote": "SE-R0058", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

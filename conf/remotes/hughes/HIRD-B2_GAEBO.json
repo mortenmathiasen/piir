@@ -1,6 +1,6 @@
 {
     "description": "HUGHES_DSS_GAEBO (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/hughes/HIRD-B2_GAEBO.lircd.conf", "remote": "HUGHES_DSS_GAEBO", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/hughes/HIRD-B2_GAEBO.lircd.conf", "remote": "HUGHES_DSS_GAEBO", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

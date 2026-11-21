@@ -1,6 +1,6 @@
 {
     "description": "KWorld-DVBT-PE310 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/kworld/DVBT-PE310.lircd.conf", "remote": "KWorld-DVBT-PE310", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/kworld/DVBT-PE310.lircd.conf", "remote": "KWorld-DVBT-PE310", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

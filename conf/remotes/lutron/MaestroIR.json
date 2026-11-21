@@ -1,6 +1,6 @@
 {
     "description": "Lutron_MaestroIR (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lutron/MaestroIR.lircd.conf", "remote": "Lutron_MaestroIR", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/lutron/MaestroIR.lircd.conf", "remote": "Lutron_MaestroIR", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 40000,
     "dutycycle": 0.4,
     "transmitter": {"outpin": 17},

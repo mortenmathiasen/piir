@@ -1,6 +1,6 @@
 {
     "description": "VP37320 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/yamaha/VP37320.lircd.conf", "remote": "VP37320", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/yamaha/VP37320.lircd.conf", "remote": "VP37320", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

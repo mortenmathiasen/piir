@@ -1,11 +1,11 @@
 #ifndef STATE_H
 #define STATE_H
 
-// Remotes with a toggle bit flip it on every press. PIIR remembers the
+// Remotes with a toggle bit flip it on every press. irlingo remembers the
 // state of each remote between runs in a small file:
-//   $PIIR_STATE_DIR/toggle-state if PIIR_STATE_DIR is set,
-//   /var/lib/piir/toggle-state when run as root, otherwise
-//   $XDG_STATE_HOME/piir/toggle-state or ~/.local/state/piir/toggle-state
+//   $IRLINGO_STATE_DIR/toggle-state if IRLINGO_STATE_DIR is set,
+//   /var/lib/irlingo/toggle-state when run as root, otherwise
+//   $XDG_STATE_HOME/irlingo/toggle-state or ~/.local/state/irlingo/toggle-state
 // Each line holds a state (0 or 1) and the path of a remote file.
 
 // The state file path, to be freed, or NULL if none can be determined

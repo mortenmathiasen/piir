@@ -1,6 +1,6 @@
 {
     "description": "C-802 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/chiro/C-802.lircd.conf", "remote": "C-802", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/chiro/C-802.lircd.conf", "remote": "C-802", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

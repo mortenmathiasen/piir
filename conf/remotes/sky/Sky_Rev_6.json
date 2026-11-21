@@ -1,6 +1,6 @@
 {
     "description": "Sky_Rev._6 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sky/Sky_Rev_6.lircd.conf", "remote": "Sky_Rev._6", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sky/Sky_Rev_6.lircd.conf", "remote": "Sky_Rev._6", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "NOW_Broadband_TV (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/now_broadband_tv/SETTOP-BOX.lircd.conf", "remote": "NOW_Broadband_TV", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/now_broadband_tv/SETTOP-BOX.lircd.conf", "remote": "NOW_Broadband_TV", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

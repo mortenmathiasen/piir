@@ -1,6 +1,6 @@
 # Builds heatpumpir_capture, which records the codes of arduino-heatpumpir
-# (https://github.com/ToniA/arduino-heatpumpir, GPL-2.0) for ir2piir.py.
-# The library is not part of PIIR; point HEATPUMPIR_DIR at a checkout:
+# (https://github.com/ToniA/arduino-heatpumpir, GPL-2.0) for ir2irlingo.py.
+# The library is not part of irlingo; point HEATPUMPIR_DIR at a checkout:
 #   git clone https://github.com/ToniA/arduino-heatpumpir.git
 #   cmake -S tools/heatpumpir -B build/heatpumpir -DHEATPUMPIR_DIR=$PWD/arduino-heatpumpir
 #   cmake --build build/heatpumpir

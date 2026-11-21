@@ -1,6 +1,6 @@
 {
     "description": "Palcom_DSL-6_T (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/palcom/DSL-6_T.lircd.conf", "remote": "Palcom_DSL-6_T", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/palcom/DSL-6_T.lircd.conf", "remote": "Palcom_DSL-6_T", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

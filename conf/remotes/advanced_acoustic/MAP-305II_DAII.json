@@ -1,6 +1,6 @@
 {
     "description": "Advance_Acoustic_MAP-305II/DAII (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/advanced_acoustic/MAP-305II_DAII.lircd.conf", "remote": "Advance_Acoustic_MAP-305II/DAII", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/advanced_acoustic/MAP-305II_DAII.lircd.conf", "remote": "Advance_Acoustic_MAP-305II/DAII", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "RM_M25-43303 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/mitsubishi/RM_M25-43303.lircd.conf", "remote": "RM_M25-43303", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/mitsubishi/RM_M25-43303.lircd.conf", "remote": "RM_M25-43303", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

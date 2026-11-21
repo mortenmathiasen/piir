@@ -1,6 +1,6 @@
 {
     "description": "AIWA-RC-5VP05 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/aiwa/RC-5VP05.lircd.conf", "remote": "AIWA-RC-5VP05", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/aiwa/RC-5VP05.lircd.conf", "remote": "AIWA-RC-5VP05", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,7 +1,7 @@
 // Just enough of the Arduino API to build arduino-heatpumpir on a PC.
 // delay() records a space, as the IR LED is off while the sketch waits.
-#ifndef PIIR_HOST_ARDUINO_H
-#define PIIR_HOST_ARDUINO_H
+#ifndef IRLINGO_HOST_ARDUINO_H
+#define IRLINGO_HOST_ARDUINO_H
 
 #include <stdint.h>
 #include <stddef.h>

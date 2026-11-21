@@ -1,6 +1,6 @@
 {
     "description": "control-Philips-0081d (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/one_for_all/URC-7510.lircd.conf", "remote": "control-Philips-0081d", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/one_for_all/URC-7510.lircd.conf", "remote": "control-Philips-0081d", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

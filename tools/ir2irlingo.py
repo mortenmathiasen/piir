@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Derive a PIIR remote from recorded IR codes.
+"""Derive a irlingo remote from recorded IR codes.
 
 The input is one or more capture files in JSON Lines format, one recorded
 code per line, with the features (settings) the code was sent for:
@@ -34,7 +34,7 @@ The remote is derived in steps:
      override ("overrides" in the remote)
   4. every capture is encoded again from the remote and compared
 
-The result is written as a PIIR remote, with a sample of the captures as
+The result is written as a irlingo remote, with a sample of the captures as
 test vectors. The exit code is 1 when some captures cannot be reproduced.
 """
 
@@ -49,7 +49,7 @@ SEPARATOR = "-"
 SYMBOL_NAMES = "HWABCDEFGIJKLMNOPQRSTUVXYZ"
 
 
-class Ir2PiirError(Exception):
+class Ir2IrlingoError(Exception):
     pass
 
 
@@ -62,7 +62,7 @@ def load_captures(paths):
             with open(path) as f:
                 lines = f.readlines()
         except OSError as e:
-            raise Ir2PiirError("cannot read %s: %s" % (path, e.strerror))
+            raise Ir2IrlingoError("cannot read %s: %s" % (path, e.strerror))
         for number, line in enumerate(lines, 1):
             line = line.strip()
             if not line or line.startswith("#"):
@@ -71,16 +71,16 @@ def load_captures(paths):
             try:
                 data = json.loads(line)
             except ValueError as e:
-                raise Ir2PiirError("%s: %s" % (where, e))
+                raise Ir2IrlingoError("%s: %s" % (where, e))
             if not isinstance(data, dict):
-                raise Ir2PiirError("%s: not a JSON object" % where)
+                raise Ir2IrlingoError("%s: not a JSON object" % where)
             features = data.get("features")
             durations = data.get("durations")
             if not isinstance(features, dict) or not features:
-                raise Ir2PiirError("%s: no features" % where)
+                raise Ir2IrlingoError("%s: no features" % where)
             if (not isinstance(durations, list) or len(durations) < 2 or
                     not all(isinstance(d, (int, float)) and d > 0 for d in durations)):
-                raise Ir2PiirError("%s: durations must be positive numbers" % where)
+                raise Ir2IrlingoError("%s: durations must be positive numbers" % where)
             captures.append({
                 "features": OrderedDict((str(k), str(v)) for k, v in features.items()),
                 "durations": [int(round(d)) for d in durations],
@@ -88,11 +88,11 @@ def load_captures(paths):
                 "where": where,
             })
     if not captures:
-        raise Ir2PiirError("no captures")
+        raise Ir2IrlingoError("no captures")
     names = list(captures[0]["features"])
     for c in captures:
         if sorted(c["features"]) != sorted(names):
-            raise Ir2PiirError("%s: features %s differ from the first capture's %s"
+            raise Ir2IrlingoError("%s: features %s differ from the first capture's %s"
                                % (c["where"], sorted(c["features"]), sorted(names)))
     return captures
 
@@ -136,7 +136,7 @@ def derive_symbols(captures, tolerance=0.2):
 
     counts = Counter(p for pairs in pair_lists for p in pairs if p[1] is not None)
     if len(counts) < 2:
-        raise Ir2PiirError("the codes need at least two kinds of mark/space pairs")
+        raise Ir2IrlingoError("the codes need at least two kinds of mark/space pairs")
     (a, _), (b, _) = counts.most_common(2)
     duration = lambda p: (mark_means[p[0]], space_means[p[1]])
     if a[0] == b[0]:     # pulse distance: the shorter space is 0
@@ -266,7 +266,7 @@ def checksum_value(spec, values, width):
 
 
 def apply_checksums(code, checksums):
-    """Apply checksums like PIIR does (src/checksum.c)"""
+    """Apply checksums like irlingo does (src/checksum.c)"""
     code = list(code)
     for spec in checksums:
         width = 4 if spec.get("unit") == "nibble" else 8
@@ -733,12 +733,12 @@ def derive_features(captures, codes, excluded):
             n = changed[0]
             known = single[n].setdefault(c["features"][n], code)
             if known != code:
-                raise Ir2PiirError("%s: two different codes for %s=%s with the other "
+                raise Ir2IrlingoError("%s: two different codes for %s=%s with the other "
                                    "features as in the first capture"
                                    % (c["where"], n, c["features"][n]))
     missing = ["%s=%s" % (n, v) for n in names for v in values[n] if v not in single[n]]
     if missing:
-        raise Ir2PiirError("no capture with only one feature changed from the first "
+        raise Ir2IrlingoError("no capture with only one feature changed from the first "
                            "capture for: " + ", ".join(missing))
 
     diff = {}
@@ -996,7 +996,7 @@ def _cycle(names, after):
 
 
 def encode(template, features, checksums, wanted, overrides=()):
-    """Encode like PIIR: overlay the features in their order, then the
+    """Encode like irlingo: overlay the features in their order, then the
     overrides whose features are all wanted, then checksums"""
     code = list(template)
     overlays = [values.get(wanted.get(name)) for name, values in features.items()]
@@ -1012,7 +1012,7 @@ def encode(template, features, checksums, wanted, overrides=()):
 
 
 def pulses(code, symboldefinitions):
-    """The pulses and spaces PIIR sends for a code (src/lirc.c)"""
+    """The pulses and spaces irlingo sends for a code (src/lirc.c)"""
     values = []
     for s in code:
         for is_mark, d in ((True, symboldefinitions[s]["mark"]),
@@ -1174,7 +1174,7 @@ def select_definition(remote, wanted):
 
 
 def encode_remote(remote, wanted):
-    """Encode like PIIR, including variants"""
+    """Encode like irlingo, including variants"""
     definition = select_definition(remote, wanted)
     return encode(definition["template"], definition.get("features", {}),
                   definition.get("checksums", []), wanted, definition.get("overrides", []))
@@ -1201,9 +1201,9 @@ def build_remote(captures, description, dutycycle=0.5, outpin=17, tolerance=0.2,
         cc = [codes[i] for i in members]
         try:
             return _derive_definition(cs, cc)
-        except Ir2PiirError as e:
+        except Ir2IrlingoError as e:
             if not fallback:
-                raise Ir2PiirError("%s: %s" % (what, e))
+                raise Ir2IrlingoError("%s: %s" % (what, e))
             print("warning: %s: %s; hard-coding its %d captures" % (what, e, len(cs)),
                   file=sys.stderr)
             return _hard_coded(cs, cc)
@@ -1224,7 +1224,7 @@ def build_remote(captures, description, dutycycle=0.5, outpin=17, tolerance=0.2,
                 variant["template"] = codes[i]
                 variants.append(variant)
         else:
-            raise Ir2PiirError(
+            raise Ir2IrlingoError(
                 "%d codes have another structure than the first capture, and no feature "
                 "value selects them (codes of different lengths need one, or --fallback); "
                 "e.g. %s:\n  %s\n  %s" % (len(members), captures[members[0]]["where"],
@@ -1290,7 +1290,7 @@ def main(argv=None):
                                 epilog="See the module documentation for the capture format.")
     p.add_argument("captures", nargs="+", help="capture files (JSON Lines)")
     p.add_argument("-o", "--output", help="remote file to write (default: standard output)")
-    p.add_argument("--description", default="Remote derived from captures by ir2piir")
+    p.add_argument("--description", default="Remote derived from captures by ir2irlingo")
     p.add_argument("--dutycycle", type=float, default=0.5)
     p.add_argument("--outpin", type=int, default=17)
     p.add_argument("--tolerance", type=float, default=0.2,
@@ -1313,8 +1313,8 @@ def main(argv=None):
                                         args.outpin, args.tolerance, args.tests,
                                         args.separators, args.fallback)
         held_out = load_captures(args.check) if args.check else []
-    except Ir2PiirError as e:
-        print("ir2piir: %s" % e, file=sys.stderr)
+    except Ir2IrlingoError as e:
+        print("ir2irlingo: %s" % e, file=sys.stderr)
         return 2
 
     text = to_json(remote) + "\n"

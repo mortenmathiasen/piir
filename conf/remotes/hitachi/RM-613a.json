@@ -1,6 +1,6 @@
 {
     "description": "RM-613a (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/hitachi/RM-613a.lircd.conf", "remote": "RM-613a", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/hitachi/RM-613a.lircd.conf", "remote": "RM-613a", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 39200,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

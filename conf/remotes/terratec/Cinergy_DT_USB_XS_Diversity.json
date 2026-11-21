@@ -1,6 +1,6 @@
 {
     "description": "Terratec_Cinergy_DT_USB_XS_Diversity (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/terratec/Cinergy_DT_USB_XS_Diversity.lircd.conf", "remote": "Terratec_Cinergy_DT_USB_XS_Diversity", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/terratec/Cinergy_DT_USB_XS_Diversity.lircd.conf", "remote": "Terratec_Cinergy_DT_USB_XS_Diversity", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

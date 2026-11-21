@@ -1,6 +1,6 @@
 {
     "description": "PHILIPS_17PT1563_43 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/17PT1563_43.lircd.conf", "remote": "PHILIPS_17PT1563_43", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/philips/17PT1563_43.lircd.conf", "remote": "PHILIPS_17PT1563_43", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

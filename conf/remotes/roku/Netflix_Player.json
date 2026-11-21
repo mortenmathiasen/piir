@@ -1,6 +1,6 @@
 {
     "description": "Roku_Netflix_Player (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/roku/Netflix_Player.lircd.conf", "remote": "Roku_Netflix_Player", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/roku/Netflix_Player.lircd.conf", "remote": "Roku_Netflix_Player", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

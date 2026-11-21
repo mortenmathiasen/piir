@@ -3,7 +3,7 @@
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {
-	"device": "/nonexistent/piir-test/lirc0"
+	"device": "/nonexistent/irlingo-test/lirc0"
     },
     "symboldefinitions": {
 	"0": {"mark": 560, "space": 560},

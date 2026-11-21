@@ -1,6 +1,6 @@
 {
     "description": "RC-548 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/teac/RC-548.lircd.conf", "remote": "RC-548", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/teac/RC-548.lircd.conf", "remote": "RC-548", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

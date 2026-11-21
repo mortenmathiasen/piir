@@ -1,6 +1,6 @@
 {
     "description": "meliconi_control4_702 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/meliconi/Control_4.lircd.conf", "remote": "meliconi_control4_702", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/meliconi/Control_4.lircd.conf", "remote": "meliconi_control4_702", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

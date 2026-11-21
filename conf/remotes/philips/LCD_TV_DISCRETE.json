@@ -1,6 +1,6 @@
 {
     "description": "Philips_LCD_TV_DISCRETE (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/philips/LCD_TV_DISCRETE.lircd.conf", "remote": "Philips_LCD_TV_DISCRETE", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/philips/LCD_TV_DISCRETE.lircd.conf", "remote": "Philips_LCD_TV_DISCRETE", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 36000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

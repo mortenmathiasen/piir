@@ -1,6 +1,6 @@
 {
     "description": "/etc/lirc/ab-cryptobox-hd-500.conf (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/cryptobox/hd-500.lircd.conf", "remote": "/etc/lirc/ab-cryptobox-hd-500.conf", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/cryptobox/hd-500.lircd.conf", "remote": "/etc/lirc/ab-cryptobox-hd-500.conf", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

@@ -1,6 +1,6 @@
 {
     "description": "Lenovo_Y530_RC2292601/01 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/lenovo/RC2292601_01.lircd.conf", "remote": "Lenovo_Y530_RC2292601/01", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/lenovo/RC2292601_01.lircd.conf", "remote": "Lenovo_Y530_RC2292601/01", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

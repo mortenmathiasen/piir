@@ -1,6 +1,6 @@
 {
     "description": "Scientific_Atlanta-1840 (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/scientific_atlanta/1840.lircd.conf", "remote": "Scientific_Atlanta-1840", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/scientific_atlanta/1840.lircd.conf", "remote": "Scientific_Atlanta-1840", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

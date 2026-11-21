@@ -1,6 +1,6 @@
 {
     "description": "G0247AJ (LIRC remote)",
-    "source": {"lirc-remotes": "remotes/sharp/VC-1594B.lircd.conf", "remote": "G0247AJ", "converter": "tools/lirc2piir.py 1.1"},
+    "source": {"lirc-remotes": "remotes/sharp/VC-1594B.lircd.conf", "remote": "G0247AJ", "converter": "tools/lirc2irlingo.py 1.1"},
     "frequency": 38000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},

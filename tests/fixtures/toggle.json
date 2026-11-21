@@ -1,6 +1,6 @@
 {
     "description": "Remote with a toggle bit",
-    "transmitter": {"device": "/nonexistent/piir-test/lirc0"},
+    "transmitter": {"device": "/nonexistent/irlingo-test/lirc0"},
     "symboldefinitions": {
 	"A": {"mark": 889, "space": 889},
 	"B": {"mark": 1778, "space": 889},

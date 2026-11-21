@@ -278,8 +278,9 @@ The LED blinks once per command. Then replace it with the IR LED circuit.
 ## Checking that the LED sends
 
 Look at the LED through a phone camera while sending: most cameras show
-infrared as a faint purple flash. Some phones filter infrared on the main
-camera; try the front camera.
+infrared as a faint purple flash. Many phones, e.g. iPhones, filter infrared on
+the main (rear) camera; use the front camera. To check that the camera sees
+infrared at all, point a TV's own remote at it and press a button.
 
 - Raspberry Pi: send with `irlingo --remote ... --feature ... --verbose INFO`,
   see [Troubleshooting](troubleshooting.md) if nothing happens.
@@ -289,3 +290,13 @@ camera; try the front camera.
 No flash: check the LED's direction (the longer leg towards the resistor or
 5 V), the transistor's pins (they differ between transistor types; check its
 datasheet) and the GPIO pin in the configuration.
+
+To test the IR LED on its own, connect it directly: 3.3 V, a 33 Ω resistor, the
+LED's long leg, its short leg to GND. This gives it about 60 mA, within its
+rating, and a working IR LED glows steadily on the front camera. If it does not
+glow either way round, it is faulty or not an IR LED: an IR receiver or
+photodiode looks very similar but sends nothing, and is often black or dark
+grey. Replace it with a 940 nm IR LED, e.g. a Vishay TSAL6200.
+
+To test the circuit around it, put a visible LED in its place, see
+[Testing with a visible LED](#testing-with-a-visible-led).

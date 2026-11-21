@@ -161,6 +161,58 @@ static void test_restart(void) {
 		 "00000011W00000011");
 }
 
+static void test_crc(void) {
+  // Check values of the CRC catalogue for the bytes of "123456789"
+  // CRC-8/SMBUS
+  CHECK_CHECKSUM("[{\"type\": \"crc\", \"poly\": 7, \"from\": 0, \"to\": 8, \"at\": 9, \"bitorder\": \"msb\"}]",
+		 "00110001-00110010-00110011-00110100-00110101-00110110-00110111-00111000-00111001-00000000",
+		 "00110001-00110010-00110011-00110100-00110101-00110110-00110111-00111000-00111001-11110100");
+  // CRC-8/MAXIM-DOW, sent lowest bit first
+  CHECK_CHECKSUM("[{\"type\": \"crc\", \"poly\": 49, \"reflect\": true, \"from\": 0, \"to\": 8, \"at\": 9}]",
+		 "10001100-01001100-11001100-00101100-10101100-01101100-11101100-00011100-10011100-00000000",
+		 "10001100-01001100-11001100-00101100-10101100-01101100-11101100-00011100-10011100-10000101");
+  // CRC-16/IBM-3740, the high byte first
+  CHECK_CHECKSUM("[{\"type\": \"crc\", \"poly\": 4129, \"init\": 65535, \"from\": 0, \"to\": 8, \"at\": [9, 10], \"bitorder\": \"msb\"}]",
+		 "00110001-00110010-00110011-00110100-00110101-00110110-00110111-00111000-00111001-00000000-00000000",
+		 "00110001-00110010-00110011-00110100-00110101-00110110-00110111-00111000-00111001-00101001-10110001");
+  // CRC-16/MODBUS, the low byte first
+  CHECK_CHECKSUM("[{\"type\": \"crc\", \"poly\": 32773, \"init\": 65535, \"reflect\": true, \"from\": 0, \"to\": 8, \"at\": [9, 10]}]",
+		 "10001100-01001100-11001100-00101100-10101100-01101100-11101100-00011100-10011100-00000000-00000000",
+		 "10001100-01001100-11001100-00101100-10101100-01101100-11101100-00011100-10011100-11101100-11010010");
+  // CRC-8/SAE-J1850
+  CHECK_CHECKSUM("[{\"type\": \"crc\", \"poly\": 29, \"init\": 255, \"xorout\": 255, \"from\": 0, \"to\": 8, \"at\": 9, \"bitorder\": \"msb\"}]",
+		 "00110001-00110010-00110011-00110100-00110101-00110110-00110111-00111000-00111001-00000000",
+		 "00110001-00110010-00110011-00110100-00110101-00110110-00110111-00111000-00111001-01001011");
+}
+
+static void test_popcount(void) {
+  // 0x0F and 0x03 have 6 bits set
+  CHECK_CHECKSUM("[{\"type\": \"popcount\", \"from\": 0, \"to\": 1, \"at\": 2}]",
+		 "11110000-11000000-11111111",
+		 "11110000-11000000-01100000");
+  // Samsung FJM: 28 - count, as 0 - (4 + count) modulo 16, into a nibble:
+  // 5 bits set, 28 - 5 = 23, 7 modulo 16
+  CHECK_CHECKSUM("[{\"type\": \"popcount\", \"unit\": \"nibble\", \"from\": 2, \"to\": 5, \"at\": 1, \"init\": 4, \"negate\": true}]",
+		 "0000-0000-1111-1000-0000-0000",
+		 "0000-1110-1111-1000-0000-0000");
+}
+
+static void test_result_units(void) {
+  // Samsung AQV: ~count of the other nibbles, the low nibble into nibble 1
+  // and the high one into nibble 2: 5 bits set, ~5 = 0xFA
+  CHECK_CHECKSUM("[{\"type\": \"popcount\", \"unit\": \"nibble\", \"data\": [0, 3], \"at\": [1, 2], \"invert\": true}]",
+		 "1110-0000-0000-1100",
+		 "1110-0101-1111-1100");
+  // With "msb" the first unit holds the high bits: 0x01 + 0xFF = 0x0100
+  CHECK_CHECKSUM("[{\"type\": \"sum\", \"from\": 0, \"to\": 1, \"at\": [2, 3], \"bitorder\": \"msb\"}]",
+		 "00000001-11111111-11111111-11111111",
+		 "00000001-11111111-00000001-00000000");
+  // Written in the order listed
+  CHECK_CHECKSUM("[{\"type\": \"sum\", \"from\": 0, \"to\": 1, \"at\": [3, 2], \"bitorder\": \"msb\"}]",
+		 "00000001-11111111-11111111-11111111",
+		 "00000001-11111111-00000000-00000001");
+}
+
 static void test_invalid(void) {
   const char *code = "00000001-00000010-00000000";
   CHECK_INVALID("[{\"type\": \"crc\", \"from\": 0, \"to\": 1, \"at\": 2}]", code);
@@ -191,6 +243,17 @@ static void test_invalid(void) {
   CHECK_INVALID("[{\"type\": \"sum\", \"data\": [0, \"1\"], \"at\": 2}]", code);
   CHECK_INVALID("[{\"type\": \"sum\", \"data\": [0, 2], \"at\": 2}]", code);
   CHECK_INVALID("[{\"type\": \"sum\", \"data\": [0, 3], \"at\": 2}]", code);
+  CHECK_INVALID("[{\"type\": \"crc\", \"poly\": 256, \"from\": 0, \"to\": 1, \"at\": 2}]", code);
+  CHECK_INVALID("[{\"type\": \"sum\", \"poly\": 7, \"from\": 0, \"to\": 1, \"at\": 2}]", code);
+  CHECK_INVALID("[{\"type\": \"xor\", \"reflect\": true, \"from\": 0, \"to\": 1, \"at\": 2}]", code);
+  CHECK_INVALID("[{\"type\": \"crc\", \"poly\": 7, \"reflect\": 1, \"from\": 0, \"to\": 1, \"at\": 2}]", code);
+  CHECK_INVALID("[{\"type\": \"sum\", \"from\": 0, \"to\": 1, \"at\": 2, \"xorout\": 256}]", code);
+  CHECK_INVALID("[{\"type\": \"sum\", \"from\": 0, \"to\": 0, \"at\": [1, 1]}]", code);
+  CHECK_INVALID("[{\"type\": \"sum\", \"from\": 0, \"to\": 1, \"at\": [2, 1]}]", code);
+  CHECK_INVALID("[{\"type\": \"sum\", \"from\": 0, \"to\": 0, \"at\": [1, 2, 3]}]", code);
+  CHECK_INVALID("[{\"type\": \"sum\", \"from\": 0, \"to\": 0, \"at\": []}]", code);
+  CHECK_INVALID("[{\"type\": \"sum\", \"from\": 0, \"to\": 0, \"at\": [1, \"2\"]}]", code);
+  CHECK_INVALID("[{\"type\": \"sum\", \"unit\": \"nibble\", \"from\": 0, \"to\": 0, \"at\": [1, 2, 3, 4, 5, 6, 7, 8, 9]}]", code);
 }
 
 // Test vector "No 1" from conf/remotes/panasonic/hvac_panasonic.json
@@ -226,6 +289,9 @@ int main(void) {
   RUN_TEST(test_nibbles);
   RUN_TEST(test_data_list);
   RUN_TEST(test_restart);
+  RUN_TEST(test_crc);
+  RUN_TEST(test_popcount);
+  RUN_TEST(test_result_units);
   RUN_TEST(test_invalid);
   RUN_TEST(test_panasonic);
   return TEST_RESULT();

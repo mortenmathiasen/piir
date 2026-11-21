@@ -201,6 +201,68 @@ class ChecksumTest(unittest.TestCase):
         self.assertEqual([{"type": "sum", "from": 0, "to": 3, "at": 4}],
                          ir2piir.find_checksums(self.codes(make)))
 
+    def test_popcount(self):
+        # Samsung FJM style: 28 minus the set bits of bytes 2-3, in the high
+        # nibble of byte 1
+        def make(d):
+            check = (28 - sum(bin(b).count("1") for b in d[2:4])) & 15
+            return "".join(bits(b) for b in [d[0], check << 4 | 2, d[2], d[3]])
+        found = ir2piir.find_checksums(self.codes(make))
+        self.assertEqual([{"type": "popcount", "unit": "nibble", "from": 4, "to": 7, "at": 3,
+                           "init": 4, "negate": True}], found)
+
+    def test_popcount_into_two_units(self):
+        # Samsung AQV style: the complement of the set bits of the other
+        # nibbles, its low nibble in nibble 3 and its high one in nibble 4
+        def make(d):
+            data = [0x02, 0, d[1] & 0xf0, d[2], d[3]]
+            check = ~sum(bin(b).count("1") for b in data) & 0xff
+            data[1] = (check & 15) << 4
+            data[2] |= check >> 4
+            return "".join(bits(b) for b in data)
+        codes = self.codes(make, count=200)
+        found = ir2piir.find_checksums(codes)
+        self.assertEqual([{"type": "popcount", "unit": "nibble",
+                           "data": [0, 1, 2, 5, 6, 7, 8, 9], "at": [3, 4], "invert": True}],
+                         found)
+        for code in codes:
+            self.assertEqual(code, ir2piir.apply_checksums(code, found))
+
+    def test_crc(self):
+        # CRC-8/MAXIM-DOW (reflected, lowest bit first) is found as the same
+        # CRC unreflected with the highest bit first: the same bits are sent
+        rng = random.Random(1)
+        maxim = {"type": "crc", "poly": 0x31, "from": 0, "to": 3, "at": 4, "reflect": True}
+        for spec, expected in (
+                ({"type": "crc", "poly": 7, "from": 0, "to": 3, "at": 4, "bitorder": "msb"}, None),
+                (maxim, dict(maxim, reflect=False, bitorder="msb")),
+                ({"type": "crc", "poly": 0x1D, "from": 0, "to": 3, "at": 4,
+                  "init": 0xFF, "xorout": 0xFF, "bitorder": "msb"}, None),
+                # Without x^0 in the polynomial no start value may give the
+                # result: a final XOR does
+                ({"type": "crc", "poly": 6, "from": 0, "to": 3, "at": 4, "xorout": 1,
+                  "bitorder": "msb"}, None),
+                # The start value 5 over the constant first nibble 5 is the
+                # same as no start value without it
+                ({"type": "crc", "unit": "nibble", "poly": 3, "from": 0, "to": 5,
+                  "at": 6, "init": 5},
+                 {"type": "crc", "unit": "nibble", "poly": 3, "from": 1, "to": 5, "at": 6,
+                  "reflect": False})):
+            width = 4 if spec.get("unit") else 8
+            msb = spec.get("bitorder") == "msb"
+            codes = []
+            for _ in range(40):
+                d = [0x5 if width == 4 else 0x5A] + [rng.randrange(1 << width)
+                                                     for _ in range(spec["to"])]
+                d.append(ir2piir.checksum_value(spec, d, width))
+                codes.append("".join(bits(b, width, msb) for b in d) + "0" * (8 - width))
+            if expected:
+                del expected["reflect"]
+            found = ir2piir.find_checksums(codes)
+            self.assertEqual([expected or spec], found)
+            for code in codes:
+                self.assertEqual(code, ir2piir.apply_checksums(code, found))
+
     def test_none(self):
         self.assertEqual([], ir2piir.find_checksums(
             self.codes(lambda d: "".join(bits(b) for b in d))))
@@ -217,6 +279,22 @@ class ChecksumTest(unittest.TestCase):
             "00000001-00000010-00000000", [{"type": "sum", "from": 0, "to": 1, "at": 2,
                                             "invert": True, "negate": True,
                                             "bitorder": "msb"}]))
+        self.assertEqual("11110000-11000000-01100000", apply(
+            "11110000-11000000-11111111", [{"type": "popcount", "from": 0, "to": 1, "at": 2}]))
+        self.assertEqual("1110-0101-1111-1100", apply(
+            "1110-0000-0000-1100", [{"type": "popcount", "unit": "nibble", "data": [0, 3],
+                                     "at": [1, 2], "invert": True}]))
+        self.assertEqual("00000001-11111111-00000000-00000001", apply(
+            "00000001-11111111-11111111-11111111", [{"type": "sum", "from": 0, "to": 1,
+                                                     "at": [3, 2], "bitorder": "msb"}]))
+        check = "".join(bits(b, msb=True) for b in b"123456789")
+        self.assertEqual(check + bits(0x4B, msb=True), apply(
+            check + "0" * 8, [{"type": "crc", "poly": 0x1D, "init": 0xFF, "xorout": 0xFF,
+                               "from": 0, "to": 8, "at": 9, "bitorder": "msb"}]))
+        check = "".join(bits(b) for b in b"123456789")
+        self.assertEqual(check + bits(0x37) + bits(0x4B), apply(
+            check + "0" * 16, [{"type": "crc", "poly": 0x8005, "init": 0xFFFF, "reflect": True,
+                                "from": 0, "to": 8, "at": [9, 10]}]))
 
 
 # A small air conditioner: mode and fan nibbles, a byte checksum. Mode DRY
@@ -391,10 +469,10 @@ class RemoteTest(unittest.TestCase):
         self.assertEqual([], ir2piir.check_remote(remote, everything))
 
     def test_fallback(self):
-        # A checksum counting the set bits cannot be expressed
+        # A checksum squaring the data cannot be expressed
         def code(mode, fan):
             data = [MODES[mode] | FANS[fan] << 4]
-            return "H" + bits(data[0]) + bits(bin(data[0]).count("1")) + "0"
+            return "H" + bits(data[0]) + bits(data[0] * data[0] & 0xff) + "0"
         sets = [("AUTO", "1"), ("COOL", "1"), ("DRY", "1"), ("AUTO", "2"), ("AUTO", "3"),
                 ("COOL", "3")]
         captures = [capture([("mode", m), ("fan", f)], code(m, f)) for m, f in sets]
@@ -522,10 +600,10 @@ class MainTest(unittest.TestCase):
         self.assertIn("1 of 1 checked captures are not sent", err)
 
     def test_not_reproduced(self):
-        # A checksum counting set bits cannot be expressed
+        # A checksum squaring the data cannot be expressed
         def code(mode, fan):
             data = MODES[mode] | FANS[fan] << 4
-            return "H" + bits(data) + bits(bin(data).count("1")) + "0"
+            return "H" + bits(data) + bits(data * data & 0xff) + "0"
         sets = [("AUTO", "1"), ("COOL", "1"), ("DRY", "1"), ("AUTO", "2"), ("AUTO", "3"),
                 ("COOL", "3"), ("DRY", "2")]
         write_captures(self.captures, [capture([("mode", m), ("fan", f)], code(m, f))

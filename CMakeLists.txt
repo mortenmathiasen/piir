@@ -111,6 +111,8 @@ endif()
 install(TARGETS piir RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 include(cmake/remotes.cmake)
 install(FILES README.md LICENSE DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/piir)
+install(DIRECTORY doc/ DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/piir/doc
+  FILES_MATCHING PATTERN "*.md" PATTERN "*.json")
 
 include(CTest)
 if(BUILD_TESTING)

@@ -13,8 +13,21 @@ piir --remote sony/RM-ED011 --feature key=KEY_POWER
 piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
 ```
 
+## Documentation
+
+The [documentation](doc/README.md) has a guide for each step:
+
+* [Installation](doc/installation.md): hardware, packages, enabling the IR transmitter, building from source
+* [Usage](doc/usage.md): finding a remote, sending keys and air conditioner settings
+* [Managing remotes](doc/remotes.md): adding remotes, converting LIRC files, deriving remotes from recordings
+* [Remote file format](doc/remote-format.md): every setting of a remote, with a worked example
+* [Integration](doc/integration.md): scripts, cron, Home Assistant, Node-RED
+* [Troubleshooting](doc/troubleshooting.md): error messages and what to do
+* [Development](doc/development.md): tests, coverage and releases
+
 ## Table of contents
 
+  * [Documentation](#documentation)
   * [Features](#features)
     + [IR-protocol](#ir-protocol)
     + [Supported systems](#supported-systems)
@@ -333,10 +346,7 @@ sudo piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT -
 
 Features are applied in the order they appear in the remote's JSON file, not the order given on the command line, so a feature listed later in the file wins where two set the same bits. For `hvac_panasonic` this means `option=QUIET` and the frost protection `option=8` override the fan speed and mode, and `mode=FAN` sends the fixed 27 degrees the original remote uses. Giving the same feature twice uses the last value.
 
-If everything goes well output from the command will be like this:
-```
-gpioWaveTxSend OK: 15897
-```
+If everything goes well the command prints nothing and exits with status 0 (the `pigpio` backend prints a line like `gpioWaveTxSend OK: 15897`). Add `--verbose=INFO` to see the code sent.
 
 A remote converted from LIRC has a single feature, `key`, with a value for every button:
 ```
@@ -403,7 +413,7 @@ The captures must contain:
 * for every value of every feature, a code where only that feature differs from the base
 * random combinations of the features: about 300 for six features, and 1000 or more when settings interact (e.g. a temperature only some modes accept). They are used to find values that override other features, e.g. a fan mode forcing a temperature. Without them, an override that happens to match the base code is not found.
 
-ir2piir clusters the durations into symbols (`0`, `1`, header, gaps), searches [checksums](#checksums) (sums, negated sums and XORs of bytes or nibbles, adjacent or not, found by solving their lowest bits as linear equations), gives each feature the bits its values change, puts a feature that overrides another after it, and writes overrides that only happen together with another feature's value as [overrides](#overrides). Bits still wrong then get overrides for the fewest feature values (up to three) under which they are the same in every capture. It then encodes every capture again and reports those it cannot reproduce (exit code 1). A sample of the captures is stored as the remote's `tests`.
+ir2piir clusters the durations into symbols (`0`, `1`, header, gaps), searches [checksums](#checksums) (sums, negated sums, XORs and counts of set bits of bytes or nibbles, adjacent or not, found by solving their lowest bits as linear equations, and 8-bit and 4-bit CRCs of the units before them), gives each feature the bits its values change, puts a feature that overrides another after it, and writes overrides that only happen together with another feature's value as [overrides](#overrides). Bits still wrong then get overrides for the fewest feature values (up to three) under which they are the same in every capture. It then encodes every capture again and reports those it cannot reproduce (exit code 1). A sample of the captures is stored as the remote's `tests`.
 
 To see whether the remote also works for combinations that were not recorded, record more and check them without using them to derive the remote:
 ```
@@ -412,7 +422,7 @@ tools/ir2piir.py captures.jsonl --check more-captures.jsonl -o aircon.json
 
 For protocols ir2piir cannot describe, `--fallback` hard-codes the recorded codes it does not reproduce as [overrides](#overrides) listing every feature. Only the recorded combinations are then sent exactly, so record every combination of the features. That can be tens of thousands of codes and a remote of several megabytes, which is fine on a Raspberry Pi.
 
-Limitations: codes of different lengths need a feature value that selects them (or `--fallback`); every symbol must be a mark followed by a space (pulse distance or pulse width coding, used by most air conditioners, not RC5/RC6); a code must end with a stop mark, since the space after the last mark cannot be recorded; CRCs and counts of set bits are not searched; and an override depending on two other features is not found, only one depending on one (see [Overrides](#overrides)).
+Limitations: codes of different lengths need a feature value that selects them (or `--fallback`); every symbol must be a mark followed by a space (pulse distance or pulse width coding, used by most air conditioners, not RC5/RC6); a code must end with a stop mark, since the space after the last mark cannot be recorded; CRCs wider than a unit are not searched; and an override depending on two other features is not found, only one depending on one (see [Overrides](#overrides)).
 
 [tools/heatpumpir](tools/heatpumpir) records the codes of the [arduino-heatpumpir](https://github.com/ToniA/arduino-heatpumpir) library as captures, for every air conditioner model it supports. The library (GPL-2.0) is not part of PIIR; build the recorder against a checkout of it:
 ```
@@ -424,7 +434,7 @@ build/heatpumpir/heatpumpir_capture gree 300 1 > gree.jsonl
 build/heatpumpir/heatpumpir_capture gree 1000 2 > gree-check.jsonl
 tools/ir2piir.py gree.jsonl --check gree-check.jsonl -o gree.json
 ```
-Of its 46 models, ir2piir derives a remote sending the same codes for 38 from 300 random combinations, and for 42 from 1000 to 3000 (checked with 1000 other random combinations each). The other four use checksums PIIR cannot express: a CRC, a count of set bits, and a sum with corrections depending on the mode. For those, `heatpumpir_capture MODEL all` records every combination for `--fallback`: for `samsung_fjm` that is 29433 codes, giving a 3.8 MB remote with 12356 hard-coded codes that sends every combination exactly. Models that send the time of day get 00:00.
+Of its 46 models, ir2piir derives a remote sending the same codes for 38 from 300 random combinations, and for 44 from 1000 to 3000 (checked with 1000 other random combinations each), the two Samsung models with counts of set bits among them. ir2piir cannot derive the other two: `nibe` sends a 2-bit byte before its checksum, so the checksum does not line up with the bytes, and `carrier_nqv` adds corrections depending on the mode and fan speed to its sum. Their remotes are written from the library's source instead and send every combination exactly: [nibe/hvac_nibe](conf/remotes/nibe/hvac_nibe.json) restarts counting bytes after the 2-bit byte (a `-` separator with `"restart": "-"`), and [carrier/hvac_carrier_nqv](conf/remotes/carrier/hvac_carrier_nqv.json) has a [variant](#variants) with its own checksum for each mode and fan speed needing a correction. For models no remote describes, `heatpumpir_capture MODEL all` records every combination for `--fallback`: for `samsung_fjm`, which no longer needs it, that was 29433 codes, giving a 3.8 MB remote with 12356 hard-coded codes that sends every combination exactly. Models that send the time of day get 00:00.
 
 The tests derive `panasonic/hvac_panasonic` from 340 codes PIIR sends for it. The result finds its checksum (`{"type": "sum", "from": 8, "to": 25, "at": 26}`) and its overrides, and sends exactly the same pulses for 1000 other random combinations.
 
@@ -455,14 +465,17 @@ After the features are applied, the bit symbols of the code (`0` and `1`) are re
 
 | Setting | Meaning | Default |
 |---------|---------|---------|
-| `type` | `sum` (modulo 256, or 16 for nibbles) or `xor` | required |
+| `type` | `sum` (modulo 256, or 16 for nibbles), `xor`, `popcount` (the number of bits set to 1) or `crc` | required |
 | `unit` | `byte` or `nibble`; `from`, `to`, `data`, `at` and `init` then count in that unit | `byte` |
 | `from`, `to` | first and last byte covered | required unless `data` is given |
 | `data` | list of the bytes covered, e.g. `[0, 2, 4]`, instead of `from` and `to` | |
-| `at` | byte the checksum is written to, not one of those covered | required |
-| `init` | start value, 0-255 (0-15 for nibbles) | `0` |
+| `at` | byte the checksum is written to, not one of those covered, or a list of bytes for a wider result | required |
+| `init` | start value, 0-255 (0-15 for nibbles, more for a wider result) | `0` |
 | `invert` | complement the result (`~x`) | `false` |
 | `negate` | negate the result (`0 - x`), after `invert` | `false` |
+| `xorout` | XOR the result with this value, after `invert` and `negate` | `0` |
+| `poly` | `crc` only: the polynomial, without its highest bit, e.g. `7` for x⁸ + x² + x + 1 | required for `crc` |
+| `reflect` | `crc` only: the CRC is reflected (each unit enters lowest bit first, the result is reversed) | `false` |
 | `bitorder` | `lsb` when a byte is sent lowest bit first, `msb` when highest bit first | `lsb` |
 | `bits` | the zero and one symbols | `"01"` |
 | `restart` | symbols after which units are counted from a new bit, e.g. the gap between frames; the bits of a partial byte (or nibble) before them are skipped | none |
@@ -470,6 +483,22 @@ After the features are applied, the bit symbols of the code (`0` and `1`) are re
 Nibbles are numbered in the order they are sent: in a byte sent lowest bit first (`lsb`), nibble 0 is its low nibble, while with `msb` it is its high nibble. For example, a 4-bit checksum summing the nibbles 0, 2 and 4 into nibble 7, sent highest bit first:
 ```json
 {"type": "sum", "unit": "nibble", "data": [0, 2, 4], "at": 7, "bitorder": "msb"}
+```
+
+A count of set bits, e.g. 28 minus the number of bits set in bytes 2 to 5, in the high nibble of byte 1, is a `popcount` with a start value of 4 negated: 0 - (4 + count) is 28 - count modulo 16:
+```json
+{"type": "popcount", "unit": "nibble", "from": 4, "to": 11, "at": 3, "init": 4, "negate": true}
+```
+
+A result wider than a unit is written into the units listed in `at`: with `lsb` the first one holds the lowest bits, with `msb` the highest. Samsung AQV sends the complement of its count of set bits, 8 bits, in the high nibble of byte 1 and the low nibble of byte 2:
+```json
+{"type": "popcount", "unit": "nibble", "data": [0, 1, 2, 5, 6, 7, 8, 9, 10, 11, 12, 13], "at": [3, 4], "invert": true}
+```
+
+A `crc` takes the parameters of the [CRC catalogue](https://reveng.sourceforge.io/crc-catalogue/): `poly`, `init`, `reflect` (its `refin` and `refout`, which must be the same) and `xorout`, and its width is that of `at`. The covered units enter the CRC as read with `bitorder`, so `"bitorder": "msb"` sends the bits in the order a CRC without `reflect` reads them. CRC-8/SAE-J1850 over bytes 0 to 8 into byte 9, and CRC-16/MODBUS into bytes 9 and 10, low byte first:
+```json
+{"type": "crc", "poly": 29, "init": 255, "xorout": 255, "from": 0, "to": 8, "at": 9, "bitorder": "msb"}
+{"type": "crc", "poly": 32773, "init": 65535, "reflect": true, "from": 0, "to": 8, "at": [9, 10]}
 ```
 
 Some protocols end a frame with a few extra bits, which shifts all bytes of the next frame. With `"restart": "W"`, counting starts again after the gap symbol `W`, so the next frame's first bits are a new byte.

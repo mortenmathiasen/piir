@@ -13,7 +13,7 @@
 # piir-remotes-<version>.tar.gz for the piir-remotes tool.
 
 set(PIIR_REMOTES_DIR ${PROJECT_SOURCE_DIR}/conf/remotes)
-set(PIIR_NATIVE_REMOTES panasonic/hvac_panasonic)
+set(PIIR_NATIVE_REMOTES panasonic/hvac_panasonic nibe/hvac_nibe carrier/hvac_carrier_nqv)
 set(PIIR_REMOTES "all" CACHE STRING
   "Remotes to install: all, native, none, or manufacturers, remotes and patterns below conf/remotes")
 

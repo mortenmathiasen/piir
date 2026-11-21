@@ -20,9 +20,9 @@ checksums and to verify the result.
 The remote is derived in steps:
   1. mark and space durations are clustered into symbols; the two most
      common mark/space pairs become the bit symbols 0 and 1
-  2. checksums are searched among bytes and nibbles: sums, negated sums and
-     XORs of other bytes or nibbles, adjacent or not (see "Checksums" in
-     README.md)
+  2. checksums are searched among bytes and nibbles: sums, negated sums,
+     XORs and counts of set bits of other bytes or nibbles, adjacent or not,
+     and CRCs of the units before them (see "Checksums" in README.md)
   3. each feature gets the bits that change with its values. A value that
      also sets bits of another feature (e.g. a fan mode forcing a
      temperature) sets those too, and its feature is placed after the other.
@@ -220,6 +220,51 @@ def read_units(code, positions, width, msb):
     return values
 
 
+def _at(spec):
+    """The units a checksum writes its result into"""
+    return spec["at"] if isinstance(spec["at"], list) else [spec["at"]]
+
+
+def _reflect(value, width):
+    return int(format(value, "0%db" % width)[::-1], 2)
+
+
+def checksum_value(spec, values, width):
+    """The result of a checksum over the unit values, as src/checksum.c"""
+    result_width = width * len(_at(spec))
+    mask = (1 << result_width) - 1
+    kind = spec["type"]
+    value = spec.get("init", 0)
+    if kind == "crc":
+        reflected = spec.get("reflect", False)
+        poly = _reflect(spec["poly"], result_width) if reflected else spec["poly"]
+        if reflected:
+            value = _reflect(value, result_width)
+        for u in values:
+            for i in range(width):
+                if reflected:
+                    bit = (value ^ (u >> i)) & 1
+                    value >>= 1
+                else:
+                    bit = (value >> (result_width - 1) ^ u >> (width - 1 - i)) & 1
+                    value = (value << 1) & mask
+                if bit:
+                    value ^= poly
+    else:
+        for u in values:
+            if kind == "sum":
+                value += u
+            elif kind == "xor":
+                value ^= u
+            else:
+                value += bin(u).count("1")
+    if spec.get("invert"):
+        value = ~value
+    if spec.get("negate"):
+        value = -value
+    return (value ^ spec.get("xorout", 0)) & mask
+
+
 def apply_checksums(code, checksums):
     """Apply checksums like PIIR does (src/checksum.c)"""
     code = list(code)
@@ -227,33 +272,33 @@ def apply_checksums(code, checksums):
         width = 4 if spec.get("unit") == "nibble" else 8
         msb = spec.get("bitorder") == "msb"
         bits = spec.get("bits", "01")
-        mask = (1 << width) - 1
         positions = unit_bits(code, width, bits, spec.get("restart", ""))
         units = read_units("".join("1" if s == bits[1] else "0" for s in code),
                            positions, width, msb)
-        covered = spec["data"] if "data" in spec else range(spec["from"], spec["to"] + 1)
-        value = spec.get("init", 0)
-        for u in covered:
-            value = value + units[u] if spec["type"] == "sum" else value ^ units[u]
-        if spec.get("invert"):
-            value = ~value
-        if spec.get("negate"):
-            value = -value
-        value &= mask
-        at = spec["at"]
-        for i in range(width):
-            bit = value >> (width - 1 - i if msb else i) & 1
-            code[positions[at * width + i]] = bits[bit]
+        value = checksum_value(spec, [units[u] for u in _covered(spec)], width)
+        at = _at(spec)
+        for k, unit in enumerate(at):
+            part = value >> width * (len(at) - 1 - k if msb else k)
+            for i in range(width):
+                bit = part >> (width - 1 - i if msb else i) & 1
+                code[positions[unit * width + i]] = bits[bit]
     return "".join(code)
 
 
 def unit_positions(code, spec, unit=None):
-    """The symbols of a checksum's unit (by default the one it writes)"""
+    """The symbols of a checksum's unit (by default the ones it writes)"""
     width = 4 if spec.get("unit") == "nibble" else 8
     positions = unit_bits(code, width, spec.get("bits", "01"), spec.get("restart", ""))
-    unit = spec["at"] if unit is None else unit
-    return positions[unit * width:(unit + 1) * width]
+    units = _at(spec) if unit is None else [unit]
+    return [p for u in units for p in positions[u * width:(u + 1) * width]]
 
+
+# A count of set bits covers this many changing units at least: over fewer,
+# e.g. the nibbles of one feature, it often holds by chance
+MIN_POPCOUNT_UNITS = 3
+# and its result takes this many values at least: any relation with two
+# values holds for some count
+MIN_POPCOUNT_RESULTS = 4
 
 # Units a sum checksum may or may not cover that its lowest bits cannot tell
 # apart are tried both ways, up to this many
@@ -304,31 +349,67 @@ def _covered(spec):
     return list(range(spec["from"], spec["to"] + 1))
 
 
-def _shape(spec, covered, at, init, kind, unit_lists, varying, mask):
+def _popcount(value):
+    return bin(value).count("1")
+
+
+def _shape(spec, covered, at, init, kind, unit_lists, varying, mask, goals=(0,)):
     """Write the covered units as a range when they are contiguous, extended
-    over constant units when that makes the start value 0, else as a list"""
-    lo, hi = min(covered), max(covered)
-    inside = [u for u in range(lo, hi + 1) if u in varying or u == at]
-    if set(inside) <= set(covered):
-        first = unit_lists[0]
-        combine = (lambda a, b: (a - b) & mask) if kind == "sum" else (lambda a, b: a ^ b)
+    over constant units when that makes the start value 0 (or another of
+    goals), else as a list. A count of set bits may also cover the constant
+    units on both sides of its result, as a list."""
+    at_units = at if isinstance(at, list) else [at]
+    first = unit_lists[0]
+    if kind == "sum":
+        combine = lambda a, b: (a - b) & mask
+    elif kind == "popcount":
+        combine = lambda a, b: (a - _popcount(b)) & mask
+    else:
+        combine = lambda a, b: a ^ b
+
+    def extend(lo, hi, init, skip):
+        """The widest range from lo to hi or beyond over constant units (and
+        skip) that reaches a goal, as (from, to, init), or None"""
         lo_min, hi_max = lo, hi
-        while lo_min > 0 and lo_min - 1 not in varying and lo_min - 1 != at:
+        while lo_min > 0 and lo_min - 1 not in varying and (
+                lo_min - 1 not in at_units or lo_min - 1 in skip):
             lo_min -= 1
-        while hi_max < len(first) - 1 and hi_max + 1 not in varying and hi_max + 1 != at:
+        while hi_max < len(first) - 1 and hi_max + 1 not in varying and (
+                hi_max + 1 not in at_units or hi_max + 1 in skip):
             hi_max += 1
+        best = None
+        for a in range(lo, lo_min - 1, -1):
+            for b in range(hi, hi_max + 1):
+                value = init
+                for u in list(range(a, lo)) + list(range(hi + 1, b + 1)):
+                    if u not in skip:
+                        value = combine(value, first[u])
+                if value in goals and (best is None or b - a > best[1] - best[0]):
+                    best = (a, b, value)
+        return best
+
+    lo, hi = min(covered), max(covered)
+    inside = [u for u in range(lo, hi + 1) if u in varying or u in at_units]
+    if set(inside) <= set(covered):
         # The range also covers the constant units between the covered ones
         for u in range(lo, hi + 1):
             if u not in covered:
                 init = combine(init, first[u])
-        best = (lo, hi, init)
-        for a in (range(lo, lo_min - 1, -1) if init else ()):
-            for b in range(hi, hi_max + 1):
-                value = init
-                for u in list(range(a, lo)) + list(range(hi + 1, b + 1)):
-                    value = combine(value, first[u])
-                if value == 0 and (best[2] != 0 or b - a > best[1] - best[0]):
-                    best = (a, b, value)
+        best = (lo, hi, init) if init in goals else extend(lo, hi, init, ()) or (lo, hi, init)
+        if kind == "popcount" and best[2] not in goals:
+            span_lo, span_hi = min(lo, *at_units), max(hi, *at_units)
+            if all(u in covered or u in at_units or u not in varying
+                   for u in range(span_lo, span_hi + 1)):
+                start = init
+                for u in list(range(span_lo, lo)) + list(range(hi + 1, span_hi + 1)):
+                    if u not in at_units:
+                        start = combine(start, first[u])
+                crossing = extend(span_lo, span_hi, start, at_units)
+                if crossing:
+                    spec["data"] = [u for u in range(crossing[0], crossing[1] + 1)
+                                    if u not in at_units]
+                    spec["at"] = at
+                    return crossing[2]
         spec["from"], spec["to"] = best[0], best[1]
         init = best[2]
     else:
@@ -337,12 +418,21 @@ def _shape(spec, covered, at, init, kind, unit_lists, varying, mask):
     return init
 
 
+def _result(units, at, width, msb):
+    """The value of the result units at, read as one number"""
+    value = 0
+    for k, u in enumerate(at):
+        value |= units[u] << width * (len(at) - 1 - k if msb else k)
+    return value
+
+
 def _search(unit_lists, width, msb, taken):
     """Find checksums among the units of every capture: for each unit, the
-    other units whose sum or XOR it is. The covered units are found by
-    solving the lowest bits over GF(2) (for XOR every bit), then verified on
-    every capture. Returns candidates sorted by preference."""
-    mask = (1 << width) - 1
+    other units whose sum, XOR or count of set bits it is (for a count also
+    for two adjacent units, read as one number). The covered units are found
+    by solving the lowest bits over GF(2) (for XOR every bit, for a count the
+    parity of each unit), then verified on every capture. Returns candidates
+    sorted by preference."""
     n = len(unit_lists[0])
     varying = [u for u in range(n) if len({units[u] for units in unit_lists}) > 1]
     # Units equal in every capture, e.g. a frame sent twice, are one unknown:
@@ -353,61 +443,194 @@ def _search(unit_lists, width, msb, taken):
         first_of.setdefault(tuple(units[u] for units in unit_lists), u)
     representative = {u: first_of[tuple(units[u] for units in unit_lists)] for u in varying}
     varying_set = set(varying)
+    targets = [([at], kind) for at in varying for kind in ("xor", "sum", "popcount")]
+    targets += [([at, at + 1], "popcount") for at in varying if at + 1 in varying]
+    counts = [[_popcount(v) for v in units] for units in unit_lists]
     found = []
-    for at in varying:
-        if at in taken:
+    for at, kind in targets:
+        if any(u in taken for u in at):
             continue
+        mask = (1 << width * len(at)) - 1
+        results = ([units[at[0]] for units in unit_lists] if len(at) == 1 else
+                   [_result(units, at, width, msb) for units in unit_lists])
+        if kind == "popcount" and len(set(results)) < MIN_POPCOUNT_RESULTS:
+            continue
+        values = counts if kind == "popcount" else unit_lists
         # A copy points to an earlier twin (its representative), never to a
         # later one: in a frame sent twice the second frame is the copy
-        others = [u for u in varying if u != at and representative[u] == u]
+        others = [u for u in varying if u not in at and representative[u] == u]
         m = len(others)
-        for kind in ("xor", "sum"):
-            planes = range(width) if kind == "xor" else range(1)
-            rows = []
-            for units in unit_lists:
-                for k in planes:
-                    row = 1 << (m + k)   # the start value's bit k
-                    for j, u in enumerate(others):
-                        if units[u] >> k & 1:
-                            row |= 1 << j
-                    rows.append((row, units[at] >> k & 1))
-            tried = set()
-            for x in _solve_gf2(rows, m):
-                covered = tuple(u for j, u in enumerate(others) if x >> j & 1)
-                if not covered or covered in tried:
-                    continue
-                tried.add(covered)
-                for negate in ((False,) if kind == "xor" else (False, True)):
-                    init = None
-                    for units in unit_lists:
-                        if kind == "xor":
-                            need = units[at]
-                            for u in covered:
-                                need ^= units[u]
-                        else:
-                            need = (-units[at] if negate else units[at]) - sum(units[u] for u in covered)
-                        need &= mask
-                        if init is None:
-                            init = need
-                        elif need != init:
-                            break
+        planes = range(width) if kind == "xor" else range(1)
+        rows = []
+        for units, result in zip(values, results):
+            for k in planes:
+                row = 1 << (m + k)   # the start value's bit k
+                for j, u in enumerate(others):
+                    if units[u] >> k & 1:
+                        row |= 1 << j
+                rows.append((row, result >> k & 1))
+        tried = set()
+        for x in _solve_gf2(rows, m):
+            covered = tuple(u for j, u in enumerate(others) if x >> j & 1)
+            if not covered or covered in tried:
+                continue
+            tried.add(covered)
+            if kind == "popcount" and len(covered) < MIN_POPCOUNT_UNITS:
+                continue
+            if kind == "popcount":
+                # A count may cover any copy of a unit: the one nearest the result
+                covered = tuple(sorted(min(
+                    (v for v in varying if v not in at and representative[v] == representative[u]),
+                    key=lambda v: (abs(v - at[0]), v)) for u in covered))
+            for negate in ((False,) if kind == "xor" else (False, True)):
+                init = None
+                for units, result in zip(values, results):
+                    if kind == "xor":
+                        need = result
+                        for u in covered:
+                            need ^= units[u]
                     else:
-                        spec = _Spec(type=kind)
-                        spec.varying = sum(1 for u in covered if u in varying_set)
-                        if width == 4:
-                            spec["unit"] = "nibble"
-                        init = _shape(spec, covered, at, init, kind, unit_lists, varying_set, mask)
-                        if kind == "xor" and init == mask:
-                            spec["invert"] = True
-                        elif init:
-                            spec["init"] = init
-                        if negate:
-                            spec["negate"] = True
-                        if msb:
-                            spec["bitorder"] = "msb"
-                        found.append(spec)
+                        need = (-result if negate else result) - sum(units[u] for u in covered)
+                    need &= mask
+                    if init is None:
+                        init = need
+                    elif need != init:
+                        break
+                else:
+                    spec = _Spec(type=kind)
+                    spec.varying = sum(1 for u in covered if u in varying_set)
+                    if width == 4:
+                        spec["unit"] = "nibble"
+                    goals = (0, 1) if kind == "popcount" and negate else (0,)
+                    init = _shape(spec, covered, at if len(at) > 1 else at[0], init, kind,
+                                  unit_lists, varying_set, mask, goals)
+                    if kind == "xor" and init == mask:
+                        spec["invert"] = True
+                    elif kind == "popcount" and negate and init == 1:
+                        spec["invert"] = True   # ~x is 0 - (1 + x)
+                        negate = False
+                    elif init:
+                        spec["init"] = init
+                    if negate:
+                        spec["negate"] = True
+                    if msb:
+                        spec["bitorder"] = "msb"
+                    found.append(spec)
+    explained = {u for spec in found for u in _at(spec)}
+    found += _search_crc(unit_lists, width, msb, taken, varying, explained)
     found.sort(key=_preference)
     return found
+
+
+def _crc_columns(poly, width, unit_width, reflected, count):
+    """The linear part of a CRC (start value 0): columns[d][k] is the
+    register after a unit with only bit k set followed by d units of 0"""
+    mask = (1 << width) - 1
+    rpoly = _reflect(poly, width) if reflected else poly
+
+    def feed(crc, u):
+        for i in range(unit_width):
+            if reflected:
+                bit = (crc ^ (u >> i)) & 1
+                crc >>= 1
+            else:
+                bit = (crc >> (width - 1) ^ u >> (unit_width - 1 - i)) & 1
+                crc = (crc << 1) & mask
+            if bit:
+                crc ^= rpoly
+        return crc
+    row = [feed(0, 1 << k) for k in range(unit_width)]
+    columns = [row]
+    for _ in range(count - 1):
+        row = [feed(c, 0) for c in row]
+        columns.append(row)
+    return columns
+
+
+def _affine(unit_lists, at, sources, width):
+    """Whether every bit of unit at is an XOR of bits of the source units
+    plus a constant in every capture (a CRC or XOR is)"""
+    m = len(sources) * width
+    for k in range(width):
+        rows = []
+        for units in unit_lists:
+            row = 1 << m
+            for j, u in enumerate(sources):
+                row |= units[u] << j * width
+            rows.append((row, units[at] >> k & 1))
+        if next(_solve_gf2(rows, m), None) is None:
+            return False
+    return True
+
+
+def _search_crc(unit_lists, width, msb, taken, varying, skip):
+    """Find CRCs of width bits over the units up to and including the one
+    before unit at, for the units at not in skip. The units at must be an
+    affine function of the earlier units; every polynomial is then tried on
+    a few captures, and those left are verified on every capture."""
+    mask = (1 << width) - 1
+    found = []
+    first = unit_lists[0]
+    sample = unit_lists[:16]
+    for at in varying:
+        if at in taken or at in skip or at == 0:
+            continue
+        sources = [u for u in varying if u < at]
+        if not sources or not _affine(unit_lists, at, sources, width):
+            continue
+        for end in sorted({at - 1, sources[-1]}, reverse=True):
+            # Diffs of the bits from the first capture, as (unit, bit) lists
+            diffs = [[(u, k) for u in range(end + 1) for k in range(width)
+                      if (units[u] ^ first[u]) >> k & 1] for units in unit_lists]
+            for reflected in (False, True):
+                for poly in range(1, mask + 1):
+                    columns = _crc_columns(poly, width, width, reflected, end + 1)
+                    for start in sorted({0} | {u for u in sources if u <= end}):
+                        # The linear part must give the change of the result
+                        if any(_xor_columns(columns, end, diff, start) != units[at] ^ first[at]
+                               for diff, units in zip(diffs[:16], sample)):
+                            continue
+                        if any(_xor_columns(columns, end, diff, start) != units[at] ^ first[at]
+                               for diff, units in zip(diffs, unit_lists)):
+                            continue
+                        found.append(_crc_spec(poly, reflected, start, end, at, width, msb,
+                                               first, sum(1 for u in sources if u >= start)))
+    return found
+
+
+def _xor_columns(columns, end, diff, start):
+    value = 0
+    for u, k in diff:
+        if u >= start:
+            value ^= columns[end - u][k]
+    return value
+
+
+def _crc_spec(poly, reflected, start, end, at, width, msb, first, varying):
+    """A CRC found, with a start value making the final XOR 0 if there is
+    one (preferring both all ones), else a final XOR"""
+    mask = (1 << width) - 1
+    spec = _Spec(type="crc")
+    spec.varying = varying
+    if width == 4:
+        spec["unit"] = "nibble"
+    spec["poly"] = poly
+    spec["from"], spec["to"], spec["at"] = start, end, at
+    values = [first[u] for u in range(start, end + 1)]
+    sends = lambda init, xorout: checksum_value(
+        dict(spec, init=init, xorout=xorout, reflect=reflected), values, width) == first[at]
+    init = next((i for i in range(mask + 1) if sends(i, 0)), None)
+    if init and sends(mask, mask):
+        spec["init"] = spec["xorout"] = mask   # e.g. CRC-8/SAE-J1850
+    elif init:
+        spec["init"] = init
+    elif init is None:
+        spec["xorout"] = checksum_value(dict(spec, reflect=reflected), values, width) ^ first[at]
+    if reflected:
+        spec["reflect"] = True
+    if msb:
+        spec["bitorder"] = "msb"
+    return spec
 
 
 class _Spec(OrderedDict):
@@ -416,12 +639,16 @@ class _Spec(OrderedDict):
 
 
 def _preference(spec):
-    """Prefer no start value, a checksum after its data, no negation, ranges,
-    and the fewest changing units covered: a relation over more units may
-    hold only through another checksum (e.g. a copy of a byte also equals
-    the XOR of the bytes around it and their checksum)"""
+    """Prefer other checksums to CRCs, no start value or final XOR, results
+    of more units, no reflected CRC, sums and XORs to counts of set bits, a
+    checksum after its data, no negation, ranges, and the
+    fewest changing units covered: a relation over more units may hold only
+    through another checksum (e.g. a copy of a byte also equals the XOR of
+    the bytes around it and their checksum)"""
     covered = _covered(spec)
-    return ("init" in spec, spec["at"] < max(covered), "negate" in spec or "invert" in spec,
+    return (spec["type"] == "crc", "init" in spec or "xorout" in spec, -len(_at(spec)),
+            "reflect" in spec, spec["type"] == "popcount",
+            min(_at(spec)) < max(covered), "negate" in spec or "invert" in spec,
             "data" in spec, getattr(spec, "varying", len(covered)))
 
 

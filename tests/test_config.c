@@ -36,6 +36,44 @@ static void test_failed_load_keeps_previous(void) {
   CHECK_EQ_STR("Test remote", description);
 }
 
+static void test_load_string(void) {
+  unloadConfig();
+  loadConfigString("{\"description\": \"From text\", \"template\": \"S01\","
+                   " \"features\": {\"key\": {\"A\": \" 1\", \"B\": \"  0\"}}}");
+  CHECK(isConfigLoaded());
+  const char *description = 0;
+  loadDescription(&description);
+  CHECK_EQ_STR("From text", description);
+  CHECK_EQ_INT(1, getAllFeaturesCount());
+  CHECK(hasFeatureNameAndValue("key", "B"));
+  featureT features[1] = {{"key", "A"}};
+  char *code = 0;
+  loadFeaturedCode(features, &code);
+  CHECK_EQ_STR("S11", code);
+  free(code);
+
+  // Text that is not a remote keeps the previous one, from text or a file
+  loadConfigString("not json");
+  loadConfigString("[1, 2]");
+  loadConfigString(NULL);
+  loadDescription(&description);
+  CHECK_EQ_STR("From text", description);
+  loadConfig(SIMPLE);
+  loadConfigString("{");
+  loadDescription(&description);
+  CHECK_EQ_STR("Test remote", description);
+
+  // Every text is loaded, also after another text, and a file after text
+  loadConfigString("{\"description\": \"One\"}");
+  loadConfigString("{\"description\": \"Two\"}");
+  loadDescription(&description);
+  CHECK_EQ_STR("Two", description);
+  loadConfig(SIMPLE);
+  loadDescription(&description);
+  CHECK_EQ_STR("Test remote", description);
+  unloadConfig();
+}
+
 static void test_unload(void) {
   loadConfig(SIMPLE);
   CHECK(isConfigLoaded());
@@ -321,6 +359,7 @@ int main(void) {
   RUN_TEST(test_load_invalid_json);
   RUN_TEST(test_load_non_object_root);
   RUN_TEST(test_failed_load_keeps_previous);
+  RUN_TEST(test_load_string);
   RUN_TEST(test_unload);
   RUN_TEST(test_scalar_settings);
   RUN_TEST(test_missing_optional_device);

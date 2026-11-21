@@ -18,6 +18,8 @@ irlingo --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
 The [documentation](doc/README.md) has a guide for each step:
 
 * [Installation](doc/installation.md): hardware, packages, enabling the IR transmitter, building from source
+* [Connecting an IR LED](doc/hardware.md): circuits, parts and pins for a Raspberry Pi or an ESP32
+* [irlingo on ESPHome](doc/esphome.md): sending irlingo remotes from an ESP32 (preview)
 * [Usage](doc/usage.md): finding a remote, sending keys and air conditioner settings
 * [Managing remotes](doc/remotes.md): adding remotes, converting LIRC files, deriving remotes from recordings
 * [Remote file format](doc/remote-format.md): every setting of a remote, with a worked example
@@ -87,7 +89,7 @@ The tool transmits IR on:
 ### Prerequisites
 
 To be able to transmit IR signal you need an IR led, either:
-* build the electronics yourself, e.g. as mentioned at [Raspberry-PI-Geek](https://www.raspberry-pi-geek.com/Archive/2015/10/Raspberry-Pi-IR-remote)
+* build the electronics yourself, see [Connecting an IR LED](doc/hardware.md) for the circuit, parts and pins
 * apply an premade pHAT, eg. [ANAVI Infrared pHAT](https://anavi.technology/)
 
 ## Getting Started
@@ -217,7 +219,7 @@ To measure coverage, configure with `-DIRLINGO_COVERAGE=ON` and run [gcovr](http
 cmake -B build-coverage -DIRLINGO_COVERAGE=ON
 cmake --build build-coverage
 ctest --test-dir build-coverage
-gcovr -r . build-coverage --exclude 'src/parson\..*' --exclude 'tests/'
+gcovr -r . build-coverage --exclude 'components/irlingo/parson\..*' --exclude 'tests/'
 ```
 The transmitter backends are tested against simulated drivers and libraries (the `ioctl` and `write` calls of the `lirc` backend, libgpiod and pigpio are replaced when linking the tests), so the tests cover sending without hardware. CI requires 95% line coverage of the C code and of the converter.
 

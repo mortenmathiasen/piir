@@ -2,7 +2,7 @@
 #include <string.h>
 #include "checksum.h"
 #include "config.h"
-#include "irgeneric.h"
+#include "pulses.h"
 #include "log.h"
 
 // Read an optional whole number between 0 and max. Returns 0 when it is

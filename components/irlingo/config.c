@@ -22,22 +22,32 @@ void unloadConfig() {
   }
 }
 
+// Make a parsed remote the loaded one. A remote that is not a JSON object
+// leaves the previous one loaded.
+static void useConfig(JSON_Value *root_value, const char *name) {
+  if (json_value_get_type(root_value) != JSONObject) {
+    log_error("JSON file %s root not an object", name);
+    if (root_value)
+      json_value_free(root_value);
+  } else {
+    unloadConfig();
+    ROOT_OBJECT = json_value_get_object(root_value);
+    CONFIGFILEPATH = strdup(name);
+  }
+}
+
 void loadConfig(const char *configfilepath) {
   if (CONFIGFILEPATH &&
       configfilepath &&
       strcmp(configfilepath,CONFIGFILEPATH)==0)
     return;
 
-  JSON_Value *root_value = json_parse_file(configfilepath);
-  if (json_value_get_type(root_value) != JSONObject) {
-    log_error("JSON file %s root not an object",configfilepath);
-    if (root_value)
-      json_value_free(root_value);
-  } else {
-    unloadConfig();
-    ROOT_OBJECT = json_value_get_object(root_value);
-    CONFIGFILEPATH = strdup(configfilepath);
-  }
+  useConfig(json_parse_file(configfilepath), configfilepath);
+}
+
+void loadConfigString(const char *json) {
+  // Text is parsed every time; "(text)" names it in messages
+  useConfig(json ? json_parse_string(json) : NULL, "(text)");
 }
 
 int isConfigLoaded() {

@@ -9,15 +9,23 @@
 
 ## Source layout
 
+The code is in two parts. `components/irlingo/` holds the portable core, which
+also an ESPHome component for the ESP32 will compile: it must not use anything
+specific to Linux. `src/` holds the Linux parts: the command line, finding
+installed remotes, the toggle state file and the transmitter backends. CMake
+builds them as the libraries `irlingo_core` and `irlingo_linux`.
+
 | Path | Contents |
 |------|----------|
+| `components/irlingo/config.c` | loading a remote from a file or from text: symbols, template, features, overrides, variants, toggle |
+| `components/irlingo/checksum.c` | the declarative `checksums` |
+| `components/irlingo/pulses.c` | turning a code into pulse and space durations |
+| `components/irlingo/plugins.c`, `components/irlingo/hvac_panasonic_plugin.c` | remote plugins |
+| `components/irlingo/log.c`, `components/irlingo/parson.c` | logging, the JSON parser |
 | `src/irlingo.c` | the command line |
-| `src/config.c` | loading a remote: symbols, template, features, overrides, variants, toggle |
-| `src/checksum.c` | the declarative `checksums` |
 | `src/remotes.c` | finding remotes by name |
 | `src/lirc.c`, `src/transmitter.c`, `src/irslinger.c` | the `lirc`, `gpiod` and `pigpio` backends |
 | `src/state.c` | the toggle state file |
-| `src/plugins.c`, `src/hvac_panasonic_plugin.c` | remote plugins |
 | `conf/remotes/` | the remotes |
 | `tools/lirc2irlingo.py` | the LIRC converter |
 | `tools/ir2irlingo.py` | derives remotes from recorded codes |
@@ -53,14 +61,32 @@ When cross compiling, tests run under qemu if you add e.g. `-DCMAKE_CROSSCOMPILI
 cmake -B build-coverage -DIRLINGO_COVERAGE=ON
 cmake --build build-coverage
 ctest --test-dir build-coverage
-gcovr -r . build-coverage --exclude 'src/parson\..*' --exclude 'tests/'
+gcovr -r . build-coverage --exclude 'components/irlingo/parson\..*' --exclude 'tests/'
 ```
 
 The converters are measured too when Python's `coverage` module is installed. CI requires 95% line coverage of the C code and of the converters.
 
+## ESPHome component
+
+`tests/esphome/check.sh` checks the [ESPHome component](esphome.md) with ESPHome
+installed (`pip install esphome`): `tests/esphome/full.yaml`, which uses every
+part of the component, must be valid, and variants of it with mistakes must fail
+with the expected messages. With `--compile` it also compiles `full.yaml` and
+`doc/examples/esphome-irlingo.yaml` for ESP32 (the first time, ESPHome downloads
+the ESP32 toolchain).
+
+```
+tests/esphome/check.sh --compile
+```
+
+The component's C++ and Python files are only compiled by ESPHome, not by the
+CMake build.
+
 ## Continuous integration
 
-GitHub Actions runs the tests for all three backends, with AddressSanitizer and UndefinedBehaviorSanitizer, measures coverage, and runs the tests of the `armv6`, `armv7` and `aarch64` builds under qemu. A separate workflow converts the LIRC database again with `tools/lirc2irlingo.py` and fails if `conf/remotes` differs from the result, and compares the converter with LIRC's own `irsimsend`.
+GitHub Actions runs the tests for all three backends, with AddressSanitizer and UndefinedBehaviorSanitizer, measures coverage, runs the tests of the `armv6`, `armv7` and `aarch64` builds under qemu, and runs
+`tests/esphome/check.sh --compile` with the ESPHome version given in the
+workflow. A separate workflow converts the LIRC database again with `tools/lirc2irlingo.py` and fails if `conf/remotes` differs from the result, and compares the converter with LIRC's own `irsimsend`.
 
 ## Adding a remote to irlingo
 

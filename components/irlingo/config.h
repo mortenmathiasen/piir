@@ -11,6 +11,10 @@ typedef struct q {
 
 //Load configuration from file
 void loadConfig(const char *configfilepath);
+// Load configuration from JSON text, e.g. a remote built into firmware.
+// Like loadConfig(), a remote that cannot be parsed leaves the previous one
+// loaded.
+void loadConfigString(const char *json);
 void unloadConfig();
 int isConfigLoaded();
 

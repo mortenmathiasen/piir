@@ -17,9 +17,9 @@
 irlingo runs on every Raspberry Pi model, from the Pi 1 and Zero to the Pi 5 and 500. Besides the Pi you need an IR LED connected to a GPIO pin. Either:
 
 - use a ready-made board, e.g. the [ANAVI Infrared pHAT](https://anavi.technology/), which has its transmitter on GPIO 17, or
-- build a small circuit yourself, e.g. as described at [Raspberry-PI-Geek](https://www.raspberry-pi-geek.com/Archive/2015/10/Raspberry-Pi-IR-remote).
+- build a small circuit yourself: an IR LED for 940 nm switched by a transistor, with three resistors. [Connecting an IR LED](hardware.md) has the circuit, the part values and the pins.
 
-A GPIO pin cannot drive an IR LED brightly enough for more than a short distance, so a home-made circuit normally switches the LED with a transistor: the GPIO pin drives the transistor's base through a resistor, and the LED and its series resistor are powered from the 5 V pin. Use an LED for 940 nm, the wavelength almost all remote controls use, and point it at the device.
+A GPIO pin cannot drive an IR LED brightly enough for more than about a metre, so a home-made circuit normally switches the LED with a transistor, powered from the 5 V pin.
 
 The examples in this documentation use GPIO 17 (physical pin 11). Any free GPIO pin works; use its number wherever 17 appears.
 

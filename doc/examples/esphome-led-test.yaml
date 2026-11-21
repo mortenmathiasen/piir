@@ -1,0 +1,43 @@
+# Test an ESP32's transmitter pin with a visible LED, before connecting an IR LED.
+#
+# Every 3 seconds this sends an IR code (NEC protocol, repeated 5 times, about
+# half a second in all) on the transmitter pin. An LED on the pin blinks once
+# per transmission; the 38 kHz carrier is too fast to see, so it glows dimly.
+#
+# GPIO2 has a blue LED on many ESP32 development boards (e.g. "DOIT ESP32
+# DevKit V1" and NodeMCU-32S style boards), so they need no wiring at all.
+# Espressif's own ESP32-DevKitC has only a power LED: connect an LED to a pin,
+# see doc/hardware.md, and set its number below.
+#
+# Flash it over USB (Linux: the board is usually /dev/ttyUSB0 or /dev/ttyACM0):
+#   esphome run esphome-led-test.yaml --device /dev/ttyUSB0
+# The log shows "Sending NEC" for every transmission.
+
+esphome:
+  name: irlingo-led-test
+
+esp32:
+  board: esp32dev # a classic ESP32; see doc/hardware.md for other chips
+  framework:
+    type: esp-idf
+
+logger:
+
+remote_transmitter:
+  id: ir_tx
+  # GPIO2: the blue LED on many boards (ESPHome warns that GPIO2 is a
+  # strapping pin, which is harmless with the board's own LED).
+  # GPIO4: the pin for an LED circuit, see doc/hardware.md.
+  pin: GPIO2
+  carrier_duty_percent: 50%
+  non_blocking: true
+
+interval:
+  - interval: 3s
+    then:
+      - remote_transmitter.transmit_nec:
+          address: 0x00FF
+          command: 0x00FF
+          repeat:
+            times: 5
+            wait_time: 40ms

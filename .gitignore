@@ -78,3 +78,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Python bytecode
+__pycache__/
+*.py[cod]

@@ -21,6 +21,7 @@ Run with --help for the options of each command.
 """
 
 import argparse
+import copy
 import json
 import os
 import re
@@ -105,6 +106,7 @@ class Remote:
         self.min_repeat = 0
         self.manual_sort = 0
         self.freq = DEFAULT_FREQ
+        self.freq_given = False     # the file gives a frequency
         self.duty_cycle = 0
         self.codes = []
         self.raw = False
@@ -316,6 +318,8 @@ def parse_config(text):
                 setattr(rem, s, strtonum(val2))
             elif lkey in INT_KEYS:
                 setattr(rem, INT_KEYS[lkey], strtonum(val))
+                if lkey == "frequency":
+                    rem.freq_given = True
             elif lkey in IGNORED_KEYS:
                 pass
             else:
@@ -772,8 +776,40 @@ def expand(code, symbols):
     return out
 
 
+# Sony devices ignore a code sent fewer than 3 times, as their remotes always
+# repeat it; their receivers are tuned to 40 kHz
+SONY_MIN_REPEAT = 2
+SONY_FREQ = 40000
+
+
+def is_sony(remote):
+    """Whether the remote uses Sony's protocol (SIRC), by its timing: a 2.4 ms
+    header mark, 1.2 ms marks for 1 and 0.6 ms marks for 0, all followed by
+    0.6 ms spaces"""
+    def near(value, target):
+        return abs(value - target) <= 0.25 * target
+    return (not remote.raw and near(remote.phead, 2400) and near(remote.shead, 600)
+            and near(remote.pone, 1200) and near(remote.sone, 600)
+            and near(remote.pzero, 600) and near(remote.szero, 600))
+
+
+def sony_corrected(remote):
+    """A copy of a remote using Sony's protocol that sends every code at least
+    3 times, at 40 kHz unless its file gives a frequency. Other remotes are
+    returned unchanged. LIRC sends such codes as the file says, often only once,
+    which Sony devices ignore."""
+    if not is_sony(remote):
+        return remote
+    remote = copy.copy(remote)
+    remote.min_repeat = max(remote.min_repeat, SONY_MIN_REPEAT)
+    if not remote.freq_given:
+        remote.freq = SONY_FREQ
+    return remote
+
+
 def convert_remote(remote, source=None):
     """Return (irlingo_json_dict, warnings) or raise ConfigError."""
+    remote = sony_corrected(remote)
     proto = remote.protocol()
     if not remote.has_timing():
         raise ConfigError("no timing: codes are receiver hardware scancodes")

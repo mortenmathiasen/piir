@@ -1,7 +1,7 @@
 {
     "description": "URC-6012w (LIRC remote)",
     "source": {"lirc-remotes": "remotes/universal/URC-6012w.lircd.conf", "remote": "URC-6012w", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {

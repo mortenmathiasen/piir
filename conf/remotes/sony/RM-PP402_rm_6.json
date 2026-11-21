@@ -1,7 +1,7 @@
 {
     "description": "rm (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RM-PP402.lircd.conf", "remote": "rm", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
@@ -9,17 +9,22 @@
 	"H": {"mark": 2404, "space": 572},
 	"1": {"mark": 1185, "space": 572},
 	"0": {"mark": 596, "space": 572},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "-------------",
+    "template": "-------------------------------------------------------------------------",
     "features": {
 	"key": {
-	    "vcr_menu": "H10110011110A",
-	    "vcr_left": "H01000111110A",
-	    "vcr_up": "H01000011110A",
-	    "vcr_down": "H11000011110A",
-	    "vcr_right": "H10000111110A",
-	    "vcr_enter": "H10001011110A"
+	    "vcr_menu": "H10110011110AVVWWWWXXXYYYYYYYZH10110011110AVVWWWWXXXYYYYYYYZH10110011110A",
+	    "vcr_left": "H01000111110AVVWWWWXXXYYYYYYYZH01000111110AVVWWWWXXXYYYYYYYZH01000111110A",
+	    "vcr_up": "H01000011110AVVWWWWXXXYYYYYYYZH01000011110AVVWWWWXXXYYYYYYYZH01000011110A",
+	    "vcr_down": "H11000011110AVVWWWWXXXYYYYYYYZH11000011110AVVWWWWXXXYYYYYYYZH11000011110A",
+	    "vcr_right": "H10000111110AVVWWWWXXXYYYYYYYZH10000111110AVVWWWWXXXYYYYYYYZH10000111110A",
+	    "vcr_enter": "H10001011110AVVWWWWXXXYYYYYYYZH10001011110AVVWWWWXXXYYYYYYYZH10001011110A"
 	}
     }
 }

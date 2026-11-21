@@ -1,7 +1,7 @@
 {
     "description": "One_for_All_URC-7830 (LIRC remote)",
     "source": {"lirc-remotes": "remotes/one_for_all/URC-7830.lircd.conf", "remote": "One_for_All_URC-7830", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
@@ -9,12 +9,17 @@
 	"H": {"mark": 2500, "space": 493},
 	"1": {"mark": 1284, "space": 505},
 	"0": {"mark": 693, "space": 505},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "-------------",
+    "template": "-----------------------------------------------------------------------------------------------",
     "features": {
 	"key": {
-	    "KEY_MUTE": "H00101001000A"
+	    "KEY_MUTE": "H00101001000AVVWWWWWXXXXXXXYYYYYYZZZZZZZZH00101001000AVVWWWWWXXXXXXXYYYYYYZZZZZZZZH00101001000A"
 	}
     }
 }

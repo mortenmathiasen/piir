@@ -1,7 +1,7 @@
 {
     "description": "Sony_RM-V402-TV (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RM-V402.lircd.conf", "remote": "Sony_RM-V402-TV", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {

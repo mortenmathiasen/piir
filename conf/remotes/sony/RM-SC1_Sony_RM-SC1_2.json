@@ -1,7 +1,7 @@
 {
     "description": "Sony_RM-SC1_2 (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RM-SC1.lircd.conf", "remote": "Sony_RM-SC1_2", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
@@ -9,13 +9,17 @@
 	"H": {"mark": 2450, "space": 500},
 	"1": {"mark": 1260, "space": 541},
 	"0": {"mark": 650, "space": 541},
+	"V": {"mark": 0, "space": 10000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "----------------",
+    "template": "----------------------------------------------------------------------------------------------",
     "features": {
 	"key": {
-	    "function": "H10010110000100A",
-	    "eq": "H11000110000100A"
+	    "function": "H10010110000100AVVXXXXXXXXYYYYZZZZZZZZZH10010110000100AVVXXXXXXXXYYYYZZZZZZZZZH10010110000100A",
+	    "eq": "H11000110000100AVVXXXXXXXXYYYYZZZZZZZZZH11000110000100AVVXXXXXXXXYYYYZZZZZZZZZH11000110000100A"
 	}
     }
 }

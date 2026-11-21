@@ -421,6 +421,8 @@ Remotes with a toggle bit (RC5, RC6 and others with a `toggle_bit_mask`) get a `
 
 Two LIRC 0.10.2 bugs are not copied: durations of 0 in a configuration break the alternation of pulses and spaces there, and raw remotes with a repeat code send the start of the raw code instead of the repeat code.
 
+Remotes using Sony's protocol (SIRC) send every code at least 3 times, at 40 kHz unless the LIRC file gives a frequency: Sony devices ignore a code sent only once, and their receivers are tuned to 40 kHz. LIRC sends such codes as the file says, often once at 38 kHz. See [Managing remotes](doc/remotes.md).
+
 ### Remotes derived from recordings
 
 [tools/ir2irlingo.py](tools/ir2irlingo.py) derives a remote, e.g. an air conditioner's, from recorded codes and the settings each was sent for. It needs only Python 3. Record the codes with an IR receiver, or from software that generates them, and write one code per line in a [JSON Lines](https://jsonlines.org/) file:

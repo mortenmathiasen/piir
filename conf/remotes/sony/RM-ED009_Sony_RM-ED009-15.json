@@ -1,7 +1,7 @@
 {
     "description": "Sony_RM-ED009-15 (LIRC remote)",
     "source": {"lirc-remotes": "remotes/sony/RM-ED009.lircd.conf", "remote": "Sony_RM-ED009-15", "converter": "tools/lirc2irlingo.py 1.1"},
-    "frequency": 38000,
+    "frequency": 40000,
     "dutycycle": 0.5,
     "transmitter": {"outpin": 17},
     "symboldefinitions": {
@@ -10,17 +10,22 @@
 	"H": {"mark": 2482, "space": 475},
 	"1": {"mark": 1267, "space": 520},
 	"0": {"mark": 658, "space": 520},
+	"V": {"mark": 0, "space": 10000},
+	"W": {"mark": 0, "space": 1000},
+	"X": {"mark": 0, "space": 100},
+	"Y": {"mark": 0, "space": 10},
+	"Z": {"mark": 0, "space": 1},
 	"-": {"mark": 0, "space": 0}
     },
-    "template": "----------------",
+    "template": "----------------------------------------------------------------------------------------------------------",
     "features": {
 	"key": {
-	    "aspect": "H10111100010010A",
-	    "KEY_EPG": "H11011010010010A",
-	    "KEY_ENTER": "H11000101110100A",
-	    "tools": "H01101101110100A",
-	    "digital": "H01001011110111B",
-	    "theatre": "H00000111110111B"
+	    "aspect": "H10111100010010AVWWWWWWWWWXXXXXXYYYYYYYYZZZZZH10111100010010AVWWWWWWWWWXXXXXXYYYYYYYYZZZZZH10111100010010A",
+	    "KEY_EPG": "H11011010010010AVWWWWWWWWWXXXXXXYYYYYYYYZZZZZH11011010010010AVWWWWWWWWWXXXXXXYYYYYYYYZZZZZH11011010010010A",
+	    "KEY_ENTER": "H11000101110100AVWWWWWWWWWXXXXXXYYYYYYYYZZZZZH11000101110100AVWWWWWWWWWXXXXXXYYYYYYYYZZZZZH11000101110100A",
+	    "tools": "H01101101110100AVWWWWWWWWWYYYYYYYZZZZZZH01101101110100AVWWWWWWWWWYYYYYYYZZZZZZH01101101110100A",
+	    "digital": "H01001011110111BVWWWWWWWWWYYYYYYYZZZZZZH01001011110111BVWWWWWWWWWYYYYYYYZZZZZZH01001011110111B",
+	    "theatre": "H00000111110111BVWWWWWWWWWXXXXXXYYYYYYYYZZZZZH00000111110111BVWWWWWWWWWXXXXXXYYYYYYYYZZZZZH00000111110111B"
 	}
     }
 }

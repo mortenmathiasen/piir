@@ -13,8 +13,21 @@ piir --remote sony/RM-ED011 --feature key=KEY_POWER
 piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT
 ```
 
+## Documentation
+
+The [documentation](doc/README.md) has a guide for each step:
+
+* [Installation](doc/installation.md): hardware, packages, enabling the IR transmitter, building from source
+* [Usage](doc/usage.md): finding a remote, sending keys and air conditioner settings
+* [Managing remotes](doc/remotes.md): adding remotes, converting LIRC files, deriving remotes from recordings
+* [Remote file format](doc/remote-format.md): every setting of a remote, with a worked example
+* [Integration](doc/integration.md): scripts, cron, Home Assistant, Node-RED
+* [Troubleshooting](doc/troubleshooting.md): error messages and what to do
+* [Development](doc/development.md): tests, coverage and releases
+
 ## Table of contents
 
+  * [Documentation](#documentation)
   * [Features](#features)
     + [IR-protocol](#ir-protocol)
     + [Supported systems](#supported-systems)
@@ -333,10 +346,7 @@ sudo piir --remote hvac_panasonic --feature temperature=21 --feature mode=HEAT -
 
 Features are applied in the order they appear in the remote's JSON file, not the order given on the command line, so a feature listed later in the file wins where two set the same bits. For `hvac_panasonic` this means `option=QUIET` and the frost protection `option=8` override the fan speed and mode, and `mode=FAN` sends the fixed 27 degrees the original remote uses. Giving the same feature twice uses the last value.
 
-If everything goes well output from the command will be like this:
-```
-gpioWaveTxSend OK: 15897
-```
+If everything goes well the command prints nothing and exits with status 0 (the `pigpio` backend prints a line like `gpioWaveTxSend OK: 15897`). Add `--verbose=INFO` to see the code sent.
 
 A remote converted from LIRC has a single feature, `key`, with a value for every button:
 ```

@@ -1,0 +1,78 @@
+# Every part of the irlingo ESPHome component, compiled by CI
+# (tests/esphome/check.sh). Not meant to be flashed.
+esphome:
+  name: irlingo-test
+  on_boot:
+    then:
+      - irlingo.send:
+          remote_id: aircon
+          features:
+            mode: HEAT
+            temperature: "21"
+      - irlingo.send:
+          remote_id: amp
+          features:
+            key: !lambda 'return std::string("Power");'
+
+esp32:
+  board: esp32dev
+  framework:
+    type: esp-idf
+
+logger:
+
+external_components:
+  - source:
+      type: local
+      path: ../../components
+    components: [irlingo]
+
+remote_transmitter:
+  id: ir_tx
+  pin: GPIO4
+  carrier_duty_percent: 50%
+  non_blocking: true
+
+irlingo:
+  - id: aircon
+    remote: panasonic/hvac_panasonic
+  - id: carrier_remote
+    remote: carrier/hvac_carrier_nqv
+  - id: amp
+    remote: RC4330_01H_Philips_RC433001H_AMP
+  - id: own
+    file: ../../doc/examples/example-aircon.json
+
+sensor:
+  - platform: template
+    id: room_temperature
+    lambda: 'return 21.5;'
+
+climate:
+  # Mapping guessed from the remote's features
+  - platform: irlingo
+    remote_id: aircon
+    name: Panasonic
+    fixed: {option: AUTO, updown: AUTO, leftright: AUTO}
+  # Mapping given, with an unquoted off
+  - platform: irlingo
+    remote_id: carrier_remote
+    name: Carrier
+    modes:
+      cool: {mode: COOL, power: ON}
+      heat: {mode: HEAT, power: ON}
+      off: {power: OFF}
+    fixed: {vertical: AUTO, horizontal: AUTO}
+    sensor: room_temperature
+
+button:
+  - platform: irlingo
+    remote_id: amp
+    name: Amplifier power
+    features:
+      key: Power
+  - platform: irlingo
+    remote_id: own
+    name: Own remote
+    features:
+      power: "ON"

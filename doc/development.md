@@ -66,9 +66,27 @@ gcovr -r . build-coverage --exclude 'components/irlingo/parson\..*' --exclude 't
 
 The converters are measured too when Python's `coverage` module is installed. CI requires 95% line coverage of the C code and of the converters.
 
+## ESPHome component
+
+`tests/esphome/check.sh` checks the [ESPHome component](esphome.md) with ESPHome
+installed (`pip install esphome`): `tests/esphome/full.yaml`, which uses every
+part of the component, must be valid, and variants of it with mistakes must fail
+with the expected messages. With `--compile` it also compiles `full.yaml` and
+`doc/examples/esphome-irlingo.yaml` for ESP32 (the first time, ESPHome downloads
+the ESP32 toolchain).
+
+```
+tests/esphome/check.sh --compile
+```
+
+The component's C++ and Python files are only compiled by ESPHome, not by the
+CMake build.
+
 ## Continuous integration
 
-GitHub Actions runs the tests for all three backends, with AddressSanitizer and UndefinedBehaviorSanitizer, measures coverage, and runs the tests of the `armv6`, `armv7` and `aarch64` builds under qemu. A separate workflow converts the LIRC database again with `tools/lirc2irlingo.py` and fails if `conf/remotes` differs from the result, and compares the converter with LIRC's own `irsimsend`.
+GitHub Actions runs the tests for all three backends, with AddressSanitizer and UndefinedBehaviorSanitizer, measures coverage, runs the tests of the `armv6`, `armv7` and `aarch64` builds under qemu, and runs
+`tests/esphome/check.sh --compile` with the ESPHome version given in the
+workflow. A separate workflow converts the LIRC database again with `tools/lirc2irlingo.py` and fails if `conf/remotes` differs from the result, and compares the converter with LIRC's own `irsimsend`.
 
 ## Adding a remote to irlingo
 

@@ -82,3 +82,6 @@ dkms.conf
 # Python bytecode
 __pycache__/
 *.py[cod]
+
+# ESPHome builds (tests/esphome)
+.esphome/

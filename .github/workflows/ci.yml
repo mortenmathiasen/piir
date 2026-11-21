@@ -209,10 +209,36 @@ jobs:
           path: build/irlingo-remotes-*.tar.gz
           if-no-files-found: error
 
+  esphome:
+    name: ESPHome
+    runs-on: ubuntu-24.04
+    env:
+      ESPHOME_VERSION: 2026.11.0
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install ESPHome
+        run: pip install "esphome==$ESPHOME_VERSION"
+
+      # The ESP32 toolchain and framework ESPHome downloads
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.platformio
+            ~/.cache/esphome
+          key: esphome-${{ env.ESPHOME_VERSION }}-esp32
+
+      - name: Check and compile the component
+        run: tests/esphome/check.sh --compile
+
   release:
     name: Release
     if: startsWith(github.ref, 'refs/tags/v')
-    needs: [test, test-gpiod, coverage, rpi, remotes]
+    needs: [test, test-gpiod, coverage, rpi, remotes, esphome]
     runs-on: ubuntu-24.04
     permissions:
       contents: write

@@ -109,11 +109,11 @@ The packages contain PIIR's own remotes. Add the remotes you need from the LIRC 
 
 Install the Debian package, e.g. for a Pi Zero W:
 ```
-sudo apt install ./piir_2.2.0_armv6.deb
+sudo apt install ./piir_2.3.0_armv6.deb
 ```
 or extract the tarball into `/`:
 ```
-sudo tar -xzf piir-2.2.0-armv6.tar.gz -C / --strip-components=1
+sudo tar -xzf piir-2.3.0-armv6.tar.gz -C / --strip-components=1
 ```
 
 Then enable the kernel IR transmitter as described below.

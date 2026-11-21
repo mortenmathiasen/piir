@@ -18,7 +18,7 @@ On a Raspberry Pi with an IR LED on GPIO 17:
 
 ```
 # 1. Install the package for your Pi (see Installation for which one)
-sudo apt install ./piir_2.2.0_aarch64.deb
+sudo apt install ./piir_2.3.0_aarch64.deb
 
 # 2. Enable the kernel IR transmitter and reboot
 echo 'dtoverlay=gpio-ir-tx,gpio_pin=17' | sudo tee -a /boot/firmware/config.txt

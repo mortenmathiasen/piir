@@ -28,8 +28,9 @@ class IrlingoRemote : public Component {
   float get_setup_priority() const override { return setup_priority::DATA; }
 
   /// Send the code for these feature values, as `irlingo --remote ... --feature name=value`
-  /// does. Features not given keep the remote's template. Returns false on errors (logged).
-  bool send(const FeatureValues &features);
+  /// does. Features not given keep the remote's template. The code is sent send_times times,
+  /// with send_wait microseconds between them. Returns false on errors (logged).
+  bool send(const FeatureValues &features, uint32_t send_times = 1, uint32_t send_wait = 0);
 
  protected:
   remote_transmitter::RemoteTransmitterComponent *transmitter_{nullptr};
@@ -46,16 +47,21 @@ template<typename... Ts> class SendAction : public Action<Ts...>, public Parente
     this->features_.emplace_back(name, TemplatableValue<std::string, Ts...>(value));
   }
 
+  void set_send_times(uint32_t send_times) { this->send_times_ = send_times; }
+  void set_send_wait(uint32_t send_wait) { this->send_wait_ = send_wait; }
+
   void play(const Ts &...x) override {
     FeatureValues values;
     values.reserve(this->features_.size());
     for (auto &feature : this->features_)
       values.emplace_back(feature.first, feature.second.value(x...));
-    this->parent_->send(values);
+    this->parent_->send(values, this->send_times_, this->send_wait_);
   }
 
  protected:
   std::vector<std::pair<std::string, TemplatableValue<std::string, Ts...>>> features_;
+  uint32_t send_times_{1};
+  uint32_t send_wait_{0};
 };
 
 }  // namespace esphome::irlingo

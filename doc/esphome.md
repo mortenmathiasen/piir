@@ -86,6 +86,22 @@ on_...:
 - A value can come from a lambda, e.g. `key: !lambda 'return std::string("Power");'`.
   It is checked on the device; an unknown value is logged and nothing is sent.
 
+Some devices only react when a code is sent several times. Remotes using
+Sony's protocol already repeat their codes (see
+[Converting a LIRC configuration](remotes.md#converting-a-lirc-configuration)); for others, `repeat` sends the code
+several times, with `wait_time` between the end of one and the start of the
+next:
+
+```yaml
+  - irlingo.send:
+      remote_id: projector
+      features:
+        key: KEY_POWER
+      repeat:
+        times: 3
+        wait_time: 25ms
+```
+
 The action works in any ESPHome automation: `on_boot`, a button's `on_press`,
 `interval`, or a Home Assistant action through ESPHome's
 [native API](https://esphome.io/components/api/).
@@ -103,6 +119,8 @@ button:
     features:
       key: Power
 ```
+
+A button takes `repeat` too, as `irlingo.send` does.
 
 ## Air conditioners
 

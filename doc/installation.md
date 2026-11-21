@@ -49,11 +49,11 @@ If you are unsure, run `dpkg --print-architecture` on the Pi: `arm64` needs the 
 
 Download the package from the release page and install it, e.g. on a 64-bit Pi:
 ```
-sudo apt install ./irlingo_3.0.0_aarch64.deb
+sudo apt install ./irlingo_3.1.0_aarch64.deb
 ```
 Or, without `apt`, extract the tarball into `/`:
 ```
-sudo tar -xzf irlingo-3.0.0-aarch64.tar.gz -C / --strip-components=1
+sudo tar -xzf irlingo-3.1.0-aarch64.tar.gz -C / --strip-components=1
 ```
 
 The packages install `irlingo`, `irlingo-remotes` and irlingo's own remotes (e.g. `panasonic/hvac_panasonic`). The more than 3000 remotes converted from the LIRC database are not included; add the ones you need with `irlingo-remotes`, see [Managing remotes](remotes.md#adding-remotes-to-an-installation).

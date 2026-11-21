@@ -19,7 +19,7 @@ The [documentation](doc/README.md) has a guide for each step:
 
 * [Installation](doc/installation.md): hardware, packages, enabling the IR transmitter, building from source
 * [Connecting an IR LED](doc/hardware.md): circuits, parts and pins for a Raspberry Pi or an ESP32
-* [irlingo on ESPHome](doc/esphome.md): sending irlingo remotes from an ESP32 (preview)
+* [irlingo on ESPHome](doc/esphome.md): sending irlingo remotes from an ESP32
 * [Usage](doc/usage.md): finding a remote, sending keys and air conditioner settings
 * [Managing remotes](doc/remotes.md): adding remotes, converting LIRC files, deriving remotes from recordings
 * [Remote file format](doc/remote-format.md): every setting of a remote, with a worked example
@@ -84,6 +84,7 @@ The tool is developed in C to support deployment on any platform.
 The tool transmits IR on:
 * Raspberry Pi (all models, including Pi 5) using the Linux kernel IR transmitter driver (the default, used by the release packages) or [libgpiod](https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/)
 * Raspberry Pi 1–4 and Zero models using [pigpio](http://abyz.me.uk/rpi/pigpio/)
+* ESP32 with [ESPHome](https://esphome.io/), as an external component, see [irlingo on ESPHome](doc/esphome.md)
 * more platforms to come
 
 ### Prerequisites
@@ -112,11 +113,11 @@ The packages contain irlingo's own remotes. Add the remotes you need from the LI
 
 Install the Debian package, e.g. for a Pi Zero W:
 ```
-sudo apt install ./irlingo_3.0.0_armv6.deb
+sudo apt install ./irlingo_3.1.0_armv6.deb
 ```
 or extract the tarball into `/`:
 ```
-sudo tar -xzf irlingo-3.0.0-armv6.tar.gz -C / --strip-components=1
+sudo tar -xzf irlingo-3.1.0-armv6.tar.gz -C / --strip-components=1
 ```
 
 Then enable the kernel IR transmitter as described below.

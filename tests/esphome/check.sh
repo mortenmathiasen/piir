@@ -55,8 +55,11 @@ invalid "climate without modes" "Cannot guess the modes" '/^  - platform: irling
 if [ "${1:-}" = "--compile" ]; then
   for config in "$here/full.yaml" "$work/example.yaml"; do
     if [ "$config" = "$work/example.yaml" ]; then
-      sed "s#path: /home/pi/irlingo/components#path: $root/components#" \
+      # The example fetches the released component from GitHub; check this
+      # checkout's instead
+      sed "s#^  - source: github://mortenmathiasen/irlingo@.*#  - source: {type: local, path: $root/components}#" \
         "$root/doc/examples/esphome-irlingo.yaml" > "$config"
+      grep -q "path: $root/components" "$config"
       name="doc/examples/esphome-irlingo.yaml"
     else
       name="full configuration"

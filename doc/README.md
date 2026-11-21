@@ -5,7 +5,7 @@ irlingo (called PIIR before version 3.0.0) sends infrared signals from a Raspber
 | Guide | What it covers |
 |-------|----------------|
 | [Installation](installation.md) | Hardware, release packages, enabling the IR transmitter, building from source, cross compiling, upgrading |
-| [irlingo on ESPHome](esphome.md) | Sending irlingo remotes from an ESP32 with ESPHome (preview) |
+| [irlingo on ESPHome](esphome.md) | Sending irlingo remotes from an ESP32 with ESPHome |
 | [Connecting an IR LED](hardware.md) | Circuits, parts and pins for a Raspberry Pi or an ESP32, finding the right pins on your board, testing with a visible LED, checking that the LED sends |
 | [Usage](usage.md) | The `irlingo` command: finding a remote, sending keys and air conditioner settings, output, exit codes |
 | [Managing remotes](remotes.md) | Adding remotes to an installation, converting LIRC files, deriving a remote from recorded codes |
@@ -20,7 +20,7 @@ On a Raspberry Pi with an IR LED on GPIO 17:
 
 ```
 # 1. Install the package for your Pi (see Installation for which one)
-sudo apt install ./irlingo_3.0.0_aarch64.deb
+sudo apt install ./irlingo_3.1.0_aarch64.deb
 
 # 2. Enable the kernel IR transmitter and reboot
 echo 'dtoverlay=gpio-ir-tx,gpio_pin=17' | sudo tee -a /boot/firmware/config.txt

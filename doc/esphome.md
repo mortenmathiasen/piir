@@ -4,7 +4,7 @@ irlingo can run on an ESP32 as an [ESPHome](https://esphome.io/) external
 component. The remotes are the same JSON files as on the Raspberry Pi, and the
 same C code encodes them, so a remote sends the same code on both.
 
-Status: preview. The component sends codes from automations (`irlingo.send`),
+Since irlingo 3.1.0. The component sends codes from automations (`irlingo.send`),
 and gives Home Assistant buttons and air conditioner (climate) entities. See
 [the plan](esphome-plan.md) for what is next.
 
@@ -24,9 +24,8 @@ and gives Home Assistant buttons and air conditioner (climate) entities. See
   circuit, see [Connecting an IR LED](hardware.md). To test the board first, see
   [Testing with a visible LED](hardware.md#testing-with-a-visible-led).
 - ESPHome 2026.11 or newer.
-- A copy of the irlingo repository, until the component is released: the
-  component is in its `components/irlingo/` folder and finds the remotes in its
-  `conf/remotes/` folder.
+- Internet access when compiling: ESPHome fetches the component, with the
+  remotes, from the irlingo repository on GitHub.
 
 ## Configuration
 
@@ -35,9 +34,7 @@ The parts for irlingo:
 
 ```yaml
 external_components:
-  - source:
-      type: local
-      path: /home/pi/irlingo/components   # your copy of the repository
+  - source: github://mortenmathiasen/irlingo@v3.1.0
     components: [irlingo]
 
 remote_transmitter:
@@ -50,6 +47,17 @@ irlingo:
     remote: panasonic/hvac_panasonic
   - id: tv
     file: my-remotes/livingroom-tv.json
+```
+
+The version after `@` keeps the component and its remotes fixed; change it to
+upgrade. To use a copy of the repository instead, e.g. with your own changes:
+
+```yaml
+external_components:
+  - source:
+      type: local
+      path: /home/pi/irlingo/components
+    components: [irlingo]
 ```
 
 Each entry under `irlingo:` is one remote:

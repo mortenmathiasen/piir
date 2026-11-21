@@ -119,8 +119,8 @@ your board and which are free.
 
 ## ESP32
 
-irlingo runs on the ESP32 as an ESPHome component (a preview, see
-[irlingo on ESPHome](esphome.md)). The wiring is the same as for the Raspberry
+irlingo runs on the ESP32 as an ESPHome component, see
+[irlingo on ESPHome](esphome.md). The wiring is the same as for the Raspberry
 Pi, and works with ESPHome's own
 [remote_transmitter](https://esphome.io/components/remote_transmitter/) too.
 

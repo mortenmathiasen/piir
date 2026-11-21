@@ -15,11 +15,7 @@ esp32:
 logger:
 
 external_components:
-  # Until the component is released, use a local copy of the irlingo
-  # repository: replace the path with yours
-  - source:
-      type: local
-      path: /home/pi/irlingo/components
+  - source: github://mortenmathiasen/irlingo@v3.1.0
     components: [irlingo]
 
 remote_transmitter:
